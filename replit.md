@@ -42,13 +42,16 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 
 ### Features
 - **Dataset Upload**: Drag & drop .csv/.dat files, parse radius/velocity columns, data preview table
-- **Sample Datasets**: M31 (Andromeda), NGC 3198, Milky Way pre-loaded
+- **15 Sample Galaxies**: M31, NGC 3198, Milky Way, NGC 6503, UGC 2885, NGC 2403, NGC 7331, NGC 2903, IC 2574, DDO 154, NGC 1560, NGC 5055, NGC 891, NGC 4736, NGC 925
 - **Visualization**: Interactive Recharts scatter + line plot with observed data, Newtonian model, custom model overlays
-- **Model Builder**: Custom math formula input using mathjs, parameter sliders (G, M, k)
+- **Model Builder**: Custom math formula input using mathjs, parameter sliders (G, M, k, a), 8 formula presets (Dark Halo Linear/Flat, Modified Gravity, MOND-inspired, Logarithmic Halo, etc.)
+- **Auto-Parameter Optimizer**: 2-phase grid search (coarse + fine-tune) for k, a, M
 - **Discovery Mode**: Highlights anomalies where model deviates >15% from observed data
-- **Insight Panel**: MSE comparison, fit quality rating, winner indicator
-- **Multi-Galaxy Testing**: Load and compare multiple galaxy datasets simultaneously
-- **Export**: PNG graph export (html-to-image), JSON model parameter export
+- **Per-Galaxy MSE Table**: Individual MSE comparison per galaxy with winner indicator
+- **Residual Analysis**: Residual chart showing model fit quality across radii
+- **Generalization Score**: Percentage of galaxies where custom model beats Newtonian
+- **Research Lab**: Full benchmark (all 7 formulas × all 15 galaxies), regional analysis (inner vs outer), k-consistency scoring (CV metric), units normalization panel
+- **Export**: PNG graph export (html-to-image), JSON model/benchmark export
 
 ### Tech
 - React 19, Vite, Tailwind CSS v4, Recharts, mathjs, PapaParse, Framer Motion
@@ -56,13 +59,22 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - Fully client-side (no backend needed)
 
 ### Key Files
-- `artifacts/galaxy-analyzer/src/hooks/use-galaxy.tsx` — Core state management (datasets, model params, chart data generation)
+- `artifacts/galaxy-analyzer/src/hooks/use-galaxy.tsx` — Core state management (datasets, model params, chart data, benchmark engine, 15 sample galaxies, formula presets)
 - `artifacts/galaxy-analyzer/src/pages/dashboard.tsx` — Dashboard overview
-- `artifacts/galaxy-analyzer/src/pages/upload.tsx` — Dataset management with preview table
-- `artifacts/galaxy-analyzer/src/pages/analysis.tsx` — Visualization with layer toggles and insights
-- `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder and parameter tuning
+- `artifacts/galaxy-analyzer/src/pages/upload.tsx` — Dataset management with preview table (15 sample galaxies)
+- `artifacts/galaxy-analyzer/src/pages/analysis.tsx` — Visualization with layer toggles, residual chart, per-galaxy MSE, discovery mode
+- `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder, parameter tuning, auto-optimizer, formula library
+- `artifacts/galaxy-analyzer/src/pages/research.tsx` — Research Lab: units panel, full benchmark, formula rankings, regional analysis, k-consistency
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
 - `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout
+
+### Design System
+- Background: #0a0e1a (deep space), glassmorphism cards (bg-white/5, backdrop-blur)
+- Colors: cyan/teal (observed data), orange dashed (Newtonian), purple solid (custom model), amber (anomalies)
+- Fonts: Space Grotesk (display), Inter (sans), JetBrains Mono (monospace)
+- G = 4.3009e-6 kpc·(km/s)²/M_sun — real physical constant
+- ModelParams interface: explicit fields only (G, M, k, a, formula) — no index signature
+- Formula validation uses real mathjs evaluation at r=10 before persisting
 
 ## TypeScript & Composite Projects
 

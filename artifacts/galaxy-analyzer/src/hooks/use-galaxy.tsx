@@ -63,12 +63,49 @@ export interface FormulaPreset {
   category: 'additive' | 'modified_gravity' | 'transition';
 }
 
+export interface BenchmarkGalaxyResult {
+  galaxyName: string;
+  galaxyId: string;
+  mseNewton: number;
+  mseCustom: number;
+  improvementPct: number;
+  bestK: number;
+  bestA: number;
+  bestM: number;
+  mseInner: number;
+  mseOuter: number;
+  innerImprovement: number;
+  outerImprovement: number;
+  pointCount: number;
+}
+
+export interface FormulaBenchmark {
+  formulaId: string;
+  formulaName: string;
+  formula: string;
+  avgMSE: number;
+  avgImprovement: number;
+  winsCount: number;
+  galaxyResults: BenchmarkGalaxyResult[];
+  avgK: number;
+  kStdDev: number;
+  avgA: number;
+  avgM: number;
+}
+
+export interface BenchmarkResult {
+  formulas: FormulaBenchmark[];
+  bestFormula: string;
+  kConsistency: string;
+  timestamp: string;
+}
+
 export const FORMULA_PRESETS: FormulaPreset[] = [
   {
     id: 'newtonian',
     name: 'Pure Newtonian',
     formula: 'sqrt((G * M) / r)',
-    description: 'v = √(GM/r)',
+    description: 'v = sqrt(GM/r)',
     physicalMeaning: 'Standard Keplerian — predicts declining curve at large r. Fails for galaxies.',
     category: 'modified_gravity'
   },
@@ -76,7 +113,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'additive_linear',
     name: 'Dark Halo (Linear)',
     formula: 'sqrt((G * M) / r + k * r)',
-    description: 'v = √(GM/r + kr)',
+    description: 'v = sqrt(GM/r + kr)',
     physicalMeaning: 'Adds a force that grows with distance — models a dark matter halo with linear density.',
     category: 'additive'
   },
@@ -84,7 +121,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'additive_constant',
     name: 'Dark Halo (Flat)',
     formula: 'sqrt((G * M) / r + k)',
-    description: 'v = √(GM/r + k)',
+    description: 'v = sqrt(GM/r + k)',
     physicalMeaning: 'Adds a constant velocity floor — models isothermal dark matter halo.',
     category: 'additive'
   },
@@ -92,7 +129,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'modified_gravity',
     name: 'Modified Gravity',
     formula: 'sqrt((G * M) / (r + a))',
-    description: 'v = √(GM/(r+a))',
+    description: 'v = sqrt(GM/(r+a))',
     physicalMeaning: 'Gravity "softens" at a core radius a — prevents singularity and flattens inner curve.',
     category: 'modified_gravity'
   },
@@ -100,7 +137,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'modified_gravity_halo',
     name: 'Modified Gravity + Halo',
     formula: 'sqrt((G * M) / (r + a) + k * r)',
-    description: 'v = √(GM/(r+a) + kr)',
+    description: 'v = sqrt(GM/(r+a) + kr)',
     physicalMeaning: 'Combines softened gravity with dark matter halo — two free parameters for fitting.',
     category: 'modified_gravity'
   },
@@ -108,7 +145,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'transition',
     name: 'Transition Model',
     formula: 'sqrt((G * M) / r) * (1 + k * r / 100)',
-    description: 'v = √(GM/r) × (1 + kr/100)',
+    description: 'v = sqrt(GM/r) * (1 + kr/100)',
     physicalMeaning: 'Newtonian at small r, gradually boosted at large r — models transition to dark matter dominated regime.',
     category: 'transition'
   },
@@ -116,7 +153,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'mond_like',
     name: 'MOND-inspired',
     formula: 'sqrt(sqrt((G * M) / r) * a + (G * M) / r)',
-    description: 'v = √(√(GM/r)·a + GM/r)',
+    description: 'v = sqrt(sqrt(GM/r)*a + GM/r)',
     physicalMeaning: 'Inspired by Modified Newtonian Dynamics — gravity transitions at a critical acceleration scale.',
     category: 'modified_gravity'
   },
@@ -124,7 +161,7 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     id: 'log_halo',
     name: 'Logarithmic Halo',
     formula: 'sqrt((G * M) / r + k * log(1 + r / a))',
-    description: 'v = √(GM/r + k·ln(1+r/a))',
+    description: 'v = sqrt(GM/r + k*ln(1+r/a))',
     physicalMeaning: 'NFW-inspired logarithmic dark matter halo profile — widely used in astrophysics.',
     category: 'additive'
   }
@@ -140,6 +177,8 @@ interface GalaxyContextType {
   discoveryMode: boolean;
   isOptimizing: boolean;
   optimizationLog: string[];
+  benchmarkResult: BenchmarkResult | null;
+  isBenchmarking: boolean;
 
   uploadDataset: (file: File) => Promise<void>;
   loadSampleDataset: (name: string) => void;
@@ -150,6 +189,7 @@ interface GalaxyContextType {
   toggleLayer: (layer: 'observed' | 'newtonian' | 'custom' | 'discovery') => void;
   applyPreset: (preset: FormulaPreset) => void;
   autoOptimize: () => void;
+  runFullBenchmark: () => void;
 
   evaluateModel: (r: number, type: 'newtonian' | 'custom') => number | null;
   evaluateFormulaWithParams: (formula: string, params: ModelParams, r: number) => number | null;
@@ -217,6 +257,106 @@ const SAMPLE_DATASETS: Record<string, Dataset> = {
       { r: 60, v: 298 }, { r: 70, v: 295 }, { r: 80, v: 300 }
     ],
     color: "hsl(350, 80%, 55%)"
+  },
+  "NGC 2403": {
+    id: "sample-ngc2403",
+    name: "NGC 2403",
+    data: [
+      { r: 0.5, v: 45 }, { r: 1, v: 80 }, { r: 2, v: 105 }, { r: 3, v: 115 },
+      { r: 5, v: 125 }, { r: 7, v: 130 }, { r: 10, v: 135 }, { r: 13, v: 134 },
+      { r: 16, v: 133 }, { r: 19, v: 132 }, { r: 22, v: 130 }
+    ],
+    color: "hsl(210, 80%, 55%)"
+  },
+  "NGC 7331": {
+    id: "sample-ngc7331",
+    name: "NGC 7331",
+    data: [
+      { r: 1, v: 150 }, { r: 3, v: 210 }, { r: 5, v: 240 }, { r: 8, v: 250 },
+      { r: 10, v: 255 }, { r: 15, v: 250 }, { r: 20, v: 245 }, { r: 25, v: 240 },
+      { r: 30, v: 238 }, { r: 35, v: 235 }
+    ],
+    color: "hsl(260, 70%, 60%)"
+  },
+  "NGC 2903": {
+    id: "sample-ngc2903",
+    name: "NGC 2903",
+    data: [
+      { r: 1, v: 120 }, { r: 2, v: 170 }, { r: 4, v: 195 }, { r: 6, v: 200 },
+      { r: 8, v: 198 }, { r: 10, v: 195 }, { r: 14, v: 190 }, { r: 18, v: 188 },
+      { r: 22, v: 185 }, { r: 26, v: 183 }
+    ],
+    color: "hsl(170, 70%, 45%)"
+  },
+  "IC 2574": {
+    id: "sample-ic2574",
+    name: "IC 2574",
+    data: [
+      { r: 1, v: 15 }, { r: 2, v: 28 }, { r: 3, v: 38 }, { r: 4, v: 48 },
+      { r: 5, v: 55 }, { r: 6, v: 60 }, { r: 7, v: 63 }, { r: 8, v: 66 },
+      { r: 9, v: 68 }, { r: 10, v: 70 }, { r: 12, v: 72 }
+    ],
+    color: "hsl(45, 90%, 55%)"
+  },
+  "DDO 154": {
+    id: "sample-ddo154",
+    name: "DDO 154",
+    data: [
+      { r: 0.5, v: 10 }, { r: 1, v: 20 }, { r: 2, v: 32 }, { r: 3, v: 40 },
+      { r: 4, v: 45 }, { r: 5, v: 48 }, { r: 6, v: 50 }, { r: 7, v: 52 },
+      { r: 8, v: 53 }
+    ],
+    color: "hsl(90, 60%, 50%)"
+  },
+  "NGC 1560": {
+    id: "sample-ngc1560",
+    name: "NGC 1560",
+    data: [
+      { r: 1, v: 25 }, { r: 2, v: 45 }, { r: 3, v: 55 }, { r: 4, v: 62 },
+      { r: 5, v: 68 }, { r: 6, v: 72 }, { r: 7, v: 75 }, { r: 8, v: 77 },
+      { r: 9, v: 78 }, { r: 10, v: 78 }
+    ],
+    color: "hsl(320, 70%, 55%)"
+  },
+  "NGC 5055": {
+    id: "sample-ngc5055",
+    name: "NGC 5055",
+    data: [
+      { r: 1, v: 100 }, { r: 3, v: 180 }, { r: 5, v: 200 }, { r: 8, v: 210 },
+      { r: 10, v: 205 }, { r: 15, v: 200 }, { r: 20, v: 198 }, { r: 25, v: 195 },
+      { r: 30, v: 192 }, { r: 35, v: 190 }, { r: 40, v: 188 }
+    ],
+    color: "hsl(15, 80%, 55%)"
+  },
+  "NGC 891": {
+    id: "sample-ngc891",
+    name: "NGC 891",
+    data: [
+      { r: 2, v: 140 }, { r: 4, v: 195 }, { r: 6, v: 215 }, { r: 8, v: 225 },
+      { r: 10, v: 228 }, { r: 15, v: 225 }, { r: 20, v: 220 }, { r: 25, v: 215 },
+      { r: 30, v: 212 }
+    ],
+    color: "hsl(195, 85%, 50%)"
+  },
+  "NGC 4736": {
+    id: "sample-ngc4736",
+    name: "NGC 4736",
+    data: [
+      { r: 0.5, v: 100 }, { r: 1, v: 160 }, { r: 2, v: 190 }, { r: 3, v: 195 },
+      { r: 4, v: 185 }, { r: 5, v: 175 }, { r: 6, v: 168 }, { r: 7, v: 162 },
+      { r: 8, v: 158 }, { r: 9, v: 155 }
+    ],
+    color: "hsl(55, 80%, 50%)"
+  },
+  "NGC 925": {
+    id: "sample-ngc925",
+    name: "NGC 925",
+    data: [
+      { r: 1, v: 35 }, { r: 2, v: 60 }, { r: 3, v: 78 }, { r: 5, v: 95 },
+      { r: 7, v: 105 }, { r: 9, v: 110 }, { r: 11, v: 112 }, { r: 13, v: 114 },
+      { r: 15, v: 115 }, { r: 18, v: 116 }
+    ],
+    color: "hsl(130, 60%, 45%)"
   }
 };
 
@@ -233,6 +373,8 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
   const [discoveryMode, setDiscoveryMode] = useState(false);
   const [isOptimizing, setIsOptimizing] = useState(false);
   const [optimizationLog, setOptimizationLog] = useState<string[]>([]);
+  const [benchmarkResult, setBenchmarkResult] = useState<BenchmarkResult | null>(null);
+  const [isBenchmarking, setIsBenchmarking] = useState(false);
 
   const uploadDataset = async (file: File) => {
     return new Promise<void>((resolve, reject) => {
@@ -372,6 +514,49 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
     return count > 0 ? sum / count : Infinity;
   }, [datasets, activeDatasetIds, evaluateFormulaWithParams]);
 
+  const optimizeFormulaOnDataset = useCallback((formula: string, ds: Dataset, baseG: number): { k: number; a: number; M: number; mse: number } => {
+    let bestK = 0, bestA = 1, bestM = 1e11, bestMSE = Infinity;
+
+    const computeDS_MSE = (f: string, p: ModelParams, data: DataPoint[]): number => {
+      let sum = 0, count = 0;
+      data.forEach(pt => {
+        const pred = evaluateFormulaWithParams(f, p, pt.r);
+        if (pred !== null) { sum += (pt.v - pred) ** 2; count++; }
+      });
+      return count > 0 ? sum / count : Infinity;
+    };
+
+    const kVals = Array.from({ length: 25 }, (_, i) => i * 8);
+    const aVals = [0.1, 0.5, 1, 2, 3, 5, 8, 10, 15, 20];
+    const mVals = [1e9, 5e9, 1e10, 5e10, 1e11, 2e11, 5e11, 1e12];
+
+    for (const tM of mVals) {
+      for (const tK of kVals) {
+        for (const tA of aVals) {
+          const params: ModelParams = { G: baseG, M: tM, k: tK, a: tA, formula: formula };
+          const mse = computeDS_MSE(formula, params, ds.data);
+          if (mse < bestMSE) { bestMSE = mse; bestK = tK; bestA = tA; bestM = tM; }
+        }
+      }
+    }
+
+    const fineK = Array.from({ length: 17 }, (_, i) => Math.max(0, bestK - 8 + i));
+    const fineA = Array.from({ length: 11 }, (_, i) => Math.max(0.01, bestA - 2.5 + i * 0.5));
+    const fineM = Array.from({ length: 9 }, (_, i) => bestM * (0.6 + i * 0.1));
+
+    for (const tM of fineM) {
+      for (const tK of fineK) {
+        for (const tA of fineA) {
+          const params: ModelParams = { G: baseG, M: tM, k: tK, a: tA, formula: formula };
+          const mse = computeDS_MSE(formula, params, ds.data);
+          if (mse < bestMSE) { bestMSE = mse; bestK = tK; bestA = tA; bestM = tM; }
+        }
+      }
+    }
+
+    return { k: bestK, a: bestA, M: bestM, mse: bestMSE };
+  }, [evaluateFormulaWithParams]);
+
   const autoOptimize = useCallback(() => {
     setIsOptimizing(true);
     setOptimizationLog([]);
@@ -399,15 +584,10 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
     for (const testM of mValues) {
       for (const testK of kValues) {
         for (const testA of aValues) {
-          const testParams = { ...modelParams, k: testK, a: testA, M: testM };
+          const testParams: ModelParams = { ...modelParams, k: testK, a: testA, M: testM };
           const mse = computeMSEForParams(modelParams.formula, testParams);
           iterations++;
-          if (mse < bestMSE) {
-            bestMSE = mse;
-            bestK = testK;
-            bestA = testA;
-            bestM = testM;
-          }
+          if (mse < bestMSE) { bestMSE = mse; bestK = testK; bestA = testA; bestM = testM; }
         }
       }
     }
@@ -426,15 +606,10 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
     for (const testM of fineM) {
       for (const testK of fineK) {
         for (const testA of fineA) {
-          const testParams = { ...modelParams, k: testK, a: testA, M: testM };
+          const testParams: ModelParams = { ...modelParams, k: testK, a: testA, M: testM };
           const mse = computeMSEForParams(modelParams.formula, testParams);
           iterations++;
-          if (mse < bestMSE) {
-            bestMSE = mse;
-            bestK = testK;
-            bestA = testA;
-            bestM = testM;
-          }
+          if (mse < bestMSE) { bestMSE = mse; bestK = testK; bestA = testA; bestM = testM; }
         }
       }
     }
@@ -466,6 +641,129 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
     setOptimizationLog(log);
     setIsOptimizing(false);
   }, [modelParams, activeDatasetIds, computeMSEForParams]);
+
+  const runFullBenchmark = useCallback(() => {
+    setIsBenchmarking(true);
+
+    const allSamples = Object.values(SAMPLE_DATASETS);
+    setDatasets(prev => {
+      const existing = new Set(prev.map(d => d.id));
+      const toAdd = allSamples.filter(s => !existing.has(s.id));
+      return [...prev, ...toAdd];
+    });
+    setActiveDatasetIds(prev => [...new Set([...prev, ...allSamples.map(s => s.id)])]);
+
+    const benchmarkData = allSamples;
+    if (benchmarkData.length === 0) { setIsBenchmarking(false); return; }
+
+    const baseG = modelParams.G;
+    const formulasToTest = FORMULA_PRESETS.filter(p => p.id !== 'newtonian');
+
+    const newtonianBaselineCache = new Map<string, { M: number; mse: number }>();
+    benchmarkData.forEach(ds => {
+      const newtOpt = optimizeFormulaOnDataset('sqrt((G * M) / r)', ds, baseG);
+      newtonianBaselineCache.set(ds.id, { M: newtOpt.M, mse: newtOpt.mse });
+    });
+
+    const formulaResults: FormulaBenchmark[] = formulasToTest.map(preset => {
+      const galaxyResults: BenchmarkGalaxyResult[] = benchmarkData.map(ds => {
+        const opt = optimizeFormulaOnDataset(preset.formula, ds, baseG);
+
+        const newtBaseline = newtonianBaselineCache.get(ds.id)!;
+        const newtMSE = newtBaseline.mse;
+        const newtParams: ModelParams = { G: baseG, M: newtBaseline.M, k: 0, a: 1, formula: 'sqrt((G * M) / r)' };
+
+        const mid = Math.floor(ds.data.length / 2);
+        const innerData = ds.data.slice(0, mid);
+        const outerData = ds.data.slice(mid);
+
+        const optParams: ModelParams = { G: baseG, M: opt.M, k: opt.k, a: opt.a, formula: preset.formula };
+        let mseIn = 0, mseOut = 0, mseInN = 0, mseOutN = 0;
+        let cIn = 0, cOut = 0;
+
+        innerData.forEach(p => {
+          const pc = evaluateFormulaWithParams(preset.formula, optParams, p.r);
+          const pn = evaluateFormulaWithParams('sqrt((G * M) / r)', newtParams, p.r);
+          if (pc !== null) { mseIn += (p.v - pc) ** 2; cIn++; }
+          if (pn !== null) { mseInN += (p.v - pn) ** 2; }
+        });
+        outerData.forEach(p => {
+          const pc = evaluateFormulaWithParams(preset.formula, optParams, p.r);
+          const pn = evaluateFormulaWithParams('sqrt((G * M) / r)', newtParams, p.r);
+          if (pc !== null) { mseOut += (p.v - pc) ** 2; cOut++; }
+          if (pn !== null) { mseOutN += (p.v - pn) ** 2; }
+        });
+        mseIn = cIn > 0 ? mseIn / cIn : 0;
+        mseOut = cOut > 0 ? mseOut / cOut : 0;
+        mseInN = cIn > 0 ? mseInN / cIn : 0;
+        mseOutN = cOut > 0 ? mseOutN / cOut : 0;
+
+        const improvPct = newtMSE > 0 ? ((newtMSE - opt.mse) / newtMSE * 100) : 0;
+        const innerImpr = mseInN > 0 ? ((mseInN - mseIn) / mseInN * 100) : 0;
+        const outerImpr = mseOutN > 0 ? ((mseOutN - mseOut) / mseOutN * 100) : 0;
+
+        return {
+          galaxyName: ds.name,
+          galaxyId: ds.id,
+          mseNewton: newtMSE,
+          mseCustom: opt.mse,
+          improvementPct: improvPct,
+          bestK: opt.k,
+          bestA: opt.a,
+          bestM: opt.M,
+          mseInner: mseIn,
+          mseOuter: mseOut,
+          innerImprovement: innerImpr,
+          outerImprovement: outerImpr,
+          pointCount: ds.data.length
+        };
+      });
+
+      const kValues = galaxyResults.map(g => g.bestK);
+      const avgK = kValues.reduce((s, v) => s + v, 0) / kValues.length;
+      const kVariance = kValues.reduce((s, v) => s + (v - avgK) ** 2, 0) / kValues.length;
+      const kStdDev = Math.sqrt(kVariance);
+
+      const avgMSE = galaxyResults.reduce((s, g) => s + g.mseCustom, 0) / galaxyResults.length;
+      const avgImpr = galaxyResults.reduce((s, g) => s + g.improvementPct, 0) / galaxyResults.length;
+      const wins = galaxyResults.filter(g => g.improvementPct > 5).length;
+      const avgA = galaxyResults.reduce((s, g) => s + g.bestA, 0) / galaxyResults.length;
+      const avgM = galaxyResults.reduce((s, g) => s + g.bestM, 0) / galaxyResults.length;
+
+      return {
+        formulaId: preset.id,
+        formulaName: preset.name,
+        formula: preset.formula,
+        avgMSE,
+        avgImprovement: avgImpr,
+        winsCount: wins,
+        galaxyResults,
+        avgK,
+        kStdDev,
+        avgA,
+        avgM
+      };
+    });
+
+    formulaResults.sort((a, b) => b.avgImprovement - a.avgImprovement);
+    const best = formulaResults[0];
+
+    let kConsistency = 'N/A';
+    if (best) {
+      const cv = best.avgK > 0 ? (best.kStdDev / best.avgK * 100) : 100;
+      if (cv < 20) kConsistency = `Highly consistent (CV=${cv.toFixed(0)}%). k is stable across galaxies.`;
+      else if (cv < 50) kConsistency = `Moderately consistent (CV=${cv.toFixed(0)}%). Some variation across galaxies.`;
+      else kConsistency = `Inconsistent (CV=${cv.toFixed(0)}%). k varies significantly — may be galaxy-dependent.`;
+    }
+
+    setBenchmarkResult({
+      formulas: formulaResults,
+      bestFormula: best?.formulaName || 'N/A',
+      kConsistency,
+      timestamp: new Date().toISOString()
+    });
+    setIsBenchmarking(false);
+  }, [datasets, activeDatasetIds, modelParams.G, evaluateFormulaWithParams, optimizeFormulaOnDataset]);
 
   const generateChartData = useCallback(() => {
     const activeData = datasets.filter(d => activeDatasetIds.includes(d.id));
@@ -621,14 +919,13 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [datasets, activeDatasetIds, evaluateModel, generateResidualData]);
 
-
   return (
     <GalaxyContext.Provider value={{
       datasets, activeDatasetIds, modelParams, 
       showObserved, showNewtonian, showCustom, discoveryMode,
-      isOptimizing, optimizationLog,
+      isOptimizing, optimizationLog, benchmarkResult, isBenchmarking,
       uploadDataset, loadSampleDataset, loadAllSamples, removeDataset, toggleDatasetActive,
-      updateModelParams, toggleLayer, applyPreset, autoOptimize,
+      updateModelParams, toggleLayer, applyPreset, autoOptimize, runFullBenchmark,
       evaluateModel, evaluateFormulaWithParams, getInsights, generateChartData, generateResidualData,
       sampleDatasetNames: Object.keys(SAMPLE_DATASETS)
     }}>

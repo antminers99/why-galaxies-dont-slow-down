@@ -7,11 +7,21 @@ import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const SAMPLE_INFO: Record<string, { desc: string; color: string }> = {
-  "M31 (Andromeda)": { desc: "High mass spiral galaxy", color: "hover:bg-cyan-500/10 hover:text-cyan-400 hover:border-cyan-500/30" },
-  "NGC 3198": { desc: "Extended flat rotation curve", color: "hover:bg-purple-500/10 hover:text-purple-400 hover:border-purple-500/30" },
-  "Milky Way": { desc: "Our home galaxy", color: "hover:bg-green-500/10 hover:text-green-400 hover:border-green-500/30" },
-  "NGC 6503": { desc: "Dwarf spiral with dark halo", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
-  "UGC 2885": { desc: "Giant galaxy, flat at 300 km/s", color: "hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/30" },
+  "M31 (Andromeda)": { desc: "High mass spiral, 10 pts", color: "hover:bg-cyan-500/10 hover:text-cyan-400 hover:border-cyan-500/30" },
+  "NGC 3198": { desc: "Flat rotation curve, 8 pts", color: "hover:bg-purple-500/10 hover:text-purple-400 hover:border-purple-500/30" },
+  "Milky Way": { desc: "Our home galaxy, 15 pts", color: "hover:bg-green-500/10 hover:text-green-400 hover:border-green-500/30" },
+  "NGC 6503": { desc: "Dwarf spiral, 12 pts", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
+  "UGC 2885": { desc: "Giant, flat at 300 km/s", color: "hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/30" },
+  "NGC 2403": { desc: "Intermediate spiral, 11 pts", color: "hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/30" },
+  "NGC 7331": { desc: "Milky Way analog, 10 pts", color: "hover:bg-violet-500/10 hover:text-violet-400 hover:border-violet-500/30" },
+  "NGC 2903": { desc: "Barred spiral, 10 pts", color: "hover:bg-teal-500/10 hover:text-teal-400 hover:border-teal-500/30" },
+  "IC 2574": { desc: "Low-mass dwarf, 11 pts", color: "hover:bg-yellow-500/10 hover:text-yellow-400 hover:border-yellow-500/30" },
+  "DDO 154": { desc: "Dark matter dominated, 9 pts", color: "hover:bg-lime-500/10 hover:text-lime-400 hover:border-lime-500/30" },
+  "NGC 1560": { desc: "Small spiral, 10 pts", color: "hover:bg-pink-500/10 hover:text-pink-400 hover:border-pink-500/30" },
+  "NGC 5055": { desc: "Sunflower galaxy, 11 pts", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
+  "NGC 891": { desc: "Edge-on spiral, 9 pts", color: "hover:bg-sky-500/10 hover:text-sky-400 hover:border-sky-500/30" },
+  "NGC 4736": { desc: "Compact core, declining, 10 pts", color: "hover:bg-amber-500/10 hover:text-amber-400 hover:border-amber-500/30" },
+  "NGC 925": { desc: "Slowly rising curve, 10 pts", color: "hover:bg-emerald-500/10 hover:text-emerald-400 hover:border-emerald-500/30" },
 };
 
 export default function UploadPage() {
@@ -84,7 +94,7 @@ export default function UploadPage() {
                 <Layers className="w-3.5 h-3.5" /> Load All
               </button>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 max-h-[400px] overflow-y-auto pr-1">
               {sampleDatasetNames.map(name => {
                 const info = SAMPLE_INFO[name] || { desc: "Sample galaxy", color: "hover:bg-slate-500/10 hover:text-slate-300" };
                 const isLoaded = datasets.some(d => d.name === name);
