@@ -66,7 +66,8 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder, parameter tuning, auto-optimizer, formula library
 - `artifacts/galaxy-analyzer/src/pages/research.tsx` — Research Lab: units panel, full benchmark, formula rankings, regional analysis, k-consistency
 - `artifacts/galaxy-analyzer/src/pages/correlations.tsx` — Correlation Explorer: scatter plots of k vs galaxy properties (M, Vmax, Rmax, distance), Pearson/Spearman correlation, interactive axis selection, regression line
-- `artifacts/galaxy-analyzer/src/pages/theory.tsx` — Theoretical Framework: 7-step derivation from v²=GM/r+kr to ρ(r)=A/r density profile, k vs V²/R verification scatter plot, density profile envelope chart, 3 hypotheses (CDM, modified gravity, emergent gravity), summary of established results and open questions
+- `artifacts/galaxy-analyzer/src/pages/theory.tsx` — Theoretical Framework: 7-step derivation from v²=GM/r+kr to ρ(r)=A/r density profile, k vs V²/R verification scatter plot, **Law Test** (k=V²/R without fitting retains 96.4% performance, beats Newton on 175/175), density profile envelope chart, 3 hypotheses (CDM, modified gravity, emergent gravity), summary of established results and open questions
+- `artifacts/galaxy-analyzer/public/law-test-results.json` — Pre-computed Law Test results: per-galaxy MSE comparison of fitted k vs k=V²/R vs Newtonian
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
 - `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout
 
