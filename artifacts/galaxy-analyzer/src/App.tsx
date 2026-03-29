@@ -9,6 +9,7 @@ import AnalysisPage from "@/pages/analysis";
 import ModelsPage from "@/pages/models";
 import ResearchPage from "@/pages/research";
 import CorrelationsPage from "@/pages/correlations";
+import TheoryPage from "@/pages/theory";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/models" component={ModelsPage} />
       <Route path="/research" component={ResearchPage} />
       <Route path="/correlations" component={CorrelationsPage} />
+      <Route path="/theory" component={TheoryPage} />
       <Route component={NotFound} />
     </Switch>
   );
