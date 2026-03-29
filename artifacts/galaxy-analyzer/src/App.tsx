@@ -8,6 +8,7 @@ import UploadPage from "@/pages/upload";
 import AnalysisPage from "@/pages/analysis";
 import ModelsPage from "@/pages/models";
 import ResearchPage from "@/pages/research";
+import CorrelationsPage from "@/pages/correlations";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/analysis" component={AnalysisPage} />
       <Route path="/models" component={ModelsPage} />
       <Route path="/research" component={ResearchPage} />
+      <Route path="/correlations" component={CorrelationsPage} />
       <Route component={NotFound} />
     </Switch>
   );

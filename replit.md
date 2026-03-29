@@ -65,6 +65,7 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/src/pages/analysis.tsx` — Visualization with layer toggles, residual chart, per-galaxy MSE, discovery mode
 - `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder, parameter tuning, auto-optimizer, formula library
 - `artifacts/galaxy-analyzer/src/pages/research.tsx` — Research Lab: units panel, full benchmark, formula rankings, regional analysis, k-consistency
+- `artifacts/galaxy-analyzer/src/pages/correlations.tsx` — Correlation Explorer: scatter plots of k vs galaxy properties (M, Vmax, Rmax, distance), Pearson/Spearman correlation, interactive axis selection, regression line
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
 - `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout
 
