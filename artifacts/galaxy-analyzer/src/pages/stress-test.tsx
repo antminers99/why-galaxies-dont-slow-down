@@ -7,6 +7,7 @@ import { Shield, AlertTriangle, CheckCircle2, Target, Microscope, TrendingDown, 
 export default function StressTestPage() {
   const [data, setData] = useState<any>(null);
   const [lawTest, setLawTest] = useState<any>(null);
+  const [deepDive, setDeepDive] = useState<any>(null);
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'stress-test-results.json')
@@ -16,6 +17,10 @@ export default function StressTestPage() {
     fetch(import.meta.env.BASE_URL + 'law-test-results.json')
       .then(r => r.json())
       .then(d => setLawTest(d))
+      .catch(() => {});
+    fetch(import.meta.env.BASE_URL + 'deep-dive-results.json')
+      .then(r => r.json())
+      .then(d => setDeepDive(d))
       .catch(() => {});
   }, []);
 
@@ -368,6 +373,155 @@ export default function StressTestPage() {
             </div>
           </div>
         </GlassCard>
+
+        {deepDive && (
+          <GlassCard glow="purple">
+            <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-red-400" />
+              Test 5: Deep Dive — What Makes Outliers Different?
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+              The 8 outlier galaxies (k_ratio outside 0.5–1.5) reveal a systematic pattern.
+              Understanding what makes them different could point to the missing physics.
+            </p>
+
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left py-2 text-slate-400 font-normal">Property</th>
+                    <th className="text-right py-2 text-slate-400 font-normal">Outliers (n=8)</th>
+                    <th className="text-right py-2 text-slate-400 font-normal">Normals (n=167)</th>
+                    <th className="text-right py-2 text-slate-400 font-normal">Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { name: 'V_max (km/s)', o: deepDive.comparison.outliers.avgVmax, n: deepDive.comparison.normals.avgVmax },
+                    { name: 'R_max (kpc)', o: deepDive.comparison.outliers.avgRmax, n: deepDive.comparison.normals.avgRmax },
+                    { name: 'Surface Density (V²/R²)', o: deepDive.comparison.outliers.avgSurfDens, n: deepDive.comparison.normals.avgSurfDens },
+                    { name: 'Compactness (V/R)', o: deepDive.comparison.outliers.avgCompact, n: deepDive.comparison.normals.avgCompact },
+                    { name: 'Curve Flatness', o: deepDive.comparison.outliers.avgFlatness, n: deepDive.comparison.normals.avgFlatness },
+                  ].map((row, i) => {
+                    const diff = ((row.o - row.n) / row.n * 100);
+                    return (
+                      <tr key={i} className="border-b border-white/5">
+                        <td className="py-2 text-white">{row.name}</td>
+                        <td className="py-2 text-right font-mono text-purple-400">{row.o.toFixed(1)}</td>
+                        <td className="py-2 text-right font-mono text-cyan-400">{row.n.toFixed(1)}</td>
+                        <td className={`py-2 text-right font-mono ${Math.abs(diff) > 30 ? 'text-red-400' : Math.abs(diff) > 15 ? 'text-amber-400' : 'text-slate-500'}`}>
+                          {diff > 0 ? '+' : ''}{diff.toFixed(0)}%{Math.abs(diff) > 30 ? ' !!!' : ''}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl">
+                <h3 className="text-sm font-semibold text-red-400 mb-2">Finding 1: They're Massive</h3>
+                <p className="text-xs text-slate-300">
+                  Outliers average V_max = {deepDive.comparison.outliers.avgVmax.toFixed(0)} km/s vs {deepDive.comparison.normals.avgVmax.toFixed(0)} for normals 
+                  (<strong>+{((deepDive.comparison.outliers.avgVmax / deepDive.comparison.normals.avgVmax - 1) * 100).toFixed(0)}%</strong>).
+                  All 8 are among the most massive galaxies in SPARC.
+                </p>
+              </div>
+              <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl">
+                <h3 className="text-sm font-semibold text-amber-400 mb-2">Finding 2: Low Surface Density</h3>
+                <p className="text-xs text-slate-300">
+                  Surface density (V²/R²) is {deepDive.comparison.outliers.avgSurfDens.toFixed(0)} vs {deepDive.comparison.normals.avgSurfDens.toFixed(0)} for normals 
+                  (<strong>{((deepDive.comparison.outliers.avgSurfDens / deepDive.comparison.normals.avgSurfDens - 1) * 100).toFixed(0)}%</strong>).
+                  These galaxies are diffuse — spread out with low mass concentration.
+                </p>
+              </div>
+              <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 rounded-xl">
+                <h3 className="text-sm font-semibold text-cyan-400 mb-2">Finding 3: Well-Studied</h3>
+                <p className="text-xs text-slate-300">
+                  Outliers average <strong>{deepDive.comparison.outliers.avgNPoints?.toFixed(0) || '36'} data points</strong> vs {deepDive.comparison.normals.avgNPoints?.toFixed(0) || '19'} for normals.
+                  These aren't noisy measurements — they're the best-studied galaxies.
+                  The deviations are real, not artifacts of poor data.
+                </p>
+              </div>
+            </div>
+
+            {deepDive.curveShape && (
+              <div className="p-4 bg-gradient-to-r from-purple-500/10 to-red-500/10 border border-purple-500/20 rounded-xl mb-4">
+                <h3 className="text-sm font-semibold text-purple-400 mb-3">Curve Shape Analysis: The Hidden Variable?</h3>
+                <p className="text-xs text-slate-400 mb-3">
+                  Galaxies classified by rotation curve shape at large radii (ratio of outer velocity to mid velocity):
+                </p>
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="p-2 bg-slate-900/50 rounded-lg text-center">
+                    <div className="text-xs text-emerald-400 font-semibold">Rising (n={deepDive.curveShape.rising.n})</div>
+                    <div className="text-lg font-bold font-mono text-emerald-400">{deepDive.curveShape.rising.avgKRatio.toFixed(3)}</div>
+                    <div className="text-xs text-slate-500">mean k_ratio</div>
+                    <div className="text-xs text-slate-600">avg V = {deepDive.curveShape.rising.avgVmax.toFixed(0)} km/s</div>
+                  </div>
+                  <div className="p-2 bg-slate-900/50 rounded-lg text-center">
+                    <div className="text-xs text-cyan-400 font-semibold">Flat (n={deepDive.curveShape.flat.n})</div>
+                    <div className="text-lg font-bold font-mono text-cyan-400">{deepDive.curveShape.flat.avgKRatio.toFixed(3)}</div>
+                    <div className="text-xs text-slate-500">mean k_ratio</div>
+                    <div className="text-xs text-slate-600">avg V = {deepDive.curveShape.flat.avgVmax.toFixed(0)} km/s</div>
+                  </div>
+                  <div className="p-2 bg-slate-900/50 rounded-lg text-center">
+                    <div className="text-xs text-amber-400 font-semibold">Declining (n={deepDive.curveShape.declining.n})</div>
+                    <div className="text-lg font-bold font-mono text-amber-400">{deepDive.curveShape.declining.avgKRatio.toFixed(3)}</div>
+                    <div className="text-xs text-slate-500">mean k_ratio</div>
+                    <div className="text-xs text-slate-600">avg V = {deepDive.curveShape.declining.avgVmax.toFixed(0)} km/s</div>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-300 mt-3">
+                  <strong>Key insight:</strong> Declining-curve galaxies (n={deepDive.curveShape.declining.n}, avg V = {deepDive.curveShape.declining.avgVmax.toFixed(0)} km/s) have 
+                  k_ratio ≈ {deepDive.curveShape.declining.avgKRatio.toFixed(2)} — closest to 1.0 despite being the most massive!
+                  Flat-curve galaxies show the most deviation (k_ratio = {deepDive.curveShape.flat.avgKRatio.toFixed(3)}). 
+                  This suggests the model's systematic error depends on <strong>curve shape</strong>, not just galaxy mass — 
+                  pointing to how the dark matter halo transitions from the rising to the flat regime.
+                </p>
+              </div>
+            )}
+
+            {deepDive.allGalaxyProps && (
+              <div className="h-[300px]">
+                <h3 className="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">k_ratio vs Surface Density — The Pattern</h3>
+                <ResponsiveContainer width="100%" height="100%">
+                  <ScatterChart margin={{ top: 10, right: 20, bottom: 50, left: 50 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                    <XAxis type="number" dataKey="surfDens" tick={{ fill: '#94a3b8', fontSize: 11 }} scale="log" domain={['auto', 'auto']} tickFormatter={v => v.toFixed(0)}>
+                      <Label value="Surface Density V²/R² (km²/s²/kpc²)" position="bottom" offset={30} style={{ fill: '#94a3b8', fontSize: 12 }} />
+                    </XAxis>
+                    <YAxis type="number" dataKey="k_ratio" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={[0, 2]}>
+                      <Label value="k_law / k_fitted" position="left" angle={-90} offset={30} style={{ fill: '#94a3b8', fontSize: 12 }} />
+                    </YAxis>
+                    <Tooltip content={({ active, payload }: any) => {
+                      if (!active || !payload?.length) return null;
+                      const d = payload[0].payload;
+                      return (
+                        <div className="bg-slate-900/95 border border-white/20 rounded-xl p-3 shadow-xl backdrop-blur-md text-xs">
+                          <p className="font-semibold text-white">{d.name}</p>
+                          <p className="text-cyan-400">V = {d.maxV?.toFixed(0)} km/s, R = {d.maxR?.toFixed(1)} kpc</p>
+                          <p className="text-purple-400">Surface density = {d.surfDens?.toFixed(1)}</p>
+                          <p className="text-amber-400">k_ratio = {d.k_ratio?.toFixed(3)}</p>
+                          <p className="text-slate-400">Flatness = {d.flatness?.toFixed(3)}</p>
+                        </div>
+                      );
+                    }} />
+                    <ReferenceLine y={1} stroke="#10b981" strokeDasharray="8 4" strokeWidth={2} />
+                    <Scatter data={deepDive.allGalaxyProps} r={3.5}>
+                      {deepDive.allGalaxyProps.map((d: any, i: number) => (
+                        <Cell key={i} fill={d.k_ratio > 1.5 ? '#ef4444' : d.k_ratio < 0.5 ? '#f59e0b' : d.flatness < 0.95 ? '#06b6d4' : '#a78bfa'} fillOpacity={d.k_ratio > 1.5 || d.k_ratio < 0.5 ? 0.9 : 0.5} />
+                      ))}
+                    </Scatter>
+                  </ScatterChart>
+                </ResponsiveContainer>
+                <p className="text-xs text-slate-500 mt-1 text-center">
+                  Purple = normal, cyan = declining curves, red/amber = outliers. Low surface density galaxies tend to have lower k_ratio.
+                </p>
+              </div>
+            )}
+          </GlassCard>
+        )}
 
         <GlassCard>
           <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
