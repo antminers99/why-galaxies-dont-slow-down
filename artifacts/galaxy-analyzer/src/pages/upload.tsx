@@ -2,12 +2,23 @@ import React, { useCallback, useState } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
 import { useGalaxy } from '@/hooks/use-galaxy';
-import { UploadCloud, FileType, X, Check, Search, Eye } from 'lucide-react';
+import { UploadCloud, X, Check, Search, Eye, Layers } from 'lucide-react';
 import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const SAMPLE_INFO: Record<string, { desc: string; color: string }> = {
+  "M31 (Andromeda)": { desc: "High mass spiral galaxy", color: "hover:bg-cyan-500/10 hover:text-cyan-400 hover:border-cyan-500/30" },
+  "NGC 3198": { desc: "Extended flat rotation curve", color: "hover:bg-purple-500/10 hover:text-purple-400 hover:border-purple-500/30" },
+  "Milky Way": { desc: "Our home galaxy", color: "hover:bg-green-500/10 hover:text-green-400 hover:border-green-500/30" },
+  "NGC 6503": { desc: "Dwarf spiral with dark halo", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
+  "UGC 2885": { desc: "Giant galaxy, flat at 300 km/s", color: "hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/30" },
+};
+
 export default function UploadPage() {
-  const { datasets, uploadDataset, loadSampleDataset, removeDataset, toggleDatasetActive, activeDatasetIds } = useGalaxy();
+  const { 
+    datasets, uploadDataset, loadSampleDataset, loadAllSamples,
+    removeDataset, toggleDatasetActive, activeDatasetIds, sampleDatasetNames
+  } = useGalaxy();
   const [error, setError] = useState<string | null>(null);
   const [previewId, setPreviewId] = useState<string | null>(null);
 
@@ -39,7 +50,6 @@ export default function UploadPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Upload Section */}
         <div className="lg:col-span-1 space-y-6">
           <GlassCard className="p-0 overflow-hidden">
             <div 
@@ -65,35 +75,42 @@ export default function UploadPage() {
           </GlassCard>
 
           <GlassCard>
-            <h3 className="font-semibold mb-4 text-slate-200">Sample Datasets</h3>
-            <div className="space-y-3">
-              <button 
-                onClick={() => loadSampleDataset("M31 (Andromeda)")}
-                className="w-full text-left px-4 py-3 rounded-xl bg-slate-800/50 hover:bg-cyan-500/10 hover:text-cyan-400 border border-transparent hover:border-cyan-500/30 transition-all"
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-semibold text-slate-200">Sample Datasets</h3>
+              <button
+                onClick={loadAllSamples}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white rounded-lg transition-all"
               >
-                <div className="font-medium">M31 (Andromeda)</div>
-                <div className="text-xs text-slate-500 mt-1">High mass spiral galaxy</div>
+                <Layers className="w-3.5 h-3.5" /> Load All
               </button>
-              <button 
-                onClick={() => loadSampleDataset("NGC 3198")}
-                className="w-full text-left px-4 py-3 rounded-xl bg-slate-800/50 hover:bg-purple-500/10 hover:text-purple-400 border border-transparent hover:border-purple-500/30 transition-all"
-              >
-                <div className="font-medium">NGC 3198</div>
-                <div className="text-xs text-slate-500 mt-1">Extended flat rotation curve</div>
-              </button>
-              <button 
-                onClick={() => loadSampleDataset("Milky Way")}
-                className="w-full text-left px-4 py-3 rounded-xl bg-slate-800/50 hover:bg-green-500/10 hover:text-green-400 border border-transparent hover:border-green-500/30 transition-all"
-              >
-                <div className="font-medium">Milky Way</div>
-                <div className="text-xs text-slate-500 mt-1">Our home galaxy</div>
-              </button>
+            </div>
+            <div className="space-y-2">
+              {sampleDatasetNames.map(name => {
+                const info = SAMPLE_INFO[name] || { desc: "Sample galaxy", color: "hover:bg-slate-500/10 hover:text-slate-300" };
+                const isLoaded = datasets.some(d => d.name === name);
+                return (
+                  <button 
+                    key={name}
+                    onClick={() => loadSampleDataset(name)}
+                    className={`w-full text-left px-4 py-3 rounded-xl bg-slate-800/50 border border-transparent transition-all ${
+                      isLoaded ? 'opacity-60' : info.color
+                    }`}
+                    disabled={isLoaded}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-sm">{name}</div>
+                      {isLoaded && <span className="text-xs text-slate-500">Loaded</span>}
+                    </div>
+                    <div className="text-xs text-slate-500 mt-0.5">{info.desc}</div>
+                  </button>
+                );
+              })}
             </div>
           </GlassCard>
         </div>
 
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl font-semibold mb-2">Loaded Datasets</h2>
+          <h2 className="text-xl font-semibold mb-2">Loaded Datasets ({datasets.length})</h2>
           
           <AnimatePresence>
             {datasets.length === 0 && (
@@ -126,11 +143,9 @@ export default function UploadPage() {
                       <Check className="w-4 h-4" />
                     </button>
                     <div 
-                      className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                      style={{ backgroundColor: `${ds.color}20`, color: ds.color }}
-                    >
-                      <FileType className="w-5 h-5" />
-                    </div>
+                      className="w-8 h-8 rounded-full shrink-0"
+                      style={{ backgroundColor: ds.color || '#06b6d4' }}
+                    />
                     <div>
                       <h4 className="font-medium text-slate-100">{ds.name}</h4>
                       <p className="text-xs font-mono text-slate-400">{ds.data.length} points • max r: {Math.max(...ds.data.map(d=>d.r)).toFixed(1)} kpc</p>
