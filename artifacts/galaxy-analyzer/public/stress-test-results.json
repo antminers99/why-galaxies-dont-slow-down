@@ -1,0 +1,197 @@
+{
+  "categories": {
+    "byVelocity": {
+      "dwarf": {
+        "n": 22,
+        "vRange": "<50",
+        "avgLawImprov": 94.63831822364341,
+        "avgFitImprov": 95.41969724838845,
+        "retained": 99.1811134940923,
+        "beatsNewton": 22,
+        "meanKRatio": 1.0096671160390853
+      },
+      "small": {
+        "n": 64,
+        "vRange": "50-100",
+        "avgLawImprov": 94.05821843154172,
+        "avgFitImprov": 96.30402922568742,
+        "retained": 97.66799913544358,
+        "beatsNewton": 64,
+        "meanKRatio": 0.8561679753612085
+      },
+      "medium": {
+        "n": 51,
+        "vRange": "100-200",
+        "avgLawImprov": 87.16018312201133,
+        "avgFitImprov": 91.7282120987124,
+        "retained": 95.0200392309127,
+        "beatsNewton": 51,
+        "meanKRatio": 0.8052799757067701
+      },
+      "massive": {
+        "n": 38,
+        "vRange": ">200",
+        "avgLawImprov": 76.1480585361706,
+        "avgFitImprov": 80.88232630118152,
+        "retained": 94.14672156265395,
+        "beatsNewton": 38,
+        "meanKRatio": 0.8067152958024328
+      }
+    },
+    "byRadius": {
+      "compact": {
+        "n": 29,
+        "rRange": "<5",
+        "avgLawImprov": 94.83993139701532,
+        "avgFitImprov": 95.82713527510761,
+        "retained": 98.96980758606824,
+        "beatsNewton": 29,
+        "meanKRatio": 1.0374902761097333
+      },
+      "midSize": {
+        "n": 72,
+        "rRange": "5-15",
+        "avgLawImprov": 93.22970025993347,
+        "avgFitImprov": 95.49024093967031,
+        "retained": 97.63269978430044,
+        "beatsNewton": 72,
+        "meanKRatio": 0.83543620383483
+      },
+      "extended": {
+        "n": 38,
+        "rRange": "15-30",
+        "avgLawImprov": 84.99193576779086,
+        "avgFitImprov": 89.68058260898592,
+        "retained": 94.77183721961542,
+        "beatsNewton": 38,
+        "meanKRatio": 0.7947497453476529
+      },
+      "veryExtended": {
+        "n": 36,
+        "rRange": ">30",
+        "avgLawImprov": 76.33262654808829,
+        "avgFitImprov": 82.00588935033109,
+        "retained": 93.08188369495451,
+        "beatsNewton": 36,
+        "meanKRatio": 0.7859103325281697
+      }
+    }
+  },
+  "regional": {
+    "galaxiesWithBothRegions": 173,
+    "inner": {
+      "avgNewtonMSE": 5754.898705156781,
+      "avgLawMSE": 1593.7634338994667,
+      "improvement": 72.30596895699752
+    },
+    "outer": {
+      "avgNewtonMSE": 11995.88625750312,
+      "avgLawMSE": 289.63340876375804,
+      "improvement": 97.58556056179175
+    }
+  },
+  "breakdowns": {
+    "overPredictors": [
+      {
+        "name": "NGC 2683",
+        "k_ratio": 1.5735868214204438,
+        "maxV": 212,
+        "maxR": 34.62,
+        "improvLaw": 52.46579076836944
+      },
+      {
+        "name": "NGC 4013",
+        "k_ratio": 1.5802966784908095,
+        "maxV": 198,
+        "maxR": 31.01,
+        "improvLaw": 74.6810861021484
+      },
+      {
+        "name": "NGC 4138",
+        "k_ratio": 1.8191603875134554,
+        "maxV": 195,
+        "maxR": 18.58,
+        "improvLaw": 39.72917642804293
+      }
+    ],
+    "underPredictors": [
+      {
+        "name": "NGC 24",
+        "k_ratio": 0.3976469814979132,
+        "maxV": 110,
+        "maxR": 11.27,
+        "improvLaw": 61.34989856570308
+      },
+      {
+        "name": "UGC 3205",
+        "k_ratio": 0.4250976296430842,
+        "maxV": 237,
+        "maxR": 40.04,
+        "improvLaw": 60.605972352707525
+      },
+      {
+        "name": "UGC 5253",
+        "k_ratio": 0.42745842107823717,
+        "maxV": 248,
+        "maxR": 53.29,
+        "improvLaw": 45.22579287716335
+      },
+      {
+        "name": "UGC 6786",
+        "k_ratio": 0.42781040952847127,
+        "maxV": 229,
+        "maxR": 34.05,
+        "improvLaw": 64.45445030339607
+      },
+      {
+        "name": "NGC 3521",
+        "k_ratio": 0.46637566366991395,
+        "maxV": 220,
+        "maxR": 17.74,
+        "improvLaw": 61.578185342788835
+      }
+    ]
+  },
+  "corrections": {
+    "Vmax": {
+      "r": -0.2785130483855938,
+      "r2": 0.07756951812103613
+    },
+    "Rmax": {
+      "r": -0.39146153349140134,
+      "r2": 0.15324213220343952
+    },
+    "log(Vmax)": {
+      "r": -0.2979286231010592,
+      "r2": 0.088761464462893
+    },
+    "log(Rmax)": {
+      "r": -0.2325327944522141,
+      "r2": 0.054071500495755646
+    },
+    "V²/R": {
+      "r": 0.011758781591731798,
+      "r2": 0.00013826894452205062
+    },
+    "log(V²/R)": {
+      "r": -0.011522712736378525,
+      "r2": 0.00013277290880509988
+    },
+    "Vmax/Rmax": {
+      "r": 0.3517463251112114,
+      "r2": 0.12372547722924203
+    },
+    "log(M_fitted)": {
+      "r": -0.14575463304082947,
+      "r2": 0.02124441305286686
+    },
+    "Rmax/Vmax": {
+      "r": -0.3517463251112114,
+      "r2": 0.12372547722924203
+    },
+    "surface_density (V²/R²)": {
+      "r": 0.3517463251112114,
+      "r2": 0.12372547722924203
+    }
+  }
+}

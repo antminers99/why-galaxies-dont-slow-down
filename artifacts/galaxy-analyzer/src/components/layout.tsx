@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRoute } from "wouter";
-import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen } from 'lucide-react';
+import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen, Shield } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NavItem = ({ href, icon: Icon, label }: { href: string, icon: any, label: string }) => {
@@ -46,6 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavItem href="/research" icon={Microscope} label="Research Lab" />
             <NavItem href="/correlations" icon={TrendingUp} label="Correlations" />
             <NavItem href="/theory" icon={BookOpen} label="Theory" />
+            <NavItem href="/stress-test" icon={Shield} label="Stress Test" />
           </nav>
         </div>
         
