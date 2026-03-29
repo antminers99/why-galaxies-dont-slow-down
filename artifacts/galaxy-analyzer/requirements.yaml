@@ -1,0 +1,19 @@
+packages:
+  "framer-motion": "For smooth transitions and micro-interactions"
+  "recharts": "For the complex scientific scatter plots and line charts"
+  "mathjs": "For safe parsing and evaluation of custom mathematical formulas"
+  "html-to-image": "To export the charts as PNG images"
+  "papaparse": "For robust CSV and DAT file parsing"
+  "@types/papaparse": "TypeScript definitions for papaparse"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+
+images:
+  - path: "artifacts/galaxy-analyzer/public/images/space-bg.png"
+    description: "Abstract, very dark, deep space background with subtle nebulous glowing teal and purple dust clouds. Very minimal, highly premium, suitable for a dark mode dashboard background. Mostly dark."
+    aspect_ratio: "16:9"
+
+notes:
+  - This is a fully client-side application. No backend API is assumed or required.
+  - All data processing, mathematical evaluation, and state management happen in the browser.
+  - Uses a global React Context (useGalaxy) to share dataset and model state between pages.

@@ -21,7 +21,8 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── api-server/         # Express API server
+│   └── galaxy-analyzer/    # Galaxy Rotation Curve Analyzer (React + Vite)
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
@@ -34,6 +35,34 @@ artifacts-monorepo/
 ├── tsconfig.json           # Root TS project references
 └── package.json            # Root package with hoisted devDeps
 ```
+
+## Galaxy Rotation Curve Analyzer
+
+A professional dark matter research tool built with React + Vite + Tailwind CSS.
+
+### Features
+- **Dataset Upload**: Drag & drop .csv/.dat files, parse radius/velocity columns, data preview table
+- **Sample Datasets**: M31 (Andromeda), NGC 3198, Milky Way pre-loaded
+- **Visualization**: Interactive Recharts scatter + line plot with observed data, Newtonian model, custom model overlays
+- **Model Builder**: Custom math formula input using mathjs, parameter sliders (G, M, k)
+- **Discovery Mode**: Highlights anomalies where model deviates >15% from observed data
+- **Insight Panel**: MSE comparison, fit quality rating, winner indicator
+- **Multi-Galaxy Testing**: Load and compare multiple galaxy datasets simultaneously
+- **Export**: PNG graph export (html-to-image), JSON model parameter export
+
+### Tech
+- React 19, Vite, Tailwind CSS v4, Recharts, mathjs, PapaParse, Framer Motion
+- Dark space theme with glassmorphism cards
+- Fully client-side (no backend needed)
+
+### Key Files
+- `artifacts/galaxy-analyzer/src/hooks/use-galaxy.tsx` — Core state management (datasets, model params, chart data generation)
+- `artifacts/galaxy-analyzer/src/pages/dashboard.tsx` — Dashboard overview
+- `artifacts/galaxy-analyzer/src/pages/upload.tsx` — Dataset management with preview table
+- `artifacts/galaxy-analyzer/src/pages/analysis.tsx` — Visualization with layer toggles and insights
+- `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder and parameter tuning
+- `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
+- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout
 
 ## TypeScript & Composite Projects
 

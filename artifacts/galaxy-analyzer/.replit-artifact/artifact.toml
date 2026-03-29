@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Galaxy Rotation Curve Analyzer"
+version = "1.0.0"
+id = "artifacts/galaxy-analyzer"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25090
+
+[services.development]
+run = "pnpm --filter @workspace/galaxy-analyzer run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/galaxy-analyzer", "run", "build" ]
+publicDir = "artifacts/galaxy-analyzer/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25090"
+BASE_PATH = "/"
