@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 import Papa from 'papaparse';
 import * as math from 'mathjs';
+import { SPARC_DATASETS } from '@/data/sparc-datasets';
 
 export interface DataPoint {
   r: number;
@@ -207,164 +208,14 @@ const defaultParams: ModelParams = {
   formula: "sqrt((G * M) / r + k * r)",
 };
 
-const SAMPLE_DATASETS: Record<string, Dataset> = {
-  "M31 (Andromeda)": {
-    id: "sample-m31",
-    name: "M31 (Andromeda)",
-    data: [
-      { r: 2, v: 100 }, { r: 4, v: 210 }, { r: 6, v: 235 }, { r: 8, v: 245 },
-      { r: 10, v: 250 }, { r: 15, v: 255 }, { r: 20, v: 250 }, { r: 25, v: 245 },
-      { r: 30, v: 240 }, { r: 35, v: 238 }
-    ],
-    color: "hsl(189, 94%, 43%)"
-  },
-  "NGC 3198": {
-    id: "sample-ngc3198",
-    name: "NGC 3198",
-    data: [
-      { r: 1, v: 50 }, { r: 3, v: 120 }, { r: 5, v: 140 }, { r: 10, v: 150 },
-      { r: 15, v: 155 }, { r: 20, v: 152 }, { r: 25, v: 150 }, { r: 30, v: 148 }
-    ],
-    color: "hsl(280, 80%, 60%)"
-  },
-  "Milky Way": {
-    id: "sample-mw",
-    name: "Milky Way",
-    data: [
-      { r: 1, v: 200 }, { r: 2, v: 215 }, { r: 3, v: 220 }, { r: 4, v: 225 },
-      { r: 5, v: 225 }, { r: 6, v: 220 }, { r: 8, v: 220 }, { r: 10, v: 210 },
-      { r: 12, v: 215 }, { r: 14, v: 220 }, { r: 16, v: 230 }, { r: 18, v: 235 },
-      { r: 20, v: 240 }, { r: 25, v: 235 }, { r: 30, v: 230 }
-    ],
-    color: "hsl(142, 76%, 45%)"
-  },
-  "NGC 6503": {
-    id: "sample-ngc6503",
-    name: "NGC 6503",
-    data: [
-      { r: 0.5, v: 40 }, { r: 1, v: 70 }, { r: 2, v: 95 }, { r: 3, v: 108 },
-      { r: 4, v: 115 }, { r: 5, v: 118 }, { r: 7, v: 120 }, { r: 9, v: 121 },
-      { r: 12, v: 120 }, { r: 15, v: 119 }, { r: 18, v: 118 }, { r: 20, v: 117 }
-    ],
-    color: "hsl(32, 95%, 54%)"
-  },
-  "UGC 2885": {
-    id: "sample-ugc2885",
-    name: "UGC 2885",
-    data: [
-      { r: 5, v: 200 }, { r: 10, v: 280 }, { r: 15, v: 295 }, { r: 20, v: 300 },
-      { r: 25, v: 298 }, { r: 30, v: 300 }, { r: 40, v: 305 }, { r: 50, v: 300 },
-      { r: 60, v: 298 }, { r: 70, v: 295 }, { r: 80, v: 300 }
-    ],
-    color: "hsl(350, 80%, 55%)"
-  },
-  "NGC 2403": {
-    id: "sample-ngc2403",
-    name: "NGC 2403",
-    data: [
-      { r: 0.5, v: 45 }, { r: 1, v: 80 }, { r: 2, v: 105 }, { r: 3, v: 115 },
-      { r: 5, v: 125 }, { r: 7, v: 130 }, { r: 10, v: 135 }, { r: 13, v: 134 },
-      { r: 16, v: 133 }, { r: 19, v: 132 }, { r: 22, v: 130 }
-    ],
-    color: "hsl(210, 80%, 55%)"
-  },
-  "NGC 7331": {
-    id: "sample-ngc7331",
-    name: "NGC 7331",
-    data: [
-      { r: 1, v: 150 }, { r: 3, v: 210 }, { r: 5, v: 240 }, { r: 8, v: 250 },
-      { r: 10, v: 255 }, { r: 15, v: 250 }, { r: 20, v: 245 }, { r: 25, v: 240 },
-      { r: 30, v: 238 }, { r: 35, v: 235 }
-    ],
-    color: "hsl(260, 70%, 60%)"
-  },
-  "NGC 2903": {
-    id: "sample-ngc2903",
-    name: "NGC 2903",
-    data: [
-      { r: 1, v: 120 }, { r: 2, v: 170 }, { r: 4, v: 195 }, { r: 6, v: 200 },
-      { r: 8, v: 198 }, { r: 10, v: 195 }, { r: 14, v: 190 }, { r: 18, v: 188 },
-      { r: 22, v: 185 }, { r: 26, v: 183 }
-    ],
-    color: "hsl(170, 70%, 45%)"
-  },
-  "IC 2574": {
-    id: "sample-ic2574",
-    name: "IC 2574",
-    data: [
-      { r: 1, v: 15 }, { r: 2, v: 28 }, { r: 3, v: 38 }, { r: 4, v: 48 },
-      { r: 5, v: 55 }, { r: 6, v: 60 }, { r: 7, v: 63 }, { r: 8, v: 66 },
-      { r: 9, v: 68 }, { r: 10, v: 70 }, { r: 12, v: 72 }
-    ],
-    color: "hsl(45, 90%, 55%)"
-  },
-  "DDO 154": {
-    id: "sample-ddo154",
-    name: "DDO 154",
-    data: [
-      { r: 0.5, v: 10 }, { r: 1, v: 20 }, { r: 2, v: 32 }, { r: 3, v: 40 },
-      { r: 4, v: 45 }, { r: 5, v: 48 }, { r: 6, v: 50 }, { r: 7, v: 52 },
-      { r: 8, v: 53 }
-    ],
-    color: "hsl(90, 60%, 50%)"
-  },
-  "NGC 1560": {
-    id: "sample-ngc1560",
-    name: "NGC 1560",
-    data: [
-      { r: 1, v: 25 }, { r: 2, v: 45 }, { r: 3, v: 55 }, { r: 4, v: 62 },
-      { r: 5, v: 68 }, { r: 6, v: 72 }, { r: 7, v: 75 }, { r: 8, v: 77 },
-      { r: 9, v: 78 }, { r: 10, v: 78 }
-    ],
-    color: "hsl(320, 70%, 55%)"
-  },
-  "NGC 5055": {
-    id: "sample-ngc5055",
-    name: "NGC 5055",
-    data: [
-      { r: 1, v: 100 }, { r: 3, v: 180 }, { r: 5, v: 200 }, { r: 8, v: 210 },
-      { r: 10, v: 205 }, { r: 15, v: 200 }, { r: 20, v: 198 }, { r: 25, v: 195 },
-      { r: 30, v: 192 }, { r: 35, v: 190 }, { r: 40, v: 188 }
-    ],
-    color: "hsl(15, 80%, 55%)"
-  },
-  "NGC 891": {
-    id: "sample-ngc891",
-    name: "NGC 891",
-    data: [
-      { r: 2, v: 140 }, { r: 4, v: 195 }, { r: 6, v: 215 }, { r: 8, v: 225 },
-      { r: 10, v: 228 }, { r: 15, v: 225 }, { r: 20, v: 220 }, { r: 25, v: 215 },
-      { r: 30, v: 212 }
-    ],
-    color: "hsl(195, 85%, 50%)"
-  },
-  "NGC 4736": {
-    id: "sample-ngc4736",
-    name: "NGC 4736",
-    data: [
-      { r: 0.5, v: 100 }, { r: 1, v: 160 }, { r: 2, v: 190 }, { r: 3, v: 195 },
-      { r: 4, v: 185 }, { r: 5, v: 175 }, { r: 6, v: 168 }, { r: 7, v: 162 },
-      { r: 8, v: 158 }, { r: 9, v: 155 }
-    ],
-    color: "hsl(55, 80%, 50%)"
-  },
-  "NGC 925": {
-    id: "sample-ngc925",
-    name: "NGC 925",
-    data: [
-      { r: 1, v: 35 }, { r: 2, v: 60 }, { r: 3, v: 78 }, { r: 5, v: 95 },
-      { r: 7, v: 105 }, { r: 9, v: 110 }, { r: 11, v: 112 }, { r: 13, v: 114 },
-      { r: 15, v: 115 }, { r: 18, v: 116 }
-    ],
-    color: "hsl(130, 60%, 45%)"
-  }
-};
+const SAMPLE_DATASETS: Record<string, Dataset> = SPARC_DATASETS;
 
 const GalaxyContext = createContext<GalaxyContextType | undefined>(undefined);
 
 export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
-  const [datasets, setDatasets] = useState<Dataset[]>([SAMPLE_DATASETS["M31 (Andromeda)"]]);
-  const [activeDatasetIds, setActiveDatasetIds] = useState<string[]>(["sample-m31"]);
+  const firstGalaxy = SAMPLE_DATASETS["NGC 3198"] || Object.values(SAMPLE_DATASETS)[0];
+  const [datasets, setDatasets] = useState<Dataset[]>([firstGalaxy]);
+  const [activeDatasetIds, setActiveDatasetIds] = useState<string[]>([firstGalaxy.id]);
   const [modelParams, setModelParams] = useState<ModelParams>(defaultParams);
   
   const [showObserved, setShowObserved] = useState(true);
@@ -645,15 +496,7 @@ export const GalaxyProvider = ({ children }: { children: ReactNode }) => {
   const runFullBenchmark = useCallback(() => {
     setIsBenchmarking(true);
 
-    const allSamples = Object.values(SAMPLE_DATASETS);
-    setDatasets(prev => {
-      const existing = new Set(prev.map(d => d.id));
-      const toAdd = allSamples.filter(s => !existing.has(s.id));
-      return [...prev, ...toAdd];
-    });
-    setActiveDatasetIds(prev => [...new Set([...prev, ...allSamples.map(s => s.id)])]);
-
-    const benchmarkData = allSamples;
+    const benchmarkData = datasets.filter(d => activeDatasetIds.includes(d.id));
     if (benchmarkData.length === 0) { setIsBenchmarking(false); return; }
 
     const baseG = modelParams.G;

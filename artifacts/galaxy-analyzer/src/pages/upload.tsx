@@ -1,28 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
 import { useGalaxy } from '@/hooks/use-galaxy';
-import { UploadCloud, X, Check, Search, Eye, Layers } from 'lucide-react';
+import { SPARC_METADATA } from '@/data/sparc-datasets';
+import { UploadCloud, X, Check, Search, Eye, Layers, Database, ChevronDown, ChevronUp } from 'lucide-react';
 import { useDropzone } from 'react-dropzone';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const SAMPLE_INFO: Record<string, { desc: string; color: string }> = {
-  "M31 (Andromeda)": { desc: "High mass spiral, 10 pts", color: "hover:bg-cyan-500/10 hover:text-cyan-400 hover:border-cyan-500/30" },
-  "NGC 3198": { desc: "Flat rotation curve, 8 pts", color: "hover:bg-purple-500/10 hover:text-purple-400 hover:border-purple-500/30" },
-  "Milky Way": { desc: "Our home galaxy, 15 pts", color: "hover:bg-green-500/10 hover:text-green-400 hover:border-green-500/30" },
-  "NGC 6503": { desc: "Dwarf spiral, 12 pts", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
-  "UGC 2885": { desc: "Giant, flat at 300 km/s", color: "hover:bg-rose-500/10 hover:text-rose-400 hover:border-rose-500/30" },
-  "NGC 2403": { desc: "Intermediate spiral, 11 pts", color: "hover:bg-blue-500/10 hover:text-blue-400 hover:border-blue-500/30" },
-  "NGC 7331": { desc: "Milky Way analog, 10 pts", color: "hover:bg-violet-500/10 hover:text-violet-400 hover:border-violet-500/30" },
-  "NGC 2903": { desc: "Barred spiral, 10 pts", color: "hover:bg-teal-500/10 hover:text-teal-400 hover:border-teal-500/30" },
-  "IC 2574": { desc: "Low-mass dwarf, 11 pts", color: "hover:bg-yellow-500/10 hover:text-yellow-400 hover:border-yellow-500/30" },
-  "DDO 154": { desc: "Dark matter dominated, 9 pts", color: "hover:bg-lime-500/10 hover:text-lime-400 hover:border-lime-500/30" },
-  "NGC 1560": { desc: "Small spiral, 10 pts", color: "hover:bg-pink-500/10 hover:text-pink-400 hover:border-pink-500/30" },
-  "NGC 5055": { desc: "Sunflower galaxy, 11 pts", color: "hover:bg-orange-500/10 hover:text-orange-400 hover:border-orange-500/30" },
-  "NGC 891": { desc: "Edge-on spiral, 9 pts", color: "hover:bg-sky-500/10 hover:text-sky-400 hover:border-sky-500/30" },
-  "NGC 4736": { desc: "Compact core, declining, 10 pts", color: "hover:bg-amber-500/10 hover:text-amber-400 hover:border-amber-500/30" },
-  "NGC 925": { desc: "Slowly rising curve, 10 pts", color: "hover:bg-emerald-500/10 hover:text-emerald-400 hover:border-emerald-500/30" },
-};
 
 export default function UploadPage() {
   const { 
@@ -31,6 +14,8 @@ export default function UploadPage() {
   } = useGalaxy();
   const [error, setError] = useState<string | null>(null);
   const [previewId, setPreviewId] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showAllSamples, setShowAllSamples] = useState(false);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     setError(null);
@@ -51,11 +36,22 @@ export default function UploadPage() {
     }
   });
 
+  const filteredSamples = useMemo(() => {
+    const q = searchQuery.toLowerCase().trim();
+    const filtered = q
+      ? sampleDatasetNames.filter(name => name.toLowerCase().includes(q))
+      : sampleDatasetNames;
+    return showAllSamples ? filtered : filtered.slice(0, 30);
+  }, [sampleDatasetNames, searchQuery, showAllSamples]);
+
+  const totalSamples = sampleDatasetNames.length;
+  const loadedCount = datasets.length;
+
   return (
     <Layout>
       <header className="mb-8">
         <h1 className="text-3xl font-bold">Data Management</h1>
-        <p className="text-slate-400 mt-2">Upload and manage galaxy rotation curve datasets.</p>
+        <p className="text-slate-400 mt-2">Upload and manage galaxy rotation curve datasets. <span className="text-cyan-400">{totalSamples} SPARC galaxies</span> available.</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -85,42 +81,80 @@ export default function UploadPage() {
           </GlassCard>
 
           <GlassCard>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold text-slate-200">Sample Datasets</h3>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold text-slate-200 flex items-center gap-2">
+                <Database className="w-4 h-4 text-cyan-400" />
+                SPARC Database
+              </h3>
               <button
                 onClick={loadAllSamples}
                 className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white rounded-lg transition-all"
               >
-                <Layers className="w-3.5 h-3.5" /> Load All
+                <Layers className="w-3.5 h-3.5" /> Load All {totalSamples}
               </button>
             </div>
-            <div className="space-y-2 max-h-[400px] overflow-y-auto pr-1">
-              {sampleDatasetNames.map(name => {
-                const info = SAMPLE_INFO[name] || { desc: "Sample galaxy", color: "hover:bg-slate-500/10 hover:text-slate-300" };
+            <p className="text-xs text-slate-500 mb-3">Real rotation curves from Lelli, McGaugh & Schombert (2016)</p>
+
+            <div className="relative mb-3">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search galaxies..."
+                className="w-full pl-9 pr-3 py-2 bg-slate-900/60 border border-white/10 rounded-lg text-sm text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50"
+              />
+            </div>
+
+            <div className="space-y-1.5 max-h-[420px] overflow-y-auto pr-1 scrollbar-thin">
+              {filteredSamples.map(name => {
                 const isLoaded = datasets.some(d => d.name === name);
+                const meta = SPARC_METADATA[name];
                 return (
                   <button 
                     key={name}
                     onClick={() => loadSampleDataset(name)}
-                    className={`w-full text-left px-4 py-3 rounded-xl bg-slate-800/50 border border-transparent transition-all ${
-                      isLoaded ? 'opacity-60' : info.color
+                    className={`w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 border border-transparent transition-all text-sm ${
+                      isLoaded ? 'opacity-50 border-cyan-500/20' : 'hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:text-cyan-400'
                     }`}
                     disabled={isLoaded}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="font-medium text-sm">{name}</div>
-                      {isLoaded && <span className="text-xs text-slate-500">Loaded</span>}
+                      <span className="font-medium">{name}</span>
+                      <span className="text-xs font-mono text-slate-500">
+                        {meta ? `${meta.pointCount} pts` : ''}
+                        {isLoaded && <Check className="w-3 h-3 inline ml-1 text-cyan-400" />}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 mt-0.5">{info.desc}</div>
+                    {meta && (
+                      <div className="text-xs text-slate-500 mt-0.5">
+                        {meta.distance ? `${meta.distance} Mpc` : ''} 
+                        {meta.distance ? ' • ' : ''}
+                        max v = {meta.maxV.toFixed(0)} km/s
+                      </div>
+                    )}
                   </button>
                 );
               })}
             </div>
+
+            {!searchQuery && sampleDatasetNames.length > 30 && (
+              <button
+                onClick={() => setShowAllSamples(!showAllSamples)}
+                className="w-full mt-2 py-2 text-xs text-slate-400 hover:text-cyan-400 flex items-center justify-center gap-1 transition-colors"
+              >
+                {showAllSamples ? (
+                  <><ChevronUp className="w-3 h-3" /> Show less</>
+                ) : (
+                  <><ChevronDown className="w-3 h-3" /> Show all {totalSamples} galaxies</>
+                )}
+              </button>
+            )}
           </GlassCard>
         </div>
 
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl font-semibold mb-2">Loaded Datasets ({datasets.length})</h2>
+          <h2 className="text-xl font-semibold mb-2">Loaded Datasets ({loadedCount})</h2>
           
           <AnimatePresence>
             {datasets.length === 0 && (

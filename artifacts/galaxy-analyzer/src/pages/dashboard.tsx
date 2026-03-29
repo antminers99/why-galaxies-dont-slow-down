@@ -134,8 +134,8 @@ export default function Dashboard() {
                 <Database className="w-5 h-5 text-cyan-400" />
               </div>
               <div>
-                <div className="font-medium">Load All 5 Sample Galaxies</div>
-                <div className="text-xs text-slate-400 mt-0.5">M31, NGC 3198, Milky Way, NGC 6503, UGC 2885</div>
+                <div className="font-medium">Load SPARC Galaxies</div>
+                <div className="text-xs text-slate-400 mt-0.5">175 real rotation curves from SPARC database</div>
               </div>
             </button>
             <Link href="/models" className="block w-full p-4 bg-slate-800/40 border border-white/5 rounded-xl hover:bg-slate-800/60 transition-colors text-left">

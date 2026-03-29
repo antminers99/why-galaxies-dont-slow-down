@@ -111,18 +111,10 @@ export default function ResearchPage() {
                 Full Benchmark
               </h2>
               <p className="text-sm text-slate-400 mt-1">
-                Test all 7 formula presets across all 15 sample galaxies. Each formula is independently optimized per galaxy. Newtonian baseline is also optimized independently for fair comparison.
+                Test all 7 formula presets across your {activeCount} active galaxies. Each formula is independently optimized per galaxy. Newtonian baseline optimized independently for fair comparison.
               </p>
             </div>
             <div className="flex items-center gap-3">
-              {activeCount < 5 && (
-                <button
-                  onClick={loadAllSamples}
-                  className="px-4 py-2 text-sm bg-slate-700 hover:bg-slate-600 rounded-xl border border-white/10 transition-colors"
-                >
-                  Load All 15 Galaxies
-                </button>
-              )}
               <button
                 onClick={runFullBenchmark}
                 disabled={isBenchmarking || activeCount === 0}

@@ -42,7 +42,7 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 
 ### Features
 - **Dataset Upload**: Drag & drop .csv/.dat files, parse radius/velocity columns, data preview table
-- **15 Sample Galaxies**: M31, NGC 3198, Milky Way, NGC 6503, UGC 2885, NGC 2403, NGC 7331, NGC 2903, IC 2574, DDO 154, NGC 1560, NGC 5055, NGC 891, NGC 4736, NGC 925
+- **175 SPARC Galaxies**: Real rotation curves from Lelli, McGaugh & Schombert (2016) SPARC database. 3,391 data points across 175 nearby galaxies with searchable catalog.
 - **Visualization**: Interactive Recharts scatter + line plot with observed data, Newtonian model, custom model overlays
 - **Model Builder**: Custom math formula input using mathjs, parameter sliders (G, M, k, a), 8 formula presets (Dark Halo Linear/Flat, Modified Gravity, MOND-inspired, Logarithmic Halo, etc.)
 - **Auto-Parameter Optimizer**: 2-phase grid search (coarse + fine-tune) for k, a, M
