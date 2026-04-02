@@ -11,6 +11,7 @@ import ResearchPage from "@/pages/research";
 import CorrelationsPage from "@/pages/correlations";
 import TheoryPage from "@/pages/theory";
 import StressTestPage from "@/pages/stress-test";
+import RARAnalysisPage from "@/pages/rar-analysis";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/correlations" component={CorrelationsPage} />
       <Route path="/theory" component={TheoryPage} />
       <Route path="/stress-test" component={StressTestPage} />
+      <Route path="/rar-analysis" component={RARAnalysisPage} />
       <Route component={NotFound} />
     </Switch>
   );
