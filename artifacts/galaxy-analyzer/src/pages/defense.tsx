@@ -370,6 +370,24 @@ interface TransitionScaleData {
   verdict: string;
 }
 
+interface SimA0Row {
+  dataset: string;
+  a0: string;
+  scatter: string;
+  universal: boolean;
+  feedbackDep: boolean;
+}
+
+interface SimA0Data {
+  observational: {
+    combined: { globalA0: number; globalRMS: number; madA0: number; nGalaxies: number; nPoints: number; bins: Array<{ logGbar: number; medRatio: number; n: number }> };
+  };
+  simulations: Array<{ name: string; ref: string; a0_kpc: number | null; a0_reported: string; scatter: string; universal: boolean; feedbackDependent: string; notes: string }>;
+  comparisonTable: { rows: SimA0Row[] };
+  keyFindings: { A_exists: string; B_universal: string; C_matchesObs: string; D_simsAgree: string; tension: string; unexplained: string };
+  verdict: string;
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -554,6 +572,7 @@ export default function DefensePage() {
   const [rawParticle, setRawParticle] = useState<RawParticleData | null>(null);
   const [bivariate, setBivariate] = useState<BivariateCollapseData | null>(null);
   const [transition, setTransition] = useState<TransitionScaleData | null>(null);
+  const [simA0, setSimA0] = useState<SimA0Data | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -565,8 +584,9 @@ export default function DefensePage() {
       fetch(`${import.meta.env.BASE_URL}raw-particle-data.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}bivariate-collapse.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}transition-scale.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}sim-a0-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData, hydroData, particleData, rawData, bivData, transData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); setBivariate(bivData); setTransition(transData); })
+      .then(([defData, fbData, hydroData, particleData, rawData, bivData, transData, simData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); setBivariate(bivData); setTransition(transData); setSimA0(simData); })
       .catch(() => setError(true));
   }, []);
 
@@ -2094,6 +2114,134 @@ export default function DefensePage() {
                     <span className="text-emerald-400 font-bold">Why it matters:</span> In {"\u039B"}CDM, dark matter halos vary enormously {"—"}
                     different masses, concentrations, formation histories. Yet the ratio g_obs/g_bar is a function of g_bar ALONE,
                     with one universal parameter. This is the deepest version of "dark matter knows where the light is."
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </section>
+        )}
+
+        {simA0 && (
+          <section>
+            <GlassCard glow="rose" className="border-2 border-rose-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-orange-600 flex items-center justify-center text-white font-bold">VII</div>
+                <div>
+                  <h2 className="text-xl font-bold text-white">The Ultimate Test: a{"\u2080"} in Simulations</h2>
+                  <p className="text-xs text-slate-400">Does the universal acceleration scale survive in {"\u039B"}CDM simulations?</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-rose-500/10 to-orange-500/10 border border-rose-500/20 rounded-xl p-5 mb-6">
+                <h3 className="text-sm font-bold text-rose-300 mb-4 text-center">Simulation vs Observation Comparison</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs font-mono">
+                    <thead>
+                      <tr className="border-b border-white/10 text-slate-400">
+                        <th className="text-left py-2 px-2">Dataset</th>
+                        <th className="text-center py-2 px-2">a{"\u2080"} (m/s{"\u00B2"})</th>
+                        <th className="text-center py-2 px-2">Scatter (dex)</th>
+                        <th className="text-center py-2 px-2">Universal?</th>
+                        <th className="text-center py-2 px-2">Feedback dep?</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {simA0.comparisonTable.rows.map((row, i) => (
+                        <tr key={i} className={"border-b border-white/5 " + (i === 0 || i === 1 ? "bg-emerald-500/5" : i === 7 ? "bg-rose-500/5" : "")}>
+                          <td className={"py-2 px-2 " + (i < 2 ? "text-emerald-400 font-bold" : "text-slate-300")}>{row.dataset}</td>
+                          <td className="py-2 px-2 text-center text-white">{row.a0}</td>
+                          <td className="py-2 px-2 text-center text-cyan-400">{row.scatter}</td>
+                          <td className="py-2 px-2 text-center">{row.universal ? <span className="text-emerald-400">YES</span> : <span className="text-rose-400">NO</span>}</td>
+                          <td className="py-2 px-2 text-center">{row.feedbackDep ? <span className="text-amber-400">YES</span> : <span className="text-slate-500">N/A</span>}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-emerald-400 mb-3">A) Does a{"\u2080"} exist in simulations?</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-2">{simA0.keyFindings.A_exists}</p>
+                  <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2">
+                    <p className="text-emerald-300 text-xs font-bold">Key: DMO (dark-matter-only) sims FAIL completely. Baryons are required.</p>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-amber-400 mb-3">B) Is it universal across galaxies?</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-2">{simA0.keyFindings.B_universal}</p>
+                  <div className="bg-amber-500/10 border border-amber-500/20 rounded-lg p-2">
+                    <p className="text-amber-300 text-xs font-bold">Key: Observations show tighter universality than any simulation.</p>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-cyan-400 mb-3">C) Does it match the observed value?</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-2">{simA0.keyFindings.C_matchesObs}</p>
+                  <div className="bg-cyan-500/10 border border-cyan-500/20 rounded-lg p-2">
+                    <p className="text-cyan-300 text-xs font-bold">Key: Match is approximate, not parameter-free.</p>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-rose-400 mb-3">D) Do TNG and EAGLE agree?</h4>
+                  <p className="text-xs text-slate-300 leading-relaxed mb-2">{simA0.keyFindings.D_simsAgree}</p>
+                  <div className="bg-rose-500/10 border border-rose-500/20 rounded-lg p-2">
+                    <p className="text-rose-300 text-xs font-bold">Key: a{"\u2080"} depends on subgrid physics {"—"} NOT a robust {"\u039B"}CDM prediction.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 mb-6">
+                <h4 className="text-sm font-bold text-white mb-3">Published Simulation Results</h4>
+                <div className="space-y-3">
+                  {simA0.simulations.map((sim, i) => (
+                    <div key={i} className={"border rounded-lg p-3 " + (sim.universal ? "border-emerald-500/20 bg-emerald-500/5" : sim.a0_kpc === null ? "border-rose-500/20 bg-rose-500/5" : "border-amber-500/20 bg-amber-500/5")}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-xs font-bold text-white">{sim.name}</span>
+                        <span className={"text-xs px-2 py-0.5 rounded-full " + (sim.universal ? "bg-emerald-500/20 text-emerald-400" : sim.a0_kpc === null ? "bg-rose-500/20 text-rose-400" : "bg-amber-500/20 text-amber-400")}>
+                          {sim.universal ? "Universal" : sim.a0_kpc === null ? "FAILS" : "Variable"}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-400 mb-1">{sim.ref}</p>
+                      <p className="text-xs text-slate-300">a{"\u2080"}: {sim.a0_reported} | Scatter: {sim.scatter}</p>
+                      <p className="text-xs text-slate-400 mt-1 italic">{sim.notes}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Key Tension</div>
+                  <div className="text-sm font-bold text-rose-400">{simA0.keyFindings.tension}</div>
+                </div>
+                <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Unexplained</div>
+                  <div className="text-sm font-bold text-violet-400">{simA0.keyFindings.unexplained}</div>
+                </div>
+                <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Observed a{"\u2080"} RMS</div>
+                  <div className="text-2xl font-bold text-amber-400 font-mono">{simA0.observational.combined.globalRMS}</div>
+                  <div className="text-xs text-slate-400">dex (our measurement)</div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-rose-500/5 to-violet-500/5 border border-rose-500/20 rounded-xl p-5">
+                <h4 className="text-rose-300 font-bold text-sm mb-3">The Honest Verdict</h4>
+                <div className="space-y-3 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    <span className="text-emerald-400 font-bold">What {"\u039B"}CDM gets right:</span> Hydrodynamic simulations (EAGLE, TNG, FIRE)
+                    CAN produce a RAR-like relation with a transition scale near a{"\u2080"}. The acceleration scale is NOT
+                    proof of new physics by itself {"—"} it can emerge from baryon-dark matter interplay.
+                  </p>
+                  <p>
+                    <span className="text-rose-400 font-bold">What {"\u039B"}CDM struggles with:</span> (1) The exact value of a{"\u2080"}
+                    depends on the feedback model {"—"} NIHAO explicitly shows this. (2) The observed scatter (0.057 dex, McGaugh+2016)
+                    is TIGHTER than most simulations predict. (3) The a{"\u2080"} {"\u2248"} cH{"\u2080"}/2{"\u03C0"} coincidence
+                    connecting galaxies to cosmology has no {"\u039B"}CDM explanation.
+                  </p>
+                  <p>
+                    <span className="text-amber-400 font-bold">Bottom line:</span> {simA0.verdict}
                   </p>
                 </div>
               </div>

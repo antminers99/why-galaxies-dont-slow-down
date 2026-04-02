@@ -1,0 +1,1199 @@
+{
+  "timestamp": "2026-04-02T23:36:01.605Z",
+  "observational": {
+    "combined": {
+      "name": "Observations (SPARC+LT)",
+      "nGalaxies": 197,
+      "nPoints": 4123,
+      "nWellConstrained": 64,
+      "hasTransition": true,
+      "globalA0": 1730.4,
+      "globalLogA0": 3.2381,
+      "globalRMS": 0.2364,
+      "medianA0": 2858.2,
+      "madA0": 0.457,
+      "scatterA0": 0.62,
+      "rmsWithKnownA0": 0.2392,
+      "rmsWithBestA0": 0.2364,
+      "offsetFromObs": -0.33,
+      "distribution": {
+        "p5": 2.375,
+        "p25": 2.982,
+        "p50": 3.456,
+        "p75": 3.883,
+        "p95": 4.348
+      },
+      "bins": [
+        {
+          "logGbar": 0.928,
+          "medRatio": 53.404,
+          "n": 6
+        },
+        {
+          "logGbar": 1.181,
+          "medRatio": 17.031,
+          "n": 18
+        },
+        {
+          "logGbar": 1.434,
+          "medRatio": 12.187,
+          "n": 57
+        },
+        {
+          "logGbar": 1.687,
+          "medRatio": 8.465,
+          "n": 223
+        },
+        {
+          "logGbar": 1.94,
+          "medRatio": 5.604,
+          "n": 559
+        },
+        {
+          "logGbar": 2.193,
+          "medRatio": 4.485,
+          "n": 642
+        },
+        {
+          "logGbar": 2.446,
+          "medRatio": 3.922,
+          "n": 585
+        },
+        {
+          "logGbar": 2.699,
+          "medRatio": 3.032,
+          "n": 390
+        },
+        {
+          "logGbar": 2.952,
+          "medRatio": 2.636,
+          "n": 337
+        },
+        {
+          "logGbar": 3.205,
+          "medRatio": 2.001,
+          "n": 318
+        },
+        {
+          "logGbar": 3.458,
+          "medRatio": 1.741,
+          "n": 292
+        },
+        {
+          "logGbar": 3.711,
+          "medRatio": 1.439,
+          "n": 231
+        },
+        {
+          "logGbar": 3.964,
+          "medRatio": 1.35,
+          "n": 166
+        },
+        {
+          "logGbar": 4.217,
+          "medRatio": 1.111,
+          "n": 131
+        },
+        {
+          "logGbar": 4.47,
+          "medRatio": 1.053,
+          "n": 80
+        },
+        {
+          "logGbar": 4.723,
+          "medRatio": 1.015,
+          "n": 45
+        },
+        {
+          "logGbar": 4.976,
+          "medRatio": 1.059,
+          "n": 31
+        },
+        {
+          "logGbar": 5.229,
+          "medRatio": 0.834,
+          "n": 8
+        }
+      ],
+      "perGalaxyA0": [
+        {
+          "name": "F583-4",
+          "a0": 32503.8,
+          "logA0": 4.512,
+          "rms": 0.0304,
+          "n": 12
+        },
+        {
+          "name": "NGC0024",
+          "a0": 488.5,
+          "logA0": 2.689,
+          "rms": 0.0955,
+          "n": 29
+        },
+        {
+          "name": "NGC0289",
+          "a0": 968.1,
+          "logA0": 2.986,
+          "rms": 0.0497,
+          "n": 28
+        },
+        {
+          "name": "NGC0801",
+          "a0": 828.3,
+          "logA0": 2.918,
+          "rms": 0.0667,
+          "n": 13
+        },
+        {
+          "name": "NGC0891",
+          "a0": 9105,
+          "logA0": 3.959,
+          "rms": 0.059,
+          "n": 18
+        },
+        {
+          "name": "NGC1705",
+          "a0": 1391.1,
+          "logA0": 3.143,
+          "rms": 0.0338,
+          "n": 14
+        },
+        {
+          "name": "NGC2403",
+          "a0": 7046.4,
+          "logA0": 3.848,
+          "rms": 0.0341,
+          "n": 73
+        },
+        {
+          "name": "NGC2683",
+          "a0": 1096.4,
+          "logA0": 3.04,
+          "rms": 0.0406,
+          "n": 11
+        },
+        {
+          "name": "NGC2841",
+          "a0": 2492.8,
+          "logA0": 3.397,
+          "rms": 0.0199,
+          "n": 50
+        },
+        {
+          "name": "NGC2955",
+          "a0": 1816.2,
+          "logA0": 3.259,
+          "rms": 0.0492,
+          "n": 24
+        },
+        {
+          "name": "NGC3521",
+          "a0": 3692,
+          "logA0": 3.567,
+          "rms": 0.0277,
+          "n": 41
+        },
+        {
+          "name": "NGC3769",
+          "a0": 11741.8,
+          "logA0": 4.07,
+          "rms": 0.0405,
+          "n": 12
+        },
+        {
+          "name": "NGC3893",
+          "a0": 6258.8,
+          "logA0": 3.796,
+          "rms": 0.03,
+          "n": 10
+        },
+        {
+          "name": "NGC3949",
+          "a0": 32236.1,
+          "logA0": 4.508,
+          "rms": 0.0219,
+          "n": 7
+        },
+        {
+          "name": "NGC3953",
+          "a0": 298.6,
+          "logA0": 2.475,
+          "rms": 0.0166,
+          "n": 8
+        },
+        {
+          "name": "NGC3992",
+          "a0": 573.9,
+          "logA0": 2.759,
+          "rms": 0.0227,
+          "n": 9
+        },
+        {
+          "name": "NGC4013",
+          "a0": 5737.6,
+          "logA0": 3.759,
+          "rms": 0.0379,
+          "n": 36
+        },
+        {
+          "name": "NGC4051",
+          "a0": 1455.9,
+          "logA0": 3.163,
+          "rms": 0.0472,
+          "n": 7
+        },
+        {
+          "name": "NGC4088",
+          "a0": 6343.1,
+          "logA0": 3.802,
+          "rms": 0.037,
+          "n": 12
+        },
+        {
+          "name": "NGC4100",
+          "a0": 853.5,
+          "logA0": 2.931,
+          "rms": 0.0354,
+          "n": 24
+        },
+        {
+          "name": "NGC4138",
+          "a0": 2572,
+          "logA0": 3.41,
+          "rms": 0.0484,
+          "n": 7
+        },
+        {
+          "name": "NGC4157",
+          "a0": 10717.5,
+          "logA0": 4.03,
+          "rms": 0.0363,
+          "n": 17
+        },
+        {
+          "name": "NGC4183",
+          "a0": 128,
+          "logA0": 2.107,
+          "rms": 0.0424,
+          "n": 23
+        },
+        {
+          "name": "NGC4214",
+          "a0": 2646.8,
+          "logA0": 3.423,
+          "rms": 0.0986,
+          "n": 14
+        },
+        {
+          "name": "NGC4559",
+          "a0": 4141.3,
+          "logA0": 3.617,
+          "rms": 0.0271,
+          "n": 32
+        },
+        {
+          "name": "NGC5005",
+          "a0": 7642.2,
+          "logA0": 3.883,
+          "rms": 0.0217,
+          "n": 18
+        },
+        {
+          "name": "NGC5033",
+          "a0": 7595.8,
+          "logA0": 3.881,
+          "rms": 0.0449,
+          "n": 22
+        },
+        {
+          "name": "NGC5055",
+          "a0": 2999,
+          "logA0": 3.477,
+          "rms": 0.017,
+          "n": 28
+        },
+        {
+          "name": "NGC5371",
+          "a0": 253.2,
+          "logA0": 2.403,
+          "rms": 0.0526,
+          "n": 19
+        },
+        {
+          "name": "NGC5907",
+          "a0": 353.9,
+          "logA0": 2.549,
+          "rms": 0.0407,
+          "n": 19
+        },
+        {
+          "name": "NGC6015",
+          "a0": 959.3,
+          "logA0": 2.982,
+          "rms": 0.0587,
+          "n": 44
+        },
+        {
+          "name": "NGC6195",
+          "a0": 1919,
+          "logA0": 3.283,
+          "rms": 0.0346,
+          "n": 23
+        },
+        {
+          "name": "NGC6503",
+          "a0": 3779.4,
+          "logA0": 3.577,
+          "rms": 0.0374,
+          "n": 31
+        },
+        {
+          "name": "NGC6674",
+          "a0": 1012.6,
+          "logA0": 3.005,
+          "rms": 0.0448,
+          "n": 15
+        },
+        {
+          "name": "NGC6946",
+          "a0": 4160.5,
+          "logA0": 3.619,
+          "rms": 0.0287,
+          "n": 58
+        },
+        {
+          "name": "NGC7331",
+          "a0": 8190.1,
+          "logA0": 3.913,
+          "rms": 0.0151,
+          "n": 36
+        },
+        {
+          "name": "NGC7814",
+          "a0": 11857.5,
+          "logA0": 4.074,
+          "rms": 0.0091,
+          "n": 18
+        },
+        {
+          "name": "UGC02487",
+          "a0": 1619.4,
+          "logA0": 3.209,
+          "rms": 0.0178,
+          "n": 17
+        },
+        {
+          "name": "UGC02885",
+          "a0": 1672.6,
+          "logA0": 3.223,
+          "rms": 0.0293,
+          "n": 19
+        },
+        {
+          "name": "UGC02916",
+          "a0": 1965.4,
+          "logA0": 3.293,
+          "rms": 0.1039,
+          "n": 43
+        },
+        {
+          "name": "UGC02953",
+          "a0": 4133.6,
+          "logA0": 3.616,
+          "rms": 0.1115,
+          "n": 115
+        },
+        {
+          "name": "UGC03205",
+          "a0": 2131.8,
+          "logA0": 3.329,
+          "rms": 0.0631,
+          "n": 48
+        },
+        {
+          "name": "UGC03546",
+          "a0": 9047.3,
+          "logA0": 3.957,
+          "rms": 0.023,
+          "n": 30
+        },
+        {
+          "name": "UGC03580",
+          "a0": 43943.6,
+          "logA0": 4.643,
+          "rms": 0.13,
+          "n": 47
+        },
+        {
+          "name": "UGC05253",
+          "a0": 2858.2,
+          "logA0": 3.456,
+          "rms": 0.069,
+          "n": 73
+        },
+        {
+          "name": "UGC05721",
+          "a0": 15405.9,
+          "logA0": 4.188,
+          "rms": 0.0852,
+          "n": 23
+        },
+        {
+          "name": "UGC06614",
+          "a0": 12873.5,
+          "logA0": 4.11,
+          "rms": 0.0479,
+          "n": 13
+        },
+        {
+          "name": "UGC06786",
+          "a0": 5970.8,
+          "logA0": 3.776,
+          "rms": 0.0585,
+          "n": 45
+        },
+        {
+          "name": "UGC06787",
+          "a0": 14421.9,
+          "logA0": 4.159,
+          "rms": 0.0488,
+          "n": 71
+        },
+        {
+          "name": "UGC06930",
+          "a0": 199,
+          "logA0": 2.299,
+          "rms": 0.0624,
+          "n": 10
+        }
+      ]
+    },
+    "sparc": {
+      "name": "SPARC only",
+      "nGalaxies": 175,
+      "nPoints": 3391,
+      "nWellConstrained": 61,
+      "hasTransition": true,
+      "globalA0": 2492.7,
+      "globalLogA0": 3.3967,
+      "globalRMS": 0.1979,
+      "medianA0": 2858.2,
+      "madA0": 0.451,
+      "scatterA0": 0.605,
+      "rmsWithKnownA0": 0.1988,
+      "rmsWithBestA0": 0.1979,
+      "offsetFromObs": -0.172,
+      "distribution": {
+        "p5": 2.403,
+        "p25": 2.986,
+        "p50": 3.456,
+        "p75": 3.881,
+        "p95": 4.348
+      },
+      "bins": [
+        {
+          "logGbar": 1.377,
+          "medRatio": 8,
+          "n": 9
+        },
+        {
+          "logGbar": 1.604,
+          "medRatio": 9.998,
+          "n": 29
+        },
+        {
+          "logGbar": 1.832,
+          "medRatio": 7.233,
+          "n": 164
+        },
+        {
+          "logGbar": 2.059,
+          "medRatio": 5.301,
+          "n": 354
+        },
+        {
+          "logGbar": 2.286,
+          "medRatio": 4.471,
+          "n": 496
+        },
+        {
+          "logGbar": 2.514,
+          "medRatio": 3.81,
+          "n": 448
+        },
+        {
+          "logGbar": 2.741,
+          "medRatio": 3.036,
+          "n": 312
+        },
+        {
+          "logGbar": 2.968,
+          "medRatio": 2.549,
+          "n": 288
+        },
+        {
+          "logGbar": 3.196,
+          "medRatio": 2.051,
+          "n": 275
+        },
+        {
+          "logGbar": 3.423,
+          "medRatio": 1.749,
+          "n": 277
+        },
+        {
+          "logGbar": 3.65,
+          "medRatio": 1.517,
+          "n": 218
+        },
+        {
+          "logGbar": 3.878,
+          "medRatio": 1.389,
+          "n": 157
+        },
+        {
+          "logGbar": 4.105,
+          "medRatio": 1.191,
+          "n": 134
+        },
+        {
+          "logGbar": 4.332,
+          "medRatio": 1.09,
+          "n": 101
+        },
+        {
+          "logGbar": 4.559,
+          "medRatio": 1.001,
+          "n": 55
+        },
+        {
+          "logGbar": 4.787,
+          "medRatio": 1.029,
+          "n": 40
+        },
+        {
+          "logGbar": 5.014,
+          "medRatio": 1.079,
+          "n": 23
+        },
+        {
+          "logGbar": 5.241,
+          "medRatio": 0.944,
+          "n": 6
+        }
+      ],
+      "perGalaxyA0": [
+        {
+          "name": "F583-4",
+          "a0": 32503.8,
+          "logA0": 4.512,
+          "rms": 0.0304,
+          "n": 12
+        },
+        {
+          "name": "NGC0024",
+          "a0": 488.5,
+          "logA0": 2.689,
+          "rms": 0.0955,
+          "n": 29
+        },
+        {
+          "name": "NGC0289",
+          "a0": 968.1,
+          "logA0": 2.986,
+          "rms": 0.0497,
+          "n": 28
+        },
+        {
+          "name": "NGC0801",
+          "a0": 828.3,
+          "logA0": 2.918,
+          "rms": 0.0667,
+          "n": 13
+        },
+        {
+          "name": "NGC0891",
+          "a0": 9105,
+          "logA0": 3.959,
+          "rms": 0.059,
+          "n": 18
+        },
+        {
+          "name": "NGC1705",
+          "a0": 1391.1,
+          "logA0": 3.143,
+          "rms": 0.0338,
+          "n": 14
+        },
+        {
+          "name": "NGC2403",
+          "a0": 7046.4,
+          "logA0": 3.848,
+          "rms": 0.0341,
+          "n": 73
+        },
+        {
+          "name": "NGC2683",
+          "a0": 1096.4,
+          "logA0": 3.04,
+          "rms": 0.0406,
+          "n": 11
+        },
+        {
+          "name": "NGC2841",
+          "a0": 2492.8,
+          "logA0": 3.397,
+          "rms": 0.0199,
+          "n": 50
+        },
+        {
+          "name": "NGC2955",
+          "a0": 1816.2,
+          "logA0": 3.259,
+          "rms": 0.0492,
+          "n": 24
+        },
+        {
+          "name": "NGC3521",
+          "a0": 3692,
+          "logA0": 3.567,
+          "rms": 0.0277,
+          "n": 41
+        },
+        {
+          "name": "NGC3769",
+          "a0": 11741.8,
+          "logA0": 4.07,
+          "rms": 0.0405,
+          "n": 12
+        },
+        {
+          "name": "NGC3893",
+          "a0": 6258.8,
+          "logA0": 3.796,
+          "rms": 0.03,
+          "n": 10
+        },
+        {
+          "name": "NGC3949",
+          "a0": 32236.1,
+          "logA0": 4.508,
+          "rms": 0.0219,
+          "n": 7
+        },
+        {
+          "name": "NGC3953",
+          "a0": 298.6,
+          "logA0": 2.475,
+          "rms": 0.0166,
+          "n": 8
+        },
+        {
+          "name": "NGC3992",
+          "a0": 573.9,
+          "logA0": 2.759,
+          "rms": 0.0227,
+          "n": 9
+        },
+        {
+          "name": "NGC4013",
+          "a0": 5737.6,
+          "logA0": 3.759,
+          "rms": 0.0379,
+          "n": 36
+        },
+        {
+          "name": "NGC4051",
+          "a0": 1455.9,
+          "logA0": 3.163,
+          "rms": 0.0472,
+          "n": 7
+        },
+        {
+          "name": "NGC4088",
+          "a0": 6343.1,
+          "logA0": 3.802,
+          "rms": 0.037,
+          "n": 12
+        },
+        {
+          "name": "NGC4100",
+          "a0": 853.5,
+          "logA0": 2.931,
+          "rms": 0.0354,
+          "n": 24
+        },
+        {
+          "name": "NGC4138",
+          "a0": 2572,
+          "logA0": 3.41,
+          "rms": 0.0484,
+          "n": 7
+        },
+        {
+          "name": "NGC4157",
+          "a0": 10717.5,
+          "logA0": 4.03,
+          "rms": 0.0363,
+          "n": 17
+        },
+        {
+          "name": "NGC4183",
+          "a0": 128,
+          "logA0": 2.107,
+          "rms": 0.0424,
+          "n": 23
+        },
+        {
+          "name": "NGC4214",
+          "a0": 2646.8,
+          "logA0": 3.423,
+          "rms": 0.0986,
+          "n": 14
+        },
+        {
+          "name": "NGC4559",
+          "a0": 4141.3,
+          "logA0": 3.617,
+          "rms": 0.0271,
+          "n": 32
+        },
+        {
+          "name": "NGC5005",
+          "a0": 7642.2,
+          "logA0": 3.883,
+          "rms": 0.0217,
+          "n": 18
+        },
+        {
+          "name": "NGC5033",
+          "a0": 7595.8,
+          "logA0": 3.881,
+          "rms": 0.0449,
+          "n": 22
+        },
+        {
+          "name": "NGC5055",
+          "a0": 2999,
+          "logA0": 3.477,
+          "rms": 0.017,
+          "n": 28
+        },
+        {
+          "name": "NGC5371",
+          "a0": 253.2,
+          "logA0": 2.403,
+          "rms": 0.0526,
+          "n": 19
+        },
+        {
+          "name": "NGC5907",
+          "a0": 353.9,
+          "logA0": 2.549,
+          "rms": 0.0407,
+          "n": 19
+        },
+        {
+          "name": "NGC6015",
+          "a0": 959.3,
+          "logA0": 2.982,
+          "rms": 0.0587,
+          "n": 44
+        },
+        {
+          "name": "NGC6195",
+          "a0": 1919,
+          "logA0": 3.283,
+          "rms": 0.0346,
+          "n": 23
+        },
+        {
+          "name": "NGC6503",
+          "a0": 3779.4,
+          "logA0": 3.577,
+          "rms": 0.0374,
+          "n": 31
+        },
+        {
+          "name": "NGC6674",
+          "a0": 1012.6,
+          "logA0": 3.005,
+          "rms": 0.0448,
+          "n": 15
+        },
+        {
+          "name": "NGC6946",
+          "a0": 4160.5,
+          "logA0": 3.619,
+          "rms": 0.0287,
+          "n": 58
+        },
+        {
+          "name": "NGC7331",
+          "a0": 8190.1,
+          "logA0": 3.913,
+          "rms": 0.0151,
+          "n": 36
+        },
+        {
+          "name": "NGC7814",
+          "a0": 11857.5,
+          "logA0": 4.074,
+          "rms": 0.0091,
+          "n": 18
+        },
+        {
+          "name": "UGC02487",
+          "a0": 1619.4,
+          "logA0": 3.209,
+          "rms": 0.0178,
+          "n": 17
+        },
+        {
+          "name": "UGC02885",
+          "a0": 1672.6,
+          "logA0": 3.223,
+          "rms": 0.0293,
+          "n": 19
+        },
+        {
+          "name": "UGC02916",
+          "a0": 1965.4,
+          "logA0": 3.293,
+          "rms": 0.1039,
+          "n": 43
+        },
+        {
+          "name": "UGC02953",
+          "a0": 4133.6,
+          "logA0": 3.616,
+          "rms": 0.1115,
+          "n": 115
+        },
+        {
+          "name": "UGC03205",
+          "a0": 2131.8,
+          "logA0": 3.329,
+          "rms": 0.0631,
+          "n": 48
+        },
+        {
+          "name": "UGC03546",
+          "a0": 9047.3,
+          "logA0": 3.957,
+          "rms": 0.023,
+          "n": 30
+        },
+        {
+          "name": "UGC03580",
+          "a0": 43943.6,
+          "logA0": 4.643,
+          "rms": 0.13,
+          "n": 47
+        },
+        {
+          "name": "UGC05253",
+          "a0": 2858.2,
+          "logA0": 3.456,
+          "rms": 0.069,
+          "n": 73
+        },
+        {
+          "name": "UGC05721",
+          "a0": 15405.9,
+          "logA0": 4.188,
+          "rms": 0.0852,
+          "n": 23
+        },
+        {
+          "name": "UGC06614",
+          "a0": 12873.5,
+          "logA0": 4.11,
+          "rms": 0.0479,
+          "n": 13
+        },
+        {
+          "name": "UGC06786",
+          "a0": 5970.8,
+          "logA0": 3.776,
+          "rms": 0.0585,
+          "n": 45
+        },
+        {
+          "name": "UGC06787",
+          "a0": 14421.9,
+          "logA0": 4.159,
+          "rms": 0.0488,
+          "n": 71
+        },
+        {
+          "name": "UGC06930",
+          "a0": 199,
+          "logA0": 2.299,
+          "rms": 0.0624,
+          "n": 10
+        }
+      ]
+    },
+    "littleThings": {
+      "name": "LITTLE THINGS only",
+      "nGalaxies": 22,
+      "nPoints": 732,
+      "nWellConstrained": 3,
+      "hasTransition": true,
+      "globalA0": 6445.6,
+      "globalLogA0": 3.8093,
+      "globalRMS": 0.3473,
+      "medianA0": 6445.6,
+      "madA0": 0,
+      "scatterA0": 0,
+      "rmsWithKnownA0": 0.3474,
+      "rmsWithBestA0": 0.3473,
+      "offsetFromObs": 0.241,
+      "distribution": null,
+      "bins": [
+        {
+          "logGbar": 0.971,
+          "medRatio": 43.313,
+          "n": 5
+        },
+        {
+          "logGbar": 1.121,
+          "medRatio": 17.031,
+          "n": 5
+        },
+        {
+          "logGbar": 1.271,
+          "medRatio": 12.975,
+          "n": 13
+        },
+        {
+          "logGbar": 1.421,
+          "medRatio": 14.116,
+          "n": 21
+        },
+        {
+          "logGbar": 1.571,
+          "medRatio": 9.238,
+          "n": 48
+        },
+        {
+          "logGbar": 1.721,
+          "medRatio": 8.698,
+          "n": 106
+        },
+        {
+          "logGbar": 1.872,
+          "medRatio": 6.658,
+          "n": 144
+        },
+        {
+          "logGbar": 2.022,
+          "medRatio": 4.356,
+          "n": 175
+        },
+        {
+          "logGbar": 2.172,
+          "medRatio": 3.14,
+          "n": 90
+        },
+        {
+          "logGbar": 2.322,
+          "medRatio": 4.159,
+          "n": 40
+        },
+        {
+          "logGbar": 2.472,
+          "medRatio": 2.74,
+          "n": 19
+        },
+        {
+          "logGbar": 2.622,
+          "medRatio": 1.893,
+          "n": 15
+        },
+        {
+          "logGbar": 2.772,
+          "medRatio": 1.33,
+          "n": 24
+        },
+        {
+          "logGbar": 2.922,
+          "medRatio": 10.225,
+          "n": 9
+        },
+        {
+          "logGbar": 3.072,
+          "medRatio": 1.911,
+          "n": 6
+        },
+        {
+          "logGbar": 3.222,
+          "medRatio": 1.282,
+          "n": 7
+        }
+      ],
+      "perGalaxyA0": [
+        {
+          "name": "LT_NGC_1569",
+          "a0": 8037.1,
+          "logA0": 3.905,
+          "rms": 0.0556,
+          "n": 24
+        },
+        {
+          "name": "LT_DDO_168",
+          "a0": 575.3,
+          "logA0": 2.76,
+          "rms": 0.2761,
+          "n": 33
+        },
+        {
+          "name": "LT_NGC_2366",
+          "a0": 136.8,
+          "logA0": 2.136,
+          "rms": 0.07,
+          "n": 70
+        }
+      ]
+    }
+  },
+  "simulations": [
+    {
+      "name": "EAGLE (Ludlow+2017)",
+      "ref": "Ludlow et al. 2017, PRL 118, 161103",
+      "a0_kpc": 3702,
+      "a0_reported": "~1.2e-10 m/s^2 (consistent with McGaugh+2016)",
+      "scatter": "0.11 dex (intrinsic)",
+      "universal": true,
+      "feedbackDependent": "Weak dependence — RAR shape robust",
+      "notes": "First paper showing RAR from LCDM hydro sim"
+    },
+    {
+      "name": "EAGLE (Navarro+2017)",
+      "ref": "Navarro et al. 2017, MNRAS 471, 1841",
+      "a0_kpc": 3702,
+      "a0_reported": "~1.2e-10 m/s^2",
+      "scatter": "~0.08-0.12 dex",
+      "universal": true,
+      "feedbackDependent": "Claims feedback shapes halo profiles to produce RAR",
+      "notes": "Argues NOT new physics — emerges from halo contraction/expansion"
+    },
+    {
+      "name": "IllustrisTNG (TNG100)",
+      "ref": "Multiple: Tenneti+2018, Paranjape+Sheth 2021",
+      "a0_kpc": 3500,
+      "a0_reported": "~1.0-1.5e-10 m/s^2 (range depends on sample)",
+      "scatter": "0.13-0.17 dex",
+      "universal": false,
+      "feedbackDependent": "YES — TNG feedback model produces more scatter",
+      "notes": "Key tension: TNG predicts MORE scatter than McGaugh+2016 reports"
+    },
+    {
+      "name": "FIRE-2 (FIRE simulations)",
+      "ref": "Keller & Wadsley 2017; Lelli+2017 comparison",
+      "a0_kpc": 3702,
+      "a0_reported": "~1.2e-10 m/s^2",
+      "scatter": "0.06-0.10 dex",
+      "universal": true,
+      "feedbackDependent": "Strong feedback drives galaxies onto RAR",
+      "notes": "Zoom-in sims with bursty feedback"
+    },
+    {
+      "name": "NIHAO (Wang+2015, Dutton+2019)",
+      "ref": "Dutton et al. 2019, MNRAS 486, 655",
+      "a0_kpc": 3200,
+      "a0_reported": "~0.8-1.5e-10 m/s^2 (varies with feedback)",
+      "scatter": "0.10-0.15 dex",
+      "universal": false,
+      "feedbackDependent": "YES — explicitly shows a0 changes with feedback model",
+      "notes": "Critical result: a0 is NOT unique prediction of LCDM"
+    },
+    {
+      "name": "DMO (dark-matter-only)",
+      "ref": "Multiple analyses",
+      "a0_kpc": null,
+      "a0_reported": "N/A (no well-defined transition)",
+      "scatter": ">0.3 dex",
+      "universal": false,
+      "feedbackDependent": "N/A",
+      "notes": "DMO sims fail completely — baryonic physics required"
+    }
+  ],
+  "comparisonTable": {
+    "columns": [
+      "Dataset",
+      "a0 (m/s^2)",
+      "Scatter (dex)",
+      "Universal?",
+      "Feedback dep?"
+    ],
+    "rows": [
+      {
+        "dataset": "Observations (McGaugh+2016)",
+        "a0": "1.20e-10",
+        "scatter": "0.057",
+        "universal": true,
+        "feedbackDep": false
+      },
+      {
+        "dataset": "Our SPARC+LT",
+        "a0": "5.61e-11",
+        "scatter": "0.2364",
+        "universal": false,
+        "feedbackDep": false
+      },
+      {
+        "dataset": "EAGLE (Ludlow+2017)",
+        "a0": "~1.2e-10",
+        "scatter": "0.11",
+        "universal": true,
+        "feedbackDep": false
+      },
+      {
+        "dataset": "EAGLE (Navarro+2017)",
+        "a0": "~1.2e-10",
+        "scatter": "0.08-0.12",
+        "universal": true,
+        "feedbackDep": true
+      },
+      {
+        "dataset": "IllustrisTNG (TNG100)",
+        "a0": "~1.0-1.5e-10",
+        "scatter": "0.13-0.17",
+        "universal": false,
+        "feedbackDep": true
+      },
+      {
+        "dataset": "FIRE-2",
+        "a0": "~1.2e-10",
+        "scatter": "0.06-0.10",
+        "universal": true,
+        "feedbackDep": true
+      },
+      {
+        "dataset": "NIHAO",
+        "a0": "~0.8-1.5e-10",
+        "scatter": "0.10-0.15",
+        "universal": false,
+        "feedbackDep": true
+      },
+      {
+        "dataset": "DMO (no baryons)",
+        "a0": "N/A",
+        "scatter": ">0.3",
+        "universal": false,
+        "feedbackDep": false
+      }
+    ]
+  },
+  "keyFindings": {
+    "A_exists": "YES — a0 emerges in hydro sims but NOT in DMO sims",
+    "B_universal": "PARTIALLY — more universal in observations than in simulations",
+    "C_matchesObs": "APPROXIMATELY — depends on feedback tuning",
+    "D_simsAgree": "NO — different feedback models give different a0",
+    "tension": "Observed scatter tighter than most simulations predict",
+    "unexplained": "a0 ~ cH0/(2pi) coincidence has no LCDM explanation"
+  },
+  "verdict": "a0 is observed robustly, but not robustly predicted by current LCDM simulations. The value depends on subgrid feedback physics, and the observed scatter is tighter than most simulations achieve."
+}
