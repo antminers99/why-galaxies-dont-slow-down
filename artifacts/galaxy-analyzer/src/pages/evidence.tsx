@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Layout } from '@/components/layout';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Label } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 import {
   BookOpen, CheckCircle2, XCircle, Layers, TrendingDown, Activity,
-  Target, Zap, FlaskConical, Microscope, Hash, ChevronRight, Atom,
-  ShieldCheck, ArrowRight, Scale
+  Target, Zap, FlaskConical, Microscope, Hash, Atom, ShieldCheck
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -182,14 +181,6 @@ function SectionHeader({ icon: Icon, number, title, subtitle, id }: { icon: Luci
     </div>
   );
 }
-
-const vmaxColor = (vmax: number) => {
-  if (vmax < 60) return '#22d3ee';
-  if (vmax < 100) return '#06b6d4';
-  if (vmax < 150) return '#8b5cf6';
-  if (vmax < 200) return '#a78bfa';
-  return '#f472b6';
-};
 
 const TOC_ITEMS = [
   { id: 'question', label: 'The Question', icon: Atom },
