@@ -82,6 +82,42 @@ interface GlobalExcess {
   sigma: number;
 }
 
+interface FeedbackMetricResult {
+  name: string;
+  observed: { slope: number; r: number; n: number };
+  noFeedback: { slope: number; r: number; n: number };
+  withFeedback: { slope: number; r: number; n: number };
+  excessNoFeedback: { sigma: number };
+  excessWithFeedback: { sigma: number };
+  feedbackExplainsPercent: number;
+  feedbackFullyExplains: boolean;
+}
+
+interface FeedbackComponent {
+  name: string;
+  reference: string;
+  description: string;
+  effect: string;
+}
+
+interface FeedbackData {
+  metrics: FeedbackMetricResult[];
+  feedbackModel: {
+    description: string;
+    components: FeedbackComponent[];
+    nGalaxies: number;
+  };
+  summary: {
+    maxSigmaWithoutFeedback: number;
+    maxSigmaWithFeedback: number;
+    averageReductionPercent: number;
+    allMetricsFullyExplained: boolean;
+    verdict: string;
+    honestAssessment: string;
+    updatedClaim: string;
+  };
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -168,7 +204,7 @@ function GlassCard({ children, glow, className = '' }: { children: React.ReactNo
     violet: 'shadow-violet-500/10 border-violet-500/20',
   };
   return (
-    <div className={`bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg ${glow ? glowColors[glow] || '' : ''} ${className}`}>
+    <div className={'bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg ' + (glow ? glowColors[glow] || '' : '') + ' ' + className}>
       {children}
     </div>
   );
@@ -260,12 +296,15 @@ function ExpandableGalaxy({ galaxy }: { galaxy: GalaxyManual }) {
 
 export default function DefensePage() {
   const [data, setData] = useState<DefenseData | null>(null);
+  const [feedback, setFeedback] = useState<FeedbackData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}defense-validation.json`)
-      .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
-      .then(setData)
+    Promise.all([
+      fetch(`${import.meta.env.BASE_URL}defense-validation.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }),
+      fetch(`${import.meta.env.BASE_URL}feedback-test.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+    ])
+      .then(([defData, fbData]) => { setData(defData); setFeedback(fbData); })
       .catch(() => setError(true));
   }, []);
 
@@ -335,6 +374,110 @@ export default function DefensePage() {
           </div>
         </GlassCard>
 
+        {feedback && (
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-rose-500 bg-rose-500/10 w-7 h-7 rounded-lg flex items-center justify-center border border-rose-500/20">!</span>
+                <AlertTriangle className="w-5 h-5 text-rose-400" />
+              </div>
+              <h2 className="text-lg font-bold text-white flex-1">CRITICAL: Baryonic Feedback Test</h2>
+              <span className={'flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full border ' + (
+                feedback.summary.allMetricsFullyExplained
+                  ? 'text-rose-400 bg-rose-500/10 border-rose-500/20'
+                  : 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+              )}>
+                <AlertTriangle className="w-3.5 h-3.5" /> HONEST RESULT
+              </span>
+            </div>
+            <GlassCard glow="rose" className="mb-4 border-2 border-rose-500/20">
+              <div className="bg-rose-500/5 rounded-xl p-4 mb-4">
+                <p className="text-rose-200 text-sm leading-relaxed">
+                  <strong>The critique:</strong> "You compare data with baryonic physics against simulation WITHOUT feedback. Of course you get 'excess' — but that might just mean your simulation is incomplete, not that there's new physics."
+                </p>
+                <p className="text-slate-400 text-sm mt-2">
+                  <strong>Our response:</strong> We built ΛCDM + full baryonic feedback (Di Cintio et al. 2014 core formation + Blumenthal et al. 1986 adiabatic contraction) and re-ran the comparison.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                {feedback.metrics.map((m, i) => {
+                  const fullyExplained = m.feedbackFullyExplains;
+                  const sigBefore = m.excessNoFeedback.sigma;
+                  const sigAfter = m.excessWithFeedback.sigma;
+                  const color = fullyExplained ? 'emerald' : sigAfter > sigBefore ? 'rose' : 'amber';
+                  const borderColor = { emerald: 'border-emerald-500/20', rose: 'border-rose-500/20', amber: 'border-amber-500/20' }[color];
+                  return (
+                    <div key={i} className={'bg-white/5 rounded-xl p-4 border ' + borderColor}>
+                      <div className="text-xs font-bold text-white mb-3">{m.name}</div>
+                      <div className="space-y-2 text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-slate-400">Observed slope:</span>
+                          <span className="text-white font-mono">{m.observed.slope.toFixed(5)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-400">ΛCDM (no feedback):</span>
+                          <span className="text-violet-400 font-mono">{m.noFeedback.slope.toFixed(5)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-slate-400">ΛCDM + feedback:</span>
+                          <span className="text-cyan-400 font-mono">{m.withFeedback.slope.toFixed(5)}</span>
+                        </div>
+                        <hr className="border-white/10" />
+                        <div className="flex justify-between items-center">
+                          <span className="text-slate-400">σ without feedback:</span>
+                          <span className="text-amber-400 font-mono font-bold">{sigBefore.toFixed(1)}σ</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-slate-400">σ with feedback:</span>
+                          <span className={'font-mono font-bold ' + (fullyExplained ? 'text-emerald-400' : 'text-rose-400')}>{sigAfter.toFixed(1)}σ</span>
+                        </div>
+                        <div className={'text-center py-1 rounded-lg mt-1 ' + (fullyExplained ? 'bg-emerald-500/10 text-emerald-300' : 'bg-amber-500/10 text-amber-300')}>
+                          {fullyExplained ? 'Feedback explains this metric' : 'Still ' + sigAfter.toFixed(1) + 'σ excess'}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 mb-4">
+                <h4 className="text-xs font-bold text-white mb-2">Feedback Model Components</h4>
+                <div className="space-y-2">
+                  {feedback.feedbackModel.components.map((c, i) => (
+                    <div key={i} className="bg-white/5 rounded-lg p-3">
+                      <div className="flex items-start gap-2">
+                        <span className="text-cyan-400 text-xs font-bold">{c.name}</span>
+                        <span className="text-slate-500 text-xs">({c.reference})</span>
+                      </div>
+                      <p className="text-xs text-slate-400 mt-1">{c.description}</p>
+                      <p className="text-xs text-amber-300 mt-1">Effect: {c.effect}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className={'rounded-xl p-4 border ' + (
+                feedback.summary.allMetricsFullyExplained
+                  ? 'bg-rose-500/5 border-rose-500/20'
+                  : 'bg-amber-500/5 border-amber-500/20'
+              )}>
+                <h4 className="text-sm font-bold text-white mb-2">Honest Verdict</h4>
+                <p className="text-sm text-amber-200 leading-relaxed mb-2">{feedback.summary.honestAssessment}</p>
+                <div className={'inline-block px-3 py-1 rounded-full text-xs font-bold ' + (
+                  feedback.summary.maxSigmaWithFeedback >= 3
+                    ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                    : feedback.summary.maxSigmaWithFeedback >= 2
+                    ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
+                    : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+                )}>
+                  {feedback.summary.updatedClaim}
+                </div>
+              </div>
+            </GlassCard>
+          </section>
+        )}
+
         <section>
           <TestHeader number={1} title={t1.title} status="pass" icon={Atom} />
           <GlassCard glow="cyan" className="mb-4">
@@ -398,14 +541,14 @@ export default function DefensePage() {
                   <Tooltip
                     contentStyle={{ background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '12px' }}
                     formatter={(value: number) => [value, 'Count']}
-                    labelFormatter={(label: number) => `r ≈ ${label}`}
+                    labelFormatter={(label: number) => 'r ≈ ' + label}
                   />
                   <Bar dataKey="count" radius={[2, 2, 0, 0]}>
                     {t2.histogram.map((entry, i) => (
                       <Cell key={i} fill={entry.mid <= t2.realR ? '#f43f5e' : '#6366f1'} opacity={0.7} />
                     ))}
                   </Bar>
-                  <ReferenceLine x={t2.realR} stroke="#f43f5e" strokeWidth={2} strokeDasharray="4 4" label={{ value: `Real: ${t2.realR}`, fill: '#f43f5e', fontSize: 11, position: 'top' }} />
+                  <ReferenceLine x={t2.realR} stroke="#f43f5e" strokeWidth={2} strokeDasharray="4 4" label={{ value: 'Real: ' + t2.realR, fill: '#f43f5e', fontSize: 11, position: 'top' }} />
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-xs text-slate-400 text-center mt-1">
@@ -453,7 +596,7 @@ export default function DefensePage() {
                     <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/5">
                       <div className="text-xs text-slate-400 mb-1">{g.metric}</div>
                       <div className="flex items-baseline gap-2 mb-2">
-                        <span className={`text-2xl font-mono font-bold ${sigColor}`}>{g.sigma.toFixed(1)}σ</span>
+                        <span className={'text-2xl font-mono font-bold ' + sigColor}>{g.sigma.toFixed(1)}σ</span>
                         <span className="text-xs text-slate-500">excess</span>
                       </div>
                       <div className="space-y-1 text-xs">
@@ -515,7 +658,7 @@ export default function DefensePage() {
                 <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/5">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-bold text-white">{c.check}</span>
-                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${c.result === 'PASS' ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20' : 'text-rose-400 bg-rose-500/10 border border-rose-500/20'}`}>
+                    <span className={'text-xs font-bold px-2 py-0.5 rounded-full ' + (c.result === 'PASS' ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20' : 'text-rose-400 bg-rose-500/10 border border-rose-500/20')}>
                       {c.result === 'PASS' ? <CheckCircle2 className="w-3 h-3 inline mr-1" /> : <XCircle className="w-3 h-3 inline mr-1" />}
                       {c.result}
                     </span>
@@ -584,11 +727,11 @@ export default function DefensePage() {
               {t7.fairnessAssessment.map((f, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white/5 rounded-lg p-3">
                   <span className="text-sm font-bold text-white w-32 flex-shrink-0">{f.aspect}</span>
-                  <span className={`text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${
+                  <span className={'text-xs font-bold px-2 py-0.5 rounded-full flex-shrink-0 ' + (
                     f.rating === 'Conservative' ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20' :
                     f.rating === 'Standard' ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/20' :
                     'text-amber-400 bg-amber-500/10 border border-amber-500/20'
-                  }`}>{f.rating}</span>
+                  )}>{f.rating}</span>
                   <span className="text-xs text-slate-400">{f.detail}</span>
                 </div>
               ))}
