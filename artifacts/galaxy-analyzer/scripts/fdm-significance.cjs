@@ -140,6 +140,7 @@ const nSim = data.simulation[0].perGalaxy.n;
 
 const zObs = 0.5 * Math.log((1 + Math.abs(rObs)) / (1 - Math.abs(rObs)));
 const zSim = 0.5 * Math.log((1 + Math.abs(rSim)) / (1 - Math.abs(rSim)));
+// Note: Using |r| since both correlations are negative; we compare magnitude of linear association
 const seDiff = Math.sqrt(1 / (nObs - 3) + 1 / (nSim - 3));
 const zScore = (zObs - zSim) / seDiff;
 

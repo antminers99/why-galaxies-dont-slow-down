@@ -893,9 +893,9 @@ export default function DarkMatterFractionPage() {
                             <div className="text-[9px] text-slate-500 mt-1">{sig.nPermutations.toLocaleString()} shuffles</div>
                           </div>
                           <div className="bg-white/5 rounded-xl p-3 text-center">
-                            <div className="text-[10px] text-slate-500 mb-1">Fisher z (|r| diff)</div>
+                            <div className="text-[10px] text-slate-500 mb-1">Fisher z (scatter diff)</div>
                             <div className={`text-xl font-mono font-bold ${sig.fisherZ.pValue < 0.001 ? 'text-emerald-400' : 'text-amber-400'}`}>
-                              p &lt; 10⁻⁶
+                              {sig.fisherZ.pValue < 1e-6 ? 'p < 10⁻⁶' : `p = ${sig.fisherZ.pValue.toFixed(4)}`}
                             </div>
                             <div className="text-[9px] text-slate-500 mt-1">z = {sig.fisherZ.zScore.toFixed(1)}</div>
                           </div>
@@ -1029,9 +1029,9 @@ export default function DarkMatterFractionPage() {
                                     <td className="text-center"><Badge pass={sig.permutation.pValue < 0.05} label={sig.permutation.pValue < 0.05 ? 'Sig' : 'NS'} /></td>
                                   </tr>
                                   <tr className="border-b border-white/5">
-                                    <td className="py-1.5 text-slate-300 font-display">Fisher z (|r| diff)</td>
+                                    <td className="py-1.5 text-slate-300 font-display">Fisher z (scatter)</td>
                                     <td className="text-center text-slate-400">z = {sig.fisherZ.zScore.toFixed(1)}</td>
-                                    <td className="text-center text-emerald-400">{'< 10⁻⁶'}</td>
+                                    <td className="text-center text-emerald-400">{sig.fisherZ.pValue < 1e-6 ? '< 10⁻⁶' : sig.fisherZ.pValue.toFixed(4)}</td>
                                     <td className="text-center"><Badge pass={true} label="Sig" /></td>
                                   </tr>
                                   <tr className="border-b border-white/5">
@@ -1217,7 +1217,7 @@ export default function DarkMatterFractionPage() {
                 </div>
                 <div className="bg-white/5 rounded-xl p-3 border-l-4 border-violet-500">
                   <p className="text-[10px] font-display font-bold text-violet-400 mb-1">Simulated</p>
-                  <p className="text-[10px] text-slate-300">Observed {data.significanceTest?.effectSize.slopeRatio.toFixed(1) ?? '1.4'}× ΛCDM ({(Math.abs(data.significanceTest?.effectSize.slopeRatio! - 1) / data.significanceTest?.effectSize.slopeRatioErr!).toFixed(1) ?? '2.2'}σ)</p>
+                  <p className="text-[10px] text-slate-300">Observed {data.significanceTest ? data.significanceTest.effectSize.slopeRatio.toFixed(1) : '~1.4'}× ΛCDM ({data.significanceTest ? (Math.abs(data.significanceTest.effectSize.slopeRatio - 1) / data.significanceTest.effectSize.slopeRatioErr).toFixed(1) : '~2'}σ)</p>
                 </div>
                 <div className="bg-white/5 rounded-xl p-3 border-l-4 border-rose-500">
                   <p className="text-[10px] font-display font-bold text-rose-400 mb-1">Scatter differs</p>
@@ -1238,8 +1238,8 @@ export default function DarkMatterFractionPage() {
                 </p>
                 <p className="text-sm text-slate-300 max-w-2xl mx-auto">
                   A baseline f<sub>DM</sub>–Σ<sub>bar</sub> anti-correlation is expected geometrically, but the observed slope
-                  is {data.significanceTest?.effectSize.slopeRatio.toFixed(1) ?? '~1.4'}× steeper than ΛCDM NFW+disk models predict.
-                  While the slope excess is suggestive (p = {data.significanceTest?.permutation.pValue.toFixed(2) ?? '0.17'}),
+                  is {data.significanceTest ? data.significanceTest.effectSize.slopeRatio.toFixed(1) : '~1.4'}× steeper than ΛCDM NFW+disk models predict.
+                  While the slope excess is suggestive (p = {data.significanceTest ? data.significanceTest.permutation.pValue.toFixed(2) : '~0.17'}),
                   the correlation <em>structure</em> differs definitively (Fisher z p &lt; 10⁻⁶).
                   Real galaxies do not follow idealized NFW profiles — demanding either baryon–halo coupling,
                   feedback-modified halos, or modified gravity with density dependence.
