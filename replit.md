@@ -75,8 +75,9 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/public/rar-analysis.json` — Pre-computed: per-galaxy shape indicators, RAR scatter data (3391 points), Q_kin diversity stats, correlations, **density correction fit** (ΔRAR = a + b·log(Σ_bar), binned by Vmax: R² up to 0.52 in low-mass bins), **validation pipeline** (7/7 tests: shuffle p<0.01, bootstrap CI, jackknife, partial corr, AIC/BIC, train/test, 5-fold CV)
 - `artifacts/galaxy-analyzer/src/pages/validation.tsx` — Validation Pipeline: 10 tests (Tests 1-7 statistical, Test 8 Υ sensitivity 21/21 configs, Test 9 internal replication 5 surveys + 10 split-halves, Test 10 Monte Carlo uncertainty 1000 iterations), point-mass vs real baryons comparison, inner/outer × mass table, final verdict with resolved caveats
 - `artifacts/galaxy-analyzer/public/rar-analysis-real.json` — Real baryonic decomposition (V_gas + V_disk + V_bulge from SPARC rotmod files, Υ_d=0.5, Υ_b=0.7), 175 galaxies, 3391 points, full validation pipeline (10/10 pass), Υ sensitivity grid (7×3), internal replication by survey source, Monte Carlo uncertainty (1000 iterations, 95% CI [−0.212, −0.163])
+- `artifacts/galaxy-analyzer/src/pages/discovery.tsx` — Discovery page: density-corrected RAR law (g_obs = g_RAR × (Σ_bar/Σ₀)^b), step-by-step derivation, scatter plot with regression, radial dependence of b(r), predictive power metrics, literature context (Stiskalek tension), physical interpretation (DM/modified gravity), status & caveats, next steps
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
-- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (11 pages)
+- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (12 pages)
 
 ### Design System
 - Background: #0a0e1a (deep space), glassmorphism cards (bg-white/5, backdrop-blur)
