@@ -231,6 +231,57 @@ interface ParticleData {
   comparisonWithParametric: { description: string; note: string };
 }
 
+interface RawParticleCorrelation {
+  label: string;
+  n: number;
+  slope: number;
+  slopeErr: number;
+  r: number;
+  intercept: number;
+  bootMean: number;
+  bootStd: number;
+  bootCI: number[];
+  sigmaFromZero: number;
+}
+
+interface RawParticleSimData {
+  catalog: string;
+  simulation: string;
+  snapshot: number;
+  redshift: number;
+  totalHalosFetched: number;
+  SPARClike: number;
+  selectionCriteria: string;
+  correlation: RawParticleCorrelation;
+}
+
+interface RawParticleData {
+  metadata: {
+    pipeline: string;
+    source: string;
+    description: string;
+    aperture_radii_kpc: number[];
+    alpha_definition: string;
+    Sigma_bar_definition: string;
+    timestamp: string;
+  };
+  simulations: {
+    TNG100: RawParticleSimData;
+    EAGLE: RawParticleSimData;
+  };
+  SPARC: { n: number; correlation: RawParticleCorrelation } | null;
+  comparison: {
+    tngVsSparc: { slopeRatio: number; sigmaDiscrepancy: number; signMatch: boolean };
+    eagleVsSparc: { slopeRatio: number; sigmaDiscrepancy: number; signMatch: boolean };
+    tngVsEagle: { slopeRatio: number; sigmaDiscrepancy: number };
+  } | null;
+  rawData: {
+    TNG100: Array<{ alpha: number; log_Sigma_bar: number }>;
+    EAGLE: Array<{ alpha: number; log_Sigma_bar: number }>;
+    SPARC: Array<{ name: string; alpha: number; log_Sigma_bar: number }>;
+  };
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -412,6 +463,7 @@ export default function DefensePage() {
   const [feedback, setFeedback] = useState<FeedbackData | null>(null);
   const [hydro, setHydro] = useState<HydroData | null>(null);
   const [particle, setParticle] = useState<ParticleData | null>(null);
+  const [rawParticle, setRawParticle] = useState<RawParticleData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -420,8 +472,9 @@ export default function DefensePage() {
       fetch(`${import.meta.env.BASE_URL}feedback-test.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}hydro-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}particle-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}raw-particle-data.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData, hydroData, particleData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); })
+      .then(([defData, fbData, hydroData, particleData, rawData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); })
       .catch(() => setError(true));
   }, []);
 
@@ -1313,6 +1366,230 @@ export default function DefensePage() {
             </div>
           </GlassCard>
         </section>
+
+        {rawParticle && (
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                  <span className="text-red-400 font-bold text-sm">IV</span>
+                </div>
+                <Atom className="w-5 h-5 text-red-400" />
+              </div>
+              <h2 className="text-lg font-bold text-white flex-1">Raw Particle Snapshot Data</h2>
+              <span className="text-xs font-bold px-3 py-1 rounded-full bg-red-500/10 text-red-400 border border-red-500/30">
+                APERTURE DATA FROM PARTICLES
+              </span>
+            </div>
+
+            <GlassCard glow="rose" className="mb-4">
+              <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-4 mb-6">
+                <p className="text-red-300 text-sm leading-relaxed">
+                  <strong>The decisive test:</strong> Not tables from papers. Not scaling relations. Not parametric models.
+                  These are <strong>aperture mass measurements</strong> computed directly from particle snapshots
+                  by the simulation teams themselves, accessed via the Flatiron Institute's FlatHUB public data portal.
+                  M_DM({"<"}r) at 10 radii (1-100 kpc) gives us the actual DM rotation curve V_DM(r) = sqrt(G M_DM / r).
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-4 border border-blue-500/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-blue-400 font-bold text-sm">TNG100-1</h4>
+                    <span className="text-xs text-blue-300 bg-blue-500/10 px-2 py-0.5 rounded-full">
+                      {rawParticle.simulations.TNG100.SPARClike} galaxies
+                    </span>
+                  </div>
+                  <p className="text-slate-400 text-xs mb-2">
+                    From {rawParticle.simulations.TNG100.totalHalosFetched.toLocaleString()} halos fetched
+                  </p>
+                  <div className="space-y-1 text-xs font-mono">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">slope:</span>
+                      <span className={'font-bold ' + (rawParticle.simulations.TNG100.correlation.slope < 0 ? 'text-emerald-400' : 'text-rose-400')}>
+                        {rawParticle.simulations.TNG100.correlation.slope.toFixed(5)}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">r:</span>
+                      <span className="text-blue-400">{rawParticle.simulations.TNG100.correlation.r.toFixed(4)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">significance:</span>
+                      <span className="text-yellow-400">{rawParticle.simulations.TNG100.correlation.sigmaFromZero.toFixed(1) + "σ"}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-4 border border-violet-500/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-violet-400 font-bold text-sm">EAGLE RefL0100</h4>
+                    <span className="text-xs text-violet-300 bg-violet-500/10 px-2 py-0.5 rounded-full">
+                      {rawParticle.simulations.EAGLE.SPARClike} galaxies
+                    </span>
+                  </div>
+                  <p className="text-slate-400 text-xs mb-2">
+                    From {rawParticle.simulations.EAGLE.totalHalosFetched.toLocaleString()} halos fetched
+                  </p>
+                  <div className="space-y-1 text-xs font-mono">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">slope:</span>
+                      <span className={'font-bold ' + (rawParticle.simulations.EAGLE.correlation.slope < 0 ? 'text-emerald-400' : 'text-rose-400')}>
+                        {rawParticle.simulations.EAGLE.correlation.slope.toFixed(5)}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">r:</span>
+                      <span className="text-violet-400">{rawParticle.simulations.EAGLE.correlation.r.toFixed(4)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">significance:</span>
+                      <span className="text-slate-500">{rawParticle.simulations.EAGLE.correlation.sigmaFromZero.toFixed(1) + "σ"}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-4 border border-cyan-500/20">
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-cyan-400 font-bold text-sm">SPARC Observed</h4>
+                    <span className="text-xs text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded-full">
+                      {rawParticle.SPARC ? rawParticle.SPARC.n : 0} galaxies
+                    </span>
+                  </div>
+                  <p className="text-slate-400 text-xs mb-2">175 rotation curves analyzed</p>
+                  {rawParticle.SPARC && (
+                    <div className="space-y-1 text-xs font-mono">
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">slope:</span>
+                        <span className={'font-bold ' + (rawParticle.SPARC.correlation.slope < 0 ? 'text-emerald-400' : 'text-rose-400')}>
+                          {rawParticle.SPARC.correlation.slope.toFixed(5)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">r:</span>
+                        <span className="text-cyan-400">{rawParticle.SPARC.correlation.r.toFixed(4)}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">significance:</span>
+                        <span className="text-yellow-400">{rawParticle.SPARC.correlation.sigmaFromZero.toFixed(1) + "σ"}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {rawParticle.comparison && (
+                <div className="mb-6">
+                  <h4 className="text-white font-bold text-sm mb-3">Head-to-Head Comparison</h4>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="border-b border-white/10">
+                          <th className="text-left py-2 px-3 text-slate-400">Comparison</th>
+                          <th className="text-center py-2 px-3 text-slate-400">Slope Ratio</th>
+                          <th className="text-center py-2 px-3 text-slate-400">Discrepancy</th>
+                          <th className="text-center py-2 px-3 text-slate-400">Sign Match</th>
+                        </tr>
+                      </thead>
+                      <tbody className="font-mono">
+                        <tr className="border-b border-white/5">
+                          <td className="py-2 px-3 text-slate-300 font-sans">SPARC vs TNG100-1</td>
+                          <td className="py-2 px-3 text-center text-white">{rawParticle.comparison.tngVsSparc.slopeRatio.toFixed(1) + "x"}</td>
+                          <td className={'py-2 px-3 text-center font-bold ' + (rawParticle.comparison.tngVsSparc.sigmaDiscrepancy > 3 ? 'text-rose-400' : rawParticle.comparison.tngVsSparc.sigmaDiscrepancy > 2 ? 'text-amber-400' : 'text-emerald-400')}>
+                            {rawParticle.comparison.tngVsSparc.sigmaDiscrepancy.toFixed(1) + "σ"}
+                          </td>
+                          <td className="py-2 px-3 text-center">
+                            {rawParticle.comparison.tngVsSparc.signMatch ? (
+                              <span className="text-emerald-400">YES</span>
+                            ) : (
+                              <span className="text-rose-400">NO</span>
+                            )}
+                          </td>
+                        </tr>
+                        <tr className="border-b border-white/5">
+                          <td className="py-2 px-3 text-slate-300 font-sans">SPARC vs EAGLE</td>
+                          <td className="py-2 px-3 text-center text-white">{rawParticle.comparison.eagleVsSparc.slopeRatio.toFixed(1) + "x"}</td>
+                          <td className={'py-2 px-3 text-center font-bold ' + (rawParticle.comparison.eagleVsSparc.sigmaDiscrepancy > 3 ? 'text-rose-400' : rawParticle.comparison.eagleVsSparc.sigmaDiscrepancy > 2 ? 'text-amber-400' : 'text-emerald-400')}>
+                            {rawParticle.comparison.eagleVsSparc.sigmaDiscrepancy.toFixed(1) + "σ"}
+                          </td>
+                          <td className="py-2 px-3 text-center">
+                            {rawParticle.comparison.eagleVsSparc.signMatch ? (
+                              <span className="text-emerald-400">YES</span>
+                            ) : (
+                              <span className="text-rose-400">NO</span>
+                            )}
+                          </td>
+                        </tr>
+                        <tr className="border-b border-white/5">
+                          <td className="py-2 px-3 text-slate-300 font-sans">TNG100-1 vs EAGLE</td>
+                          <td className="py-2 px-3 text-center text-white">{rawParticle.comparison.tngVsEagle.slopeRatio.toFixed(1) + "x"}</td>
+                          <td className={'py-2 px-3 text-center font-bold ' + (rawParticle.comparison.tngVsEagle.sigmaDiscrepancy > 3 ? 'text-rose-400' : 'text-amber-400')}>
+                            {rawParticle.comparison.tngVsEagle.sigmaDiscrepancy.toFixed(1) + "σ"}
+                          </td>
+                          <td className="py-2 px-3 text-center text-slate-500">—</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4 mb-4">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-amber-300 font-bold text-sm mb-1">The Real Finding: Simulation-Simulation Tension</p>
+                    <p className="text-amber-200/80 text-xs leading-relaxed">
+                      TNG100-1 produces a strong negative alpha-Sigma_bar coupling
+                      ({rawParticle.simulations.TNG100.correlation.sigmaFromZero.toFixed(1) + "σ"}, slope = {rawParticle.simulations.TNG100.correlation.slope.toFixed(5)}).
+                      EAGLE produces NO coupling
+                      ({rawParticle.simulations.EAGLE.correlation.sigmaFromZero.toFixed(1) + "σ"}, slope = {rawParticle.simulations.EAGLE.correlation.slope.toFixed(5)}).
+                      These two state-of-the-art ΛCDM simulations disagree at
+                      {rawParticle.comparison ? " " + rawParticle.comparison.tngVsEagle.sigmaDiscrepancy.toFixed(1) + "σ" : " ?"} —
+                      baryon-halo coupling is a discriminating test of feedback physics.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-4">
+                <h4 className="text-white font-bold text-sm mb-2">Honest Assessment</h4>
+                <div className="space-y-2 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    With a consistent r {"<="} 10 kpc window across all datasets,
+                    SPARC shows {rawParticle.SPARC ? (Math.abs(rawParticle.SPARC.correlation.sigmaFromZero) < 2 ? "no significant" : "marginal") : "no"} coupling
+                    (slope = {rawParticle.SPARC ? rawParticle.SPARC.correlation.slope.toFixed(3) : "?"}, {rawParticle.SPARC ? rawParticle.SPARC.correlation.sigmaFromZero.toFixed(1) + "σ" : "?"}).
+                    This means the coupling signal from our earlier analyses was driven by different radial window definitions,
+                    not by a genuine observation-simulation mismatch.
+                  </p>
+                  <p>
+                    The robust, definition-independent finding is the massive <strong>TNG vs EAGLE tension</strong>:
+                    two ΛCDM simulations with different feedback implementations (TNG's kinetic AGN winds vs EAGLE's thermal stochastic feedback)
+                    produce opposite predictions for baryon-halo coupling. This makes alpha-Sigma_bar a powerful
+                    diagnostic for distinguishing galaxy formation models.
+                  </p>
+                  <p className="text-amber-300/80">
+                    <strong>Caveat:</strong> FlatHUB API limited to ~10k halos (not the full catalog).
+                    Aperture data gives only 4 radial points at r {"<="} 10 kpc — coarser than SPARC rotation curves.
+                    Results should be verified with full TNG/EAGLE API access for complete galaxy samples.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <h4 className="text-white font-bold text-sm mb-2">Data Provenance</h4>
+                <div className="space-y-1 text-xs text-slate-400">
+                  <p>Source: {rawParticle.metadata.source}</p>
+                  <p>Alpha: {rawParticle.metadata.alpha_definition}</p>
+                  <p>Sigma_bar: {rawParticle.metadata.Sigma_bar_definition}</p>
+                  <p>Apertures: {rawParticle.metadata.aperture_radii_kpc.join(", ")} kpc</p>
+                  <p>Pipeline: {rawParticle.metadata.pipeline}</p>
+                  <p>Generated: {rawParticle.metadata.timestamp}</p>
+                </div>
+              </div>
+            </GlassCard>
+          </section>
+        )}
 
         <GlassCard glow="emerald" className="border-2 border-emerald-500/30">
           <div className="text-center py-4">
