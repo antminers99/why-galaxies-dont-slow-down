@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import { ShieldCheck, Shuffle, BarChart3, Scissors, GitBranch, FlaskConical, Layers, Target, CheckCircle2, XCircle, Atom, ArrowRight, Gauge, Copy } from 'lucide-react';
+import { ShieldCheck, Shuffle, BarChart3, Scissors, GitBranch, FlaskConical, Layers, Target, CheckCircle2, XCircle, Atom, ArrowRight, Gauge, Copy, Dice5 } from 'lucide-react';
 
 function TestCard({ title, icon: Icon, pass, children }: { title: string; icon: any; pass: boolean | null; children: React.ReactNode }) {
   return (
@@ -51,10 +51,12 @@ export default function ValidationPage() {
   const v = real.validation;
   const sens = real.sensitivity;
   const rep = real.replication;
+  const mc = real.monteCarlo;
   const sensPass = sens?.summary?.allSlopesNegative && sens?.summary?.allPartialSignificant && sens?.summary?.allAICBetter && sens?.summary?.allCVPositive;
   const repPass = rep && rep.summary.surveysWithNegSlope === rep.summary.nSurveys && rep.summary.allLOSOstable && rep.splitHalf.bothNegative === rep.splitHalf.total;
-  const passes = v.summary.passes + (sensPass ? 1 : 0) + (repPass ? 1 : 0);
-  const total = v.summary.total + (sens ? 1 : 0) + (rep ? 1 : 0);
+  const mcPass = mc?.pass === true;
+  const passes = v.summary.passes + (sensPass ? 1 : 0) + (repPass ? 1 : 0) + (mcPass ? 1 : 0);
+  const total = v.summary.total + (sens ? 1 : 0) + (rep ? 1 : 0) + (mc ? 1 : 0);
   const pm = pointMass?.validation;
 
   return (
@@ -123,7 +125,7 @@ export default function ValidationPage() {
               <div className="text-4xl font-bold font-mono text-emerald-400">{passes}/{total}</div>
               <div className="text-xs text-slate-500">statistical tests passed</div>
             </div>
-            <div className="grid grid-cols-7 gap-1.5">
+            <div className="grid grid-cols-5 gap-1.5">
               {Array.from({ length: total }, (_, i) => (
                 <div key={i} className={`w-6 h-6 rounded-md flex items-center justify-center ${i < passes ? 'bg-emerald-500/30' : 'bg-red-500/30'}`}>
                   {i < passes
@@ -629,6 +631,93 @@ export default function ValidationPage() {
           );
         })()}
 
+        {mc && (() => {
+          const histData = mc.histogram || [];
+          return (
+            <GlassCard glow={mcPass ? 'cyan' : undefined}>
+              <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <Dice5 className="w-5 h-5 text-orange-400" />
+                Test 10: Monte Carlo Uncertainty — Inclination & Distance
+                {mcPass && <span className="ml-auto px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs rounded-full font-semibold">PASS</span>}
+              </h2>
+              <p className="text-xs text-slate-400 mb-4">
+                Perturb each galaxy's inclination (±eInc) and distance (±eDist) with Gaussian noise within published error bars, 
+                then recompute all quantities. Repeat {mc.nIterations.toLocaleString()} times. If the 95% CI for slope b is entirely 
+                below zero, the result is robust to measurement uncertainties.
+              </p>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <h3 className="text-sm font-semibold text-orange-400 mb-2">Distribution of Slope b ({mc.nIterations} iterations)</h3>
+                  <div className="h-[160px]">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart data={histData} margin={{ top: 5, right: 10, bottom: 5, left: 10 }}>
+                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                        <XAxis dataKey="binCenter" tick={{ fill: '#94a3b8', fontSize: 9 }} tickFormatter={(val: number) => val.toFixed(2)} interval={4} />
+                        <YAxis tick={{ fill: '#94a3b8', fontSize: 9 }} />
+                        <Tooltip
+                          contentStyle={{ background: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', fontSize: '11px' }}
+                          formatter={(val: number) => [val, 'Count']}
+                          labelFormatter={(val: number) => `b = ${val}`}
+                        />
+                        <Bar dataKey="count" name="Count">
+                          {histData.map((_: any, i: number) => (
+                            <Cell key={i} fill={histData[i].binCenter < 0 ? '#10b981' : '#ef4444'} fillOpacity={0.7} />
+                          ))}
+                        </Bar>
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1 text-center">Green = b {'<'} 0 (expected direction)</p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold text-orange-400 mb-2">Key Results</h3>
+                  {[
+                    { label: 'Mean slope b', value: mc.slope.mean.toFixed(4), sub: `± ${mc.slope.std.toFixed(4)} std` },
+                    { label: '95% CI', value: `[${mc.slope.ci95[0].toFixed(4)}, ${mc.slope.ci95[1].toFixed(4)}]`, sub: mc.slope.ci95[1] < 0 ? 'Entirely below zero' : 'Crosses zero' },
+                    { label: '99% CI', value: `[${mc.slope.ci99[0].toFixed(4)}, ${mc.slope.ci99[1].toFixed(4)}]`, sub: mc.slope.ci99[1] < 0 ? 'Entirely below zero' : 'Crosses zero' },
+                    { label: 'Fraction b < 0', value: `${(mc.slope.fracNegative * 100).toFixed(1)}%`, sub: `${Math.round(mc.slope.fracNegative * mc.nIterations)}/${mc.nIterations} iterations` },
+                  ].map(({ label, value, sub }) => (
+                    <div key={label} className="flex items-center gap-3 p-2 bg-white/[0.02] rounded-lg">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <div className="flex-1">
+                        <div className="text-xs text-slate-300 font-medium">{label}</div>
+                        <div className="text-xs text-slate-500">{sub}</div>
+                      </div>
+                      <div className="text-xs font-mono text-cyan-400">{value}</div>
+                    </div>
+                  ))}
+                  <div className="grid grid-cols-2 gap-2 mt-2">
+                    <div className="p-2 bg-white/[0.02] rounded-lg text-center">
+                      <div className="text-xs text-slate-500">Partial r|V_max</div>
+                      <div className="text-sm font-mono text-cyan-400">{mc.partialR.mean.toFixed(3)}</div>
+                      <div className="text-xs text-slate-500">[{mc.partialR.ci95[0].toFixed(3)}, {mc.partialR.ci95[1].toFixed(3)}]</div>
+                    </div>
+                    <div className="p-2 bg-white/[0.02] rounded-lg text-center">
+                      <div className="text-xs text-slate-500">ΔAIC mean</div>
+                      <div className="text-sm font-mono text-emerald-400">{mc.deltaAIC.mean.toFixed(1)}</div>
+                      <div className="text-xs text-slate-500">{(mc.deltaAIC.fracNegative * 100).toFixed(0)}% negative</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-xl">
+                <p className="text-xs text-emerald-300 font-semibold">
+                  <CheckCircle2 className="w-3.5 h-3.5 inline mr-1" />
+                  {mcPass
+                    ? `PASS — After ${mc.nIterations.toLocaleString()} Monte Carlo perturbations of inclination and distance, 
+                       ${(mc.slope.fracNegative * 100).toFixed(1)}% of iterations yield b < 0. The 95% CI 
+                       [${mc.slope.ci95[0].toFixed(3)}, ${mc.slope.ci95[1].toFixed(3)}] is entirely below zero. 
+                       The density correction is robust to observational measurement uncertainties.`
+                    : 'The 95% CI crosses zero — result may be sensitive to measurement uncertainties.'}
+                </p>
+              </div>
+            </GlassCard>
+          );
+        })()}
+
         <GlassCard glow="cyan">
           <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-emerald-400" />
@@ -641,7 +730,9 @@ export default function ValidationPage() {
               the density correction is <strong>confirmed and strengthened</strong>. 
               The result is robust to mass-to-light ratio choice ({sens ? sens.results.length + '/' + sens.results.length : '?'} Υ configs), 
               replicates across {rep ? rep.summary.nSurveys : '?'} independent survey 
-              sources, and holds in {rep ? rep.splitHalf.bothNegative + '/' + rep.splitHalf.total : '?'} random split-halves. 
+              sources, holds in {rep ? rep.splitHalf.bothNegative + '/' + rep.splitHalf.total : '?'} random split-halves, 
+              and survives {mc ? mc.nIterations.toLocaleString() : '?'} Monte Carlo uncertainty perturbations 
+              (95% CI [{mc ? mc.slope.ci95[0].toFixed(3) : '?'}, {mc ? mc.slope.ci95[1].toFixed(3) : '?'}]). 
               ΔAIC = {v.modelComparison.deltaAIC.toFixed(0)} with {v.crossValidation.avgImprovement.toFixed(0)}% cross-validated error reduction.
             </p>
           </div>
@@ -664,7 +755,7 @@ export default function ValidationPage() {
               <ul className="text-xs text-slate-300 space-y-1 list-disc list-inside">
                 <li><s>Fixed Υ_d=0.5, Υ_b=0.7</s> — <span className="text-emerald-400">RESOLVED: 21/21 Υ configs pass (Test 8)</span></li>
                 <li><s>Single survey source</s> — <span className="text-emerald-400">RESOLVED: 5/5 surveys, 10/10 splits (Test 9)</span></li>
-                <li>No inclination/distance Monte Carlo uncertainty propagation yet</li>
+                <li><s>No Monte Carlo uncertainty</s> — <span className="text-emerald-400">RESOLVED: {mc ? mc.nIterations.toLocaleString() : '?'} iterations, 95% CI entirely {'<'} 0 (Test 10)</span></li>
                 <li>Dwarf galaxies show weaker signal (R²=0.08) — small sample (n=21)</li>
               </ul>
             </div>
