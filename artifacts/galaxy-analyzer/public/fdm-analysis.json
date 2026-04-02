@@ -20437,5 +20437,650 @@
         }
       ]
     }
-  ]
+  ],
+  "significanceTest": {
+    "nBootstrap": 10000,
+    "nPermutations": 10000,
+    "sparc": {
+      "observedSlope": -0.11365028282146641,
+      "bootstrapMean": -0.11408221272255353,
+      "bootstrapSD": 0.015898387325643956,
+      "ci95": [
+        -0.14463988728818816,
+        -0.08237509237025244
+      ],
+      "n": 169
+    },
+    "lcdm": {
+      "observedSlope": -0.07933375088763019,
+      "bootstrapMean": -0.07929117310666134,
+      "bootstrapSD": 0.0021693152646721013,
+      "ci95": [
+        -0.08355216453536683,
+        -0.07507441242187296
+      ],
+      "n": 300
+    },
+    "ciOverlap": true,
+    "permutation": {
+      "realDelta": -0.03431653193383623,
+      "pValue": 0.1742,
+      "moreExtreme": 1742,
+      "nullMean": 0.0003182765182013642,
+      "nullSD": 0.02488173067851417,
+      "histogram": [
+        {
+          "binCenter": -0.0936,
+          "count": 0
+        },
+        {
+          "binCenter": -0.0886,
+          "count": 1
+        },
+        {
+          "binCenter": -0.0836,
+          "count": 1
+        },
+        {
+          "binCenter": -0.0786,
+          "count": 2
+        },
+        {
+          "binCenter": -0.0737,
+          "count": 7
+        },
+        {
+          "binCenter": -0.0687,
+          "count": 11
+        },
+        {
+          "binCenter": -0.0637,
+          "count": 21
+        },
+        {
+          "binCenter": -0.0587,
+          "count": 36
+        },
+        {
+          "binCenter": -0.0538,
+          "count": 79
+        },
+        {
+          "binCenter": -0.0488,
+          "count": 102
+        },
+        {
+          "binCenter": -0.0438,
+          "count": 190
+        },
+        {
+          "binCenter": -0.0389,
+          "count": 237
+        },
+        {
+          "binCenter": -0.0339,
+          "count": 333
+        },
+        {
+          "binCenter": -0.0289,
+          "count": 392
+        },
+        {
+          "binCenter": -0.0239,
+          "count": 518
+        },
+        {
+          "binCenter": -0.019,
+          "count": 617
+        },
+        {
+          "binCenter": -0.014,
+          "count": 677
+        },
+        {
+          "binCenter": -0.009,
+          "count": 760
+        },
+        {
+          "binCenter": -0.004,
+          "count": 794
+        },
+        {
+          "binCenter": 0.0009,
+          "count": 777
+        },
+        {
+          "binCenter": 0.0059,
+          "count": 737
+        },
+        {
+          "binCenter": 0.0109,
+          "count": 741
+        },
+        {
+          "binCenter": 0.0159,
+          "count": 647
+        },
+        {
+          "binCenter": 0.0208,
+          "count": 555
+        },
+        {
+          "binCenter": 0.0258,
+          "count": 422
+        },
+        {
+          "binCenter": 0.0308,
+          "count": 358
+        },
+        {
+          "binCenter": 0.0358,
+          "count": 294
+        },
+        {
+          "binCenter": 0.0407,
+          "count": 257
+        },
+        {
+          "binCenter": 0.0457,
+          "count": 140
+        },
+        {
+          "binCenter": 0.0507,
+          "count": 103
+        },
+        {
+          "binCenter": 0.0557,
+          "count": 79
+        },
+        {
+          "binCenter": 0.0606,
+          "count": 39
+        },
+        {
+          "binCenter": 0.0656,
+          "count": 38
+        },
+        {
+          "binCenter": 0.0706,
+          "count": 18
+        },
+        {
+          "binCenter": 0.0756,
+          "count": 10
+        },
+        {
+          "binCenter": 0.0805,
+          "count": 3
+        },
+        {
+          "binCenter": 0.0855,
+          "count": 2
+        },
+        {
+          "binCenter": 0.0905,
+          "count": 1
+        },
+        {
+          "binCenter": 0.0955,
+          "count": 1
+        },
+        {
+          "binCenter": 0.1004,
+          "count": 0
+        }
+      ]
+    },
+    "fisherZ": {
+      "rObs": -0.4793371466938919,
+      "rSim": -0.9506159208587809,
+      "zObs": 0.5221233374342402,
+      "zSim": 1.8381361854389222,
+      "zScore": -13.580066680447674,
+      "pValue": 0
+    },
+    "effectSize": {
+      "cohensD": 3.066363250364367,
+      "label": "large",
+      "slopeRatio": 1.4387756953613462,
+      "slopeRatioErr": 0.20433374648565333
+    },
+    "welchT": {
+      "tStat": -216.8246247913867,
+      "df": 10371.199036233695,
+      "pValue": 0
+    },
+    "bootstrapHistograms": {
+      "sparc": [
+        {
+          "binCenter": -0.1781,
+          "count": 0
+        },
+        {
+          "binCenter": -0.17541,
+          "count": 1
+        },
+        {
+          "binCenter": -0.17272,
+          "count": 1
+        },
+        {
+          "binCenter": -0.17002,
+          "count": 1
+        },
+        {
+          "binCenter": -0.16733,
+          "count": 1
+        },
+        {
+          "binCenter": -0.16464,
+          "count": 3
+        },
+        {
+          "binCenter": -0.16195,
+          "count": 7
+        },
+        {
+          "binCenter": -0.15925,
+          "count": 3
+        },
+        {
+          "binCenter": -0.15656,
+          "count": 22
+        },
+        {
+          "binCenter": -0.15387,
+          "count": 29
+        },
+        {
+          "binCenter": -0.15117,
+          "count": 29
+        },
+        {
+          "binCenter": -0.14848,
+          "count": 58
+        },
+        {
+          "binCenter": -0.14579,
+          "count": 102
+        },
+        {
+          "binCenter": -0.14309,
+          "count": 133
+        },
+        {
+          "binCenter": -0.1404,
+          "count": 185
+        },
+        {
+          "binCenter": -0.13771,
+          "count": 229
+        },
+        {
+          "binCenter": -0.13502,
+          "count": 283
+        },
+        {
+          "binCenter": -0.13232,
+          "count": 350
+        },
+        {
+          "binCenter": -0.12963,
+          "count": 419
+        },
+        {
+          "binCenter": -0.12694,
+          "count": 475
+        },
+        {
+          "binCenter": -0.12424,
+          "count": 563
+        },
+        {
+          "binCenter": -0.12155,
+          "count": 611
+        },
+        {
+          "binCenter": -0.11886,
+          "count": 678
+        },
+        {
+          "binCenter": -0.11616,
+          "count": 724
+        },
+        {
+          "binCenter": -0.11347,
+          "count": 655
+        },
+        {
+          "binCenter": -0.11078,
+          "count": 657
+        },
+        {
+          "binCenter": -0.10809,
+          "count": 609
+        },
+        {
+          "binCenter": -0.10539,
+          "count": 566
+        },
+        {
+          "binCenter": -0.1027,
+          "count": 505
+        },
+        {
+          "binCenter": -0.10001,
+          "count": 430
+        },
+        {
+          "binCenter": -0.09731,
+          "count": 371
+        },
+        {
+          "binCenter": -0.09462,
+          "count": 330
+        },
+        {
+          "binCenter": -0.09193,
+          "count": 261
+        },
+        {
+          "binCenter": -0.08923,
+          "count": 174
+        },
+        {
+          "binCenter": -0.08654,
+          "count": 157
+        },
+        {
+          "binCenter": -0.08385,
+          "count": 121
+        },
+        {
+          "binCenter": -0.08115,
+          "count": 100
+        },
+        {
+          "binCenter": -0.07846,
+          "count": 50
+        },
+        {
+          "binCenter": -0.07577,
+          "count": 41
+        },
+        {
+          "binCenter": -0.07308,
+          "count": 16
+        },
+        {
+          "binCenter": -0.07038,
+          "count": 18
+        },
+        {
+          "binCenter": -0.06769,
+          "count": 10
+        },
+        {
+          "binCenter": -0.065,
+          "count": 9
+        },
+        {
+          "binCenter": -0.0623,
+          "count": 8
+        },
+        {
+          "binCenter": -0.05961,
+          "count": 3
+        },
+        {
+          "binCenter": -0.05692,
+          "count": 1
+        },
+        {
+          "binCenter": -0.05422,
+          "count": 0
+        },
+        {
+          "binCenter": -0.05153,
+          "count": 0
+        },
+        {
+          "binCenter": -0.04884,
+          "count": 1
+        },
+        {
+          "binCenter": -0.04615,
+          "count": 0
+        }
+      ],
+      "lcdm": [
+        {
+          "binCenter": -0.1781,
+          "count": 0
+        },
+        {
+          "binCenter": -0.17541,
+          "count": 0
+        },
+        {
+          "binCenter": -0.17272,
+          "count": 0
+        },
+        {
+          "binCenter": -0.17002,
+          "count": 0
+        },
+        {
+          "binCenter": -0.16733,
+          "count": 0
+        },
+        {
+          "binCenter": -0.16464,
+          "count": 0
+        },
+        {
+          "binCenter": -0.16195,
+          "count": 0
+        },
+        {
+          "binCenter": -0.15925,
+          "count": 0
+        },
+        {
+          "binCenter": -0.15656,
+          "count": 0
+        },
+        {
+          "binCenter": -0.15387,
+          "count": 0
+        },
+        {
+          "binCenter": -0.15117,
+          "count": 0
+        },
+        {
+          "binCenter": -0.14848,
+          "count": 0
+        },
+        {
+          "binCenter": -0.14579,
+          "count": 0
+        },
+        {
+          "binCenter": -0.14309,
+          "count": 0
+        },
+        {
+          "binCenter": -0.1404,
+          "count": 0
+        },
+        {
+          "binCenter": -0.13771,
+          "count": 0
+        },
+        {
+          "binCenter": -0.13502,
+          "count": 0
+        },
+        {
+          "binCenter": -0.13232,
+          "count": 0
+        },
+        {
+          "binCenter": -0.12963,
+          "count": 0
+        },
+        {
+          "binCenter": -0.12694,
+          "count": 0
+        },
+        {
+          "binCenter": -0.12424,
+          "count": 0
+        },
+        {
+          "binCenter": -0.12155,
+          "count": 0
+        },
+        {
+          "binCenter": -0.11886,
+          "count": 0
+        },
+        {
+          "binCenter": -0.11616,
+          "count": 0
+        },
+        {
+          "binCenter": -0.11347,
+          "count": 0
+        },
+        {
+          "binCenter": -0.11078,
+          "count": 0
+        },
+        {
+          "binCenter": -0.10809,
+          "count": 0
+        },
+        {
+          "binCenter": -0.10539,
+          "count": 0
+        },
+        {
+          "binCenter": -0.1027,
+          "count": 0
+        },
+        {
+          "binCenter": -0.10001,
+          "count": 0
+        },
+        {
+          "binCenter": -0.09731,
+          "count": 0
+        },
+        {
+          "binCenter": -0.09462,
+          "count": 0
+        },
+        {
+          "binCenter": -0.09193,
+          "count": 0
+        },
+        {
+          "binCenter": -0.08923,
+          "count": 0
+        },
+        {
+          "binCenter": -0.08654,
+          "count": 35
+        },
+        {
+          "binCenter": -0.08385,
+          "count": 668
+        },
+        {
+          "binCenter": -0.08115,
+          "count": 3331
+        },
+        {
+          "binCenter": -0.07846,
+          "count": 4370
+        },
+        {
+          "binCenter": -0.07577,
+          "count": 1486
+        },
+        {
+          "binCenter": -0.07308,
+          "count": 108
+        },
+        {
+          "binCenter": -0.07038,
+          "count": 2
+        },
+        {
+          "binCenter": -0.06769,
+          "count": 0
+        },
+        {
+          "binCenter": -0.065,
+          "count": 0
+        },
+        {
+          "binCenter": -0.0623,
+          "count": 0
+        },
+        {
+          "binCenter": -0.05961,
+          "count": 0
+        },
+        {
+          "binCenter": -0.05692,
+          "count": 0
+        },
+        {
+          "binCenter": -0.05422,
+          "count": 0
+        },
+        {
+          "binCenter": -0.05153,
+          "count": 0
+        },
+        {
+          "binCenter": -0.04884,
+          "count": 0
+        },
+        {
+          "binCenter": -0.04615,
+          "count": 0
+        }
+      ]
+    },
+    "whyStronger": [
+      {
+        "mechanism": "Adiabatic contraction",
+        "description": "Real baryonic infall contracts the DM halo, creating a tighter density–DM coupling than simple NFW profiles predict.",
+        "prediction": "High-Σ galaxies should show steeper inner DM profiles than NFW.",
+        "testable": true
+      },
+      {
+        "mechanism": "Feedback-driven core creation",
+        "description": "Stellar feedback in low-Σ dwarfs creates DM cores, boosting f_DM at low density more than NFW expects.",
+        "prediction": "Dwarf galaxies should show DM cores (not cusps) proportional to star formation history.",
+        "testable": true
+      },
+      {
+        "mechanism": "Abundance matching scatter",
+        "description": "Our mock uses a deterministic M★–M₂₀₀ relation. Real scatter in this relation could steepen the slope.",
+        "prediction": "Adding realistic scatter (0.2 dex) to M★–M₂₀₀ should produce slopes closer to observed.",
+        "testable": true
+      },
+      {
+        "mechanism": "MOND-like density threshold",
+        "description": "In MOND/modified gravity, the transition from Newtonian to modified regime depends on surface density (Σ ∝ a₀/G), naturally creating a steeper f_DM–Σ relation.",
+        "prediction": "The slope should correlate with a₀ = 1.2×10⁻¹⁰ m/s² and show a characteristic break.",
+        "testable": true
+      }
+    ]
+  }
 }

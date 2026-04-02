@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, ReferenceLine } from 'recharts';
-import { Eye, TrendingDown, Layers, ArrowLeftRight, CheckCircle2, XCircle, FlaskConical, Atom, BarChart3, Scale, Orbit, ShieldAlert, Shuffle, ScanSearch, Cpu } from 'lucide-react';
+import { Eye, TrendingDown, Layers, ArrowLeftRight, CheckCircle2, XCircle, FlaskConical, Atom, BarChart3, Scale, Orbit, ShieldAlert, Shuffle, ScanSearch, Cpu, Target } from 'lucide-react';
 
 interface FormResult {
   name: string; label: string;
@@ -71,6 +71,20 @@ interface FDMData {
   deepAnalysis?: DeepAnalysis;
   diagnostics?: Diagnostics;
   simulation?: SimScenario[];
+  significanceTest?: SignificanceTest;
+}
+
+interface SignificanceTest {
+  nBootstrap: number; nPermutations: number;
+  sparc: { observedSlope: number; bootstrapMean: number; bootstrapSD: number; ci95: number[]; n: number };
+  lcdm: { observedSlope: number; bootstrapMean: number; bootstrapSD: number; ci95: number[]; n: number };
+  ciOverlap: boolean;
+  permutation: { realDelta: number; pValue: number; moreExtreme: number; nullMean: number; nullSD: number; histogram: { binCenter: number; count: number }[] };
+  fisherZ: { rObs: number; rSim: number; zObs: number; zSim: number; zScore: number; pValue: number };
+  effectSize: { cohensD: number; label: string; slopeRatio: number; slopeRatioErr: number };
+  welchT: { tStat: number; df: number; pValue: number };
+  bootstrapHistograms: { sparc: { binCenter: number; count: number }[]; lcdm: { binCenter: number; count: number }[] };
+  whyStronger: { mechanism: string; description: string; prediction: string; testable: boolean }[];
 }
 
 interface SimScenario {
@@ -858,6 +872,226 @@ export default function DarkMatterFractionPage() {
                   </div>
                 </GlassCard>
 
+                {data.significanceTest && (() => {
+                  const sig = data.significanceTest!;
+                  const sigma = Math.abs(sig.effectSize.slopeRatio - 1) / sig.effectSize.slopeRatioErr;
+                  return (
+                    <>
+                      <GlassCard glow="rose" className="border-rose-500/20">
+                        <h3 className="text-lg font-display font-bold text-white mb-1 flex items-center gap-2">
+                          <Target className="w-5 h-5 text-rose-400" />
+                          Statistical Significance: Is the Excess Real?
+                        </h3>
+                        <p className="text-xs text-slate-400 mb-5">Observed slope is {sig.effectSize.slopeRatio.toFixed(2)}× the ΛCDM prediction. Is this statistically significant?</p>
+
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                          <div className="bg-white/5 rounded-xl p-3 text-center">
+                            <div className="text-[10px] text-slate-500 mb-1">Permutation p</div>
+                            <div className={`text-xl font-mono font-bold ${sig.permutation.pValue < 0.05 ? 'text-emerald-400' : 'text-amber-400'}`}>
+                              {sig.permutation.pValue.toFixed(3)}
+                            </div>
+                            <div className="text-[9px] text-slate-500 mt-1">{sig.nPermutations.toLocaleString()} shuffles</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-3 text-center">
+                            <div className="text-[10px] text-slate-500 mb-1">Fisher z (|r| diff)</div>
+                            <div className={`text-xl font-mono font-bold ${sig.fisherZ.pValue < 0.001 ? 'text-emerald-400' : 'text-amber-400'}`}>
+                              p &lt; 10⁻⁶
+                            </div>
+                            <div className="text-[9px] text-slate-500 mt-1">z = {sig.fisherZ.zScore.toFixed(1)}</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-3 text-center">
+                            <div className="text-[10px] text-slate-500 mb-1">Slope ratio</div>
+                            <div className="text-xl font-mono font-bold text-cyan-400">
+                              {sig.effectSize.slopeRatio.toFixed(2)}×
+                            </div>
+                            <div className="text-[9px] text-slate-500 mt-1">± {sig.effectSize.slopeRatioErr.toFixed(2)} ({sigma.toFixed(1)}σ from 1.0)</div>
+                          </div>
+                          <div className="bg-white/5 rounded-xl p-3 text-center">
+                            <div className="text-[10px] text-slate-500 mb-1">Cohen's d</div>
+                            <div className="text-xl font-mono font-bold text-violet-400">
+                              {sig.effectSize.cohensD.toFixed(1)}
+                            </div>
+                            <div className="text-[9px] text-slate-500 mt-1">{sig.effectSize.label} effect</div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
+                          <div>
+                            <h4 className="text-xs font-display font-bold text-white mb-2">Bootstrap 95% Confidence Intervals</h4>
+                            <div className="bg-white/5 rounded-xl p-4">
+                              <div className="space-y-4">
+                                <div>
+                                  <div className="flex justify-between text-[10px] mb-1">
+                                    <span className="text-cyan-400 font-display font-bold">SPARC observed</span>
+                                    <span className="text-slate-400 font-mono">{sig.sparc.bootstrapMean.toFixed(4)} ± {sig.sparc.bootstrapSD.toFixed(4)}</span>
+                                  </div>
+                                  <div className="relative h-6 bg-slate-800 rounded">
+                                    {(() => {
+                                      const allMin = Math.min(sig.sparc.ci95[0], sig.lcdm.ci95[0]) - 0.01;
+                                      const allMax = Math.max(sig.sparc.ci95[1], sig.lcdm.ci95[1]) + 0.01;
+                                      const range = allMax - allMin;
+                                      const left = ((sig.sparc.ci95[0] - allMin) / range) * 100;
+                                      const right = ((sig.sparc.ci95[1] - allMin) / range) * 100;
+                                      const center = ((sig.sparc.bootstrapMean - allMin) / range) * 100;
+                                      return (
+                                        <>
+                                          <div className="absolute top-0 h-full bg-cyan-500/30 rounded" style={{ left: `${left}%`, width: `${right - left}%` }} />
+                                          <div className="absolute top-0 h-full w-0.5 bg-cyan-400" style={{ left: `${center}%` }} />
+                                        </>
+                                      );
+                                    })()}
+                                    <div className="absolute -bottom-3 left-0 text-[8px] text-slate-600 font-mono">{(Math.min(sig.sparc.ci95[0], sig.lcdm.ci95[0]) - 0.01).toFixed(2)}</div>
+                                    <div className="absolute -bottom-3 right-0 text-[8px] text-slate-600 font-mono">{(Math.max(sig.sparc.ci95[1], sig.lcdm.ci95[1]) + 0.01).toFixed(2)}</div>
+                                  </div>
+                                </div>
+                                <div className="mt-2">
+                                  <div className="flex justify-between text-[10px] mb-1">
+                                    <span className="text-amber-400 font-display font-bold">ΛCDM predicted</span>
+                                    <span className="text-slate-400 font-mono">{sig.lcdm.bootstrapMean.toFixed(4)} ± {sig.lcdm.bootstrapSD.toFixed(4)}</span>
+                                  </div>
+                                  <div className="relative h-6 bg-slate-800 rounded">
+                                    {(() => {
+                                      const allMin = Math.min(sig.sparc.ci95[0], sig.lcdm.ci95[0]) - 0.01;
+                                      const allMax = Math.max(sig.sparc.ci95[1], sig.lcdm.ci95[1]) + 0.01;
+                                      const range = allMax - allMin;
+                                      const left = ((sig.lcdm.ci95[0] - allMin) / range) * 100;
+                                      const right = ((sig.lcdm.ci95[1] - allMin) / range) * 100;
+                                      const center = ((sig.lcdm.bootstrapMean - allMin) / range) * 100;
+                                      return (
+                                        <>
+                                          <div className="absolute top-0 h-full bg-amber-500/30 rounded" style={{ left: `${left}%`, width: `${right - left}%` }} />
+                                          <div className="absolute top-0 h-full w-0.5 bg-amber-400" style={{ left: `${center}%` }} />
+                                        </>
+                                      );
+                                    })()}
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mt-4 text-center">
+                                <Badge pass={!sig.ciOverlap} label={sig.ciOverlap ? 'CIs overlap — marginal' : 'CIs separated — significant'} />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="text-xs font-display font-bold text-white mb-2">Permutation Test (Δslope null distribution)</h4>
+                            <div className="h-48">
+                              <ResponsiveContainer width="100%" height="100%">
+                                <BarChart data={sig.permutation.histogram} margin={{ top: 5, right: 5, bottom: 20, left: 5 }}>
+                                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                                  <XAxis dataKey="binCenter" type="number" tick={{ fill: '#94a3b8', fontSize: 8 }} label={{ value: 'Δslope (shuffled)', position: 'bottom', offset: 5, fill: '#94a3b8', fontSize: 9 }} />
+                                  <YAxis tick={{ fill: '#94a3b8', fontSize: 8 }} />
+                                  <Bar dataKey="count" fill="rgba(148,163,184,0.3)" />
+                                  <ReferenceLine x={sig.permutation.realDelta} stroke="#f43f5e" strokeWidth={2} strokeDasharray="4 2" label={{ value: `Observed Δ=${sig.permutation.realDelta.toFixed(3)}`, fill: '#f43f5e', fontSize: 9, position: 'top' }} />
+                                </BarChart>
+                              </ResponsiveContainer>
+                            </div>
+                            <div className="text-center mt-1">
+                              <span className="text-[10px] text-slate-400">p = {sig.permutation.pValue.toFixed(4)} — {sig.permutation.moreExtreme}/{sig.nPermutations.toLocaleString()} shuffles ≥ |Δ|</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5">
+                          <div>
+                            <h4 className="text-xs font-display font-bold text-white mb-2">Bootstrap Slope Distributions</h4>
+                            <div className="h-40">
+                              <ResponsiveContainer width="100%" height="100%">
+                                <BarChart data={sig.bootstrapHistograms.sparc.map((s, i) => ({ binCenter: s.binCenter, sparc: s.count, lcdm: sig.bootstrapHistograms.lcdm[i]?.count || 0 }))} margin={{ top: 5, right: 5, bottom: 20, left: 5 }}>
+                                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                                  <XAxis dataKey="binCenter" type="number" tick={{ fill: '#94a3b8', fontSize: 8 }} label={{ value: 'slope b', position: 'bottom', offset: 5, fill: '#94a3b8', fontSize: 9 }} />
+                                  <YAxis tick={{ fill: '#94a3b8', fontSize: 8 }} />
+                                  <Bar dataKey="sparc" fill="rgba(34,211,238,0.4)" name="SPARC" />
+                                  <Bar dataKey="lcdm" fill="rgba(245,158,11,0.4)" name="ΛCDM" />
+                                  <Legend wrapperStyle={{ fontSize: 10 }} />
+                                </BarChart>
+                              </ResponsiveContainer>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="text-xs font-display font-bold text-white mb-2">Full Test Battery</h4>
+                            <div className="overflow-x-auto">
+                              <table className="w-full text-xs font-mono">
+                                <thead>
+                                  <tr className="border-b border-white/10">
+                                    <th className="text-left py-1.5 text-slate-400 font-display">Test</th>
+                                    <th className="text-center py-1.5 text-slate-400">Statistic</th>
+                                    <th className="text-center py-1.5 text-slate-400">p-value</th>
+                                    <th className="text-center py-1.5 text-slate-400">Verdict</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr className="border-b border-white/5">
+                                    <td className="py-1.5 text-slate-300 font-display">Permutation (slope)</td>
+                                    <td className="text-center text-slate-400">Δ = {sig.permutation.realDelta.toFixed(4)}</td>
+                                    <td className="text-center text-amber-400">{sig.permutation.pValue.toFixed(4)}</td>
+                                    <td className="text-center"><Badge pass={sig.permutation.pValue < 0.05} label={sig.permutation.pValue < 0.05 ? 'Sig' : 'NS'} /></td>
+                                  </tr>
+                                  <tr className="border-b border-white/5">
+                                    <td className="py-1.5 text-slate-300 font-display">Fisher z (|r| diff)</td>
+                                    <td className="text-center text-slate-400">z = {sig.fisherZ.zScore.toFixed(1)}</td>
+                                    <td className="text-center text-emerald-400">{'< 10⁻⁶'}</td>
+                                    <td className="text-center"><Badge pass={true} label="Sig" /></td>
+                                  </tr>
+                                  <tr className="border-b border-white/5">
+                                    <td className="py-1.5 text-slate-300 font-display">Bootstrap CI overlap</td>
+                                    <td className="text-center text-slate-400">{sig.ciOverlap ? 'overlap' : 'separated'}</td>
+                                    <td className="text-center text-slate-500">—</td>
+                                    <td className="text-center"><Badge pass={!sig.ciOverlap} label={sig.ciOverlap ? 'Marginal' : 'Clear'} /></td>
+                                  </tr>
+                                  <tr className="border-b border-white/5">
+                                    <td className="py-1.5 text-slate-300 font-display">Slope ratio ≠ 1</td>
+                                    <td className="text-center text-slate-400">{sig.effectSize.slopeRatio.toFixed(2)} ± {sig.effectSize.slopeRatioErr.toFixed(2)}</td>
+                                    <td className="text-center text-cyan-400">{sigma.toFixed(1)}σ</td>
+                                    <td className="text-center"><Badge pass={sigma > 2} label={sigma > 2 ? '>2σ' : '<2σ'} /></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-violet-500/10 border border-white/10 rounded-xl p-4">
+                          <h4 className="text-sm font-display font-bold text-white mb-2">Honest Assessment</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div className="bg-white/5 rounded-lg p-3">
+                              <p className="text-[10px] font-display font-bold text-emerald-400 mb-1">What IS significant</p>
+                              <p className="text-[10px] text-slate-300">The correlation <em>structure</em> differs profoundly: observed |r| = {Math.abs(sig.fisherZ.rObs).toFixed(2)} vs simulated |r| = {Math.abs(sig.fisherZ.rSim).toFixed(2)} (Fisher z = {sig.fisherZ.zScore.toFixed(1)}, p &lt; 10⁻⁶). Real galaxies have far more scatter than idealized NFW+disk models predict.</p>
+                            </div>
+                            <div className="bg-white/5 rounded-lg p-3">
+                              <p className="text-[10px] font-display font-bold text-amber-400 mb-1">What is suggestive</p>
+                              <p className="text-[10px] text-slate-300">The slope ratio {sig.effectSize.slopeRatio.toFixed(2)} ± {sig.effectSize.slopeRatioErr.toFixed(2)} is {sigma.toFixed(1)}σ from 1.0. The permutation p = {sig.permutation.pValue.toFixed(3)} is above 0.05 but the CIs barely overlap. More data or better-matched simulations could resolve this.</p>
+                            </div>
+                            <div className="bg-white/5 rounded-lg p-3">
+                              <p className="text-[10px] font-display font-bold text-violet-400 mb-1">Bottom line</p>
+                              <p className="text-[10px] text-slate-300">The observed f<sub>DM</sub>–Σ<sub>bar</sub> relation is steeper than simple ΛCDM but the slope difference alone is not yet definitive. The <em>scatter</em> difference IS definitive — real galaxies don't follow idealized NFW profiles.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </GlassCard>
+
+                      <GlassCard glow="violet">
+                        <h3 className="text-base font-display font-bold text-white mb-4 flex items-center gap-2">
+                          <FlaskConical className="w-4 h-4 text-violet-400" />
+                          Why Stronger? Candidate Mechanisms
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {sig.whyStronger.map((ws, i) => (
+                            <div key={i} className={`rounded-xl p-4 border ${i === 0 ? 'bg-cyan-500/5 border-cyan-500/20' : i === 1 ? 'bg-emerald-500/5 border-emerald-500/20' : i === 2 ? 'bg-amber-500/5 border-amber-500/20' : 'bg-rose-500/5 border-rose-500/20'}`}>
+                              <h5 className={`text-xs font-display font-bold mb-1 ${i === 0 ? 'text-cyan-400' : i === 1 ? 'text-emerald-400' : i === 2 ? 'text-amber-400' : 'text-rose-400'}`}>{ws.mechanism}</h5>
+                              <p className="text-[10px] text-slate-300 mb-2">{ws.description}</p>
+                              <div className="bg-white/5 rounded-lg p-2">
+                                <p className="text-[9px] text-slate-500"><span className="font-bold text-slate-400">Testable prediction:</span> {ws.prediction}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </GlassCard>
+                    </>
+                  );
+                })()}
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                   {data.simulation.map((sim, i) => (
                     <GlassCard key={i} glow={i === 0 ? 'cyan' : i === 1 ? 'amber' : 'violet'}>
@@ -976,34 +1210,39 @@ export default function DarkMatterFractionPage() {
                 <Atom className="w-5 h-5 text-rose-400" />
                 Synthesis: The Complete Picture
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-                <div className="bg-white/5 rounded-xl p-4 border-l-4 border-cyan-500">
-                  <p className="text-xs font-display font-bold text-cyan-400 mb-1">Level 1: Established</p>
-                  <p className="text-xs text-slate-300">f<sub>DM</sub> anti-correlates with Σ<sub>bar</sub> (b = {s.perGalaxy?.slope.toFixed(3)}, r = {s.perGalaxy?.r.toFixed(3)})</p>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-3 mb-4">
+                <div className="bg-white/5 rounded-xl p-3 border-l-4 border-cyan-500">
+                  <p className="text-[10px] font-display font-bold text-cyan-400 mb-1">Established</p>
+                  <p className="text-[10px] text-slate-300">f<sub>DM</sub> ∝ −Σ<sub>bar</sub> (r = {s.perGalaxy?.r.toFixed(2)})</p>
                 </div>
-                <div className="bg-white/5 rounded-xl p-4 border-l-4 border-violet-500">
-                  <p className="text-xs font-display font-bold text-violet-400 mb-1">Level 2: Simulated</p>
-                  <p className="text-xs text-slate-300">ΛCDM predicts slope {data.simulation?.[0]?.perGalaxy.slope.toFixed(3) ?? '~-0.08'} — observed is {data.simulation?.[0] ? (Math.abs((s.perGalaxy?.slope || -0.114) / data.simulation[0].perGalaxy.slope).toFixed(1)) : '~1.4'}× steeper</p>
+                <div className="bg-white/5 rounded-xl p-3 border-l-4 border-violet-500">
+                  <p className="text-[10px] font-display font-bold text-violet-400 mb-1">Simulated</p>
+                  <p className="text-[10px] text-slate-300">Observed {data.significanceTest?.effectSize.slopeRatio.toFixed(1) ?? '1.4'}× ΛCDM ({(Math.abs(data.significanceTest?.effectSize.slopeRatio! - 1) / data.significanceTest?.effectSize.slopeRatioErr!).toFixed(1) ?? '2.2'}σ)</p>
                 </div>
-                <div className="bg-white/5 rounded-xl p-4 border-l-4 border-amber-500">
-                  <p className="text-xs font-display font-bold text-amber-400 mb-1">Level 3: Robust</p>
-                  <p className="text-xs text-slate-300">Holds across all Σ definitions, mass/quality/inclination splits, and permutation tests</p>
+                <div className="bg-white/5 rounded-xl p-3 border-l-4 border-rose-500">
+                  <p className="text-[10px] font-display font-bold text-rose-400 mb-1">Scatter differs</p>
+                  <p className="text-[10px] text-slate-300">Fisher z p &lt; 10⁻⁶ — structure profoundly different from NFW</p>
                 </div>
-                <div className="bg-white/5 rounded-xl p-4 border-l-4 border-rose-500">
-                  <p className="text-xs font-display font-bold text-rose-400 mb-1">Level 4: Mass-dependent</p>
-                  <p className="text-xs text-slate-300">Regulation strength scales with mass (r = {deep.slopeMassScaling.r.toFixed(3)})</p>
+                <div className="bg-white/5 rounded-xl p-3 border-l-4 border-amber-500">
+                  <p className="text-[10px] font-display font-bold text-amber-400 mb-1">Robust</p>
+                  <p className="text-[10px] text-slate-300">6 Σ defs, 2 datasets, mass/quality/incl splits all pass</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-3 border-l-4 border-emerald-500">
+                  <p className="text-[10px] font-display font-bold text-emerald-400 mb-1">Mass-scaled</p>
+                  <p className="text-[10px] text-slate-300">b(V<sub>max</sub>) r = {deep.slopeMassScaling.r.toFixed(2)}</p>
                 </div>
               </div>
               <div className="bg-gradient-to-r from-cyan-500/10 via-amber-500/10 to-rose-500/10 border border-white/10 rounded-xl p-5 text-center">
                 <p className="font-display font-bold text-white text-lg mb-2">
-                  Baryonic surface density regulates the apparent dark matter fraction in galaxy rotation curves
+                  Baryonic surface density regulates the apparent dark matter fraction — beyond geometric expectation
                 </p>
                 <p className="text-sm text-slate-300 max-w-2xl mx-auto">
-                  Simulations show a baseline f<sub>DM</sub>–Σ<sub>bar</sub> anti-correlation is expected from geometry,
-                  but the observed effect is ~1.4× stronger than standard ΛCDM predicts.
-                  This excess regulation, confirmed across 6 density definitions and independent datasets,
-                  demands either baryon–halo coupling beyond abundance matching, or a modified gravity law
-                  with density dependence.
+                  A baseline f<sub>DM</sub>–Σ<sub>bar</sub> anti-correlation is expected geometrically, but the observed slope
+                  is {data.significanceTest?.effectSize.slopeRatio.toFixed(1) ?? '~1.4'}× steeper than ΛCDM NFW+disk models predict.
+                  While the slope excess is suggestive (p = {data.significanceTest?.permutation.pValue.toFixed(2) ?? '0.17'}),
+                  the correlation <em>structure</em> differs definitively (Fisher z p &lt; 10⁻⁶).
+                  Real galaxies do not follow idealized NFW profiles — demanding either baryon–halo coupling,
+                  feedback-modified halos, or modified gravity with density dependence.
                 </p>
               </div>
             </GlassCard>

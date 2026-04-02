@@ -83,6 +83,7 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/src/pages/dark-matter-fraction.tsx` — Dark Matter Fraction page: f_DM = (g_obs−g_bar)/g_obs vs Σ_bar analysis, SPARC (b=−0.130, r=−0.654, 169 galaxies), LITTLE THINGS replication (b=−0.162), deep analysis (functional forms, mass scaling r=−0.941, halo connection), diagnostics (circularity check cleared, 6 alt Σ definitions all negative, selection bias tests), simulation test (3 scenarios: ΛCDM, ΛCDM+feedback, independent halos)
 - `artifacts/galaxy-analyzer/public/fdm-analysis.json` — f_DM analysis data: SPARC results, LITTLE THINGS replication, deep analysis, diagnostics, simulation results (300 mock galaxies × 3 scenarios)
 - `artifacts/galaxy-analyzer/scripts/fdm-simulation.cjs` — Mock galaxy simulation: NFW halos + exponential disks, 3 scenarios (ΛCDM abundance-matched, ΛCDM+feedback, independent), tests f_DM vs Σ_bar across density definitions and galaxy types
+- `artifacts/galaxy-analyzer/scripts/fdm-significance.cjs` — Statistical significance tests: 10,000 bootstrap CIs, 10,000 permutation test, Fisher z-test, Cohen's d, Welch's t-test. Key results: permutation p=0.174 (marginal), Fisher z p<10⁻⁶ (scatter structure differs), slope ratio 1.44±0.20 (2.2σ from 1.0)
 - `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (14 pages)
 
 ### Design System
