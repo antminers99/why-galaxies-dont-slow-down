@@ -151,30 +151,30 @@ export default function EvidencePage() {
   return (
     <Layout>
       <div ref={mainRef} className="space-y-10">
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-display font-bold text-white flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-500 flex items-center justify-center shadow-lg shadow-amber-500/20">
-                <BookOpen className="w-7 h-7 text-white" />
+            <h1 className="text-2xl md:text-3xl font-display font-bold text-white flex items-center gap-3">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-500 flex items-center justify-center shadow-lg shadow-amber-500/20 flex-shrink-0">
+                <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
               The Evidence
             </h1>
-            <p className="text-slate-400 mt-2 max-w-2xl">
+            <p className="text-slate-400 mt-2 max-w-2xl text-sm md:text-base">
               Complete research narrative: from observation to discovery. Seven findings that show dark matter halo structure
               is coupled to baryonic surface density far beyond what standard physics predicts.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-2 md:gap-3">
             {excess && (
-              <div className="px-5 py-3 rounded-2xl text-sm font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">
+              <div className="px-3 py-2 md:px-5 md:py-3 rounded-2xl text-xs md:text-sm font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse">
                 {excess.maxSigma.toFixed(1)}σ DISCOVERY
               </div>
             )}
-            <div className="px-5 py-3 rounded-2xl text-sm font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <div className="px-3 py-2 md:px-5 md:py-3 rounded-2xl text-xs md:text-sm font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
               {s.perGalaxy.n} GALAXIES
             </div>
             {coupling && (
-              <div className="px-5 py-3 rounded-2xl text-sm font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
+              <div className="px-3 py-2 md:px-5 md:py-3 rounded-2xl text-xs md:text-sm font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
                 {coupling.passCount}/6 TESTS
               </div>
             )}
@@ -186,7 +186,7 @@ export default function EvidencePage() {
             <Target className="w-5 h-5 text-amber-400" />
             <h3 className="text-white font-bold">Table of Contents</h3>
           </div>
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
             {TOC_ITEMS.map((item, i) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -214,7 +214,7 @@ export default function EvidencePage() {
           {/* ═══════════════ SECTION 1: THE QUESTION ═══════════════ */}
           <section>
             <SectionHeader icon={Atom} number={1} title="The Question" subtitle="Does baryonic surface density track dark matter halo structure?" id="question" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <GlassCard glow="cyan">
                 <h4 className="text-sm font-bold text-white mb-3">The SPARC Dataset</h4>
                 <p className="text-sm text-slate-300 mb-4">
@@ -222,7 +222,7 @@ export default function EvidencePage() {
                   High-quality photometry (3.6μm) + resolved HI/Hα kinematics for {s.perGalaxy.n} galaxies spanning
                   dwarf irregulars (V_max ~ 20 km/s) to massive spirals (V_max ~ 320 km/s).
                 </p>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <StatBox label="Galaxies" value={String(s.perGalaxy.n)} />
                   <StatBox label="Radial Points" value={s.pointLevel.n.toLocaleString()} />
                   <StatBox label="V_max Range" value="20–320" sub="km/s" />
@@ -245,7 +245,7 @@ export default function EvidencePage() {
             </div>
             <GlassCard className="mt-6">
               <h4 className="text-sm font-bold text-white mb-3">What We Measure</h4>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-white/5 rounded-xl p-4">
                   <div className="text-xs text-cyan-400 font-bold mb-1">Σ_bar</div>
                   <div className="text-xs text-slate-400">Baryonic surface density (M☉/kpc²). Computed from Spitzer 3.6μm luminosity (Υ_d = 0.5, Υ_b = 0.7) + HI gas mass.</div>
@@ -269,7 +269,7 @@ export default function EvidencePage() {
           {/* ═══════════════ SECTION 2: THE ANTI-CORRELATION ═══════════════ */}
           <section>
             <SectionHeader icon={TrendingDown} number={2} title="Finding 1: The Anti-Correlation" subtitle="f_DM is strongly anti-correlated with baryonic surface density" id="anticorrelation" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <GlassCard glow="cyan">
                 <h4 className="text-sm font-bold text-white mb-2">f_DM vs log(Σ_bar) — {s.pointLevel.n.toLocaleString()} Radial Points</h4>
                 <p className="text-xs text-slate-500 mb-3 font-mono">
@@ -319,7 +319,7 @@ export default function EvidencePage() {
           <section>
             <SectionHeader icon={Layers} number={3} title="Finding 2: Mass Independence" subtitle="The anti-correlation holds across ALL mass bins — not just a mass proxy" id="massindep" />
             <GlassCard glow="cyan">
-              <div className="grid grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 {s.byVmax.map((bin: any, i: number) => {
                   const colors = ['text-cyan-400', 'text-violet-400', 'text-rose-400'];
                   const glows = ['cyan', 'violet', 'rose'];
@@ -347,7 +347,7 @@ export default function EvidencePage() {
                   );
                 })}
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white/5 rounded-xl p-4">
                   <h4 className="text-sm font-bold text-white mb-2">Inner vs Outer Radii</h4>
                   <div className="grid grid-cols-2 gap-4">
@@ -381,7 +381,7 @@ export default function EvidencePage() {
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   Robustness Checks
                 </h4>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white/5 rounded-xl p-4">
                     <div className="text-xs text-cyan-400 font-bold mb-1">Circularity Test</div>
                     <div className="text-xs text-slate-400 mb-2">Using purely photometric Σ (no rotation curve info)</div>
@@ -430,7 +430,7 @@ export default function EvidencePage() {
                 </div>
               </GlassCard>
 
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {coupling.fingerprint.map((f: any, i: number) => (
                   <GlassCard key={i} glow={f.matchesExpected ? 'cyan' : 'rose'}>
                     <div className="flex items-center justify-between mb-3">
@@ -472,7 +472,7 @@ export default function EvidencePage() {
 
               <GlassCard className="mt-6">
                 <h4 className="text-sm font-bold text-white mb-3">Inner vs Outer Coupling Strength</h4>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white/5 rounded-xl p-4">
                     <h5 className="text-xs font-bold text-white mb-2">V_DM Coupling</h5>
                     <div className="grid grid-cols-2 gap-3">
@@ -529,7 +529,7 @@ export default function EvidencePage() {
                 </div>
               </GlassCard>
 
-              <div className="grid grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 {excess.global.map((g: any, i: number) => {
                   const sigColor = g.sigma >= 5 ? 'text-amber-400' : g.sigma >= 3 ? 'text-emerald-400' : g.sigma >= 2 ? 'text-cyan-400' : 'text-slate-400';
                   return (
@@ -572,7 +572,7 @@ export default function EvidencePage() {
                 })}
               </div>
 
-              <div className="grid grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                 <GlassCard>
                   <h4 className="text-sm font-bold text-white mb-3">Mass-Dependent Excess</h4>
                   <div className="space-y-4">
@@ -605,7 +605,7 @@ export default function EvidencePage() {
                     Predictive Test
                   </h4>
                   <p className="text-xs text-slate-400 mb-4">Does Σ_bar add predictive power beyond V_max alone? Train/test split validation.</p>
-                  <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                     <StatBox label="MSE (Σ only)" value={excess.predictiveTest.mseSigmaOnly.toFixed(4)} color="text-slate-400" />
                     <StatBox label="MSE (V_max only)" value={excess.predictiveTest.mseVmaxOnly.toFixed(4)} color="text-cyan-400" />
                     <StatBox label="MSE (Both)" value={excess.predictiveTest.mseCombined.toFixed(4)} color="text-emerald-400" />
@@ -648,7 +648,7 @@ export default function EvidencePage() {
           {/* ═══════════════ SECTION 6: INDEPENDENT REPLICATION ═══════════════ */}
           <section>
             <SectionHeader icon={Microscope} number={6} title="Finding 5: Independent Replication" subtitle="LITTLE THINGS confirms the signal in 22 dwarf galaxies" id="replication" />
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <GlassCard glow="emerald">
                 <h4 className="text-sm font-bold text-white mb-3">LITTLE THINGS Survey</h4>
                 <p className="text-xs text-slate-400 mb-4">
@@ -657,7 +657,7 @@ export default function EvidencePage() {
                 </p>
                 {lt && (
                   <div className="space-y-3">
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <StatBox label="Slope b" value={lt.simpleRegression.slope.toFixed(3)} color="text-emerald-400" />
                       <StatBox label="Partial r" value={lt.partialCorrelation.rPartial.toFixed(3)} color="text-emerald-400" />
                       <StatBox label="n galaxies" value={String(lt.nGalaxies)} color="text-emerald-400" />
@@ -725,7 +725,7 @@ export default function EvidencePage() {
             {sig && (
               <GlassCard className="mt-6">
                 <h4 className="text-sm font-bold text-white mb-3">Statistical Significance (SPARC vs ΛCDM)</h4>
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-white/5 rounded-xl p-4 text-center">
                     <div className="text-xs text-slate-500 mb-1">Fisher z-score</div>
                     <div className="font-mono text-lg font-bold text-violet-400">{sig.fisherZ.zScore.toFixed(2)}</div>
@@ -879,7 +879,7 @@ export default function EvidencePage() {
                   </p>
                 </div>
 
-                <div className="flex justify-center gap-4 pt-2">
+                <div className="flex flex-wrap justify-center gap-6 pt-2">
                   <div className="text-center">
                     <div className="text-2xl font-mono font-bold text-amber-400">{excess?.maxSigma.toFixed(1)}σ</div>
                     <div className="text-xs text-slate-500">Max Excess</div>
@@ -893,7 +893,7 @@ export default function EvidencePage() {
                     <div className="text-xs text-slate-500">Tests Pass</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-mono font-bold text-violet-400">{excess?.predictiveTest.improvementPct}%</div>
+                    <div className="text-2xl font-mono font-bold text-violet-400">{excess?.predictiveTest?.improvementPct}%</div>
                     <div className="text-xs text-slate-500">Predictive Gain</div>
                   </div>
                 </div>
