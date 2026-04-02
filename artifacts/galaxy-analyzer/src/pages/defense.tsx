@@ -91,6 +91,7 @@ interface FeedbackMetricResult {
   excessWithFeedback: { sigma: number };
   feedbackExplainsPercent: number;
   feedbackFullyExplains: boolean;
+  caveat?: string;
 }
 
 interface FeedbackComponent {
@@ -106,15 +107,22 @@ interface FeedbackData {
     description: string;
     components: FeedbackComponent[];
     nGalaxies: number;
+    limitations?: string[];
   };
   summary: {
     maxSigmaWithoutFeedback: number;
     maxSigmaWithFeedback: number;
+    robustMetric?: string;
+    robustSigma?: number;
+    inflatedMetric?: string;
+    inflatedSigma?: number;
+    inflatedReason?: string;
     averageReductionPercent: number;
     allMetricsFullyExplained: boolean;
     verdict: string;
     honestAssessment: string;
     updatedClaim: string;
+    nextSteps?: string;
   };
 }
 
@@ -396,7 +404,7 @@ export default function DefensePage() {
                   <strong>The critique:</strong> "You compare data with baryonic physics against simulation WITHOUT feedback. Of course you get 'excess' — but that might just mean your simulation is incomplete, not that there's new physics."
                 </p>
                 <p className="text-slate-400 text-sm mt-2">
-                  <strong>Our response:</strong> We built ΛCDM + full baryonic feedback (Di Cintio et al. 2014 core formation + Blumenthal et al. 1986 adiabatic contraction) and re-ran the comparison.
+                  <strong>Our response:</strong> We built ΛCDM + parametric baryonic feedback (Di Cintio et al. 2014 core formation + Blumenthal et al. 1986 adiabatic contraction) and re-ran the comparison. We acknowledge this is not a full hydrodynamic simulation.
                 </p>
               </div>
 
@@ -405,11 +413,17 @@ export default function DefensePage() {
                   const fullyExplained = m.feedbackFullyExplains;
                   const sigBefore = m.excessNoFeedback.sigma;
                   const sigAfter = m.excessWithFeedback.sigma;
-                  const color = fullyExplained ? 'emerald' : sigAfter > sigBefore ? 'rose' : 'amber';
-                  const borderColor = { emerald: 'border-emerald-500/20', rose: 'border-rose-500/20', amber: 'border-amber-500/20' }[color];
+                  const isInflated = sigAfter > sigBefore * 1.5 && !fullyExplained;
+                  const statusColor = fullyExplained ? 'emerald' : isInflated ? 'rose' : 'amber';
+                  const borderColor = { emerald: 'border-emerald-500/20', rose: 'border-rose-500/20', amber: 'border-amber-500/20' }[statusColor];
                   return (
                     <div key={i} className={'bg-white/5 rounded-xl p-4 border ' + borderColor}>
-                      <div className="text-xs font-bold text-white mb-3">{m.name}</div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-bold text-white">{m.name}</span>
+                        {isInflated && (
+                          <span className="text-xs text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full border border-rose-500/20">INFLATED</span>
+                        )}
+                      </div>
                       <div className="space-y-2 text-xs">
                         <div className="flex justify-between">
                           <span className="text-slate-400">Observed slope:</span>
@@ -425,21 +439,40 @@ export default function DefensePage() {
                         </div>
                         <hr className="border-white/10" />
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-400">σ without feedback:</span>
+                          <span className="text-slate-400">Without feedback:</span>
                           <span className="text-amber-400 font-mono font-bold">{sigBefore.toFixed(1)}σ</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className="text-slate-400">σ with feedback:</span>
-                          <span className={'font-mono font-bold ' + (fullyExplained ? 'text-emerald-400' : 'text-rose-400')}>{sigAfter.toFixed(1)}σ</span>
+                          <span className="text-slate-400">With feedback:</span>
+                          <span className={'font-mono font-bold ' + (fullyExplained ? 'text-emerald-400' : isInflated ? 'text-rose-400' : 'text-amber-400')}>{sigAfter.toFixed(1)}σ</span>
                         </div>
-                        <div className={'text-center py-1 rounded-lg mt-1 ' + (fullyExplained ? 'bg-emerald-500/10 text-emerald-300' : 'bg-amber-500/10 text-amber-300')}>
-                          {fullyExplained ? 'Feedback explains this metric' : 'Still ' + sigAfter.toFixed(1) + 'σ excess'}
+                        <div className={'text-center py-1 rounded-lg mt-1 ' + (
+                          fullyExplained ? 'bg-emerald-500/10 text-emerald-300' :
+                          isInflated ? 'bg-rose-500/10 text-rose-300' :
+                          'bg-amber-500/10 text-amber-300'
+                        )}>
+                          {fullyExplained ? 'Feedback explains this' : isInflated ? 'Model mismatch (unreliable)' : sigAfter.toFixed(1) + 'σ residual'}
                         </div>
                       </div>
+                      {m.caveat && (
+                        <p className="text-xs text-slate-500 mt-3 leading-relaxed italic border-t border-white/5 pt-2">{m.caveat}</p>
+                      )}
                     </div>
                   );
                 })}
               </div>
+
+              {feedback.summary.inflatedMetric && (
+                <div className="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4 mb-4">
+                  <div className="flex items-start gap-2">
+                    <AlertTriangle className="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-xs font-bold text-rose-300 mb-1">Sigma Inflation Warning: {feedback.summary.inflatedMetric}</h4>
+                      <p className="text-xs text-rose-200/70 leading-relaxed">{feedback.summary.inflatedReason}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="bg-white/5 rounded-xl p-4 mb-4">
                 <h4 className="text-xs font-bold text-white mb-2">Feedback Model Components</h4>
@@ -451,29 +484,47 @@ export default function DefensePage() {
                         <span className="text-slate-500 text-xs">({c.reference})</span>
                       </div>
                       <p className="text-xs text-slate-400 mt-1">{c.description}</p>
-                      <p className="text-xs text-amber-300 mt-1">Effect: {c.effect}</p>
+                      <p className="text-xs text-amber-300 mt-1">{c.effect}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className={'rounded-xl p-4 border ' + (
-                feedback.summary.allMetricsFullyExplained
-                  ? 'bg-rose-500/5 border-rose-500/20'
-                  : 'bg-amber-500/5 border-amber-500/20'
-              )}>
-                <h4 className="text-sm font-bold text-white mb-2">Honest Verdict</h4>
-                <p className="text-sm text-amber-200 leading-relaxed mb-2">{feedback.summary.honestAssessment}</p>
-                <div className={'inline-block px-3 py-1 rounded-full text-xs font-bold ' + (
-                  feedback.summary.maxSigmaWithFeedback >= 3
-                    ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
-                    : feedback.summary.maxSigmaWithFeedback >= 2
-                    ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
-                    : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
-                )}>
-                  {feedback.summary.updatedClaim}
+              {feedback.feedbackModel.limitations && feedback.feedbackModel.limitations.length > 0 && (
+                <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4 mb-4">
+                  <h4 className="text-xs font-bold text-amber-300 mb-2">Known Limitations of This Test</h4>
+                  <ul className="space-y-1">
+                    {feedback.feedbackModel.limitations.map((lim, i) => (
+                      <li key={i} className="text-xs text-amber-200/70 flex items-start gap-2">
+                        <span className="text-amber-500 mt-0.5">-</span>
+                        <span>{lim}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="bg-white/5 rounded-xl p-4 mb-4 border border-white/10">
+                <h4 className="text-sm font-bold text-white mb-2">Honest Assessment</h4>
+                <p className="text-sm text-slate-300 leading-relaxed mb-3">{feedback.summary.honestAssessment}</p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    {feedback.summary.updatedClaim}
+                  </span>
                 </div>
               </div>
+
+              {feedback.summary.nextSteps && (
+                <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-xl p-4">
+                  <div className="flex items-start gap-2">
+                    <Beaker className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-xs font-bold text-cyan-300 mb-1">Next Steps Required</h4>
+                      <p className="text-xs text-cyan-200/70 leading-relaxed">{feedback.summary.nextSteps}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </GlassCard>
           </section>
         )}

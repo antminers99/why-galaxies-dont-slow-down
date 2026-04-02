@@ -46,7 +46,8 @@
         "sigma": 10.14
       },
       "feedbackExplainsPercent": -162.4,
-      "feedbackFullyExplains": false
+      "feedbackFullyExplains": false,
+      "caveat": "Inflated sigma likely reflects model mismatch: our parametric feedback prescription over-corrects the V_DM slope, pushing it further from data. This is not evidence of new physics but rather indicates the Di Cintio + Blumenthal model is too aggressive for this metric. Full hydrodynamic simulations (FIRE, IllustrisTNG) are needed to assess the true residual."
     },
     {
       "name": "r_DMdom",
@@ -94,7 +95,8 @@
         "sigma": 0.55
       },
       "feedbackExplainsPercent": 89.4,
-      "feedbackFullyExplains": true
+      "feedbackFullyExplains": true,
+      "caveat": "Standard baryonic feedback fully accounts for this correlation. The r_DMdom signal is consistent with known feedback physics and should not be cited as evidence for new coupling."
     },
     {
       "name": "alpha",
@@ -142,43 +144,57 @@
         "sigma": 2.77
       },
       "feedbackExplainsPercent": -0.4,
-      "feedbackFullyExplains": false
+      "feedbackFullyExplains": false,
+      "caveat": "The inner slope anomaly is completely unaffected by feedback prescriptions. At 2.8sigma this is suggestive but below the 3sigma threshold. The sign reversal (observed negative vs LCDM positive) is the most physically interesting feature."
     }
   ],
   "feedbackModel": {
-    "description": "ΛCDM + baryonic feedback following Di Cintio et al. (2014) and Blumenthal et al. (1986)",
+    "description": "LCDM + parametric baryonic feedback following Di Cintio et al. (2014) and Blumenthal et al. (1986)",
     "components": [
       {
         "name": "Supernova-driven core formation",
         "reference": "Di Cintio et al. (2014), MNRAS 437, 415",
-        "description": "Inner DM profile slope α depends on M_star/M_halo ratio. Maximum core formation at M_star/M_halo ~ 10^-2.7. Transforms NFW cusps into shallow cores for dwarf galaxies.",
-        "effect": "Creates baryon-dependent DM profile → direct coupling between Σ_bar and inner halo structure"
+        "description": "Inner DM profile slope depends on M_star/M_halo ratio. Maximum core formation at M_star/M_halo ~ 10^-2.7. Transforms NFW cusps into shallow cores for dwarf galaxies.",
+        "effect": "Creates baryon-dependent DM profile. NOTE: This inherently encodes coupling between baryons and dark matter."
       },
       {
         "name": "Adiabatic contraction",
         "reference": "Blumenthal et al. (1986), ApJ 301, 27",
         "description": "Baryonic infall deepens DM potential in massive galaxies. Halo contracts when baryons condense at center.",
-        "effect": "Higher Σ_bar → more contraction → steeper DM profile in massive systems"
+        "effect": "Higher baryonic density leads to more contraction. NOTE: This is an analytic approximation; real contraction involves complex gas dynamics."
       },
       {
         "name": "Abundance matching (SMHM relation)",
         "reference": "Behroozi et al. (2013), ApJ 770, 57",
-        "description": "Star formation efficiency peaks at M_halo ~ 10^12 M☉, creating non-linear M_star-M_halo relation.",
-        "effect": "Creates mass-dependent baryon fractions that can produce apparent coupling"
+        "description": "Star formation efficiency peaks at M_halo ~ 10^12 solar masses, creating non-linear M_star-M_halo relation.",
+        "effect": "Creates mass-dependent baryon fractions that produce some apparent coupling."
       }
     ],
     "nGalaxies": 15000,
     "nRealizations": 50,
-    "perRealization": 300
+    "perRealization": 300,
+    "limitations": [
+      "Parametric feedback (not full hydrodynamic simulation)",
+      "No gas turbulence, time evolution, or bursty star formation",
+      "Adiabatic contraction is analytic, not from N-body",
+      "Core formation prescription is calibrated on a limited mass range",
+      "Coupling is partially built into the model (core formation depends on M*/M_halo)"
+    ]
   },
   "summary": {
     "maxSigmaWithoutFeedback": 5.2,
-    "maxSigmaWithFeedback": 10.1,
+    "maxSigmaWithFeedback": 2.8,
+    "robustMetric": "alpha (inner slope)",
+    "robustSigma": 2.77,
+    "inflatedMetric": "V_DM",
+    "inflatedSigma": 10.14,
+    "inflatedReason": "Model mismatch: parametric feedback over-corrects V_DM slope, inflating apparent sigma. Not reliable as stated.",
     "averageReductionPercent": -24.5,
     "anyMetricFullyExplained": true,
     "allMetricsFullyExplained": false,
-    "verdict": "FEEDBACK PARTIALLY EXPLAINS the coupling. Some metrics drop below 2σ but V_DM, alpha remain significant.",
-    "honestAssessment": "Peak significance drops from 5.2σ to 10.1σ when feedback is included. Feedback explains ~-24% of the tension. The remaining excess is still significant (>3σ) and may indicate physics beyond standard feedback models.",
-    "updatedClaim": "10.1σ discovery-level excess PERSISTS even with feedback"
+    "verdict": "Standard baryonic feedback explains the r_DMdom correlation entirely. The alpha (inner slope) residual of 2.8sigma survives but is below discovery threshold. The V_DM result is unreliable due to model mismatch in our simplified feedback prescription.",
+    "honestAssessment": "A statistically significant residual (>2.5 sigma) remains for the inner DM slope (alpha) even after including standard baryonic feedback prescriptions (Di Cintio + Blumenthal). However, our feedback model is parametric, not from full hydrodynamic simulations. The key finding is not the raw sigma value, but that feedback fails to reproduce the observed scaling relationship: data show anti-correlation where LCDM predicts positive correlation, regardless of whether feedback is included.",
+    "updatedClaim": "Residual tension in alpha (2.8 sigma) survives feedback; V_DM requires hydrodynamic validation",
+    "nextSteps": "Comparison with FIRE/IllustrisTNG mock catalogs needed to confirm or rule out the residual"
   }
 }
