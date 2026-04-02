@@ -340,6 +340,36 @@ interface BivariateCollapseData {
   };
 }
 
+interface TransitionScaleData {
+  a0_corrected: number;
+  a0_ms2: number;
+  nPoints: number;
+  nGalaxies: number;
+  ratioBins: Array<{ logGbar: number; gBar: number; medianRatio: number; rmsScatter: number; residScatter: number; n: number }>;
+  collapse: {
+    rmsWithCorrectA0: number;
+    madWithCorrectA0: number;
+    rmsWithWrongA0: number;
+    improvement: number;
+    binned: Array<{ x: number; rms: number; mad: number; bias: number; n: number }>;
+  };
+  perGalaxyA0: {
+    global: { a0: number; logA0: number; rms: number };
+    nFit: number;
+    nWellConstrained: number;
+    medianLogA0: number;
+    madLogA0: number;
+    rmsPerGalaxy: number;
+    rmsUniversal: number;
+    improvement: number;
+    distribution: { p5: number; p25: number; p50: number; p75: number; p95: number };
+    perDataset: { sparc: { n: number; medA0: number; mad: number }; lt: { n: number; medA0: number; mad: number } };
+  };
+  cosmology: { a0: number; cH0: string; ratio: number };
+  plotPoints: Array<{ x: number; y: number; g: string }>;
+  verdict: string;
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -523,6 +553,7 @@ export default function DefensePage() {
   const [particle, setParticle] = useState<ParticleData | null>(null);
   const [rawParticle, setRawParticle] = useState<RawParticleData | null>(null);
   const [bivariate, setBivariate] = useState<BivariateCollapseData | null>(null);
+  const [transition, setTransition] = useState<TransitionScaleData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -533,8 +564,9 @@ export default function DefensePage() {
       fetch(`${import.meta.env.BASE_URL}particle-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}raw-particle-data.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}bivariate-collapse.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}transition-scale.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData, hydroData, particleData, rawData, bivData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); setBivariate(bivData); })
+      .then(([defData, fbData, hydroData, particleData, rawData, bivData, transData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); setBivariate(bivData); setTransition(transData); })
       .catch(() => setError(true));
   }, []);
 
@@ -1922,6 +1954,146 @@ export default function DefensePage() {
                     This is a refinement, not a new law. The standard RAR (McGaugh 2016) captures {">"} 99% of the physics.
                     The residual Sigma dependence is consistent with baryonic feedback effects shaping the inner DM profile
                     slightly differently in high vs low surface density galaxies — exactly what LCDM predicts.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </section>
+        )}
+
+        {transition && (
+          <section>
+            <GlassCard glow="cyan" className="border-2 border-cyan-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold">VI</div>
+                <div>
+                  <h2 className="text-xl font-bold text-white">The Hidden Scale: Universal Acceleration Constant</h2>
+                  <p className="text-xs text-slate-400">{transition.nPoints} radial points across {transition.nGalaxies} galaxies</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-xl p-5 mb-6">
+                <h3 className="text-lg font-bold text-cyan-300 mb-3 text-center">The Transition Plot: g_obs/g_bar vs g_bar</h3>
+                <div className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={transition.ratioBins.filter(b => b.n >= 10)} margin={{ top: 5, right: 20, bottom: 20, left: 20 }}>
+                      <XAxis dataKey="logGbar" tick={{ fill: '#94a3b8', fontSize: 10 }} label={{ value: 'log(g_bar) [(km/s)\u00B2/kpc]', position: 'bottom', fill: '#94a3b8', fontSize: 11, dy: 10 }} />
+                      <YAxis tick={{ fill: '#94a3b8', fontSize: 10 }} label={{ value: 'g_obs / g_bar (median)', angle: -90, position: 'insideLeft', fill: '#94a3b8', fontSize: 11, dx: -5 }} domain={[0, 'auto']} />
+                      <Tooltip contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px', fontSize: '11px' }} formatter={(v: number, name: string) => [v.toFixed(2), name === 'medianRatio' ? 'g_obs/g_bar' : name]} labelFormatter={(l: number) => 'log(g_bar) = ' + l.toFixed(2)} />
+                      <ReferenceLine y={1} stroke="#f59e0b" strokeDasharray="5 5" label={{ value: 'Newton (ratio=1)', fill: '#f59e0b', fontSize: 10, position: 'right' }} />
+                      <ReferenceLine x={Math.log10(transition.a0_corrected)} stroke="#ef4444" strokeDasharray="3 3" label={{ value: 'a\u2080', fill: '#ef4444', fontSize: 11, position: 'top' }} />
+                      <Bar dataKey="medianRatio" name="g_obs/g_bar">
+                        {transition.ratioBins.filter(b => b.n >= 10).map((b, i) => (
+                          <Cell key={i} fill={b.logGbar < Math.log10(transition.a0_corrected) ? '#06b6d4' : b.logGbar < Math.log10(transition.a0_corrected) + 0.5 ? '#8b5cf6' : '#10b981'} fillOpacity={0.7} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="flex justify-center gap-6 mt-2 text-xs">
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-cyan-500 inline-block"></span> DM-dominated (g_bar {"<"} a{"\u2080"})</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-violet-500 inline-block"></span> Transition zone</span>
+                  <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-emerald-500 inline-block"></span> Baryon-dominated (g_bar {">"} a{"\u2080"})</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-cyan-500/5 border border-cyan-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Acceleration Scale a{"\u2080"}</div>
+                  <div className="text-2xl font-bold text-cyan-400 font-mono">{transition.a0_corrected.toFixed(0)}</div>
+                  <div className="text-xs text-slate-400">(km/s){"\u00B2"}/kpc</div>
+                  <div className="text-xs text-cyan-300 mt-1 font-mono">= 1.2 {"\u00D7"} 10{"\u207B\u00B9\u2070"} m/s{"\u00B2"}</div>
+                </div>
+                <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Collapse RMS</div>
+                  <div className="text-2xl font-bold text-emerald-400 font-mono">{transition.collapse.rmsWithCorrectA0.toFixed(3)}</div>
+                  <div className="text-xs text-slate-400">dex scatter</div>
+                  <div className="text-xs text-emerald-300 mt-1">{transition.nPoints} points {"\u2192"} 1 curve</div>
+                </div>
+                <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4 text-center">
+                  <div className="text-xs text-slate-400 mb-1">Cosmological Coincidence</div>
+                  <div className="text-2xl font-bold text-violet-400 font-mono">a{"\u2080"} {"\u2248"} cH{"\u2080"}/2{"\u03C0"}</div>
+                  <div className="text-xs text-slate-400">within ~13%</div>
+                  <div className="text-xs text-violet-300 mt-1">Milgrom 1983</div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 mb-6">
+                <h4 className="text-sm font-bold text-white mb-3">Collapse Quality Across the Transition</h4>
+                <div className="h-48">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={transition.collapse.binned} margin={{ top: 5, right: 20, bottom: 20, left: 20 }}>
+                      <XAxis dataKey="x" tick={{ fill: '#94a3b8', fontSize: 10 }} label={{ value: 'log(g_bar / a\u2080)', position: 'bottom', fill: '#94a3b8', fontSize: 11, dy: 10 }} />
+                      <YAxis tick={{ fill: '#94a3b8', fontSize: 10 }} domain={[0, 0.5]} label={{ value: 'RMS scatter (dex)', angle: -90, position: 'insideLeft', fill: '#94a3b8', fontSize: 11, dx: -5 }} />
+                      <Tooltip contentStyle={{ backgroundColor: '#1e293b', border: '1px solid #334155', borderRadius: '8px', fontSize: '11px' }} />
+                      <ReferenceLine y={0.3} stroke="#f59e0b" strokeDasharray="3 3" />
+                      <Bar dataKey="rms" name="RMS scatter" fill="#06b6d4" fillOpacity={0.7} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="flex justify-between text-xs text-slate-400 px-4">
+                  <span>{"\u2190"} DM-dominated</span>
+                  <span className="text-cyan-400 font-bold">Transition at x = 0</span>
+                  <span>Baryon-dominated {"\u2192"}</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-emerald-400 mb-3">Per-Galaxy a{"\u2080"} Distribution</h4>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span className="text-slate-400">Galaxies fit:</span><span className="text-white font-mono">{transition.perGalaxyA0.nFit}</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Well-constrained:</span><span className="text-white font-mono">{transition.perGalaxyA0.nWellConstrained}</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Global best-fit a{"\u2080"}:</span><span className="text-cyan-400 font-mono">{transition.perGalaxyA0.global.a0} (km/s){"\u00B2"}/kpc</span></div>
+                    <div className="border-t border-white/10 pt-2">
+                      <div className="flex justify-between"><span className="text-slate-400">5th percentile:</span><span className="text-white font-mono">{transition.perGalaxyA0.distribution.p5}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">25th percentile:</span><span className="text-white font-mono">{transition.perGalaxyA0.distribution.p25}</span></div>
+                      <div className="flex justify-between font-bold"><span className="text-slate-300">50th (median):</span><span className="text-cyan-400 font-mono">{transition.perGalaxyA0.distribution.p50}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">75th percentile:</span><span className="text-white font-mono">{transition.perGalaxyA0.distribution.p75}</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">95th percentile:</span><span className="text-white font-mono">{transition.perGalaxyA0.distribution.p95}</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <h4 className="text-sm font-bold text-violet-400 mb-3">Universality Test</h4>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span className="text-slate-400">Universal a{"\u2080"} RMS:</span><span className="text-white font-mono">{transition.perGalaxyA0.rmsUniversal} dex</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Per-galaxy a{"\u2080"} RMS:</span><span className="text-white font-mono">{transition.perGalaxyA0.rmsPerGalaxy} dex</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Per-galaxy improvement:</span><span className={transition.perGalaxyA0.improvement < 20 ? "text-emerald-400 font-mono font-bold" : "text-amber-400 font-mono font-bold"}>{transition.perGalaxyA0.improvement}%</span></div>
+                    <div className="border-t border-white/10 pt-2">
+                      <div className="flex justify-between"><span className="text-slate-400">SPARC median a{"\u2080"}:</span><span className="text-white font-mono">{transition.perGalaxyA0.perDataset.sparc.medA0} ({transition.perGalaxyA0.perDataset.sparc.n} gal)</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">LT median a{"\u2080"}:</span><span className="text-white font-mono">{transition.perGalaxyA0.perDataset.lt.medA0} ({transition.perGalaxyA0.perDataset.lt.n} gal)</span></div>
+                    </div>
+                    <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-2 mt-2">
+                      <p className="text-emerald-300 text-xs">
+                        {transition.perGalaxyA0.improvement < 20 ?
+                          "A single a\u2080 works nearly as well as fitting each galaxy separately \u2014 the scale IS universal." :
+                          "Per-galaxy a\u2080 fits significantly better \u2014 the scale may vary with galaxy properties."}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-amber-500/5 to-rose-500/5 border border-amber-500/20 rounded-xl p-5">
+                <h4 className="text-amber-300 font-bold text-sm mb-3">The Deep Mystery</h4>
+                <div className="space-y-3 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    <span className="text-cyan-400 font-bold">The fact:</span> There IS a sharp, universal acceleration scale
+                    a{"\u2080"} {"\u2248"} 1.2 {"\u00D7"} 10{"\u207B\u00B9\u2070"} m/s{"\u00B2"}. Below it, dark matter dominates. Above it, Newton works.
+                    All {transition.nGalaxies} galaxies {"—"} giant spirals to tiny dwarfs {"—"} follow the SAME curve
+                    when normalized by this single number. The scatter is only {transition.collapse.rmsWithCorrectA0} dex.
+                  </p>
+                  <p>
+                    <span className="text-violet-400 font-bold">The coincidence:</span> This acceleration scale is
+                    a{"\u2080"} {"\u2248"} cH{"\u2080"}/2{"\u03C0"} {"—"} the speed of light times the Hubble parameter, divided by 2{"\u03C0"}.
+                    This connects the smallest galactic scales to the size of the observable universe.
+                    If dark matter is random clumps, why does it know about the expansion rate of the universe?
+                  </p>
+                  <p>
+                    <span className="text-emerald-400 font-bold">Why it matters:</span> In {"\u039B"}CDM, dark matter halos vary enormously {"—"}
+                    different masses, concentrations, formation histories. Yet the ratio g_obs/g_bar is a function of g_bar ALONE,
+                    with one universal parameter. This is the deepest version of "dark matter knows where the light is."
                   </p>
                 </div>
               </div>

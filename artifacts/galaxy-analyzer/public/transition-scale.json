@@ -1,0 +1,12186 @@
+{
+  "timestamp": "2026-04-02T23:21:25.562Z",
+  "a0_corrected": 3702,
+  "a0_old_wrong": 3.7032,
+  "a0_ms2": 1.2e-10,
+  "nPoints": 4123,
+  "nGalaxies": 193,
+  "ratioBins": [
+    {
+      "logGbar": 1.055,
+      "gBar": 11.3,
+      "medianRatio": 15.408,
+      "rmsScatter": 0.2687,
+      "residScatter": 0.2538,
+      "n": 7
+    },
+    {
+      "logGbar": 1.224,
+      "gBar": 16.7,
+      "medianRatio": 18.95,
+      "rmsScatter": 0.2761,
+      "residScatter": 0.2651,
+      "n": 14
+    },
+    {
+      "logGbar": 1.392,
+      "gBar": 24.7,
+      "medianRatio": 14.275,
+      "rmsScatter": 0.4456,
+      "residScatter": 0.4446,
+      "n": 28
+    },
+    {
+      "logGbar": 1.561,
+      "gBar": 36.4,
+      "medianRatio": 9.541,
+      "rmsScatter": 0.3047,
+      "residScatter": 0.301,
+      "n": 68
+    },
+    {
+      "logGbar": 1.729,
+      "gBar": 53.6,
+      "medianRatio": 8.359,
+      "rmsScatter": 0.3126,
+      "residScatter": 0.3095,
+      "n": 184
+    },
+    {
+      "logGbar": 1.898,
+      "gBar": 79.1,
+      "medianRatio": 6.05,
+      "rmsScatter": 0.3222,
+      "residScatter": 0.3174,
+      "n": 340
+    },
+    {
+      "logGbar": 2.067,
+      "gBar": 116.6,
+      "medianRatio": 5.043,
+      "rmsScatter": 0.2602,
+      "residScatter": 0.2622,
+      "n": 422
+    },
+    {
+      "logGbar": 2.235,
+      "gBar": 171.9,
+      "medianRatio": 4.361,
+      "rmsScatter": 0.2453,
+      "residScatter": 0.2465,
+      "n": 439
+    },
+    {
+      "logGbar": 2.404,
+      "gBar": 253.5,
+      "medianRatio": 4.054,
+      "rmsScatter": 0.212,
+      "residScatter": 0.2108,
+      "n": 415
+    },
+    {
+      "logGbar": 2.573,
+      "gBar": 373.8,
+      "medianRatio": 3.537,
+      "rmsScatter": 0.2092,
+      "residScatter": 0.2075,
+      "n": 302
+    },
+    {
+      "logGbar": 2.741,
+      "gBar": 551.2,
+      "medianRatio": 2.933,
+      "rmsScatter": 0.2064,
+      "residScatter": 0.2052,
+      "n": 258
+    },
+    {
+      "logGbar": 2.91,
+      "gBar": 812.7,
+      "medianRatio": 2.744,
+      "rmsScatter": 0.225,
+      "residScatter": 0.2233,
+      "n": 222
+    },
+    {
+      "logGbar": 3.079,
+      "gBar": 1198.2,
+      "medianRatio": 2.351,
+      "rmsScatter": 0.1731,
+      "residScatter": 0.1731,
+      "n": 227
+    },
+    {
+      "logGbar": 3.247,
+      "gBar": 1766.7,
+      "medianRatio": 1.922,
+      "rmsScatter": 0.1641,
+      "residScatter": 0.1622,
+      "n": 206
+    },
+    {
+      "logGbar": 3.416,
+      "gBar": 2604.9,
+      "medianRatio": 1.79,
+      "rmsScatter": 0.1691,
+      "residScatter": 0.1667,
+      "n": 210
+    },
+    {
+      "logGbar": 3.584,
+      "gBar": 3840.9,
+      "medianRatio": 1.605,
+      "rmsScatter": 0.2028,
+      "residScatter": 0.2032,
+      "n": 171
+    },
+    {
+      "logGbar": 3.753,
+      "gBar": 5663.2,
+      "medianRatio": 1.406,
+      "rmsScatter": 0.1889,
+      "residScatter": 0.1898,
+      "n": 142
+    },
+    {
+      "logGbar": 3.922,
+      "gBar": 8350.1,
+      "medianRatio": 1.397,
+      "rmsScatter": 0.1377,
+      "residScatter": 0.1377,
+      "n": 112
+    },
+    {
+      "logGbar": 4.09,
+      "gBar": 12311.8,
+      "medianRatio": 1.194,
+      "rmsScatter": 0.1226,
+      "residScatter": 0.1216,
+      "n": 103
+    },
+    {
+      "logGbar": 4.259,
+      "gBar": 18153.1,
+      "medianRatio": 1.097,
+      "rmsScatter": 0.1891,
+      "residScatter": 0.1894,
+      "n": 82
+    },
+    {
+      "logGbar": 4.428,
+      "gBar": 26765.9,
+      "medianRatio": 1.072,
+      "rmsScatter": 0.1129,
+      "residScatter": 0.113,
+      "n": 60
+    },
+    {
+      "logGbar": 4.596,
+      "gBar": 39465.1,
+      "medianRatio": 0.996,
+      "rmsScatter": 0.1608,
+      "residScatter": 0.1613,
+      "n": 36
+    },
+    {
+      "logGbar": 4.765,
+      "gBar": 58189.4,
+      "medianRatio": 1.015,
+      "rmsScatter": 0.2905,
+      "residScatter": 0.2902,
+      "n": 29
+    },
+    {
+      "logGbar": 4.933,
+      "gBar": 85797.5,
+      "medianRatio": 1.059,
+      "rmsScatter": 0.166,
+      "residScatter": 0.1662,
+      "n": 24
+    },
+    {
+      "logGbar": 5.102,
+      "gBar": 126504.2,
+      "medianRatio": 1.206,
+      "rmsScatter": 0.2054,
+      "residScatter": 0.2053,
+      "n": 9
+    },
+    {
+      "logGbar": 5.271,
+      "gBar": 186524.4,
+      "medianRatio": 0.799,
+      "rmsScatter": 0.0903,
+      "residScatter": 0.0903,
+      "n": 5
+    }
+  ],
+  "collapse": {
+    "rmsWithCorrectA0": 0.2392,
+    "madWithCorrectA0": 0.0974,
+    "rmsWithWrongA0": 0.3353,
+    "improvement": 28.7,
+    "binned": [
+      {
+        "x": -2.25,
+        "rms": 0.3735,
+        "mad": 0.1586,
+        "bias": -0.0338,
+        "n": 77
+      },
+      {
+        "x": -1.75,
+        "rms": 0.3062,
+        "mad": 0.1289,
+        "bias": -0.1572,
+        "n": 779
+      },
+      {
+        "x": -1.25,
+        "rms": 0.2265,
+        "mad": 0.1107,
+        "bias": -0.0817,
+        "n": 1220
+      },
+      {
+        "x": -0.75,
+        "rms": 0.214,
+        "mad": 0.0913,
+        "bias": -0.0188,
+        "n": 718
+      },
+      {
+        "x": -0.25,
+        "rms": 0.1717,
+        "mad": 0.072,
+        "bias": -0.0106,
+        "n": 612
+      },
+      {
+        "x": 0.25,
+        "rms": 0.1695,
+        "mad": 0.0884,
+        "bias": -0.0129,
+        "n": 401
+      },
+      {
+        "x": 0.75,
+        "rms": 0.1604,
+        "mad": 0.0578,
+        "bias": -0.0279,
+        "n": 213
+      },
+      {
+        "x": 1.25,
+        "rms": 0.2101,
+        "mad": 0.0554,
+        "bias": 0.0177,
+        "n": 80
+      },
+      {
+        "x": 1.75,
+        "rms": 0.2004,
+        "mad": 0.105,
+        "bias": -0.0075,
+        "n": 12
+      }
+    ]
+  },
+  "perGalaxyA0": {
+    "global": {
+      "a0": 1730.4,
+      "logA0": 3.238,
+      "rms": 0.2364
+    },
+    "nFit": 193,
+    "nWellConstrained": 128,
+    "medianLogA0": 3.619,
+    "madLogA0": 1.981,
+    "rmsPerGalaxy": 0.6794,
+    "rmsUniversal": 0.2471,
+    "improvement": -175,
+    "distribution": {
+      "p5": 7.9,
+      "p25": 147.4,
+      "p50": 4163.1,
+      "p75": 398107.2,
+      "p95": 398107.2
+    },
+    "perDataset": {
+      "sparc": {
+        "n": 171,
+        "medA0": 4160.5,
+        "mad": 1.981
+      },
+      "lt": {
+        "n": 22,
+        "medA0": 398107.2,
+        "mad": 1.695
+      }
+    },
+    "galaxies": [
+      {
+        "name": "CamB",
+        "a0": 147.4,
+        "logA0": 2.168,
+        "rms": 0.2665,
+        "gRange": 0.47,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "D564-8",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1222,
+        "gRange": 0.4,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "D631-7",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2357,
+        "gRange": 0.9,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "DDO064",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1397,
+        "gRange": 1.63,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "DDO154",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0939,
+        "gRange": 0.61,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "DDO161",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0727,
+        "gRange": 0.7,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "DDO168",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1346,
+        "gRange": 0.5,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "DDO170",
+        "a0": 165.2,
+        "logA0": 2.218,
+        "rms": 0.0437,
+        "gRange": 0.34,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "ESO079-G014",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0925,
+        "gRange": 0.32,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "ESO116-G012",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.053,
+        "gRange": 0.67,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "ESO444-G084",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0462,
+        "gRange": 0.76,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "ESO563-G021",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2289,
+        "gRange": 1.03,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F561-1",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0903,
+        "gRange": 0.11,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F563-1",
+        "a0": 19.8,
+        "logA0": 1.296,
+        "rms": 0.1602,
+        "gRange": 0.38,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F563-V1",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0868,
+        "gRange": 0.27,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F563-V2",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0973,
+        "gRange": 0.66,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F565-V2",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0903,
+        "gRange": 0.15,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F567-2",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1208,
+        "gRange": 0.11,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F568-1",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.167,
+        "gRange": 0.25,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F568-3",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1574,
+        "gRange": 0.24,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F568-V1",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.119,
+        "gRange": 0.52,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F571-8",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.301,
+        "gRange": 1.64,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F571-V1",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0664,
+        "gRange": 0.41,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F574-1",
+        "a0": 158.8,
+        "logA0": 2.201,
+        "rms": 0.1113,
+        "gRange": 0.35,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F574-2",
+        "a0": 89.1,
+        "logA0": 1.95,
+        "rms": 0.0725,
+        "gRange": 0.27,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F579-V1",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1416,
+        "gRange": 0.43,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F583-1",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2233,
+        "gRange": 0.4,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "F583-4",
+        "a0": 32503.8,
+        "logA0": 4.512,
+        "rms": 0.0304,
+        "gRange": 0.59,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "IC2574",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.095,
+        "gRange": 0.29,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "IC4202",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1885,
+        "gRange": 1.29,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "KK98-251",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0519,
+        "gRange": 0.77,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0024",
+        "a0": 488.5,
+        "logA0": 2.689,
+        "rms": 0.0955,
+        "gRange": 1.09,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0055",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.057,
+        "gRange": 0.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0100",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1677,
+        "gRange": 0.61,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0247",
+        "a0": 30.5,
+        "logA0": 1.484,
+        "rms": 0.049,
+        "gRange": 0.26,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0289",
+        "a0": 968.1,
+        "logA0": 2.986,
+        "rms": 0.0497,
+        "gRange": 2.18,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0300",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.051,
+        "gRange": 0.77,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0801",
+        "a0": 828.3,
+        "logA0": 2.918,
+        "rms": 0.0667,
+        "gRange": 1.71,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC0891",
+        "a0": 9105,
+        "logA0": 3.959,
+        "rms": 0.059,
+        "gRange": 1.65,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC1003",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0423,
+        "gRange": 1.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC1090",
+        "a0": 136772.7,
+        "logA0": 5.136,
+        "rms": 0.1231,
+        "gRange": 1.21,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC1705",
+        "a0": 1391.1,
+        "logA0": 3.143,
+        "rms": 0.0338,
+        "gRange": 1.61,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2366",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.113,
+        "gRange": 0.65,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2403",
+        "a0": 7046.4,
+        "logA0": 3.848,
+        "rms": 0.0341,
+        "gRange": 1.46,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2683",
+        "a0": 1096.4,
+        "logA0": 3.04,
+        "rms": 0.0406,
+        "gRange": 1.76,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2841",
+        "a0": 2492.8,
+        "logA0": 3.397,
+        "rms": 0.0199,
+        "gRange": 1.92,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2903",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.156,
+        "gRange": 2.28,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2915",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2444,
+        "gRange": 1.75,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2955",
+        "a0": 1816.2,
+        "logA0": 3.259,
+        "rms": 0.0492,
+        "gRange": 1.53,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2976",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1197,
+        "gRange": 0.55,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC2998",
+        "a0": 69.8,
+        "logA0": 1.844,
+        "rms": 0.1618,
+        "gRange": 1.25,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3109",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.103,
+        "gRange": 0.82,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3198",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1113,
+        "gRange": 1.82,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3521",
+        "a0": 3692,
+        "logA0": 3.567,
+        "rms": 0.0277,
+        "gRange": 1.72,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3726",
+        "a0": 126861.3,
+        "logA0": 5.103,
+        "rms": 0.0451,
+        "gRange": 1.14,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3741",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0779,
+        "gRange": 1.08,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3769",
+        "a0": 11741.8,
+        "logA0": 4.07,
+        "rms": 0.0405,
+        "gRange": 1.92,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3877",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1812,
+        "gRange": 0.55,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3893",
+        "a0": 6258.8,
+        "logA0": 3.796,
+        "rms": 0.03,
+        "gRange": 1.4,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3917",
+        "a0": 797.4,
+        "logA0": 2.902,
+        "rms": 0.1239,
+        "gRange": 0.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3949",
+        "a0": 32236.1,
+        "logA0": 4.508,
+        "rms": 0.0219,
+        "gRange": 0.57,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3953",
+        "a0": 298.6,
+        "logA0": 2.475,
+        "rms": 0.0166,
+        "gRange": 0.57,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3972",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0777,
+        "gRange": 0.35,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC3992",
+        "a0": 573.9,
+        "logA0": 2.759,
+        "rms": 0.0227,
+        "gRange": 0.95,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4010",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0759,
+        "gRange": 0.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4013",
+        "a0": 5737.6,
+        "logA0": 3.759,
+        "rms": 0.0379,
+        "gRange": 1.33,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4051",
+        "a0": 1455.9,
+        "logA0": 3.163,
+        "rms": 0.0472,
+        "gRange": 0.8,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4068",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1732,
+        "gRange": 0.42,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4085",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1489,
+        "gRange": 0.49,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4088",
+        "a0": 6343.1,
+        "logA0": 3.802,
+        "rms": 0.037,
+        "gRange": 0.93,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4100",
+        "a0": 853.5,
+        "logA0": 2.931,
+        "rms": 0.0354,
+        "gRange": 1.02,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4138",
+        "a0": 2572,
+        "logA0": 3.41,
+        "rms": 0.0484,
+        "gRange": 1.53,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4157",
+        "a0": 10717.5,
+        "logA0": 4.03,
+        "rms": 0.0363,
+        "gRange": 1.34,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4183",
+        "a0": 128,
+        "logA0": 2.107,
+        "rms": 0.0424,
+        "gRange": 0.87,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4214",
+        "a0": 2646.8,
+        "logA0": 3.423,
+        "rms": 0.0986,
+        "gRange": 1.36,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4217",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1374,
+        "gRange": 1.31,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4389",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1908,
+        "gRange": 0.35,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC4559",
+        "a0": 4141.3,
+        "logA0": 3.617,
+        "rms": 0.0271,
+        "gRange": 1.05,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5005",
+        "a0": 7642.2,
+        "logA0": 3.883,
+        "rms": 0.0217,
+        "gRange": 1.41,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5033",
+        "a0": 7595.8,
+        "logA0": 3.881,
+        "rms": 0.0449,
+        "gRange": 2.64,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5055",
+        "a0": 2999,
+        "logA0": 3.477,
+        "rms": 0.017,
+        "gRange": 2.3,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5371",
+        "a0": 253.2,
+        "logA0": 2.403,
+        "rms": 0.0526,
+        "gRange": 1.7,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5585",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0916,
+        "gRange": 0.98,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5907",
+        "a0": 353.9,
+        "logA0": 2.549,
+        "rms": 0.0407,
+        "gRange": 1.13,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC5985",
+        "a0": 63.7,
+        "logA0": 1.804,
+        "rms": 0.0475,
+        "gRange": 0.89,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC6015",
+        "a0": 959.3,
+        "logA0": 2.982,
+        "rms": 0.0587,
+        "gRange": 1.38,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC6195",
+        "a0": 1919,
+        "logA0": 3.283,
+        "rms": 0.0346,
+        "gRange": 1.57,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC6503",
+        "a0": 3779.4,
+        "logA0": 3.577,
+        "rms": 0.0374,
+        "gRange": 1.81,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC6674",
+        "a0": 1012.6,
+        "logA0": 3.005,
+        "rms": 0.0448,
+        "gRange": 1.97,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC6946",
+        "a0": 4160.5,
+        "logA0": 3.619,
+        "rms": 0.0287,
+        "gRange": 2.67,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC7331",
+        "a0": 8190.1,
+        "logA0": 3.913,
+        "rms": 0.0151,
+        "gRange": 1.67,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC7793",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1537,
+        "gRange": 0.92,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "NGC7814",
+        "a0": 11857.5,
+        "logA0": 4.074,
+        "rms": 0.0091,
+        "gRange": 2.36,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "PGC51017",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.2483,
+        "gRange": 0.57,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC00128",
+        "a0": 96.4,
+        "logA0": 1.984,
+        "rms": 0.0827,
+        "gRange": 1.04,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC00191",
+        "a0": 14.5,
+        "logA0": 1.16,
+        "rms": 0.0778,
+        "gRange": 0.46,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC00731",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1926,
+        "gRange": 0.64,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC00891",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1134,
+        "gRange": 0.36,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC01230",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1623,
+        "gRange": 0.83,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC01281",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.375,
+        "gRange": 1.08,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02023",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.144,
+        "gRange": 0.26,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02259",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0808,
+        "gRange": 0.37,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02455",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1581,
+        "gRange": 0.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02487",
+        "a0": 1619.4,
+        "logA0": 3.209,
+        "rms": 0.0178,
+        "gRange": 1.48,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02885",
+        "a0": 1672.6,
+        "logA0": 3.223,
+        "rms": 0.0293,
+        "gRange": 2.04,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02916",
+        "a0": 1965.4,
+        "logA0": 3.293,
+        "rms": 0.1039,
+        "gRange": 1.97,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC02953",
+        "a0": 4133.6,
+        "logA0": 3.616,
+        "rms": 0.1115,
+        "gRange": 2.83,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC03205",
+        "a0": 2131.8,
+        "logA0": 3.329,
+        "rms": 0.0631,
+        "gRange": 2.1,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC03546",
+        "a0": 9047.3,
+        "logA0": 3.957,
+        "rms": 0.023,
+        "gRange": 2.74,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC03580",
+        "a0": 43943.6,
+        "logA0": 4.643,
+        "rms": 0.13,
+        "gRange": 2.31,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC04278",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1352,
+        "gRange": 0.75,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC04305",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1722,
+        "gRange": 0.69,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC04325",
+        "a0": 599.2,
+        "logA0": 2.778,
+        "rms": 0.1069,
+        "gRange": 0.22,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC04483",
+        "a0": 80.8,
+        "logA0": 1.907,
+        "rms": 0.0697,
+        "gRange": 0.32,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC04499",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0782,
+        "gRange": 0.4,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05005",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1152,
+        "gRange": 0.57,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05253",
+        "a0": 2858.2,
+        "logA0": 3.456,
+        "rms": 0.069,
+        "gRange": 2.84,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05414",
+        "a0": 1547.4,
+        "logA0": 3.19,
+        "rms": 0.0594,
+        "gRange": 0.17,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05716",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.034,
+        "gRange": 0.53,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05721",
+        "a0": 15405.9,
+        "logA0": 4.188,
+        "rms": 0.0852,
+        "gRange": 1.23,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05750",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.2169,
+        "gRange": 0.68,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05764",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1332,
+        "gRange": 0.49,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05829",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0786,
+        "gRange": 0.77,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05918",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0849,
+        "gRange": 0.19,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05986",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0871,
+        "gRange": 0.63,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC05999",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0925,
+        "gRange": 0.29,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06399",
+        "a0": 141.4,
+        "logA0": 2.151,
+        "rms": 0.0733,
+        "gRange": 0.23,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06446",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0751,
+        "gRange": 0.48,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06614",
+        "a0": 12873.5,
+        "logA0": 4.11,
+        "rms": 0.0479,
+        "gRange": 2,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06628",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1267,
+        "gRange": 0.17,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06667",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1122,
+        "gRange": 0.69,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06786",
+        "a0": 5970.8,
+        "logA0": 3.776,
+        "rms": 0.0585,
+        "gRange": 2.61,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06787",
+        "a0": 14421.9,
+        "logA0": 4.159,
+        "rms": 0.0488,
+        "gRange": 3.01,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06818",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.182,
+        "gRange": 0.47,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06917",
+        "a0": 68694.6,
+        "logA0": 4.837,
+        "rms": 0.0404,
+        "gRange": 0.48,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06923",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0694,
+        "gRange": 0.52,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06930",
+        "a0": 199,
+        "logA0": 2.299,
+        "rms": 0.0624,
+        "gRange": 0.65,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06973",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0233,
+        "gRange": 1.25,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC06983",
+        "a0": 474.5,
+        "logA0": 2.676,
+        "rms": 0.0761,
+        "gRange": 0.79,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07089",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0543,
+        "gRange": 0.32,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07125",
+        "a0": 362.1,
+        "logA0": 2.559,
+        "rms": 0.0643,
+        "gRange": 0.61,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07151",
+        "a0": 156.8,
+        "logA0": 2.195,
+        "rms": 0.0647,
+        "gRange": 0.32,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07261",
+        "a0": 156.4,
+        "logA0": 2.194,
+        "rms": 0.0722,
+        "gRange": 0.49,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07323",
+        "a0": 276301.7,
+        "logA0": 5.441,
+        "rms": 0.049,
+        "gRange": 0.1,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07399",
+        "a0": 20520.1,
+        "logA0": 4.312,
+        "rms": 0.0388,
+        "gRange": 0.66,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07524",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.076,
+        "gRange": 0.34,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07559",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0994,
+        "gRange": 0.14,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07577",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0986,
+        "gRange": 0.92,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07603",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0924,
+        "gRange": 0.7,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07608",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1424,
+        "gRange": 0.15,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07690",
+        "a0": 236.9,
+        "logA0": 2.375,
+        "rms": 0.0399,
+        "gRange": 0.88,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC07866",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0374,
+        "gRange": 0.08,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC08286",
+        "a0": 22.8,
+        "logA0": 1.358,
+        "rms": 0.0584,
+        "gRange": 0.44,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC08490",
+        "a0": 465.2,
+        "logA0": 2.668,
+        "rms": 0.025,
+        "gRange": 1.23,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC08550",
+        "a0": 525.2,
+        "logA0": 2.72,
+        "rms": 0.0465,
+        "gRange": 0.58,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC08699",
+        "a0": 7079.2,
+        "logA0": 3.85,
+        "rms": 0.0444,
+        "gRange": 2.58,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC08837",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.131,
+        "gRange": 0.39,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC09037",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0721,
+        "gRange": 1.05,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC09133",
+        "a0": 1924.1,
+        "logA0": 3.284,
+        "rms": 0.0661,
+        "gRange": 3.07,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC09992",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0735,
+        "gRange": 0.35,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC10310",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0687,
+        "gRange": 0.17,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC11455",
+        "a0": 22264.6,
+        "logA0": 4.348,
+        "rms": 0.1074,
+        "gRange": 0.98,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC11557",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.3733,
+        "gRange": 0.45,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC11820",
+        "a0": 9.4,
+        "logA0": 0.974,
+        "rms": 0.0888,
+        "gRange": 0.54,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC11914",
+        "a0": 4140.5,
+        "logA0": 3.617,
+        "rms": 0.0356,
+        "gRange": 1.49,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC12506",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1333,
+        "gRange": 0.79,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC12632",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0784,
+        "gRange": 0.13,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGC12732",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.06,
+        "gRange": 0.31,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGCA281",
+        "a0": 4163.1,
+        "logA0": 3.619,
+        "rms": 0.0266,
+        "gRange": 0.56,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGCA442",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0561,
+        "gRange": 0.63,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "UGCA444",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0861,
+        "gRange": 1.13,
+        "dataset": "SPARC"
+      },
+      {
+        "name": "LT_CVnIdwA",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2915,
+        "gRange": 0.52,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_210",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0483,
+        "gRange": 0.69,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_216",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2008,
+        "gRange": 1.03,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_53",
+        "a0": 3748.5,
+        "logA0": 3.574,
+        "rms": 0.1506,
+        "gRange": 0.44,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_70",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1171,
+        "gRange": 0.73,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_IC_10",
+        "a0": 2931.6,
+        "logA0": 3.467,
+        "rms": 0.0658,
+        "gRange": 0.49,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_IC_1613",
+        "a0": 12.8,
+        "logA0": 1.107,
+        "rms": 0.1362,
+        "gRange": 0.75,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_UGC_8508",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.2003,
+        "gRange": 1.3,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_WLM",
+        "a0": 96,
+        "logA0": 1.982,
+        "rms": 0.1999,
+        "gRange": 1.07,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_50",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.3257,
+        "gRange": 1.96,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_126",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.0788,
+        "gRange": 0.76,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_101",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.3165,
+        "gRange": 1.63,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_133",
+        "a0": 21.6,
+        "logA0": 1.335,
+        "rms": 0.0779,
+        "gRange": 0.81,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_NGC_1569",
+        "a0": 8037.1,
+        "logA0": 3.905,
+        "rms": 0.0556,
+        "gRange": 1.14,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_43",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1119,
+        "gRange": 0.72,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_HARO_36",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.1449,
+        "gRange": 0.52,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_168",
+        "a0": 575.3,
+        "logA0": 2.76,
+        "rms": 0.2761,
+        "gRange": 0.96,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_NGC_2366",
+        "a0": 136.8,
+        "logA0": 2.136,
+        "rms": 0.07,
+        "gRange": 0.72,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_154",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.081,
+        "gRange": 0.55,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_87",
+        "a0": 7.9,
+        "logA0": 0.9,
+        "rms": 0.1794,
+        "gRange": 1.21,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_DDO_52",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0782,
+        "gRange": 0.27,
+        "dataset": "LT"
+      },
+      {
+        "name": "LT_NGC_3738",
+        "a0": 398107.2,
+        "logA0": 5.6,
+        "rms": 0.0674,
+        "gRange": 0.8,
+        "dataset": "LT"
+      }
+    ]
+  },
+  "cosmology": {
+    "a0": 1.2e-10,
+    "cH0": 6.548e-10,
+    "ratio": 0.183
+  },
+  "plotPoints": [
+    {
+      "x": 0.296,
+      "y": 2.42,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 0.611,
+      "y": 1.606,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 0.809,
+      "y": 1.788,
+      "g": "DDO064"
+    },
+    {
+      "x": 0.958,
+      "y": 1.728,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.003,
+      "y": 1.058,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.059,
+      "y": 1.188,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.132,
+      "y": 1.144,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.149,
+      "y": 1.231,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.194,
+      "y": 1.31,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.255,
+      "y": 1.327,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.282,
+      "y": 1.476,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.291,
+      "y": 0.881,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 1.293,
+      "y": 1.278,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.306,
+      "y": 0.593,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.314,
+      "y": 1.021,
+      "g": "LT_DDO_210"
+    },
+    {
+      "x": 1.343,
+      "y": 1.113,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.35,
+      "y": 0.362,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.383,
+      "y": 1.086,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.394,
+      "y": 1.612,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.41,
+      "y": 0.899,
+      "g": "D564-8"
+    },
+    {
+      "x": 1.423,
+      "y": 0.108,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.431,
+      "y": 1.171,
+      "g": "UGCA444"
+    },
+    {
+      "x": 1.434,
+      "y": 1.195,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.441,
+      "y": 1.328,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.458,
+      "y": 1.081,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.462,
+      "y": 0.869,
+      "g": "LT_CVnIdwA"
+    },
+    {
+      "x": 1.468,
+      "y": 1.053,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.472,
+      "y": 0.019,
+      "g": "UGC05750"
+    },
+    {
+      "x": 1.477,
+      "y": 1.144,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.485,
+      "y": 0.373,
+      "g": "KK98-251"
+    },
+    {
+      "x": 1.494,
+      "y": 1.095,
+      "g": "LT_DDO_43"
+    },
+    {
+      "x": 1.506,
+      "y": 0.865,
+      "g": "LT_CVnIdwA"
+    },
+    {
+      "x": 1.507,
+      "y": 1.147,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.514,
+      "y": 1.987,
+      "g": "LT_DDO_101"
+    },
+    {
+      "x": 1.517,
+      "y": 0.272,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.521,
+      "y": 1.038,
+      "g": "LT_DDO_216"
+    },
+    {
+      "x": 1.526,
+      "y": 1.072,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.535,
+      "y": 1.448,
+      "g": "UGC00731"
+    },
+    {
+      "x": 1.538,
+      "y": 1.532,
+      "g": "UGC06667"
+    },
+    {
+      "x": 1.539,
+      "y": 0.656,
+      "g": "UGC01281"
+    },
+    {
+      "x": 1.546,
+      "y": 1.059,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.557,
+      "y": 1.082,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.558,
+      "y": 1.091,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.564,
+      "y": 1.328,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.585,
+      "y": 0.986,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.588,
+      "y": 0.912,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.598,
+      "y": 1.062,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.603,
+      "y": 0.93,
+      "g": "UGC00128"
+    },
+    {
+      "x": 1.608,
+      "y": 1.045,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 1.61,
+      "y": 0.966,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.612,
+      "y": 0.861,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.614,
+      "y": 0.93,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.617,
+      "y": 0.892,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.618,
+      "y": 1,
+      "g": "UGCA444"
+    },
+    {
+      "x": 1.622,
+      "y": 0.75,
+      "g": "D564-8"
+    },
+    {
+      "x": 1.622,
+      "y": 1.008,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.624,
+      "y": 1.045,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.625,
+      "y": 1.26,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.628,
+      "y": 0.936,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.631,
+      "y": 0.851,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.635,
+      "y": 0.849,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.643,
+      "y": 0.107,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.648,
+      "y": 1.029,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.65,
+      "y": 0.894,
+      "g": "DDO154"
+    },
+    {
+      "x": 1.654,
+      "y": 0.959,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.657,
+      "y": 1.073,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.66,
+      "y": 0.614,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.661,
+      "y": 0.928,
+      "g": "UGC00128"
+    },
+    {
+      "x": 1.664,
+      "y": 0.962,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.665,
+      "y": 0.994,
+      "g": "D631-7"
+    },
+    {
+      "x": 1.666,
+      "y": 1,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.669,
+      "y": 1.228,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.674,
+      "y": 1.001,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.684,
+      "y": 1.23,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.689,
+      "y": 0.813,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.69,
+      "y": 0.97,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.692,
+      "y": 0.034,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.696,
+      "y": 0.983,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.698,
+      "y": 1.27,
+      "g": "UGC00731"
+    },
+    {
+      "x": 1.704,
+      "y": 0.939,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.707,
+      "y": 0.075,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.709,
+      "y": 1.079,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.716,
+      "y": 0.928,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.72,
+      "y": 1.082,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.722,
+      "y": 0.894,
+      "g": "DDO154"
+    },
+    {
+      "x": 1.726,
+      "y": 0.947,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.726,
+      "y": 1.315,
+      "g": "UGC00731"
+    },
+    {
+      "x": 1.726,
+      "y": 0.943,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.726,
+      "y": 1.006,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.727,
+      "y": 1.145,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.728,
+      "y": 0.623,
+      "g": "UGC01281"
+    },
+    {
+      "x": 1.728,
+      "y": 0.943,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.728,
+      "y": 1.004,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.731,
+      "y": 0.99,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.732,
+      "y": 0.763,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.733,
+      "y": 0.363,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.736,
+      "y": 1.165,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.738,
+      "y": 0.867,
+      "g": "UGCA444"
+    },
+    {
+      "x": 1.739,
+      "y": 0.954,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.74,
+      "y": 0.961,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.742,
+      "y": 1.205,
+      "g": "ESO444-G084"
+    },
+    {
+      "x": 1.745,
+      "y": 0.77,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.746,
+      "y": 0.884,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.747,
+      "y": 0.94,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.75,
+      "y": 0.713,
+      "g": "UGC01230"
+    },
+    {
+      "x": 1.751,
+      "y": 0.748,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.754,
+      "y": 1.022,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.755,
+      "y": 1.013,
+      "g": "UGC05829"
+    },
+    {
+      "x": 1.755,
+      "y": 0.924,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.756,
+      "y": 0.168,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.756,
+      "y": 0.91,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.757,
+      "y": 1.05,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.758,
+      "y": 0.582,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.759,
+      "y": 0.168,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.76,
+      "y": 0.192,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.761,
+      "y": 1.003,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.761,
+      "y": 0.977,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.761,
+      "y": 0.875,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.763,
+      "y": 0.922,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.765,
+      "y": 0.85,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.765,
+      "y": 0.129,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.767,
+      "y": 0.693,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.769,
+      "y": 1.131,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.772,
+      "y": 0.997,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.773,
+      "y": 0.991,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.774,
+      "y": 0.723,
+      "g": "DDO170"
+    },
+    {
+      "x": 1.775,
+      "y": 0.915,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.775,
+      "y": 1.045,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.776,
+      "y": 1.518,
+      "g": "LT_DDO_101"
+    },
+    {
+      "x": 1.778,
+      "y": 0.513,
+      "g": "UGC04278"
+    },
+    {
+      "x": 1.779,
+      "y": 0.972,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.781,
+      "y": 1.182,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.782,
+      "y": 0.064,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.783,
+      "y": 0.422,
+      "g": "KK98-251"
+    },
+    {
+      "x": 1.785,
+      "y": 0.96,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.785,
+      "y": 0.924,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.786,
+      "y": 1.087,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.788,
+      "y": 0.966,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.79,
+      "y": 0.96,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.793,
+      "y": 0.035,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.797,
+      "y": 0.844,
+      "g": "NGC1003"
+    },
+    {
+      "x": 1.799,
+      "y": 0.905,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.8,
+      "y": 0.86,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.8,
+      "y": 0.314,
+      "g": "LT_CVnIdwA"
+    },
+    {
+      "x": 1.8,
+      "y": 0.625,
+      "g": "LT_DDO_216"
+    },
+    {
+      "x": 1.8,
+      "y": 0.832,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.801,
+      "y": 1.117,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.801,
+      "y": 0.354,
+      "g": "D564-8"
+    },
+    {
+      "x": 1.802,
+      "y": 0.745,
+      "g": "UGC01281"
+    },
+    {
+      "x": 1.803,
+      "y": 0.853,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.808,
+      "y": 1.019,
+      "g": "UGC05918"
+    },
+    {
+      "x": 1.81,
+      "y": 0.851,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.81,
+      "y": 0.539,
+      "g": "D564-8"
+    },
+    {
+      "x": 1.812,
+      "y": 0.724,
+      "g": "UGC05005"
+    },
+    {
+      "x": 1.814,
+      "y": 0.026,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.815,
+      "y": 0.892,
+      "g": "UGC05918"
+    },
+    {
+      "x": 1.817,
+      "y": 0.894,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.817,
+      "y": 1.02,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.817,
+      "y": 0.887,
+      "g": "LT_DDO_87"
+    },
+    {
+      "x": 1.818,
+      "y": 1.153,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.82,
+      "y": 0.86,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.821,
+      "y": 1.101,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.823,
+      "y": 0.853,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.828,
+      "y": 0.016,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.832,
+      "y": 0.445,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.833,
+      "y": 1.263,
+      "g": "UGC06667"
+    },
+    {
+      "x": 1.834,
+      "y": 1.067,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 1.835,
+      "y": 0.853,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.838,
+      "y": 0.992,
+      "g": "UGC05918"
+    },
+    {
+      "x": 1.839,
+      "y": 0.999,
+      "g": "LT_DDO_154"
+    },
+    {
+      "x": 1.841,
+      "y": 0.131,
+      "g": "UGC07577"
+    },
+    {
+      "x": 1.843,
+      "y": 0.684,
+      "g": "D512-2"
+    },
+    {
+      "x": 1.844,
+      "y": 0.888,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.846,
+      "y": 0.873,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.847,
+      "y": 0.919,
+      "g": "D631-7"
+    },
+    {
+      "x": 1.848,
+      "y": 0.875,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.849,
+      "y": 0.863,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.85,
+      "y": 0.733,
+      "g": "NGC0289"
+    },
+    {
+      "x": 1.852,
+      "y": 1.143,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.853,
+      "y": 0.802,
+      "g": "UGC05716"
+    },
+    {
+      "x": 1.855,
+      "y": 0.867,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.857,
+      "y": 0.792,
+      "g": "UGC00128"
+    },
+    {
+      "x": 1.857,
+      "y": 0.231,
+      "g": "F574-2"
+    },
+    {
+      "x": 1.858,
+      "y": 0.107,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 1.859,
+      "y": 0.845,
+      "g": "F563-V2"
+    },
+    {
+      "x": 1.864,
+      "y": 0.897,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.866,
+      "y": 0.991,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 1.866,
+      "y": 0.997,
+      "g": "LT_UGC_8508"
+    },
+    {
+      "x": 1.866,
+      "y": 0.804,
+      "g": "UGC01281"
+    },
+    {
+      "x": 1.867,
+      "y": 1.124,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.87,
+      "y": 0.486,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.871,
+      "y": 0.618,
+      "g": "LT_DDO_210"
+    },
+    {
+      "x": 1.872,
+      "y": 0.884,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.872,
+      "y": 0.244,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.874,
+      "y": 0.83,
+      "g": "DDO154"
+    },
+    {
+      "x": 1.874,
+      "y": 0.893,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.875,
+      "y": 0.645,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.876,
+      "y": 0.895,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.878,
+      "y": 1.041,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.88,
+      "y": 0.871,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.881,
+      "y": 0.78,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.884,
+      "y": 0.995,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.888,
+      "y": 0.897,
+      "g": "UGCA442"
+    },
+    {
+      "x": 1.888,
+      "y": 0.661,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.889,
+      "y": 0.948,
+      "g": "F563-1"
+    },
+    {
+      "x": 1.891,
+      "y": 0.665,
+      "g": "DDO161"
+    },
+    {
+      "x": 1.892,
+      "y": 0.629,
+      "g": "DDO170"
+    },
+    {
+      "x": 1.893,
+      "y": 0.814,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.893,
+      "y": 0.857,
+      "g": "NGC6503"
+    },
+    {
+      "x": 1.895,
+      "y": 0.712,
+      "g": "NGC0289"
+    },
+    {
+      "x": 1.896,
+      "y": 1.139,
+      "g": "NGC2915"
+    },
+    {
+      "x": 1.896,
+      "y": 0.823,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.897,
+      "y": -0.293,
+      "g": "UGC04305"
+    },
+    {
+      "x": 1.897,
+      "y": 1.549,
+      "g": "LT_DDO_101"
+    },
+    {
+      "x": 1.899,
+      "y": 0.931,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 1.899,
+      "y": 0.992,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.899,
+      "y": 0.164,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.9,
+      "y": 1.047,
+      "g": "UGC00731"
+    },
+    {
+      "x": 1.901,
+      "y": 0.649,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 1.902,
+      "y": 0.199,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.904,
+      "y": 0.594,
+      "g": "LT_DDO_210"
+    },
+    {
+      "x": 1.904,
+      "y": 0.865,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.905,
+      "y": 1.054,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.905,
+      "y": 0.884,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.906,
+      "y": 0.655,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.908,
+      "y": 0.092,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.908,
+      "y": 0.193,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.909,
+      "y": 0.798,
+      "g": "UGC00128"
+    },
+    {
+      "x": 1.91,
+      "y": 0.273,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.911,
+      "y": 0.974,
+      "g": "UGC00731"
+    },
+    {
+      "x": 1.912,
+      "y": 0.211,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.912,
+      "y": 0.275,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.913,
+      "y": 0.177,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.915,
+      "y": 1.055,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.916,
+      "y": 0.635,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.916,
+      "y": 0.875,
+      "g": "UGC05829"
+    },
+    {
+      "x": 1.916,
+      "y": 0.104,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.918,
+      "y": 0.966,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.919,
+      "y": 0.975,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.92,
+      "y": 0.296,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.921,
+      "y": 0.39,
+      "g": "KK98-251"
+    },
+    {
+      "x": 1.922,
+      "y": 0.865,
+      "g": "NGC6503"
+    },
+    {
+      "x": 1.922,
+      "y": 0.673,
+      "g": "LT_DDO_43"
+    },
+    {
+      "x": 1.923,
+      "y": 0.961,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.923,
+      "y": 0.352,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.923,
+      "y": 0.167,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.924,
+      "y": 0.371,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.924,
+      "y": 0.891,
+      "g": "UGC08490"
+    },
+    {
+      "x": 1.925,
+      "y": 0.551,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.927,
+      "y": 0.038,
+      "g": "PGC51017"
+    },
+    {
+      "x": 1.928,
+      "y": 0.613,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.929,
+      "y": 0.948,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.93,
+      "y": 0.29,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.93,
+      "y": 0.87,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.93,
+      "y": 0.381,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.931,
+      "y": 0.347,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.932,
+      "y": 0.182,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.933,
+      "y": 0.371,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.935,
+      "y": 0.355,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.935,
+      "y": 0.864,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.935,
+      "y": 0.872,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.936,
+      "y": 0.557,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.936,
+      "y": 0.04,
+      "g": "F563-V1"
+    },
+    {
+      "x": 1.936,
+      "y": 0.646,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.937,
+      "y": 0.484,
+      "g": "LT_DDO_216"
+    },
+    {
+      "x": 1.939,
+      "y": 0.767,
+      "g": "UGC05918"
+    },
+    {
+      "x": 1.939,
+      "y": 0.824,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.94,
+      "y": 0.938,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.94,
+      "y": 0.539,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.94,
+      "y": 0.643,
+      "g": "NGC0289"
+    },
+    {
+      "x": 1.941,
+      "y": 0.358,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.941,
+      "y": 0.375,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.942,
+      "y": 0.359,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.943,
+      "y": 0.843,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.944,
+      "y": 0.022,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.946,
+      "y": 0.708,
+      "g": "UGC11820"
+    },
+    {
+      "x": 1.946,
+      "y": 0.989,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.948,
+      "y": 0.375,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.948,
+      "y": 0.806,
+      "g": "UGC03580"
+    },
+    {
+      "x": 1.948,
+      "y": 0.019,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.949,
+      "y": 0.83,
+      "g": "NGC6503"
+    },
+    {
+      "x": 1.95,
+      "y": 0.695,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.951,
+      "y": 0.361,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.952,
+      "y": 0.539,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.952,
+      "y": 0.761,
+      "g": "NGC3741"
+    },
+    {
+      "x": 1.953,
+      "y": 0.659,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 1.953,
+      "y": 0.689,
+      "g": "LT_DDO_43"
+    },
+    {
+      "x": 1.954,
+      "y": 0.035,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.955,
+      "y": 0.191,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.956,
+      "y": 0.251,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 1.958,
+      "y": 0.325,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.959,
+      "y": 0.048,
+      "g": "LT_CVnIdwA"
+    },
+    {
+      "x": 1.96,
+      "y": 0.83,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.96,
+      "y": 0.662,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.96,
+      "y": 1.08,
+      "g": "NGC1705"
+    },
+    {
+      "x": 1.961,
+      "y": 0.008,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.963,
+      "y": 0.977,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.965,
+      "y": 0.082,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.966,
+      "y": 0.903,
+      "g": "NGC0300"
+    },
+    {
+      "x": 1.967,
+      "y": 0.761,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.967,
+      "y": 0.811,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.969,
+      "y": 0.097,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.969,
+      "y": 0.563,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.97,
+      "y": 0.642,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.97,
+      "y": 0.582,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.971,
+      "y": 0.009,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.971,
+      "y": 0.94,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.972,
+      "y": 0.82,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.973,
+      "y": 0.56,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.974,
+      "y": 0.044,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.975,
+      "y": 0.012,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.975,
+      "y": 0.559,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.976,
+      "y": 0.03,
+      "g": "LT_CVnIdwA"
+    },
+    {
+      "x": 1.976,
+      "y": 0.643,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.976,
+      "y": 0.324,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.977,
+      "y": 0.119,
+      "g": "F563-V1"
+    },
+    {
+      "x": 1.977,
+      "y": 0.824,
+      "g": "NGC6503"
+    },
+    {
+      "x": 1.978,
+      "y": 0.724,
+      "g": "NGC3198"
+    },
+    {
+      "x": 1.979,
+      "y": 0.043,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.979,
+      "y": 0.881,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.98,
+      "y": 0.804,
+      "g": "D631-7"
+    },
+    {
+      "x": 1.98,
+      "y": 0.057,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.981,
+      "y": 0.971,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 1.982,
+      "y": 0.758,
+      "g": "UGC00128"
+    },
+    {
+      "x": 1.983,
+      "y": 0.896,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 1.983,
+      "y": 1.351,
+      "g": "LT_DDO_101"
+    },
+    {
+      "x": 1.984,
+      "y": 0.804,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 1.985,
+      "y": 1.399,
+      "g": "LT_DDO_101"
+    },
+    {
+      "x": 1.986,
+      "y": 0.494,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.986,
+      "y": 0.693,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.986,
+      "y": 0.115,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.987,
+      "y": 0.558,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 1.988,
+      "y": 0.01,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.989,
+      "y": 0.9,
+      "g": "NGC3109"
+    },
+    {
+      "x": 1.989,
+      "y": 0.913,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 1.99,
+      "y": 0.593,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.99,
+      "y": 0.665,
+      "g": "IC2574"
+    },
+    {
+      "x": 1.993,
+      "y": 0.637,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 1.994,
+      "y": 0.611,
+      "g": "NGC0289"
+    },
+    {
+      "x": 1.996,
+      "y": 0.017,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.997,
+      "y": 0.933,
+      "g": "F583-1"
+    },
+    {
+      "x": 1.999,
+      "y": 0.266,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 1.999,
+      "y": 0.798,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2,
+      "y": 0.601,
+      "g": "LT_DDO_210"
+    },
+    {
+      "x": 2,
+      "y": 0.757,
+      "g": "F567-2"
+    },
+    {
+      "x": 2.002,
+      "y": 0.049,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.003,
+      "y": 0.752,
+      "g": "UGC05918"
+    },
+    {
+      "x": 2.004,
+      "y": 0.609,
+      "g": "IC2574"
+    },
+    {
+      "x": 2.004,
+      "y": 0.649,
+      "g": "IC2574"
+    },
+    {
+      "x": 2.005,
+      "y": 0.013,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.005,
+      "y": 0.779,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.006,
+      "y": 0.775,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.006,
+      "y": 0.609,
+      "g": "IC2574"
+    },
+    {
+      "x": 2.008,
+      "y": 0.608,
+      "g": "IC2574"
+    },
+    {
+      "x": 2.009,
+      "y": 0.794,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.009,
+      "y": 0.251,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.01,
+      "y": 0.86,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.01,
+      "y": 0.882,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.01,
+      "y": 0.851,
+      "g": "UGC00731"
+    },
+    {
+      "x": 2.011,
+      "y": 0.77,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.012,
+      "y": 0.748,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.014,
+      "y": 0.88,
+      "g": "F565-V2"
+    },
+    {
+      "x": 2.016,
+      "y": 0.031,
+      "g": "PGC51017"
+    },
+    {
+      "x": 2.017,
+      "y": 0.497,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.017,
+      "y": 0.71,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.018,
+      "y": 0.462,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.019,
+      "y": 0.775,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.02,
+      "y": 0.791,
+      "g": "F565-V2"
+    },
+    {
+      "x": 2.022,
+      "y": 0.634,
+      "g": "F583-1"
+    },
+    {
+      "x": 2.023,
+      "y": 0.193,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.024,
+      "y": 0.061,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.025,
+      "y": 0.039,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.026,
+      "y": 0.919,
+      "g": "F565-V2"
+    },
+    {
+      "x": 2.026,
+      "y": 0.89,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.026,
+      "y": 0.895,
+      "g": "UGC07608"
+    },
+    {
+      "x": 2.027,
+      "y": 0.734,
+      "g": "UGC05716"
+    },
+    {
+      "x": 2.027,
+      "y": 0.798,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.028,
+      "y": 0.639,
+      "g": "UGC05750"
+    },
+    {
+      "x": 2.028,
+      "y": 0.748,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.028,
+      "y": 0.876,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 2.029,
+      "y": 0.119,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.029,
+      "y": 0.789,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.03,
+      "y": 0.762,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.031,
+      "y": 0.66,
+      "g": "LT_DDO_43"
+    },
+    {
+      "x": 2.031,
+      "y": 0.189,
+      "g": "F563-V1"
+    },
+    {
+      "x": 2.032,
+      "y": 0.694,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.033,
+      "y": 0.802,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.034,
+      "y": 0.729,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.035,
+      "y": 0.874,
+      "g": "F583-1"
+    },
+    {
+      "x": 2.036,
+      "y": 0.995,
+      "g": "NGC0024"
+    },
+    {
+      "x": 2.036,
+      "y": 0.713,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.036,
+      "y": 1.03,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.037,
+      "y": 0.135,
+      "g": "F583-1"
+    },
+    {
+      "x": 2.038,
+      "y": 0.628,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.039,
+      "y": 0.663,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.039,
+      "y": 0.733,
+      "g": "DDO154"
+    },
+    {
+      "x": 2.039,
+      "y": 0.185,
+      "g": "UGC05750"
+    },
+    {
+      "x": 2.04,
+      "y": 0.159,
+      "g": "LT_IC_1613"
+    },
+    {
+      "x": 2.04,
+      "y": 0.718,
+      "g": "NGC3109"
+    },
+    {
+      "x": 2.041,
+      "y": 0.767,
+      "g": "NGC3741"
+    },
+    {
+      "x": 2.041,
+      "y": 0.671,
+      "g": "UGC05750"
+    },
+    {
+      "x": 2.042,
+      "y": 0.348,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.043,
+      "y": 0.78,
+      "g": "UGC12732"
+    },
+    {
+      "x": 2.043,
+      "y": 0.758,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.044,
+      "y": 0.982,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.044,
+      "y": 0.739,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.046,
+      "y": 0.836,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.047,
+      "y": 0.632,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.048,
+      "y": 0.929,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.048,
+      "y": 0.728,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.049,
+      "y": 0.73,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.05,
+      "y": 0.86,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.051,
+      "y": 0.58,
+      "g": "UGC01230"
+    },
+    {
+      "x": 2.052,
+      "y": 0.866,
+      "g": "LT_DDO_52"
+    },
+    {
+      "x": 2.053,
+      "y": 0.918,
+      "g": "UGC06667"
+    },
+    {
+      "x": 2.053,
+      "y": 0.125,
+      "g": "UGC07577"
+    },
+    {
+      "x": 2.053,
+      "y": 0.683,
+      "g": "UGCA281"
+    },
+    {
+      "x": 2.053,
+      "y": 0.996,
+      "g": "UGC07608"
+    },
+    {
+      "x": 2.054,
+      "y": 0.736,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.055,
+      "y": 0.991,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.056,
+      "y": 0.975,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.056,
+      "y": 0.728,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.057,
+      "y": 0.675,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.058,
+      "y": 0.627,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 2.059,
+      "y": 0.672,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.06,
+      "y": 0.581,
+      "g": "DDO170"
+    },
+    {
+      "x": 2.06,
+      "y": 0.913,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.061,
+      "y": 0.733,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.062,
+      "y": 0.91,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.062,
+      "y": 0.894,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.062,
+      "y": 0.47,
+      "g": "F583-1"
+    },
+    {
+      "x": 2.063,
+      "y": 0.647,
+      "g": "LT_DDO_43"
+    },
+    {
+      "x": 2.063,
+      "y": 0.741,
+      "g": "UGC12732"
+    },
+    {
+      "x": 2.064,
+      "y": 0.641,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 2.069,
+      "y": 0.743,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.069,
+      "y": 0.772,
+      "g": "NGC3109"
+    },
+    {
+      "x": 2.071,
+      "y": 0.643,
+      "g": "LT_DDO_126"
+    },
+    {
+      "x": 2.071,
+      "y": 0.585,
+      "g": "F583-1"
+    },
+    {
+      "x": 2.071,
+      "y": 0.755,
+      "g": "LT_WLM"
+    },
+    {
+      "x": 2.071,
+      "y": 0.362,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.072,
+      "y": 0.822,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.072,
+      "y": 0.861,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.072,
+      "y": 0.246,
+      "g": "F563-V1"
+    },
+    {
+      "x": 2.073,
+      "y": 0.645,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.074,
+      "y": 0.836,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.075,
+      "y": 0.878,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.076,
+      "y": 0.79,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.076,
+      "y": 0.837,
+      "g": "UGC12732"
+    },
+    {
+      "x": 2.077,
+      "y": 0.727,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.078,
+      "y": 0.735,
+      "g": "NGC3109"
+    },
+    {
+      "x": 2.08,
+      "y": 0.748,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.08,
+      "y": 0.817,
+      "g": "UGC05716"
+    },
+    {
+      "x": 2.081,
+      "y": 0.024,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.082,
+      "y": 0.779,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.083,
+      "y": 0.493,
+      "g": "F567-2"
+    },
+    {
+      "x": 2.084,
+      "y": 0.662,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.085,
+      "y": 0.823,
+      "g": "NGC6674"
+    },
+    {
+      "x": 2.085,
+      "y": 1.043,
+      "g": "UGC05764"
+    },
+    {
+      "x": 2.086,
+      "y": 0.805,
+      "g": "NGC3109"
+    },
+    {
+      "x": 2.086,
+      "y": 0.847,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.087,
+      "y": 0.639,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.088,
+      "y": 0.592,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.089,
+      "y": 0.926,
+      "g": "UGC07608"
+    },
+    {
+      "x": 2.091,
+      "y": 0.739,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.092,
+      "y": 0.54,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.093,
+      "y": 0.364,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.094,
+      "y": 0.637,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.094,
+      "y": 0.629,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.095,
+      "y": 0.64,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.095,
+      "y": 0.755,
+      "g": "NGC3109"
+    },
+    {
+      "x": 2.096,
+      "y": 0.004,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.097,
+      "y": 0.546,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.099,
+      "y": 0.629,
+      "g": "DDO170"
+    },
+    {
+      "x": 2.1,
+      "y": 0.8,
+      "g": "LT_DDO_133"
+    },
+    {
+      "x": 2.101,
+      "y": 0.599,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.101,
+      "y": 0.725,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.102,
+      "y": 0.812,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.103,
+      "y": 0.969,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.103,
+      "y": 0.65,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.103,
+      "y": 0.614,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.106,
+      "y": 0.957,
+      "g": "UGC06667"
+    },
+    {
+      "x": 2.107,
+      "y": 0.498,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.107,
+      "y": 0.536,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.108,
+      "y": 0.646,
+      "g": "DDO170"
+    },
+    {
+      "x": 2.11,
+      "y": 0.867,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.11,
+      "y": 0.503,
+      "g": "DDO170"
+    },
+    {
+      "x": 2.11,
+      "y": 0.672,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.11,
+      "y": 0.45,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.111,
+      "y": 0.651,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.113,
+      "y": 0.685,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.114,
+      "y": 0.684,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.114,
+      "y": 0.671,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.115,
+      "y": 0.168,
+      "g": "CamB"
+    },
+    {
+      "x": 2.116,
+      "y": 0.812,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.117,
+      "y": 0.612,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.118,
+      "y": 0.834,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.119,
+      "y": 0.835,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.121,
+      "y": 0.65,
+      "g": "D631-7"
+    },
+    {
+      "x": 2.121,
+      "y": 0.616,
+      "g": "D512-2"
+    },
+    {
+      "x": 2.122,
+      "y": 0.815,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.123,
+      "y": 0.705,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.123,
+      "y": 0.823,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.124,
+      "y": 0.631,
+      "g": "DDO064"
+    },
+    {
+      "x": 2.126,
+      "y": 0.772,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.126,
+      "y": 0.01,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.127,
+      "y": 0.967,
+      "g": "UGC06667"
+    },
+    {
+      "x": 2.128,
+      "y": 0.537,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.13,
+      "y": 0.486,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.13,
+      "y": 0.665,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.131,
+      "y": 0.466,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.133,
+      "y": 0.836,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.134,
+      "y": 0.628,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.135,
+      "y": 0.727,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.135,
+      "y": 0.654,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.136,
+      "y": 0.014,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.136,
+      "y": 0.701,
+      "g": "UGC05999"
+    },
+    {
+      "x": 2.138,
+      "y": 0.672,
+      "g": "UGC06614"
+    },
+    {
+      "x": 2.138,
+      "y": 0.695,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.138,
+      "y": 0.497,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.14,
+      "y": 0.828,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.141,
+      "y": 0.811,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.141,
+      "y": 0.66,
+      "g": "UGC12732"
+    },
+    {
+      "x": 2.142,
+      "y": 0.881,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.142,
+      "y": 0.628,
+      "g": "UGC05750"
+    },
+    {
+      "x": 2.143,
+      "y": 0.857,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.144,
+      "y": 0.305,
+      "g": "UGC08837"
+    },
+    {
+      "x": 2.145,
+      "y": 0.003,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.145,
+      "y": 0.632,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.146,
+      "y": 0.848,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.146,
+      "y": 0.635,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.148,
+      "y": 0.877,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.148,
+      "y": 0.819,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.149,
+      "y": 0.818,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.15,
+      "y": 1.053,
+      "g": "UGC05764"
+    },
+    {
+      "x": 2.15,
+      "y": 0.584,
+      "g": "NGC5055"
+    },
+    {
+      "x": 2.151,
+      "y": 0.494,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.151,
+      "y": 0.858,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.152,
+      "y": 0.716,
+      "g": "NGC3741"
+    },
+    {
+      "x": 2.154,
+      "y": 0.795,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.155,
+      "y": 0.595,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.155,
+      "y": 0.627,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.156,
+      "y": 0.788,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.158,
+      "y": 0.763,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.158,
+      "y": 0.668,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.159,
+      "y": 0.621,
+      "g": "UGC00731"
+    },
+    {
+      "x": 2.161,
+      "y": 0.647,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.161,
+      "y": 0.739,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.162,
+      "y": 0.917,
+      "g": "NGC0024"
+    },
+    {
+      "x": 2.162,
+      "y": 0.665,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.163,
+      "y": 0.805,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.164,
+      "y": 0.63,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.164,
+      "y": 0.669,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.165,
+      "y": 0.737,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.165,
+      "y": 0.509,
+      "g": "UGC07866"
+    },
+    {
+      "x": 2.166,
+      "y": 0.617,
+      "g": "UGC05005"
+    },
+    {
+      "x": 2.167,
+      "y": 0.465,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.171,
+      "y": 0.801,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.171,
+      "y": 0.211,
+      "g": "UGC07559"
+    },
+    {
+      "x": 2.171,
+      "y": 0.848,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.173,
+      "y": 0.347,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.174,
+      "y": 0.726,
+      "g": "UGC06818"
+    },
+    {
+      "x": 2.174,
+      "y": 0.504,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.174,
+      "y": 0.955,
+      "g": "NGC4214"
+    },
+    {
+      "x": 2.174,
+      "y": 0.012,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.176,
+      "y": 0.611,
+      "g": "UGC05829"
+    },
+    {
+      "x": 2.177,
+      "y": 0.672,
+      "g": "LT_HARO_36"
+    },
+    {
+      "x": 2.177,
+      "y": 0.579,
+      "g": "UGC07866"
+    },
+    {
+      "x": 2.178,
+      "y": 0.619,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.179,
+      "y": 0.562,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.179,
+      "y": 0.164,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.18,
+      "y": 0.724,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.18,
+      "y": 0.636,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.181,
+      "y": 0.915,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.181,
+      "y": 0.776,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.182,
+      "y": 1.159,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.183,
+      "y": 0.46,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.184,
+      "y": 0.873,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.185,
+      "y": 0.642,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.185,
+      "y": -0.428,
+      "g": "CamB"
+    },
+    {
+      "x": 2.186,
+      "y": 0.693,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.187,
+      "y": 0.807,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.188,
+      "y": 0.063,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.189,
+      "y": 0.697,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.19,
+      "y": 0.771,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.191,
+      "y": 0.571,
+      "g": "D631-7"
+    },
+    {
+      "x": 2.192,
+      "y": 0.707,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.194,
+      "y": 0.732,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.196,
+      "y": 0.639,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.197,
+      "y": 0.571,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.197,
+      "y": 0.794,
+      "g": "UGC05716"
+    },
+    {
+      "x": 2.198,
+      "y": 0.62,
+      "g": "NGC2683"
+    },
+    {
+      "x": 2.199,
+      "y": 0.193,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.2,
+      "y": 0.72,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.2,
+      "y": 0.204,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.201,
+      "y": 0.241,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.201,
+      "y": 0.893,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.202,
+      "y": 0.329,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.203,
+      "y": 0.452,
+      "g": "UGC07866"
+    },
+    {
+      "x": 2.203,
+      "y": 0.235,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.203,
+      "y": 0.493,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.204,
+      "y": 0.692,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.205,
+      "y": 0.455,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.205,
+      "y": 0.57,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.205,
+      "y": 0.105,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.206,
+      "y": 0.908,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.207,
+      "y": 0.234,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.207,
+      "y": 0.182,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.208,
+      "y": 0.696,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.209,
+      "y": 0.736,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.21,
+      "y": 0.576,
+      "g": "UGC05005"
+    },
+    {
+      "x": 2.211,
+      "y": 0.717,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.212,
+      "y": 0.714,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.213,
+      "y": 0.461,
+      "g": "DDO154"
+    },
+    {
+      "x": 2.213,
+      "y": 0.158,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.214,
+      "y": 0.803,
+      "g": "UGC12632"
+    },
+    {
+      "x": 2.214,
+      "y": 0.919,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.215,
+      "y": 0.834,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.215,
+      "y": 0.216,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.215,
+      "y": 0.408,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.216,
+      "y": 0.214,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.216,
+      "y": 0.635,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.216,
+      "y": 0.52,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.217,
+      "y": 0.533,
+      "g": "UGC04483"
+    },
+    {
+      "x": 2.218,
+      "y": 0.936,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.219,
+      "y": 0.438,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.221,
+      "y": 0.713,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.221,
+      "y": 0.903,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.223,
+      "y": 0.946,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.223,
+      "y": 0.851,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.224,
+      "y": 0.672,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.224,
+      "y": 0.762,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.224,
+      "y": 0.698,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.224,
+      "y": 0.218,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.225,
+      "y": 0.208,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.225,
+      "y": 0.113,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.226,
+      "y": 0.353,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.226,
+      "y": 0.456,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.227,
+      "y": 0.613,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.227,
+      "y": 0.667,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.228,
+      "y": 0.181,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.228,
+      "y": 0.708,
+      "g": "F571-V1"
+    },
+    {
+      "x": 2.228,
+      "y": 0.758,
+      "g": "NGC6674"
+    },
+    {
+      "x": 2.229,
+      "y": 0.155,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.23,
+      "y": 0.672,
+      "g": "UGC05999"
+    },
+    {
+      "x": 2.23,
+      "y": 0.111,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.231,
+      "y": 0.78,
+      "g": "UGC05764"
+    },
+    {
+      "x": 2.232,
+      "y": 0.558,
+      "g": "UGC05999"
+    },
+    {
+      "x": 2.233,
+      "y": 0.662,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.234,
+      "y": 0.663,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.235,
+      "y": 0.58,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.236,
+      "y": 0.206,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.237,
+      "y": 0.53,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.239,
+      "y": 0.152,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.24,
+      "y": 0.688,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.241,
+      "y": 0.465,
+      "g": "UGC07866"
+    },
+    {
+      "x": 2.241,
+      "y": 0.705,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.241,
+      "y": 0.815,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.242,
+      "y": 0.682,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.243,
+      "y": 0.53,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.243,
+      "y": 0.677,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.244,
+      "y": 0.713,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.245,
+      "y": 0.69,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.246,
+      "y": 0.929,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.247,
+      "y": 0.619,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.247,
+      "y": 0.705,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.247,
+      "y": 0.599,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.247,
+      "y": 0.918,
+      "g": "NGC4214"
+    },
+    {
+      "x": 2.248,
+      "y": 0.707,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.248,
+      "y": 0.936,
+      "g": "F568-V1"
+    },
+    {
+      "x": 2.25,
+      "y": 0.463,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.25,
+      "y": 0.76,
+      "g": "F563-1"
+    },
+    {
+      "x": 2.251,
+      "y": 0.599,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.251,
+      "y": 0.776,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.252,
+      "y": 0.434,
+      "g": "KK98-251"
+    },
+    {
+      "x": 2.253,
+      "y": 0.432,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.253,
+      "y": 0.658,
+      "g": "DDO168"
+    },
+    {
+      "x": 2.254,
+      "y": 0.683,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.254,
+      "y": 0.926,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.255,
+      "y": 0.102,
+      "g": "LT_DDO_50"
+    },
+    {
+      "x": 2.255,
+      "y": 0.348,
+      "g": "UGC00891"
+    },
+    {
+      "x": 2.255,
+      "y": 0.6,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.256,
+      "y": 0.51,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.258,
+      "y": 0.567,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.258,
+      "y": 0.561,
+      "g": "UGC05829"
+    },
+    {
+      "x": 2.259,
+      "y": 0.531,
+      "g": "UGC05005"
+    },
+    {
+      "x": 2.262,
+      "y": 0.55,
+      "g": "UGCA442"
+    },
+    {
+      "x": 2.264,
+      "y": 0.721,
+      "g": "DDO064"
+    },
+    {
+      "x": 2.264,
+      "y": 0.824,
+      "g": "UGC05764"
+    },
+    {
+      "x": 2.264,
+      "y": 0.672,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.265,
+      "y": 0.488,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.265,
+      "y": 0.647,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.266,
+      "y": 0.504,
+      "g": "UGC04483"
+    },
+    {
+      "x": 2.267,
+      "y": 0.493,
+      "g": "D631-7"
+    },
+    {
+      "x": 2.267,
+      "y": 0.996,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.268,
+      "y": 0.271,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.269,
+      "y": 0.729,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.27,
+      "y": 0.561,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.271,
+      "y": 0.627,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.272,
+      "y": 0.577,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.272,
+      "y": 0.775,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.272,
+      "y": 0.516,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.274,
+      "y": 0.649,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.275,
+      "y": 0.623,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.275,
+      "y": 0.566,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.276,
+      "y": 0.603,
+      "g": "NGC2683"
+    },
+    {
+      "x": 2.276,
+      "y": -0.155,
+      "g": "CamB"
+    },
+    {
+      "x": 2.276,
+      "y": 0.819,
+      "g": "UGC12732"
+    },
+    {
+      "x": 2.277,
+      "y": 0.558,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.277,
+      "y": 0.659,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.278,
+      "y": 0.749,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.279,
+      "y": 0.735,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.28,
+      "y": 0.688,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.281,
+      "y": 0.675,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.281,
+      "y": 0.757,
+      "g": "UGC02259"
+    },
+    {
+      "x": 2.282,
+      "y": 0.639,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.283,
+      "y": 0.702,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.283,
+      "y": 0.481,
+      "g": "UGCA444"
+    },
+    {
+      "x": 2.285,
+      "y": 0.66,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.286,
+      "y": 0.716,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.287,
+      "y": 0.63,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.288,
+      "y": 0.73,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.289,
+      "y": 0.541,
+      "g": "UGC04499"
+    },
+    {
+      "x": 2.289,
+      "y": 0.673,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.289,
+      "y": 0.644,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.291,
+      "y": 0.585,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.291,
+      "y": 0.594,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.294,
+      "y": 0.577,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.294,
+      "y": 0.656,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.295,
+      "y": 1.035,
+      "g": "F568-V1"
+    },
+    {
+      "x": 2.296,
+      "y": 0.602,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.296,
+      "y": 0.78,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.298,
+      "y": 0.949,
+      "g": "F571-8"
+    },
+    {
+      "x": 2.299,
+      "y": 0.544,
+      "g": "NGC5055"
+    },
+    {
+      "x": 2.3,
+      "y": 0.65,
+      "g": "UGC05253"
+    },
+    {
+      "x": 2.301,
+      "y": 0.003,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.302,
+      "y": 1.119,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.305,
+      "y": 0.629,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.306,
+      "y": 0.362,
+      "g": "UGC09992"
+    },
+    {
+      "x": 2.306,
+      "y": 0.533,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.307,
+      "y": 0.239,
+      "g": "UGC07559"
+    },
+    {
+      "x": 2.307,
+      "y": 0.526,
+      "g": "UGC05829"
+    },
+    {
+      "x": 2.308,
+      "y": 0.169,
+      "g": "UGC02023"
+    },
+    {
+      "x": 2.308,
+      "y": 0.903,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.31,
+      "y": 0.62,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.311,
+      "y": 0.529,
+      "g": "UGC10310"
+    },
+    {
+      "x": 2.311,
+      "y": 0.428,
+      "g": "UGC08837"
+    },
+    {
+      "x": 2.312,
+      "y": 0.575,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.312,
+      "y": 0.644,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.314,
+      "y": 0.616,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.314,
+      "y": 0.643,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.315,
+      "y": 0.847,
+      "g": "ESO444-G084"
+    },
+    {
+      "x": 2.316,
+      "y": 0.771,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.317,
+      "y": 0.769,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.318,
+      "y": 0.966,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.319,
+      "y": 0.373,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.32,
+      "y": 0.584,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.321,
+      "y": 0.309,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.323,
+      "y": 0.901,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.323,
+      "y": 0.491,
+      "g": "UGC05829"
+    },
+    {
+      "x": 2.324,
+      "y": 0.779,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.325,
+      "y": 0.543,
+      "g": "UGC04499"
+    },
+    {
+      "x": 2.326,
+      "y": 0.252,
+      "g": "UGC08837"
+    },
+    {
+      "x": 2.326,
+      "y": 0.447,
+      "g": "UGC04483"
+    },
+    {
+      "x": 2.327,
+      "y": 0.633,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.327,
+      "y": 0.849,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.329,
+      "y": 0.788,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.33,
+      "y": 0.505,
+      "g": "UGC05829"
+    },
+    {
+      "x": 2.33,
+      "y": 0.78,
+      "g": "ESO444-G084"
+    },
+    {
+      "x": 2.331,
+      "y": 0.326,
+      "g": "UGC05005"
+    },
+    {
+      "x": 2.332,
+      "y": 0.536,
+      "g": "DDO064"
+    },
+    {
+      "x": 2.332,
+      "y": 0.431,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.332,
+      "y": 0.581,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.333,
+      "y": 0.692,
+      "g": "UGC00634"
+    },
+    {
+      "x": 2.333,
+      "y": 1.111,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.334,
+      "y": 0.606,
+      "g": "NGC3769"
+    },
+    {
+      "x": 2.335,
+      "y": 0.61,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.335,
+      "y": 0.686,
+      "g": "UGC06399"
+    },
+    {
+      "x": 2.335,
+      "y": 0.538,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.336,
+      "y": 0.619,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.336,
+      "y": 0.665,
+      "g": "UGC10310"
+    },
+    {
+      "x": 2.338,
+      "y": 0.645,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.338,
+      "y": 0.786,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.339,
+      "y": 0.236,
+      "g": "F561-1"
+    },
+    {
+      "x": 2.34,
+      "y": 0.577,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.34,
+      "y": 0.67,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.341,
+      "y": 0.509,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.342,
+      "y": 0.901,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.343,
+      "y": 0.58,
+      "g": "LT_NGC_2366"
+    },
+    {
+      "x": 2.344,
+      "y": 0.447,
+      "g": "UGC05005"
+    },
+    {
+      "x": 2.344,
+      "y": 0.576,
+      "g": "UGC04499"
+    },
+    {
+      "x": 2.345,
+      "y": 0.561,
+      "g": "UGCA281"
+    },
+    {
+      "x": 2.345,
+      "y": 0.564,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.346,
+      "y": 0.586,
+      "g": "F571-V1"
+    },
+    {
+      "x": 2.348,
+      "y": 0.65,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.349,
+      "y": 0.758,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.35,
+      "y": 0.52,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.351,
+      "y": 0.754,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.352,
+      "y": 0.598,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.353,
+      "y": 0.487,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.353,
+      "y": 0.895,
+      "g": "NGC1705"
+    },
+    {
+      "x": 2.354,
+      "y": 0.608,
+      "g": "UGC06818"
+    },
+    {
+      "x": 2.356,
+      "y": 0.546,
+      "g": "UGCA442"
+    },
+    {
+      "x": 2.357,
+      "y": 0.816,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.357,
+      "y": 0.42,
+      "g": "LT_HARO_36"
+    },
+    {
+      "x": 2.358,
+      "y": 0.709,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.359,
+      "y": 0.034,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.359,
+      "y": 0.217,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.361,
+      "y": 0.137,
+      "g": "F561-1"
+    },
+    {
+      "x": 2.362,
+      "y": 0.664,
+      "g": "NGC6674"
+    },
+    {
+      "x": 2.364,
+      "y": 0.527,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.364,
+      "y": 0.572,
+      "g": "UGC07524"
+    },
+    {
+      "x": 2.366,
+      "y": 0.335,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.366,
+      "y": 0.789,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.366,
+      "y": 0.571,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.368,
+      "y": 0.308,
+      "g": "UGC08837"
+    },
+    {
+      "x": 2.369,
+      "y": 0.735,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.371,
+      "y": 0.473,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.372,
+      "y": 0.673,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.373,
+      "y": 0.586,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.373,
+      "y": 0.654,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.374,
+      "y": 0.816,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.374,
+      "y": 0.623,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.375,
+      "y": 0.653,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.377,
+      "y": 0.592,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.377,
+      "y": 0.537,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.378,
+      "y": 0.737,
+      "g": "UGC08699"
+    },
+    {
+      "x": 2.378,
+      "y": 0.567,
+      "g": "UGC00191"
+    },
+    {
+      "x": 2.378,
+      "y": 0.501,
+      "g": "UGC07690"
+    },
+    {
+      "x": 2.379,
+      "y": 0.628,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.379,
+      "y": 0.592,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.38,
+      "y": 0.959,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.381,
+      "y": 0.832,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.381,
+      "y": 0.656,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.382,
+      "y": 0.862,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.383,
+      "y": 0.468,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.383,
+      "y": 0.698,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.384,
+      "y": 0.807,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.385,
+      "y": 0.728,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.387,
+      "y": 0.816,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.388,
+      "y": 0.223,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.388,
+      "y": 1.003,
+      "g": "F568-V1"
+    },
+    {
+      "x": 2.389,
+      "y": 0.674,
+      "g": "UGC06399"
+    },
+    {
+      "x": 2.39,
+      "y": 0.63,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.391,
+      "y": 0.748,
+      "g": "UGC02259"
+    },
+    {
+      "x": 2.393,
+      "y": 0.408,
+      "g": "UGC09992"
+    },
+    {
+      "x": 2.393,
+      "y": 0.793,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.394,
+      "y": 0.734,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.395,
+      "y": 0.918,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.395,
+      "y": 0.689,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.396,
+      "y": 0.291,
+      "g": "UGC04483"
+    },
+    {
+      "x": 2.396,
+      "y": 0.569,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.397,
+      "y": 0.707,
+      "g": "F568-3"
+    },
+    {
+      "x": 2.398,
+      "y": 0.703,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.398,
+      "y": 0.344,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.399,
+      "y": 1.024,
+      "g": "F568-V1"
+    },
+    {
+      "x": 2.401,
+      "y": 0.787,
+      "g": "ESO444-G084"
+    },
+    {
+      "x": 2.403,
+      "y": 0.591,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.403,
+      "y": 0.401,
+      "g": "NGC3741"
+    },
+    {
+      "x": 2.403,
+      "y": 0.648,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.404,
+      "y": 0.617,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.404,
+      "y": 0.701,
+      "g": "PGC51017"
+    },
+    {
+      "x": 2.405,
+      "y": 0.48,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.406,
+      "y": 0.673,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.408,
+      "y": 0.681,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.409,
+      "y": 0.465,
+      "g": "UGC04483"
+    },
+    {
+      "x": 2.41,
+      "y": 0.554,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.411,
+      "y": 0.822,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.412,
+      "y": 0.012,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.412,
+      "y": 0.648,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.413,
+      "y": 0.585,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.415,
+      "y": 0.789,
+      "g": "UGC01230"
+    },
+    {
+      "x": 2.416,
+      "y": 0.583,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.417,
+      "y": 0.583,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.417,
+      "y": 0.594,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.418,
+      "y": 0.49,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.421,
+      "y": 0.582,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.422,
+      "y": 0.724,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.422,
+      "y": 0.761,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.423,
+      "y": 0.868,
+      "g": "F571-8"
+    },
+    {
+      "x": 2.424,
+      "y": 0.601,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.424,
+      "y": 0.7,
+      "g": "UGC03205"
+    },
+    {
+      "x": 2.425,
+      "y": 0.616,
+      "g": "DDO168"
+    },
+    {
+      "x": 2.425,
+      "y": 0.602,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.425,
+      "y": 0.363,
+      "g": "UGC05999"
+    },
+    {
+      "x": 2.426,
+      "y": 0.636,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.428,
+      "y": -0.231,
+      "g": "D631-7"
+    },
+    {
+      "x": 2.428,
+      "y": 0.531,
+      "g": "UGC10310"
+    },
+    {
+      "x": 2.429,
+      "y": 0.741,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.431,
+      "y": 0.25,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.432,
+      "y": -0.065,
+      "g": "UGC06628"
+    },
+    {
+      "x": 2.432,
+      "y": 0.199,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.433,
+      "y": 0.532,
+      "g": "UGCA281"
+    },
+    {
+      "x": 2.433,
+      "y": 0.699,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.434,
+      "y": 0.67,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.435,
+      "y": 0.828,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.435,
+      "y": 0.522,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.435,
+      "y": 0.762,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.435,
+      "y": -0.002,
+      "g": "UGC06628"
+    },
+    {
+      "x": 2.436,
+      "y": 0.934,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.437,
+      "y": 0.465,
+      "g": "LT_HARO_36"
+    },
+    {
+      "x": 2.437,
+      "y": 0.584,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.437,
+      "y": 0.461,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.438,
+      "y": 0.902,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.438,
+      "y": 0.595,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.439,
+      "y": 0.437,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.439,
+      "y": 0.471,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.439,
+      "y": 1.043,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.441,
+      "y": 0.396,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.442,
+      "y": 0.793,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.442,
+      "y": 0.563,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.442,
+      "y": 0.615,
+      "g": "DDO064"
+    },
+    {
+      "x": 2.443,
+      "y": 0.519,
+      "g": "UGC02023"
+    },
+    {
+      "x": 2.444,
+      "y": 0.594,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.445,
+      "y": 0.485,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.446,
+      "y": 0.617,
+      "g": "F583-4"
+    },
+    {
+      "x": 2.446,
+      "y": 0.334,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.447,
+      "y": 0.572,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.447,
+      "y": 0.512,
+      "g": "NGC3769"
+    },
+    {
+      "x": 2.448,
+      "y": 0.14,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.449,
+      "y": 0.624,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.449,
+      "y": 0.46,
+      "g": "NGC2366"
+    },
+    {
+      "x": 2.45,
+      "y": 0.558,
+      "g": "UGC05253"
+    },
+    {
+      "x": 2.451,
+      "y": 0.466,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.453,
+      "y": 0.388,
+      "g": "LT_HARO_36"
+    },
+    {
+      "x": 2.453,
+      "y": 0.522,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.453,
+      "y": 0.439,
+      "g": "NGC0801"
+    },
+    {
+      "x": 2.454,
+      "y": 0.559,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.455,
+      "y": 0.588,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.456,
+      "y": 0.721,
+      "g": "F568-1"
+    },
+    {
+      "x": 2.456,
+      "y": 0.624,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.459,
+      "y": 0.638,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.46,
+      "y": 0.93,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.461,
+      "y": 0.819,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.461,
+      "y": 0.477,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.462,
+      "y": 0.658,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.463,
+      "y": 0.518,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.463,
+      "y": 0.466,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.464,
+      "y": 0.721,
+      "g": "NGC0024"
+    },
+    {
+      "x": 2.464,
+      "y": 0.686,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.465,
+      "y": 0.746,
+      "g": "NGC0247"
+    },
+    {
+      "x": 2.465,
+      "y": 0.126,
+      "g": "UGC06628"
+    },
+    {
+      "x": 2.467,
+      "y": 0.577,
+      "g": "UGC06614"
+    },
+    {
+      "x": 2.469,
+      "y": 0.862,
+      "g": "UGC06446"
+    },
+    {
+      "x": 2.47,
+      "y": 0.058,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.47,
+      "y": 0.48,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.471,
+      "y": 0.676,
+      "g": "UGC06399"
+    },
+    {
+      "x": 2.472,
+      "y": -0.004,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.472,
+      "y": 0.081,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.473,
+      "y": 0.768,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.473,
+      "y": 0.485,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.475,
+      "y": 0.514,
+      "g": "NGC2998"
+    },
+    {
+      "x": 2.476,
+      "y": 0.61,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.478,
+      "y": 0.51,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.481,
+      "y": 0.59,
+      "g": "UGC06917"
+    },
+    {
+      "x": 2.482,
+      "y": 0.468,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.483,
+      "y": 0.213,
+      "g": "UGC06628"
+    },
+    {
+      "x": 2.483,
+      "y": 0.677,
+      "g": "UGC08699"
+    },
+    {
+      "x": 2.484,
+      "y": 0.479,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.484,
+      "y": 0.562,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.485,
+      "y": 0.346,
+      "g": "NGC4068"
+    },
+    {
+      "x": 2.486,
+      "y": 0.799,
+      "g": "UGC11820"
+    },
+    {
+      "x": 2.487,
+      "y": 0.48,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.489,
+      "y": 0.738,
+      "g": "UGC02259"
+    },
+    {
+      "x": 2.49,
+      "y": 0.41,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.49,
+      "y": 0.617,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.49,
+      "y": 0.673,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.491,
+      "y": 0.585,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.491,
+      "y": 0.81,
+      "g": "UGC01230"
+    },
+    {
+      "x": 2.493,
+      "y": 0.58,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.493,
+      "y": 0.544,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.493,
+      "y": 0.692,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.494,
+      "y": 0.995,
+      "g": "UGC02259"
+    },
+    {
+      "x": 2.495,
+      "y": 0.531,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.497,
+      "y": 0.836,
+      "g": "NGC1705"
+    },
+    {
+      "x": 2.497,
+      "y": 0.647,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.498,
+      "y": 0.698,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.499,
+      "y": 0.672,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.499,
+      "y": 0.588,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.501,
+      "y": 0.505,
+      "g": "UGC09992"
+    },
+    {
+      "x": 2.501,
+      "y": 0.906,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.503,
+      "y": 0.37,
+      "g": "NGC3741"
+    },
+    {
+      "x": 2.504,
+      "y": 0.481,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.504,
+      "y": 0.596,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.504,
+      "y": 0.605,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.505,
+      "y": 0.459,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.505,
+      "y": 0.192,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.506,
+      "y": 0.557,
+      "g": "UGC06614"
+    },
+    {
+      "x": 2.507,
+      "y": 0.168,
+      "g": "UGC07125"
+    },
+    {
+      "x": 2.511,
+      "y": 0.602,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.511,
+      "y": 0.577,
+      "g": "UGC06399"
+    },
+    {
+      "x": 2.512,
+      "y": 0.635,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.513,
+      "y": 0.874,
+      "g": "UGC04325"
+    },
+    {
+      "x": 2.514,
+      "y": 0.996,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.515,
+      "y": 0.214,
+      "g": "DDO161"
+    },
+    {
+      "x": 2.517,
+      "y": 0.776,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.517,
+      "y": 0.522,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.52,
+      "y": 0.582,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.52,
+      "y": 1.034,
+      "g": "F563-V2"
+    },
+    {
+      "x": 2.521,
+      "y": 0.541,
+      "g": "NGC4157"
+    },
+    {
+      "x": 2.522,
+      "y": 0.426,
+      "g": "UGCA281"
+    },
+    {
+      "x": 2.523,
+      "y": 0.552,
+      "g": "UGC04499"
+    },
+    {
+      "x": 2.524,
+      "y": 0.457,
+      "g": "UGC04278"
+    },
+    {
+      "x": 2.525,
+      "y": 0.714,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.525,
+      "y": 0.484,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.526,
+      "y": 0.652,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.528,
+      "y": 0.528,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.528,
+      "y": 0.61,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.529,
+      "y": 0.647,
+      "g": "UGC04325"
+    },
+    {
+      "x": 2.53,
+      "y": 0.435,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.53,
+      "y": 0.844,
+      "g": "NGC2915"
+    },
+    {
+      "x": 2.531,
+      "y": 0.468,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.532,
+      "y": 0.527,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.535,
+      "y": 0.567,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.536,
+      "y": 0.774,
+      "g": "NGC4214"
+    },
+    {
+      "x": 2.539,
+      "y": 0.899,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.541,
+      "y": 0.198,
+      "g": "DDO168"
+    },
+    {
+      "x": 2.542,
+      "y": 0.427,
+      "g": "UGC00128"
+    },
+    {
+      "x": 2.543,
+      "y": 0.169,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.544,
+      "y": 0.716,
+      "g": "F568-V1"
+    },
+    {
+      "x": 2.544,
+      "y": 0.85,
+      "g": "UGC02259"
+    },
+    {
+      "x": 2.545,
+      "y": 0.663,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.547,
+      "y": 0.542,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.547,
+      "y": 0.64,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.549,
+      "y": 0.475,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.551,
+      "y": 0.856,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.552,
+      "y": 0.516,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.552,
+      "y": 0.33,
+      "g": "UGC07089"
+    },
+    {
+      "x": 2.553,
+      "y": 0.768,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.555,
+      "y": 0.474,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.556,
+      "y": 0.529,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.557,
+      "y": 0.701,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.557,
+      "y": 0.585,
+      "g": "UGC03205"
+    },
+    {
+      "x": 2.558,
+      "y": 0.542,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.558,
+      "y": 0.635,
+      "g": "UGC08699"
+    },
+    {
+      "x": 2.56,
+      "y": 0.545,
+      "g": "UGC07261"
+    },
+    {
+      "x": 2.56,
+      "y": 0.61,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.562,
+      "y": 0.532,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.562,
+      "y": 0.728,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.563,
+      "y": 0.476,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.564,
+      "y": 0.136,
+      "g": "D631-7"
+    },
+    {
+      "x": 2.566,
+      "y": 0.78,
+      "g": "UGC08286"
+    },
+    {
+      "x": 2.567,
+      "y": 0.53,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.567,
+      "y": 0.562,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.568,
+      "y": 0.683,
+      "g": "UGC07603"
+    },
+    {
+      "x": 2.569,
+      "y": 0.505,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.57,
+      "y": 0.651,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.571,
+      "y": 0.495,
+      "g": "UGCA281"
+    },
+    {
+      "x": 2.574,
+      "y": 0.683,
+      "g": "UGC02487"
+    },
+    {
+      "x": 2.575,
+      "y": 0.579,
+      "g": "UGC02885"
+    },
+    {
+      "x": 2.577,
+      "y": 0.557,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.578,
+      "y": 0.495,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.578,
+      "y": 0.507,
+      "g": "NGC2998"
+    },
+    {
+      "x": 2.58,
+      "y": 0.63,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.58,
+      "y": 0.545,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.582,
+      "y": 0.46,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.584,
+      "y": 0.581,
+      "g": "UGC06917"
+    },
+    {
+      "x": 2.584,
+      "y": 0.492,
+      "g": "F574-1"
+    },
+    {
+      "x": 2.585,
+      "y": 0.685,
+      "g": "UGC08550"
+    },
+    {
+      "x": 2.587,
+      "y": 0.258,
+      "g": "UGC04305"
+    },
+    {
+      "x": 2.589,
+      "y": 0.668,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.589,
+      "y": 0.57,
+      "g": "UGC00191"
+    },
+    {
+      "x": 2.59,
+      "y": 0.43,
+      "g": "NGC5055"
+    },
+    {
+      "x": 2.593,
+      "y": 0.421,
+      "g": "UGC05414"
+    },
+    {
+      "x": 2.594,
+      "y": 0.639,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.596,
+      "y": 0.746,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.597,
+      "y": 0.388,
+      "g": "LT_DDO_70"
+    },
+    {
+      "x": 2.598,
+      "y": 0.647,
+      "g": "UGC04325"
+    },
+    {
+      "x": 2.599,
+      "y": 0.756,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.601,
+      "y": 0.614,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.602,
+      "y": 0.543,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.604,
+      "y": 0.226,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.605,
+      "y": 0.386,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.606,
+      "y": 0.465,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.607,
+      "y": 0.582,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.608,
+      "y": 0.467,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.609,
+      "y": 0.371,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.61,
+      "y": 0.576,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.613,
+      "y": 0.601,
+      "g": "UGC06917"
+    },
+    {
+      "x": 2.613,
+      "y": 0.481,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.614,
+      "y": 0.543,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.616,
+      "y": 0.583,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.617,
+      "y": -1.221,
+      "g": "UGC01281"
+    },
+    {
+      "x": 2.619,
+      "y": 0.682,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.621,
+      "y": 0.708,
+      "g": "F571-8"
+    },
+    {
+      "x": 2.622,
+      "y": 0.371,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.623,
+      "y": 0.666,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.623,
+      "y": 0.625,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.624,
+      "y": 0.642,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.625,
+      "y": 0.111,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.626,
+      "y": 0.47,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.627,
+      "y": 0.555,
+      "g": "UGC02885"
+    },
+    {
+      "x": 2.628,
+      "y": 0.742,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.631,
+      "y": 0.7,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.632,
+      "y": 0.355,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.632,
+      "y": 0.541,
+      "g": "UGC03205"
+    },
+    {
+      "x": 2.633,
+      "y": 0.638,
+      "g": "UGC07603"
+    },
+    {
+      "x": 2.637,
+      "y": 0.593,
+      "g": "UGC08699"
+    },
+    {
+      "x": 2.639,
+      "y": 0.586,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.64,
+      "y": 0.442,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.64,
+      "y": 0.554,
+      "g": "NGC6674"
+    },
+    {
+      "x": 2.64,
+      "y": 0.655,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.643,
+      "y": 0.521,
+      "g": "UGC03546"
+    },
+    {
+      "x": 2.644,
+      "y": 0.01,
+      "g": "UGC06818"
+    },
+    {
+      "x": 2.644,
+      "y": 0.434,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.646,
+      "y": 0.614,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.647,
+      "y": 0.72,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.648,
+      "y": 0.482,
+      "g": "NGC4138"
+    },
+    {
+      "x": 2.649,
+      "y": 0.495,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.65,
+      "y": 0.513,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.652,
+      "y": 0.539,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.653,
+      "y": 0.683,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.653,
+      "y": 0.546,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.655,
+      "y": 0.563,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.657,
+      "y": 0.433,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.659,
+      "y": 0.515,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.66,
+      "y": 0.599,
+      "g": "UGC06917"
+    },
+    {
+      "x": 2.66,
+      "y": 0.079,
+      "g": "LT_DDO_53"
+    },
+    {
+      "x": 2.662,
+      "y": 0.763,
+      "g": "NGC1705"
+    },
+    {
+      "x": 2.663,
+      "y": 0.638,
+      "g": "UGC04325"
+    },
+    {
+      "x": 2.665,
+      "y": 0.546,
+      "g": "UGC02885"
+    },
+    {
+      "x": 2.665,
+      "y": 0.623,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.666,
+      "y": 0.444,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.667,
+      "y": 0.328,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.668,
+      "y": 0.403,
+      "g": "NGC5055"
+    },
+    {
+      "x": 2.67,
+      "y": 0.48,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.672,
+      "y": 0.61,
+      "g": "UGC00191"
+    },
+    {
+      "x": 2.674,
+      "y": 0.599,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.674,
+      "y": 0.674,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.675,
+      "y": 0.454,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.676,
+      "y": 0.708,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.678,
+      "y": 0.277,
+      "g": "LT_DDO_168"
+    },
+    {
+      "x": 2.679,
+      "y": 0.487,
+      "g": "NGC3893"
+    },
+    {
+      "x": 2.68,
+      "y": 0.206,
+      "g": "NGC0055"
+    },
+    {
+      "x": 2.684,
+      "y": 0.422,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.686,
+      "y": 0.517,
+      "g": "NGC0300"
+    },
+    {
+      "x": 2.688,
+      "y": 0.679,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.689,
+      "y": 0.892,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.69,
+      "y": 0.523,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.692,
+      "y": 0.459,
+      "g": "NGC2683"
+    },
+    {
+      "x": 2.693,
+      "y": 0.537,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.693,
+      "y": 0.417,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.695,
+      "y": 0.623,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.696,
+      "y": 0.129,
+      "g": "DDO168"
+    },
+    {
+      "x": 2.698,
+      "y": 0.817,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.7,
+      "y": 0.419,
+      "g": "NGC0289"
+    },
+    {
+      "x": 2.7,
+      "y": 0.532,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.701,
+      "y": 0.352,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.702,
+      "y": 0.659,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.702,
+      "y": 0.356,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.704,
+      "y": 0.822,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.704,
+      "y": 0.413,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.706,
+      "y": 0.445,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.707,
+      "y": 0.439,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.707,
+      "y": 0.519,
+      "g": "UGC03205"
+    },
+    {
+      "x": 2.708,
+      "y": 0.424,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.709,
+      "y": 0.485,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.71,
+      "y": 0.437,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.711,
+      "y": 0.449,
+      "g": "NGC3769"
+    },
+    {
+      "x": 2.713,
+      "y": 0.483,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.715,
+      "y": 0.432,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.716,
+      "y": 0.421,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.716,
+      "y": 0.995,
+      "g": "NGC6789"
+    },
+    {
+      "x": 2.717,
+      "y": 0.602,
+      "g": "UGC06930"
+    },
+    {
+      "x": 2.719,
+      "y": 0.517,
+      "g": "UGC07603"
+    },
+    {
+      "x": 2.72,
+      "y": 0.365,
+      "g": "NGC0100"
+    },
+    {
+      "x": 2.72,
+      "y": 0.313,
+      "g": "UGC02916"
+    },
+    {
+      "x": 2.721,
+      "y": 0.646,
+      "g": "UGC04325"
+    },
+    {
+      "x": 2.724,
+      "y": 0.419,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.724,
+      "y": 0.296,
+      "g": "UGC07323"
+    },
+    {
+      "x": 2.725,
+      "y": 0.632,
+      "g": "UGC02487"
+    },
+    {
+      "x": 2.726,
+      "y": 0.471,
+      "g": "UGC03546"
+    },
+    {
+      "x": 2.727,
+      "y": 0.531,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.728,
+      "y": 0.512,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.728,
+      "y": 0.665,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.73,
+      "y": 0.673,
+      "g": "NGC2841"
+    },
+    {
+      "x": 2.732,
+      "y": 0.399,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.733,
+      "y": 0.417,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.734,
+      "y": 0.482,
+      "g": "NGC7331"
+    },
+    {
+      "x": 2.736,
+      "y": 0.65,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.737,
+      "y": 0.297,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.738,
+      "y": 0.344,
+      "g": "UGC09037"
+    },
+    {
+      "x": 2.739,
+      "y": 0.439,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.741,
+      "y": 0.933,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.743,
+      "y": 0.41,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.744,
+      "y": 0.879,
+      "g": "F579-V1"
+    },
+    {
+      "x": 2.746,
+      "y": 0.035,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.746,
+      "y": 1.269,
+      "g": "LT_NGC_3738"
+    },
+    {
+      "x": 2.747,
+      "y": 0.513,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.747,
+      "y": 0.622,
+      "g": "NGC5985"
+    },
+    {
+      "x": 2.749,
+      "y": 0.573,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.749,
+      "y": 0.53,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 2.75,
+      "y": 0.551,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.754,
+      "y": 0.495,
+      "g": "NGC6503"
+    },
+    {
+      "x": 2.756,
+      "y": 0.383,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.757,
+      "y": 0.524,
+      "g": "UGC05253"
+    },
+    {
+      "x": 2.759,
+      "y": 0.119,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.762,
+      "y": 0.453,
+      "g": "NGC7331"
+    },
+    {
+      "x": 2.762,
+      "y": 0.481,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.764,
+      "y": 0.48,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.765,
+      "y": 0.563,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.768,
+      "y": 0.437,
+      "g": "NGC4010"
+    },
+    {
+      "x": 2.768,
+      "y": 0.45,
+      "g": "UGC06923"
+    },
+    {
+      "x": 2.773,
+      "y": 0.54,
+      "g": "NGC3972"
+    },
+    {
+      "x": 2.776,
+      "y": 0.404,
+      "g": "NGC4157"
+    },
+    {
+      "x": 2.776,
+      "y": 0.643,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.781,
+      "y": 0.655,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.782,
+      "y": 0.496,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.783,
+      "y": 0.44,
+      "g": "NGC2998"
+    },
+    {
+      "x": 2.786,
+      "y": 0.475,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.787,
+      "y": 0.41,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.788,
+      "y": 0.072,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.789,
+      "y": 0.657,
+      "g": "UGC08490"
+    },
+    {
+      "x": 2.789,
+      "y": 0.382,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.79,
+      "y": 0.366,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.79,
+      "y": 0.459,
+      "g": "NGC4010"
+    },
+    {
+      "x": 2.792,
+      "y": 0.766,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.794,
+      "y": 0.467,
+      "g": "NGC3992"
+    },
+    {
+      "x": 2.794,
+      "y": 0.158,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.795,
+      "y": 0.015,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.796,
+      "y": 0.135,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.796,
+      "y": 0.55,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.796,
+      "y": 0.624,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.797,
+      "y": 0.396,
+      "g": "NGC4138"
+    },
+    {
+      "x": 2.798,
+      "y": 0.445,
+      "g": "NGC7793"
+    },
+    {
+      "x": 2.798,
+      "y": 0.116,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.801,
+      "y": 0.307,
+      "g": "UGC07232"
+    },
+    {
+      "x": 2.802,
+      "y": 0.615,
+      "g": "NGC5985"
+    },
+    {
+      "x": 2.806,
+      "y": 0.036,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.809,
+      "y": 0.501,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.81,
+      "y": 0.458,
+      "g": "UGC02885"
+    },
+    {
+      "x": 2.812,
+      "y": 0.318,
+      "g": "UGC02916"
+    },
+    {
+      "x": 2.812,
+      "y": 0.583,
+      "g": "NGC7814"
+    },
+    {
+      "x": 2.813,
+      "y": 0.818,
+      "g": "NGC6789"
+    },
+    {
+      "x": 2.814,
+      "y": 0.248,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.815,
+      "y": 0.359,
+      "g": "NGC1003"
+    },
+    {
+      "x": 2.816,
+      "y": 0.627,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.817,
+      "y": 0.325,
+      "g": "UGC09037"
+    },
+    {
+      "x": 2.817,
+      "y": 0.613,
+      "g": "UGC02487"
+    },
+    {
+      "x": 2.818,
+      "y": 0.623,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.819,
+      "y": 0.369,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.821,
+      "y": -0.198,
+      "g": "NGC2976"
+    },
+    {
+      "x": 2.824,
+      "y": 1.216,
+      "g": "LT_NGC_3738"
+    },
+    {
+      "x": 2.826,
+      "y": 0.542,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.828,
+      "y": 0.358,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.831,
+      "y": 0.48,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.831,
+      "y": 0.527,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.832,
+      "y": 0.54,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.833,
+      "y": 0.776,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.834,
+      "y": 0.046,
+      "g": "LT_NGC_1569"
+    },
+    {
+      "x": 2.836,
+      "y": 0.62,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.837,
+      "y": 0.519,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.839,
+      "y": 0.472,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.84,
+      "y": 0.597,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.842,
+      "y": 0.632,
+      "g": "NGC6789"
+    },
+    {
+      "x": 2.844,
+      "y": 0.455,
+      "g": "UGC11455"
+    },
+    {
+      "x": 2.844,
+      "y": 0.356,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.845,
+      "y": 0.472,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.846,
+      "y": 0.499,
+      "g": "UGC05253"
+    },
+    {
+      "x": 2.849,
+      "y": 0.089,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.849,
+      "y": 0.748,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.853,
+      "y": 0.485,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.854,
+      "y": 1.135,
+      "g": "LT_NGC_3738"
+    },
+    {
+      "x": 2.854,
+      "y": 0.591,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.855,
+      "y": 0.414,
+      "g": "UGC06923"
+    },
+    {
+      "x": 2.856,
+      "y": 0.462,
+      "g": "UGC07690"
+    },
+    {
+      "x": 2.857,
+      "y": 0.492,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.857,
+      "y": 0.502,
+      "g": "NGC3972"
+    },
+    {
+      "x": 2.859,
+      "y": 0.446,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.86,
+      "y": 0.528,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.861,
+      "y": 0.615,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.862,
+      "y": 0.612,
+      "g": "UGC05986"
+    },
+    {
+      "x": 2.864,
+      "y": 0.463,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.865,
+      "y": 0.42,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.867,
+      "y": 0.379,
+      "g": "UGC07151"
+    },
+    {
+      "x": 2.868,
+      "y": -1.183,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.871,
+      "y": 0.46,
+      "g": "UGC03205"
+    },
+    {
+      "x": 2.872,
+      "y": 0.343,
+      "g": "NGC5055"
+    },
+    {
+      "x": 2.873,
+      "y": 0.293,
+      "g": "UGC09037"
+    },
+    {
+      "x": 2.874,
+      "y": 0.595,
+      "g": "NGC5985"
+    },
+    {
+      "x": 2.876,
+      "y": 0.405,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.877,
+      "y": 0.558,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 2.881,
+      "y": 0.479,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 2.883,
+      "y": 0.583,
+      "g": "UGC06983"
+    },
+    {
+      "x": 2.884,
+      "y": 0.404,
+      "g": "NGC7331"
+    },
+    {
+      "x": 2.886,
+      "y": 0.401,
+      "g": "UGC03546"
+    },
+    {
+      "x": 2.887,
+      "y": 0.747,
+      "g": "UGC05721"
+    },
+    {
+      "x": 2.89,
+      "y": 0.186,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 2.892,
+      "y": 1.203,
+      "g": "LT_NGC_3738"
+    },
+    {
+      "x": 2.897,
+      "y": 0.403,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.898,
+      "y": 0.514,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.899,
+      "y": 0.324,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.9,
+      "y": 0.561,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.901,
+      "y": 0.191,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.901,
+      "y": 0.34,
+      "g": "UGC02916"
+    },
+    {
+      "x": 2.902,
+      "y": 0.398,
+      "g": "NGC5907"
+    },
+    {
+      "x": 2.905,
+      "y": 0.321,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.909,
+      "y": 0.397,
+      "g": "NGC2998"
+    },
+    {
+      "x": 2.912,
+      "y": 0.477,
+      "g": "NGC5033"
+    },
+    {
+      "x": 2.913,
+      "y": 0.446,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.913,
+      "y": 0.322,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.916,
+      "y": 0.176,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.917,
+      "y": 0.379,
+      "g": "NGC7331"
+    },
+    {
+      "x": 2.917,
+      "y": 0.129,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.918,
+      "y": 0.6,
+      "g": "UGC02487"
+    },
+    {
+      "x": 2.918,
+      "y": 0.445,
+      "g": "NGC4010"
+    },
+    {
+      "x": 2.919,
+      "y": 0.24,
+      "g": "NGC0024"
+    },
+    {
+      "x": 2.922,
+      "y": 0.255,
+      "g": "UGC09037"
+    },
+    {
+      "x": 2.926,
+      "y": 0.443,
+      "g": "UGC08699"
+    },
+    {
+      "x": 2.927,
+      "y": 0.094,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 2.928,
+      "y": 0.448,
+      "g": "NGC4100"
+    },
+    {
+      "x": 2.928,
+      "y": 0.636,
+      "g": "UGC07399"
+    },
+    {
+      "x": 2.93,
+      "y": 0.287,
+      "g": "NGC4559"
+    },
+    {
+      "x": 2.932,
+      "y": 0.487,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.934,
+      "y": 0.19,
+      "g": "NGC3726"
+    },
+    {
+      "x": 2.937,
+      "y": 0.425,
+      "g": "NGC2903"
+    },
+    {
+      "x": 2.937,
+      "y": 0.503,
+      "g": "UGC02953"
+    },
+    {
+      "x": 2.939,
+      "y": 0.48,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.94,
+      "y": 0.535,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 2.94,
+      "y": 0.252,
+      "g": "NGC0801"
+    },
+    {
+      "x": 2.942,
+      "y": 0.374,
+      "g": "NGC6015"
+    },
+    {
+      "x": 2.942,
+      "y": 0.513,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.943,
+      "y": 0.46,
+      "g": "NGC3992"
+    },
+    {
+      "x": 2.944,
+      "y": 0.392,
+      "g": "UGC09133"
+    },
+    {
+      "x": 2.945,
+      "y": 0.176,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.945,
+      "y": 0.279,
+      "g": "NGC4013"
+    },
+    {
+      "x": 2.946,
+      "y": 0.476,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 2.949,
+      "y": 0.458,
+      "g": "NGC4183"
+    },
+    {
+      "x": 2.951,
+      "y": 1.229,
+      "g": "LT_NGC_3738"
+    },
+    {
+      "x": 2.953,
+      "y": -0.049,
+      "g": "UGC02455"
+    },
+    {
+      "x": 2.953,
+      "y": 0.37,
+      "g": "UGC03546"
+    },
+    {
+      "x": 2.954,
+      "y": 0.19,
+      "g": "NGC5585"
+    },
+    {
+      "x": 2.956,
+      "y": 0.379,
+      "g": "NGC4010"
+    },
+    {
+      "x": 2.958,
+      "y": 0.234,
+      "g": "UGC03580"
+    },
+    {
+      "x": 2.959,
+      "y": 0.345,
+      "g": "UGC06917"
+    },
+    {
+      "x": 2.962,
+      "y": 0.432,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.962,
+      "y": 0.527,
+      "g": "NGC4214"
+    },
+    {
+      "x": 2.965,
+      "y": 0.437,
+      "g": "NGC3917"
+    },
+    {
+      "x": 2.966,
+      "y": 0.575,
+      "g": "UGC06786"
+    },
+    {
+      "x": 2.968,
+      "y": 0.306,
+      "g": "NGC1090"
+    },
+    {
+      "x": 2.97,
+      "y": 0.012,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.972,
+      "y": 0.33,
+      "g": "UGC11455"
+    },
+    {
+      "x": 2.978,
+      "y": 0.3,
+      "g": "NGC4217"
+    },
+    {
+      "x": 2.979,
+      "y": 0.459,
+      "g": "NGC3521"
+    },
+    {
+      "x": 2.979,
+      "y": 0.305,
+      "g": "ESO116-G012"
+    },
+    {
+      "x": 2.979,
+      "y": 0.463,
+      "g": "NGC3972"
+    },
+    {
+      "x": 2.982,
+      "y": 0.173,
+      "g": "NGC5371"
+    },
+    {
+      "x": 2.982,
+      "y": 0.535,
+      "g": "UGC12506"
+    },
+    {
+      "x": 2.986,
+      "y": 0.325,
+      "g": "NGC6946"
+    },
+    {
+      "x": 2.986,
+      "y": 0.334,
+      "g": "UGC02916"
+    },
+    {
+      "x": 2.988,
+      "y": 0.461,
+      "g": "NGC2403"
+    },
+    {
+      "x": 2.988,
+      "y": 0.477,
+      "g": "UGC06787"
+    },
+    {
+      "x": 2.991,
+      "y": 0.435,
+      "g": "NGC3893"
+    },
+    {
+      "x": 2.992,
+      "y": 0.271,
+      "g": "NGC2976"
+    },
+    {
+      "x": 2.994,
+      "y": 0.444,
+      "g": "NGC7793"
+    },
+    {
+      "x": 2.995,
+      "y": -0.074,
+      "g": "UGC11557"
+    },
+    {
+      "x": 2.995,
+      "y": 0.449,
+      "g": "UGC05253"
+    },
+    {
+      "x": 2.996,
+      "y": 0.388,
+      "g": "NGC3198"
+    },
+    {
+      "x": 2.999,
+      "y": 0.28,
+      "g": "NGC4157"
+    },
+    {
+      "x": 3,
+      "y": 0.618,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.002,
+      "y": 0.199,
+      "g": "UGC09037"
+    },
+    {
+      "x": 3.003,
+      "y": 0.244,
+      "g": "NGC1003"
+    },
+    {
+      "x": 3.006,
+      "y": 0.299,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.006,
+      "y": 0.573,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.007,
+      "y": 0.392,
+      "g": "UGC02885"
+    },
+    {
+      "x": 3.01,
+      "y": 0.183,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.011,
+      "y": 0.382,
+      "g": "NGC3972"
+    },
+    {
+      "x": 3.014,
+      "y": -0.07,
+      "g": "UGC11557"
+    },
+    {
+      "x": 3.015,
+      "y": 0.185,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.016,
+      "y": 0.612,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.017,
+      "y": 0.235,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.017,
+      "y": 0.333,
+      "g": "NGC3769"
+    },
+    {
+      "x": 3.018,
+      "y": 0.333,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.019,
+      "y": 0.459,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.021,
+      "y": 0.452,
+      "g": "NGC3972"
+    },
+    {
+      "x": 3.024,
+      "y": 0.086,
+      "g": "NGC5585"
+    },
+    {
+      "x": 3.024,
+      "y": 0.393,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.026,
+      "y": 0.559,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.027,
+      "y": 0.471,
+      "g": "NGC6674"
+    },
+    {
+      "x": 3.029,
+      "y": 0.351,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.031,
+      "y": 0.623,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.032,
+      "y": 0.454,
+      "g": "NGC3972"
+    },
+    {
+      "x": 3.034,
+      "y": 0.302,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.035,
+      "y": 0.574,
+      "g": "UGC02487"
+    },
+    {
+      "x": 3.036,
+      "y": 0.194,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 3.038,
+      "y": 0.193,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.039,
+      "y": 0.554,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.04,
+      "y": 0.489,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.041,
+      "y": 0.527,
+      "g": "UGC12506"
+    },
+    {
+      "x": 3.043,
+      "y": 0.426,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.044,
+      "y": 0.452,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.045,
+      "y": 0.168,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 3.045,
+      "y": 0.179,
+      "g": "UGC09037"
+    },
+    {
+      "x": 3.049,
+      "y": 0.411,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.052,
+      "y": 0.426,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.053,
+      "y": 0.41,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.054,
+      "y": 0.079,
+      "g": "NGC5585"
+    },
+    {
+      "x": 3.055,
+      "y": 0.239,
+      "g": "NGC0801"
+    },
+    {
+      "x": 3.056,
+      "y": -0.59,
+      "g": "UGC11557"
+    },
+    {
+      "x": 3.057,
+      "y": 0.386,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.059,
+      "y": 0.587,
+      "g": "UGC08490"
+    },
+    {
+      "x": 3.061,
+      "y": 0.535,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.064,
+      "y": 0.321,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.066,
+      "y": 0.405,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.069,
+      "y": 0.281,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.07,
+      "y": 0.343,
+      "g": "ESO079-G014"
+    },
+    {
+      "x": 3.071,
+      "y": 0.435,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.071,
+      "y": 0.237,
+      "g": "NGC4010"
+    },
+    {
+      "x": 3.074,
+      "y": 0.206,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.074,
+      "y": 0.25,
+      "g": "NGC4217"
+    },
+    {
+      "x": 3.075,
+      "y": 0.402,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.079,
+      "y": 0.249,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.08,
+      "y": 0.533,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.081,
+      "y": 0.159,
+      "g": "UGC09037"
+    },
+    {
+      "x": 3.085,
+      "y": 0.32,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.086,
+      "y": 0.421,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.087,
+      "y": 0.48,
+      "g": "UGC08490"
+    },
+    {
+      "x": 3.088,
+      "y": 0.396,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.089,
+      "y": 0.385,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.09,
+      "y": 0.28,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.09,
+      "y": 0.341,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.093,
+      "y": 0.251,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.095,
+      "y": 0.266,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.096,
+      "y": 0.647,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.097,
+      "y": 0.225,
+      "g": "NGC3726"
+    },
+    {
+      "x": 3.097,
+      "y": 0.44,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.098,
+      "y": 0.41,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.1,
+      "y": 0.603,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.102,
+      "y": 0.39,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.103,
+      "y": 0.279,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.104,
+      "y": 0.4,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.105,
+      "y": 0.151,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.106,
+      "y": 0.623,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.11,
+      "y": 0.405,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.112,
+      "y": 0.387,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.112,
+      "y": 0.274,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.113,
+      "y": 0.535,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.115,
+      "y": 0.133,
+      "g": "NGC1003"
+    },
+    {
+      "x": 3.116,
+      "y": 0.416,
+      "g": "NGC4214"
+    },
+    {
+      "x": 3.118,
+      "y": 0.52,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.119,
+      "y": 0.514,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.123,
+      "y": 0.181,
+      "g": "NGC4010"
+    },
+    {
+      "x": 3.123,
+      "y": 0.578,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.125,
+      "y": 0.512,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.126,
+      "y": 0.593,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.126,
+      "y": 0.381,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.128,
+      "y": 0.317,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.128,
+      "y": 0.123,
+      "g": "NGC5585"
+    },
+    {
+      "x": 3.129,
+      "y": 0.061,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.13,
+      "y": 0.571,
+      "g": "NGC0024"
+    },
+    {
+      "x": 3.132,
+      "y": 0.564,
+      "g": "UGC12506"
+    },
+    {
+      "x": 3.134,
+      "y": 0.279,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.136,
+      "y": 0.382,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.137,
+      "y": 0.357,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.139,
+      "y": 0.505,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.143,
+      "y": 0.277,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.144,
+      "y": 0.235,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.146,
+      "y": 0.286,
+      "g": "NGC5585"
+    },
+    {
+      "x": 3.151,
+      "y": 0.357,
+      "g": "NGC6503"
+    },
+    {
+      "x": 3.152,
+      "y": 0.17,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.153,
+      "y": 0.377,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.153,
+      "y": 0.356,
+      "g": "NGC0289"
+    },
+    {
+      "x": 3.153,
+      "y": 0.365,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.154,
+      "y": 0.438,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.155,
+      "y": 0.324,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.158,
+      "y": 0.389,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.159,
+      "y": 0.362,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.162,
+      "y": 0.218,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.163,
+      "y": 0.524,
+      "g": "UGC02487"
+    },
+    {
+      "x": 3.164,
+      "y": 0.388,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.166,
+      "y": 0.349,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.169,
+      "y": 0.265,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.171,
+      "y": 0.369,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.172,
+      "y": 0.488,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.174,
+      "y": 0.34,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.175,
+      "y": 0.148,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.177,
+      "y": 0.835,
+      "g": "UGC12506"
+    },
+    {
+      "x": 3.183,
+      "y": 0.305,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.184,
+      "y": 0.374,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.185,
+      "y": 0.336,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.187,
+      "y": 0.367,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.187,
+      "y": 0.186,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.189,
+      "y": 0.206,
+      "g": "NGC4157"
+    },
+    {
+      "x": 3.191,
+      "y": 0.337,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.191,
+      "y": 0.289,
+      "g": "UGC05721"
+    },
+    {
+      "x": 3.195,
+      "y": -0.461,
+      "g": "UGC02455"
+    },
+    {
+      "x": 3.196,
+      "y": 0.109,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.197,
+      "y": 0.314,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.198,
+      "y": 0.306,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.198,
+      "y": 0.236,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.199,
+      "y": 0.297,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.201,
+      "y": 0.305,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.204,
+      "y": 0.312,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.206,
+      "y": 0.484,
+      "g": "UGC05721"
+    },
+    {
+      "x": 3.206,
+      "y": 0.195,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.207,
+      "y": 0.131,
+      "g": "UGC06614"
+    },
+    {
+      "x": 3.208,
+      "y": 0.29,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.21,
+      "y": 0.418,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.21,
+      "y": 0.199,
+      "g": "NGC3769"
+    },
+    {
+      "x": 3.213,
+      "y": 0.127,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.213,
+      "y": 0.304,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.214,
+      "y": 0.282,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.214,
+      "y": 0.108,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.218,
+      "y": 0.493,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.218,
+      "y": 0.24,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.219,
+      "y": 0.744,
+      "g": "UGC12506"
+    },
+    {
+      "x": 3.221,
+      "y": 0.288,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.222,
+      "y": 0.384,
+      "g": "NGC3992"
+    },
+    {
+      "x": 3.222,
+      "y": 0.179,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.225,
+      "y": 0.284,
+      "g": "UGC03546"
+    },
+    {
+      "x": 3.227,
+      "y": 0.133,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.228,
+      "y": 0.127,
+      "g": "NGC4051"
+    },
+    {
+      "x": 3.229,
+      "y": 0.32,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.231,
+      "y": -0.474,
+      "g": "UGC02455"
+    },
+    {
+      "x": 3.234,
+      "y": 0.189,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.238,
+      "y": 0.505,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.241,
+      "y": 0.274,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.244,
+      "y": 0.206,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.245,
+      "y": 0.339,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.246,
+      "y": 0.212,
+      "g": "NGC0801"
+    },
+    {
+      "x": 3.246,
+      "y": 0.108,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.247,
+      "y": 0.353,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.251,
+      "y": 0.323,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.253,
+      "y": 0.209,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.253,
+      "y": 0.233,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.254,
+      "y": 0.178,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.256,
+      "y": 0.354,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.256,
+      "y": 0.267,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.257,
+      "y": 0.317,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.259,
+      "y": 0.266,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.261,
+      "y": 0.327,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.265,
+      "y": 0.105,
+      "g": "LT_IC_10"
+    },
+    {
+      "x": 3.266,
+      "y": 0.249,
+      "g": "NGC0891"
+    },
+    {
+      "x": 3.268,
+      "y": 0.056,
+      "g": "UGC09037"
+    },
+    {
+      "x": 3.272,
+      "y": -0.107,
+      "g": "NGC2915"
+    },
+    {
+      "x": 3.273,
+      "y": 0.354,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.274,
+      "y": 0.311,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.275,
+      "y": 0.29,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.276,
+      "y": 0.256,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.277,
+      "y": 0.377,
+      "g": "NGC7814"
+    },
+    {
+      "x": 3.279,
+      "y": 0.285,
+      "g": "NGC2998"
+    },
+    {
+      "x": 3.28,
+      "y": 0.161,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.282,
+      "y": 0.353,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.283,
+      "y": 0.19,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.284,
+      "y": 0.288,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.286,
+      "y": 0.194,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.286,
+      "y": 0.266,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.29,
+      "y": 0.351,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.295,
+      "y": 0.445,
+      "g": "UGC05721"
+    },
+    {
+      "x": 3.297,
+      "y": 0.193,
+      "g": "NGC3726"
+    },
+    {
+      "x": 3.297,
+      "y": 0.138,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.3,
+      "y": 0.349,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.301,
+      "y": 0.461,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.303,
+      "y": 0.263,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.303,
+      "y": 0.303,
+      "g": "NGC3949"
+    },
+    {
+      "x": 3.304,
+      "y": 0.243,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.308,
+      "y": 0.234,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.31,
+      "y": 0.346,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.31,
+      "y": 0.161,
+      "g": "NGC4157"
+    },
+    {
+      "x": 3.311,
+      "y": 0.251,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.313,
+      "y": 0.252,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.315,
+      "y": 0.241,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.316,
+      "y": 0.237,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.318,
+      "y": 0.546,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.319,
+      "y": 0.291,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.321,
+      "y": -0.6,
+      "g": "UGC02455"
+    },
+    {
+      "x": 3.324,
+      "y": 0.342,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.325,
+      "y": 0.132,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.327,
+      "y": -0.57,
+      "g": "UGC02455"
+    },
+    {
+      "x": 3.328,
+      "y": 0.205,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.33,
+      "y": 0.273,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.332,
+      "y": 0.226,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.333,
+      "y": 0.56,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.336,
+      "y": 0.211,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.338,
+      "y": 0.305,
+      "g": "NGC5907"
+    },
+    {
+      "x": 3.339,
+      "y": 0.253,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.342,
+      "y": 0.153,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.343,
+      "y": 0.125,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.344,
+      "y": 0.359,
+      "g": "NGC3992"
+    },
+    {
+      "x": 3.345,
+      "y": 0.608,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.347,
+      "y": 0.601,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.35,
+      "y": 0.297,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.352,
+      "y": 0.626,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.354,
+      "y": 0.203,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.358,
+      "y": 0.435,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.359,
+      "y": 0.224,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.36,
+      "y": 0.113,
+      "g": "NGC4051"
+    },
+    {
+      "x": 3.365,
+      "y": 0.314,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.365,
+      "y": 0.174,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.367,
+      "y": 0.221,
+      "g": "NGC0891"
+    },
+    {
+      "x": 3.367,
+      "y": 0.248,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.368,
+      "y": 0.351,
+      "g": "NGC7814"
+    },
+    {
+      "x": 3.372,
+      "y": 0.394,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.375,
+      "y": 0.229,
+      "g": "NGC2976"
+    },
+    {
+      "x": 3.376,
+      "y": 0.379,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.377,
+      "y": 0.165,
+      "g": "NGC4217"
+    },
+    {
+      "x": 3.379,
+      "y": -0.007,
+      "g": "UGC09037"
+    },
+    {
+      "x": 3.38,
+      "y": 0.388,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.38,
+      "y": 0.184,
+      "g": "NGC4051"
+    },
+    {
+      "x": 3.38,
+      "y": 0.3,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.381,
+      "y": 0.144,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.382,
+      "y": 0.629,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.387,
+      "y": 0.295,
+      "g": "UGC08699"
+    },
+    {
+      "x": 3.388,
+      "y": 0.439,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.39,
+      "y": 0.412,
+      "g": "NGC4214"
+    },
+    {
+      "x": 3.396,
+      "y": 0.215,
+      "g": "NGC3953"
+    },
+    {
+      "x": 3.398,
+      "y": 0.07,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.4,
+      "y": 0.29,
+      "g": "NGC2683"
+    },
+    {
+      "x": 3.402,
+      "y": 0.202,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.403,
+      "y": 0.41,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.405,
+      "y": 0.356,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.405,
+      "y": 0.42,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.408,
+      "y": 0.331,
+      "g": "NGC5907"
+    },
+    {
+      "x": 3.41,
+      "y": 0.34,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.411,
+      "y": 0.158,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.413,
+      "y": 0.413,
+      "g": "NGC3992"
+    },
+    {
+      "x": 3.413,
+      "y": 0.272,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.414,
+      "y": 0.381,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.414,
+      "y": 0.043,
+      "g": "NGC4559"
+    },
+    {
+      "x": 3.416,
+      "y": 0.23,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.417,
+      "y": 0.16,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.418,
+      "y": 0.268,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.418,
+      "y": 0.252,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.419,
+      "y": 0.401,
+      "g": "UGC02487"
+    },
+    {
+      "x": 3.419,
+      "y": 0.382,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.419,
+      "y": 0.053,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.421,
+      "y": 0.376,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.422,
+      "y": 0.12,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.423,
+      "y": 0.641,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.424,
+      "y": 0.292,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.424,
+      "y": 0.261,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.427,
+      "y": 0,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.427,
+      "y": 0.277,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.43,
+      "y": 0.31,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.432,
+      "y": 0.379,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.433,
+      "y": 0.223,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.436,
+      "y": -0.12,
+      "g": "NGC4389"
+    },
+    {
+      "x": 3.436,
+      "y": 0.037,
+      "g": "NGC3726"
+    },
+    {
+      "x": 3.438,
+      "y": 0.225,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.439,
+      "y": 0.146,
+      "g": "NGC4051"
+    },
+    {
+      "x": 3.442,
+      "y": 0.114,
+      "g": "NGC4157"
+    },
+    {
+      "x": 3.443,
+      "y": 0.274,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.443,
+      "y": 0.158,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.445,
+      "y": 0.173,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.446,
+      "y": 0.268,
+      "g": "NGC3893"
+    },
+    {
+      "x": 3.45,
+      "y": 0.463,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.451,
+      "y": 0.102,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.451,
+      "y": 0.303,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.452,
+      "y": 0.128,
+      "g": "NGC4085"
+    },
+    {
+      "x": 3.452,
+      "y": 0.128,
+      "g": "NGC4217"
+    },
+    {
+      "x": 3.453,
+      "y": 0.297,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.455,
+      "y": 0.316,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.458,
+      "y": 0.306,
+      "g": "NGC6015"
+    },
+    {
+      "x": 3.459,
+      "y": 0.294,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.46,
+      "y": 0.387,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.463,
+      "y": 0.158,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.465,
+      "y": 0.238,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.465,
+      "y": 0.196,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.468,
+      "y": 0.295,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.469,
+      "y": 0.623,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.471,
+      "y": 0.17,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.472,
+      "y": 0.191,
+      "g": "UGC06973"
+    },
+    {
+      "x": 3.474,
+      "y": 0.15,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.475,
+      "y": 0.243,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.478,
+      "y": 0.096,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.48,
+      "y": 0.181,
+      "g": "NGC6503"
+    },
+    {
+      "x": 3.483,
+      "y": 0.224,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.486,
+      "y": 0.256,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.488,
+      "y": 0.227,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.488,
+      "y": 0.206,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.489,
+      "y": -0.004,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.491,
+      "y": 0.263,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.493,
+      "y": 0.089,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.495,
+      "y": 0.203,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.497,
+      "y": 0.235,
+      "g": "NGC4100"
+    },
+    {
+      "x": 3.499,
+      "y": 0.09,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.502,
+      "y": 0.238,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.503,
+      "y": 0.15,
+      "g": "NGC4085"
+    },
+    {
+      "x": 3.505,
+      "y": -0.16,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.507,
+      "y": 0.257,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.511,
+      "y": -0.025,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.514,
+      "y": -0.267,
+      "g": "NGC4389"
+    },
+    {
+      "x": 3.515,
+      "y": 0.215,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.515,
+      "y": 0.195,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.517,
+      "y": 0.086,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.52,
+      "y": 0.372,
+      "g": "NGC6503"
+    },
+    {
+      "x": 3.521,
+      "y": 0.31,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.522,
+      "y": 0.205,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.522,
+      "y": 0.396,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.523,
+      "y": -0.679,
+      "g": "F571-8"
+    },
+    {
+      "x": 3.528,
+      "y": -0.651,
+      "g": "NGC7793"
+    },
+    {
+      "x": 3.531,
+      "y": -0.435,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.534,
+      "y": 0.334,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.535,
+      "y": 0.122,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.535,
+      "y": 0.393,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.537,
+      "y": 0.135,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.538,
+      "y": 0.438,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.539,
+      "y": 0.245,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.541,
+      "y": 0.154,
+      "g": "NGC0801"
+    },
+    {
+      "x": 3.543,
+      "y": 0.185,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.544,
+      "y": 0.139,
+      "g": "UGC06973"
+    },
+    {
+      "x": 3.544,
+      "y": 0.225,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.547,
+      "y": 0.55,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.549,
+      "y": 0.238,
+      "g": "NGC5005"
+    },
+    {
+      "x": 3.551,
+      "y": 0.238,
+      "g": "NGC5033"
+    },
+    {
+      "x": 3.557,
+      "y": 0.023,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.558,
+      "y": 0.136,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.562,
+      "y": 0.26,
+      "g": "NGC2403"
+    },
+    {
+      "x": 3.565,
+      "y": 0.282,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.568,
+      "y": 0.184,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.571,
+      "y": 0.145,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.572,
+      "y": 0.089,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.573,
+      "y": 0.174,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.575,
+      "y": 0.25,
+      "g": "NGC3953"
+    },
+    {
+      "x": 3.58,
+      "y": -0.013,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.581,
+      "y": 0.085,
+      "g": "NGC4085"
+    },
+    {
+      "x": 3.584,
+      "y": 0.367,
+      "g": "UGC02487"
+    },
+    {
+      "x": 3.587,
+      "y": 0.269,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.589,
+      "y": 0.372,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.596,
+      "y": 0.192,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.599,
+      "y": 0.293,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.602,
+      "y": 0.134,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.604,
+      "y": 0.137,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.605,
+      "y": 0.157,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.607,
+      "y": 0.259,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.608,
+      "y": 0.079,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.61,
+      "y": -0.23,
+      "g": "F571-8"
+    },
+    {
+      "x": 3.612,
+      "y": -0.313,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.613,
+      "y": 0.422,
+      "g": "NGC6674"
+    },
+    {
+      "x": 3.614,
+      "y": 0.202,
+      "g": "NGC5005"
+    },
+    {
+      "x": 3.618,
+      "y": 0.27,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.62,
+      "y": 0.186,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.622,
+      "y": 0.371,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.624,
+      "y": 0.261,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.627,
+      "y": 0.066,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.627,
+      "y": 0.225,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.627,
+      "y": -0.236,
+      "g": "ESO563-G021"
+    },
+    {
+      "x": 3.627,
+      "y": -0.16,
+      "g": "NGC3198"
+    },
+    {
+      "x": 3.629,
+      "y": 0.024,
+      "g": "NGC4217"
+    },
+    {
+      "x": 3.631,
+      "y": 0.128,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.633,
+      "y": 0.118,
+      "g": "NGC3949"
+    },
+    {
+      "x": 3.637,
+      "y": 0.166,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.637,
+      "y": 0.141,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.639,
+      "y": 0.362,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.641,
+      "y": 0.149,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.641,
+      "y": 0.506,
+      "g": "NGC5985"
+    },
+    {
+      "x": 3.642,
+      "y": 0.281,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.643,
+      "y": 0.16,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.645,
+      "y": 0.212,
+      "g": "NGC3893"
+    },
+    {
+      "x": 3.648,
+      "y": 0.116,
+      "g": "NGC0891"
+    },
+    {
+      "x": 3.649,
+      "y": 0.253,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.65,
+      "y": 0.179,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.653,
+      "y": 0.094,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.654,
+      "y": -0.103,
+      "g": "NGC1090"
+    },
+    {
+      "x": 3.656,
+      "y": 0.095,
+      "g": "NGC0289"
+    },
+    {
+      "x": 3.657,
+      "y": 0.432,
+      "g": "NGC2998"
+    },
+    {
+      "x": 3.658,
+      "y": 0.104,
+      "g": "NGC4157"
+    },
+    {
+      "x": 3.661,
+      "y": 0.14,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.663,
+      "y": 0.095,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.667,
+      "y": 0.056,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.668,
+      "y": -0.025,
+      "g": "NGC3769"
+    },
+    {
+      "x": 3.669,
+      "y": 0.185,
+      "g": "NGC4013"
+    },
+    {
+      "x": 3.672,
+      "y": 0.13,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.674,
+      "y": -0.418,
+      "g": "F571-8"
+    },
+    {
+      "x": 3.675,
+      "y": 0.079,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.676,
+      "y": 0.054,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.676,
+      "y": 0.19,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.678,
+      "y": 0.101,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.681,
+      "y": 0.188,
+      "g": "NGC5033"
+    },
+    {
+      "x": 3.683,
+      "y": 0.057,
+      "g": "UGC06973"
+    },
+    {
+      "x": 3.685,
+      "y": 0.326,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.689,
+      "y": -0.124,
+      "g": "NGC4085"
+    },
+    {
+      "x": 3.689,
+      "y": 0.297,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.691,
+      "y": 0.171,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.691,
+      "y": 0.273,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.695,
+      "y": 0.273,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.698,
+      "y": 0.354,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.7,
+      "y": 0.279,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.701,
+      "y": 0.117,
+      "g": "NGC6503"
+    },
+    {
+      "x": 3.708,
+      "y": -0.017,
+      "g": "NGC4217"
+    },
+    {
+      "x": 3.709,
+      "y": 0.182,
+      "g": "NGC2683"
+    },
+    {
+      "x": 3.71,
+      "y": 0.004,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.711,
+      "y": 0.188,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.711,
+      "y": 0.09,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.713,
+      "y": -0.402,
+      "g": "NGC4085"
+    },
+    {
+      "x": 3.715,
+      "y": 0.284,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.717,
+      "y": 0.094,
+      "g": "NGC0891"
+    },
+    {
+      "x": 3.721,
+      "y": -0.229,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.726,
+      "y": 0.281,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.727,
+      "y": -0.182,
+      "g": "UGC11455"
+    },
+    {
+      "x": 3.729,
+      "y": 0.034,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.731,
+      "y": 0.187,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.733,
+      "y": -0.115,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.736,
+      "y": 0.279,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.738,
+      "y": 0.131,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.74,
+      "y": 0.279,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.748,
+      "y": -0.048,
+      "g": "NGC4088"
+    },
+    {
+      "x": 3.749,
+      "y": 0.081,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.753,
+      "y": 0.066,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.753,
+      "y": -0.255,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.756,
+      "y": 0.318,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.756,
+      "y": 0.277,
+      "g": "UGC06786"
+    },
+    {
+      "x": 3.76,
+      "y": 0.041,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.762,
+      "y": 0.197,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.766,
+      "y": 0.26,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.768,
+      "y": 0.051,
+      "g": "NGC3949"
+    },
+    {
+      "x": 3.775,
+      "y": 0.197,
+      "g": "NGC3953"
+    },
+    {
+      "x": 3.776,
+      "y": -0.56,
+      "g": "NGC3877"
+    },
+    {
+      "x": 3.777,
+      "y": 0.195,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.784,
+      "y": 0.058,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.785,
+      "y": 0.146,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.786,
+      "y": 0.023,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.786,
+      "y": 0.354,
+      "g": "UGC02487"
+    },
+    {
+      "x": 3.791,
+      "y": 0.19,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.794,
+      "y": -0.282,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.796,
+      "y": 0.143,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.796,
+      "y": 0.161,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.797,
+      "y": 0.038,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.797,
+      "y": 0.254,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.804,
+      "y": 0.185,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.806,
+      "y": 0.164,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.807,
+      "y": 0.14,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.81,
+      "y": 0.344,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.811,
+      "y": 0.12,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.817,
+      "y": 0.049,
+      "g": "NGC6195"
+    },
+    {
+      "x": 3.819,
+      "y": 0.136,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.821,
+      "y": 0.085,
+      "g": "NGC2955"
+    },
+    {
+      "x": 3.823,
+      "y": 0.058,
+      "g": "NGC7331"
+    },
+    {
+      "x": 3.824,
+      "y": 0.134,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.829,
+      "y": 0.337,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.831,
+      "y": 0.132,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.836,
+      "y": 0.028,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.837,
+      "y": -0.305,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.838,
+      "y": 0.232,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.84,
+      "y": 0.244,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.843,
+      "y": 0.243,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.844,
+      "y": -0.024,
+      "g": "UGC06973"
+    },
+    {
+      "x": 3.847,
+      "y": 0.288,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.849,
+      "y": 0.334,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.854,
+      "y": 0.175,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.854,
+      "y": 0.145,
+      "g": "UGC09133"
+    },
+    {
+      "x": 3.855,
+      "y": 0.055,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.861,
+      "y": 0.153,
+      "g": "NGC7814"
+    },
+    {
+      "x": 3.863,
+      "y": 0.124,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.866,
+      "y": 0.236,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.87,
+      "y": 0.07,
+      "g": "NGC3949"
+    },
+    {
+      "x": 3.873,
+      "y": 0.006,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.878,
+      "y": 0.013,
+      "g": "IC4202"
+    },
+    {
+      "x": 3.885,
+      "y": 0.003,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.89,
+      "y": 0.211,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.892,
+      "y": 0.257,
+      "g": "UGC03205"
+    },
+    {
+      "x": 3.899,
+      "y": 0.327,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.902,
+      "y": 0.077,
+      "g": "NGC2903"
+    },
+    {
+      "x": 3.905,
+      "y": 0.221,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.907,
+      "y": 0.013,
+      "g": "NGC0891"
+    },
+    {
+      "x": 3.91,
+      "y": 0.032,
+      "g": "NGC6946"
+    },
+    {
+      "x": 3.911,
+      "y": 0.112,
+      "g": "NGC5005"
+    },
+    {
+      "x": 3.912,
+      "y": 0.107,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.915,
+      "y": 0.204,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.916,
+      "y": 0.156,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.919,
+      "y": 0.1,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.925,
+      "y": 0.202,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.931,
+      "y": 0.307,
+      "g": "NGC2841"
+    },
+    {
+      "x": 3.933,
+      "y": 0.212,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.936,
+      "y": -0.011,
+      "g": "NGC5055"
+    },
+    {
+      "x": 3.938,
+      "y": -0.024,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.942,
+      "y": 0.097,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.943,
+      "y": 0.197,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.946,
+      "y": 0.089,
+      "g": "NGC3521"
+    },
+    {
+      "x": 3.949,
+      "y": 0.207,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.952,
+      "y": -0.318,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.954,
+      "y": 0.208,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.957,
+      "y": 0.092,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.96,
+      "y": 0.205,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.963,
+      "y": 0.195,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.965,
+      "y": 0.202,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.971,
+      "y": 0.202,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.973,
+      "y": 0.233,
+      "g": "NGC5371"
+    },
+    {
+      "x": 3.978,
+      "y": 0.199,
+      "g": "UGC02953"
+    },
+    {
+      "x": 3.983,
+      "y": 0.192,
+      "g": "UGC11914"
+    },
+    {
+      "x": 3.984,
+      "y": -0.297,
+      "g": "UGC03580"
+    },
+    {
+      "x": 3.987,
+      "y": 0.086,
+      "g": "UGC05253"
+    },
+    {
+      "x": 3.991,
+      "y": -0.049,
+      "g": "UGC02916"
+    },
+    {
+      "x": 3.992,
+      "y": 0.129,
+      "g": "UGC06787"
+    },
+    {
+      "x": 3.999,
+      "y": 0.294,
+      "g": "NGC2841"
+    },
+    {
+      "x": 4.002,
+      "y": 0.082,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.003,
+      "y": 0.081,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.005,
+      "y": -0.002,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.007,
+      "y": 0.063,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.009,
+      "y": 0.023,
+      "g": "NGC6195"
+    },
+    {
+      "x": 4.012,
+      "y": 0.121,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.015,
+      "y": 0.189,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.018,
+      "y": -0.006,
+      "g": "NGC5055"
+    },
+    {
+      "x": 4.019,
+      "y": 0.076,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.026,
+      "y": 0.187,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.027,
+      "y": -0.269,
+      "g": "UGC03580"
+    },
+    {
+      "x": 4.032,
+      "y": 0.174,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.033,
+      "y": 0.073,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.037,
+      "y": 0.094,
+      "g": "NGC7814"
+    },
+    {
+      "x": 4.039,
+      "y": -0.122,
+      "g": "UGC06973"
+    },
+    {
+      "x": 4.041,
+      "y": 0.17,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.042,
+      "y": 0.042,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.046,
+      "y": -0.07,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.047,
+      "y": 0.187,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.051,
+      "y": -0.21,
+      "g": "NGC4217"
+    },
+    {
+      "x": 4.052,
+      "y": 0.178,
+      "g": "NGC6674"
+    },
+    {
+      "x": 4.053,
+      "y": 0.065,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.055,
+      "y": 0.076,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.062,
+      "y": 0.161,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.067,
+      "y": 0.155,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.07,
+      "y": -0.231,
+      "g": "UGC03580"
+    },
+    {
+      "x": 4.072,
+      "y": 0.058,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.077,
+      "y": 0.006,
+      "g": "NGC3893"
+    },
+    {
+      "x": 4.081,
+      "y": 0.061,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.083,
+      "y": 0.18,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.091,
+      "y": -0.041,
+      "g": "NGC7331"
+    },
+    {
+      "x": 4.097,
+      "y": 0.057,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.102,
+      "y": -0.084,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.105,
+      "y": 0.013,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.107,
+      "y": 0.072,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.109,
+      "y": 0.171,
+      "g": "NGC0801"
+    },
+    {
+      "x": 4.11,
+      "y": 0.061,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.114,
+      "y": 0.054,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.122,
+      "y": 0.046,
+      "g": "NGC6946"
+    },
+    {
+      "x": 4.13,
+      "y": -0.183,
+      "g": "UGC03580"
+    },
+    {
+      "x": 4.133,
+      "y": -0.066,
+      "g": "UGC06614"
+    },
+    {
+      "x": 4.135,
+      "y": 0.234,
+      "g": "NGC2841"
+    },
+    {
+      "x": 4.138,
+      "y": -0.025,
+      "g": "NGC5055"
+    },
+    {
+      "x": 4.141,
+      "y": 0.001,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.146,
+      "y": 0.116,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.147,
+      "y": 0.047,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.147,
+      "y": 0.122,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.15,
+      "y": 0.08,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.153,
+      "y": -0.042,
+      "g": "NGC0801"
+    },
+    {
+      "x": 4.154,
+      "y": -0.573,
+      "g": "IC4202"
+    },
+    {
+      "x": 4.156,
+      "y": 0.17,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.159,
+      "y": -0.047,
+      "g": "NGC0801"
+    },
+    {
+      "x": 4.163,
+      "y": 0.086,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.172,
+      "y": 0.03,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.173,
+      "y": 0.114,
+      "g": "UGC02885"
+    },
+    {
+      "x": 4.18,
+      "y": 0.052,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.182,
+      "y": 0.016,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.192,
+      "y": -0.067,
+      "g": "NGC7331"
+    },
+    {
+      "x": 4.194,
+      "y": 0.164,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.196,
+      "y": -0.311,
+      "g": "NGC4217"
+    },
+    {
+      "x": 4.199,
+      "y": -0.152,
+      "g": "UGC03580"
+    },
+    {
+      "x": 4.202,
+      "y": 0.061,
+      "g": "NGC6195"
+    },
+    {
+      "x": 4.205,
+      "y": 0.044,
+      "g": "UGC03205"
+    },
+    {
+      "x": 4.209,
+      "y": -0.005,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.215,
+      "y": -0.097,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.221,
+      "y": 0.028,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.224,
+      "y": 0.001,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.229,
+      "y": 0.104,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.246,
+      "y": 0.039,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.25,
+      "y": 0.068,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.251,
+      "y": 0.046,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.255,
+      "y": -0.022,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.258,
+      "y": 0.062,
+      "g": "UGC06786"
+    },
+    {
+      "x": 4.259,
+      "y": 0.153,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.263,
+      "y": 0.026,
+      "g": "NGC7814"
+    },
+    {
+      "x": 4.263,
+      "y": 0.039,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.268,
+      "y": 0.061,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.27,
+      "y": -0.092,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.271,
+      "y": -0.359,
+      "g": "NGC4217"
+    },
+    {
+      "x": 4.273,
+      "y": -0.04,
+      "g": "NGC2903"
+    },
+    {
+      "x": 4.28,
+      "y": 0.04,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.284,
+      "y": -0.865,
+      "g": "NGC4217"
+    },
+    {
+      "x": 4.289,
+      "y": 0.093,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.292,
+      "y": 0.02,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.299,
+      "y": 0.054,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.301,
+      "y": 0.206,
+      "g": "NGC5371"
+    },
+    {
+      "x": 4.307,
+      "y": 0.062,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.308,
+      "y": 0.053,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.311,
+      "y": -0.006,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.317,
+      "y": 0.04,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.327,
+      "y": 0.284,
+      "g": "UGC03205"
+    },
+    {
+      "x": 4.329,
+      "y": 0.022,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.333,
+      "y": 0.047,
+      "g": "NGC6195"
+    },
+    {
+      "x": 4.336,
+      "y": -0.194,
+      "g": "NGC0891"
+    },
+    {
+      "x": 4.338,
+      "y": -0.095,
+      "g": "NGC7331"
+    },
+    {
+      "x": 4.342,
+      "y": 0.041,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.354,
+      "y": 0.153,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.357,
+      "y": 0.038,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.36,
+      "y": -0.044,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.368,
+      "y": 0.154,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.369,
+      "y": 0.037,
+      "g": "UGC06786"
+    },
+    {
+      "x": 4.372,
+      "y": 0.034,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.379,
+      "y": 0.155,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.379,
+      "y": 0.046,
+      "g": "NGC2955"
+    },
+    {
+      "x": 4.383,
+      "y": 0.156,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.389,
+      "y": 0.03,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.397,
+      "y": 0.067,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.399,
+      "y": -0.053,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.405,
+      "y": 0.022,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.415,
+      "y": -0.019,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.423,
+      "y": 0.018,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.43,
+      "y": -0.005,
+      "g": "UGC03205"
+    },
+    {
+      "x": 4.432,
+      "y": 0.162,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.438,
+      "y": -0.131,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.443,
+      "y": 0.035,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.45,
+      "y": -0.114,
+      "g": "NGC5055"
+    },
+    {
+      "x": 4.454,
+      "y": 0.081,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.463,
+      "y": 0.033,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.469,
+      "y": -0.132,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.472,
+      "y": -0.028,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.478,
+      "y": 0.001,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.483,
+      "y": 0.007,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.486,
+      "y": 0.093,
+      "g": "UGC02916"
+    },
+    {
+      "x": 4.493,
+      "y": -0.083,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.499,
+      "y": -0.004,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.503,
+      "y": -0.122,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.513,
+      "y": 0.167,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.52,
+      "y": -0.008,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.537,
+      "y": 0.165,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.539,
+      "y": -0.011,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.549,
+      "y": -0.002,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.561,
+      "y": -0.013,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.574,
+      "y": 0.029,
+      "g": "NGC3521"
+    },
+    {
+      "x": 4.581,
+      "y": 0.165,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.588,
+      "y": -0.042,
+      "g": "UGC08699"
+    },
+    {
+      "x": 4.591,
+      "y": -0.111,
+      "g": "NGC6946"
+    },
+    {
+      "x": 4.604,
+      "y": 0.163,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.609,
+      "y": 0.012,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.623,
+      "y": -0.01,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.631,
+      "y": -0.086,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.645,
+      "y": -0.006,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.65,
+      "y": -0.025,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.668,
+      "y": -0.002,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.674,
+      "y": 0.155,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.688,
+      "y": -0.02,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.695,
+      "y": 0.152,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.706,
+      "y": -0.01,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.713,
+      "y": -0.105,
+      "g": "UGC08699"
+    },
+    {
+      "x": 4.718,
+      "y": 0.15,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.739,
+      "y": 0.143,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.748,
+      "y": 0.004,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.767,
+      "y": -0.155,
+      "g": "UGC03546"
+    },
+    {
+      "x": 4.768,
+      "y": 0.052,
+      "g": "UGC06786"
+    },
+    {
+      "x": 4.776,
+      "y": -0.018,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.796,
+      "y": -0.002,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.797,
+      "y": 0.006,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.811,
+      "y": 0.107,
+      "g": "UGC11914"
+    },
+    {
+      "x": 4.831,
+      "y": -0.087,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.851,
+      "y": -0.158,
+      "g": "UGC08699"
+    },
+    {
+      "x": 4.862,
+      "y": 0.007,
+      "g": "UGC05253"
+    },
+    {
+      "x": 4.873,
+      "y": 0.118,
+      "g": "UGC06786"
+    },
+    {
+      "x": 4.885,
+      "y": -0.139,
+      "g": "NGC5033"
+    },
+    {
+      "x": 4.895,
+      "y": 0.025,
+      "g": "UGC09133"
+    },
+    {
+      "x": 4.909,
+      "y": 0.113,
+      "g": "UGC08699"
+    },
+    {
+      "x": 4.931,
+      "y": 0.092,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.943,
+      "y": -0.013,
+      "g": "UGC06787"
+    },
+    {
+      "x": 4.964,
+      "y": -0.005,
+      "g": "NGC5005"
+    },
+    {
+      "x": 4.977,
+      "y": 0.121,
+      "g": "UGC02953"
+    },
+    {
+      "x": 4.986,
+      "y": 0.115,
+      "g": "UGC09133"
+    },
+    {
+      "x": 5.001,
+      "y": 0.033,
+      "g": "UGC05253"
+    },
+    {
+      "x": 5.029,
+      "y": 0.167,
+      "g": "UGC02953"
+    },
+    {
+      "x": 5.061,
+      "y": -0.057,
+      "g": "UGC11914"
+    },
+    {
+      "x": 5.084,
+      "y": 0.533,
+      "g": "UGC05253"
+    },
+    {
+      "x": 5.098,
+      "y": 0.013,
+      "g": "UGC06787"
+    },
+    {
+      "x": 5.137,
+      "y": 0.2,
+      "g": "UGC05253"
+    },
+    {
+      "x": 5.24,
+      "y": -0.203,
+      "g": "UGC03546"
+    },
+    {
+      "x": 5.284,
+      "y": -0.025,
+      "g": "UGC06787"
+    },
+    {
+      "x": 5.355,
+      "y": -0.099,
+      "g": "UGC06787"
+    }
+  ],
+  "verdict": "UNIVERSAL_SCALE_CONFIRMED"
+}
