@@ -17,6 +17,7 @@ import DarkMatterFractionPage from "@/pages/dark-matter-fraction";
 import BaryonHaloCouplingPage from "@/pages/baryon-halo-coupling";
 import EvidencePage from "@/pages/evidence";
 import DefensePage from "@/pages/defense";
+import ModelProposalPage from "@/pages/model-proposal";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ function Router() {
       <Route path="/dark-matter-fraction" component={DarkMatterFractionPage} />
       <Route path="/baryon-halo-coupling" component={BaryonHaloCouplingPage} />
       <Route path="/defense" component={DefensePage} />
+      <Route path="/model" component={ModelProposalPage} />
       <Route component={NotFound} />
     </Switch>
   );

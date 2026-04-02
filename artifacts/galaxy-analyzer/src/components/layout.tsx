@@ -53,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavItem href="/dark-matter-fraction" icon={Eye} label="DM Fraction" />
             <NavItem href="/baryon-halo-coupling" icon={Link2} label="B-H Coupling" />
             <NavItem href="/defense" icon={ShieldCheck} label="Defense" />
+            <NavItem href="/model" icon={Atom} label="Model" />
           </nav>
         </div>
         
