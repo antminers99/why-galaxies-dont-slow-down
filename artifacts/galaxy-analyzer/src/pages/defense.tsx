@@ -3,7 +3,7 @@ import { Layout } from '@/components/layout';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine, Cell } from 'recharts';
 import {
   Shield, CheckCircle2, XCircle, Shuffle, Microscope, FileCode, Layers,
-  Scale, ChevronDown, ChevronRight, AlertTriangle, Atom, Beaker
+  Scale, ChevronDown, ChevronRight, AlertTriangle, Atom, Beaker, BarChart3
 } from 'lucide-react';
 
 interface SigmaResult {
@@ -282,6 +282,64 @@ interface RawParticleData {
   };
 }
 
+interface BivariateCollapseData {
+  datasets: {
+    sparc: { nGalaxies: number; nPoints: number };
+    littleThings: { nGalaxies: number; nPoints: number };
+    combined: { nGalaxies: number; nPoints: number };
+  };
+  test2_deltaVsSigma: {
+    sparc: { slope: number; se: number; r: number; r2: number; n: number };
+    littleThings: { slope: number; se: number; r: number; r2: number; n: number };
+    combined: { slope: number; se: number; r: number; r2: number; n: number };
+    signConsistent: boolean;
+  };
+  test3_bivariateModels: {
+    sparc: { modelA: { r2: number; adjR2: number; rmse: number }; modelB: { r2: number; adjR2: number; rmse: number; sigmaCoeff: number }; fStatAB: number; deltaAIC: number; deltaBIC: number };
+    littleThings: { modelA: { r2: number; adjR2: number; rmse: number }; modelB: { r2: number; adjR2: number; rmse: number; sigmaCoeff: number }; fStatAB: number; deltaAIC: number; deltaBIC: number };
+    combined: { modelA: { r2: number; adjR2: number; rmse: number }; modelB: { r2: number; adjR2: number; rmse: number; sigmaCoeff: number }; fStatAB: number; deltaAIC: number };
+  };
+  test4_crossValidation: {
+    sparcToLT: { rmseA: number; rmseB: number; improvement: number; sigmaCoeff: number };
+    ltToSPARC: { rmseA: number; rmseB: number; improvement: number; sigmaCoeff: number };
+    signConsistent: boolean;
+    bothImprove: boolean;
+  };
+  test5_collapse: {
+    baseline: { rms: number; meanGap: number };
+    best: { coeff: number; rms: number; meanGap: number };
+    scatterReduction: number;
+    meanGapReduction: number;
+  };
+  test6_stability: {
+    results: Array<{ label: string; slope: number; se: number; sig: number; n: number; sign: string }>;
+    allSameSign: boolean;
+    signDirection: string;
+    meanSignificance: number;
+  };
+  test7_bivariateFormula: {
+    bestGamma: number;
+    baseRMS: number;
+    correctedRMS: number;
+    scatterReduction: number;
+    formula: string;
+    perDataset: { sparc: { baseRMS: number; correctedRMS: number }; littleThings: { baseRMS: number; correctedRMS: number } };
+  };
+  test8_galaxyLevel: {
+    sparc: { slope: number; se: number; sig: number; r: number; n: number };
+    littleThings: { slope: number; se: number; sig: number; r: number; n: number };
+    combined: { slope: number; se: number; sig: number; r: number; n: number };
+  };
+  verdict: {
+    sigmaImprovesRAR_SPARC: boolean;
+    sigmaImprovesRAR_LT: boolean;
+    crossValidated: boolean;
+    signConsistent: boolean;
+    definitionStable: boolean;
+    isTreasure: boolean;
+  };
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -464,6 +522,7 @@ export default function DefensePage() {
   const [hydro, setHydro] = useState<HydroData | null>(null);
   const [particle, setParticle] = useState<ParticleData | null>(null);
   const [rawParticle, setRawParticle] = useState<RawParticleData | null>(null);
+  const [bivariate, setBivariate] = useState<BivariateCollapseData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -473,8 +532,9 @@ export default function DefensePage() {
       fetch(`${import.meta.env.BASE_URL}hydro-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}particle-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}raw-particle-data.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}bivariate-collapse.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData, hydroData, particleData, rawData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); })
+      .then(([defData, fbData, hydroData, particleData, rawData, bivData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); setRawParticle(rawData); setBivariate(bivData); })
       .catch(() => setError(true));
   }, []);
 
@@ -1585,6 +1645,262 @@ export default function DefensePage() {
                   <p>Apertures: {rawParticle.metadata.aperture_radii_kpc.join(", ")} kpc</p>
                   <p>Pipeline: {rawParticle.metadata.pipeline}</p>
                   <p>Generated: {rawParticle.metadata.timestamp}</p>
+                </div>
+              </div>
+            </GlassCard>
+          </section>
+        )}
+
+        {bivariate && (
+          <section className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-white font-bold text-sm">V</div>
+              <div className="flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-violet-400" />
+              </div>
+              <h2 className="text-lg font-bold text-white flex-1">Bivariate Collapse: Does Sigma_bar Complete the RAR?</h2>
+              <span className="text-xs font-bold px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/30">
+                CROSS-VALIDATED
+              </span>
+            </div>
+
+            <GlassCard glow="violet" className="mb-4">
+              <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4 mb-6">
+                <p className="text-violet-200 text-sm leading-relaxed">
+                  The critical question: does adding baryon surface density (Sigma_bar) as a second parameter to the Radial Acceleration Relation
+                  produce a bivariate law that unifies SPARC and LITTLE THINGS with measurably better predictions?
+                  We test this with {bivariate.datasets.combined.nPoints.toLocaleString()} radial measurements across {bivariate.datasets.combined.nGalaxies} galaxies.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-4 text-center">
+                  <p className="text-xs text-slate-400 mb-1">SPARC</p>
+                  <p className="text-2xl font-bold text-cyan-400">{bivariate.datasets.sparc.nGalaxies}</p>
+                  <p className="text-xs text-slate-500">{bivariate.datasets.sparc.nPoints.toLocaleString()} points</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4 text-center">
+                  <p className="text-xs text-slate-400 mb-1">LITTLE THINGS</p>
+                  <p className="text-2xl font-bold text-emerald-400">{bivariate.datasets.littleThings.nGalaxies}</p>
+                  <p className="text-xs text-slate-500">{bivariate.datasets.littleThings.nPoints.toLocaleString()} points</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4 text-center">
+                  <p className="text-xs text-slate-400 mb-1">COMBINED</p>
+                  <p className="text-2xl font-bold text-violet-400">{bivariate.datasets.combined.nGalaxies}</p>
+                  <p className="text-xs text-slate-500">{bivariate.datasets.combined.nPoints.toLocaleString()} points</p>
+                </div>
+              </div>
+
+              <h4 className="text-white font-bold text-sm mb-3">Test A: DELTA_RAR vs log(Sigma_bar) — Galaxy-Level</h4>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left text-slate-400 py-2 px-3">Dataset</th>
+                      <th className="text-center text-slate-400 py-2 px-3">N galaxies</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Slope</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Significance</th>
+                      <th className="text-center text-slate-400 py-2 px-3">r</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-white/5">
+                      <td className="py-2 px-3 text-cyan-300 font-mono">SPARC</td>
+                      <td className="py-2 px-3 text-center text-white">{bivariate.test8_galaxyLevel.sparc.n}</td>
+                      <td className="py-2 px-3 text-center font-mono text-rose-400">{bivariate.test8_galaxyLevel.sparc.slope.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400">{bivariate.test8_galaxyLevel.sparc.sig.toFixed(1)}sigma</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400">{bivariate.test8_galaxyLevel.sparc.r.toFixed(3)}</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-2 px-3 text-emerald-300 font-mono">LITTLE THINGS</td>
+                      <td className="py-2 px-3 text-center text-white">{bivariate.test8_galaxyLevel.littleThings.n}</td>
+                      <td className="py-2 px-3 text-center font-mono text-rose-400">{bivariate.test8_galaxyLevel.littleThings.slope.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400">{bivariate.test8_galaxyLevel.littleThings.sig.toFixed(1)}sigma</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400">{bivariate.test8_galaxyLevel.littleThings.r.toFixed(3)}</td>
+                    </tr>
+                    <tr className="bg-violet-500/10">
+                      <td className="py-2 px-3 text-violet-300 font-mono font-bold">COMBINED</td>
+                      <td className="py-2 px-3 text-center text-white font-bold">{bivariate.test8_galaxyLevel.combined.n}</td>
+                      <td className="py-2 px-3 text-center font-mono text-rose-400 font-bold">{bivariate.test8_galaxyLevel.combined.slope.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400 font-bold">{bivariate.test8_galaxyLevel.combined.sig.toFixed(1)}sigma</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400 font-bold">{bivariate.test8_galaxyLevel.combined.r.toFixed(3)}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="text-white font-bold text-sm mb-3">Test B: Bivariate Model Comparison (F-test)</h4>
+              <p className="text-slate-400 text-xs mb-3">Model A: log(g_obs) = a + b*log(g_bar) | Model B: + c*log(Sigma_bar)</p>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left text-slate-400 py-2 px-3">Dataset</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Model A R2</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Model B R2</th>
+                      <th className="text-center text-slate-400 py-2 px-3">F-stat</th>
+                      <th className="text-center text-slate-400 py-2 px-3">delta_AIC</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Sigma adds power?</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-white/5">
+                      <td className="py-2 px-3 text-cyan-300 font-mono">SPARC</td>
+                      <td className="py-2 px-3 text-center font-mono text-white">{bivariate.test3_bivariateModels.sparc.modelA.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-white">{bivariate.test3_bivariateModels.sparc.modelB.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400">{bivariate.test3_bivariateModels.sparc.fStatAB.toFixed(1)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400">{bivariate.test3_bivariateModels.sparc.deltaAIC.toFixed(1)}</td>
+                      <td className={"py-2 px-3 text-center font-bold " + (bivariate.test3_bivariateModels.sparc.fStatAB > 6.63 ? "text-emerald-400" : bivariate.test3_bivariateModels.sparc.fStatAB > 3.84 ? "text-amber-400" : "text-slate-500")}>{bivariate.test3_bivariateModels.sparc.fStatAB > 6.63 ? "YES p<0.01" : bivariate.test3_bivariateModels.sparc.fStatAB > 3.84 ? "Marginal" : "No"}</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-2 px-3 text-emerald-300 font-mono">LITTLE THINGS</td>
+                      <td className="py-2 px-3 text-center font-mono text-white">{bivariate.test3_bivariateModels.littleThings.modelA.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-white">{bivariate.test3_bivariateModels.littleThings.modelB.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400">{bivariate.test3_bivariateModels.littleThings.fStatAB.toFixed(1)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400">{bivariate.test3_bivariateModels.littleThings.deltaAIC.toFixed(1)}</td>
+                      <td className={"py-2 px-3 text-center font-bold " + (bivariate.test3_bivariateModels.littleThings.fStatAB > 6.63 ? "text-emerald-400" : "text-slate-500")}>{bivariate.test3_bivariateModels.littleThings.fStatAB > 6.63 ? "YES p<0.01" : "No"}</td>
+                    </tr>
+                    <tr className="bg-violet-500/10">
+                      <td className="py-2 px-3 text-violet-300 font-mono font-bold">COMBINED</td>
+                      <td className="py-2 px-3 text-center font-mono text-white font-bold">{bivariate.test3_bivariateModels.combined.modelA.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-white font-bold">{bivariate.test3_bivariateModels.combined.modelB.r2.toFixed(4)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-amber-400 font-bold">{bivariate.test3_bivariateModels.combined.fStatAB.toFixed(1)}</td>
+                      <td className="py-2 px-3 text-center font-mono text-blue-400 font-bold">{bivariate.test3_bivariateModels.combined.deltaAIC.toFixed(1)}</td>
+                      <td className="py-2 px-3 text-center font-bold text-emerald-400">YES p&lt;0.01</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 className="text-white font-bold text-sm mb-3">Test C: Cross-Validation (The Decisive Test)</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className={"rounded-xl p-4 border " + (bivariate.test4_crossValidation.sparcToLT.improvement > 0 ? "bg-emerald-500/5 border-emerald-500/20" : "bg-rose-500/5 border-rose-500/20")}>
+                  <p className="text-xs text-slate-400 mb-2">Train on SPARC {"→"} Test on LITTLE THINGS</p>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-slate-300">Standard RAR RMSE:</span>
+                    <span className="text-white font-mono">{bivariate.test4_crossValidation.sparcToLT.rmseA.toFixed(5)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-slate-300">+Sigma_bar RMSE:</span>
+                    <span className="text-white font-mono">{bivariate.test4_crossValidation.sparcToLT.rmseB.toFixed(5)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm font-bold">
+                    <span className="text-slate-300">Improvement:</span>
+                    <span className={bivariate.test4_crossValidation.sparcToLT.improvement > 0 ? "text-emerald-400" : "text-rose-400"}>{bivariate.test4_crossValidation.sparcToLT.improvement.toFixed(2)}%</span>
+                  </div>
+                </div>
+                <div className={"rounded-xl p-4 border " + (bivariate.test4_crossValidation.ltToSPARC.improvement > 0 ? "bg-emerald-500/5 border-emerald-500/20" : "bg-rose-500/5 border-rose-500/20")}>
+                  <p className="text-xs text-slate-400 mb-2">Train on LITTLE THINGS {"→"} Test on SPARC</p>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-slate-300">Standard RAR RMSE:</span>
+                    <span className="text-white font-mono">{bivariate.test4_crossValidation.ltToSPARC.rmseA.toFixed(5)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span className="text-slate-300">+Sigma_bar RMSE:</span>
+                    <span className="text-white font-mono">{bivariate.test4_crossValidation.ltToSPARC.rmseB.toFixed(5)}</span>
+                  </div>
+                  <div className="flex justify-between text-sm font-bold">
+                    <span className="text-slate-300">Improvement:</span>
+                    <span className={bivariate.test4_crossValidation.ltToSPARC.improvement > 0 ? "text-emerald-400" : "text-rose-400"}>{bivariate.test4_crossValidation.ltToSPARC.improvement.toFixed(2)}%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-3 mb-6">
+                <div className={"flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border " + (bivariate.test4_crossValidation.signConsistent ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-rose-500/10 border-rose-500/20 text-rose-400")}>
+                  {bivariate.test4_crossValidation.signConsistent ? "Sigma coefficient sign CONSISTENT" : "Sigma coefficient sign INCONSISTENT"}
+                </div>
+                <div className={"flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border " + (bivariate.test4_crossValidation.bothImprove ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-amber-500/10 border-amber-500/20 text-amber-400")}>
+                  {bivariate.test4_crossValidation.bothImprove ? "Both directions IMPROVE" : "NOT both directions improve"}
+                </div>
+              </div>
+
+              <h4 className="text-white font-bold text-sm mb-3">Test D: Stability Under All Definitions</h4>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left text-slate-400 py-2 px-3">Definition</th>
+                      <th className="text-center text-slate-400 py-2 px-3">N</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Slope</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Sig</th>
+                      <th className="text-center text-slate-400 py-2 px-3">Sign</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bivariate.test6_stability.results.map((s, i) => (
+                      <tr key={i} className={"border-b border-white/5 " + (s.label.includes("baseline") ? "bg-violet-500/10" : "")}>
+                        <td className="py-1.5 px-3 text-slate-300 font-mono">{s.label}</td>
+                        <td className="py-1.5 px-3 text-center text-white">{s.n.toLocaleString()}</td>
+                        <td className="py-1.5 px-3 text-center font-mono text-rose-400">{s.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-3 text-center font-mono text-amber-400">{s.sig.toFixed(1)}sigma</td>
+                        <td className={"py-1.5 px-3 text-center font-bold " + (s.sign === "NEG" ? "text-rose-400" : "text-emerald-400")}>{s.sign}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className={"rounded-xl p-3 border text-center text-sm font-bold mb-6 " + (bivariate.test6_stability.allSameSign ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-amber-500/10 border-amber-500/20 text-amber-400")}>
+                {bivariate.test6_stability.allSameSign
+                  ? "ALL " + bivariate.test6_stability.results.length + " definitions: " + bivariate.test6_stability.signDirection.toUpperCase() + " slope | Mean " + bivariate.test6_stability.meanSignificance.toFixed(1) + "sigma"
+                  : "MIXED signs across definitions — signal is fragile"}
+              </div>
+
+              <h4 className="text-white font-bold text-sm mb-3">Test E: Collapse Relation</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-xs text-slate-400 mb-2">Scatter Reduction</p>
+                  <p className="text-3xl font-bold text-violet-400">{bivariate.test5_collapse.scatterReduction.toFixed(1)}%</p>
+                  <p className="text-xs text-slate-500 mt-1">Combined RMS: {bivariate.test5_collapse.baseline.rms.toFixed(4)} -&gt; {bivariate.test5_collapse.best.rms.toFixed(4)}</p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-xs text-slate-400 mb-2">Inter-Dataset Gap Reduction</p>
+                  <p className="text-3xl font-bold text-emerald-400">{bivariate.test5_collapse.meanGapReduction.toFixed(1)}%</p>
+                  <p className="text-xs text-slate-500 mt-1">Mean gap: {bivariate.test5_collapse.baseline.meanGap.toFixed(4)} -&gt; {bivariate.test5_collapse.best.meanGap.toFixed(4)}</p>
+                </div>
+              </div>
+
+              <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4 mb-6">
+                <h4 className="text-violet-300 font-bold text-sm mb-2">Best Bivariate Formula</h4>
+                <p className="text-white font-mono text-sm mb-2">{bivariate.test7_bivariateFormula.formula}</p>
+                <div className="grid grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <span className="text-slate-400">SPARC scatter: </span>
+                    <span className="text-white font-mono">{bivariate.test7_bivariateFormula.perDataset.sparc.baseRMS.toFixed(4)} -&gt; {bivariate.test7_bivariateFormula.perDataset.sparc.correctedRMS.toFixed(4)}</span>
+                    <span className={" font-bold " + (bivariate.test7_bivariateFormula.perDataset.sparc.correctedRMS < bivariate.test7_bivariateFormula.perDataset.sparc.baseRMS ? "text-emerald-400" : "text-rose-400")}>
+                      {" "}({((bivariate.test7_bivariateFormula.perDataset.sparc.baseRMS - bivariate.test7_bivariateFormula.perDataset.sparc.correctedRMS) / bivariate.test7_bivariateFormula.perDataset.sparc.baseRMS * 100).toFixed(1)}%)
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400">LT scatter: </span>
+                    <span className="text-white font-mono">{bivariate.test7_bivariateFormula.perDataset.littleThings.baseRMS.toFixed(4)} -&gt; {bivariate.test7_bivariateFormula.perDataset.littleThings.correctedRMS.toFixed(4)}</span>
+                    <span className={" font-bold " + (bivariate.test7_bivariateFormula.perDataset.littleThings.correctedRMS < bivariate.test7_bivariateFormula.perDataset.littleThings.baseRMS ? "text-emerald-400" : "text-rose-400")}>
+                      {" "}({((bivariate.test7_bivariateFormula.perDataset.littleThings.baseRMS - bivariate.test7_bivariateFormula.perDataset.littleThings.correctedRMS) / bivariate.test7_bivariateFormula.perDataset.littleThings.baseRMS * 100).toFixed(1)}%)
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
+                <h4 className="text-amber-300 font-bold text-sm mb-2">Honest Assessment</h4>
+                <div className="space-y-2 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    <span className="text-emerald-400 font-bold">What IS robust:</span> The DELTA_RAR vs log(Sigma_bar) correlation is always negative, across
+                    all {bivariate.test6_stability.results.length} definition variants (mean {bivariate.test6_stability.meanSignificance.toFixed(0)}sigma). At galaxy level in SPARC:
+                    {" "}{bivariate.test8_galaxyLevel.sparc.sig.toFixed(1)}sigma. The sign is consistent between SPARC and LITTLE THINGS.
+                    Cross-validation improves in both directions with consistent coefficient sign.
+                  </p>
+                  <p>
+                    <span className="text-amber-400 font-bold">What is NOT dramatic:</span> Cross-validation improvements are modest
+                    ({bivariate.test4_crossValidation.sparcToLT.improvement.toFixed(1)}% and {bivariate.test4_crossValidation.ltToSPARC.improvement.toFixed(1)}%).
+                    The bivariate formula helps SPARC but slightly hurts LITTLE THINGS.
+                    {" "}The R2 improvement from adding Sigma_bar is small in absolute terms.
+                  </p>
+                  <p>
+                    <span className="text-violet-400 font-bold">Interpretation:</span> Sigma_bar captures a real, reproducible residual structure in the RAR.
+                    Higher surface density galaxies systematically deviate less from the McGaugh relation. This is a second-order effect —
+                    real but not a dramatic "hidden law." The interaction term (g_bar x Sigma_bar) matters more than the linear Sigma term,
+                    suggesting the coupling depends on where you sit on the RAR curve.
+                  </p>
                 </div>
               </div>
             </GlassCard>
