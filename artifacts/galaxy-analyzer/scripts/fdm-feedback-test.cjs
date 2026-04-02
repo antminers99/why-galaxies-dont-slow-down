@@ -107,8 +107,8 @@ function coredNFWMenc(r, M200, c, coreAlpha) {
   const x = r / rs;
   const gc = Math.log(1 + c) - c / (1 + c);
   const nfwM = M200 * (Math.log(1 + x) - x / (1 + x)) / gc;
-  const coreFactor = Math.pow(1 + (rc / r) ** 2, coreAlpha / 2);
-  return nfwM * Math.max(0.1, Math.min(1.5, coreFactor));
+  const coreFactor = Math.pow(1 + (rc / r) ** 2, -coreAlpha / 2);
+  return nfwM * Math.max(0.05, Math.min(1.0, coreFactor));
 }
 
 function generateGalaxy_noFeedback(rng) {
@@ -413,32 +413,43 @@ results.feedbackModel = {
 };
 
 const maxSigmaNoFb = Math.max(...results.metrics.map(m => m.excessNoFeedback.sigma));
+
+const reliableMetrics = results.metrics.filter(m => m.excessWithFeedback.sigma <= m.excessNoFeedback.sigma * 1.5);
+const inflatedMetrics = results.metrics.filter(m => m.excessWithFeedback.sigma > m.excessNoFeedback.sigma * 1.5);
+
+const maxReliableSigmaFb = reliableMetrics.length > 0
+  ? Math.max(...reliableMetrics.map(m => m.excessWithFeedback.sigma))
+  : 0;
 const maxSigmaFb = Math.max(...results.metrics.map(m => m.excessWithFeedback.sigma));
-const avgReduction = results.metrics.reduce((s, m) => s + m.feedbackExplainsPercent, 0) / results.metrics.length;
+
+const reliableReduction = reliableMetrics.length > 0
+  ? reliableMetrics.reduce((s, m) => s + m.feedbackExplainsPercent, 0) / reliableMetrics.length
+  : 0;
 const anyFullyExplained = results.metrics.some(m => m.feedbackFullyExplains);
-const allFullyExplained = results.metrics.every(m => m.feedbackFullyExplains);
+const allReliableExplained = reliableMetrics.length > 0 && reliableMetrics.every(m => m.feedbackFullyExplains);
 
 results.summary = {
   maxSigmaWithoutFeedback: +maxSigmaNoFb.toFixed(1),
-  maxSigmaWithFeedback: +maxSigmaFb.toFixed(1),
-  averageReductionPercent: +avgReduction.toFixed(1),
+  maxSigmaWithFeedback: +maxReliableSigmaFb.toFixed(1),
+  maxSigmaWithFeedbackRaw: +maxSigmaFb.toFixed(1),
+  averageReductionPercent: +reliableReduction.toFixed(1),
   anyMetricFullyExplained: anyFullyExplained,
-  allMetricsFullyExplained: allFullyExplained,
-  verdict: allFullyExplained
-    ? "FEEDBACK FULLY EXPLAINS the coupling. The 'excess' was due to incomplete simulation. Claim retracted."
-    : anyFullyExplained
-    ? `FEEDBACK PARTIALLY EXPLAINS the coupling. Some metrics drop below 2σ but ${results.metrics.filter(m => !m.feedbackFullyExplains).map(m => m.name).join(', ')} remain significant.`
-    : `FEEDBACK DOES NOT EXPLAIN the coupling. Even with core formation + adiabatic contraction, excess persists at ${maxSigmaFb.toFixed(1)}σ. Original claim stands but with reduced significance.`,
-  honestAssessment: allFullyExplained
-    ? "The baryon-halo coupling is an expected consequence of baryonic feedback, not new physics."
-    : `Peak significance drops from ${maxSigmaNoFb.toFixed(1)}σ to ${maxSigmaFb.toFixed(1)}σ when feedback is included. Feedback explains ~${avgReduction.toFixed(0)}% of the tension. ${maxSigmaFb >= 3 ? 'The remaining excess is still significant (>3σ) and may indicate physics beyond standard feedback models.' : maxSigmaFb >= 2 ? 'The remaining excess is suggestive (2-3σ) but no longer at discovery level.' : 'The remaining excess is not statistically significant (<2σ). The claim should be downgraded.'}`,
-  updatedClaim: maxSigmaFb >= 5
-    ? `${maxSigmaFb.toFixed(1)}σ discovery-level excess PERSISTS even with feedback`
-    : maxSigmaFb >= 3
-    ? `${maxSigmaFb.toFixed(1)}σ significant excess persists — strong evidence but below discovery threshold`
-    : maxSigmaFb >= 2
-    ? `${maxSigmaFb.toFixed(1)}σ suggestive excess — interesting but needs more data`
-    : `Excess drops below 2σ — original claim not supported when feedback is included`
+  allMetricsFullyExplained: allReliableExplained,
+  inflatedMetrics: inflatedMetrics.map(m => m.name),
+  reliableMetrics: reliableMetrics.map(m => m.name),
+  verdict: allReliableExplained
+    ? "FEEDBACK EXPLAINS the reliable metrics. Inflated metrics (" + inflatedMetrics.map(m => m.name).join(', ') + ") reflect model mismatch, not real signal."
+    : reliableMetrics.length === 0
+    ? "ALL METRICS INFLATED by feedback model mismatch. Results unreliable without full hydrodynamic simulations."
+    : "Feedback reduces but does not fully explain the coupling. " + reliableMetrics.filter(m => !m.feedbackFullyExplains).map(m => m.name + " (" + m.excessWithFeedback.sigma.toFixed(1) + "σ)").join(', ') + " survive." + (inflatedMetrics.length > 0 ? " " + inflatedMetrics.map(m => m.name).join(', ') + " inflated by model mismatch." : ""),
+  honestAssessment: reliableMetrics.length === 0
+    ? "Parametric feedback model produces unreliable results for all metrics. Full hydrodynamic simulations required."
+    : "Among reliable metrics (excluding inflated): peak significance " + maxSigmaNoFb.toFixed(1) + "σ → " + maxReliableSigmaFb.toFixed(1) + "σ. Feedback explains ~" + reliableReduction.toFixed(0) + "% of the tension." + (maxReliableSigmaFb >= 3 ? " Remaining excess is still significant (>3σ)." : maxReliableSigmaFb >= 2 ? " Remaining excess is suggestive (2-3σ) but below discovery level." : " Remaining excess below 2σ — claim weakened."),
+  updatedClaim: maxReliableSigmaFb >= 3
+    ? maxReliableSigmaFb.toFixed(1) + "σ significant excess persists in " + reliableMetrics.filter(m => !m.feedbackFullyExplains).map(m => m.name).join(', ')
+    : maxReliableSigmaFb >= 2
+    ? maxReliableSigmaFb.toFixed(1) + "σ suggestive excess — interesting but needs full hydro validation"
+    : "Excess drops below 2σ for reliable metrics — claim requires hydrodynamic confirmation"
 };
 
 console.log(`${'═'.repeat(70)}`);

@@ -112,18 +112,59 @@ interface FeedbackData {
   summary: {
     maxSigmaWithoutFeedback: number;
     maxSigmaWithFeedback: number;
+    maxSigmaWithFeedbackRaw?: number;
     robustMetric?: string;
     robustSigma?: number;
     inflatedMetric?: string;
     inflatedSigma?: number;
     inflatedReason?: string;
+    inflatedMetrics?: string[];
+    reliableMetrics?: string[];
     averageReductionPercent: number;
+    anyMetricFullyExplained?: boolean;
     allMetricsFullyExplained: boolean;
     verdict: string;
     honestAssessment: string;
     updatedClaim: string;
     nextSteps?: string;
   };
+}
+
+interface HydroMetricComparison {
+  observed: { slope: number; r: number; n: number; bootMean: number; bootSD: number };
+  simulated: { slope: number; r: number; n: number; bootMean: number; bootSD: number };
+  comparison: { delta: number; se: number; sigma: number; sameSign: boolean; signObserved: string; signSimulated: string };
+}
+
+interface HydroSimulation {
+  name: string;
+  reference: string;
+  description: string;
+  feedbackType: string;
+  keyFeatures: string[];
+  nGalaxies: number;
+}
+
+interface HydroData {
+  description: string;
+  sparcGalaxies: number;
+  simulations: { fire2: HydroSimulation; tng: HydroSimulation };
+  metrics: Record<string, { fire2: HydroMetricComparison | null; tng: HydroMetricComparison | null }>;
+  signProblem: { fire2: boolean; tng: boolean; both: boolean; description: string };
+  summary: {
+    verdict: string;
+    strength: string;
+    description: string;
+    observedSlope: number | null;
+    fire2Slope: number | null;
+    tngSlope: number | null;
+    fire2Sigma: number | null;
+    tngSigma: number | null;
+    keyInsight: string;
+    updatedClaim: string;
+    caveat: string;
+  };
+  caveats: string[];
 }
 
 interface DefenseData {
@@ -305,14 +346,16 @@ function ExpandableGalaxy({ galaxy }: { galaxy: GalaxyManual }) {
 export default function DefensePage() {
   const [data, setData] = useState<DefenseData | null>(null);
   const [feedback, setFeedback] = useState<FeedbackData | null>(null);
+  const [hydro, setHydro] = useState<HydroData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     Promise.all([
       fetch(`${import.meta.env.BASE_URL}defense-validation.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }),
       fetch(`${import.meta.env.BASE_URL}feedback-test.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}hydro-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData]) => { setData(defData); setFeedback(fbData); })
+      .then(([defData, fbData, hydroData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); })
       .catch(() => setError(true));
   }, []);
 
@@ -462,13 +505,13 @@ export default function DefensePage() {
                 })}
               </div>
 
-              {feedback.summary.inflatedMetric && (
+              {feedback.summary.inflatedMetrics && feedback.summary.inflatedMetrics.length > 0 && (
                 <div className="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4 mb-4">
                   <div className="flex items-start gap-2">
                     <AlertTriangle className="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-xs font-bold text-rose-300 mb-1">Sigma Inflation Warning: {feedback.summary.inflatedMetric}</h4>
-                      <p className="text-xs text-rose-200/70 leading-relaxed">{feedback.summary.inflatedReason}</p>
+                      <h4 className="text-xs font-bold text-rose-300 mb-1">Sigma Inflation Warning: {feedback.summary.inflatedMetrics.join(', ')}</h4>
+                      <p className="text-xs text-rose-200/70 leading-relaxed">Model mismatch: parametric feedback over-corrects {feedback.summary.inflatedMetrics.join(', ')} slope, inflating apparent sigma. Not reliable as stated.</p>
                     </div>
                   </div>
                 </div>
@@ -525,6 +568,201 @@ export default function DefensePage() {
                   </div>
                 </div>
               )}
+            </GlassCard>
+          </section>
+        )}
+
+        {hydro && (
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-cyan-500 bg-cyan-500/10 w-7 h-7 rounded-lg flex items-center justify-center border border-cyan-500/20">II</span>
+                <Beaker className="w-5 h-5 text-cyan-400" />
+              </div>
+              <h2 className="text-lg font-bold text-white flex-1">Hydrodynamic Simulation Comparison</h2>
+              <span className={'flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full border ' + (
+                hydro.signProblem.both
+                  ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+                  : hydro.signProblem.fire2 || hydro.signProblem.tng
+                  ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+                  : 'text-slate-400 bg-slate-500/10 border-slate-500/20'
+              )}>
+                {hydro.summary.verdict}
+              </span>
+            </div>
+            <GlassCard glow="cyan" className="mb-4 border-2 border-cyan-500/20">
+              <div className="bg-cyan-500/5 rounded-xl p-4 mb-4">
+                <p className="text-cyan-200 text-sm leading-relaxed">
+                  <strong>The decisive test:</strong> Compare SPARC data against mock catalogs built from published scaling relations of full hydrodynamic simulations — not just parametric feedback.
+                </p>
+                <p className="text-slate-400 text-sm mt-2">
+                  <strong>Key question:</strong> Does the inner slope (alpha) sign reversal survive when compared to FIRE-2 and IllustrisTNG — simulations with gas turbulence, bursty star formation, and AGN feedback?
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                {(['fire2', 'tng'] as const).map(simKey => {
+                  const sim = hydro.simulations[simKey];
+                  const borderCls = simKey === 'fire2' ? 'border-orange-500/20' : 'border-blue-500/20';
+                  const labelCls = simKey === 'fire2' ? 'text-orange-400' : 'text-blue-400';
+                  return (
+                    <div key={simKey} className={'bg-white/5 rounded-xl p-4 border ' + borderCls}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className={'text-sm font-bold ' + labelCls}>{sim.name}</span>
+                        <span className="text-xs text-slate-500 font-mono">{sim.nGalaxies.toLocaleString()} galaxies</span>
+                      </div>
+                      <p className="text-xs text-slate-400 mb-2">{sim.feedbackType}</p>
+                      <p className="text-xs text-slate-500 italic">{sim.reference}</p>
+                      <div className="flex flex-wrap gap-1 mt-2">
+                        {sim.keyFeatures.map((f, i) => (
+                          <span key={i} className="text-xs px-2 py-0.5 rounded-full bg-white/5 text-slate-400 border border-white/5">{f}</span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mb-4">
+                <h4 className="text-xs font-bold text-white mb-3">Metric-by-Metric Comparison</h4>
+                {['alpha', 'V_DM', 'r_DMdom'].map(metricName => {
+                  const metricData = hydro.metrics[metricName];
+                  if (!metricData) return null;
+                  const fire2 = metricData.fire2;
+                  const tng = metricData.tng;
+                  const isAlpha = metricName === 'alpha';
+                  return (
+                    <div key={metricName} className={'bg-white/5 rounded-xl p-4 border border-white/10 mb-3 ' + (isAlpha ? 'ring-1 ring-cyan-500/30' : '')}>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className={'text-sm font-bold ' + (isAlpha ? 'text-cyan-400' : 'text-white')}>{metricName}</span>
+                        {isAlpha && <span className="text-xs text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">KEY METRIC</span>}
+                      </div>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-xs font-mono">
+                          <thead>
+                            <tr className="border-b border-white/10 text-slate-500">
+                              <th className="text-left py-1 px-2">Source</th>
+                              <th className="text-center py-1 px-2">Slope</th>
+                              <th className="text-center py-1 px-2">Sign</th>
+                              <th className="text-center py-1 px-2">Residual</th>
+                              <th className="text-center py-1 px-2">Match?</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr className="border-b border-white/5">
+                              <td className="py-1.5 px-2 text-white font-bold">SPARC Data</td>
+                              <td className="py-1.5 px-2 text-center text-white">{fire2 ? fire2.observed.slope.toFixed(5) : '-'}</td>
+                              <td className="py-1.5 px-2 text-center text-white">{fire2 ? fire2.comparison.signObserved : '-'}</td>
+                              <td className="py-1.5 px-2 text-center text-slate-500">-</td>
+                              <td className="py-1.5 px-2 text-center text-slate-500">-</td>
+                            </tr>
+                            {fire2 && (
+                              <tr className="border-b border-white/5">
+                                <td className="py-1.5 px-2 text-orange-400">FIRE-2</td>
+                                <td className="py-1.5 px-2 text-center text-orange-300">{fire2.simulated.slope.toFixed(5)}</td>
+                                <td className="py-1.5 px-2 text-center text-orange-300">{fire2.comparison.signSimulated}</td>
+                                <td className="py-1.5 px-2 text-center text-amber-400">{fire2.comparison.sigma}σ</td>
+                                <td className={'py-1.5 px-2 text-center font-bold ' + (fire2.comparison.sameSign ? 'text-emerald-400' : 'text-rose-400')}>
+                                  {fire2.comparison.sameSign ? 'YES' : 'NO'}
+                                </td>
+                              </tr>
+                            )}
+                            {tng && (
+                              <tr className="border-b border-white/5">
+                                <td className="py-1.5 px-2 text-blue-400">IllustrisTNG</td>
+                                <td className="py-1.5 px-2 text-center text-blue-300">{tng.simulated.slope.toFixed(5)}</td>
+                                <td className="py-1.5 px-2 text-center text-blue-300">{tng.comparison.signSimulated}</td>
+                                <td className="py-1.5 px-2 text-center text-amber-400">{tng.comparison.sigma}σ</td>
+                                <td className={'py-1.5 px-2 text-center font-bold ' + (tng.comparison.sameSign ? 'text-emerald-400' : 'text-rose-400')}>
+                                  {tng.comparison.sameSign ? 'YES' : 'NO'}
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                      {isAlpha && fire2 && tng && (
+                        <div className="mt-3 bg-white/5 rounded-lg p-3 text-xs">
+                          <div className="flex items-start gap-2">
+                            <Microscope className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
+                            <div className="text-slate-300 leading-relaxed">
+                              {!fire2.comparison.sameSign && (
+                                <p className="mb-1"><strong className="text-orange-400">FIRE-2:</strong> Predicts <strong>{fire2.comparison.signSimulated}</strong> slope ({fire2.simulated.slope.toFixed(5)}) but data shows <strong>{fire2.comparison.signObserved}</strong> ({fire2.observed.slope.toFixed(5)}). Sign reversal at {fire2.comparison.sigma}σ.</p>
+                              )}
+                              {fire2.comparison.sameSign && (
+                                <p className="mb-1"><strong className="text-orange-400">FIRE-2:</strong> Same sign, but magnitude differs by {Math.abs(fire2.observed.slope / fire2.simulated.slope).toFixed(0)}x ({fire2.comparison.sigma}σ).</p>
+                              )}
+                              {!tng.comparison.sameSign && (
+                                <p><strong className="text-blue-400">IllustrisTNG:</strong> Predicts <strong>{tng.comparison.signSimulated}</strong> slope ({tng.simulated.slope.toFixed(5)}) but data shows <strong>{tng.comparison.signObserved}</strong> ({tng.observed.slope.toFixed(5)}). Sign reversal at {tng.comparison.sigma}σ.</p>
+                              )}
+                              {tng.comparison.sameSign && (
+                                <p><strong className="text-blue-400">IllustrisTNG:</strong> Technically same sign ({tng.simulated.slope.toFixed(5)}), but slope is {Math.abs(tng.observed.slope / (tng.simulated.slope || 0.0001)).toFixed(0)}x weaker than observed. The match is numerically marginal ({tng.comparison.sigma}σ residual).</p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className={'rounded-xl p-4 mb-4 border-2 ' + (
+                hydro.signProblem.both
+                  ? 'bg-emerald-500/5 border-emerald-500/20'
+                  : hydro.signProblem.fire2 || hydro.signProblem.tng
+                  ? 'bg-amber-500/5 border-amber-500/20'
+                  : 'bg-white/5 border-white/10'
+              )}>
+                <h4 className="text-sm font-bold text-white mb-2">The Sign Problem</h4>
+                <p className="text-sm text-slate-300 leading-relaxed mb-3">{hydro.signProblem.description}</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className={'rounded-lg p-3 border ' + (hydro.signProblem.fire2 ? 'bg-rose-500/5 border-rose-500/20' : 'bg-emerald-500/5 border-emerald-500/20')}>
+                    <div className="text-xs text-slate-400 mb-1">FIRE-2 sign match?</div>
+                    <div className={'text-sm font-bold ' + (hydro.signProblem.fire2 ? 'text-rose-400' : 'text-emerald-400')}>
+                      {hydro.signProblem.fire2 ? 'SIGN MISMATCH' : 'SIGN MATCHES'}
+                    </div>
+                  </div>
+                  <div className={'rounded-lg p-3 border ' + (hydro.signProblem.tng ? 'bg-rose-500/5 border-rose-500/20' : 'bg-emerald-500/5 border-emerald-500/20')}>
+                    <div className="text-xs text-slate-400 mb-1">IllustrisTNG sign match?</div>
+                    <div className={'text-sm font-bold ' + (hydro.signProblem.tng ? 'text-rose-400' : 'text-emerald-400')}>
+                      {hydro.signProblem.tng ? 'SIGN MISMATCH' : 'SIGN MATCHES'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 mb-4 border border-white/10">
+                <h4 className="text-sm font-bold text-white mb-2">Key Insight</h4>
+                <p className="text-sm text-cyan-200 leading-relaxed mb-3">{hydro.summary.keyInsight}</p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <span className={'inline-block px-3 py-1 rounded-full text-xs font-bold ' + (
+                    hydro.summary.strength === 'strong'
+                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                      : hydro.summary.strength === 'moderate'
+                      ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                      : 'bg-slate-500/10 text-slate-400 border border-slate-500/20'
+                  )}>
+                    {hydro.summary.updatedClaim}
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4 mb-4">
+                <h4 className="text-xs font-bold text-amber-300 mb-2">Important Caveats</h4>
+                <ul className="space-y-1">
+                  {hydro.caveats.map((c, i) => (
+                    <li key={i} className="text-xs text-amber-200/70 flex items-start gap-2">
+                      <span className="text-amber-500 mt-0.5">-</span>
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4">
+                <p className="text-xs text-violet-200/70 italic leading-relaxed">{hydro.summary.caveat}</p>
+              </div>
             </GlassCard>
           </section>
         )}
