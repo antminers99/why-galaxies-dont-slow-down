@@ -2,155 +2,76 @@
 
 ## Overview
 
-pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
+This pnpm workspace monorepo, built with TypeScript, serves as a professional dark matter research tool. Its core purpose is to analyze galaxy rotation curves using real-world data and advanced modeling. The project aims to provide a comprehensive platform for researchers to:
 
-## Stack
+1.  **Analyze Galaxy Data**: Ingest and visualize astronomical datasets, specifically focusing on galaxy rotation curves.
+2.  **Model Dark Matter Hypotheses**: Develop, test, and optimize various dark matter and modified gravity models against observed data.
+3.  **Validate Theories**: Conduct rigorous statistical validation of models, perform replication studies, and explore fundamental physics questions related to the baryon-dark matter connection.
 
-- **Monorepo tool**: pnpm workspaces
-- **Node.js version**: 24
-- **Package manager**: pnpm
-- **TypeScript version**: 5.9
-- **API framework**: Express 5
-- **Database**: PostgreSQL + Drizzle ORM
-- **Validation**: Zod (`zod/v4`), `drizzle-zod`
-- **API codegen**: Orval (from OpenAPI spec)
-- **Build**: esbuild (CJS bundle)
+The project addresses a critical need in astrophysics for tools that facilitate the testing and refinement of dark matter theories, offering a powerful platform for scientific discovery.
 
-## Structure
+## User Preferences
 
-```text
-artifacts-monorepo/
-├── artifacts/              # Deployable applications
-│   ├── api-server/         # Express API server
-│   └── galaxy-analyzer/    # Galaxy Rotation Curve Analyzer (React + Vite)
-├── lib/                    # Shared libraries
-│   ├── api-spec/           # OpenAPI spec + Orval codegen config
-│   ├── api-client-react/   # Generated React Query hooks
-│   ├── api-zod/            # Generated Zod schemas from OpenAPI
-│   └── db/                 # Drizzle ORM schema + DB connection
-├── scripts/                # Utility scripts (single workspace package)
-│   └── src/                # Individual .ts scripts, run via `pnpm --filter @workspace/scripts run <script>`
-├── pnpm-workspace.yaml     # pnpm workspace (artifacts/*, lib/*, lib/integrations/*, scripts)
-├── tsconfig.base.json      # Shared TS options (composite, bundler resolution, es2022)
-├── tsconfig.json           # Root TS project references
-└── package.json            # Root package with hoisted devDeps
-```
+I prefer detailed explanations and clear communication. Please ask before making major changes. I appreciate an iterative development approach.
 
-## Galaxy Rotation Curve Analyzer
+## System Architecture
 
-A professional dark matter research tool built with React + Vite + Tailwind CSS.
+The project is structured as a pnpm monorepo, facilitating shared libraries and independent application development.
 
-### Features
-- **Dataset Upload**: Drag & drop .csv/.dat files, parse radius/velocity columns, data preview table
-- **175 SPARC Galaxies**: Real rotation curves from Lelli, McGaugh & Schombert (2016) SPARC database. 3,391 data points across 175 nearby galaxies with searchable catalog.
-- **Visualization**: Interactive Recharts scatter + line plot with observed data, Newtonian model, custom model overlays
-- **Model Builder**: Custom math formula input using mathjs, parameter sliders (G, M, k, a), 8 formula presets (Dark Halo Linear/Flat, Modified Gravity, MOND-inspired, Logarithmic Halo, etc.)
-- **Auto-Parameter Optimizer**: 2-phase grid search (coarse + fine-tune) for k, a, M
-- **Discovery Mode**: Highlights anomalies where model deviates >15% from observed data
-- **Per-Galaxy MSE Table**: Individual MSE comparison per galaxy with winner indicator
-- **Residual Analysis**: Residual chart showing model fit quality across radii
-- **Generalization Score**: Percentage of galaxies where custom model beats Newtonian
-- **Research Lab**: Full benchmark (all 7 formulas × all 15 galaxies), regional analysis (inner vs outer), k-consistency scoring (CV metric), units normalization panel
-- **Export**: PNG graph export (html-to-image), JSON model/benchmark export
+**Monorepo Structure:**
 
-### Tech
-- React 19, Vite, Tailwind CSS v4, Recharts, mathjs, PapaParse, Framer Motion
-- Dark space theme with glassmorphism cards
-- Fully client-side (no backend needed)
+*   `artifacts/`: Deployable applications (`api-server`, `galaxy-analyzer`).
+*   `lib/`: Shared libraries (`api-spec`, `api-client-react`, `api-zod`, `db`).
+*   `scripts/`: Utility scripts.
 
-### Key Files
-- `artifacts/galaxy-analyzer/src/hooks/use-galaxy.tsx` — Core state management (datasets, model params, chart data, benchmark engine, 15 sample galaxies, formula presets)
-- `artifacts/galaxy-analyzer/src/pages/dashboard.tsx` — Dashboard overview
-- `artifacts/galaxy-analyzer/src/pages/upload.tsx` — Dataset management with preview table (15 sample galaxies)
-- `artifacts/galaxy-analyzer/src/pages/analysis.tsx` — Visualization with layer toggles, residual chart, per-galaxy MSE, discovery mode
-- `artifacts/galaxy-analyzer/src/pages/models.tsx` — Formula builder, parameter tuning, auto-optimizer, formula library
-- `artifacts/galaxy-analyzer/src/pages/research.tsx` — Research Lab: units panel, full benchmark, formula rankings, regional analysis, k-consistency
-- `artifacts/galaxy-analyzer/src/pages/correlations.tsx` — Correlation Explorer: scatter plots of k vs galaxy properties (M, Vmax, Rmax, distance), Pearson/Spearman correlation, interactive axis selection, regression line
-- `artifacts/galaxy-analyzer/src/pages/theory.tsx` — Theoretical Framework: 7-step derivation from v²=GM/r+kr to ρ(r)=A/r density profile, k vs V²/R verification scatter plot, **Law Test** (k=V²/R without fitting retains 96.4% performance, beats Newton on 175/175), density profile envelope chart, 3 hypotheses (CDM, modified gravity, emergent gravity), summary of established results and open questions
-- `artifacts/galaxy-analyzer/public/law-test-results.json` — Pre-computed Law Test results: per-galaxy MSE comparison of fitted k vs k=V²/R vs Newtonian
-- `artifacts/galaxy-analyzer/src/pages/stress-test.tsx` — Stress Test: galaxy categories (dwarf/small/medium/massive), inner vs outer regions, outlier analysis, correction factor search, **deep dive outlier analysis** (Test 5: outlier vs normal comparison table, 3 findings cards, curve shape analysis, k_ratio vs surface density scatter), summary
-- `artifacts/galaxy-analyzer/public/stress-test-results.json` — Pre-computed stress test results across galaxy categories, regions, and correction factor correlations
-- `artifacts/galaxy-analyzer/public/deep-dive-results.json` — Deep dive: 8 outlier galaxy details, outlier vs normal comparison stats, curve shape analysis (rising/flat/declining), all galaxy properties for scatter plot
-- `artifacts/galaxy-analyzer/src/pages/rar-analysis.tsx` — RAR Residual Analysis: RAR baseline plot (McGaugh g†=1.2e-10), shape indicators (r_fid, η_rot, η_bar, S_out), Q_kin kinematic reliability index, second-variable search (Σ_bar vs ΔRAR at fixed Vmax), diversity test by quality tier, 4-plot analysis, summary
-- `artifacts/galaxy-analyzer/public/rar-analysis.json` — Pre-computed: per-galaxy shape indicators, RAR scatter data (3391 points), Q_kin diversity stats, correlations, **density correction fit** (ΔRAR = a + b·log(Σ_bar), binned by Vmax: R² up to 0.52 in low-mass bins), **validation pipeline** (7/7 tests: shuffle p<0.01, bootstrap CI, jackknife, partial corr, AIC/BIC, train/test, 5-fold CV)
-- `artifacts/galaxy-analyzer/src/pages/validation.tsx` — Validation Pipeline: 10 tests (Tests 1-7 statistical, Test 8 Υ sensitivity 21/21 configs, Test 9 internal replication 5 surveys + 10 split-halves, Test 10 Monte Carlo uncertainty 1000 iterations), point-mass vs real baryons comparison, inner/outer × mass table, final verdict with resolved caveats
-- `artifacts/galaxy-analyzer/public/rar-analysis-real.json` — Real baryonic decomposition (V_gas + V_disk + V_bulge from SPARC rotmod files, Υ_d=0.5, Υ_b=0.7), 175 galaxies, 3391 points, full validation pipeline (10/10 pass), Υ sensitivity grid (7×3), internal replication by survey source, Monte Carlo uncertainty (1000 iterations, 95% CI [−0.212, −0.163])
-- `artifacts/galaxy-analyzer/src/pages/discovery.tsx` — Discovery page: density-corrected RAR law (g_obs = g_RAR × (Σ_bar/Σ₀)^b), step-by-step derivation, scatter plot with regression, radial dependence of b(r), predictive power metrics, literature context (Stiskalek tension), physical interpretation (DM/modified gravity), status & caveats, next steps
-- `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
-- `artifacts/galaxy-analyzer/src/pages/replication.tsx` — External Replication page: LITTLE THINGS (Oh et al. 2015) independent validation, side-by-side SPARC vs LT scatter plots, head-to-head comparison table, Stiskalek & Desmond (2023) methodology reconciliation, calibrated claim, galaxy sample table
-- `artifacts/galaxy-analyzer/public/little-things-replication.json` — LITTLE THINGS replication results: 22 dwarf irregulars, slope b=−0.203±0.178, partial r=−0.470, 445 point-level data points (p<10⁻¹³)
-- `artifacts/galaxy-analyzer/scripts/replicate-little-things.cjs` — Replication analysis script: downloads Oh et al. 2015 VizieR data, computes V_bar from V_total−V_DM decomposition, runs ΔRAR vs log(Σ_bar) regression
-- `artifacts/galaxy-analyzer/src/pages/dark-matter-fraction.tsx` — Dark Matter Fraction page: f_DM = (g_obs−g_bar)/g_obs vs Σ_bar analysis, SPARC (b=−0.130, r=−0.654, 169 galaxies), LITTLE THINGS replication (b=−0.162), deep analysis (functional forms, mass scaling r=−0.941, halo connection), diagnostics (circularity check cleared, 6 alt Σ definitions all negative, selection bias tests), simulation test (3 scenarios: ΛCDM, ΛCDM+feedback, independent halos)
-- `artifacts/galaxy-analyzer/public/fdm-analysis.json` — f_DM analysis data: SPARC results, LITTLE THINGS replication, deep analysis, diagnostics, simulation results (300 mock galaxies × 3 scenarios)
-- `artifacts/galaxy-analyzer/scripts/fdm-simulation.cjs` — Mock galaxy simulation: NFW halos + exponential disks, 3 scenarios (ΛCDM abundance-matched, ΛCDM+feedback, independent), tests f_DM vs Σ_bar across density definitions and galaxy types
-- `artifacts/galaxy-analyzer/scripts/fdm-significance.cjs` — Statistical significance tests: 10,000 bootstrap CIs, 10,000 permutation test, Fisher z-test, Cohen's d, Welch's t-test. Key results: permutation p=0.174 (marginal), Fisher z p<10⁻⁶ (scatter structure differs), slope ratio 1.44±0.20 (2.2σ from 1.0)
-- `artifacts/galaxy-analyzer/scripts/fdm-excess.cjs` — Discovery Proof: Δb per Vmax bin (observed − ΛCDM), 10,000 bootstrap. Overall Δb = −0.034 (2.1σ), 95% CI excludes zero. 4-step proof: excess over expectation, halo tracks Σ_bar, simulation can't explain, kill tests passed. Verdict: baryon–halo coupling stronger than ΛCDM predicts.
-- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (14 pages)
+**Galaxy Rotation Curve Analyzer (Frontend - `galaxy-analyzer`):**
 
-### Design System
-- Background: #0a0e1a (deep space), glassmorphism cards (bg-white/5, backdrop-blur)
-- Colors: cyan/teal (observed data), orange dashed (Newtonian), purple solid (custom model), amber (anomalies)
-- Fonts: Space Grotesk (display), Inter (sans), JetBrains Mono (monospace)
-- G = 4.3009e-6 kpc·(km/s)²/M_sun — real physical constant
-- ModelParams interface: explicit fields only (G, M, k, a, formula) — no index signature
-- Formula validation uses real mathjs evaluation at r=10 before persisting
+*   **UI/UX:** Dark space theme with glassmorphism cards. Uses `cyan/teal` for observed data, `orange dashed` for Newtonian models, `purple solid` for custom models, and `amber` for anomalies. Fonts include Space Grotesk (display), Inter (sans), and JetBrains Mono (monospace).
+*   **Technical Stack:** React 19, Vite, Tailwind CSS v4, Recharts for visualization, mathjs for formula parsing, PapaParse for CSV, Framer Motion for animations. It is a fully client-side application.
+*   **Key Features:**
+    *   **Data Handling:** Dataset upload (.csv/.dat), parsing, and preview. Integration of 175 SPARC galaxies with 3,391 data points.
+    *   **Visualization:** Interactive scatter/line plots with observed data, Newtonian, and custom model overlays.
+    *   **Model Building:** Custom math formula input, parameter sliders (G, M, k, a), 8 formula presets.
+    *   **Optimization:** 2-phase grid search optimizer for model parameters.
+    *   **Analysis Tools:** Discovery Mode for anomalies, per-galaxy MSE table, residual analysis, generalization score.
+    *   **Research Lab:** Full benchmark across all formulas and galaxies, regional analysis, k-consistency scoring, units normalization.
+    *   **Advanced Research Pages:** Correlations Explorer, Theoretical Framework (derivation, Law Test, density profiles), Stress Test (outlier analysis, categories), RAR Residual Analysis (density correction fit, validation pipeline), Validation Pipeline (statistical tests, replication, Monte Carlo), Discovery (density-corrected RAR law), External Replication (LITTLE THINGS data), Dark Matter Fraction, Baryon-Halo Coupling.
+*   **Design System:** Constants like `G = 4.3009e-6 kpc·(km/s)²/M_sun` are used. Formula validation is performed using `mathjs` before persistence.
 
-## TypeScript & Composite Projects
+**API Server (Backend - `api-server`):**
 
-Every package extends `tsconfig.base.json` which sets `composite: true`. The root `tsconfig.json` lists all packages as project references. This means:
+*   **Technical Stack:** Express 5.
+*   **Structure:** Routes are defined in `src/routes/` and leverage shared Zod schemas for validation and Drizzle ORM for persistence.
+*   **Core Functionality:** Provides API endpoints, including a health check.
 
-- **Always typecheck from the root** — run `pnpm run typecheck` (which runs `tsc --build --emitDeclarationOnly`). This builds the full dependency graph so that cross-package imports resolve correctly. Running `tsc` inside a single package will fail if its dependencies haven't been built yet.
-- **`emitDeclarationOnly`** — we only emit `.d.ts` files during typecheck; actual JS bundling is handled by esbuild/tsx/vite...etc, not `tsc`.
-- **Project references** — when package A depends on package B, A's `tsconfig.json` must list B in its `references` array. `tsc --build` uses this to determine build order and skip up-to-date packages.
+**Database (`lib/db`):**
 
-## Root Scripts
+*   **Technology:** PostgreSQL with Drizzle ORM.
+*   **Functionality:** Manages database connection and schema definitions.
 
-- `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
-- `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
+**API Specification & Codegen (`lib/api-spec`, `lib/api-zod`, `lib/api-client-react`):**
 
-## Packages
+*   **Specification:** OpenAPI 3.1 (`openapi.yaml`) defines the API contract.
+*   **Code Generation:** Orval generates:
+    *   React Query hooks and a fetch client (`lib/api-client-react`).
+    *   Zod schemas for request/response validation (`lib/api-zod`).
 
-### `artifacts/api-server` (`@workspace/api-server`)
+**TypeScript Configuration:**
 
-Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
+*   Uses TypeScript 5.9.
+*   Employs composite projects (`composite: true`) and project references for efficient type-checking across packages. `tsc --build --emitDeclarationOnly` is used for type declaration generation, while esbuild/Vite handles actual JavaScript bundling.
 
-- Entry: `src/index.ts` — reads `PORT`, starts Express
-- App setup: `src/app.ts` — mounts CORS, JSON/urlencoded parsing, routes at `/api`
-- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`)
-- Depends on: `@workspace/db`, `@workspace/api-zod`
-- `pnpm --filter @workspace/api-server run dev` — run the dev server
-- `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
-- Build bundles an allowlist of deps (express, cors, pg, drizzle-orm, zod, etc.) and externalizes the rest
+## External Dependencies
 
-### `lib/db` (`@workspace/db`)
-
-Database layer using Drizzle ORM with PostgreSQL. Exports a Drizzle client instance and schema models.
-
-- `src/index.ts` — creates a `Pool` + Drizzle instance, exports schema
-- `src/schema/index.ts` — barrel re-export of all models
-- `src/schema/<modelname>.ts` — table definitions with `drizzle-zod` insert schemas (no models definitions exist right now)
-- `drizzle.config.ts` — Drizzle Kit config (requires `DATABASE_URL`, automatically provided by Replit)
-- Exports: `.` (pool, db, schema), `./schema` (schema only)
-
-Production migrations are handled by Replit when publishing. In development, we just use `pnpm --filter @workspace/db run push`, and we fallback to `pnpm --filter @workspace/db run push-force`.
-
-### `lib/api-spec` (`@workspace/api-spec`)
-
-Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config (`orval.config.ts`). Running codegen produces output into two sibling packages:
-
-1. `lib/api-client-react/src/generated/` — React Query hooks + fetch client
-2. `lib/api-zod/src/generated/` — Zod schemas
-
-Run codegen: `pnpm --filter @workspace/api-spec run codegen`
-
-### `lib/api-zod` (`@workspace/api-zod`)
-
-Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used by `api-server` for response validation.
-
-### `lib/api-client-react` (`@workspace/api-client-react`)
-
-Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
-
-### `scripts` (`@workspace/scripts`)
-
-Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+*   **Monorepo Tool:** pnpm workspaces
+*   **Package Manager:** pnpm
+*   **Node.js:** Version 24
+*   **TypeScript:** Version 5.9
+*   **API Framework:** Express 5
+*   **Database:** PostgreSQL
+*   **ORM:** Drizzle ORM
+*   **Validation:** Zod (`zod/v4`), `drizzle-zod`
+*   **API Codegen:** Orval
+*   **Build Tools:** esbuild (CJS bundle), Vite
+*   **Frontend Libraries:** React 19, Tailwind CSS v4, Recharts, mathjs, PapaParse, Framer Motion
+*   **Data Sources:** SPARC database (Lelli, McGaugh & Schombert 2016), LITTLE THINGS (Oh et al. 2015 via VizieR)
