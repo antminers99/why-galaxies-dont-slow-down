@@ -77,7 +77,10 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/public/rar-analysis-real.json` — Real baryonic decomposition (V_gas + V_disk + V_bulge from SPARC rotmod files, Υ_d=0.5, Υ_b=0.7), 175 galaxies, 3391 points, full validation pipeline (10/10 pass), Υ sensitivity grid (7×3), internal replication by survey source, Monte Carlo uncertainty (1000 iterations, 95% CI [−0.212, −0.163])
 - `artifacts/galaxy-analyzer/src/pages/discovery.tsx` — Discovery page: density-corrected RAR law (g_obs = g_RAR × (Σ_bar/Σ₀)^b), step-by-step derivation, scatter plot with regression, radial dependence of b(r), predictive power metrics, literature context (Stiskalek tension), physical interpretation (DM/modified gravity), status & caveats, next steps
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
-- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (12 pages)
+- `artifacts/galaxy-analyzer/src/pages/replication.tsx` — External Replication page: LITTLE THINGS (Oh et al. 2015) independent validation, side-by-side SPARC vs LT scatter plots, head-to-head comparison table, Stiskalek & Desmond (2023) methodology reconciliation, calibrated claim, galaxy sample table
+- `artifacts/galaxy-analyzer/public/little-things-replication.json` — LITTLE THINGS replication results: 22 dwarf irregulars, slope b=−0.203±0.178, partial r=−0.470, 445 point-level data points (p<10⁻¹³)
+- `artifacts/galaxy-analyzer/scripts/replicate-little-things.cjs` — Replication analysis script: downloads Oh et al. 2015 VizieR data, computes V_bar from V_total−V_DM decomposition, runs ΔRAR vs log(Σ_bar) regression
+- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (13 pages)
 
 ### Design System
 - Background: #0a0e1a (deep space), glassmorphism cards (bg-white/5, backdrop-blur)

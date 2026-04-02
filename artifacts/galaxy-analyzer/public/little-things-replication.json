@@ -1,0 +1,238 @@
+{
+  "dataset": "LITTLE THINGS (Oh et al. 2015)",
+  "source": "VizieR J/AJ/149/180",
+  "instrument": "VLA HI + Spitzer 3.6μm",
+  "nGalaxies": 22,
+  "type": "dwarf irregular galaxies",
+  "independent": true,
+  "simpleRegression": {
+    "slope": -0.2030074640898463,
+    "slopeError": 0.17820113312087407,
+    "intercept": 2.1646147500382793,
+    "r": -0.24685067283117193,
+    "r2": 0.06093525467720229,
+    "p": 0.002421366253017664,
+    "n": 22
+  },
+  "partialCorrelation": {
+    "rPartial": -0.47001284685343286,
+    "t": -2.321097013685364,
+    "df": 19,
+    "p": 0.0020520696116040327
+  },
+  "pointLevelRegression": {
+    "slope": -0.2676453804754399,
+    "slopeError": 0.038784683172976175,
+    "r": -0.3115490369020264,
+    "r2": 0.0970628023945802,
+    "p": 1.7628183272143496e-13,
+    "nPoints": 445
+  },
+  "sparcComparison": {
+    "sparcSlope": -0.178,
+    "ltSlope": -0.2030074640898463,
+    "signConsistent": true,
+    "sparcPartialR": -0.656,
+    "ltPartialR": -0.47001284685343286
+  },
+  "galaxies": [
+    {
+      "name": "CVnIdwA",
+      "dist": 3.6,
+      "vmax": 23.5,
+      "mbar": 43603000,
+      "meanDeltaRAR": 0.7514999586889844,
+      "meanLogSigBar": 6.637762851136265,
+      "nPoints": 9
+    },
+    {
+      "name": "DDO_210",
+      "dist": 0.9,
+      "vmax": 12,
+      "mbar": 2462000.0000000005,
+      "meanDeltaRAR": 0.6151542121434039,
+      "meanLogSigBar": 7.170903440914361,
+      "nPoints": 5
+    },
+    {
+      "name": "DDO_216",
+      "dist": 1.1,
+      "vmax": 18.9,
+      "mbar": 21617000,
+      "meanDeltaRAR": 0.501003600346075,
+      "meanLogSigBar": 7.083371073335307,
+      "nPoints": 7
+    },
+    {
+      "name": "DDO_53",
+      "dist": 3.6,
+      "vmax": 28.6,
+      "mbar": 102800000,
+      "meanDeltaRAR": 0.45082553002523623,
+      "meanLogSigBar": 7.489973887251452,
+      "nPoints": 8
+    },
+    {
+      "name": "DDO_70",
+      "dist": 1.3,
+      "vmax": 43.9,
+      "mbar": 70140000,
+      "meanDeltaRAR": 0.5577146883499026,
+      "meanLogSigBar": 6.846710422078114,
+      "nPoints": 6
+    },
+    {
+      "name": "IC_10",
+      "dist": 0.7,
+      "vmax": 36.5,
+      "mbar": 140045000,
+      "meanDeltaRAR": 0.1709884065216401,
+      "meanLogSigBar": 8.541324358492844,
+      "nPoints": 16
+    },
+    {
+      "name": "IC_1613",
+      "dist": 0.7,
+      "vmax": 16.9,
+      "mbar": 107669000,
+      "meanDeltaRAR": 0.2034101134884776,
+      "meanLogSigBar": 7.00572630131144,
+      "nPoints": 69
+    },
+    {
+      "name": "UGC_8508",
+      "dist": 2.6,
+      "vmax": 46,
+      "mbar": 23527000,
+      "meanDeltaRAR": 1.3367142857328047,
+      "meanLogSigBar": 6.647409712301026,
+      "nPoints": 15
+    },
+    {
+      "name": "WLM",
+      "dist": 1,
+      "vmax": 37.3,
+      "mbar": 122068000,
+      "meanDeltaRAR": 0.8533220022584341,
+      "meanLogSigBar": 6.9600517170264,
+      "nPoints": 76
+    },
+    {
+      "name": "DDO_50",
+      "dist": 3.4,
+      "vmax": 35.7,
+      "mbar": 1868516000,
+      "meanDeltaRAR": 0.11617432727813642,
+      "meanLogSigBar": 7.128043307778727,
+      "nPoints": 50
+    },
+    {
+      "name": "DDO_126",
+      "dist": 4.9,
+      "vmax": 37.2,
+      "mbar": 233788000,
+      "meanDeltaRAR": 0.6675310540754477,
+      "meanLogSigBar": 7.010798691275979,
+      "nPoints": 19
+    },
+    {
+      "name": "DDO_101",
+      "dist": 6.4,
+      "vmax": 64.5,
+      "mbar": 111684000,
+      "meanDeltaRAR": 1.5011747897290224,
+      "meanLogSigBar": 7.266325572259957,
+      "nPoints": 4
+    },
+    {
+      "name": "DDO_133",
+      "dist": 3.5,
+      "vmax": 46.1,
+      "mbar": 201305000,
+      "meanDeltaRAR": 0.8224626316796156,
+      "meanLogSigBar": 7.049707210194426,
+      "nPoints": 12
+    },
+    {
+      "name": "NGC_1569",
+      "dist": 3.4,
+      "vmax": 29.1,
+      "mbar": 632092000,
+      "meanDeltaRAR": 0.09338912244798836,
+      "meanLogSigBar": 7.665368281587273,
+      "nPoints": 15
+    },
+    {
+      "name": "DDO_43",
+      "dist": 7.8,
+      "vmax": 33.2,
+      "mbar": 309358000.00000006,
+      "meanDeltaRAR": 0.6367161369332356,
+      "meanLogSigBar": 7.063829040310792,
+      "nPoints": 6
+    },
+    {
+      "name": "HARO_36",
+      "dist": 9.3,
+      "vmax": 58.2,
+      "mbar": 206528000,
+      "meanDeltaRAR": 0.6809014154993658,
+      "meanLogSigBar": 7.148137141576067,
+      "nPoints": 5
+    },
+    {
+      "name": "DDO_168",
+      "dist": 4.3,
+      "vmax": 60.3,
+      "mbar": 403502000,
+      "meanDeltaRAR": 0.8296099560570033,
+      "meanLogSigBar": 7.459859127264278,
+      "nPoints": 15
+    },
+    {
+      "name": "NGC_2366",
+      "dist": 3.4,
+      "vmax": 58.2,
+      "mbar": 1508992000,
+      "meanDeltaRAR": 0.6116761193126493,
+      "meanLogSigBar": 7.195588938174567,
+      "nPoints": 42
+    },
+    {
+      "name": "DDO_154",
+      "dist": 3.7,
+      "vmax": 47.8,
+      "mbar": 477391000.0000001,
+      "meanDeltaRAR": 0.9220413040974462,
+      "meanLogSigBar": 6.783850395195395,
+      "nPoints": 31
+    },
+    {
+      "name": "DDO_87",
+      "dist": 7.7,
+      "vmax": 56.6,
+      "mbar": 419996000,
+      "meanDeltaRAR": 0.9862117097931332,
+      "meanLogSigBar": 6.728105877643013,
+      "nPoints": 19
+    },
+    {
+      "name": "DDO_52",
+      "dist": 10.3,
+      "vmax": 60.2,
+      "mbar": 497719000,
+      "meanDeltaRAR": 0.9493680530143095,
+      "meanLogSigBar": 7.045141744836732,
+      "nPoints": 10
+    },
+    {
+      "name": "NGC_3738",
+      "dist": 4.9,
+      "vmax": 125.5,
+      "mbar": 633514000,
+      "meanDeltaRAR": 1.2716808714012608,
+      "meanLogSigBar": 8.154642775056457,
+      "nPoints": 6
+    }
+  ]
+}

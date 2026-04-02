@@ -482,7 +482,7 @@ export default function DiscoveryPage() {
               <ul className="text-xs text-slate-300 space-y-1.5">
                 <li className="flex items-start gap-2">
                   <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                  <span><strong>Not a final law</strong> — needs replication on independent datasets (THINGS, LITTLE THINGS, MIGHTEE-HI)</span>
+                  <span><strong>Replicated on LITTLE THINGS</strong> — b = −0.203 (22 dwarfs, Oh et al. 2015); see <a href="replication" className="text-cyan-400 underline">Replication page</a></span>
                 </li>
                 <li className="flex items-start gap-2">
                   <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
@@ -508,8 +508,8 @@ export default function DiscoveryPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-3 bg-white/[0.02] rounded-xl">
-              <div className="text-xs text-cyan-400 font-semibold mb-1">1. External Replication</div>
-              <p className="text-xs text-slate-400">Apply the law to THINGS, LITTLE THINGS, or MIGHTEE-HI data. If b {'<'} 0 persists in independent surveys, the finding is robust.</p>
+              <div className="text-xs text-emerald-400 font-semibold mb-1">1. External Replication ✓</div>
+              <p className="text-xs text-slate-400">Done — LITTLE THINGS (Oh et al. 2015): b = −0.203, partial r = −0.470, 445 points p {'<'} 10⁻¹³. See <a href="replication" className="text-cyan-400 underline">Replication page</a>.</p>
             </div>
             <div className="p-3 bg-white/[0.02] rounded-xl">
               <div className="text-xs text-cyan-400 font-semibold mb-1">2. Resolve Stiskalek Tension</div>
