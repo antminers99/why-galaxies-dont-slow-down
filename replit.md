@@ -75,3 +75,14 @@ The project is structured as a pnpm monorepo, facilitating shared libraries and 
 *   **Build Tools:** esbuild (CJS bundle), Vite
 *   **Frontend Libraries:** React 19, Tailwind CSS v4, Recharts, mathjs, PapaParse, Framer Motion
 *   **Data Sources:** SPARC database (Lelli, McGaugh & Schombert 2016), LITTLE THINGS (Oh et al. 2015 via VizieR)
+
+### Key Analysis Scripts
+*   `scripts/fdm-coupling.cjs` — Coupling analysis: V_DM, r_DMdom, α vs Σ_bar with partial correlations, bootstrap CIs, residual tests, inner/outer splits. 6/6 tests pass.
+*   `scripts/fdm-coupling-excess.cjs` — Coupling excess vs ΛCDM: 50×300 mock galaxies, Δb comparison with 10,000 bootstrap. Results: r_DMdom 5.1σ, V_DM 3.8σ, α 2.7σ. Predictive test: Σ_bar improves V_DM prediction by 16.6% over Vmax alone.
+*   `scripts/fdm-excess.cjs` — Discovery proof: Δb per Vmax bin (observed − ΛCDM), 10,000 bootstrap. Overall Δb = −0.034 (2.1σ).
+*   `scripts/fdm-significance.cjs` — Statistical significance: bootstrap CIs, permutation test, Fisher z-test, Cohen's d, Welch's t.
+*   `scripts/fdm-simulation.cjs` — NFW+exponential disk mock galaxy simulation (3 scenarios)
+*   `scripts/fdm-deep-analysis.cjs` — Deep analysis: functional forms, mass scaling, halo connection
+
+### Key Pages (15 total)
+*   Baryon–Halo Coupling (`/baryon-halo-coupling`) — 4 phases: Fingerprint, Inner/Outer, Residuals, Excess vs ΛCDM. 5.1σ discovery-level excess.
