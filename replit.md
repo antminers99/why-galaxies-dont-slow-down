@@ -84,5 +84,6 @@ The project is structured as a pnpm monorepo, facilitating shared libraries and 
 *   `scripts/fdm-simulation.cjs` — NFW+exponential disk mock galaxy simulation (3 scenarios)
 *   `scripts/fdm-deep-analysis.cjs` — Deep analysis: functional forms, mass scaling, halo connection
 
-### Key Pages (15 total)
+### Key Pages (14 total)
+*   The Evidence (`/evidence`) — Comprehensive 7-section research narrative consolidating all findings. Sections: The Question, Anti-Correlation, Mass Independence, Halo Structure Coupling, Exceeds ΛCDM (5.1σ), Independent Replication, The Equations. Includes TOC with IntersectionObserver scroll tracking and Final Verdict banner.
 *   Baryon–Halo Coupling (`/baryon-halo-coupling`) — 4 phases: Fingerprint, Inner/Outer, Residuals, Excess vs ΛCDM. 5.1σ discovery-level excess.

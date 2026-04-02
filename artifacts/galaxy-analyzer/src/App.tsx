@@ -12,11 +12,10 @@ import CorrelationsPage from "@/pages/correlations";
 import TheoryPage from "@/pages/theory";
 import StressTestPage from "@/pages/stress-test";
 import RARAnalysisPage from "@/pages/rar-analysis";
-import ValidationPage from "@/pages/validation";
-import DiscoveryPage from "@/pages/discovery";
 import ReplicationPage from "@/pages/replication";
 import DarkMatterFractionPage from "@/pages/dark-matter-fraction";
 import BaryonHaloCouplingPage from "@/pages/baryon-halo-coupling";
+import EvidencePage from "@/pages/evidence";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -33,8 +32,7 @@ function Router() {
       <Route path="/theory" component={TheoryPage} />
       <Route path="/stress-test" component={StressTestPage} />
       <Route path="/rar-analysis" component={RARAnalysisPage} />
-      <Route path="/validation" component={ValidationPage} />
-      <Route path="/discovery" component={DiscoveryPage} />
+      <Route path="/evidence" component={EvidencePage} />
       <Route path="/replication" component={ReplicationPage} />
       <Route path="/dark-matter-fraction" component={DarkMatterFractionPage} />
       <Route path="/baryon-halo-coupling" component={BaryonHaloCouplingPage} />
