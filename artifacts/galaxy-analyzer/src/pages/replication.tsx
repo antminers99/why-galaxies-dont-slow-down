@@ -4,6 +4,34 @@ import { GlassCard } from '@/components/ui/glass-card';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ComposedChart, Line, BarChart, Bar, Cell, Legend } from 'recharts';
 import { FlaskConical, CheckCircle2, XCircle, AlertTriangle, ArrowRight, Microscope, BookOpen, Scale, Lightbulb, Target, ShieldCheck } from 'lucide-react';
 
+interface UpsilonResult {
+  upsilon: number;
+  slope: number;
+  slopeErr: number;
+  r: number;
+  r2: number;
+  partialR: number;
+  n: number;
+  negative: boolean;
+}
+
+interface Robustness {
+  upsilonSensitivity: {
+    values: UpsilonResult[];
+    allNegative: boolean;
+    negCount: number;
+    total: number;
+  };
+  monteCarlo: {
+    nIterations: number;
+    slope: { mean: number; std: number; ci95: [number, number]; fracNegative: number };
+    partialR: { mean: number; std: number; ci95: [number, number]; fracNegative: number };
+    allSlopes: number[];
+  };
+  combined: Array<{ upsilon: number; fracNeg: number; meanSlope: number; nValid: number }>;
+  verdict: { upsilonPass: boolean; mcPass: boolean; combinedPass: boolean; overallRobust: boolean };
+}
+
 interface LTData {
   dataset: string;
   source: string;
@@ -16,6 +44,7 @@ interface LTData {
   pointLevelRegression: { slope: number; slopeError: number; r: number; r2: number; p: number; nPoints: number };
   sparcComparison: { sparcSlope: number; ltSlope: number; signConsistent: boolean; sparcPartialR: number; ltPartialR: number };
   galaxies: Array<{ name: string; dist: number; vmax: number; mbar: number; meanDeltaRAR: number; meanLogSigBar: number; nPoints: number }>;
+  robustness?: Robustness;
 }
 
 interface SparcData {
@@ -243,6 +272,165 @@ export default function ReplicationPage() {
             </table>
           </div>
         </GlassCard>
+
+        {lt.robustness && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <GlassCard glow="violet">
+              <h3 className="text-lg font-display font-bold text-white mb-3 flex items-center gap-2">
+                <FlaskConical className="w-5 h-5 text-violet-400" />
+                Υ_star Sensitivity (Mass-to-Light)
+              </h3>
+              <p className="text-xs text-slate-400 mb-3">
+                Varying the stellar mass-to-light ratio Υ★ from 0.2 to 0.8 (canonical = 0.5).
+                Tests whether the slope depends on the assumed stellar mass calibration.
+              </p>
+              <div className="mb-3">
+                <Badge pass={lt.robustness.upsilonSensitivity.allNegative} label={`${lt.robustness.upsilonSensitivity.negCount}/${lt.robustness.upsilonSensitivity.total} negative`} />
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs font-mono">
+                  <thead>
+                    <tr className="border-b border-white/10 text-slate-400">
+                      <th className="text-center py-1.5 px-2">Υ★</th>
+                      <th className="text-center py-1.5 px-2">slope b</th>
+                      <th className="text-center py-1.5 px-2">partial r</th>
+                      <th className="text-center py-1.5 px-2">sign</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {lt.robustness.upsilonSensitivity.values.map((v) => (
+                      <tr key={v.upsilon} className={`border-b border-white/5 ${v.upsilon === 0.5 ? 'bg-violet-500/10' : ''}`}>
+                        <td className="py-1.5 px-2 text-center text-slate-300">{v.upsilon.toFixed(1)}{v.upsilon === 0.5 ? ' ★' : ''}</td>
+                        <td className="py-1.5 px-2 text-center text-violet-400">{v.slope.toFixed(3)}</td>
+                        <td className="py-1.5 px-2 text-center text-slate-300">{v.partialR.toFixed(3)}</td>
+                        <td className="py-1.5 px-2 text-center">{v.negative ? <span className="text-emerald-400">✓</span> : <span className="text-red-400">✗</span>}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="h-[160px] mt-3">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={lt.robustness.upsilonSensitivity.values.map(v => ({
+                    upsilon: `Υ=${v.upsilon.toFixed(1)}`,
+                    slope: +v.slope.toFixed(4),
+                    partialR: +v.partialR.toFixed(4),
+                  }))} margin={{ top: 5, right: 10, bottom: 20, left: 10 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                    <XAxis dataKey="upsilon" tick={{ fill: '#94a3b8', fontSize: 9 }} />
+                    <YAxis tick={{ fill: '#94a3b8', fontSize: 9 }} domain={[-0.6, 0]} />
+                    <Tooltip contentStyle={{ backgroundColor: '#1e293b', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, fontSize: 11 }} />
+                    <Bar dataKey="slope" fill="#8b5cf6" name="slope b" />
+                    <Bar dataKey="partialR" fill="#6366f1" name="partial r" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </GlassCard>
+
+            <GlassCard glow="amber">
+              <h3 className="text-lg font-display font-bold text-white mb-3 flex items-center gap-2">
+                <Target className="w-5 h-5 text-amber-400" />
+                Monte Carlo Uncertainty (1000 iterations)
+              </h3>
+              <p className="text-xs text-slate-400 mb-3">
+                Perturbing inclination (±eInc from tilted-ring fits) and distance (±10%, typical for dwarf irregulars).
+              </p>
+              <div className="flex flex-wrap gap-2 mb-3">
+                <Badge pass={lt.robustness.monteCarlo.slope.fracNegative >= 0.95} label={`${(lt.robustness.monteCarlo.slope.fracNegative * 100).toFixed(0)}% slopes negative`} />
+                <Badge pass={lt.robustness.monteCarlo.slope.ci95[1] < 0} label={`95% CI below zero`} />
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="bg-white/5 rounded-lg p-3 text-center">
+                  <div className="text-xs text-slate-500 mb-1">Mean slope b</div>
+                  <div className="text-lg font-mono font-bold text-amber-400">{lt.robustness.monteCarlo.slope.mean.toFixed(3)}</div>
+                  <div className="text-xs text-slate-500">± {lt.robustness.monteCarlo.slope.std.toFixed(3)}</div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-3 text-center">
+                  <div className="text-xs text-slate-500 mb-1">95% CI</div>
+                  <div className="text-lg font-mono font-bold text-amber-400">
+                    [{lt.robustness.monteCarlo.slope.ci95[0].toFixed(3)}, {lt.robustness.monteCarlo.slope.ci95[1].toFixed(3)}]
+                  </div>
+                  <div className="text-xs text-slate-500">entirely below zero</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 mb-3">
+                <div className="bg-white/5 rounded-lg p-3 text-center">
+                  <div className="text-xs text-slate-500 mb-1">Mean partial r</div>
+                  <div className="text-lg font-mono font-bold text-amber-400">{lt.robustness.monteCarlo.partialR.mean.toFixed(3)}</div>
+                  <div className="text-xs text-slate-500">± {lt.robustness.monteCarlo.partialR.std.toFixed(3)}</div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-3 text-center">
+                  <div className="text-xs text-slate-500 mb-1">Partial r 95% CI</div>
+                  <div className="text-lg font-mono font-bold text-amber-400">
+                    [{lt.robustness.monteCarlo.partialR.ci95[0].toFixed(3)}, {lt.robustness.monteCarlo.partialR.ci95[1].toFixed(3)}]
+                  </div>
+                  <div className="text-xs text-slate-500">100% negative</div>
+                </div>
+              </div>
+              <div className="h-[120px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={(() => {
+                    const bins: Record<string, number> = {};
+                    const slopes = lt.robustness!.monteCarlo.allSlopes;
+                    const bw = 0.02;
+                    for (const s of slopes) {
+                      const key = (Math.round(s / bw) * bw).toFixed(3);
+                      bins[key] = (bins[key] || 0) + 1;
+                    }
+                    return Object.entries(bins).sort(([a], [b]) => +a - +b).map(([k, v]) => ({ bin: k, count: v }));
+                  })()} margin={{ top: 5, right: 10, bottom: 15, left: 10 }}>
+                    <XAxis dataKey="bin" tick={{ fill: '#94a3b8', fontSize: 8 }} interval={2} label={{ value: 'slope b', position: 'bottom', offset: 0, fill: '#94a3b8', fontSize: 9 }} />
+                    <YAxis tick={{ fill: '#94a3b8', fontSize: 8 }} />
+                    <Bar dataKey="count" fill="#f59e0b" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </GlassCard>
+          </div>
+        )}
+
+        {lt.robustness && (
+          <GlassCard>
+            <h3 className="text-lg font-display font-bold text-white mb-3 flex items-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-emerald-400" />
+              Combined Robustness: Υ × Monte Carlo (1400 runs)
+            </h3>
+            <p className="text-xs text-slate-400 mb-3">
+              For each Υ★ value, 200 Monte Carlo iterations perturbing inclination and distance.
+              Tests whether the result survives <em>simultaneous</em> variation of stellar mass calibration AND measurement errors.
+            </p>
+            <div className="overflow-x-auto mb-3">
+              <table className="w-full text-xs font-mono">
+                <thead>
+                  <tr className="border-b border-white/10 text-slate-400">
+                    <th className="text-center py-1.5 px-3">Υ★</th>
+                    <th className="text-center py-1.5 px-3">% Negative</th>
+                    <th className="text-center py-1.5 px-3">Mean slope</th>
+                    <th className="text-center py-1.5 px-3">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lt.robustness.combined.map((c) => (
+                    <tr key={c.upsilon} className={`border-b border-white/5 ${c.upsilon === 0.5 ? 'bg-emerald-500/10' : ''}`}>
+                      <td className="py-1.5 px-3 text-center text-slate-300">{c.upsilon.toFixed(1)}{c.upsilon === 0.5 ? ' ★' : ''}</td>
+                      <td className="py-1.5 px-3 text-center text-emerald-400">{(c.fracNeg * 100).toFixed(1)}%</td>
+                      <td className="py-1.5 px-3 text-center text-amber-400">{c.meanSlope.toFixed(4)}</td>
+                      <td className="py-1.5 px-3 text-center">
+                        <Badge pass={c.fracNeg >= 0.95} label={c.fracNeg >= 0.95 ? 'PASS' : c.fracNeg >= 0.5 ? 'PARTIAL' : 'FAIL'} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <Badge pass={lt.robustness.verdict.overallRobust} label={lt.robustness.verdict.overallRobust ? 'OVERALL: ROBUST' : 'OVERALL: NEEDS CAUTION'} />
+              <span className="text-xs text-slate-400">
+                Result survives Υ★ variation (0.2–0.8) AND measurement uncertainty (inc ± σ, dist ± 10%)
+              </span>
+            </div>
+          </GlassCard>
+        )}
 
         <GlassCard>
           <h3 className="text-lg font-display font-bold text-white mb-3 flex items-center gap-2">
