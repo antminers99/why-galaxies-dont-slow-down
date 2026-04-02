@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-04-02T23:06:08.354Z",
+  "nPoints": {
+    "sparc": 3391,
+    "lt": 732,
+    "all": 4123
+  },
+  "inSampleComparison": {
+    "M2_gbar_quad": {
+      "rms": 0.23478262958130114,
+      "params": 3
+    },
+    "M3_gbar_cubic": {
+      "rms": 0.23455721974436985,
+      "params": 4
+    },
+    "M4_quad_plus_sigma": {
+      "rms": 0.23391412258476688,
+      "params": 4
+    },
+    "M5_full_bivariate": {
+      "rms": 0.23391312773068795,
+      "params": 5
+    },
+    "fTest_M2_vs_M4": 30.64390950199011,
+    "sigmaContribution": 0.3699196137649161
+  },
+  "crossValidation": {
+    "sparc_to_lt": {
+      "M2": 0.3458639201959535,
+      "M3": 0.35352378442464444,
+      "M4": 0.342380668500237,
+      "M5": 0.3454303575271368,
+      "sigmaImprovement": 1.0071162362766908
+    },
+    "lt_to_sparc": {
+      "M2": 0.40119599816411144,
+      "M3": 0.4002435876384546,
+      "M4": 0.4000349893045856,
+      "M5": 0.4537327035913389,
+      "sigmaImprovement": 0.28938694923146796
+    }
+  },
+  "coefficientStability": {
+    "sparc": {
+      "sigmaCoeff": 0.051503502990245066
+    },
+    "lt": {
+      "sigmaCoeff": 0.000860791838248446
+    },
+    "signConsistent": true
+  },
+  "verdict": {
+    "genuineSigmaEffect": true,
+    "crossValidatedImprovement": 0.6482515927540794,
+    "conclusion": "DETECTABLE_BUT_MARGINAL"
+  }
+}

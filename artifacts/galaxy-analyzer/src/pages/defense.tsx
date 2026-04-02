@@ -1880,26 +1880,48 @@ export default function DefensePage() {
                 </div>
               </div>
 
+              <div className="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4 mb-4">
+                <h4 className="text-rose-300 font-bold text-sm mb-2">Critical Control Test: Where Does the Improvement Actually Come From?</h4>
+                <div className="space-y-1 text-xs text-slate-300 leading-relaxed">
+                  <p>
+                    We searched 8 functional families for the best F(g_bar, Sigma_bar). The top candidate (log-space polynomial)
+                    showed ~30% scatter reduction. But the decisive control test reveals:
+                  </p>
+                  <div className="bg-black/30 rounded-lg p-3 my-2 font-mono text-xs">
+                    <p className="text-slate-400">M2: log(g_obs) = a + b*log(g_bar) + c*log(g_bar){"\u00B2"}</p>
+                    <p className="text-slate-400">M4: M2 + d*log(Sigma_bar)</p>
+                    <p className="text-white mt-1">M2 RMS = 0.2348 {"  |  "} M4 RMS = 0.2339</p>
+                    <p className="text-amber-400 mt-1">Sigma_bar marginal contribution: 0.37% (F=30.6, p{"<"}0.01)</p>
+                  </div>
+                  <p>
+                    The ~30% improvement was from <span className="text-white font-bold">better polynomial fitting of g_bar</span> (vs McGaugh interpolation),
+                    not from Sigma_bar. Sigma_bar adds only <span className="text-amber-400 font-bold">0.37% marginal improvement</span> — statistically significant
+                    (F=30.6 with 4123 points) but practically negligible.
+                  </p>
+                </div>
+              </div>
+
               <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
-                <h4 className="text-amber-300 font-bold text-sm mb-2">Honest Assessment</h4>
+                <h4 className="text-amber-300 font-bold text-sm mb-2">Final Honest Assessment</h4>
                 <div className="space-y-2 text-xs text-slate-300 leading-relaxed">
                   <p>
-                    <span className="text-emerald-400 font-bold">What IS robust:</span> The DELTA_RAR vs log(Sigma_bar) correlation is always negative, across
-                    all {bivariate.test6_stability.results.length} definition variants (mean {bivariate.test6_stability.meanSignificance.toFixed(0)}sigma). At galaxy level in SPARC:
-                    {" "}{bivariate.test8_galaxyLevel.sparc.sig.toFixed(1)}sigma. The sign is consistent between SPARC and LITTLE THINGS.
-                    Cross-validation improves in both directions with consistent coefficient sign.
+                    <span className="text-emerald-400 font-bold">What IS real:</span> The DELTA_RAR vs log(Sigma_bar) correlation is always negative,
+                    across all {bivariate.test6_stability.results.length} definitions (mean {bivariate.test6_stability.meanSignificance.toFixed(0)}sigma).
+                    Galaxy-level: SPARC {bivariate.test8_galaxyLevel.sparc.sig.toFixed(1)}sigma, combined {bivariate.test8_galaxyLevel.combined.sig.toFixed(1)}sigma.
+                    Cross-validation: both directions improve with consistent sign. F-test: highly significant. Sigma_bar beats
+                    adding a cubic g_bar term in cross-validation. AIC favors including Sigma by 28.6 points.
                   </p>
                   <p>
-                    <span className="text-amber-400 font-bold">What is NOT dramatic:</span> Cross-validation improvements are modest
-                    ({bivariate.test4_crossValidation.sparcToLT.improvement.toFixed(1)}% and {bivariate.test4_crossValidation.ltToSPARC.improvement.toFixed(1)}%).
-                    The bivariate formula helps SPARC but slightly hurts LITTLE THINGS.
-                    {" "}The R2 improvement from adding Sigma_bar is small in absolute terms.
+                    <span className="text-rose-400 font-bold">What is NOT a hidden law:</span> The marginal cross-validated improvement from
+                    Sigma_bar is ~0.65% average. The full bivariate model (5 params) overfits and HURTS cross-dataset
+                    prediction. The Sigma coefficient magnitude differs 60x between SPARC and LT (same sign, vastly
+                    different scale). This is a real but tiny residual structure — not a bivariate revolution.
                   </p>
                   <p>
-                    <span className="text-violet-400 font-bold">Interpretation:</span> Sigma_bar captures a real, reproducible residual structure in the RAR.
-                    Higher surface density galaxies systematically deviate less from the McGaugh relation. This is a second-order effect —
-                    real but not a dramatic "hidden law." The interaction term (g_bar x Sigma_bar) matters more than the linear Sigma term,
-                    suggesting the coupling depends on where you sit on the RAR curve.
+                    <span className="text-violet-400 font-bold">Scientific conclusion:</span> Sigma_bar modulates the RAR at the ~0.4% level.
+                    This is a refinement, not a new law. The standard RAR (McGaugh 2016) captures {">"} 99% of the physics.
+                    The residual Sigma dependence is consistent with baryonic feedback effects shaping the inner DM profile
+                    slightly differently in high vs low surface density galaxies — exactly what LCDM predicts.
                   </p>
                 </div>
               </div>
