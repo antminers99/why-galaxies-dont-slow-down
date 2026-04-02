@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRoute } from "wouter";
-import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen, Shield, Crosshair } from 'lucide-react';
+import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen, Shield, Crosshair, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NavItem = ({ href, icon: Icon, label }: { href: string, icon: any, label: string }) => {
@@ -48,11 +48,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <NavItem href="/theory" icon={BookOpen} label="Theory" />
             <NavItem href="/stress-test" icon={Shield} label="Stress Test" />
             <NavItem href="/rar-analysis" icon={Crosshair} label="RAR Analysis" />
+            <NavItem href="/validation" icon={ShieldCheck} label="Validation" />
           </nav>
         </div>
         
         <div className="mt-auto p-6 text-xs text-slate-500 font-mono">
-          System v1.0.4<br/>
+          System v1.0.5<br/>
           Status: Online
         </div>
       </aside>
