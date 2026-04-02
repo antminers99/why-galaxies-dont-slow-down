@@ -6719,5 +6719,1756 @@
         "region": "outer"
       }
     ]
+  },
+  "deepAnalysis": {
+    "functionalForms": [
+      {
+        "name": "f_DM = a + b·log(Σ)",
+        "label": "f_DM",
+        "pointSlope": -0.13080443533114153,
+        "pointR": -0.6598098692112361,
+        "pointR2": 0.4353490635085485,
+        "pointAIC": -11003.146180778558,
+        "pointN": 3150,
+        "galaxySlope": -0.16547831875380656,
+        "galaxyR": -0.6128393827433358,
+        "galaxyR2": 0.37557210904123284,
+        "galaxyAIC": -643.5104571709004,
+        "galaxyN": 167
+      },
+      {
+        "name": "log(g_obs/g_bar) = a + b·log(Σ)",
+        "label": "log(g_obs/g_bar)",
+        "pointSlope": -0.14500654628579174,
+        "pointR": -0.6269617438826621,
+        "pointR2": 0.3930810282923888,
+        "pointAIC": -9804.662438393754,
+        "pointN": 3150,
+        "galaxySlope": -0.21278866309986647,
+        "galaxyR": -0.6295181516086615,
+        "galaxyR2": 0.39629310320478583,
+        "galaxyAIC": -574.1273106671699,
+        "galaxyN": 167
+      },
+      {
+        "name": "log(M_dyn/M_bar) = a + b·log(Σ)",
+        "label": "log(V²_obs/V²_bar)",
+        "pointSlope": -0.14500654628579174,
+        "pointR": -0.626961743882662,
+        "pointR2": 0.39308102829238867,
+        "pointAIC": -9804.662438393754,
+        "pointN": 3150,
+        "galaxySlope": -0.21278866309986647,
+        "galaxyR": -0.6295181516086615,
+        "galaxyR2": 0.39629310320478583,
+        "galaxyAIC": -574.1273106671699,
+        "galaxyN": 167
+      }
+    ],
+    "bestForm": "f_DM = a + b·log(Σ)",
+    "slopeVsVmax": [
+      {
+        "bin": "V < 50",
+        "midVmax": 25,
+        "slope": 0.03434900155715603,
+        "r": 0.10493197063923158,
+        "r2": 0.01101071846223256,
+        "n": 181
+      },
+      {
+        "bin": "50–80",
+        "midVmax": 65,
+        "slope": -0.09686510975175641,
+        "r": -0.4535499595642061,
+        "r2": 0.20570756582069294,
+        "n": 437
+      },
+      {
+        "bin": "80–120",
+        "midVmax": 100,
+        "slope": -0.09593606388593448,
+        "r": -0.5366605523259242,
+        "r2": 0.288004548422766,
+        "n": 762
+      },
+      {
+        "bin": "120–170",
+        "midVmax": 145,
+        "slope": -0.12779052410958974,
+        "r": -0.5860821702085701,
+        "r2": 0.3434923102363874,
+        "n": 405
+      },
+      {
+        "bin": "170–250",
+        "midVmax": 210,
+        "slope": -0.15059193222335737,
+        "r": -0.664351263551715,
+        "r2": 0.4413626013827603,
+        "n": 731
+      },
+      {
+        "bin": "V > 250",
+        "midVmax": 325,
+        "slope": -0.1513569466107464,
+        "r": -0.6549702124738239,
+        "r2": 0.4289859792280061,
+        "n": 634
+      }
+    ],
+    "slopeMassScaling": {
+      "slope": -0.1648450255560627,
+      "r": -0.9406950364200838,
+      "r2": 0.8849071515453828,
+      "direction": "stronger for massive"
+    },
+    "halo": {
+      "vDMvsSigBar": {
+        "pointSlope": 0.051173956104969526,
+        "pointR": 0.17326435983296376,
+        "pointR2": 0.030020538388326745,
+        "pointN": 3150,
+        "galSlope": 0.32428031032125115,
+        "galR": 0.756099347989021,
+        "galR2": 0.5716862240294227,
+        "galN": 167
+      },
+      "dmDominanceRadius": {
+        "slope": 0.14739868223977307,
+        "r": 0.4143516829791053,
+        "r2": 0.17168731718761698,
+        "n": 158
+      },
+      "dmDomGalaxies": [
+        {
+          "name": "D564-8",
+          "logSigBar": 6.378,
+          "rDMdomNorm": 0.1661,
+          "vmax": 25
+        },
+        {
+          "name": "D631-7",
+          "logSigBar": 7.248,
+          "rDMdomNorm": 0.3129,
+          "vmax": 58.5
+        },
+        {
+          "name": "DDO064",
+          "logSigBar": 7.1,
+          "rDMdomNorm": 0.0336,
+          "vmax": 46.9
+        },
+        {
+          "name": "DDO154",
+          "logSigBar": 6.795,
+          "rDMdomNorm": 0.0828,
+          "vmax": 48.2
+        },
+        {
+          "name": "DDO161",
+          "logSigBar": 7.171,
+          "rDMdomNorm": 0.0449,
+          "vmax": 67.5
+        },
+        {
+          "name": "DDO168",
+          "logSigBar": 7.284,
+          "rDMdomNorm": 0.3981,
+          "vmax": 55
+        },
+        {
+          "name": "DDO170",
+          "logSigBar": 7.023,
+          "rDMdomNorm": 0.1517,
+          "vmax": 62.2
+        },
+        {
+          "name": "ESO079-G014",
+          "logSigBar": 7.686,
+          "rDMdomNorm": 0.0246,
+          "vmax": 178
+        },
+        {
+          "name": "ESO116-G012",
+          "logSigBar": 7.719,
+          "rDMdomNorm": 0.0254,
+          "vmax": 112
+        },
+        {
+          "name": "ESO444-G084",
+          "logSigBar": 7.044,
+          "rDMdomNorm": 0.0586,
+          "vmax": 63.1
+        },
+        {
+          "name": "ESO563-G021",
+          "logSigBar": 8.338,
+          "rDMdomNorm": 0.1155,
+          "vmax": 321
+        },
+        {
+          "name": "F561-1",
+          "logSigBar": 7.399,
+          "rDMdomNorm": 0.3344,
+          "vmax": 50.4
+        },
+        {
+          "name": "F563-1",
+          "logSigBar": 7.03,
+          "rDMdomNorm": 0.0532,
+          "vmax": 112.5
+        },
+        {
+          "name": "F563-V1",
+          "logSigBar": 7.053,
+          "rDMdomNorm": 0.3342,
+          "vmax": 29.5
+        },
+        {
+          "name": "F563-V2",
+          "logSigBar": 7.076,
+          "rDMdomNorm": 0.0267,
+          "vmax": 118
+        },
+        {
+          "name": "F565-V2",
+          "logSigBar": 6.207,
+          "rDMdomNorm": 0.1432,
+          "vmax": 83.1
+        },
+        {
+          "name": "F567-2",
+          "logSigBar": 7.172,
+          "rDMdomNorm": 0.2002,
+          "vmax": 52.2
+        },
+        {
+          "name": "F568-1",
+          "logSigBar": 7.182,
+          "rDMdomNorm": 0.0333,
+          "vmax": 142
+        },
+        {
+          "name": "F568-3",
+          "logSigBar": 7.138,
+          "rDMdomNorm": 0.0656,
+          "vmax": 120
+        },
+        {
+          "name": "F568-V1",
+          "logSigBar": 7.089,
+          "rDMdomNorm": 0.0221,
+          "vmax": 118
+        },
+        {
+          "name": "F571-8",
+          "logSigBar": 7.953,
+          "rDMdomNorm": 0.3068,
+          "vmax": 144
+        },
+        {
+          "name": "F571-V1",
+          "logSigBar": 6.934,
+          "rDMdomNorm": 0.1435,
+          "vmax": 84.3
+        },
+        {
+          "name": "F574-1",
+          "logSigBar": 7.26,
+          "rDMdomNorm": 0.0373,
+          "vmax": 99.7
+        },
+        {
+          "name": "F579-V1",
+          "logSigBar": 7.454,
+          "rDMdomNorm": 0.0277,
+          "vmax": 114
+        },
+        {
+          "name": "F583-1",
+          "logSigBar": 6.685,
+          "rDMdomNorm": 0.016,
+          "vmax": 86.9
+        },
+        {
+          "name": "F583-4",
+          "logSigBar": 7.292,
+          "rDMdomNorm": 0.0302,
+          "vmax": 69.9
+        },
+        {
+          "name": "IC2574",
+          "logSigBar": 6.64,
+          "rDMdomNorm": 0.0831,
+          "vmax": 67.5
+        },
+        {
+          "name": "IC4202",
+          "logSigBar": 8.446,
+          "rDMdomNorm": 0.6081,
+          "vmax": 250
+        },
+        {
+          "name": "KK98-251",
+          "logSigBar": 6.798,
+          "rDMdomNorm": 0.0799,
+          "vmax": 34.6
+        },
+        {
+          "name": "NGC0024",
+          "logSigBar": 7.757,
+          "rDMdomNorm": 0.0284,
+          "vmax": 110
+        },
+        {
+          "name": "NGC0055",
+          "logSigBar": 7.522,
+          "rDMdomNorm": 0.2726,
+          "vmax": 87.4
+        },
+        {
+          "name": "NGC0100",
+          "logSigBar": 7.543,
+          "rDMdomNorm": 0.1653,
+          "vmax": 91.2
+        },
+        {
+          "name": "NGC0247",
+          "logSigBar": 7.213,
+          "rDMdomNorm": 0.0743,
+          "vmax": 108
+        },
+        {
+          "name": "NGC0289",
+          "logSigBar": 8.508,
+          "rDMdomNorm": 0.149,
+          "vmax": 194
+        },
+        {
+          "name": "NGC0300",
+          "logSigBar": 7.506,
+          "rDMdomNorm": 0.0771,
+          "vmax": 97
+        },
+        {
+          "name": "NGC0801",
+          "logSigBar": 8.349,
+          "rDMdomNorm": 0.7656,
+          "vmax": 238
+        },
+        {
+          "name": "NGC1003",
+          "logSigBar": 7.764,
+          "rDMdomNorm": 0.1508,
+          "vmax": 115
+        },
+        {
+          "name": "NGC1090",
+          "logSigBar": 8.048,
+          "rDMdomNorm": 0.1692,
+          "vmax": 176
+        },
+        {
+          "name": "NGC1705",
+          "logSigBar": 7.492,
+          "rDMdomNorm": 0.0367,
+          "vmax": 73.2
+        },
+        {
+          "name": "NGC2366",
+          "logSigBar": 7.178,
+          "rDMdomNorm": 0.0198,
+          "vmax": 53.7
+        },
+        {
+          "name": "NGC2403",
+          "logSigBar": 8.025,
+          "rDMdomNorm": 0.0077,
+          "vmax": 136
+        },
+        {
+          "name": "NGC2683",
+          "logSigBar": 8.536,
+          "rDMdomNorm": 0.3333,
+          "vmax": 212
+        },
+        {
+          "name": "NGC2841",
+          "logSigBar": 8.558,
+          "rDMdomNorm": 0.0861,
+          "vmax": 323
+        },
+        {
+          "name": "NGC2903",
+          "logSigBar": 8.573,
+          "rDMdomNorm": 0.4231,
+          "vmax": 216
+        },
+        {
+          "name": "NGC2915",
+          "logSigBar": 7.352,
+          "rDMdomNorm": 0.1335,
+          "vmax": 86.5
+        },
+        {
+          "name": "NGC2976",
+          "logSigBar": 7.974,
+          "rDMdomNorm": 0.9251,
+          "vmax": 88.7
+        },
+        {
+          "name": "NGC2998",
+          "logSigBar": 8.144,
+          "rDMdomNorm": 0.0078,
+          "vmax": 214
+        },
+        {
+          "name": "NGC3109",
+          "logSigBar": 6.894,
+          "rDMdomNorm": 0.0403,
+          "vmax": 67.3
+        },
+        {
+          "name": "NGC3198",
+          "logSigBar": 8.01,
+          "rDMdomNorm": 0.0656,
+          "vmax": 157
+        },
+        {
+          "name": "NGC3521",
+          "logSigBar": 8.551,
+          "rDMdomNorm": 0.624,
+          "vmax": 220
+        },
+        {
+          "name": "NGC3726",
+          "logSigBar": 8.026,
+          "rDMdomNorm": 0.6857,
+          "vmax": 169
+        },
+        {
+          "name": "NGC3741",
+          "logSigBar": 6.777,
+          "rDMdomNorm": 0.0329,
+          "vmax": 51.6
+        },
+        {
+          "name": "NGC3769",
+          "logSigBar": 8.29,
+          "rDMdomNorm": 0.1878,
+          "vmax": 126
+        },
+        {
+          "name": "NGC3877",
+          "logSigBar": 8.156,
+          "rDMdomNorm": 0.3084,
+          "vmax": 171
+        },
+        {
+          "name": "NGC3893",
+          "logSigBar": 8.465,
+          "rDMdomNorm": 0.4625,
+          "vmax": 194
+        },
+        {
+          "name": "NGC3917",
+          "logSigBar": 7.664,
+          "rDMdomNorm": 0.1171,
+          "vmax": 138
+        },
+        {
+          "name": "NGC3949",
+          "logSigBar": 8.416,
+          "rDMdomNorm": 1,
+          "vmax": 169
+        },
+        {
+          "name": "NGC3972",
+          "logSigBar": 7.812,
+          "rDMdomNorm": 0.1995,
+          "vmax": 134
+        },
+        {
+          "name": "NGC3992",
+          "logSigBar": 8.428,
+          "rDMdomNorm": 0.1997,
+          "vmax": 272
+        },
+        {
+          "name": "NGC4010",
+          "logSigBar": 7.947,
+          "rDMdomNorm": 0.0831,
+          "vmax": 129
+        },
+        {
+          "name": "NGC4013",
+          "logSigBar": 8.512,
+          "rDMdomNorm": 0.4344,
+          "vmax": 198
+        },
+        {
+          "name": "NGC4068",
+          "logSigBar": 7.2,
+          "rDMdomNorm": 0.6352,
+          "vmax": 41.9
+        },
+        {
+          "name": "NGC4088",
+          "logSigBar": 8.192,
+          "rDMdomNorm": 1,
+          "vmax": 182
+        },
+        {
+          "name": "NGC4100",
+          "logSigBar": 8.304,
+          "rDMdomNorm": 0.1538,
+          "vmax": 195
+        },
+        {
+          "name": "NGC4138",
+          "logSigBar": 8.419,
+          "rDMdomNorm": 0.4225,
+          "vmax": 195
+        },
+        {
+          "name": "NGC4157",
+          "logSigBar": 8.545,
+          "rDMdomNorm": 0.6471,
+          "vmax": 201
+        },
+        {
+          "name": "NGC4183",
+          "logSigBar": 7.496,
+          "rDMdomNorm": 0.0414,
+          "vmax": 115
+        },
+        {
+          "name": "NGC4214",
+          "logSigBar": 7.667,
+          "rDMdomNorm": 0.0373,
+          "vmax": 80.6
+        },
+        {
+          "name": "NGC4559",
+          "logSigBar": 8.047,
+          "rDMdomNorm": 0.4368,
+          "vmax": 124
+        },
+        {
+          "name": "NGC5033",
+          "logSigBar": 8.575,
+          "rDMdomNorm": 0.2305,
+          "vmax": 225
+        },
+        {
+          "name": "NGC5055",
+          "logSigBar": 8.673,
+          "rDMdomNorm": 0.4206,
+          "vmax": 206
+        },
+        {
+          "name": "NGC5371",
+          "logSigBar": 8.425,
+          "rDMdomNorm": 0.9369,
+          "vmax": 242
+        },
+        {
+          "name": "NGC5585",
+          "logSigBar": 7.511,
+          "rDMdomNorm": 0.25,
+          "vmax": 92.3
+        },
+        {
+          "name": "NGC5907",
+          "logSigBar": 8.121,
+          "rDMdomNorm": 0.0999,
+          "vmax": 235
+        },
+        {
+          "name": "NGC5985",
+          "logSigBar": 8.163,
+          "rDMdomNorm": 0.102,
+          "vmax": 305
+        },
+        {
+          "name": "NGC6015",
+          "logSigBar": 8.232,
+          "rDMdomNorm": 0.0229,
+          "vmax": 166
+        },
+        {
+          "name": "NGC6195",
+          "logSigBar": 8.745,
+          "rDMdomNorm": 1,
+          "vmax": 258
+        },
+        {
+          "name": "NGC6503",
+          "logSigBar": 8.238,
+          "rDMdomNorm": 0.0323,
+          "vmax": 121
+        },
+        {
+          "name": "NGC6674",
+          "logSigBar": 8.392,
+          "rDMdomNorm": 0.1034,
+          "vmax": 291
+        },
+        {
+          "name": "NGC6946",
+          "logSigBar": 8.502,
+          "rDMdomNorm": 0.6328,
+          "vmax": 181
+        },
+        {
+          "name": "NGC7331",
+          "logSigBar": 8.792,
+          "rDMdomNorm": 0.7064,
+          "vmax": 257
+        },
+        {
+          "name": "NGC7793",
+          "logSigBar": 8.048,
+          "rDMdomNorm": 0.0534,
+          "vmax": 116
+        },
+        {
+          "name": "NGC7814",
+          "logSigBar": 8.411,
+          "rDMdomNorm": 0.4286,
+          "vmax": 233
+        },
+        {
+          "name": "PGC51017",
+          "logSigBar": 6.775,
+          "rDMdomNorm": 0.0909,
+          "vmax": 20.5
+        },
+        {
+          "name": "UGC00128",
+          "logSigBar": 7.366,
+          "rDMdomNorm": 0.0233,
+          "vmax": 134
+        },
+        {
+          "name": "UGC00191",
+          "logSigBar": 7.421,
+          "rDMdomNorm": 0.0621,
+          "vmax": 83.8
+        },
+        {
+          "name": "UGC00731",
+          "logSigBar": 6.46,
+          "rDMdomNorm": 0.0834,
+          "vmax": 74
+        },
+        {
+          "name": "UGC00891",
+          "logSigBar": 6.944,
+          "rDMdomNorm": 0.2003,
+          "vmax": 63.8
+        },
+        {
+          "name": "UGC01230",
+          "logSigBar": 7.175,
+          "rDMdomNorm": 0.0643,
+          "vmax": 113
+        },
+        {
+          "name": "UGC01281",
+          "logSigBar": 6.968,
+          "rDMdomNorm": 0.0762,
+          "vmax": 56.9
+        },
+        {
+          "name": "UGC02023",
+          "logSigBar": 7.347,
+          "rDMdomNorm": 0.8016,
+          "vmax": 58.8
+        },
+        {
+          "name": "UGC02259",
+          "logSigBar": 7.212,
+          "rDMdomNorm": 0.1253,
+          "vmax": 90
+        },
+        {
+          "name": "UGC02487",
+          "logSigBar": 8.607,
+          "rDMdomNorm": 0.1235,
+          "vmax": 383
+        },
+        {
+          "name": "UGC02885",
+          "logSigBar": 8.485,
+          "rDMdomNorm": 0.2631,
+          "vmax": 305
+        },
+        {
+          "name": "UGC02916",
+          "logSigBar": 8.661,
+          "rDMdomNorm": 0.0097,
+          "vmax": 218
+        },
+        {
+          "name": "UGC02953",
+          "logSigBar": 8.638,
+          "rDMdomNorm": 0.0014,
+          "vmax": 319
+        },
+        {
+          "name": "UGC03205",
+          "logSigBar": 8.506,
+          "rDMdomNorm": 0.0897,
+          "vmax": 237
+        },
+        {
+          "name": "UGC03546",
+          "logSigBar": 8.43,
+          "rDMdomNorm": 0.4749,
+          "vmax": 204
+        },
+        {
+          "name": "UGC03580",
+          "logSigBar": 8.109,
+          "rDMdomNorm": 0.0041,
+          "vmax": 131
+        },
+        {
+          "name": "UGC04278",
+          "logSigBar": 7.103,
+          "rDMdomNorm": 0.0209,
+          "vmax": 92.8
+        },
+        {
+          "name": "UGC04305",
+          "logSigBar": 7.334,
+          "rDMdomNorm": 0.2846,
+          "vmax": 37.3
+        },
+        {
+          "name": "UGC04325",
+          "logSigBar": 7.359,
+          "rDMdomNorm": 0.1252,
+          "vmax": 92.7
+        },
+        {
+          "name": "UGC04483",
+          "logSigBar": 7.073,
+          "rDMdomNorm": 0.0661,
+          "vmax": 24.3
+        },
+        {
+          "name": "UGC04499",
+          "logSigBar": 7.296,
+          "rDMdomNorm": 0.2225,
+          "vmax": 74.3
+        },
+        {
+          "name": "UGC05005",
+          "logSigBar": 7.027,
+          "rDMdomNorm": 0.0818,
+          "vmax": 100
+        },
+        {
+          "name": "UGC05253",
+          "logSigBar": 8.651,
+          "rDMdomNorm": 0.0024,
+          "vmax": 248
+        },
+        {
+          "name": "UGC05414",
+          "logSigBar": 7.257,
+          "rDMdomNorm": 0.1655,
+          "vmax": 61.4
+        },
+        {
+          "name": "UGC05716",
+          "logSigBar": 7.166,
+          "rDMdomNorm": 0.0833,
+          "vmax": 74.7
+        },
+        {
+          "name": "UGC05721",
+          "logSigBar": 7.426,
+          "rDMdomNorm": 0.0401,
+          "vmax": 82.6
+        },
+        {
+          "name": "UGC05750",
+          "logSigBar": 6.537,
+          "rDMdomNorm": 0.1103,
+          "vmax": 78.9
+        },
+        {
+          "name": "UGC05764",
+          "logSigBar": 6.982,
+          "rDMdomNorm": 0.0994,
+          "vmax": 55.8
+        },
+        {
+          "name": "UGC05829",
+          "logSigBar": 6.749,
+          "rDMdomNorm": 0.0912,
+          "vmax": 68.6
+        },
+        {
+          "name": "UGC05918",
+          "logSigBar": 6.589,
+          "rDMdomNorm": 0.1256,
+          "vmax": 44.5
+        },
+        {
+          "name": "UGC05986",
+          "logSigBar": 7.736,
+          "rDMdomNorm": 0.1339,
+          "vmax": 116
+        },
+        {
+          "name": "UGC05999",
+          "logSigBar": 7.466,
+          "rDMdomNorm": 0.2145,
+          "vmax": 100
+        },
+        {
+          "name": "UGC06399",
+          "logSigBar": 7.065,
+          "rDMdomNorm": 0.1108,
+          "vmax": 87.6
+        },
+        {
+          "name": "UGC06446",
+          "logSigBar": 7.216,
+          "rDMdomNorm": 0.0568,
+          "vmax": 84.9
+        },
+        {
+          "name": "UGC06614",
+          "logSigBar": 8.485,
+          "rDMdomNorm": 0.3861,
+          "vmax": 205
+        },
+        {
+          "name": "UGC06628",
+          "logSigBar": 7.381,
+          "rDMdomNorm": 0.4,
+          "vmax": 42.3
+        },
+        {
+          "name": "UGC06667",
+          "logSigBar": 6.111,
+          "rDMdomNorm": 0.1108,
+          "vmax": 85.7
+        },
+        {
+          "name": "UGC06786",
+          "logSigBar": 8.433,
+          "rDMdomNorm": 0.0047,
+          "vmax": 229
+        },
+        {
+          "name": "UGC06787",
+          "logSigBar": 8.43,
+          "rDMdomNorm": 0.2221,
+          "vmax": 276
+        },
+        {
+          "name": "UGC06818",
+          "logSigBar": 7.339,
+          "rDMdomNorm": 0.5014,
+          "vmax": 74.4
+        },
+        {
+          "name": "UGC06917",
+          "logSigBar": 7.525,
+          "rDMdomNorm": 0.1662,
+          "vmax": 111
+        },
+        {
+          "name": "UGC06923",
+          "logSigBar": 7.681,
+          "rDMdomNorm": 0.5562,
+          "vmax": 81.1
+        },
+        {
+          "name": "UGC06930",
+          "logSigBar": 7.264,
+          "rDMdomNorm": 0.1048,
+          "vmax": 109
+        },
+        {
+          "name": "UGC06983",
+          "logSigBar": 7.568,
+          "rDMdomNorm": 0.1665,
+          "vmax": 113
+        },
+        {
+          "name": "UGC07089",
+          "logSigBar": 7.194,
+          "rDMdomNorm": 0.095,
+          "vmax": 79.1
+        },
+        {
+          "name": "UGC07125",
+          "logSigBar": 7.148,
+          "rDMdomNorm": 0.2318,
+          "vmax": 65.6
+        },
+        {
+          "name": "UGC07151",
+          "logSigBar": 7.604,
+          "rDMdomNorm": 0.1818,
+          "vmax": 76.2
+        },
+        {
+          "name": "UGC07261",
+          "logSigBar": 7.595,
+          "rDMdomNorm": 0.1424,
+          "vmax": 76.1
+        },
+        {
+          "name": "UGC07323",
+          "logSigBar": 7.528,
+          "rDMdomNorm": 0.0997,
+          "vmax": 85.6
+        },
+        {
+          "name": "UGC07399",
+          "logSigBar": 7.289,
+          "rDMdomNorm": 0.0995,
+          "vmax": 106
+        },
+        {
+          "name": "UGC07524",
+          "logSigBar": 6.944,
+          "rDMdomNorm": 0.0645,
+          "vmax": 83.8
+        },
+        {
+          "name": "UGC07559",
+          "logSigBar": 6.966,
+          "rDMdomNorm": 0.4269,
+          "vmax": 32.1
+        },
+        {
+          "name": "UGC07577",
+          "logSigBar": 6.225,
+          "rDMdomNorm": 0.1124,
+          "vmax": 17.8
+        },
+        {
+          "name": "UGC07603",
+          "logSigBar": 7.439,
+          "rDMdomNorm": 0.1655,
+          "vmax": 64
+        },
+        {
+          "name": "UGC07608",
+          "logSigBar": 6.835,
+          "rDMdomNorm": 0.1255,
+          "vmax": 69.3
+        },
+        {
+          "name": "UGC07690",
+          "logSigBar": 7.587,
+          "rDMdomNorm": 0.2857,
+          "vmax": 60.7
+        },
+        {
+          "name": "UGC07866",
+          "logSigBar": 6.734,
+          "rDMdomNorm": 0.1422,
+          "vmax": 33.1
+        },
+        {
+          "name": "UGC08286",
+          "logSigBar": 7.421,
+          "rDMdomNorm": 0.0585,
+          "vmax": 84.3
+        },
+        {
+          "name": "UGC08490",
+          "logSigBar": 7.554,
+          "rDMdomNorm": 0.0335,
+          "vmax": 80.1
+        },
+        {
+          "name": "UGC08550",
+          "logSigBar": 7.319,
+          "rDMdomNorm": 0.0914,
+          "vmax": 57.8
+        },
+        {
+          "name": "UGC08699",
+          "logSigBar": 8.214,
+          "rDMdomNorm": 0.2537,
+          "vmax": 202
+        },
+        {
+          "name": "UGC08837",
+          "logSigBar": 6.68,
+          "rDMdomNorm": 0.3738,
+          "vmax": 48
+        },
+        {
+          "name": "UGC09037",
+          "logSigBar": 8.16,
+          "rDMdomNorm": 0.652,
+          "vmax": 160
+        },
+        {
+          "name": "UGC09133",
+          "logSigBar": 8.726,
+          "rDMdomNorm": 0.003,
+          "vmax": 289
+        },
+        {
+          "name": "UGC09992",
+          "logSigBar": 7.172,
+          "rDMdomNorm": 0.2005,
+          "vmax": 34.3
+        },
+        {
+          "name": "UGC10310",
+          "logSigBar": 6.647,
+          "rDMdomNorm": 0.1421,
+          "vmax": 73.2
+        },
+        {
+          "name": "UGC11455",
+          "logSigBar": 8.55,
+          "rDMdomNorm": 0.6947,
+          "vmax": 291
+        },
+        {
+          "name": "UGC11820",
+          "logSigBar": 6.599,
+          "rDMdomNorm": 0.0164,
+          "vmax": 84.5
+        },
+        {
+          "name": "UGC11914",
+          "logSigBar": 8.543,
+          "rDMdomNorm": 0.8749,
+          "vmax": 305
+        },
+        {
+          "name": "UGC12506",
+          "logSigBar": 7.853,
+          "rDMdomNorm": 0.0164,
+          "vmax": 255
+        },
+        {
+          "name": "UGC12632",
+          "logSigBar": 6.694,
+          "rDMdomNorm": 0.0666,
+          "vmax": 73.2
+        },
+        {
+          "name": "UGC12732",
+          "logSigBar": 6.868,
+          "rDMdomNorm": 0.0623,
+          "vmax": 98
+        },
+        {
+          "name": "UGCA281",
+          "logSigBar": 7.268,
+          "rDMdomNorm": 0.0833,
+          "vmax": 29.5
+        },
+        {
+          "name": "UGCA442",
+          "logSigBar": 6.897,
+          "rDMdomNorm": 0.0664,
+          "vmax": 57.8
+        },
+        {
+          "name": "UGCA444",
+          "logSigBar": 7.106,
+          "rDMdomNorm": 0.0458,
+          "vmax": 38.3
+        }
+      ],
+      "innerSlopeData": {
+        "slope": -0.1567301460796116,
+        "r": -0.19208023076518269,
+        "r2": 0.03689481505080583,
+        "n": 112,
+        "galaxies": [
+          {
+            "name": "D631-7",
+            "alpha": 2.4316,
+            "logSigBar": 7.248,
+            "vmax": 58.5
+          },
+          {
+            "name": "DDO064",
+            "alpha": 0.4854,
+            "logSigBar": 7.1,
+            "vmax": 46.9
+          },
+          {
+            "name": "DDO154",
+            "alpha": 0.8268,
+            "logSigBar": 6.795,
+            "vmax": 48.2
+          },
+          {
+            "name": "DDO161",
+            "alpha": 0.5549,
+            "logSigBar": 7.171,
+            "vmax": 67.5
+          },
+          {
+            "name": "ESO079-G014",
+            "alpha": 0.3953,
+            "logSigBar": 7.686,
+            "vmax": 178
+          },
+          {
+            "name": "ESO116-G012",
+            "alpha": 0.5609,
+            "logSigBar": 7.719,
+            "vmax": 112
+          },
+          {
+            "name": "ESO444-G084",
+            "alpha": 0.5982,
+            "logSigBar": 7.044,
+            "vmax": 63.1
+          },
+          {
+            "name": "ESO563-G021",
+            "alpha": 1.0259,
+            "logSigBar": 8.338,
+            "vmax": 321
+          },
+          {
+            "name": "F563-1",
+            "alpha": 1.3952,
+            "logSigBar": 7.03,
+            "vmax": 112.5
+          },
+          {
+            "name": "F563-V2",
+            "alpha": 0.9779,
+            "logSigBar": 7.076,
+            "vmax": 118
+          },
+          {
+            "name": "F568-1",
+            "alpha": 0.9362,
+            "logSigBar": 7.182,
+            "vmax": 142
+          },
+          {
+            "name": "F568-3",
+            "alpha": 1.1236,
+            "logSigBar": 7.138,
+            "vmax": 120
+          },
+          {
+            "name": "F568-V1",
+            "alpha": 0.7503,
+            "logSigBar": 7.089,
+            "vmax": 118
+          },
+          {
+            "name": "F574-1",
+            "alpha": 0.8937,
+            "logSigBar": 7.26,
+            "vmax": 99.7
+          },
+          {
+            "name": "F579-V1",
+            "alpha": 0.4697,
+            "logSigBar": 7.454,
+            "vmax": 114
+          },
+          {
+            "name": "F583-1",
+            "alpha": 0.788,
+            "logSigBar": 6.685,
+            "vmax": 86.9
+          },
+          {
+            "name": "F583-4",
+            "alpha": 0.6196,
+            "logSigBar": 7.292,
+            "vmax": 69.9
+          },
+          {
+            "name": "IC2574",
+            "alpha": 1.0032,
+            "logSigBar": 6.64,
+            "vmax": 67.5
+          },
+          {
+            "name": "IC4202",
+            "alpha": 1.9049,
+            "logSigBar": 8.446,
+            "vmax": 250
+          },
+          {
+            "name": "KK98-251",
+            "alpha": 1.0006,
+            "logSigBar": 6.798,
+            "vmax": 34.6
+          },
+          {
+            "name": "NGC0024",
+            "alpha": 0.6777,
+            "logSigBar": 7.757,
+            "vmax": 110
+          },
+          {
+            "name": "NGC0055",
+            "alpha": 0.8386,
+            "logSigBar": 7.522,
+            "vmax": 87.4
+          },
+          {
+            "name": "NGC0100",
+            "alpha": 1.78,
+            "logSigBar": 7.543,
+            "vmax": 91.2
+          },
+          {
+            "name": "NGC0247",
+            "alpha": 0.5084,
+            "logSigBar": 7.213,
+            "vmax": 108
+          },
+          {
+            "name": "NGC0289",
+            "alpha": 0.1561,
+            "logSigBar": 8.508,
+            "vmax": 194
+          },
+          {
+            "name": "NGC0300",
+            "alpha": 0.6901,
+            "logSigBar": 7.506,
+            "vmax": 97
+          },
+          {
+            "name": "NGC0801",
+            "alpha": 0.0337,
+            "logSigBar": 8.349,
+            "vmax": 238
+          },
+          {
+            "name": "NGC1003",
+            "alpha": 0.658,
+            "logSigBar": 7.764,
+            "vmax": 115
+          },
+          {
+            "name": "NGC1090",
+            "alpha": 1.5596,
+            "logSigBar": 8.048,
+            "vmax": 176
+          },
+          {
+            "name": "NGC1705",
+            "alpha": 0.2118,
+            "logSigBar": 7.492,
+            "vmax": 73.2
+          },
+          {
+            "name": "NGC2366",
+            "alpha": 0.8566,
+            "logSigBar": 7.178,
+            "vmax": 53.7
+          },
+          {
+            "name": "NGC2403",
+            "alpha": 0.4086,
+            "logSigBar": 8.025,
+            "vmax": 136
+          },
+          {
+            "name": "NGC2683",
+            "alpha": 0.3662,
+            "logSigBar": 8.536,
+            "vmax": 212
+          },
+          {
+            "name": "NGC2841",
+            "alpha": 0.181,
+            "logSigBar": 8.558,
+            "vmax": 323
+          },
+          {
+            "name": "NGC2903",
+            "alpha": 0.4419,
+            "logSigBar": 8.573,
+            "vmax": 216
+          },
+          {
+            "name": "NGC2915",
+            "alpha": 2.0063,
+            "logSigBar": 7.352,
+            "vmax": 86.5
+          },
+          {
+            "name": "NGC2955",
+            "alpha": -0.071,
+            "logSigBar": 8.747,
+            "vmax": 276
+          },
+          {
+            "name": "NGC2976",
+            "alpha": 0.7279,
+            "logSigBar": 7.974,
+            "vmax": 88.7
+          },
+          {
+            "name": "NGC2998",
+            "alpha": 0.153,
+            "logSigBar": 8.144,
+            "vmax": 214
+          },
+          {
+            "name": "NGC3109",
+            "alpha": 0.8593,
+            "logSigBar": 6.894,
+            "vmax": 67.3
+          },
+          {
+            "name": "NGC3198",
+            "alpha": 1.0364,
+            "logSigBar": 8.01,
+            "vmax": 157
+          },
+          {
+            "name": "NGC3521",
+            "alpha": 0.2641,
+            "logSigBar": 8.551,
+            "vmax": 220
+          },
+          {
+            "name": "NGC3726",
+            "alpha": 1.3353,
+            "logSigBar": 8.026,
+            "vmax": 169
+          },
+          {
+            "name": "NGC3741",
+            "alpha": 0.5048,
+            "logSigBar": 6.777,
+            "vmax": 51.6
+          },
+          {
+            "name": "NGC3769",
+            "alpha": 0.8725,
+            "logSigBar": 8.29,
+            "vmax": 126
+          },
+          {
+            "name": "NGC3893",
+            "alpha": 1.8724,
+            "logSigBar": 8.465,
+            "vmax": 194
+          },
+          {
+            "name": "NGC3917",
+            "alpha": 1.0061,
+            "logSigBar": 7.664,
+            "vmax": 138
+          },
+          {
+            "name": "NGC3972",
+            "alpha": 1.1987,
+            "logSigBar": 7.812,
+            "vmax": 134
+          },
+          {
+            "name": "NGC4010",
+            "alpha": -0.1852,
+            "logSigBar": 7.947,
+            "vmax": 129
+          },
+          {
+            "name": "NGC4013",
+            "alpha": -0.1432,
+            "logSigBar": 8.512,
+            "vmax": 198
+          },
+          {
+            "name": "NGC4100",
+            "alpha": 0.5504,
+            "logSigBar": 8.304,
+            "vmax": 195
+          },
+          {
+            "name": "NGC4157",
+            "alpha": 0.0507,
+            "logSigBar": 8.545,
+            "vmax": 201
+          },
+          {
+            "name": "NGC4183",
+            "alpha": 0.424,
+            "logSigBar": 7.496,
+            "vmax": 115
+          },
+          {
+            "name": "NGC4214",
+            "alpha": 0.0348,
+            "logSigBar": 7.667,
+            "vmax": 80.6
+          },
+          {
+            "name": "NGC4559",
+            "alpha": 0.6847,
+            "logSigBar": 8.047,
+            "vmax": 124
+          },
+          {
+            "name": "NGC5033",
+            "alpha": 1.2273,
+            "logSigBar": 8.575,
+            "vmax": 225
+          },
+          {
+            "name": "NGC5055",
+            "alpha": 1.4721,
+            "logSigBar": 8.673,
+            "vmax": 206
+          },
+          {
+            "name": "NGC5371",
+            "alpha": -0.0479,
+            "logSigBar": 8.425,
+            "vmax": 242
+          },
+          {
+            "name": "NGC5585",
+            "alpha": 0.4389,
+            "logSigBar": 7.511,
+            "vmax": 92.3
+          },
+          {
+            "name": "NGC5907",
+            "alpha": -0.0216,
+            "logSigBar": 8.121,
+            "vmax": 235
+          },
+          {
+            "name": "NGC5985",
+            "alpha": 0.3229,
+            "logSigBar": 8.163,
+            "vmax": 305
+          },
+          {
+            "name": "NGC6015",
+            "alpha": 0.4479,
+            "logSigBar": 8.232,
+            "vmax": 166
+          },
+          {
+            "name": "NGC6195",
+            "alpha": 0.071,
+            "logSigBar": 8.745,
+            "vmax": 258
+          },
+          {
+            "name": "NGC6503",
+            "alpha": 0.326,
+            "logSigBar": 8.238,
+            "vmax": 121
+          },
+          {
+            "name": "NGC6674",
+            "alpha": 0.3333,
+            "logSigBar": 8.392,
+            "vmax": 291
+          },
+          {
+            "name": "NGC6946",
+            "alpha": 0.8113,
+            "logSigBar": 8.502,
+            "vmax": 181
+          },
+          {
+            "name": "NGC7331",
+            "alpha": 2.7269,
+            "logSigBar": 8.792,
+            "vmax": 257
+          },
+          {
+            "name": "NGC7793",
+            "alpha": 0.4174,
+            "logSigBar": 8.048,
+            "vmax": 116
+          },
+          {
+            "name": "NGC7814",
+            "alpha": 1.3568,
+            "logSigBar": 8.411,
+            "vmax": 233
+          },
+          {
+            "name": "UGC00128",
+            "alpha": 0.5772,
+            "logSigBar": 7.366,
+            "vmax": 134
+          },
+          {
+            "name": "UGC00191",
+            "alpha": 0.7547,
+            "logSigBar": 7.421,
+            "vmax": 83.8
+          },
+          {
+            "name": "UGC00731",
+            "alpha": 0.4872,
+            "logSigBar": 6.46,
+            "vmax": 74
+          },
+          {
+            "name": "UGC01230",
+            "alpha": 0.8729,
+            "logSigBar": 7.175,
+            "vmax": 113
+          },
+          {
+            "name": "UGC01281",
+            "alpha": 1.0156,
+            "logSigBar": 6.968,
+            "vmax": 56.9
+          },
+          {
+            "name": "UGC02487",
+            "alpha": -0.004,
+            "logSigBar": 8.607,
+            "vmax": 383
+          },
+          {
+            "name": "UGC02885",
+            "alpha": 0.0639,
+            "logSigBar": 8.485,
+            "vmax": 305
+          },
+          {
+            "name": "UGC02916",
+            "alpha": 0.0509,
+            "logSigBar": 8.661,
+            "vmax": 218
+          },
+          {
+            "name": "UGC02953",
+            "alpha": 0.2653,
+            "logSigBar": 8.638,
+            "vmax": 319
+          },
+          {
+            "name": "UGC03205",
+            "alpha": 0.3034,
+            "logSigBar": 8.506,
+            "vmax": 237
+          },
+          {
+            "name": "UGC03546",
+            "alpha": 2.0772,
+            "logSigBar": 8.43,
+            "vmax": 204
+          },
+          {
+            "name": "UGC03580",
+            "alpha": 0.0939,
+            "logSigBar": 8.109,
+            "vmax": 131
+          },
+          {
+            "name": "UGC04278",
+            "alpha": 0.8151,
+            "logSigBar": 7.103,
+            "vmax": 92.8
+          },
+          {
+            "name": "UGC04305",
+            "alpha": 1.2975,
+            "logSigBar": 7.334,
+            "vmax": 37.3
+          },
+          {
+            "name": "UGC05005",
+            "alpha": 0.849,
+            "logSigBar": 7.027,
+            "vmax": 100
+          },
+          {
+            "name": "UGC05253",
+            "alpha": 0.2548,
+            "logSigBar": 8.651,
+            "vmax": 248
+          },
+          {
+            "name": "UGC05716",
+            "alpha": 0.3108,
+            "logSigBar": 7.166,
+            "vmax": 74.7
+          },
+          {
+            "name": "UGC05721",
+            "alpha": 0.5888,
+            "logSigBar": 7.426,
+            "vmax": 82.6
+          },
+          {
+            "name": "UGC05750",
+            "alpha": 1.4967,
+            "logSigBar": 6.537,
+            "vmax": 78.9
+          },
+          {
+            "name": "UGC05829",
+            "alpha": 0.7637,
+            "logSigBar": 6.749,
+            "vmax": 68.6
+          },
+          {
+            "name": "UGC05986",
+            "alpha": 0.9608,
+            "logSigBar": 7.736,
+            "vmax": 116
+          },
+          {
+            "name": "UGC06446",
+            "alpha": 0.4941,
+            "logSigBar": 7.216,
+            "vmax": 84.9
+          },
+          {
+            "name": "UGC06614",
+            "alpha": 0.6313,
+            "logSigBar": 8.485,
+            "vmax": 205
+          },
+          {
+            "name": "UGC06786",
+            "alpha": 0.2757,
+            "logSigBar": 8.433,
+            "vmax": 229
+          },
+          {
+            "name": "UGC06787",
+            "alpha": 0.6168,
+            "logSigBar": 8.43,
+            "vmax": 276
+          },
+          {
+            "name": "UGC06983",
+            "alpha": 0.7983,
+            "logSigBar": 7.568,
+            "vmax": 113
+          },
+          {
+            "name": "UGC07089",
+            "alpha": 0.6033,
+            "logSigBar": 7.194,
+            "vmax": 79.1
+          },
+          {
+            "name": "UGC07125",
+            "alpha": 0.8416,
+            "logSigBar": 7.148,
+            "vmax": 65.6
+          },
+          {
+            "name": "UGC07151",
+            "alpha": 0.994,
+            "logSigBar": 7.604,
+            "vmax": 76.2
+          },
+          {
+            "name": "UGC07524",
+            "alpha": 0.6819,
+            "logSigBar": 6.944,
+            "vmax": 83.8
+          },
+          {
+            "name": "UGC07603",
+            "alpha": 0.8991,
+            "logSigBar": 7.439,
+            "vmax": 64
+          },
+          {
+            "name": "UGC08286",
+            "alpha": 0.7855,
+            "logSigBar": 7.421,
+            "vmax": 84.3
+          },
+          {
+            "name": "UGC08490",
+            "alpha": 0.3769,
+            "logSigBar": 7.554,
+            "vmax": 80.1
+          },
+          {
+            "name": "UGC08550",
+            "alpha": 0.6292,
+            "logSigBar": 7.319,
+            "vmax": 57.8
+          },
+          {
+            "name": "UGC08699",
+            "alpha": 0.2647,
+            "logSigBar": 8.214,
+            "vmax": 202
+          },
+          {
+            "name": "UGC09133",
+            "alpha": 0.2531,
+            "logSigBar": 8.726,
+            "vmax": 289
+          },
+          {
+            "name": "UGC11455",
+            "alpha": 0.9857,
+            "logSigBar": 8.55,
+            "vmax": 291
+          },
+          {
+            "name": "UGC11820",
+            "alpha": 0.7769,
+            "logSigBar": 6.599,
+            "vmax": 84.5
+          },
+          {
+            "name": "UGC11914",
+            "alpha": 0.3666,
+            "logSigBar": 8.543,
+            "vmax": 305
+          },
+          {
+            "name": "UGC12506",
+            "alpha": 0.2281,
+            "logSigBar": 7.853,
+            "vmax": 255
+          },
+          {
+            "name": "UGC12632",
+            "alpha": 0.5923,
+            "logSigBar": 6.694,
+            "vmax": 73.2
+          },
+          {
+            "name": "UGC12732",
+            "alpha": 0.4884,
+            "logSigBar": 6.868,
+            "vmax": 98
+          },
+          {
+            "name": "UGCA444",
+            "alpha": 0.5782,
+            "logSigBar": 7.106,
+            "vmax": 38.3
+          }
+        ]
+      }
+    }
   }
 }
