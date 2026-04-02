@@ -80,7 +80,10 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/src/pages/replication.tsx` — External Replication page: LITTLE THINGS (Oh et al. 2015) independent validation, side-by-side SPARC vs LT scatter plots, head-to-head comparison table, Stiskalek & Desmond (2023) methodology reconciliation, calibrated claim, galaxy sample table
 - `artifacts/galaxy-analyzer/public/little-things-replication.json` — LITTLE THINGS replication results: 22 dwarf irregulars, slope b=−0.203±0.178, partial r=−0.470, 445 point-level data points (p<10⁻¹³)
 - `artifacts/galaxy-analyzer/scripts/replicate-little-things.cjs` — Replication analysis script: downloads Oh et al. 2015 VizieR data, computes V_bar from V_total−V_DM decomposition, runs ΔRAR vs log(Σ_bar) regression
-- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (13 pages)
+- `artifacts/galaxy-analyzer/src/pages/dark-matter-fraction.tsx` — Dark Matter Fraction page: f_DM = (g_obs−g_bar)/g_obs vs Σ_bar analysis, SPARC (b=−0.130, r=−0.654, 169 galaxies), LITTLE THINGS replication (b=−0.162), deep analysis (functional forms, mass scaling r=−0.941, halo connection), diagnostics (circularity check cleared, 6 alt Σ definitions all negative, selection bias tests), simulation test (3 scenarios: ΛCDM, ΛCDM+feedback, independent halos)
+- `artifacts/galaxy-analyzer/public/fdm-analysis.json` — f_DM analysis data: SPARC results, LITTLE THINGS replication, deep analysis, diagnostics, simulation results (300 mock galaxies × 3 scenarios)
+- `artifacts/galaxy-analyzer/scripts/fdm-simulation.cjs` — Mock galaxy simulation: NFW halos + exponential disks, 3 scenarios (ΛCDM abundance-matched, ΛCDM+feedback, independent), tests f_DM vs Σ_bar across density definitions and galaxy types
+- `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout (14 pages)
 
 ### Design System
 - Background: #0a0e1a (deep space), glassmorphism cards (bg-white/5, backdrop-blur)
