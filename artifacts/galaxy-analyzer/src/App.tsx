@@ -15,6 +15,7 @@ import RARAnalysisPage from "@/pages/rar-analysis";
 import ValidationPage from "@/pages/validation";
 import DiscoveryPage from "@/pages/discovery";
 import ReplicationPage from "@/pages/replication";
+import DarkMatterFractionPage from "@/pages/dark-matter-fraction";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/validation" component={ValidationPage} />
       <Route path="/discovery" component={DiscoveryPage} />
       <Route path="/replication" component={ReplicationPage} />
+      <Route path="/dark-matter-fraction" component={DarkMatterFractionPage} />
       <Route component={NotFound} />
     </Switch>
   );

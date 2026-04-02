@@ -1,0 +1,6723 @@
+{
+  "sparc": {
+    "pointLevel": {
+      "slope": -0.12987761454920352,
+      "slopeErr": 0.0026758271884558915,
+      "intercept": 1.6663422978917266,
+      "r": -0.6538316053970339,
+      "r2": 0.4274957682160626,
+      "n": 3157
+    },
+    "perGalaxy": {
+      "slope": -0.11365028282146641,
+      "slopeErr": 0.01610212068092935,
+      "intercept": 1.5087292159728976,
+      "r": -0.4793371466938919,
+      "r2": 0.22976410020064164,
+      "partialR": -0.48992751150784214,
+      "n": 169
+    },
+    "byVmax": [
+      {
+        "name": "Dwarf",
+        "slope": -0.05250176924941993,
+        "r": -0.19567018584221527,
+        "r2": 0.03828682162752706,
+        "n": 625,
+        "intercept": 1.0640494736501267
+      },
+      {
+        "name": "Medium",
+        "slope": -0.11202775310809886,
+        "r": -0.6045128656009522,
+        "r2": 0.3654358046770748,
+        "n": 1038,
+        "intercept": 1.5906389887386125
+      },
+      {
+        "name": "Massive",
+        "slope": -0.1444508571321969,
+        "r": -0.632581832047875,
+        "r2": 0.40015977423704596,
+        "n": 1494,
+        "intercept": 1.7715658042394464
+      }
+    ],
+    "innerOuter": {
+      "inner": {
+        "slope": -0.14482167913671276,
+        "r": -0.6450469647056154,
+        "r2": 0.41608558667592743,
+        "n": 1791,
+        "intercept": 1.7997762464948472
+      },
+      "outer": {
+        "slope": -0.08674383757066541,
+        "r": -0.36141876333106754,
+        "r2": 0.13062352248775821,
+        "n": 1366,
+        "intercept": 1.3437068973573831
+      }
+    },
+    "galaxies": [
+      {
+        "name": "CamB",
+        "vmax": 20.1,
+        "meanFDM": 0.3513,
+        "meanLogSigBar": 6.676
+      },
+      {
+        "name": "D564-8",
+        "vmax": 25,
+        "meanFDM": 0.7687,
+        "meanLogSigBar": 6.381
+      },
+      {
+        "name": "D631-7",
+        "vmax": 58.5,
+        "meanFDM": 0.6719,
+        "meanLogSigBar": 7.278
+      },
+      {
+        "name": "DDO064",
+        "vmax": 46.9,
+        "meanFDM": 0.7839,
+        "meanLogSigBar": 7.404
+      },
+      {
+        "name": "DDO154",
+        "vmax": 48.2,
+        "meanFDM": 0.7918,
+        "meanLogSigBar": 6.905
+      },
+      {
+        "name": "DDO161",
+        "vmax": 67.5,
+        "meanFDM": 0.5936,
+        "meanLogSigBar": 7.493
+      },
+      {
+        "name": "DDO168",
+        "vmax": 55,
+        "meanFDM": 0.6119,
+        "meanLogSigBar": 7.371
+      },
+      {
+        "name": "DDO170",
+        "vmax": 62.2,
+        "meanFDM": 0.7526,
+        "meanLogSigBar": 7.034
+      },
+      {
+        "name": "ESO079-G014",
+        "vmax": 178,
+        "meanFDM": 0.6121,
+        "meanLogSigBar": 8.146
+      },
+      {
+        "name": "ESO116-G012",
+        "vmax": 112,
+        "meanFDM": 0.7145,
+        "meanLogSigBar": 8.049
+      },
+      {
+        "name": "ESO444-G084",
+        "vmax": 63.1,
+        "meanFDM": 0.8597,
+        "meanLogSigBar": 7.39
+      },
+      {
+        "name": "ESO563-G021",
+        "vmax": 321,
+        "meanFDM": 0.6333,
+        "meanLogSigBar": 8.556
+      },
+      {
+        "name": "F561-1",
+        "vmax": 50.4,
+        "meanFDM": 0.3483,
+        "meanLogSigBar": 7.4
+      },
+      {
+        "name": "F563-1",
+        "vmax": 112.5,
+        "meanFDM": 0.8786,
+        "meanLogSigBar": 7.371
+      },
+      {
+        "name": "F563-V1",
+        "vmax": 29.5,
+        "meanFDM": 0.3399,
+        "meanLogSigBar": 7.056
+      },
+      {
+        "name": "F563-V2",
+        "vmax": 118,
+        "meanFDM": 0.866,
+        "meanLogSigBar": 7.559
+      },
+      {
+        "name": "F565-V2",
+        "vmax": 83.1,
+        "meanFDM": 0.8592,
+        "meanLogSigBar": 6.237
+      },
+      {
+        "name": "F567-2",
+        "vmax": 52.2,
+        "meanFDM": 0.697,
+        "meanLogSigBar": 7.136
+      },
+      {
+        "name": "F568-1",
+        "vmax": 142,
+        "meanFDM": 0.8606,
+        "meanLogSigBar": 7.571
+      },
+      {
+        "name": "F568-3",
+        "vmax": 120,
+        "meanFDM": 0.7471,
+        "meanLogSigBar": 7.701
+      },
+      {
+        "name": "F568-V1",
+        "vmax": 118,
+        "meanFDM": 0.8728,
+        "meanLogSigBar": 7.659
+      },
+      {
+        "name": "F571-8",
+        "vmax": 144,
+        "meanFDM": 0.6686,
+        "meanLogSigBar": 8.094
+      },
+      {
+        "name": "F571-V1",
+        "vmax": 84.3,
+        "meanFDM": 0.7775,
+        "meanLogSigBar": 6.963
+      },
+      {
+        "name": "F574-1",
+        "vmax": 99.7,
+        "meanFDM": 0.7973,
+        "meanLogSigBar": 7.468
+      },
+      {
+        "name": "F574-2",
+        "vmax": 40,
+        "meanFDM": 0.1755,
+        "meanLogSigBar": 7.048
+      },
+      {
+        "name": "F579-V1",
+        "vmax": 114,
+        "meanFDM": 0.8008,
+        "meanLogSigBar": 7.865
+      },
+      {
+        "name": "F583-1",
+        "vmax": 86.9,
+        "meanFDM": 0.8351,
+        "meanLogSigBar": 7.519
+      },
+      {
+        "name": "F583-4",
+        "vmax": 69.9,
+        "meanFDM": 0.7691,
+        "meanLogSigBar": 7.498
+      },
+      {
+        "name": "IC2574",
+        "vmax": 67.5,
+        "meanFDM": 0.732,
+        "meanLogSigBar": 6.723
+      },
+      {
+        "name": "IC4202",
+        "vmax": 250,
+        "meanFDM": 0.4761,
+        "meanLogSigBar": 8.501
+      },
+      {
+        "name": "KK98-251",
+        "vmax": 34.6,
+        "meanFDM": 0.6022,
+        "meanLogSigBar": 7.025
+      },
+      {
+        "name": "NGC0024",
+        "vmax": 110,
+        "meanFDM": 0.7552,
+        "meanLogSigBar": 8.838
+      },
+      {
+        "name": "NGC0055",
+        "vmax": 87.4,
+        "meanFDM": 0.5921,
+        "meanLogSigBar": 7.6
+      },
+      {
+        "name": "NGC0100",
+        "vmax": 91.2,
+        "meanFDM": 0.6625,
+        "meanLogSigBar": 7.782
+      },
+      {
+        "name": "NGC0247",
+        "vmax": 108,
+        "meanFDM": 0.7604,
+        "meanLogSigBar": 7.317
+      },
+      {
+        "name": "NGC0289",
+        "vmax": 194,
+        "meanFDM": 0.6078,
+        "meanLogSigBar": 8.978
+      },
+      {
+        "name": "NGC0300",
+        "vmax": 97,
+        "meanFDM": 0.7825,
+        "meanLogSigBar": 7.606
+      },
+      {
+        "name": "NGC0801",
+        "vmax": 238,
+        "meanFDM": 0.4395,
+        "meanLogSigBar": 8.903
+      },
+      {
+        "name": "NGC0891",
+        "vmax": 234,
+        "meanFDM": 0.3076,
+        "meanLogSigBar": 8.619
+      },
+      {
+        "name": "NGC1003",
+        "vmax": 115,
+        "meanFDM": 0.7505,
+        "meanLogSigBar": 7.93
+      },
+      {
+        "name": "NGC1090",
+        "vmax": 176,
+        "meanFDM": 0.54,
+        "meanLogSigBar": 8.144
+      },
+      {
+        "name": "NGC1705",
+        "vmax": 73.2,
+        "meanFDM": 0.8547,
+        "meanLogSigBar": 7.707
+      },
+      {
+        "name": "NGC2366",
+        "vmax": 53.7,
+        "meanFDM": 0.6316,
+        "meanLogSigBar": 7.416
+      },
+      {
+        "name": "NGC2403",
+        "vmax": 136,
+        "meanFDM": 0.6113,
+        "meanLogSigBar": 8.84
+      },
+      {
+        "name": "NGC2683",
+        "vmax": 212,
+        "meanFDM": 0.5744,
+        "meanLogSigBar": 8.688
+      },
+      {
+        "name": "NGC2841",
+        "vmax": 323,
+        "meanFDM": 0.6535,
+        "meanLogSigBar": 9.157
+      },
+      {
+        "name": "NGC2903",
+        "vmax": 216,
+        "meanFDM": 0.4547,
+        "meanLogSigBar": 8.836
+      },
+      {
+        "name": "NGC2915",
+        "vmax": 86.5,
+        "meanFDM": 0.8632,
+        "meanLogSigBar": 7.41
+      },
+      {
+        "name": "NGC2955",
+        "vmax": 276,
+        "meanFDM": 0.2601,
+        "meanLogSigBar": 9.349
+      },
+      {
+        "name": "NGC2976",
+        "vmax": 88.7,
+        "meanFDM": 0.4238,
+        "meanLogSigBar": 8.079
+      },
+      {
+        "name": "NGC2998",
+        "vmax": 214,
+        "meanFDM": 0.6184,
+        "meanLogSigBar": 9.023
+      },
+      {
+        "name": "NGC3109",
+        "vmax": 67.3,
+        "meanFDM": 0.8582,
+        "meanLogSigBar": 7.073
+      },
+      {
+        "name": "NGC3198",
+        "vmax": 157,
+        "meanFDM": 0.6034,
+        "meanLogSigBar": 8.75
+      },
+      {
+        "name": "NGC3521",
+        "vmax": 220,
+        "meanFDM": 0.2512,
+        "meanLogSigBar": 9.352
+      },
+      {
+        "name": "NGC3726",
+        "vmax": 169,
+        "meanFDM": 0.4334,
+        "meanLogSigBar": 8.235
+      },
+      {
+        "name": "NGC3741",
+        "vmax": 51.6,
+        "meanFDM": 0.853,
+        "meanLogSigBar": 7.162
+      },
+      {
+        "name": "NGC3769",
+        "vmax": 126,
+        "meanFDM": 0.6279,
+        "meanLogSigBar": 8.617
+      },
+      {
+        "name": "NGC3877",
+        "vmax": 171,
+        "meanFDM": 0.3856,
+        "meanLogSigBar": 8.056
+      },
+      {
+        "name": "NGC3893",
+        "vmax": 194,
+        "meanFDM": 0.4841,
+        "meanLogSigBar": 8.593
+      },
+      {
+        "name": "NGC3917",
+        "vmax": 138,
+        "meanFDM": 0.6619,
+        "meanLogSigBar": 7.706
+      },
+      {
+        "name": "NGC3949",
+        "vmax": 169,
+        "meanFDM": 0.2764,
+        "meanLogSigBar": 8.314
+      },
+      {
+        "name": "NGC3953",
+        "vmax": 224,
+        "meanFDM": 0.4093,
+        "meanLogSigBar": 8.271
+      },
+      {
+        "name": "NGC3972",
+        "vmax": 134,
+        "meanFDM": 0.6077,
+        "meanLogSigBar": 7.898
+      },
+      {
+        "name": "NGC3992",
+        "vmax": 272,
+        "meanFDM": 0.6548,
+        "meanLogSigBar": 8.37
+      },
+      {
+        "name": "NGC4010",
+        "vmax": 129,
+        "meanFDM": 0.5117,
+        "meanLogSigBar": 8.057
+      },
+      {
+        "name": "NGC4013",
+        "vmax": 198,
+        "meanFDM": 0.5623,
+        "meanLogSigBar": 8.462
+      },
+      {
+        "name": "NGC4051",
+        "vmax": 161,
+        "meanFDM": 0.268,
+        "meanLogSigBar": 8.1
+      },
+      {
+        "name": "NGC4068",
+        "vmax": 41.9,
+        "meanFDM": 0.4472,
+        "meanLogSigBar": 7.073
+      },
+      {
+        "name": "NGC4085",
+        "vmax": 136,
+        "meanFDM": 0.2994,
+        "meanLogSigBar": 8.023
+      },
+      {
+        "name": "NGC4088",
+        "vmax": 182,
+        "meanFDM": 0.2474,
+        "meanLogSigBar": 8.079
+      },
+      {
+        "name": "NGC4100",
+        "vmax": 195,
+        "meanFDM": 0.6026,
+        "meanLogSigBar": 8.342
+      },
+      {
+        "name": "NGC4138",
+        "vmax": 195,
+        "meanFDM": 0.5229,
+        "meanLogSigBar": 8.452
+      },
+      {
+        "name": "NGC4157",
+        "vmax": 201,
+        "meanFDM": 0.456,
+        "meanLogSigBar": 8.504
+      },
+      {
+        "name": "NGC4183",
+        "vmax": 115,
+        "meanFDM": 0.7116,
+        "meanLogSigBar": 7.701
+      },
+      {
+        "name": "NGC4214",
+        "vmax": 80.6,
+        "meanFDM": 0.7865,
+        "meanLogSigBar": 7.879
+      },
+      {
+        "name": "NGC4217",
+        "vmax": 191,
+        "meanFDM": 0.3399,
+        "meanLogSigBar": 8.444
+      },
+      {
+        "name": "NGC4559",
+        "vmax": 124,
+        "meanFDM": 0.524,
+        "meanLogSigBar": 8.241
+      },
+      {
+        "name": "NGC5005",
+        "vmax": 265,
+        "meanFDM": 0.226,
+        "meanLogSigBar": 8.63
+      },
+      {
+        "name": "NGC5033",
+        "vmax": 225,
+        "meanFDM": 0.6028,
+        "meanLogSigBar": 8.726
+      },
+      {
+        "name": "NGC5055",
+        "vmax": 206,
+        "meanFDM": 0.4531,
+        "meanLogSigBar": 8.945
+      },
+      {
+        "name": "NGC5371",
+        "vmax": 242,
+        "meanFDM": 0.3538,
+        "meanLogSigBar": 8.8
+      },
+      {
+        "name": "NGC5585",
+        "vmax": 92.3,
+        "meanFDM": 0.543,
+        "meanLogSigBar": 8.248
+      },
+      {
+        "name": "NGC5907",
+        "vmax": 235,
+        "meanFDM": 0.6219,
+        "meanLogSigBar": 8.185
+      },
+      {
+        "name": "NGC5985",
+        "vmax": 305,
+        "meanFDM": 0.7254,
+        "meanLogSigBar": 8.361
+      },
+      {
+        "name": "NGC6015",
+        "vmax": 166,
+        "meanFDM": 0.656,
+        "meanLogSigBar": 8.766
+      },
+      {
+        "name": "NGC6195",
+        "vmax": 258,
+        "meanFDM": 0.2105,
+        "meanLogSigBar": 9.081
+      },
+      {
+        "name": "NGC6503",
+        "vmax": 121,
+        "meanFDM": 0.6992,
+        "meanLogSigBar": 8.43
+      },
+      {
+        "name": "NGC6674",
+        "vmax": 291,
+        "meanFDM": 0.7046,
+        "meanLogSigBar": 8.608
+      },
+      {
+        "name": "NGC6946",
+        "vmax": 181,
+        "meanFDM": 0.4018,
+        "meanLogSigBar": 8.622
+      },
+      {
+        "name": "NGC7331",
+        "vmax": 257,
+        "meanFDM": 0.4267,
+        "meanLogSigBar": 8.708
+      },
+      {
+        "name": "NGC7793",
+        "vmax": 116,
+        "meanFDM": 0.4951,
+        "meanLogSigBar": 8.828
+      },
+      {
+        "name": "NGC7814",
+        "vmax": 265,
+        "meanFDM": 0.5349,
+        "meanLogSigBar": 8.412
+      },
+      {
+        "name": "PGC51017",
+        "vmax": 20.5,
+        "meanFDM": 0.2142,
+        "meanLogSigBar": 6.917
+      },
+      {
+        "name": "UGC00128",
+        "vmax": 134,
+        "meanFDM": 0.8416,
+        "meanLogSigBar": 7.598
+      },
+      {
+        "name": "UGC00191",
+        "vmax": 83.85,
+        "meanFDM": 0.7512,
+        "meanLogSigBar": 8.138
+      },
+      {
+        "name": "UGC00731",
+        "vmax": 74,
+        "meanFDM": 0.8548,
+        "meanLogSigBar": 6.57
+      },
+      {
+        "name": "UGC00891",
+        "vmax": 63.75,
+        "meanFDM": 0.742,
+        "meanLogSigBar": 6.906
+      },
+      {
+        "name": "UGC01230",
+        "vmax": 113,
+        "meanFDM": 0.7618,
+        "meanLogSigBar": 7.853
+      },
+      {
+        "name": "UGC01281",
+        "vmax": 56.9,
+        "meanFDM": 0.8101,
+        "meanLogSigBar": 7.235
+      },
+      {
+        "name": "UGC02023",
+        "vmax": 58.8,
+        "meanFDM": 0.4679,
+        "meanLogSigBar": 7.31
+      },
+      {
+        "name": "UGC02259",
+        "vmax": 90,
+        "meanFDM": 0.8417,
+        "meanLogSigBar": 7.264
+      },
+      {
+        "name": "UGC02487",
+        "vmax": 383,
+        "meanFDM": 0.7117,
+        "meanLogSigBar": 8.775
+      },
+      {
+        "name": "UGC02885",
+        "vmax": 305,
+        "meanFDM": 0.6011,
+        "meanLogSigBar": 8.749
+      },
+      {
+        "name": "UGC02916",
+        "vmax": 218,
+        "meanFDM": 0.3522,
+        "meanLogSigBar": 9.372
+      },
+      {
+        "name": "UGC02953",
+        "vmax": 319,
+        "meanFDM": 0.4317,
+        "meanLogSigBar": 9.883
+      },
+      {
+        "name": "UGC03205",
+        "vmax": 237,
+        "meanFDM": 0.5269,
+        "meanLogSigBar": 9.243
+      },
+      {
+        "name": "UGC03546",
+        "vmax": 262,
+        "meanFDM": 0.4961,
+        "meanLogSigBar": 8.455
+      },
+      {
+        "name": "UGC03580",
+        "vmax": 131,
+        "meanFDM": 0.5375,
+        "meanLogSigBar": 8.657
+      },
+      {
+        "name": "UGC04278",
+        "vmax": 92.8,
+        "meanFDM": 0.7938,
+        "meanLogSigBar": 7.328
+      },
+      {
+        "name": "UGC04305",
+        "vmax": 37.3,
+        "meanFDM": 0.3077,
+        "meanLogSigBar": 7.513
+      },
+      {
+        "name": "UGC04325",
+        "vmax": 92.7,
+        "meanFDM": 0.8126,
+        "meanLogSigBar": 7.412
+      },
+      {
+        "name": "UGC04483",
+        "vmax": 24.3,
+        "meanFDM": 0.6486,
+        "meanLogSigBar": 7.247
+      },
+      {
+        "name": "UGC04499",
+        "vmax": 74.3,
+        "meanFDM": 0.6659,
+        "meanLogSigBar": 7.366
+      },
+      {
+        "name": "UGC05005",
+        "vmax": 100,
+        "meanFDM": 0.69,
+        "meanLogSigBar": 7.561
+      },
+      {
+        "name": "UGC05253",
+        "vmax": 248,
+        "meanFDM": 0.2669,
+        "meanLogSigBar": 10.154
+      },
+      {
+        "name": "UGC05414",
+        "vmax": 61.4,
+        "meanFDM": 0.6229,
+        "meanLogSigBar": 7.261
+      },
+      {
+        "name": "UGC05716",
+        "vmax": 74.7,
+        "meanFDM": 0.8327,
+        "meanLogSigBar": 7.274
+      },
+      {
+        "name": "UGC05721",
+        "vmax": 82.6,
+        "meanFDM": 0.7939,
+        "meanLogSigBar": 7.972
+      },
+      {
+        "name": "UGC05750",
+        "vmax": 78.9,
+        "meanFDM": 0.6422,
+        "meanLogSigBar": 7.383
+      },
+      {
+        "name": "UGC05764",
+        "vmax": 55.8,
+        "meanFDM": 0.8726,
+        "meanLogSigBar": 7.067
+      },
+      {
+        "name": "UGC05829",
+        "vmax": 68.6,
+        "meanFDM": 0.7898,
+        "meanLogSigBar": 6.847
+      },
+      {
+        "name": "UGC05918",
+        "vmax": 44.5,
+        "meanFDM": 0.8486,
+        "meanLogSigBar": 6.642
+      },
+      {
+        "name": "UGC05986",
+        "vmax": 116,
+        "meanFDM": 0.7443,
+        "meanLogSigBar": 7.87
+      },
+      {
+        "name": "UGC05999",
+        "vmax": 100,
+        "meanFDM": 0.7346,
+        "meanLogSigBar": 7.382
+      },
+      {
+        "name": "UGC06399",
+        "vmax": 87.6,
+        "meanFDM": 0.7692,
+        "meanLogSigBar": 7.136
+      },
+      {
+        "name": "UGC06446",
+        "vmax": 84.9,
+        "meanFDM": 0.8265,
+        "meanLogSigBar": 7.387
+      },
+      {
+        "name": "UGC06614",
+        "vmax": 205,
+        "meanFDM": 0.4717,
+        "meanLogSigBar": 8.854
+      },
+      {
+        "name": "UGC06628",
+        "vmax": 42.3,
+        "meanFDM": 0.3502,
+        "meanLogSigBar": 7.637
+      },
+      {
+        "name": "UGC06667",
+        "vmax": 85.7,
+        "meanFDM": 0.9165,
+        "meanLogSigBar": 6.182
+      },
+      {
+        "name": "UGC06786",
+        "vmax": 229,
+        "meanFDM": 0.5353,
+        "meanLogSigBar": 9.357
+      },
+      {
+        "name": "UGC06787",
+        "vmax": 276,
+        "meanFDM": 0.5202,
+        "meanLogSigBar": 9.049
+      },
+      {
+        "name": "UGC06818",
+        "vmax": 74.4,
+        "meanFDM": 0.5447,
+        "meanLogSigBar": 7.392
+      },
+      {
+        "name": "UGC06917",
+        "vmax": 111,
+        "meanFDM": 0.7184,
+        "meanLogSigBar": 7.504
+      },
+      {
+        "name": "UGC06923",
+        "vmax": 81.1,
+        "meanFDM": 0.517,
+        "meanLogSigBar": 7.622
+      },
+      {
+        "name": "UGC06930",
+        "vmax": 109,
+        "meanFDM": 0.7008,
+        "meanLogSigBar": 7.312
+      },
+      {
+        "name": "UGC06973",
+        "vmax": 180,
+        "meanFDM": 0.3268,
+        "meanLogSigBar": 8.113
+      },
+      {
+        "name": "UGC06983",
+        "vmax": 113,
+        "meanFDM": 0.7681,
+        "meanLogSigBar": 7.615
+      },
+      {
+        "name": "UGC07089",
+        "vmax": 79.1,
+        "meanFDM": 0.6076,
+        "meanLogSigBar": 7.225
+      },
+      {
+        "name": "UGC07125",
+        "vmax": 65.6,
+        "meanFDM": 0.5727,
+        "meanLogSigBar": 7.265
+      },
+      {
+        "name": "UGC07151",
+        "vmax": 76.2,
+        "meanFDM": 0.6488,
+        "meanLogSigBar": 7.703
+      },
+      {
+        "name": "UGC07261",
+        "vmax": 76.1,
+        "meanFDM": 0.7372,
+        "meanLogSigBar": 7.626
+      },
+      {
+        "name": "UGC07323",
+        "vmax": 85.6,
+        "meanFDM": 0.5777,
+        "meanLogSigBar": 7.614
+      },
+      {
+        "name": "UGC07399",
+        "vmax": 106,
+        "meanFDM": 0.8679,
+        "meanLogSigBar": 7.376
+      },
+      {
+        "name": "UGC07524",
+        "vmax": 83.8,
+        "meanFDM": 0.766,
+        "meanLogSigBar": 7.136
+      },
+      {
+        "name": "UGC07559",
+        "vmax": 32.1,
+        "meanFDM": 0.5695,
+        "meanLogSigBar": 6.998
+      },
+      {
+        "name": "UGC07577",
+        "vmax": 17.8,
+        "meanFDM": 0.3362,
+        "meanLogSigBar": 6.291
+      },
+      {
+        "name": "UGC07603",
+        "vmax": 64,
+        "meanFDM": 0.7646,
+        "meanLogSigBar": 7.551
+      },
+      {
+        "name": "UGC07608",
+        "vmax": 69.3,
+        "meanFDM": 0.8511,
+        "meanLogSigBar": 6.888
+      },
+      {
+        "name": "UGC07690",
+        "vmax": 60.7,
+        "meanFDM": 0.6293,
+        "meanLogSigBar": 7.617
+      },
+      {
+        "name": "UGC07866",
+        "vmax": 33.1,
+        "meanFDM": 0.6774,
+        "meanLogSigBar": 6.762
+      },
+      {
+        "name": "UGC08286",
+        "vmax": 84.3,
+        "meanFDM": 0.8357,
+        "meanLogSigBar": 7.568
+      },
+      {
+        "name": "UGC08490",
+        "vmax": 80.1,
+        "meanFDM": 0.8203,
+        "meanLogSigBar": 7.744
+      },
+      {
+        "name": "UGC08550",
+        "vmax": 57.8,
+        "meanFDM": 0.8165,
+        "meanLogSigBar": 7.417
+      },
+      {
+        "name": "UGC08699",
+        "vmax": 202,
+        "meanFDM": 0.492,
+        "meanLogSigBar": 8.856
+      },
+      {
+        "name": "UGC08837",
+        "vmax": 48,
+        "meanFDM": 0.4868,
+        "meanLogSigBar": 6.735
+      },
+      {
+        "name": "UGC09037",
+        "vmax": 160,
+        "meanFDM": 0.4241,
+        "meanLogSigBar": 8.067
+      },
+      {
+        "name": "UGC09133",
+        "vmax": 289,
+        "meanFDM": 0.4609,
+        "meanLogSigBar": 9.774
+      },
+      {
+        "name": "UGC09992",
+        "vmax": 34.3,
+        "meanFDM": 0.5779,
+        "meanLogSigBar": 7.135
+      },
+      {
+        "name": "UGC10310",
+        "vmax": 73.2,
+        "meanFDM": 0.7436,
+        "meanLogSigBar": 6.678
+      },
+      {
+        "name": "UGC11455",
+        "vmax": 291,
+        "meanFDM": 0.3769,
+        "meanLogSigBar": 8.99
+      },
+      {
+        "name": "UGC11557",
+        "vmax": 85,
+        "meanFDM": 0.234,
+        "meanLogSigBar": 7.717
+      },
+      {
+        "name": "UGC11820",
+        "vmax": 84.45,
+        "meanFDM": 0.7907,
+        "meanLogSigBar": 7.654
+      },
+      {
+        "name": "UGC11914",
+        "vmax": 305,
+        "meanFDM": 0.3327,
+        "meanLogSigBar": 8.951
+      },
+      {
+        "name": "UGC12506",
+        "vmax": 255,
+        "meanFDM": 0.7583,
+        "meanLogSigBar": 8.096
+      },
+      {
+        "name": "UGC12632",
+        "vmax": 73.2,
+        "meanFDM": 0.8093,
+        "meanLogSigBar": 6.829
+      },
+      {
+        "name": "UGC12732",
+        "vmax": 98,
+        "meanFDM": 0.8248,
+        "meanLogSigBar": 7.011
+      },
+      {
+        "name": "UGCA281",
+        "vmax": 29.5,
+        "meanFDM": 0.6906,
+        "meanLogSigBar": 7.422
+      },
+      {
+        "name": "UGCA442",
+        "vmax": 57.8,
+        "meanFDM": 0.8017,
+        "meanLogSigBar": 7.071
+      },
+      {
+        "name": "UGCA444",
+        "vmax": 38.3,
+        "meanFDM": 0.778,
+        "meanLogSigBar": 7.265
+      }
+    ],
+    "samplePoints": [
+      {
+        "logSigBar": 6.841,
+        "fDM": 0.1263,
+        "vmax": 20.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.131,
+        "fDM": 0.8221,
+        "vmax": 25,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.655,
+        "fDM": 0.5063,
+        "vmax": 58.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.971,
+        "fDM": 0.8429,
+        "vmax": 58.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.446,
+        "fDM": 0.9837,
+        "vmax": 46.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.225,
+        "fDM": 0.8101,
+        "vmax": 46.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.697,
+        "fDM": 0.7227,
+        "vmax": 46.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.952,
+        "fDM": 0.815,
+        "vmax": 48.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.268,
+        "fDM": 0.8725,
+        "vmax": 48.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.762,
+        "fDM": 0.3677,
+        "vmax": 67.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.639,
+        "fDM": 0.4685,
+        "vmax": 67.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.162,
+        "fDM": 0.6755,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.858,
+        "fDM": 0.6997,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.633,
+        "fDM": 0.7836,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.482,
+        "fDM": 0.5911,
+        "vmax": 55,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.682,
+        "fDM": 0.7592,
+        "vmax": 55,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.662,
+        "fDM": 0.7376,
+        "vmax": 62.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.668,
+        "fDM": 0.3606,
+        "vmax": 178,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.685,
+        "fDM": 0.7144,
+        "vmax": 178,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.309,
+        "fDM": 0.6563,
+        "vmax": 112,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.973,
+        "fDM": 0.6972,
+        "vmax": 112,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.265,
+        "fDM": 0.7972,
+        "vmax": 112,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.221,
+        "fDM": 0.8366,
+        "vmax": 63.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.611,
+        "fDM": 0.5937,
+        "vmax": 321,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.828,
+        "fDM": 0.6064,
+        "vmax": 321,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.308,
+        "fDM": 0.6203,
+        "vmax": 321,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.976,
+        "fDM": 0.7086,
+        "vmax": 321,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.736,
+        "fDM": 0.7808,
+        "vmax": 321,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.797,
+        "fDM": 0.1818,
+        "vmax": 50.4,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.026,
+        "fDM": 0.9381,
+        "vmax": 112.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.887,
+        "fDM": 0.882,
+        "vmax": 112.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.009,
+        "fDM": 0.4245,
+        "vmax": 29.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.62,
+        "fDM": 0.857,
+        "vmax": 118,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.723,
+        "fDM": 0.8495,
+        "vmax": 118,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.339,
+        "fDM": 0.8796,
+        "vmax": 83.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.367,
+        "fDM": 0.825,
+        "vmax": 52.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.138,
+        "fDM": 0.8748,
+        "vmax": 142,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.977,
+        "fDM": 0.8628,
+        "vmax": 142,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.535,
+        "fDM": 0.6293,
+        "vmax": 120,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.72,
+        "fDM": 0.8339,
+        "vmax": 120,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.888,
+        "fDM": 0.758,
+        "vmax": 120,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.399,
+        "fDM": 0.8748,
+        "vmax": 118,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.367,
+        "fDM": 0.9057,
+        "vmax": 118,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.487,
+        "fDM": 0.8674,
+        "vmax": 118,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.017,
+        "fDM": 0.8039,
+        "vmax": 144,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.067,
+        "fDM": 0.8039,
+        "vmax": 84.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.56,
+        "fDM": 0.678,
+        "vmax": 99.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.163,
+        "fDM": 0.8375,
+        "vmax": 99.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.658,
+        "fDM": 0.7826,
+        "vmax": 99.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.879,
+        "fDM": 0.8833,
+        "vmax": 114,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.612,
+        "fDM": 0.7719,
+        "vmax": 114,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.852,
+        "fDM": 0.7605,
+        "vmax": 114,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.125,
+        "fDM": 0.8337,
+        "vmax": 86.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.435,
+        "fDM": 0.9173,
+        "vmax": 86.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.969,
+        "fDM": 0.8989,
+        "vmax": 86.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.125,
+        "fDM": 0.7741,
+        "vmax": 86.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.229,
+        "fDM": 0.7342,
+        "vmax": 69.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.758,
+        "fDM": 0.7851,
+        "vmax": 69.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.46,
+        "fDM": 0.5744,
+        "vmax": 67.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.922,
+        "fDM": 0.7733,
+        "vmax": 67.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.592,
+        "fDM": 0.7263,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.356,
+        "fDM": 0.7542,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.168,
+        "fDM": 0.7723,
+        "vmax": 67.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.68,
+        "fDM": 0.0292,
+        "vmax": 250,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.88,
+        "fDM": 0.4773,
+        "vmax": 250,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.479,
+        "fDM": 0.4611,
+        "vmax": 250,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.235,
+        "fDM": 0.5228,
+        "vmax": 250,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.981,
+        "fDM": 0.5541,
+        "vmax": 250,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.961,
+        "fDM": 0.5993,
+        "vmax": 34.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.894,
+        "fDM": 0.5314,
+        "vmax": 34.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.296,
+        "fDM": 0.6573,
+        "vmax": 34.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.646,
+        "fDM": 0.7923,
+        "vmax": 110,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.044,
+        "fDM": 0.7616,
+        "vmax": 110,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.696,
+        "fDM": 0.7326,
+        "vmax": 110,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.449,
+        "fDM": 0.7618,
+        "vmax": 110,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.154,
+        "fDM": 0.8989,
+        "vmax": 110,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.914,
+        "fDM": 0.5588,
+        "vmax": 87.4,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.377,
+        "fDM": 0.6595,
+        "vmax": 87.4,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.047,
+        "fDM": 0.6934,
+        "vmax": 87.4,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.786,
+        "fDM": 0.4592,
+        "vmax": 91.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.73,
+        "fDM": 0.6893,
+        "vmax": 91.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.198,
+        "fDM": 0.8033,
+        "vmax": 91.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.941,
+        "fDM": 0.847,
+        "vmax": 91.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.783,
+        "fDM": 0.7746,
+        "vmax": 108,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.247,
+        "fDM": 0.7387,
+        "vmax": 108,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.916,
+        "fDM": 0.7402,
+        "vmax": 108,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.676,
+        "fDM": 0.7702,
+        "vmax": 108,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.339,
+        "fDM": 0.2869,
+        "vmax": 194,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.167,
+        "fDM": 0.6357,
+        "vmax": 194,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.527,
+        "fDM": 0.7209,
+        "vmax": 194,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.161,
+        "fDM": 0.7643,
+        "vmax": 194,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.906,
+        "fDM": 0.8151,
+        "vmax": 194,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.046,
+        "fDM": 0.7388,
+        "vmax": 97,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.506,
+        "fDM": 0.7964,
+        "vmax": 97,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.177,
+        "fDM": 0.8027,
+        "vmax": 97,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.94,
+        "fDM": 0.8685,
+        "vmax": 97,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.808,
+        "fDM": 0.3862,
+        "vmax": 238,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.747,
+        "fDM": 0.6359,
+        "vmax": 238,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.575,
+        "fDM": 0.3088,
+        "vmax": 234,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.18,
+        "fDM": 0.4655,
+        "vmax": 234,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.98,
+        "fDM": 0.4625,
+        "vmax": 115,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.244,
+        "fDM": 0.7216,
+        "vmax": 115,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.849,
+        "fDM": 0.7622,
+        "vmax": 115,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.582,
+        "fDM": 0.8469,
+        "vmax": 115,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.375,
+        "fDM": 0.8913,
+        "vmax": 115,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.211,
+        "fDM": 0.8782,
+        "vmax": 115,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.763,
+        "fDM": 0.5032,
+        "vmax": 176,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.049,
+        "fDM": 0.5055,
+        "vmax": 176,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.696,
+        "fDM": 0.6382,
+        "vmax": 176,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.446,
+        "fDM": 0.6723,
+        "vmax": 176,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.668,
+        "fDM": 0.8541,
+        "vmax": 73.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.03,
+        "fDM": 0.9204,
+        "vmax": 73.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.303,
+        "fDM": 0.3762,
+        "vmax": 53.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.433,
+        "fDM": 0.6564,
+        "vmax": 53.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.007,
+        "fDM": 0.7195,
+        "vmax": 53.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.724,
+        "fDM": 0.6788,
+        "vmax": 53.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 11.232,
+        "fDM": 0.4991,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.193,
+        "fDM": 0.5214,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.728,
+        "fDM": 0.4895,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.426,
+        "fDM": 0.4466,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.206,
+        "fDM": 0.426,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.028,
+        "fDM": 0.4627,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.88,
+        "fDM": 0.591,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.442,
+        "fDM": 0.6934,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.112,
+        "fDM": 0.7379,
+        "vmax": 136,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.874,
+        "fDM": 0.7681,
+        "vmax": 136,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.687,
+        "fDM": 0.8045,
+        "vmax": 136,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.534,
+        "fDM": 0.8411,
+        "vmax": 136,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.091,
+        "fDM": 0.2591,
+        "vmax": 212,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.402,
+        "fDM": 0.6523,
+        "vmax": 212,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.41,
+        "fDM": 0.4169,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.032,
+        "fDM": 0.5288,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.773,
+        "fDM": 0.5361,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.569,
+        "fDM": 0.5658,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.249,
+        "fDM": 0.6308,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.711,
+        "fDM": 0.7433,
+        "vmax": 323,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.383,
+        "fDM": 0.7841,
+        "vmax": 323,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.143,
+        "fDM": 0.8473,
+        "vmax": 323,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.956,
+        "fDM": 0.8637,
+        "vmax": 323,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.672,
+        "fDM": 0.0304,
+        "vmax": 216,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.892,
+        "fDM": 0.4404,
+        "vmax": 216,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.448,
+        "fDM": 0.6056,
+        "vmax": 216,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.156,
+        "fDM": 0.7095,
+        "vmax": 216,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.753,
+        "fDM": 0.0343,
+        "vmax": 86.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.796,
+        "fDM": 0.9128,
+        "vmax": 86.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.352,
+        "fDM": 0.9163,
+        "vmax": 86.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.061,
+        "fDM": 0.9223,
+        "vmax": 86.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.842,
+        "fDM": 0.926,
+        "vmax": 86.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.52,
+        "fDM": 0.1333,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.393,
+        "fDM": 0.0184,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.941,
+        "fDM": 0.3769,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.286,
+        "fDM": 0.4925,
+        "vmax": 276,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.543,
+        "fDM": 0.3586,
+        "vmax": 88.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.076,
+        "fDM": 0.3941,
+        "vmax": 88.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.78,
+        "fDM": 0.4063,
+        "vmax": 88.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.44,
+        "fDM": 0.5247,
+        "vmax": 88.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.674,
+        "fDM": 0.5203,
+        "vmax": 214,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.775,
+        "fDM": 0.6581,
+        "vmax": 214,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.886,
+        "fDM": 0.7816,
+        "vmax": 67.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.088,
+        "fDM": 0.8308,
+        "vmax": 67.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.68,
+        "fDM": 0.8786,
+        "vmax": 67.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.404,
+        "fDM": 0.894,
+        "vmax": 67.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.125,
+        "fDM": 0.4151,
+        "vmax": 157,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.526,
+        "fDM": 0.5388,
+        "vmax": 157,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.173,
+        "fDM": 0.5003,
+        "vmax": 157,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.784,
+        "fDM": 0.5912,
+        "vmax": 157,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.18,
+        "fDM": 0.7208,
+        "vmax": 157,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.74,
+        "fDM": 0.768,
+        "vmax": 157,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.447,
+        "fDM": 0.8051,
+        "vmax": 157,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.288,
+        "fDM": 0.1439,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.75,
+        "fDM": 0.2131,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.42,
+        "fDM": 0.1606,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.182,
+        "fDM": 0.1618,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.995,
+        "fDM": 0.2409,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.841,
+        "fDM": 0.3546,
+        "vmax": 220,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.949,
+        "fDM": 0.7021,
+        "vmax": 220,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.276,
+        "fDM": 0.4048,
+        "vmax": 169,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.424,
+        "fDM": 0.7678,
+        "vmax": 169,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.572,
+        "fDM": 0.8267,
+        "vmax": 51.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.97,
+        "fDM": 0.9014,
+        "vmax": 51.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.367,
+        "fDM": 0.9189,
+        "vmax": 51.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.141,
+        "fDM": 0.5359,
+        "vmax": 126,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.823,
+        "fDM": 0.8347,
+        "vmax": 126,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.225,
+        "fDM": 0.4875,
+        "vmax": 171,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.624,
+        "fDM": 0.3101,
+        "vmax": 171,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.533,
+        "fDM": 0.5026,
+        "vmax": 194,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.925,
+        "fDM": 0.5407,
+        "vmax": 138,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.719,
+        "fDM": 0.6382,
+        "vmax": 138,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.234,
+        "fDM": 0.6729,
+        "vmax": 138,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.424,
+        "fDM": 0.1113,
+        "vmax": 169,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.706,
+        "fDM": 0.4184,
+        "vmax": 224,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.754,
+        "fDM": 0.4519,
+        "vmax": 224,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.653,
+        "fDM": 0.6008,
+        "vmax": 134,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.873,
+        "fDM": 0.563,
+        "vmax": 272,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.917,
+        "fDM": 0.7412,
+        "vmax": 272,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.104,
+        "fDM": 0.4212,
+        "vmax": 129,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.42,
+        "fDM": 0.6341,
+        "vmax": 129,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.049,
+        "fDM": 0.2793,
+        "vmax": 198,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.681,
+        "fDM": 0.4967,
+        "vmax": 198,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.423,
+        "fDM": 0.551,
+        "vmax": 198,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.229,
+        "fDM": 0.6804,
+        "vmax": 198,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.067,
+        "fDM": 0.7421,
+        "vmax": 198,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.93,
+        "fDM": 0.7711,
+        "vmax": 198,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.76,
+        "fDM": 0.2291,
+        "vmax": 161,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.771,
+        "fDM": 0.5494,
+        "vmax": 41.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.7,
+        "fDM": 0.4427,
+        "vmax": 136,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.863,
+        "fDM": 0.2933,
+        "vmax": 182,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.135,
+        "fDM": 0.5818,
+        "vmax": 195,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.451,
+        "fDM": 0.5423,
+        "vmax": 195,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.072,
+        "fDM": 0.6528,
+        "vmax": 195,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.81,
+        "fDM": 0.6699,
+        "vmax": 195,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.566,
+        "fDM": 0.5478,
+        "vmax": 195,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.198,
+        "fDM": 0.2133,
+        "vmax": 201,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.404,
+        "fDM": 0.4753,
+        "vmax": 201,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.996,
+        "fDM": 0.6886,
+        "vmax": 201,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.258,
+        "fDM": 0.7364,
+        "vmax": 115,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.574,
+        "fDM": 0.6654,
+        "vmax": 115,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.188,
+        "fDM": 0.7212,
+        "vmax": 115,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.894,
+        "fDM": 0.8048,
+        "vmax": 115,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.842,
+        "fDM": 0.7671,
+        "vmax": 80.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.203,
+        "fDM": 0.8891,
+        "vmax": 80.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.556,
+        "fDM": 0.3157,
+        "vmax": 191,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.199,
+        "fDM": 0.4682,
+        "vmax": 191,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.056,
+        "fDM": 0.378,
+        "vmax": 124,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.374,
+        "fDM": 0.4632,
+        "vmax": 124,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.995,
+        "fDM": 0.5932,
+        "vmax": 124,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.734,
+        "fDM": 0.6722,
+        "vmax": 124,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.529,
+        "fDM": 0.663,
+        "vmax": 124,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.018,
+        "fDM": 0.1128,
+        "vmax": 265,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.38,
+        "fDM": 0.2887,
+        "vmax": 265,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.818,
+        "fDM": 0.2158,
+        "vmax": 225,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.803,
+        "fDM": 0.6395,
+        "vmax": 225,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.292,
+        "fDM": 0.7261,
+        "vmax": 225,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.973,
+        "fDM": 0.7959,
+        "vmax": 225,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.674,
+        "fDM": 0.1403,
+        "vmax": 206,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.72,
+        "fDM": 0.5788,
+        "vmax": 206,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.275,
+        "fDM": 0.7044,
+        "vmax": 206,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.234,
+        "fDM": 0.415,
+        "vmax": 242,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.831,
+        "fDM": 0.1864,
+        "vmax": 242,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.149,
+        "fDM": 0.3284,
+        "vmax": 242,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 11.08,
+        "fDM": 0.3543,
+        "vmax": 92.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.898,
+        "fDM": 0.1797,
+        "vmax": 92.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.921,
+        "fDM": 0.6724,
+        "vmax": 92.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.235,
+        "fDM": 0.7794,
+        "vmax": 92.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.519,
+        "fDM": 0.6508,
+        "vmax": 235,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.315,
+        "fDM": 0.5613,
+        "vmax": 235,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.829,
+        "fDM": 0.6404,
+        "vmax": 235,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.519,
+        "fDM": 0.7404,
+        "vmax": 235,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.925,
+        "fDM": 0.765,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.496,
+        "fDM": 0.7248,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.215,
+        "fDM": 0.6789,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.998,
+        "fDM": 0.7032,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.813,
+        "fDM": 0.7416,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.561,
+        "fDM": 0.6102,
+        "vmax": 166,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.619,
+        "fDM": 0.6361,
+        "vmax": 166,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.174,
+        "fDM": 0.4982,
+        "vmax": 166,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.536,
+        "fDM": 0.5776,
+        "vmax": 166,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.193,
+        "fDM": 0.7001,
+        "vmax": 166,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.952,
+        "fDM": 0.7846,
+        "vmax": 166,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.759,
+        "fDM": 0.7812,
+        "vmax": 166,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.527,
+        "fDM": 0.1032,
+        "vmax": 258,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.233,
+        "fDM": 0.1108,
+        "vmax": 258,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.839,
+        "fDM": 0.1858,
+        "vmax": 258,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.229,
+        "fDM": 0.456,
+        "vmax": 258,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.221,
+        "fDM": 0.4798,
+        "vmax": 121,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.535,
+        "fDM": 0.6987,
+        "vmax": 121,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.16,
+        "fDM": 0.778,
+        "vmax": 121,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.892,
+        "fDM": 0.8172,
+        "vmax": 121,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.692,
+        "fDM": 0.852,
+        "vmax": 121,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.026,
+        "fDM": 0.6335,
+        "vmax": 291,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.157,
+        "fDM": 0.7559,
+        "vmax": 291,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.347,
+        "fDM": 0.0996,
+        "vmax": 181,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.464,
+        "fDM": 0.0895,
+        "vmax": 181,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.036,
+        "fDM": 0.2559,
+        "vmax": 181,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.76,
+        "fDM": 0.3178,
+        "vmax": 181,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.543,
+        "fDM": 0.3783,
+        "vmax": 181,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.37,
+        "fDM": 0.4915,
+        "vmax": 181,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.225,
+        "fDM": 0.5375,
+        "vmax": 181,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.106,
+        "fDM": 0.5616,
+        "vmax": 181,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.997,
+        "fDM": 0.6097,
+        "vmax": 181,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.9,
+        "fDM": 0.625,
+        "vmax": 181,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.093,
+        "fDM": 0.2683,
+        "vmax": 257,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.741,
+        "fDM": 0.3818,
+        "vmax": 257,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.491,
+        "fDM": 0.5128,
+        "vmax": 257,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.298,
+        "fDM": 0.6214,
+        "vmax": 257,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.344,
+        "fDM": 0.3242,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.858,
+        "fDM": 0.5137,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.548,
+        "fDM": 0.4712,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.752,
+        "fDM": 0.4284,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.347,
+        "fDM": 0.4887,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.067,
+        "fDM": 0.5899,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.715,
+        "fDM": 0.6325,
+        "vmax": 116,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.206,
+        "fDM": 0.1951,
+        "vmax": 265,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.336,
+        "fDM": 0.5799,
+        "vmax": 265,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.911,
+        "fDM": 0.7224,
+        "vmax": 265,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.566,
+        "fDM": 0.073,
+        "vmax": 20.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.339,
+        "fDM": 0.875,
+        "vmax": 134,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.472,
+        "fDM": 0.8295,
+        "vmax": 134,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.046,
+        "fDM": 0.8393,
+        "vmax": 134,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.764,
+        "fDM": 0.8899,
+        "vmax": 134,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.094,
+        "fDM": 0.8251,
+        "vmax": 83.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.062,
+        "fDM": 0.9463,
+        "vmax": 74,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.107,
+        "fDM": 0.77,
+        "vmax": 74,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.783,
+        "fDM": 0.7592,
+        "vmax": 63.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.221,
+        "fDM": 0.8563,
+        "vmax": 113,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.688,
+        "fDM": 0.7662,
+        "vmax": 113,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.762,
+        "fDM": 0.8279,
+        "vmax": 56.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.195,
+        "fDM": 0.7953,
+        "vmax": 56.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.88,
+        "fDM": 0.8162,
+        "vmax": 56.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.366,
+        "fDM": 0.8194,
+        "vmax": 56.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.414,
+        "fDM": 0.8988,
+        "vmax": 90,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.725,
+        "fDM": 0.8252,
+        "vmax": 90,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.21,
+        "fDM": 0.6024,
+        "vmax": 383,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.413,
+        "fDM": 0.7667,
+        "vmax": 383,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.005,
+        "fDM": 0.8498,
+        "vmax": 383,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.885,
+        "fDM": 0.5673,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.283,
+        "fDM": 0.6935,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.93,
+        "fDM": 0.7526,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.73,
+        "fDM": 0.006,
+        "vmax": 218,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.481,
+        "fDM": 0.2462,
+        "vmax": 218,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.261,
+        "fDM": 0.3735,
+        "vmax": 218,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.013,
+        "fDM": 0.4355,
+        "vmax": 218,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.308,
+        "fDM": 0.5188,
+        "vmax": 218,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 12.796,
+        "fDM": 0.4436,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 11.853,
+        "fDM": 0.0816,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.994,
+        "fDM": 0.0196,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.803,
+        "fDM": 0.0835,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.646,
+        "fDM": 0.1254,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.361,
+        "fDM": 0.2288,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.16,
+        "fDM": 0.314,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.044,
+        "fDM": 0.3572,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.974,
+        "fDM": 0.3804,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.889,
+        "fDM": 0.3969,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.784,
+        "fDM": 0.4286,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.308,
+        "fDM": 0.4748,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.956,
+        "fDM": 0.6283,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.706,
+        "fDM": 0.6939,
+        "vmax": 319,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.515,
+        "fDM": 0.7414,
+        "vmax": 319,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.356,
+        "fDM": 0.7826,
+        "vmax": 319,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.222,
+        "fDM": 0.8068,
+        "vmax": 319,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.07,
+        "fDM": 0.8427,
+        "vmax": 319,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.067,
+        "fDM": 0.4853,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.717,
+        "fDM": 0.5166,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.466,
+        "fDM": 0.4615,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.272,
+        "fDM": 0.4321,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.782,
+        "fDM": 0.5655,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.684,
+        "fDM": 0.6033,
+        "vmax": 237,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.341,
+        "fDM": 0.6793,
+        "vmax": 237,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.27,
+        "fDM": 0.0657,
+        "vmax": 262,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.475,
+        "fDM": 0.5191,
+        "vmax": 262,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.039,
+        "fDM": 0.662,
+        "vmax": 262,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.424,
+        "fDM": 0.1159,
+        "vmax": 131,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.619,
+        "fDM": 0.5519,
+        "vmax": 131,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.327,
+        "fDM": 0.6569,
+        "vmax": 131,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.787,
+        "fDM": 0.7995,
+        "vmax": 131,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.474,
+        "fDM": 0.7163,
+        "vmax": 92.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.41,
+        "fDM": 0.7927,
+        "vmax": 92.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.946,
+        "fDM": 0.8831,
+        "vmax": 92.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.643,
+        "fDM": 0.8336,
+        "vmax": 92.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.465,
+        "fDM": 0.4015,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.507,
+        "fDM": 0.5608,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.905,
+        "fDM": 0.0983,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.612,
+        "fDM": 0.8524,
+        "vmax": 92.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.83,
+        "fDM": 0.6245,
+        "vmax": 24.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.594,
+        "fDM": 0.7068,
+        "vmax": 24.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.203,
+        "fDM": 0.6999,
+        "vmax": 74.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.599,
+        "fDM": 0.5283,
+        "vmax": 100,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.829,
+        "fDM": 0.8072,
+        "vmax": 100,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 12.343,
+        "fDM": 0.1706,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 11.388,
+        "fDM": 0.0146,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.945,
+        "fDM": 0.0735,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.653,
+        "fDM": 0.0889,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.434,
+        "fDM": 0.0872,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.26,
+        "fDM": 0.1166,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.115,
+        "fDM": 0.1626,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.991,
+        "fDM": 0.2087,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.831,
+        "fDM": 0.2748,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.373,
+        "fDM": 0.4255,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.833,
+        "fDM": 0.644,
+        "vmax": 248,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.299,
+        "fDM": 0.7024,
+        "vmax": 248,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.609,
+        "fDM": 0.5415,
+        "vmax": 61.4,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.117,
+        "fDM": 0.8195,
+        "vmax": 74.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.915,
+        "fDM": 0.8272,
+        "vmax": 74.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.619,
+        "fDM": 0.6407,
+        "vmax": 82.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.221,
+        "fDM": 0.8024,
+        "vmax": 82.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.628,
+        "fDM": 0.8771,
+        "vmax": 82.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.02,
+        "fDM": 0.8659,
+        "vmax": 82.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.85,
+        "fDM": 0.6328,
+        "vmax": 78.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.704,
+        "fDM": 0.7503,
+        "vmax": 78.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.175,
+        "fDM": 0.9028,
+        "vmax": 55.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.38,
+        "fDM": 0.8202,
+        "vmax": 55.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.673,
+        "fDM": 0.7721,
+        "vmax": 68.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.789,
+        "fDM": 0.8718,
+        "vmax": 44.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.104,
+        "fDM": 0.8151,
+        "vmax": 44.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.09,
+        "fDM": 0.7156,
+        "vmax": 116,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.404,
+        "fDM": 0.8129,
+        "vmax": 116,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.601,
+        "fDM": 0.7953,
+        "vmax": 100,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.419,
+        "fDM": 0.7893,
+        "vmax": 87.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.463,
+        "fDM": 0.8053,
+        "vmax": 87.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.547,
+        "fDM": 0.8393,
+        "vmax": 84.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.945,
+        "fDM": 0.8015,
+        "vmax": 84.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.578,
+        "fDM": 0.1515,
+        "vmax": 205,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.71,
+        "fDM": 0.6065,
+        "vmax": 205,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.468,
+        "fDM": 0.4035,
+        "vmax": 42.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.817,
+        "fDM": 0.9706,
+        "vmax": 85.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 5.611,
+        "fDM": 0.8733,
+        "vmax": 85.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.667,
+        "fDM": 0.0812,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.644,
+        "fDM": 0.4746,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.493,
+        "fDM": 0.4663,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.339,
+        "fDM": 0.4874,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.189,
+        "fDM": 0.5174,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.682,
+        "fDM": 0.7071,
+        "vmax": 229,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.079,
+        "fDM": 0.8324,
+        "vmax": 229,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 11.428,
+        "fDM": 0.0304,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.688,
+        "fDM": 0.271,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.479,
+        "fDM": 0.3476,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.343,
+        "fDM": 0.4044,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.239,
+        "fDM": 0.4635,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.032,
+        "fDM": 0.6009,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.592,
+        "fDM": 0.6471,
+        "vmax": 276,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.299,
+        "fDM": 0.7786,
+        "vmax": 276,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.08,
+        "fDM": 0.8246,
+        "vmax": 276,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.546,
+        "fDM": 0.2946,
+        "vmax": 74.4,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.853,
+        "fDM": 0.7702,
+        "vmax": 74.4,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.525,
+        "fDM": 0.7483,
+        "vmax": 111,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.923,
+        "fDM": 0.7427,
+        "vmax": 111,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.079,
+        "fDM": 0.651,
+        "vmax": 81.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.063,
+        "fDM": 0.6992,
+        "vmax": 109,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.164,
+        "fDM": 0.2743,
+        "vmax": 180,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.268,
+        "fDM": 0.7799,
+        "vmax": 113,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.476,
+        "fDM": 0.7955,
+        "vmax": 113,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.068,
+        "fDM": 0.7756,
+        "vmax": 113,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.428,
+        "fDM": 0.5116,
+        "vmax": 79.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.726,
+        "fDM": 0.6743,
+        "vmax": 79.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.567,
+        "fDM": 0.6003,
+        "vmax": 65.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.77,
+        "fDM": 0.5358,
+        "vmax": 65.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.131,
+        "fDM": 0.7113,
+        "vmax": 76.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.178,
+        "fDM": 0.6686,
+        "vmax": 76.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.48,
+        "fDM": 0.7147,
+        "vmax": 76.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.97,
+        "fDM": 0.4936,
+        "vmax": 85.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.019,
+        "fDM": 0.6139,
+        "vmax": 85.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.288,
+        "fDM": 0.8737,
+        "vmax": 106,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.311,
+        "fDM": 0.4262,
+        "vmax": 83.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.636,
+        "fDM": 0.8148,
+        "vmax": 83.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.097,
+        "fDM": 0.8025,
+        "vmax": 83.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.767,
+        "fDM": 0.8044,
+        "vmax": 83.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.528,
+        "fDM": 0.7388,
+        "vmax": 83.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.342,
+        "fDM": 0.691,
+        "vmax": 83.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.497,
+        "fDM": 0.6608,
+        "vmax": 32.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.132,
+        "fDM": 0.1084,
+        "vmax": 17.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.399,
+        "fDM": 0.5928,
+        "vmax": 64,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.189,
+        "fDM": 0.8343,
+        "vmax": 64,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.441,
+        "fDM": 0.8726,
+        "vmax": 69.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.233,
+        "fDM": 0.8513,
+        "vmax": 69.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.119,
+        "fDM": 0.6668,
+        "vmax": 60.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.417,
+        "fDM": 0.6604,
+        "vmax": 33.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.072,
+        "fDM": 0.8606,
+        "vmax": 84.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.28,
+        "fDM": 0.811,
+        "vmax": 84.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.871,
+        "fDM": 0.8484,
+        "vmax": 84.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.509,
+        "fDM": 0.7629,
+        "vmax": 80.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.824,
+        "fDM": 0.7992,
+        "vmax": 80.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.446,
+        "fDM": 0.8558,
+        "vmax": 80.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.183,
+        "fDM": 0.862,
+        "vmax": 80.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.985,
+        "fDM": 0.8768,
+        "vmax": 80.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.4,
+        "fDM": 0.8136,
+        "vmax": 57.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.717,
+        "fDM": 0.8164,
+        "vmax": 57.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.759,
+        "fDM": 0.2639,
+        "vmax": 202,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.864,
+        "fDM": 0.4779,
+        "vmax": 202,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.695,
+        "fDM": 0.5494,
+        "vmax": 202,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.555,
+        "fDM": 0.5573,
+        "vmax": 202,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.314,
+        "fDM": 0.6078,
+        "vmax": 202,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.712,
+        "fDM": 0.7895,
+        "vmax": 202,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.485,
+        "fDM": 0.5077,
+        "vmax": 48,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.591,
+        "fDM": 0.1747,
+        "vmax": 160,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.054,
+        "fDM": 0.4435,
+        "vmax": 160,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.722,
+        "fDM": 0.5793,
+        "vmax": 160,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 12.594,
+        "fDM": 0.2329,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 11.036,
+        "fDM": 0.0452,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.684,
+        "fDM": 0.1522,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.399,
+        "fDM": 0.2611,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.212,
+        "fDM": 0.3364,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.908,
+        "fDM": 0.4471,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.309,
+        "fDM": 0.5814,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.901,
+        "fDM": 0.6613,
+        "vmax": 289,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.624,
+        "fDM": 0.7618,
+        "vmax": 289,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.415,
+        "fDM": 0.7717,
+        "vmax": 289,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.246,
+        "fDM": 0.7979,
+        "vmax": 289,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.761,
+        "fDM": 0.4966,
+        "vmax": 34.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.339,
+        "fDM": 0.7056,
+        "vmax": 73.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.922,
+        "fDM": 0.3814,
+        "vmax": 291,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.387,
+        "fDM": 0.181,
+        "vmax": 291,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.059,
+        "fDM": 0.3169,
+        "vmax": 291,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.659,
+        "fDM": 0.4228,
+        "vmax": 291,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.202,
+        "fDM": 0.5547,
+        "vmax": 291,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.136,
+        "fDM": 0.0272,
+        "vmax": 85,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.259,
+        "fDM": 0.4061,
+        "vmax": 85,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.953,
+        "fDM": 0.8177,
+        "vmax": 84.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 10.43,
+        "fDM": 0.1486,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.827,
+        "fDM": 0.3001,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.475,
+        "fDM": 0.3162,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.222,
+        "fDM": 0.3048,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.06,
+        "fDM": 0.2934,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.717,
+        "fDM": 0.3242,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.604,
+        "fDM": 0.34,
+        "vmax": 305,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.487,
+        "fDM": 0.3538,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.399,
+        "fDM": 0.3648,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.333,
+        "fDM": 0.3817,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.057,
+        "fDM": 0.5279,
+        "vmax": 305,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.913,
+        "fDM": 0.7647,
+        "vmax": 255,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.177,
+        "fDM": 0.7014,
+        "vmax": 255,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.785,
+        "fDM": 0.7453,
+        "vmax": 255,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.515,
+        "fDM": 0.7707,
+        "vmax": 255,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.31,
+        "fDM": 0.7651,
+        "vmax": 255,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.238,
+        "fDM": 0.8425,
+        "vmax": 73.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.444,
+        "fDM": 0.8029,
+        "vmax": 73.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.677,
+        "fDM": 0.8144,
+        "vmax": 98,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.986,
+        "fDM": 0.8382,
+        "vmax": 98,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.447,
+        "fDM": 0.7978,
+        "vmax": 98,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.507,
+        "fDM": 0.6224,
+        "vmax": 29.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.697,
+        "fDM": 0.7181,
+        "vmax": 57.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.295,
+        "fDM": 0.8944,
+        "vmax": 57.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.996,
+        "fDM": 0.8346,
+        "vmax": 38.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.432,
+        "fDM": 0.7287,
+        "vmax": 38.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.092,
+        "fDM": 0.6757,
+        "vmax": 38.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.854,
+        "fDM": 0.7657,
+        "vmax": 38.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.659,
+        "fDM": 0.7734,
+        "vmax": 38.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.504,
+        "fDM": 0.8606,
+        "vmax": 38.3,
+        "region": "outer"
+      }
+    ]
+  },
+  "littleThings": {
+    "pointLevel": {
+      "slope": 0.026716471874869568,
+      "slopeErr": 0.012754980030606957,
+      "intercept": 0.48407338307932807,
+      "r": 0.07507605573784149,
+      "r2": 0.00563641414515148,
+      "n": 776
+    },
+    "perGalaxy": {
+      "slope": -0.16206026394645845,
+      "r": -0.3323439548471735,
+      "r2": 0.1104525043234601,
+      "n": 22
+    },
+    "galaxies": [
+      {
+        "name": "CVnIdwA",
+        "vmax": 23.5,
+        "meanFDM": 0.565,
+        "meanLogSigBar": 7.042
+      },
+      {
+        "name": "DDO_210",
+        "vmax": 12,
+        "meanFDM": 0.8133,
+        "meanLogSigBar": 7.546
+      },
+      {
+        "name": "DDO_216",
+        "vmax": 18.9,
+        "meanFDM": 0.7828,
+        "meanLogSigBar": 7.46
+      },
+      {
+        "name": "DDO_53",
+        "vmax": 28.6,
+        "meanFDM": 0.5695,
+        "meanLogSigBar": 7.856
+      },
+      {
+        "name": "DDO_70",
+        "vmax": 43.9,
+        "meanFDM": 0.8007,
+        "meanLogSigBar": 7.526
+      },
+      {
+        "name": "IC_10",
+        "vmax": 36.5,
+        "meanFDM": 0.4074,
+        "meanLogSigBar": 8.786
+      },
+      {
+        "name": "IC_1613",
+        "vmax": 16.9,
+        "meanFDM": 0.3931,
+        "meanLogSigBar": 7.401
+      },
+      {
+        "name": "UGC_8508",
+        "vmax": 46,
+        "meanFDM": 0.9328,
+        "meanLogSigBar": 7.119
+      },
+      {
+        "name": "WLM",
+        "vmax": 37.3,
+        "meanFDM": 0.8292,
+        "meanLogSigBar": 7.396
+      },
+      {
+        "name": "DDO_50",
+        "vmax": 35.7,
+        "meanFDM": 0.4501,
+        "meanLogSigBar": 7.627
+      },
+      {
+        "name": "DDO_126",
+        "vmax": 37.2,
+        "meanFDM": 0.7708,
+        "meanLogSigBar": 7.462
+      },
+      {
+        "name": "DDO_101",
+        "vmax": 64.5,
+        "meanFDM": 0.9771,
+        "meanLogSigBar": 7.492
+      },
+      {
+        "name": "DDO_133",
+        "vmax": 46.1,
+        "meanFDM": 0.8627,
+        "meanLogSigBar": 7.482
+      },
+      {
+        "name": "NGC_1569",
+        "vmax": 29.1,
+        "meanFDM": 0.21,
+        "meanLogSigBar": 7.998
+      },
+      {
+        "name": "DDO_43",
+        "vmax": 33.2,
+        "meanFDM": 0.8084,
+        "meanLogSigBar": 7.421
+      },
+      {
+        "name": "HARO_36",
+        "vmax": 58.2,
+        "meanFDM": 0.742,
+        "meanLogSigBar": 7.507
+      },
+      {
+        "name": "DDO_168",
+        "vmax": 60.3,
+        "meanFDM": 0.717,
+        "meanLogSigBar": 7.706
+      },
+      {
+        "name": "NGC_2366",
+        "vmax": 58.2,
+        "meanFDM": 0.7696,
+        "meanLogSigBar": 7.697
+      },
+      {
+        "name": "DDO_154",
+        "vmax": 47.8,
+        "meanFDM": 0.8898,
+        "meanLogSigBar": 7.21
+      },
+      {
+        "name": "DDO_87",
+        "vmax": 56.6,
+        "meanFDM": 0.8983,
+        "meanLogSigBar": 7.187
+      },
+      {
+        "name": "DDO_52",
+        "vmax": 60.2,
+        "meanFDM": 0.8883,
+        "meanLogSigBar": 7.472
+      },
+      {
+        "name": "NGC_3738",
+        "vmax": 125.5,
+        "meanFDM": 0.9412,
+        "meanLogSigBar": 8.622
+      }
+    ],
+    "samplePoints": [
+      {
+        "logSigBar": 8.585,
+        "fDM": 0.0367,
+        "vmax": 23.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.646,
+        "fDM": 0.1039,
+        "vmax": 23.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.205,
+        "fDM": 0.3443,
+        "vmax": 23.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.914,
+        "fDM": 0.6579,
+        "vmax": 23.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.697,
+        "fDM": 0.8714,
+        "vmax": 23.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.523,
+        "fDM": 0.8871,
+        "vmax": 23.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.378,
+        "fDM": 0.8636,
+        "vmax": 23.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.69,
+        "fDM": 1,
+        "vmax": 12,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.736,
+        "fDM": 0.8069,
+        "vmax": 12,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.292,
+        "fDM": 0.7453,
+        "vmax": 12,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.031,
+        "fDM": 0.7496,
+        "vmax": 12,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.929,
+        "fDM": 1,
+        "vmax": 18.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.008,
+        "fDM": 0.9084,
+        "vmax": 18.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.571,
+        "fDM": 0.8306,
+        "vmax": 18.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.281,
+        "fDM": 0.6343,
+        "vmax": 18.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.065,
+        "fDM": 0.6718,
+        "vmax": 18.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.891,
+        "fDM": 0.7056,
+        "vmax": 18.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.739,
+        "fDM": 0.8145,
+        "vmax": 18.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.83,
+        "fDM": 0.3778,
+        "vmax": 28.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.208,
+        "fDM": 0.4644,
+        "vmax": 28.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.863,
+        "fDM": 0.5358,
+        "vmax": 28.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.616,
+        "fDM": 0.5981,
+        "vmax": 28.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.416,
+        "fDM": 0.7217,
+        "vmax": 28.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.261,
+        "fDM": 0.702,
+        "vmax": 28.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.129,
+        "fDM": 0.1666,
+        "vmax": 28.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.888,
+        "fDM": 0.5285,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.312,
+        "fDM": 0.6669,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.951,
+        "fDM": 0.7163,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.697,
+        "fDM": 0.732,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.511,
+        "fDM": 1,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.349,
+        "fDM": 1,
+        "vmax": 43.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.22,
+        "fDM": 1,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.101,
+        "fDM": 1,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.997,
+        "fDM": 1,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.909,
+        "fDM": 0.7662,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.824,
+        "fDM": 0.6351,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.747,
+        "fDM": 0.5904,
+        "vmax": 43.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.649,
+        "fDM": 1,
+        "vmax": 36.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.357,
+        "fDM": 0.5019,
+        "vmax": 36.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.139,
+        "fDM": 0.4627,
+        "vmax": 36.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.964,
+        "fDM": 0.1944,
+        "vmax": 36.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.819,
+        "fDM": 0.4595,
+        "vmax": 36.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.695,
+        "fDM": 0.5014,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.586,
+        "fDM": 0.4233,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.49,
+        "fDM": 0.131,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.403,
+        "fDM": 0.2038,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.324,
+        "fDM": 0.2534,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.251,
+        "fDM": 0.2198,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.184,
+        "fDM": 0.1439,
+        "vmax": 36.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.074,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.891,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.705,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.552,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.422,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.331,
+        "fDM": 1,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.229,
+        "fDM": 0.1589,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.137,
+        "fDM": 0.1568,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.054,
+        "fDM": 0.7648,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.993,
+        "fDM": 0.4652,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.923,
+        "fDM": 0.0698,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.857,
+        "fDM": 0.0268,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.796,
+        "fDM": 0.0758,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.751,
+        "fDM": 0.0885,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.697,
+        "fDM": 0.1567,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.646,
+        "fDM": 0.1965,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.598,
+        "fDM": 0.3248,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.561,
+        "fDM": 0.344,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.518,
+        "fDM": 0.236,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.476,
+        "fDM": 0.0955,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.437,
+        "fDM": 0.049,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.406,
+        "fDM": 0.1714,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.369,
+        "fDM": 0.0941,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.334,
+        "fDM": 0.0146,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.3,
+        "fDM": 0.0214,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.274,
+        "fDM": 0.0268,
+        "vmax": 16.9,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.243,
+        "fDM": 0.034,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.212,
+        "fDM": 0.0387,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.183,
+        "fDM": 0.1308,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.16,
+        "fDM": 0.2277,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.132,
+        "fDM": 0.2437,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.105,
+        "fDM": 0.3061,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.079,
+        "fDM": 0.4048,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.059,
+        "fDM": 0.439,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.034,
+        "fDM": 0.5146,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.01,
+        "fDM": 0.51,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.987,
+        "fDM": 0.526,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.968,
+        "fDM": 0.5421,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.946,
+        "fDM": 0.5642,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.924,
+        "fDM": 0.5661,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.903,
+        "fDM": 0.5838,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.886,
+        "fDM": 0.5667,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.866,
+        "fDM": 0.57,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.846,
+        "fDM": 0.558,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.827,
+        "fDM": 0.5739,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.811,
+        "fDM": 0.555,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.793,
+        "fDM": 0.4867,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.775,
+        "fDM": 0.4883,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.757,
+        "fDM": 0.4692,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.743,
+        "fDM": 0.4671,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.725,
+        "fDM": 0.3948,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.708,
+        "fDM": 0.3847,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.692,
+        "fDM": 0.3593,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.679,
+        "fDM": 0.2128,
+        "vmax": 16.9,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.184,
+        "fDM": 1,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.19,
+        "fDM": 0.9063,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.738,
+        "fDM": 0.8718,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.442,
+        "fDM": 0.8886,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.222,
+        "fDM": 0.8779,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.047,
+        "fDM": 0.9044,
+        "vmax": 46,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.901,
+        "fDM": 0.9181,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.776,
+        "fDM": 0.9408,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.674,
+        "fDM": 0.9483,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.576,
+        "fDM": 0.9635,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.488,
+        "fDM": 0.9705,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.408,
+        "fDM": 0.9755,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.335,
+        "fDM": 0.9777,
+        "vmax": 46,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.385,
+        "fDM": 1,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.783,
+        "fDM": 1,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.362,
+        "fDM": 1,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.079,
+        "fDM": 1,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.866,
+        "fDM": 0.9282,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.695,
+        "fDM": 0.9617,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.552,
+        "fDM": 0.917,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.43,
+        "fDM": 0.9127,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.343,
+        "fDM": 0.9132,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.245,
+        "fDM": 0.9004,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.157,
+        "fDM": 0.8808,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.078,
+        "fDM": 0.8597,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.005,
+        "fDM": 0.8498,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.937,
+        "fDM": 0.8473,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.875,
+        "fDM": 0.8326,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.828,
+        "fDM": 0.832,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.772,
+        "fDM": 0.823,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.72,
+        "fDM": 0.8174,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.671,
+        "fDM": 0.8135,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.625,
+        "fDM": 0.8128,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.581,
+        "fDM": 0.8125,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.547,
+        "fDM": 0.8337,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.507,
+        "fDM": 0.8375,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.468,
+        "fDM": 0.8403,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.431,
+        "fDM": 0.8481,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.396,
+        "fDM": 0.8379,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.362,
+        "fDM": 0.8303,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.329,
+        "fDM": 0.8357,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.303,
+        "fDM": 0.8437,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.273,
+        "fDM": 0.842,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.243,
+        "fDM": 0.8421,
+        "vmax": 37.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.214,
+        "fDM": 0.847,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.187,
+        "fDM": 0.8525,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.16,
+        "fDM": 0.8609,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.139,
+        "fDM": 0.8701,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.113,
+        "fDM": 0.8632,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.089,
+        "fDM": 0.8641,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.065,
+        "fDM": 0.8542,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.041,
+        "fDM": 0.8545,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.018,
+        "fDM": 0.8583,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.996,
+        "fDM": 0.8687,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.979,
+        "fDM": 0.8657,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.958,
+        "fDM": 0.8642,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.937,
+        "fDM": 0.863,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.917,
+        "fDM": 0.8693,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.897,
+        "fDM": 0.8727,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.877,
+        "fDM": 0.872,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.862,
+        "fDM": 0.8738,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.844,
+        "fDM": 0.8643,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.825,
+        "fDM": 0.8631,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.808,
+        "fDM": 0.8704,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.79,
+        "fDM": 0.8675,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.773,
+        "fDM": 0.8596,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.756,
+        "fDM": 0.8629,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.743,
+        "fDM": 0.859,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.727,
+        "fDM": 0.8456,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.711,
+        "fDM": 0.8756,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.695,
+        "fDM": 0.8763,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.68,
+        "fDM": 0.8785,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.665,
+        "fDM": 0.864,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.65,
+        "fDM": 0.8747,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.638,
+        "fDM": 0.8771,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.624,
+        "fDM": 0.8736,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.61,
+        "fDM": 0.8215,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.596,
+        "fDM": 0.8694,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.582,
+        "fDM": 0.3212,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.568,
+        "fDM": 0.3567,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.558,
+        "fDM": 0.2772,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.545,
+        "fDM": 0.1862,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.532,
+        "fDM": 0.0582,
+        "vmax": 37.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.051,
+        "fDM": 1,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.449,
+        "fDM": 1,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.097,
+        "fDM": 1,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.847,
+        "fDM": 0.9472,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.653,
+        "fDM": 0.8826,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.495,
+        "fDM": 0.983,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.355,
+        "fDM": 0.9512,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.24,
+        "fDM": 0.9962,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.138,
+        "fDM": 0.8941,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.047,
+        "fDM": 0.7505,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.965,
+        "fDM": 0.7235,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.889,
+        "fDM": 0.6774,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.82,
+        "fDM": 0.7569,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.756,
+        "fDM": 0.6546,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.696,
+        "fDM": 0.411,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.64,
+        "fDM": 0.2093,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.588,
+        "fDM": 0.3407,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.538,
+        "fDM": 0.3918,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.491,
+        "fDM": 0.4173,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.445,
+        "fDM": 0.3803,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.403,
+        "fDM": 0.4172,
+        "vmax": 35.7,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.363,
+        "fDM": 0.3725,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.324,
+        "fDM": 0.359,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.287,
+        "fDM": 0.3371,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.252,
+        "fDM": 0.3082,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.218,
+        "fDM": 0.2855,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.185,
+        "fDM": 0.2999,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.154,
+        "fDM": 0.1886,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.123,
+        "fDM": 0.1957,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.094,
+        "fDM": 0.2141,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.066,
+        "fDM": 0.1344,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.038,
+        "fDM": 0.0264,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.01,
+        "fDM": 0.0324,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.985,
+        "fDM": 0.0281,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.96,
+        "fDM": 0.0147,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.935,
+        "fDM": 0.0166,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.911,
+        "fDM": 0.054,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.888,
+        "fDM": 0.0386,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.866,
+        "fDM": 0.0222,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.844,
+        "fDM": 0.1886,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.823,
+        "fDM": 0.342,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.802,
+        "fDM": 0.4584,
+        "vmax": 35.7,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.644,
+        "fDM": 0.7447,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.668,
+        "fDM": 0.7569,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.22,
+        "fDM": 0.7381,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.935,
+        "fDM": 0.6797,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.713,
+        "fDM": 0.7336,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.543,
+        "fDM": 0.7444,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.396,
+        "fDM": 0.7981,
+        "vmax": 37.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.27,
+        "fDM": 0.8226,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.163,
+        "fDM": 0.8268,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.065,
+        "fDM": 0.7898,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.98,
+        "fDM": 0.7723,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.9,
+        "fDM": 0.7641,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.827,
+        "fDM": 0.7693,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.761,
+        "fDM": 0.7605,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.698,
+        "fDM": 0.7786,
+        "vmax": 37.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.721,
+        "fDM": 1,
+        "vmax": 64.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.778,
+        "fDM": 0.9897,
+        "vmax": 64.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.33,
+        "fDM": 0.9718,
+        "vmax": 64.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.04,
+        "fDM": 0.9554,
+        "vmax": 64.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.82,
+        "fDM": 0.9667,
+        "vmax": 64.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.67,
+        "fDM": 0.9099,
+        "vmax": 46.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.08,
+        "fDM": 0.8931,
+        "vmax": 46.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.724,
+        "fDM": 0.8672,
+        "vmax": 46.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.472,
+        "fDM": 0.8711,
+        "vmax": 46.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.282,
+        "fDM": 0.8719,
+        "vmax": 46.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.122,
+        "fDM": 0.8541,
+        "vmax": 46.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.987,
+        "fDM": 0.8446,
+        "vmax": 46.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.873,
+        "fDM": 0.8337,
+        "vmax": 46.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.77,
+        "fDM": 0.8406,
+        "vmax": 46.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.508,
+        "fDM": 0.788,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.888,
+        "fDM": 0.0195,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.542,
+        "fDM": 0.081,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.286,
+        "fDM": 0.283,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.096,
+        "fDM": 0.3225,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.94,
+        "fDM": 0.0784,
+        "vmax": 29.1,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.803,
+        "fDM": 0.1846,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.689,
+        "fDM": 0.2345,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.588,
+        "fDM": 0.3056,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.494,
+        "fDM": 0.1849,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.412,
+        "fDM": 0.1534,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.335,
+        "fDM": 0.1126,
+        "vmax": 29.1,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.649,
+        "fDM": 0.8597,
+        "vmax": 33.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.701,
+        "fDM": 0.886,
+        "vmax": 33.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.259,
+        "fDM": 0.7748,
+        "vmax": 33.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.967,
+        "fDM": 0.7955,
+        "vmax": 33.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.749,
+        "fDM": 0.6923,
+        "vmax": 33.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.219,
+        "fDM": 0.6194,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.617,
+        "fDM": 0.6573,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.265,
+        "fDM": 0.7215,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.015,
+        "fDM": 0.8209,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.818,
+        "fDM": 0.9209,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.348,
+        "fDM": 0.4492,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.746,
+        "fDM": 0.2827,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.382,
+        "fDM": 0.4718,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.135,
+        "fDM": 0.5398,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.943,
+        "fDM": 0.6587,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.786,
+        "fDM": 0.7543,
+        "vmax": 60.3,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.653,
+        "fDM": 0.8292,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.538,
+        "fDM": 0.8554,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.432,
+        "fDM": 0.8743,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.341,
+        "fDM": 0.8782,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.259,
+        "fDM": 0.8842,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.184,
+        "fDM": 0.8763,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.115,
+        "fDM": 0.8751,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.048,
+        "fDM": 0.8612,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.989,
+        "fDM": 0.8163,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.933,
+        "fDM": 0.7868,
+        "vmax": 60.3,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.523,
+        "fDM": 0.8306,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.593,
+        "fDM": 0.8232,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.155,
+        "fDM": 0.7758,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.865,
+        "fDM": 0.8282,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.647,
+        "fDM": 0.8701,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.474,
+        "fDM": 0.8621,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.329,
+        "fDM": 0.7229,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.205,
+        "fDM": 0.7947,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.097,
+        "fDM": 0.8052,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.001,
+        "fDM": 0.7732,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.914,
+        "fDM": 0.7733,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.835,
+        "fDM": 0.7726,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.763,
+        "fDM": 0.7596,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.693,
+        "fDM": 0.7367,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.631,
+        "fDM": 0.7435,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.574,
+        "fDM": 0.7498,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.52,
+        "fDM": 0.7721,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.469,
+        "fDM": 0.77,
+        "vmax": 58.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.421,
+        "fDM": 0.7527,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.375,
+        "fDM": 0.7705,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.332,
+        "fDM": 0.7784,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.291,
+        "fDM": 0.7639,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.251,
+        "fDM": 0.7748,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.214,
+        "fDM": 0.7837,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.177,
+        "fDM": 0.787,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.143,
+        "fDM": 0.7769,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.108,
+        "fDM": 0.7763,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.076,
+        "fDM": 0.7778,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.045,
+        "fDM": 0.7704,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.015,
+        "fDM": 0.7551,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.986,
+        "fDM": 0.7605,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.958,
+        "fDM": 0.7441,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.931,
+        "fDM": 0.7153,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.905,
+        "fDM": 0.7095,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.88,
+        "fDM": 0.6435,
+        "vmax": 58.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.889,
+        "fDM": 0.9288,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.915,
+        "fDM": 0.9122,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.467,
+        "fDM": 0.9155,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.182,
+        "fDM": 0.9166,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.961,
+        "fDM": 0.9006,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.784,
+        "fDM": 0.898,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.638,
+        "fDM": 0.9099,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.517,
+        "fDM": 0.9087,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.407,
+        "fDM": 0.8982,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.309,
+        "fDM": 0.902,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.225,
+        "fDM": 0.8993,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.145,
+        "fDM": 0.898,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.072,
+        "fDM": 0.8903,
+        "vmax": 47.8,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.006,
+        "fDM": 0.8899,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.944,
+        "fDM": 0.9008,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.885,
+        "fDM": 0.8976,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.83,
+        "fDM": 0.8887,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.78,
+        "fDM": 0.885,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.732,
+        "fDM": 0.8922,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.685,
+        "fDM": 0.8832,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.643,
+        "fDM": 0.8841,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.601,
+        "fDM": 0.8825,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.561,
+        "fDM": 0.8805,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.524,
+        "fDM": 0.8592,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.488,
+        "fDM": 0.8462,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.453,
+        "fDM": 0.8275,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.419,
+        "fDM": 0.8648,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.388,
+        "fDM": 0.8719,
+        "vmax": 47.8,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.82,
+        "fDM": 0.9351,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.218,
+        "fDM": 0.9116,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.872,
+        "fDM": 0.951,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.62,
+        "fDM": 0.9442,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.426,
+        "fDM": 0.9153,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.267,
+        "fDM": 0.8959,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.132,
+        "fDM": 0.9246,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.018,
+        "fDM": 0.9292,
+        "vmax": 56.6,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 6.915,
+        "fDM": 0.9282,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.824,
+        "fDM": 0.8819,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.74,
+        "fDM": 0.8703,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.665,
+        "fDM": 0.8597,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.596,
+        "fDM": 0.891,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.532,
+        "fDM": 0.8908,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.471,
+        "fDM": 0.8967,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.415,
+        "fDM": 0.9018,
+        "vmax": 56.6,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 9.137,
+        "fDM": 0.8707,
+        "vmax": 60.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.183,
+        "fDM": 0.8778,
+        "vmax": 60.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.739,
+        "fDM": 0.9207,
+        "vmax": 60.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.447,
+        "fDM": 0.9296,
+        "vmax": 60.2,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 7.228,
+        "fDM": 0.8975,
+        "vmax": 60.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.054,
+        "fDM": 0.8946,
+        "vmax": 60.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.911,
+        "fDM": 0.8639,
+        "vmax": 60.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 6.786,
+        "fDM": 0.8684,
+        "vmax": 60.2,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 10.498,
+        "fDM": 0.9757,
+        "vmax": 125.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 9.145,
+        "fDM": 0.9266,
+        "vmax": 125.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.64,
+        "fDM": 0.941,
+        "vmax": 125.5,
+        "region": "inner"
+      },
+      {
+        "logSigBar": 8.313,
+        "fDM": 0.9391,
+        "vmax": 125.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 8.083,
+        "fDM": 0.9541,
+        "vmax": 125.5,
+        "region": "outer"
+      },
+      {
+        "logSigBar": 7.896,
+        "fDM": 0.9461,
+        "vmax": 125.5,
+        "region": "outer"
+      }
+    ]
+  }
+}
