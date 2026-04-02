@@ -6,6 +6,137 @@ import {
   Target, Zap, FlaskConical, Microscope, Hash, ChevronRight, Atom,
   ShieldCheck, ArrowRight, Scale
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+interface RegressionResult {
+  slope: number;
+  slopeErr: number;
+  intercept: number;
+  r: number;
+  r2: number;
+  n: number;
+  partialR?: number;
+}
+
+interface MassBin {
+  name: string;
+  slope: number;
+  r: number;
+  r2: number;
+  n: number;
+  intercept: number;
+}
+
+interface InnerOuter {
+  inner: RegressionResult;
+  outer: RegressionResult;
+}
+
+interface SparcData {
+  pointLevel: RegressionResult;
+  perGalaxy: RegressionResult;
+  byVmax: MassBin[];
+  innerOuter: InnerOuter;
+  samplePoints: Array<{ logSigBar: number; fDM: number }>;
+}
+
+interface CouplingFingerprint {
+  metric: string;
+  r: number;
+  partialR: number;
+  bootCI95: [number, number];
+  matchesExpected: boolean;
+}
+
+interface CouplingLaw {
+  formula: string;
+  r: number;
+  r2: number;
+  slope: number;
+  intercept: number;
+}
+
+interface CouplingAnalysis {
+  fingerprint: CouplingFingerprint[];
+  innerOuter: {
+    innerVDM: { r: number; slope: number };
+    outerVDM: { r: number; slope: number };
+    innerStronger: { vdm: boolean; fdm: boolean };
+  };
+  residualTests: Record<string, { residualR: number; sigBarExplains: boolean }>;
+  couplingLaws: { vdm: CouplingLaw; rDMdom: CouplingLaw; alpha: CouplingLaw };
+  tests: Array<{ name: string; pass: boolean }>;
+  passCount: number;
+  verdict: string;
+}
+
+interface GlobalExcess {
+  metric: string;
+  sigma: number;
+  obs: { slope: number; sd: number; n: number };
+  sim: { slope: number; sd: number; n: number };
+  deltaB: number;
+  deltaSE: number;
+  deltaCI95: [number, number];
+  ciExcludesZero: boolean;
+}
+
+interface CouplingExcess {
+  maxSigma: number;
+  verdict: string;
+  tests: Array<{ name: string; pass: boolean }>;
+  global: GlobalExcess[];
+  bins: Array<{ metric: string; bins: Array<{ bin: string; skipped?: boolean; sigma?: number; deltaB?: number }> }>;
+  predictiveTest: {
+    mseSigmaOnly: number;
+    mseVmaxOnly: number;
+    mseCombined: number;
+    improvementPct: number;
+    sigmaImproves: boolean;
+  };
+}
+
+interface Diagnostics {
+  circularity: {
+    photometricSigma?: { r: number; partialR: number };
+    verdict: string;
+  };
+  selectionBias: {
+    permutationTest: { nShuffles: number; pValue: number };
+  };
+  altSigmaDefinitions: Array<{ r: number }>;
+}
+
+interface SignificanceTest {
+  fisherZ: { zScore: number; pValue: number };
+  effectSize: { cohensD: number; label: string };
+  welchT: { tStat: number; pValue: number };
+  permutation: { pValue: number };
+  nPermutations: number;
+}
+
+interface FdmData {
+  sparc: SparcData;
+  couplingAnalysis?: CouplingAnalysis;
+  couplingExcess?: CouplingExcess;
+  discoveryProof?: unknown;
+  diagnostics?: Diagnostics;
+  significanceTest?: SignificanceTest;
+}
+
+interface LTData {
+  nGalaxies: number;
+  simpleRegression: { slope: number; r: number };
+  partialCorrelation: { rPartial: number };
+  pointLevelRegression: { slope: number; r: number; p: number; nPoints: number };
+  sparcComparison: { signConsistent: boolean };
+  robustness?: {
+    monteCarlo: {
+      nIterations: number;
+      slope: { mean: number; std: number; ci95: [number, number]; fracNegative: number };
+    };
+  };
+}
 
 function GlassCard({ children, glow, className }: { children: React.ReactNode; glow?: string; className?: string }) {
   const glowColor = glow === 'cyan' ? 'shadow-cyan-500/5' : glow === 'emerald' ? 'shadow-emerald-500/5' : glow === 'violet' ? 'shadow-violet-500/5' : glow === 'amber' ? 'shadow-amber-500/5' : glow === 'rose' ? 'shadow-rose-500/5' : '';
@@ -35,7 +166,7 @@ function StatBox({ label, value, sub, color = 'text-cyan-400' }: { label: string
   );
 }
 
-function SectionHeader({ icon: Icon, number, title, subtitle, id }: { icon: any; number: number; title: string; subtitle: string; id?: string }) {
+function SectionHeader({ icon: Icon, number, title, subtitle, id }: { icon: LucideIcon; number: number; title: string; subtitle: string; id?: string }) {
   return (
     <div id={id} className="flex items-center gap-3 mb-6 scroll-mt-8">
       <div className="flex items-center gap-2">
@@ -71,8 +202,8 @@ const TOC_ITEMS = [
 ];
 
 export default function EvidencePage() {
-  const [fdm, setFdm] = useState<any>(null);
-  const [lt, setLt] = useState<any>(null);
+  const [fdm, setFdm] = useState<FdmData | null>(null);
+  const [lt, setLt] = useState<LTData | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [activeSection, setActiveSection] = useState('question');
   const mainRef = useRef<HTMLDivElement>(null);
@@ -320,7 +451,7 @@ export default function EvidencePage() {
             <SectionHeader icon={Layers} number={3} title="Finding 2: Mass Independence" subtitle="The anti-correlation holds across ALL mass bins — not just a mass proxy" id="massindep" />
             <GlassCard glow="cyan">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                {s.byVmax.map((bin: any, i: number) => {
+                {s.byVmax.map((bin: MassBin, i: number) => {
                   const colors = ['text-cyan-400', 'text-violet-400', 'text-rose-400'];
                   const glows = ['cyan', 'violet', 'rose'];
                   return (
@@ -404,7 +535,7 @@ export default function EvidencePage() {
                     <div className="text-xs text-cyan-400 font-bold mb-1">Alt Σ Definitions</div>
                     <div className="text-xs text-slate-400 mb-2">{diag.altSigmaDefinitions.length} different density measures</div>
                     <div className="font-mono text-sm text-white">
-                      All {diag.altSigmaDefinitions.filter((a: any) => a.r < 0).length}/{diag.altSigmaDefinitions.length} negative
+                      All {diag.altSigmaDefinitions.filter((a: { r: number }) => a.r < 0).length}/{diag.altSigmaDefinitions.length} negative
                     </div>
                     <div className="text-xs text-emerald-400 mt-1">Result is definition-independent</div>
                   </div>
@@ -424,14 +555,14 @@ export default function EvidencePage() {
                 </div>
                 <p className="text-emerald-300 text-sm leading-relaxed font-mono">{coupling.verdict}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {coupling.tests.map((t: any, i: number) => (
+                  {coupling.tests.map((t: { name: string; pass: boolean }, i: number) => (
                     <Badge key={i} pass={t.pass} label={t.name} />
                   ))}
                 </div>
               </GlassCard>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                {coupling.fingerprint.map((f: any, i: number) => (
+                {coupling.fingerprint.map((f: CouplingFingerprint, i: number) => (
                   <GlassCard key={i} glow={f.matchesExpected ? 'cyan' : 'rose'}>
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-sm font-bold text-white">{f.metric}</span>
@@ -492,7 +623,7 @@ export default function EvidencePage() {
                   <div className="bg-white/5 rounded-xl p-4">
                     <h5 className="text-xs font-bold text-white mb-2">Residual Tests (after removing V_max)</h5>
                     <div className="space-y-2">
-                      {Object.entries(coupling.residualTests).map(([key, rt]: [string, any]) => (
+                      {Object.entries(coupling.residualTests).map(([key, rt]) => (
                         <div key={key} className="flex items-center justify-between">
                           <span className="text-xs text-slate-400">{key}</span>
                           <div className="flex items-center gap-2">
@@ -523,14 +654,14 @@ export default function EvidencePage() {
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {excess.tests.map((t: any, i: number) => (
+                  {excess.tests.map((t: { name: string; pass: boolean }, i: number) => (
                     <Badge key={i} pass={t.pass} label={t.name} />
                   ))}
                 </div>
               </GlassCard>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                {excess.global.map((g: any, i: number) => {
+                {excess.global.map((g: GlobalExcess, i: number) => {
                   const sigColor = g.sigma >= 5 ? 'text-amber-400' : g.sigma >= 3 ? 'text-emerald-400' : g.sigma >= 2 ? 'text-cyan-400' : 'text-slate-400';
                   return (
                     <GlassCard key={i} glow={g.sigma >= 5 ? 'amber' : g.sigma >= 3 ? 'emerald' : 'cyan'}>
@@ -576,11 +707,11 @@ export default function EvidencePage() {
                 <GlassCard>
                   <h4 className="text-sm font-bold text-white mb-3">Mass-Dependent Excess</h4>
                   <div className="space-y-4">
-                    {excess.bins.map((metricBins: any, mi: number) => (
+                    {excess.bins.map((metricBins: { metric: string; bins: Array<{ bin: string; skipped?: boolean; sigma?: number; deltaB?: number }> }, mi: number) => (
                       <div key={mi}>
                         <h5 className="text-xs font-bold text-slate-300 mb-2">{metricBins.metric}</h5>
                         <div className="grid grid-cols-3 gap-2">
-                          {metricBins.bins.filter((b: any) => !b.skipped).map((b: any, bi: number) => {
+                          {metricBins.bins.filter((b: { skipped?: boolean }) => !b.skipped).map((b: { bin: string; sigma?: number; deltaB?: number }, bi: number) => {
                             const sig = b.sigma || 0;
                             const sigColor = sig >= 3 ? 'text-emerald-400' : sig >= 2 ? 'text-cyan-400' : 'text-slate-400';
                             return (
@@ -809,7 +940,7 @@ export default function EvidencePage() {
                       </tr>
                     </thead>
                     <tbody className="font-mono text-xs">
-                      {excess.global.map((g: any, i: number) => (
+                      {excess.global.map((g: GlobalExcess, i: number) => (
                         <tr key={i} className="border-b border-white/5">
                           <td className="py-2.5 px-3 text-slate-300">{g.metric}</td>
                           <td className="py-2.5 px-3 text-center text-cyan-400">{g.obs.slope.toFixed(5)}</td>
