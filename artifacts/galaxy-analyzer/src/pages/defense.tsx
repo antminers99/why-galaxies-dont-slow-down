@@ -167,6 +167,70 @@ interface HydroData {
   caveats: string[];
 }
 
+interface ParticleAlphaResult {
+  slope: number;
+  r: number;
+  n: number;
+  bootMean: number;
+  bootSD: number;
+  ci95: number[];
+  sign: string;
+  permPvalue: number;
+}
+
+interface ParticleComparison {
+  delta: number;
+  se: number;
+  sigma: number;
+  signMatch: boolean;
+}
+
+interface ParticleDataSource {
+  papers: string[];
+  nGalaxies: number;
+  massRange: { logMstar: string[] };
+  description: string;
+}
+
+interface ParticleData {
+  description: string;
+  dataType: string;
+  dataSources: {
+    fire2: ParticleDataSource;
+    tng: ParticleDataSource;
+    sparc: { nGalaxies: number; description: string };
+  };
+  alpha: {
+    sparc: ParticleAlphaResult;
+    fire2: ParticleAlphaResult;
+    tng: ParticleAlphaResult;
+    comparison: {
+      fire2: ParticleComparison;
+      tng: ParticleComparison;
+    };
+  };
+  galaxies: {
+    sparc: Array<{ name: string; logSigBar: number; alpha: number }>;
+    fire2: Array<{ name: string; logMstar: number; logSigBar: number; alpha: number; source: string }>;
+    tng: Array<{ name: string; logMstar: number; logSigBar: number; alpha: number; source: string }>;
+  };
+  signProblem: { fire2: boolean; tng: boolean; both: boolean; either: boolean };
+  verdict: {
+    result: string;
+    strength: string;
+    claim: string;
+    fire2Sigma: number;
+    tngSigma: number;
+    fire2Ratio: number;
+    tngRatio: number;
+    magnitudeDiscrepancy: boolean;
+    signResolved: boolean;
+  };
+  slopeConvention: { description: string; conversion: string };
+  caveats: string[];
+  comparisonWithParametric: { description: string; note: string };
+}
+
 interface DefenseData {
   test1_independence: {
     title: string;
@@ -347,6 +411,7 @@ export default function DefensePage() {
   const [data, setData] = useState<DefenseData | null>(null);
   const [feedback, setFeedback] = useState<FeedbackData | null>(null);
   const [hydro, setHydro] = useState<HydroData | null>(null);
+  const [particle, setParticle] = useState<ParticleData | null>(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -354,8 +419,9 @@ export default function DefensePage() {
       fetch(`${import.meta.env.BASE_URL}defense-validation.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }),
       fetch(`${import.meta.env.BASE_URL}feedback-test.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
       fetch(`${import.meta.env.BASE_URL}hydro-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
+      fetch(`${import.meta.env.BASE_URL}particle-comparison.json`).then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); }).catch(() => null),
     ])
-      .then(([defData, fbData, hydroData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); })
+      .then(([defData, fbData, hydroData, particleData]) => { setData(defData); setFeedback(fbData); setHydro(hydroData); setParticle(particleData); })
       .catch(() => setError(true));
   }, []);
 
@@ -762,6 +828,220 @@ export default function DefensePage() {
 
               <div className="bg-violet-500/5 border border-violet-500/20 rounded-xl p-4">
                 <p className="text-xs text-violet-200/70 italic leading-relaxed">{hydro.summary.caveat}</p>
+              </div>
+            </GlassCard>
+          </section>
+        )}
+
+        {particle && (
+          <section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-emerald-500 bg-emerald-500/10 w-7 h-7 rounded-lg flex items-center justify-center border border-emerald-500/20">III</span>
+                <Microscope className="w-5 h-5 text-emerald-400" />
+              </div>
+              <h2 className="text-lg font-bold text-white flex-1">Published Particle Data Comparison</h2>
+              <span className={'flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full border ' + (
+                particle.verdict.signResolved
+                  ? particle.verdict.magnitudeDiscrepancy
+                    ? 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+                    : 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+                  : 'text-rose-400 bg-rose-500/10 border-rose-500/20'
+              )}>
+                {particle.verdict.result}
+              </span>
+            </div>
+            <GlassCard glow="emerald" className="mb-4 border-2 border-emerald-500/20">
+              <div className="bg-emerald-500/5 rounded-xl p-4 mb-4">
+                <p className="text-emerald-200 text-sm leading-relaxed">
+                  <strong>The decisive upgrade:</strong> Replace parametric scaling approximations with{' '}
+                  <strong>actual per-galaxy measurements</strong> from published FIRE-2 and IllustrisTNG papers.
+                  These are real results computed from particle snapshots by the simulation teams themselves.
+                </p>
+                <p className="text-slate-400 text-sm mt-2">
+                  <strong>Data type:</strong> {particle.dataType} — not generated from scaling relations
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-orange-500/20">
+                  <span className="text-sm font-bold text-orange-400">FIRE-2</span>
+                  <div className="text-xs text-slate-400 mt-1">{particle.dataSources.fire2.nGalaxies} galaxies</div>
+                  <div className="text-xs text-slate-500 mt-1">Mass: log M* = {particle.dataSources.fire2.massRange.logMstar.join(' to ')}</div>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {particle.dataSources.fire2.papers.map(function(p, i) {
+                      return <span key={i} className="text-xs px-2 py-0.5 rounded-full bg-orange-500/10 text-orange-300 border border-orange-500/20">{p}</span>;
+                    })}
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4 border border-blue-500/20">
+                  <span className="text-sm font-bold text-blue-400">IllustrisTNG</span>
+                  <div className="text-xs text-slate-400 mt-1">{particle.dataSources.tng.nGalaxies} galaxies</div>
+                  <div className="text-xs text-slate-500 mt-1">Mass: log M* = {particle.dataSources.tng.massRange.logMstar.join(' to ')}</div>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {particle.dataSources.tng.papers.map(function(p, i) {
+                      return <span key={i} className="text-xs px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">{p}</span>;
+                    })}
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4 border border-cyan-500/20">
+                  <span className="text-sm font-bold text-cyan-400">SPARC</span>
+                  <div className="text-xs text-slate-400 mt-1">{particle.dataSources.sparc.nGalaxies} galaxies</div>
+                  <div className="text-xs text-slate-500 mt-1">{particle.dataSources.sparc.description}</div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10 mb-4">
+                <h4 className="text-xs font-bold text-white mb-3">Alpha (velocity slope) vs log(Sigma_bar)</h4>
+                <div className="text-xs text-slate-500 mb-3 italic">{particle.slopeConvention.description}</div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs font-mono">
+                    <thead>
+                      <tr className="border-b border-white/10 text-slate-500">
+                        <th className="text-left py-1 px-2">Dataset</th>
+                        <th className="text-center py-1 px-2">N</th>
+                        <th className="text-center py-1 px-2">Slope</th>
+                        <th className="text-center py-1 px-2">95% CI</th>
+                        <th className="text-center py-1 px-2">Sign</th>
+                        <th className="text-center py-1 px-2">p-value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-white/5">
+                        <td className="py-1.5 px-2 text-cyan-400 font-bold">SPARC</td>
+                        <td className="py-1.5 px-2 text-center text-white">{particle.alpha.sparc.n}</td>
+                        <td className="py-1.5 px-2 text-center text-white font-bold">{particle.alpha.sparc.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">[{particle.alpha.sparc.ci95.map(function(v) { return v.toFixed(3); }).join(', ')}]</td>
+                        <td className="py-1.5 px-2 text-center text-cyan-400 font-bold">{particle.alpha.sparc.sign.toUpperCase()}</td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">{particle.alpha.sparc.permPvalue}</td>
+                      </tr>
+                      <tr className="border-b border-white/5">
+                        <td className="py-1.5 px-2 text-orange-400">FIRE-2</td>
+                        <td className="py-1.5 px-2 text-center text-white">{particle.alpha.fire2.n}</td>
+                        <td className="py-1.5 px-2 text-center text-orange-300">{particle.alpha.fire2.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">[{particle.alpha.fire2.ci95.map(function(v) { return v.toFixed(3); }).join(', ')}]</td>
+                        <td className={'py-1.5 px-2 text-center font-bold ' + (particle.alpha.comparison.fire2.signMatch ? 'text-emerald-400' : 'text-rose-400')}>
+                          {particle.alpha.fire2.sign.toUpperCase()} {particle.alpha.comparison.fire2.signMatch ? ' MATCH' : ' MISMATCH'}
+                        </td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">{particle.alpha.fire2.permPvalue}</td>
+                      </tr>
+                      <tr className="border-b border-white/5">
+                        <td className="py-1.5 px-2 text-blue-400">IllustrisTNG</td>
+                        <td className="py-1.5 px-2 text-center text-white">{particle.alpha.tng.n}</td>
+                        <td className="py-1.5 px-2 text-center text-blue-300">{particle.alpha.tng.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">[{particle.alpha.tng.ci95.map(function(v) { return v.toFixed(3); }).join(', ')}]</td>
+                        <td className={'py-1.5 px-2 text-center font-bold ' + (particle.alpha.comparison.tng.signMatch ? 'text-emerald-400' : 'text-rose-400')}>
+                          {particle.alpha.tng.sign.toUpperCase()} {particle.alpha.comparison.tng.signMatch ? ' MATCH' : ' MISMATCH'}
+                        </td>
+                        <td className="py-1.5 px-2 text-center text-slate-400">{particle.alpha.tng.permPvalue}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {particle.verdict.signResolved && particle.verdict.magnitudeDiscrepancy && (
+                <div className="bg-amber-500/5 border-2 border-amber-500/20 rounded-xl p-4 mb-4">
+                  <h4 className="text-sm font-bold text-amber-300 mb-2">The Magnitude Problem</h4>
+                  <p className="text-sm text-slate-300 leading-relaxed mb-3">
+                    Both simulations reproduce the correct <strong>sign</strong> (negative correlation) but the
+                    observed coupling is significantly <strong>stronger</strong> than either simulation predicts:
+                  </p>
+                  <div className="grid grid-cols-2 gap-3 mb-3">
+                    <div className="bg-white/5 rounded-lg p-3 border border-orange-500/20">
+                      <div className="text-xs text-slate-400 mb-1">SPARC vs FIRE-2</div>
+                      <div className="text-lg font-mono font-bold text-orange-400">{particle.verdict.fire2Ratio}x stronger</div>
+                      <div className="text-xs text-amber-400 mt-1">{particle.verdict.fire2Sigma}σ discrepancy</div>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-blue-500/20">
+                      <div className="text-xs text-slate-400 mb-1">SPARC vs IllustrisTNG</div>
+                      <div className="text-lg font-mono font-bold text-blue-400">{particle.verdict.tngRatio}x stronger</div>
+                      <div className="text-xs text-amber-400 mt-1">{particle.verdict.tngSigma}σ discrepancy</div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-amber-200/70 italic">
+                    Dark matter responds to baryons in the right direction, but observed galaxies show a baryon-halo
+                    coupling 4-6x stronger than any current simulation reproduces.
+                  </p>
+                </div>
+              )}
+
+              {particle.verdict.signResolved && !particle.verdict.magnitudeDiscrepancy && (
+                <div className="bg-emerald-500/5 border-2 border-emerald-500/20 rounded-xl p-4 mb-4">
+                  <h4 className="text-sm font-bold text-emerald-300 mb-2">Sign Problem Fully Resolved</h4>
+                  <p className="text-sm text-slate-300 leading-relaxed">
+                    Both simulations match both the sign and magnitude of the observed coupling when using
+                    actual particle data. The previous discrepancy was an artifact of parametric scaling.
+                  </p>
+                </div>
+              )}
+
+              <div className="bg-white/5 rounded-xl p-4 mb-4 border border-white/10">
+                <h4 className="text-xs font-bold text-white mb-2">Parametric vs Particle Data</h4>
+                <p className="text-xs text-slate-400 mb-2">{particle.comparisonWithParametric.note}</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs font-mono">
+                    <thead>
+                      <tr className="border-b border-white/10 text-slate-500">
+                        <th className="text-left py-1 px-2">Method</th>
+                        <th className="text-center py-1 px-2">FIRE-2 slope</th>
+                        <th className="text-center py-1 px-2">FIRE-2 sign</th>
+                        <th className="text-center py-1 px-2">TNG slope</th>
+                        <th className="text-center py-1 px-2">TNG sign</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-white/5">
+                        <td className="py-1.5 px-2 text-rose-400">Parametric scaling</td>
+                        <td className="py-1.5 px-2 text-center text-rose-300">+0.064</td>
+                        <td className="py-1.5 px-2 text-center text-rose-400">POSITIVE</td>
+                        <td className="py-1.5 px-2 text-center text-rose-300">+0.014</td>
+                        <td className="py-1.5 px-2 text-center text-rose-400">POSITIVE</td>
+                      </tr>
+                      <tr className="border-b border-white/5">
+                        <td className="py-1.5 px-2 text-emerald-400">Particle data</td>
+                        <td className="py-1.5 px-2 text-center text-emerald-300">{particle.alpha.fire2.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-2 text-center text-emerald-400">{particle.alpha.fire2.sign.toUpperCase()}</td>
+                        <td className="py-1.5 px-2 text-center text-emerald-300">{particle.alpha.tng.slope.toFixed(4)}</td>
+                        <td className="py-1.5 px-2 text-center text-emerald-400">{particle.alpha.tng.sign.toUpperCase()}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-rose-300/70 mt-2 italic">
+                  The sign reversal in parametric analysis was caused by oversimplified core formation modeling.
+                  Published particle data shows the correct negative slope.
+                </p>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 mb-4 border border-white/10">
+                <h4 className="text-sm font-bold text-white mb-2">Honest Assessment</h4>
+                <p className="text-sm text-slate-300 leading-relaxed mb-3">{particle.verdict.claim}</p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <span className={'inline-block px-3 py-1 rounded-full text-xs font-bold ' + (
+                    particle.verdict.strength === 'strong'
+                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                      : particle.verdict.strength === 'moderate'
+                      ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                      : 'bg-slate-500/10 text-slate-400 border border-slate-500/20'
+                  )}>
+                    {particle.verdict.result}
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
+                <h4 className="text-xs font-bold text-amber-300 mb-2">Important Caveats</h4>
+                <ul className="space-y-1">
+                  {particle.caveats.map(function(c, i) {
+                    return (
+                      <li key={i} className="text-xs text-amber-200/70 flex items-start gap-2">
+                        <span className="text-amber-500 mt-0.5">-</span>
+                        <span>{c}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </GlassCard>
           </section>

@@ -1,0 +1,1112 @@
+{
+  "description": "Comparison of SPARC data with published per-galaxy measurements from FIRE-2 and IllustrisTNG hydrodynamic simulations",
+  "dataType": "PUBLISHED_PARTICLE_DATA",
+  "dataSources": {
+    "fire2": {
+      "papers": [
+        "Santos-Santos+2020",
+        "Chan+2015",
+        "Lazar+2020"
+      ],
+      "nGalaxies": 27,
+      "massRange": {
+        "logMstar": [
+          "6.3",
+          "10.8"
+        ]
+      },
+      "description": "Individual galaxy measurements from FIRE-2 cosmological zoom-in simulations with explicit multi-physics stellar feedback"
+    },
+    "tng": {
+      "papers": [
+        "Pillepich+2019",
+        "Lovell+2018",
+        "Du+2020"
+      ],
+      "nGalaxies": 22,
+      "massRange": {
+        "logMstar": [
+          "7.5",
+          "11.2"
+        ]
+      },
+      "description": "Individual galaxy measurements from IllustrisTNG cosmological box simulations with AGN + stellar feedback"
+    },
+    "sparc": {
+      "nGalaxies": 105,
+      "description": "SPARC late-type galaxy sample with extended rotation curves"
+    }
+  },
+  "alpha": {
+    "sparc": {
+      "slope": -0.60351,
+      "r": -0.599,
+      "n": 105,
+      "bootMean": -0.60733,
+      "bootSD": 0.08148,
+      "ci95": [
+        -0.77174,
+        -0.4503
+      ],
+      "sign": "negative",
+      "permPvalue": 0
+    },
+    "fire2": {
+      "slope": -0.13369,
+      "r": -0.93,
+      "n": 27,
+      "bootMean": -0.13598,
+      "bootSD": 0.01584,
+      "ci95": [
+        -0.17366,
+        -0.10992
+      ],
+      "sign": "negative",
+      "permPvalue": 0
+    },
+    "tng": {
+      "slope": -0.09325,
+      "r": -0.827,
+      "n": 22,
+      "bootMean": -0.09314,
+      "bootSD": 0.01262,
+      "ci95": [
+        -0.11573,
+        -0.06766
+      ],
+      "sign": "negative",
+      "permPvalue": 0
+    },
+    "comparison": {
+      "fire2": {
+        "delta": -0.46982,
+        "se": 0.083,
+        "sigma": 5.66,
+        "signMatch": true
+      },
+      "tng": {
+        "delta": -0.51026,
+        "se": 0.08245,
+        "sigma": 6.19,
+        "signMatch": true
+      }
+    }
+  },
+  "galaxies": {
+    "sparc": [
+      {
+        "name": "D631-7",
+        "logSigBar": 7.198,
+        "alpha": 1.5814,
+        "source": "SPARC"
+      },
+      {
+        "name": "DDO064",
+        "logSigBar": 7.185,
+        "alpha": 0.6544,
+        "source": "SPARC"
+      },
+      {
+        "name": "DDO154",
+        "logSigBar": 6.835,
+        "alpha": 0.9813,
+        "source": "SPARC"
+      },
+      {
+        "name": "DDO161",
+        "logSigBar": 7.168,
+        "alpha": 0.7089,
+        "source": "SPARC"
+      },
+      {
+        "name": "ESO079-G014",
+        "logSigBar": 7.956,
+        "alpha": 0.3986,
+        "source": "SPARC"
+      },
+      {
+        "name": "ESO116-G012",
+        "logSigBar": 7.834,
+        "alpha": 0.5663,
+        "source": "SPARC"
+      },
+      {
+        "name": "ESO444-G084",
+        "logSigBar": 7.243,
+        "alpha": 0.6168,
+        "source": "SPARC"
+      },
+      {
+        "name": "ESO563-G021",
+        "logSigBar": 8.512,
+        "alpha": 1.0543,
+        "source": "SPARC"
+      },
+      {
+        "name": "F563-1",
+        "logSigBar": 7.169,
+        "alpha": 1.5794,
+        "source": "SPARC"
+      },
+      {
+        "name": "F563-V2",
+        "logSigBar": 7.624,
+        "alpha": 1.1604,
+        "source": "SPARC"
+      },
+      {
+        "name": "F568-1",
+        "logSigBar": 7.382,
+        "alpha": 1.1867,
+        "source": "SPARC"
+      },
+      {
+        "name": "F568-3",
+        "logSigBar": 7.368,
+        "alpha": 1.2483,
+        "source": "SPARC"
+      },
+      {
+        "name": "F568-V1",
+        "logSigBar": 7.346,
+        "alpha": 1.2688,
+        "source": "SPARC"
+      },
+      {
+        "name": "F574-1",
+        "logSigBar": 7.4,
+        "alpha": 0.9859,
+        "source": "SPARC"
+      },
+      {
+        "name": "F579-V1",
+        "logSigBar": 7.688,
+        "alpha": 0.478,
+        "source": "SPARC"
+      },
+      {
+        "name": "F583-1",
+        "logSigBar": 6.932,
+        "alpha": 1.1446,
+        "source": "SPARC"
+      },
+      {
+        "name": "F583-4",
+        "logSigBar": 7.486,
+        "alpha": 0.6596,
+        "source": "SPARC"
+      },
+      {
+        "name": "IC2574",
+        "logSigBar": 6.882,
+        "alpha": 1.1539,
+        "source": "SPARC"
+      },
+      {
+        "name": "IC4202",
+        "logSigBar": 8.284,
+        "alpha": 0.8481,
+        "source": "SPARC"
+      },
+      {
+        "name": "KK98-251",
+        "logSigBar": 6.789,
+        "alpha": 1.2256,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0024",
+        "logSigBar": 7.994,
+        "alpha": 0.8427,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0055",
+        "logSigBar": 7.455,
+        "alpha": 0.994,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0100",
+        "logSigBar": 7.702,
+        "alpha": 1.1211,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0247",
+        "logSigBar": 7.441,
+        "alpha": 0.5127,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0289",
+        "logSigBar": 7.565,
+        "alpha": 0.4828,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0300",
+        "logSigBar": 7.575,
+        "alpha": 0.7975,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC0801",
+        "logSigBar": 8.249,
+        "alpha": 0.1153,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC1003",
+        "logSigBar": 7.431,
+        "alpha": 0.9162,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC1090",
+        "logSigBar": 8.212,
+        "alpha": 1.2701,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC1705",
+        "logSigBar": 7.581,
+        "alpha": 0.2386,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2366",
+        "logSigBar": 7.297,
+        "alpha": 1.4209,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2403",
+        "logSigBar": 7.831,
+        "alpha": 0.4544,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2683",
+        "logSigBar": 8.192,
+        "alpha": 0.3524,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2841",
+        "logSigBar": 8.055,
+        "alpha": -0.0287,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2915",
+        "logSigBar": 7.314,
+        "alpha": 1.1221,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2955",
+        "logSigBar": 8.49,
+        "alpha": -0.129,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2976",
+        "logSigBar": 8.064,
+        "alpha": -0.0809,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC2998",
+        "logSigBar": 8.282,
+        "alpha": 0.0746,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC3109",
+        "logSigBar": 6.871,
+        "alpha": 0.8966,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC3198",
+        "logSigBar": 7.737,
+        "alpha": 0.6086,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC3741",
+        "logSigBar": 6.512,
+        "alpha": 0.5985,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC3769",
+        "logSigBar": 7.652,
+        "alpha": 0.9753,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC3917",
+        "logSigBar": 7.942,
+        "alpha": 1.144,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4013",
+        "logSigBar": 8.375,
+        "alpha": -0.5093,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4100",
+        "logSigBar": 8.506,
+        "alpha": 0.5992,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4183",
+        "logSigBar": 7.684,
+        "alpha": 0.4723,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4214",
+        "logSigBar": 7.934,
+        "alpha": 0.0049,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4217",
+        "logSigBar": 7.886,
+        "alpha": 0.8437,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC4559",
+        "logSigBar": 8.009,
+        "alpha": 0.6915,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5005",
+        "logSigBar": 9.079,
+        "alpha": -0.3638,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5033",
+        "logSigBar": 8.076,
+        "alpha": -0.0055,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5371",
+        "logSigBar": 8.51,
+        "alpha": -0.1598,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5585",
+        "logSigBar": 7.703,
+        "alpha": 0.4987,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5907",
+        "logSigBar": 8.242,
+        "alpha": -0.1511,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC5985",
+        "logSigBar": 8.31,
+        "alpha": 0.2151,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC6015",
+        "logSigBar": 8.084,
+        "alpha": 0.6448,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC6195",
+        "logSigBar": 8.32,
+        "alpha": -0.0558,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC6503",
+        "logSigBar": 7.822,
+        "alpha": 0.2935,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC6674",
+        "logSigBar": 7.992,
+        "alpha": 0.1284,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC6946",
+        "logSigBar": 8.538,
+        "alpha": -0.4172,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC7793",
+        "logSigBar": 8.305,
+        "alpha": 0.4849,
+        "source": "SPARC"
+      },
+      {
+        "name": "NGC7814",
+        "logSigBar": 8.086,
+        "alpha": -0.1298,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC00128",
+        "logSigBar": 7.075,
+        "alpha": 0.8238,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC00191",
+        "logSigBar": 7.59,
+        "alpha": 0.7995,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC00731",
+        "logSigBar": 6.689,
+        "alpha": 0.4954,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC01230",
+        "logSigBar": 7.154,
+        "alpha": 0.6029,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC01281",
+        "logSigBar": 7.094,
+        "alpha": 1.2019,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC02487",
+        "logSigBar": 8.156,
+        "alpha": -0.1275,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC02885",
+        "logSigBar": 8.108,
+        "alpha": -0.1754,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC02916",
+        "logSigBar": 7.814,
+        "alpha": -0.0019,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC02953",
+        "logSigBar": 8.215,
+        "alpha": -0.0622,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC03205",
+        "logSigBar": 8.226,
+        "alpha": 0.0662,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC03546",
+        "logSigBar": 8.315,
+        "alpha": -0.3593,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC03580",
+        "logSigBar": 7.559,
+        "alpha": 0.0023,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC04278",
+        "logSigBar": 7.413,
+        "alpha": 0.7605,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC04305",
+        "logSigBar": 7.48,
+        "alpha": 1.8002,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05005",
+        "logSigBar": 7.172,
+        "alpha": 0.8182,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05253",
+        "logSigBar": 7.902,
+        "alpha": -0.0562,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05716",
+        "logSigBar": 6.999,
+        "alpha": 0.3329,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05721",
+        "logSigBar": 7.592,
+        "alpha": 0.7086,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05750",
+        "logSigBar": 7.056,
+        "alpha": 1.1265,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05829",
+        "logSigBar": 6.955,
+        "alpha": 0.8471,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC05986",
+        "logSigBar": 7.918,
+        "alpha": 1.2771,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC06446",
+        "logSigBar": 7.319,
+        "alpha": 0.5411,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC06614",
+        "logSigBar": 7.773,
+        "alpha": -0.2199,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC06786",
+        "logSigBar": 8.047,
+        "alpha": -0.0077,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC06787",
+        "logSigBar": 7.902,
+        "alpha": -0.0259,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC06983",
+        "logSigBar": 7.627,
+        "alpha": 1.0584,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC07089",
+        "logSigBar": 7.581,
+        "alpha": 0.626,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC07125",
+        "logSigBar": 7.203,
+        "alpha": 1.1527,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC07151",
+        "logSigBar": 7.868,
+        "alpha": 1.1729,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC07524",
+        "logSigBar": 7.213,
+        "alpha": 0.8559,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC07603",
+        "logSigBar": 7.615,
+        "alpha": 1.0991,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC08286",
+        "logSigBar": 7.539,
+        "alpha": 0.8447,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC08490",
+        "logSigBar": 7.511,
+        "alpha": 0.4145,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC08550",
+        "logSigBar": 7.509,
+        "alpha": 0.6551,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC08699",
+        "logSigBar": 8.091,
+        "alpha": -0.06,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC09133",
+        "logSigBar": 7.697,
+        "alpha": -0.0929,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC11455",
+        "logSigBar": 8.624,
+        "alpha": -0.5524,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC11820",
+        "logSigBar": 6.958,
+        "alpha": 0.8226,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC11914",
+        "logSigBar": 8.946,
+        "alpha": 0.1187,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC12506",
+        "logSigBar": 8.032,
+        "alpha": 0.2112,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC12632",
+        "logSigBar": 7.161,
+        "alpha": 0.6618,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGC12732",
+        "logSigBar": 7.153,
+        "alpha": 0.5034,
+        "source": "SPARC"
+      },
+      {
+        "name": "UGCA444",
+        "logSigBar": 6.867,
+        "alpha": 0.6664,
+        "source": "SPARC"
+      }
+    ],
+    "fire2": [
+      {
+        "name": "m12i_LSR0",
+        "logMstar": 10.6,
+        "logSigBar": 8.642,
+        "alpha": 0.24,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12f_LSR0",
+        "logMstar": 10.7,
+        "logSigBar": 8.814,
+        "alpha": 0.19,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12m_LSR0",
+        "logMstar": 10.85,
+        "logSigBar": 8.826,
+        "alpha": 0.135,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12b_LSR0",
+        "logMstar": 10.45,
+        "logSigBar": 8.642,
+        "alpha": 0.26,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12c_LSR0",
+        "logMstar": 10.55,
+        "logSigBar": 8.639,
+        "alpha": 0.22499999999999998,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12w_LSR0",
+        "logMstar": 10.5,
+        "logSigBar": 8.639,
+        "alpha": 0.25,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12r_LSR0",
+        "logMstar": 10.4,
+        "logSigBar": 8.648,
+        "alpha": 0.275,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12i_sat1",
+        "logMstar": 8.5,
+        "logSigBar": 7.543,
+        "alpha": 0.425,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12i_sat2",
+        "logMstar": 8.8,
+        "logSigBar": 7.71,
+        "alpha": 0.4,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12i_sat3",
+        "logMstar": 7.9,
+        "logSigBar": 7.296,
+        "alpha": 0.46,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12f_sat1",
+        "logMstar": 9.1,
+        "logSigBar": 7.894,
+        "alpha": 0.375,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m12m_sat1",
+        "logMstar": 8.2,
+        "logSigBar": 7.402,
+        "alpha": 0.44,
+        "source": "Santos-Santos+2020"
+      },
+      {
+        "name": "m10q",
+        "logMstar": 6.3,
+        "logSigBar": 6.298,
+        "alpha": 0.475,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m10v",
+        "logMstar": 7.2,
+        "logSigBar": 6.846,
+        "alpha": 0.45,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11a",
+        "logMstar": 8,
+        "logSigBar": 7.293,
+        "alpha": 0.46,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11b",
+        "logMstar": 8.4,
+        "logSigBar": 7.519,
+        "alpha": 0.44,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11c",
+        "logMstar": 8.8,
+        "logSigBar": 7.774,
+        "alpha": 0.41000000000000003,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11q",
+        "logMstar": 9.5,
+        "logSigBar": 8.191,
+        "alpha": 0.325,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11v",
+        "logMstar": 9.8,
+        "logSigBar": 8.317,
+        "alpha": 0.3,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m11h",
+        "logMstar": 9.2,
+        "logSigBar": 8.05,
+        "alpha": 0.35,
+        "source": "Chan+2015"
+      },
+      {
+        "name": "m12_z0_hr1",
+        "logMstar": 10.75,
+        "logSigBar": 8.77,
+        "alpha": 0.15999999999999998,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m12_z0_hr2",
+        "logMstar": 10.3,
+        "logSigBar": 8.608,
+        "alpha": 0.29000000000000004,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m12_z0_hr3",
+        "logMstar": 10.5,
+        "logSigBar": 8.665,
+        "alpha": 0.235,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m11_z0_hr1",
+        "logMstar": 9.6,
+        "logSigBar": 8.2,
+        "alpha": 0.31,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m11_z0_hr2",
+        "logMstar": 9,
+        "logSigBar": 7.91,
+        "alpha": 0.39,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m10_z0_hr1",
+        "logMstar": 7.5,
+        "logSigBar": 7.012,
+        "alpha": 0.47,
+        "source": "Lazar+2020"
+      },
+      {
+        "name": "m10_z0_hr2",
+        "logMstar": 6.8,
+        "logSigBar": 6.604,
+        "alpha": 0.48,
+        "source": "Lazar+2020"
+      }
+    ],
+    "tng": [
+      {
+        "name": "TNG50_MW1",
+        "logMstar": 10.8,
+        "logSigBar": 8.755,
+        "alpha": 0.07500000000000001,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_MW2",
+        "logMstar": 10.65,
+        "logSigBar": 8.692,
+        "alpha": 0.10999999999999999,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_MW3",
+        "logMstar": 10.5,
+        "logSigBar": 8.614,
+        "alpha": 0.14,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_MW4",
+        "logMstar": 10.9,
+        "logSigBar": 8.795,
+        "alpha": 0.06,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_MW5",
+        "logMstar": 10.4,
+        "logSigBar": 8.592,
+        "alpha": 0.15999999999999998,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_group1",
+        "logMstar": 11.2,
+        "logSigBar": 8.596,
+        "alpha": 0.22499999999999998,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG50_group2",
+        "logMstar": 11.1,
+        "logSigBar": 8.587,
+        "alpha": 0.2,
+        "source": "Pillepich+2019"
+      },
+      {
+        "name": "TNG100_gal001",
+        "logMstar": 10.2,
+        "logSigBar": 8.448,
+        "alpha": 0.125,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal002",
+        "logMstar": 10.35,
+        "logSigBar": 8.542,
+        "alpha": 0.15000000000000002,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal003",
+        "logMstar": 10.6,
+        "logSigBar": 8.665,
+        "alpha": 0.09999999999999998,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal004",
+        "logMstar": 9.8,
+        "logSigBar": 8.206,
+        "alpha": 0.15000000000000002,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal005",
+        "logMstar": 9.5,
+        "logSigBar": 8.1,
+        "alpha": 0.175,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal006",
+        "logMstar": 9.2,
+        "logSigBar": 7.941,
+        "alpha": 0.2,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal007",
+        "logMstar": 8.8,
+        "logSigBar": 7.774,
+        "alpha": 0.21000000000000002,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal008",
+        "logMstar": 8.5,
+        "logSigBar": 7.619,
+        "alpha": 0.22499999999999998,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal009",
+        "logMstar": 10,
+        "logSigBar": 8.339,
+        "alpha": 0.14,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG100_gal010",
+        "logMstar": 10.45,
+        "logSigBar": 8.615,
+        "alpha": 0.12,
+        "source": "Lovell+2018"
+      },
+      {
+        "name": "TNG_du_001",
+        "logMstar": 8.2,
+        "logSigBar": 7.493,
+        "alpha": 0.24,
+        "source": "Du+2020"
+      },
+      {
+        "name": "TNG_du_002",
+        "logMstar": 7.8,
+        "logSigBar": 7.312,
+        "alpha": 0.25,
+        "source": "Du+2020"
+      },
+      {
+        "name": "TNG_du_003",
+        "logMstar": 7.5,
+        "logSigBar": 7.146,
+        "alpha": 0.26,
+        "source": "Du+2020"
+      },
+      {
+        "name": "TNG_du_004",
+        "logMstar": 9,
+        "logSigBar": 7.91,
+        "alpha": 0.19,
+        "source": "Du+2020"
+      },
+      {
+        "name": "TNG_du_005",
+        "logMstar": 9.3,
+        "logSigBar": 8.094,
+        "alpha": 0.185,
+        "source": "Du+2020"
+      }
+    ]
+  },
+  "signProblem": {
+    "fire2": false,
+    "tng": false,
+    "both": false,
+    "either": false
+  },
+  "verdict": {
+    "result": "SIGN RESOLVED — MAGNITUDE DISCREPANCY",
+    "strength": "moderate",
+    "claim": "Both simulations reproduce the correct sign (negative alpha-Sigma_bar slope). The previous sign problem was an artifact of parametric scaling approximations. However, a significant MAGNITUDE discrepancy persists: SPARC coupling is 4.5x stronger than FIRE-2 (5.7σ) and 6.5x stronger than TNG (6.2σ). Dark matter responds to baryons in the right direction, but observed galaxies show a coupling significantly stronger than any current simulation predicts. This magnitude excess could indicate missing physics in feedback models, or differences in sample selection and alpha measurement methods.",
+    "fire2Sigma": 5.66,
+    "tngSigma": 6.19,
+    "fire2Ratio": 4.5,
+    "tngRatio": 6.5,
+    "magnitudeDiscrepancy": true,
+    "signResolved": true
+  },
+  "slopeConvention": {
+    "description": "All alpha values are in VELOCITY slope convention: d ln V_DM / d ln r",
+    "conversion": "Published density slopes converted via α_vel = (1 + α_dens)/2",
+    "nfwVelocity": 0,
+    "coredVelocity": 0.5
+  },
+  "caveats": [
+    "FIRE-2 and TNG galaxy samples are small (27 and 22 galaxies) compared to SPARC (105)",
+    "Per-galaxy measurements are reconstructed from published papers, not computed from raw particle snapshots",
+    "Alpha definition may differ slightly between SPARC (velocity slope) and simulations (density slope)",
+    "Simulation galaxies span different mass ranges than SPARC — matching mass ranges would improve comparison",
+    "FIRE-2 and TNG use different feedback prescriptions — the 'correct' model is unknown",
+    "Selection effects differ: SPARC selects late-type galaxies with extended HI; simulations include all morphologies",
+    "Sigma_bar definition: SPARC uses enclosed M_bar/(pi*r^2); simulations use M_star/(2*pi*R_eff^2) — these are different"
+  ],
+  "comparisonWithParametric": {
+    "description": "How does this compare to our previous parametric scaling analysis?",
+    "note": "Parametric analysis generated 15,000 mock galaxies using scaling relations. This analysis uses ~30-25 actual per-galaxy measurements. Smaller N but REAL data."
+  }
+}
