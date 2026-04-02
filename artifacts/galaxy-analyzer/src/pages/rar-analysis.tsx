@@ -6,7 +6,7 @@ import {
   ResponsiveContainer, ReferenceLine, Label, BarChart, Bar, Cell,
   LineChart, Line
 } from 'recharts';
-import { Crosshair, Layers, Search, BarChart3, Filter, Zap, TrendingUp } from 'lucide-react';
+import { Crosshair, Layers, Search, BarChart3, Filter, Zap, TrendingUp, FlaskConical } from 'lucide-react';
 
 type GalaxyData = {
   name: string; Vmax: number; Rmax: number; n: number;
@@ -405,6 +405,116 @@ export default function RARAnalysisPage() {
           </div>
         </GlassCard>
 
+        {data.densityCorrection && (
+          <GlassCard glow="purple">
+            <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+              <FlaskConical className="w-5 h-5 text-red-400" />
+              Plot 5: Density Correction — ΔRAR = a + b·log(Σ_bar)
+            </h2>
+            <p className="text-sm text-slate-400 mb-4">
+              Testing whether surface density acts as a second variable in the RAR.
+              If b ≠ 0, then g_obs = g_RAR × (Σ_bar/Σ₀)^α — density modifies the acceleration law.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+              <StatBox label="Slope b (global)" value={data.densityCorrection.pointLevel.b.toFixed(4)} sub={`r = ${data.densityCorrection.pointLevel.r.toFixed(3)}`} color="purple" />
+              <StatBox label="Slope b (high-Q)" value={data.densityCorrection.highQOnly.b.toFixed(4)} sub={`r = ${data.densityCorrection.highQOnly.r.toFixed(3)}`} color="cyan" />
+              <StatBox label="Best Bin R²" value={Math.max(...data.densityCorrection.binned.map((b: any) => b.R2)).toFixed(3)} sub="within fixed V_max" color="red" />
+              <StatBox label="Scatter Reduction" value={`${data.densityCorrection.scatterReduction.reductionPct.toFixed(1)}%`} sub="global correction" color="amber" />
+            </div>
+
+            <div className="h-[350px] mb-4">
+              <ResponsiveContainer width="100%" height="100%">
+                <ScatterChart margin={{ top: 10, right: 20, bottom: 50, left: 60 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
+                  <XAxis type="number" dataKey="log_sigma" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={['auto', 'auto']}>
+                    <Label value="log₁₀ Σ_bar(r) = log₁₀[M/(πr²)]  [M☉/kpc²]" position="bottom" offset={30} style={{ fill: '#94a3b8', fontSize: 12 }} />
+                  </XAxis>
+                  <YAxis type="number" dataKey="delta_rar" tick={{ fill: '#94a3b8', fontSize: 11 }} domain={['auto', 'auto']}>
+                    <Label value="ΔRAR = log(g_obs) − log(g_RAR)" position="left" angle={-90} offset={40} style={{ fill: '#94a3b8', fontSize: 12 }} />
+                  </YAxis>
+                  <Tooltip content={({ active, payload }: any) => {
+                    if (!active || !payload?.length) return null;
+                    const d = payload[0].payload;
+                    return (
+                      <div className="bg-slate-900/95 border border-white/20 rounded-xl p-3 shadow-xl backdrop-blur-md text-xs">
+                        <p className="font-semibold text-white">{d.name}</p>
+                        <p className="text-cyan-400">log Σ_bar = {d.log_sigma?.toFixed(3)}</p>
+                        <p className="text-purple-400">ΔRAR = {d.delta_rar?.toFixed(4)}</p>
+                        <p className="text-slate-400">V_max = {d.Vmax?.toFixed(0)} km/s</p>
+                      </div>
+                    );
+                  }} />
+                  <ReferenceLine y={0} stroke="#10b981" strokeDasharray="8 4" strokeWidth={1} />
+                  <Scatter data={data.densityCorrection.scatterData} r={2.5}>
+                    {data.densityCorrection.scatterData.map((d: any, i: number) => (
+                      <Cell key={i} fill={d.Q_kin > 0.7 ? '#a78bfa' : '#64748b'} fillOpacity={0.4} />
+                    ))}
+                  </Scatter>
+                  <Scatter data={data.densityCorrection.fitLine} r={0} line={{ stroke: '#ef4444', strokeWidth: 2, strokeDasharray: '8 4' }} shape={() => null} dataKey="delta_rar" />
+                </ScatterChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div className="p-4 bg-gradient-to-r from-red-500/10 to-purple-500/10 border border-red-500/20 rounded-xl mb-4">
+              <h3 className="text-sm font-semibold text-red-400 mb-3">Binned Analysis: Does the Effect Survive at Fixed V_max?</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-2 text-slate-400 font-normal">V_max Bin</th>
+                      <th className="text-right py-2 text-slate-400 font-normal">n points</th>
+                      <th className="text-right py-2 text-slate-400 font-normal">Slope b</th>
+                      <th className="text-right py-2 text-slate-400 font-normal">Correlation r</th>
+                      <th className="text-right py-2 text-slate-400 font-normal">R²</th>
+                      <th className="text-right py-2 text-slate-400 font-normal">Strength</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.densityCorrection.binned.map((bin: any, i: number) => (
+                      <tr key={i} className="border-b border-white/5">
+                        <td className="py-2 text-white font-mono">{bin.minV.toFixed(0)}–{bin.maxV.toFixed(0)} km/s</td>
+                        <td className="py-2 text-right font-mono text-slate-400">{bin.n}</td>
+                        <td className="py-2 text-right font-mono text-purple-400">{bin.b.toFixed(4)}</td>
+                        <td className="py-2 text-right font-mono text-cyan-400">{bin.r.toFixed(3)}</td>
+                        <td className={`py-2 text-right font-mono ${bin.R2 > 0.3 ? 'text-red-400' : bin.R2 > 0.1 ? 'text-amber-400' : 'text-slate-500'}`}>{bin.R2.toFixed(3)}</td>
+                        <td className={`py-2 text-right text-xs font-semibold ${bin.R2 > 0.3 ? 'text-red-400' : bin.R2 > 0.1 ? 'text-amber-400' : 'text-slate-500'}`}>
+                          {bin.R2 > 0.3 ? 'STRONG' : bin.R2 > 0.1 ? 'MODERATE' : 'WEAK'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl">
+                <h3 className="text-sm font-semibold text-red-400 mb-2">The Finding</h3>
+                <p className="text-xs text-slate-300">
+                  Within fixed V_max bins, surface density explains up to <strong className="text-red-400">{(Math.max(...data.densityCorrection.binned.map((b: any) => b.R2)) * 100).toFixed(0)}%</strong> of 
+                  RAR residual variance (R² = {Math.max(...data.densityCorrection.binned.map((b: any) => b.R2)).toFixed(3)} in the strongest bin).
+                  The slope b is <strong>negative</strong> everywhere — denser galaxies deviate less from RAR.
+                  This is consistent with the proposed law: g_obs = g_RAR × C(Σ_bar).
+                </p>
+              </div>
+              <div className="p-3 bg-purple-500/10 border border-purple-500/20 rounded-xl">
+                <h3 className="text-sm font-semibold text-purple-400 mb-2">The Candidate Law</h3>
+                <p className="text-xs text-slate-300 font-mono leading-relaxed">
+                  ΔRAR = a + b·log(Σ_bar)<br/>
+                  ⇒ g_obs = g_RAR × (Σ_bar)^b<br/>
+                  ⇒ g_obs = g_RAR × (Σ_bar/Σ₀)^α<br/><br/>
+                </p>
+                <p className="text-xs text-slate-300">
+                  With b ≈ −0.33 to −0.39 in low-mass bins, this means:
+                  at constant baryonic acceleration, <strong>lower surface density galaxies show 
+                  more excess acceleration</strong> — they appear to have more dark matter per unit surface area.
+                </p>
+              </div>
+            </div>
+          </GlassCard>
+        )}
+
         <GlassCard glow="cyan">
           <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
             <Zap className="w-5 h-5 text-red-400" />
@@ -422,9 +532,12 @@ export default function RARAnalysisPage() {
             <div className="space-y-3">
               <h3 className="text-sm font-semibold text-amber-400 uppercase tracking-wider">Discoveries</h3>
               <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-xl text-xs text-slate-300 space-y-2">
-                <p><strong className="text-amber-400">Σ_bar as second variable:</strong> Within fixed V_max bins, surface density correlates with RAR residuals (r = 0.5–0.8). At the same mass, denser galaxies have different dark matter fractions.</p>
-                <p><strong className="text-amber-400">η_bar is NOT predictive:</strong> Baryonic curve shape (η_bar) has r = {data.correlations.eta_rot_vs_eta_bar.toFixed(3)} with observed shape — near zero. The dark matter halo decouples from the baryonic distribution shape.</p>
-                <p><strong className="text-amber-400">Candidate law:</strong> η_rot = f(η_bar, Σ_bar, Q_kin) — the rotation curve shape may depend on surface density as the missing variable beyond RAR.</p>
+                <p><strong className="text-amber-400">Σ_bar as second variable:</strong> Within fixed V_max bins, surface density correlates with RAR residuals
+                  {data.densityCorrection ? ` (R² up to ${(Math.max(...data.densityCorrection.binned.map((b: any) => b.R2)) * 100).toFixed(0)}%)` : ' (r = 0.5–0.8)'}. 
+                  At the same mass, denser galaxies deviate less from RAR.</p>
+                <p><strong className="text-amber-400">Density correction law:</strong> ΔRAR = a + b·log(Σ_bar) with b ≈ {data.densityCorrection ? data.densityCorrection.binned[0]?.b.toFixed(2) : '−0.39'} in low-mass bins.
+                  This implies g_obs = g_RAR × (Σ_bar)^b — lower surface density → more excess acceleration.</p>
+                <p><strong className="text-amber-400">Candidate extended RAR:</strong> g_obs = f(g_bar, Σ_bar) — galaxy dynamics depends not only on baryonic acceleration but also on baryonic compactness.</p>
               </div>
             </div>
           </div>

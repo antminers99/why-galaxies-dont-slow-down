@@ -30836,5 +30836,6023 @@
     "g_dag_kpc": 3703200,
     "nGalaxies": 175,
     "nRARPoints": 3391
+  },
+  "densityCorrection": {
+    "galaxyLevel": {
+      "a": -0.20775512784057093,
+      "b": 0.19805288465118429,
+      "r": 0.3148057959292291,
+      "R2": 0.09910268915063543,
+      "n": 175
+    },
+    "pointLevel": {
+      "a": -0.7054457459102697,
+      "b": -0.09028007905146035,
+      "r": -0.2057729407112998,
+      "R2": 0.042342503128976104,
+      "n": 3391
+    },
+    "highQOnly": {
+      "a": -0.638442557555978,
+      "b": -0.09328413673612626,
+      "r": -0.22433990067496573,
+      "R2": 0.05032839103485349,
+      "n": 2967
+    },
+    "binned": [
+      {
+        "bin": 1,
+        "minV": 17.8,
+        "maxV": 85.6,
+        "n": 848,
+        "a": 1.1351282000371457,
+        "b": -0.38731312956667624,
+        "r": -0.6720453137141948,
+        "R2": 0.45164490368521054
+      },
+      {
+        "bin": 2,
+        "minV": 85.6,
+        "maxV": 136,
+        "n": 848,
+        "a": 1.0314918710061158,
+        "b": -0.33208748468559174,
+        "r": -0.718374596354703,
+        "R2": 0.5160620606877825
+      },
+      {
+        "bin": 3,
+        "minV": 136,
+        "maxV": 237,
+        "n": 848,
+        "a": -0.29135883415867214,
+        "b": -0.12668999317375187,
+        "r": -0.4182204203327777,
+        "R2": 0.17490831998332523
+      },
+      {
+        "bin": 4,
+        "minV": 237,
+        "maxV": 383,
+        "n": 847,
+        "a": -0.7158070439982704,
+        "b": -0.048812100110143725,
+        "r": -0.1936302025176812,
+        "R2": 0.037492655327038237
+      }
+    ],
+    "scatterReduction": {
+      "before": 0.41279103206655626,
+      "after": 0.4039572063022654,
+      "reductionPct": 2.140023662836399
+    },
+    "scatterData": [
+      {
+        "name": "CamB",
+        "log_sigma": 8.077,
+        "delta_rar": -3.499,
+        "Vmax": 20.1,
+        "Q_kin": 0.63
+      },
+      {
+        "name": "CamB",
+        "log_sigma": 6.577,
+        "delta_rar": -2.0182,
+        "Vmax": 20.1,
+        "Q_kin": 0.63
+      },
+      {
+        "name": "CamB",
+        "log_sigma": 5.979,
+        "delta_rar": -1.4862,
+        "Vmax": 20.1,
+        "Q_kin": 0.63
+      },
+      {
+        "name": "D512-2",
+        "log_sigma": 6.939,
+        "delta_rar": -1.7931,
+        "Vmax": 37.2,
+        "Q_kin": 0.631
+      },
+      {
+        "name": "D564-8",
+        "log_sigma": 6.787,
+        "delta_rar": -1.8728,
+        "Vmax": 25,
+        "Q_kin": 0.64
+      },
+      {
+        "name": "D631-7",
+        "log_sigma": 8.293,
+        "delta_rar": -2.4555,
+        "Vmax": 58.5,
+        "Q_kin": 0.792
+      },
+      {
+        "name": "D631-7",
+        "log_sigma": 7.342,
+        "delta_rar": -1.7748,
+        "Vmax": 58.5,
+        "Q_kin": 0.792
+      },
+      {
+        "name": "D631-7",
+        "log_sigma": 6.897,
+        "delta_rar": -1.5231,
+        "Vmax": 58.5,
+        "Q_kin": 0.792
+      },
+      {
+        "name": "D631-7",
+        "log_sigma": 6.605,
+        "delta_rar": -1.4171,
+        "Vmax": 58.5,
+        "Q_kin": 0.792
+      },
+      {
+        "name": "DDO 64",
+        "log_sigma": 8.394,
+        "delta_rar": -2.2441,
+        "Vmax": 46.9,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "DDO 64",
+        "log_sigma": 7.273,
+        "delta_rar": -1.6789,
+        "Vmax": 46.9,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "DDO 64",
+        "log_sigma": 6.8,
+        "delta_rar": -1.1935,
+        "Vmax": 46.9,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "DDO 64",
+        "log_sigma": 6.4,
+        "delta_rar": -1.1819,
+        "Vmax": 46.9,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "DDO 154",
+        "log_sigma": 7.516,
+        "delta_rar": -1.8339,
+        "Vmax": 48.2,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "DDO 154",
+        "log_sigma": 6.912,
+        "delta_rar": -1.5721,
+        "Vmax": 48.2,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "DDO 154",
+        "log_sigma": 6.56,
+        "delta_rar": -1.5869,
+        "Vmax": 48.2,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 8.423,
+        "delta_rar": -2.4573,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 7.614,
+        "delta_rar": -1.9622,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 7.125,
+        "delta_rar": -1.7381,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 6.81,
+        "delta_rar": -1.5729,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 6.583,
+        "delta_rar": -1.4714,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 6.402,
+        "delta_rar": -1.4195,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 161",
+        "log_sigma": 6.252,
+        "delta_rar": -1.4062,
+        "Vmax": 67.5,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "DDO 168",
+        "log_sigma": 8.879,
+        "delta_rar": -2.5613,
+        "Vmax": 55,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "DDO 168",
+        "log_sigma": 7.477,
+        "delta_rar": -1.6175,
+        "Vmax": 55,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "DDO 168",
+        "log_sigma": 6.966,
+        "delta_rar": -1.4226,
+        "Vmax": 55,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "DDO 170",
+        "log_sigma": 7.538,
+        "delta_rar": -1.8673,
+        "Vmax": 62.2,
+        "Q_kin": 0.665
+      },
+      {
+        "name": "DDO 170",
+        "log_sigma": 6.842,
+        "delta_rar": -1.75,
+        "Vmax": 62.2,
+        "Q_kin": 0.665
+      },
+      {
+        "name": "ESO079-G014",
+        "log_sigma": 8.507,
+        "delta_rar": -1.8979,
+        "Vmax": 178,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "ESO079-G014",
+        "log_sigma": 7.504,
+        "delta_rar": -1.2271,
+        "Vmax": 178,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "ESO079-G014",
+        "log_sigma": 7.005,
+        "delta_rar": -0.9306,
+        "Vmax": 178,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "ESO079-G014",
+        "log_sigma": 6.564,
+        "delta_rar": -0.8536,
+        "Vmax": 178,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "ESO116-G012",
+        "log_sigma": 8.115,
+        "delta_rar": -1.5151,
+        "Vmax": 112,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "ESO116-G012",
+        "log_sigma": 7.417,
+        "delta_rar": -1.1591,
+        "Vmax": 112,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "ESO116-G012",
+        "log_sigma": 6.892,
+        "delta_rar": -1.1004,
+        "Vmax": 112,
+        "Q_kin": 0.782
+      },
+      {
+        "name": "ESO444-G084",
+        "log_sigma": 9.15,
+        "delta_rar": -2.3302,
+        "Vmax": 63.1,
+        "Q_kin": 0.672
+      },
+      {
+        "name": "ESO444-G084",
+        "log_sigma": 7.249,
+        "delta_rar": -1.3145,
+        "Vmax": 63.1,
+        "Q_kin": 0.672
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 9.726,
+        "delta_rar": -2.3382,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 8.6,
+        "delta_rar": -1.2678,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 8.124,
+        "delta_rar": -0.9408,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 7.617,
+        "delta_rar": -0.8596,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 7.297,
+        "delta_rar": -0.8366,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 7.061,
+        "delta_rar": -0.8527,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 6.876,
+        "delta_rar": -0.8305,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "ESO563-G021",
+        "log_sigma": 6.725,
+        "delta_rar": -0.8523,
+        "Vmax": 321,
+        "Q_kin": 1
+      },
+      {
+        "name": "F561-1",
+        "log_sigma": 7.03,
+        "delta_rar": -1.7916,
+        "Vmax": 50.4,
+        "Q_kin": 0.664
+      },
+      {
+        "name": "F563-1",
+        "log_sigma": 8.701,
+        "delta_rar": -2.199,
+        "Vmax": 112.5,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "F563-1",
+        "log_sigma": 8.194,
+        "delta_rar": -1.5767,
+        "Vmax": 112.5,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "F563-1",
+        "log_sigma": 7.211,
+        "delta_rar": -1.4266,
+        "Vmax": 112.5,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "F563-1",
+        "log_sigma": 6.825,
+        "delta_rar": -1.3571,
+        "Vmax": 112.5,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "F563-V1",
+        "log_sigma": 7.825,
+        "delta_rar": -2.7242,
+        "Vmax": 29.5,
+        "Q_kin": 0.581
+      },
+      {
+        "name": "F563-V1",
+        "log_sigma": 6.427,
+        "delta_rar": -1.9672,
+        "Vmax": 29.5,
+        "Q_kin": 0.581
+      },
+      {
+        "name": "F563-V2",
+        "log_sigma": 8.156,
+        "delta_rar": -1.5628,
+        "Vmax": 118,
+        "Q_kin": 0.723
+      },
+      {
+        "name": "F563-V2",
+        "log_sigma": 6.694,
+        "delta_rar": -0.9642,
+        "Vmax": 118,
+        "Q_kin": 0.723
+      },
+      {
+        "name": "F565-V2",
+        "log_sigma": 8.585,
+        "delta_rar": -2.5779,
+        "Vmax": 83.1,
+        "Q_kin": 0.628
+      },
+      {
+        "name": "F565-V2",
+        "log_sigma": 7.189,
+        "delta_rar": -1.5118,
+        "Vmax": 83.1,
+        "Q_kin": 0.628
+      },
+      {
+        "name": "F567-2",
+        "log_sigma": 7.541,
+        "delta_rar": -1.8651,
+        "Vmax": 52.2,
+        "Q_kin": 0.567
+      },
+      {
+        "name": "F568-1",
+        "log_sigma": 9.624,
+        "delta_rar": -2.94,
+        "Vmax": 142,
+        "Q_kin": 0.716
+      },
+      {
+        "name": "F568-1",
+        "log_sigma": 7.716,
+        "delta_rar": -1.2658,
+        "Vmax": 142,
+        "Q_kin": 0.716
+      },
+      {
+        "name": "F568-1",
+        "log_sigma": 7.066,
+        "delta_rar": -1.099,
+        "Vmax": 142,
+        "Q_kin": 0.716
+      },
+      {
+        "name": "F568-3",
+        "log_sigma": 9.174,
+        "delta_rar": -3.0718,
+        "Vmax": 120,
+        "Q_kin": 0.779
+      },
+      {
+        "name": "F568-3",
+        "log_sigma": 7.898,
+        "delta_rar": -1.7962,
+        "Vmax": 120,
+        "Q_kin": 0.779
+      },
+      {
+        "name": "F568-3",
+        "log_sigma": 7.461,
+        "delta_rar": -1.4141,
+        "Vmax": 120,
+        "Q_kin": 0.779
+      },
+      {
+        "name": "F568-3",
+        "log_sigma": 6.868,
+        "delta_rar": -1.2866,
+        "Vmax": 120,
+        "Q_kin": 0.779
+      },
+      {
+        "name": "F568-3",
+        "log_sigma": 6.381,
+        "delta_rar": -1.107,
+        "Vmax": 120,
+        "Q_kin": 0.779
+      },
+      {
+        "name": "F568-V1",
+        "log_sigma": 8.331,
+        "delta_rar": -1.6323,
+        "Vmax": 118,
+        "Q_kin": 0.788
+      },
+      {
+        "name": "F568-V1",
+        "log_sigma": 7.498,
+        "delta_rar": -1.2407,
+        "Vmax": 118,
+        "Q_kin": 0.788
+      },
+      {
+        "name": "F568-V1",
+        "log_sigma": 7.082,
+        "delta_rar": -1.2082,
+        "Vmax": 118,
+        "Q_kin": 0.788
+      },
+      {
+        "name": "F568-V1",
+        "log_sigma": 6.419,
+        "delta_rar": -1.1621,
+        "Vmax": 118,
+        "Q_kin": 0.788
+      },
+      {
+        "name": "F571-8",
+        "log_sigma": 7.768,
+        "delta_rar": -1.4253,
+        "Vmax": 144,
+        "Q_kin": 0.732
+      },
+      {
+        "name": "F571-8",
+        "log_sigma": 7.032,
+        "delta_rar": -1.004,
+        "Vmax": 144,
+        "Q_kin": 0.732
+      },
+      {
+        "name": "F571-8",
+        "log_sigma": 6.412,
+        "delta_rar": -0.8095,
+        "Vmax": 144,
+        "Q_kin": 0.732
+      },
+      {
+        "name": "F571-V1",
+        "log_sigma": 7.574,
+        "delta_rar": -1.7033,
+        "Vmax": 84.3,
+        "Q_kin": 0.684
+      },
+      {
+        "name": "F571-V1",
+        "log_sigma": 6.838,
+        "delta_rar": -1.5557,
+        "Vmax": 84.3,
+        "Q_kin": 0.684
+      },
+      {
+        "name": "F574-1",
+        "log_sigma": 7.819,
+        "delta_rar": -1.5306,
+        "Vmax": 99.7,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "F574-1",
+        "log_sigma": 7.157,
+        "delta_rar": -1.3455,
+        "Vmax": 99.7,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "F574-1",
+        "log_sigma": 6.787,
+        "delta_rar": -1.2877,
+        "Vmax": 99.7,
+        "Q_kin": 0.769
+      },
+      {
+        "name": "F574-2",
+        "log_sigma": 7.077,
+        "delta_rar": -2.3016,
+        "Vmax": 40,
+        "Q_kin": 0.511
+      },
+      {
+        "name": "F579-V1",
+        "log_sigma": 9.813,
+        "delta_rar": -2.3069,
+        "Vmax": 114,
+        "Q_kin": 0.781
+      },
+      {
+        "name": "F579-V1",
+        "log_sigma": 7.877,
+        "delta_rar": -1.3742,
+        "Vmax": 114,
+        "Q_kin": 0.781
+      },
+      {
+        "name": "F579-V1",
+        "log_sigma": 7.324,
+        "delta_rar": -1.2983,
+        "Vmax": 114,
+        "Q_kin": 0.781
+      },
+      {
+        "name": "F579-V1",
+        "log_sigma": 6.886,
+        "delta_rar": -1.2666,
+        "Vmax": 114,
+        "Q_kin": 0.781
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 8.429,
+        "delta_rar": -2.8986,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 7.691,
+        "delta_rar": -1.9351,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 7.219,
+        "delta_rar": -1.5253,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 6.921,
+        "delta_rar": -1.3531,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 6.634,
+        "delta_rar": -1.22,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-1",
+        "log_sigma": 6.177,
+        "delta_rar": -1.0953,
+        "Vmax": 86.9,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "F583-4",
+        "log_sigma": 8.298,
+        "delta_rar": -2.0997,
+        "Vmax": 69.9,
+        "Q_kin": 0.67
+      },
+      {
+        "name": "F583-4",
+        "log_sigma": 6.782,
+        "delta_rar": -1.3654,
+        "Vmax": 69.9,
+        "Q_kin": 0.67
+      },
+      {
+        "name": "F583-4",
+        "log_sigma": 6.49,
+        "delta_rar": -1.2622,
+        "Vmax": 69.9,
+        "Q_kin": 0.67
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 8.389,
+        "delta_rar": -2.8864,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 7.787,
+        "delta_rar": -2.271,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 7.437,
+        "delta_rar": -2.0201,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 7.187,
+        "delta_rar": -1.8986,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 6.994,
+        "delta_rar": -1.8076,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 6.834,
+        "delta_rar": -1.652,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 6.701,
+        "delta_rar": -1.5857,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 6.585,
+        "delta_rar": -1.5312,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 2574",
+        "log_sigma": 6.483,
+        "delta_rar": -1.4432,
+        "Vmax": 67.5,
+        "Q_kin": 0.91
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 9.114,
+        "delta_rar": -1.5307,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 8.51,
+        "delta_rar": -1.2247,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 8.154,
+        "delta_rar": -1.1252,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 7.913,
+        "delta_rar": -1.124,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 7.754,
+        "delta_rar": -1.1304,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 7.6,
+        "delta_rar": -1.1407,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 7.415,
+        "delta_rar": -1.1584,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "IC 4202",
+        "log_sigma": 7.278,
+        "delta_rar": -1.1185,
+        "Vmax": 250,
+        "Q_kin": 0.997
+      },
+      {
+        "name": "KK98-251",
+        "log_sigma": 7.543,
+        "delta_rar": -2.3128,
+        "Vmax": 34.6,
+        "Q_kin": 0.757
+      },
+      {
+        "name": "KK98-251",
+        "log_sigma": 6.989,
+        "delta_rar": -1.8145,
+        "Vmax": 34.6,
+        "Q_kin": 0.757
+      },
+      {
+        "name": "KK98-251",
+        "log_sigma": 6.653,
+        "delta_rar": -1.4646,
+        "Vmax": 34.6,
+        "Q_kin": 0.757
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 9.858,
+        "delta_rar": -2.6547,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 8.89,
+        "delta_rar": -1.5857,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 8.444,
+        "delta_rar": -1.3227,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 8.162,
+        "delta_rar": -1.2171,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 7.941,
+        "delta_rar": -1.1359,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 7.764,
+        "delta_rar": -1.0702,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 7.621,
+        "delta_rar": -1.045,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 24",
+        "log_sigma": 6.399,
+        "delta_rar": -1.0189,
+        "Vmax": 110,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "NGC 55",
+        "log_sigma": 8.131,
+        "delta_rar": -2.0072,
+        "Vmax": 87.4,
+        "Q_kin": 0.878
+      },
+      {
+        "name": "NGC 55",
+        "log_sigma": 7.621,
+        "delta_rar": -1.6865,
+        "Vmax": 87.4,
+        "Q_kin": 0.878
+      },
+      {
+        "name": "NGC 55",
+        "log_sigma": 7.301,
+        "delta_rar": -1.5523,
+        "Vmax": 87.4,
+        "Q_kin": 0.878
+      },
+      {
+        "name": "NGC 55",
+        "log_sigma": 7.068,
+        "delta_rar": -1.5406,
+        "Vmax": 87.4,
+        "Q_kin": 0.878
+      },
+      {
+        "name": "NGC 55",
+        "log_sigma": 6.884,
+        "delta_rar": -1.5202,
+        "Vmax": 87.4,
+        "Q_kin": 0.878
+      },
+      {
+        "name": "NGC 100",
+        "log_sigma": 8.285,
+        "delta_rar": -2.0213,
+        "Vmax": 91.2,
+        "Q_kin": 0.826
+      },
+      {
+        "name": "NGC 100",
+        "log_sigma": 7.46,
+        "delta_rar": -1.4715,
+        "Vmax": 91.2,
+        "Q_kin": 0.826
+      },
+      {
+        "name": "NGC 100",
+        "log_sigma": 7.045,
+        "delta_rar": -1.272,
+        "Vmax": 91.2,
+        "Q_kin": 0.826
+      },
+      {
+        "name": "NGC 100",
+        "log_sigma": 6.696,
+        "delta_rar": -1.2112,
+        "Vmax": 91.2,
+        "Q_kin": 0.826
+      },
+      {
+        "name": "NGC 100",
+        "log_sigma": 6.507,
+        "delta_rar": -1.1546,
+        "Vmax": 91.2,
+        "Q_kin": 0.826
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 8.867,
+        "delta_rar": -2.1572,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 8.128,
+        "delta_rar": -1.8072,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 7.736,
+        "delta_rar": -1.7035,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 7.467,
+        "delta_rar": -1.5772,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 7.261,
+        "delta_rar": -1.4833,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 7.096,
+        "delta_rar": -1.4492,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 247",
+        "log_sigma": 6.956,
+        "delta_rar": -1.4326,
+        "Vmax": 108,
+        "Q_kin": 0.917
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 8.931,
+        "delta_rar": -1.4283,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 8.151,
+        "delta_rar": -1.4211,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 7.491,
+        "delta_rar": -1.5666,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 7.119,
+        "delta_rar": -1.4464,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 6.86,
+        "delta_rar": -1.4411,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 6.66,
+        "delta_rar": -1.5008,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 289",
+        "log_sigma": 6.498,
+        "delta_rar": -1.5163,
+        "Vmax": 194,
+        "Q_kin": 0.937
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 8.393,
+        "delta_rar": -1.8698,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 7.884,
+        "delta_rar": -1.5561,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 7.563,
+        "delta_rar": -1.5685,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 7.331,
+        "delta_rar": -1.5131,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 7.147,
+        "delta_rar": -1.4301,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 300",
+        "log_sigma": 6.997,
+        "delta_rar": -1.4683,
+        "Vmax": 97,
+        "Q_kin": 0.912
+      },
+      {
+        "name": "NGC 801",
+        "log_sigma": 9.327,
+        "delta_rar": -1.2006,
+        "Vmax": 238,
+        "Q_kin": 0.766
+      },
+      {
+        "name": "NGC 801",
+        "log_sigma": 7.418,
+        "delta_rar": -1.1029,
+        "Vmax": 238,
+        "Q_kin": 0.766
+      },
+      {
+        "name": "NGC 801",
+        "log_sigma": 6.589,
+        "delta_rar": -1.1452,
+        "Vmax": 238,
+        "Q_kin": 0.766
+      },
+      {
+        "name": "NGC 891",
+        "log_sigma": 9.471,
+        "delta_rar": -1.4063,
+        "Vmax": 234,
+        "Q_kin": 0.808
+      },
+      {
+        "name": "NGC 891",
+        "log_sigma": 8.641,
+        "delta_rar": -1.2587,
+        "Vmax": 234,
+        "Q_kin": 0.808
+      },
+      {
+        "name": "NGC 891",
+        "log_sigma": 8.226,
+        "delta_rar": -1.2439,
+        "Vmax": 234,
+        "Q_kin": 0.808
+      },
+      {
+        "name": "NGC 891",
+        "log_sigma": 7.944,
+        "delta_rar": -1.2775,
+        "Vmax": 234,
+        "Q_kin": 0.808
+      },
+      {
+        "name": "NGC 891",
+        "log_sigma": 7.735,
+        "delta_rar": -1.3175,
+        "Vmax": 234,
+        "Q_kin": 0.808
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 8.506,
+        "delta_rar": -1.9018,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 7.954,
+        "delta_rar": -1.6868,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 7.62,
+        "delta_rar": -1.6908,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 7.374,
+        "delta_rar": -1.7035,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 7.188,
+        "delta_rar": -1.6417,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 7.034,
+        "delta_rar": -1.6167,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 6.901,
+        "delta_rar": -1.6004,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 6.788,
+        "delta_rar": -1.569,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1003",
+        "log_sigma": 6.688,
+        "delta_rar": -1.5537,
+        "Vmax": 115,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 8.212,
+        "delta_rar": -1.3421,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 7.429,
+        "delta_rar": -1.0447,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 6.993,
+        "delta_rar": -1.0743,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 6.74,
+        "delta_rar": -1.0896,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 6.548,
+        "delta_rar": -1.1,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1090",
+        "log_sigma": 6.391,
+        "delta_rar": -1.116,
+        "Vmax": 176,
+        "Q_kin": 0.904
+      },
+      {
+        "name": "NGC 1705",
+        "log_sigma": 8.122,
+        "delta_rar": -1.3768,
+        "Vmax": 73.2,
+        "Q_kin": 0.787
+      },
+      {
+        "name": "NGC 1705",
+        "log_sigma": 7.455,
+        "delta_rar": -1.3995,
+        "Vmax": 73.2,
+        "Q_kin": 0.787
+      },
+      {
+        "name": "NGC 1705",
+        "log_sigma": 7.086,
+        "delta_rar": -1.3963,
+        "Vmax": 73.2,
+        "Q_kin": 0.787
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 8.674,
+        "delta_rar": -2.8045,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 7.552,
+        "delta_rar": -1.8478,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 7.078,
+        "delta_rar": -1.4915,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 6.773,
+        "delta_rar": -1.3669,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 6.548,
+        "delta_rar": -1.2835,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 6.369,
+        "delta_rar": -1.3385,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2366",
+        "log_sigma": 6.221,
+        "delta_rar": -1.3558,
+        "Vmax": 53.7,
+        "Q_kin": 0.907
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 9.528,
+        "delta_rar": -1.868,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 8.984,
+        "delta_rar": -1.5435,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 8.645,
+        "delta_rar": -1.4426,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 8.408,
+        "delta_rar": -1.343,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 8.217,
+        "delta_rar": -1.2894,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 8.068,
+        "delta_rar": -1.3053,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 7.934,
+        "delta_rar": -1.2879,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 7.819,
+        "delta_rar": -1.2709,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 7.719,
+        "delta_rar": -1.1808,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 7.552,
+        "delta_rar": -1.1349,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 7.233,
+        "delta_rar": -1.0772,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.999,
+        "delta_rar": -1.0699,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.817,
+        "delta_rar": -1.0696,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.665,
+        "delta_rar": -1.0359,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.536,
+        "delta_rar": -1.0293,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.423,
+        "delta_rar": -1.0227,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.324,
+        "delta_rar": -1.0161,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2403",
+        "log_sigma": 6.235,
+        "delta_rar": -1.0161,
+        "Vmax": 136,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "NGC 2683",
+        "log_sigma": 8.473,
+        "delta_rar": -1.403,
+        "Vmax": 212,
+        "Q_kin": 0.744
+      },
+      {
+        "name": "NGC 2683",
+        "log_sigma": 7.737,
+        "delta_rar": -1.5709,
+        "Vmax": 212,
+        "Q_kin": 0.744
+      },
+      {
+        "name": "NGC 2683",
+        "log_sigma": 7.269,
+        "delta_rar": -1.6675,
+        "Vmax": 212,
+        "Q_kin": 0.744
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 9.486,
+        "delta_rar": -1.294,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 9.255,
+        "delta_rar": -1.2691,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 9.074,
+        "delta_rar": -1.2466,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 8.92,
+        "delta_rar": -1.2362,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 8.792,
+        "delta_rar": -1.2373,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 8.682,
+        "delta_rar": -1.2388,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 8.253,
+        "delta_rar": -1.2969,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 7.934,
+        "delta_rar": -1.3128,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 7.701,
+        "delta_rar": -1.336,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 7.518,
+        "delta_rar": -1.3792,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 7.366,
+        "delta_rar": -1.332,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2841",
+        "log_sigma": 7.238,
+        "delta_rar": -1.3287,
+        "Vmax": 323,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 9.97,
+        "delta_rar": -2.0677,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 9.015,
+        "delta_rar": -1.101,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 8.572,
+        "delta_rar": -0.9838,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 8.061,
+        "delta_rar": -1.0007,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 7.617,
+        "delta_rar": -1.0369,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 7.325,
+        "delta_rar": -1.0715,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 7.107,
+        "delta_rar": -1.0938,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 6.933,
+        "delta_rar": -1.1265,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2903",
+        "log_sigma": 6.788,
+        "delta_rar": -1.1311,
+        "Vmax": 216,
+        "Q_kin": 0.982
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 8.532,
+        "delta_rar": -1.8438,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 7.933,
+        "delta_rar": -1.4084,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 7.578,
+        "delta_rar": -1.4092,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 7.329,
+        "delta_rar": -1.4159,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 7.135,
+        "delta_rar": -1.423,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 6.977,
+        "delta_rar": -1.4217,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2915",
+        "log_sigma": 6.843,
+        "delta_rar": -1.3738,
+        "Vmax": 86.5,
+        "Q_kin": 0.959
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 9.821,
+        "delta_rar": -1.3689,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 8.874,
+        "delta_rar": -1.1556,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 8.433,
+        "delta_rar": -1.179,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 8.133,
+        "delta_rar": -1.1491,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 7.747,
+        "delta_rar": -1.075,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2955",
+        "log_sigma": 7.323,
+        "delta_rar": -1.1428,
+        "Vmax": 276,
+        "Q_kin": 0.882
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 9.325,
+        "delta_rar": -2.8062,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 8.48,
+        "delta_rar": -1.8341,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 8.06,
+        "delta_rar": -1.5562,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 7.778,
+        "delta_rar": -1.362,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 7.565,
+        "delta_rar": -1.0828,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 7.4,
+        "delta_rar": -0.9752,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2976",
+        "log_sigma": 7.142,
+        "delta_rar": -0.8484,
+        "Vmax": 88.7,
+        "Q_kin": 0.891
+      },
+      {
+        "name": "NGC 2998",
+        "log_sigma": 8.755,
+        "delta_rar": -1.1929,
+        "Vmax": 214,
+        "Q_kin": 0.76
+      },
+      {
+        "name": "NGC 2998",
+        "log_sigma": 7.154,
+        "delta_rar": -0.8644,
+        "Vmax": 214,
+        "Q_kin": 0.76
+      },
+      {
+        "name": "NGC 2998",
+        "log_sigma": 6.329,
+        "delta_rar": -0.8675,
+        "Vmax": 214,
+        "Q_kin": 0.76
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 8.673,
+        "delta_rar": -2.8126,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 7.724,
+        "delta_rar": -1.9567,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 7.282,
+        "delta_rar": -1.6512,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 6.99,
+        "delta_rar": -1.4548,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 6.772,
+        "delta_rar": -1.3599,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3109",
+        "log_sigma": 6.598,
+        "delta_rar": -1.256,
+        "Vmax": 67.3,
+        "Q_kin": 0.86
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 10.192,
+        "delta_rar": -2.7265,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 8.788,
+        "delta_rar": -1.7856,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 8.28,
+        "delta_rar": -1.4774,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 7.962,
+        "delta_rar": -1.3181,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 7.727,
+        "delta_rar": -1.1994,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 7.545,
+        "delta_rar": -1.1363,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 7.198,
+        "delta_rar": -1.0885,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 6.79,
+        "delta_rar": -1.0822,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 6.44,
+        "delta_rar": -1.0991,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 6.188,
+        "delta_rar": -1.1164,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3198",
+        "log_sigma": 5.996,
+        "delta_rar": -1.0988,
+        "Vmax": 157,
+        "Q_kin": 0.995
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 10.108,
+        "delta_rar": -1.3806,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 9.506,
+        "delta_rar": -1.1859,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 9.158,
+        "delta_rar": -1.1098,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.907,
+        "delta_rar": -1.0977,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.716,
+        "delta_rar": -1.0995,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.556,
+        "delta_rar": -1.0657,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.422,
+        "delta_rar": -1.0805,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.307,
+        "delta_rar": -1.0837,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 8.203,
+        "delta_rar": -1.0912,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3521",
+        "log_sigma": 7.698,
+        "delta_rar": -1.1012,
+        "Vmax": 220,
+        "Q_kin": 0.992
+      },
+      {
+        "name": "NGC 3726",
+        "log_sigma": 9.096,
+        "delta_rar": -1.9391,
+        "Vmax": 169,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "NGC 3726",
+        "log_sigma": 8.144,
+        "delta_rar": -1.5275,
+        "Vmax": 169,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "NGC 3726",
+        "log_sigma": 7.487,
+        "delta_rar": -1.5467,
+        "Vmax": 169,
+        "Q_kin": 0.734
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 9.13,
+        "delta_rar": -2.5568,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 7.717,
+        "delta_rar": -1.9037,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 7.209,
+        "delta_rar": -1.7541,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 6.827,
+        "delta_rar": -1.5412,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 6.431,
+        "delta_rar": -1.4054,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3741",
+        "log_sigma": 6.163,
+        "delta_rar": -1.3514,
+        "Vmax": 51.6,
+        "Q_kin": 0.829
+      },
+      {
+        "name": "NGC 3769",
+        "log_sigma": 8.019,
+        "delta_rar": -1.5135,
+        "Vmax": 126,
+        "Q_kin": 0.742
+      },
+      {
+        "name": "NGC 3769",
+        "log_sigma": 7.383,
+        "delta_rar": -1.5838,
+        "Vmax": 126,
+        "Q_kin": 0.742
+      },
+      {
+        "name": "NGC 3769",
+        "log_sigma": 6.567,
+        "delta_rar": -1.5978,
+        "Vmax": 126,
+        "Q_kin": 0.742
+      },
+      {
+        "name": "NGC 3877",
+        "log_sigma": 8.494,
+        "delta_rar": -1.3434,
+        "Vmax": 171,
+        "Q_kin": 0.773
+      },
+      {
+        "name": "NGC 3877",
+        "log_sigma": 7.894,
+        "delta_rar": -1.1989,
+        "Vmax": 171,
+        "Q_kin": 0.773
+      },
+      {
+        "name": "NGC 3877",
+        "log_sigma": 7.542,
+        "delta_rar": -1.1822,
+        "Vmax": 171,
+        "Q_kin": 0.773
+      },
+      {
+        "name": "NGC 3893",
+        "log_sigma": 8.666,
+        "delta_rar": -1.3354,
+        "Vmax": 194,
+        "Q_kin": 0.679
+      },
+      {
+        "name": "NGC 3893",
+        "log_sigma": 7.869,
+        "delta_rar": -1.362,
+        "Vmax": 194,
+        "Q_kin": 0.679
+      },
+      {
+        "name": "NGC 3917",
+        "log_sigma": 9.527,
+        "delta_rar": -2.8052,
+        "Vmax": 138,
+        "Q_kin": 0.823
+      },
+      {
+        "name": "NGC 3917",
+        "log_sigma": 8.125,
+        "delta_rar": -1.4986,
+        "Vmax": 138,
+        "Q_kin": 0.823
+      },
+      {
+        "name": "NGC 3917",
+        "log_sigma": 7.616,
+        "delta_rar": -1.3011,
+        "Vmax": 138,
+        "Q_kin": 0.823
+      },
+      {
+        "name": "NGC 3917",
+        "log_sigma": 7.296,
+        "delta_rar": -1.281,
+        "Vmax": 138,
+        "Q_kin": 0.823
+      },
+      {
+        "name": "NGC 3917",
+        "log_sigma": 7.062,
+        "delta_rar": -1.2806,
+        "Vmax": 138,
+        "Q_kin": 0.823
+      },
+      {
+        "name": "NGC 3949",
+        "log_sigma": 8.426,
+        "delta_rar": -1.3181,
+        "Vmax": 169,
+        "Q_kin": 0.664
+      },
+      {
+        "name": "NGC 3953",
+        "log_sigma": 9.318,
+        "delta_rar": -1.556,
+        "Vmax": 224,
+        "Q_kin": 0.681
+      },
+      {
+        "name": "NGC 3953",
+        "log_sigma": 8.366,
+        "delta_rar": -1.3584,
+        "Vmax": 224,
+        "Q_kin": 0.681
+      },
+      {
+        "name": "NGC 3972",
+        "log_sigma": 9.323,
+        "delta_rar": -2.274,
+        "Vmax": 134,
+        "Q_kin": 0.69
+      },
+      {
+        "name": "NGC 3972",
+        "log_sigma": 7.921,
+        "delta_rar": -1.3715,
+        "Vmax": 134,
+        "Q_kin": 0.69
+      },
+      {
+        "name": "NGC 3972",
+        "log_sigma": 7.412,
+        "delta_rar": -1.1984,
+        "Vmax": 134,
+        "Q_kin": 0.69
+      },
+      {
+        "name": "NGC 3992",
+        "log_sigma": 8.453,
+        "delta_rar": -1.4775,
+        "Vmax": 272,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "NGC 3992",
+        "log_sigma": 7.851,
+        "delta_rar": -1.5683,
+        "Vmax": 272,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "NGC 4010",
+        "log_sigma": 8.721,
+        "delta_rar": -1.9856,
+        "Vmax": 129,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "NGC 4010",
+        "log_sigma": 7.763,
+        "delta_rar": -1.4196,
+        "Vmax": 129,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "NGC 4010",
+        "log_sigma": 7.321,
+        "delta_rar": -1.2448,
+        "Vmax": 129,
+        "Q_kin": 0.725
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 8.922,
+        "delta_rar": -1.5329,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 8.583,
+        "delta_rar": -1.5291,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 8.339,
+        "delta_rar": -1.5682,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 8.152,
+        "delta_rar": -1.6816,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 7.998,
+        "delta_rar": -1.665,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 7.867,
+        "delta_rar": -1.6336,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 7.754,
+        "delta_rar": -1.6331,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 7.653,
+        "delta_rar": -1.5933,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4013",
+        "log_sigma": 7.56,
+        "delta_rar": -1.6027,
+        "Vmax": 198,
+        "Q_kin": 1
+      },
+      {
+        "name": "NGC 4051",
+        "log_sigma": 8.698,
+        "delta_rar": -1.623,
+        "Vmax": 161,
+        "Q_kin": 0.666
+      },
+      {
+        "name": "NGC 4051",
+        "log_sigma": 7.746,
+        "delta_rar": -1.3708,
+        "Vmax": 161,
+        "Q_kin": 0.666
+      },
+      {
+        "name": "NGC 4068",
+        "log_sigma": 7.151,
+        "delta_rar": -1.7477,
+        "Vmax": 41.9,
+        "Q_kin": 0.59
+      },
+      {
+        "name": "NGC 4085",
+        "log_sigma": 9.323,
+        "delta_rar": -2.2188,
+        "Vmax": 136,
+        "Q_kin": 0.669
+      },
+      {
+        "name": "NGC 4085",
+        "log_sigma": 7.905,
+        "delta_rar": -1.2264,
+        "Vmax": 136,
+        "Q_kin": 0.669
+      },
+      {
+        "name": "NGC 4088",
+        "log_sigma": 8.892,
+        "delta_rar": -1.5841,
+        "Vmax": 182,
+        "Q_kin": 0.74
+      },
+      {
+        "name": "NGC 4088",
+        "log_sigma": 7.94,
+        "delta_rar": -1.3378,
+        "Vmax": 182,
+        "Q_kin": 0.74
+      },
+      {
+        "name": "NGC 4088",
+        "log_sigma": 7.498,
+        "delta_rar": -1.407,
+        "Vmax": 182,
+        "Q_kin": 0.74
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 9.193,
+        "delta_rar": -1.6659,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 8.593,
+        "delta_rar": -1.4227,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 8.241,
+        "delta_rar": -1.429,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 7.992,
+        "delta_rar": -1.4741,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 7.799,
+        "delta_rar": -1.4926,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4100",
+        "log_sigma": 7.636,
+        "delta_rar": -1.5956,
+        "Vmax": 195,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "NGC 4138",
+        "log_sigma": 8.666,
+        "delta_rar": -1.3309,
+        "Vmax": 195,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "NGC 4138",
+        "log_sigma": 7.695,
+        "delta_rar": -1.5704,
+        "Vmax": 195,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "NGC 4157",
+        "log_sigma": 8.763,
+        "delta_rar": -1.3939,
+        "Vmax": 201,
+        "Q_kin": 0.821
+      },
+      {
+        "name": "NGC 4157",
+        "log_sigma": 8.03,
+        "delta_rar": -1.3973,
+        "Vmax": 201,
+        "Q_kin": 0.821
+      },
+      {
+        "name": "NGC 4157",
+        "log_sigma": 7.637,
+        "delta_rar": -1.4379,
+        "Vmax": 201,
+        "Q_kin": 0.821
+      },
+      {
+        "name": "NGC 4157",
+        "log_sigma": 7.368,
+        "delta_rar": -1.4135,
+        "Vmax": 201,
+        "Q_kin": 0.821
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 8.925,
+        "delta_rar": -1.9268,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 7.967,
+        "delta_rar": -1.5627,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 7.525,
+        "delta_rar": -1.4412,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 7.225,
+        "delta_rar": -1.4637,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 6.996,
+        "delta_rar": -1.4633,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4183",
+        "log_sigma": 6.805,
+        "delta_rar": -1.4552,
+        "Vmax": 115,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "NGC 4214",
+        "log_sigma": 8.469,
+        "delta_rar": -1.4612,
+        "Vmax": 80.6,
+        "Q_kin": 0.785
+      },
+      {
+        "name": "NGC 4214",
+        "log_sigma": 7.637,
+        "delta_rar": -1.2965,
+        "Vmax": 80.6,
+        "Q_kin": 0.785
+      },
+      {
+        "name": "NGC 4214",
+        "log_sigma": 7.22,
+        "delta_rar": -1.2955,
+        "Vmax": 80.6,
+        "Q_kin": 0.785
+      },
+      {
+        "name": "NGC 4217",
+        "log_sigma": 9.907,
+        "delta_rar": -2.4206,
+        "Vmax": 191,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "NGC 4217",
+        "log_sigma": 8.505,
+        "delta_rar": -1.269,
+        "Vmax": 191,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "NGC 4217",
+        "log_sigma": 7.996,
+        "delta_rar": -1.1985,
+        "Vmax": 191,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "NGC 4217",
+        "log_sigma": 7.676,
+        "delta_rar": -1.1926,
+        "Vmax": 191,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "NGC 4217",
+        "log_sigma": 7.442,
+        "delta_rar": -1.249,
+        "Vmax": 191,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "NGC 4389",
+        "log_sigma": 8.305,
+        "delta_rar": -1.805,
+        "Vmax": 110,
+        "Q_kin": 0.59
+      },
+      {
+        "name": "NGC 4389",
+        "log_sigma": 7.334,
+        "delta_rar": -1.1619,
+        "Vmax": 110,
+        "Q_kin": 0.59
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 8.666,
+        "delta_rar": -1.7593,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 8.068,
+        "delta_rar": -1.5549,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 7.711,
+        "delta_rar": -1.4902,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 7.462,
+        "delta_rar": -1.4449,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 7.27,
+        "delta_rar": -1.4301,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 7.112,
+        "delta_rar": -1.4227,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 6.979,
+        "delta_rar": -1.4296,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 4559",
+        "log_sigma": 6.86,
+        "delta_rar": -1.4511,
+        "Vmax": 124,
+        "Q_kin": 0.98
+      },
+      {
+        "name": "NGC 5005",
+        "log_sigma": 9.391,
+        "delta_rar": -1.1216,
+        "Vmax": 265,
+        "Q_kin": 0.838
+      },
+      {
+        "name": "NGC 5005",
+        "log_sigma": 8.791,
+        "delta_rar": -1.0233,
+        "Vmax": 265,
+        "Q_kin": 0.838
+      },
+      {
+        "name": "NGC 5005",
+        "log_sigma": 8.346,
+        "delta_rar": -1.0059,
+        "Vmax": 265,
+        "Q_kin": 0.838
+      },
+      {
+        "name": "NGC 5005",
+        "log_sigma": 7.995,
+        "delta_rar": -1.0005,
+        "Vmax": 265,
+        "Q_kin": 0.838
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 9.486,
+        "delta_rar": -1.3125,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 8.396,
+        "delta_rar": -1.2644,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 7.733,
+        "delta_rar": -1.2807,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 7.364,
+        "delta_rar": -1.2756,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 7.105,
+        "delta_rar": -1.39,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5033",
+        "log_sigma": 6.903,
+        "delta_rar": -1.3672,
+        "Vmax": 225,
+        "Q_kin": 0.852
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 9.064,
+        "delta_rar": -1.2826,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 8.461,
+        "delta_rar": -1.2403,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 8.109,
+        "delta_rar": -1.2166,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 7.375,
+        "delta_rar": -1.2396,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 6.98,
+        "delta_rar": -1.3208,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 6.71,
+        "delta_rar": -1.3349,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5055",
+        "log_sigma": 6.506,
+        "delta_rar": -1.3693,
+        "Vmax": 206,
+        "Q_kin": 0.954
+      },
+      {
+        "name": "NGC 5371",
+        "log_sigma": 8.824,
+        "delta_rar": -1.3735,
+        "Vmax": 242,
+        "Q_kin": 0.831
+      },
+      {
+        "name": "NGC 5371",
+        "log_sigma": 8.026,
+        "delta_rar": -1.2784,
+        "Vmax": 242,
+        "Q_kin": 0.831
+      },
+      {
+        "name": "NGC 5371",
+        "log_sigma": 7.517,
+        "delta_rar": -1.2876,
+        "Vmax": 242,
+        "Q_kin": 0.831
+      },
+      {
+        "name": "NGC 5371",
+        "log_sigma": 7.2,
+        "delta_rar": -1.3891,
+        "Vmax": 242,
+        "Q_kin": 0.831
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 10.003,
+        "delta_rar": -2.7477,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 8.138,
+        "delta_rar": -1.7548,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 7.582,
+        "delta_rar": -1.5228,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 6.843,
+        "delta_rar": -1.0784,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 6.332,
+        "delta_rar": -0.9168,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5585",
+        "log_sigma": 6.012,
+        "delta_rar": -0.8752,
+        "Vmax": 92.3,
+        "Q_kin": 0.915
+      },
+      {
+        "name": "NGC 5907",
+        "log_sigma": 9.383,
+        "delta_rar": -1.6021,
+        "Vmax": 235,
+        "Q_kin": 0.851
+      },
+      {
+        "name": "NGC 5907",
+        "log_sigma": 8.428,
+        "delta_rar": -1.526,
+        "Vmax": 235,
+        "Q_kin": 0.851
+      },
+      {
+        "name": "NGC 5907",
+        "log_sigma": 7.985,
+        "delta_rar": -1.5463,
+        "Vmax": 235,
+        "Q_kin": 0.851
+      },
+      {
+        "name": "NGC 5907",
+        "log_sigma": 7.692,
+        "delta_rar": -1.5889,
+        "Vmax": 235,
+        "Q_kin": 0.851
+      },
+      {
+        "name": "NGC 5907",
+        "log_sigma": 7.474,
+        "delta_rar": -1.5801,
+        "Vmax": 235,
+        "Q_kin": 0.851
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 9.533,
+        "delta_rar": -1.5433,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 9.069,
+        "delta_rar": -1.3877,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 8.763,
+        "delta_rar": -1.2927,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 8.533,
+        "delta_rar": -1.2818,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 8.359,
+        "delta_rar": -1.3242,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 8.209,
+        "delta_rar": -1.3113,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 8.081,
+        "delta_rar": -1.3106,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 5985",
+        "log_sigma": 7.958,
+        "delta_rar": -1.3012,
+        "Vmax": 305,
+        "Q_kin": 0.994
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 10.343,
+        "delta_rar": -2.5123,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 8.971,
+        "delta_rar": -1.5229,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 8.463,
+        "delta_rar": -1.2612,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 8.145,
+        "delta_rar": -1.1768,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 7.905,
+        "delta_rar": -1.2336,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 7.38,
+        "delta_rar": -1.2259,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 7.14,
+        "delta_rar": -1.1679,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 6.951,
+        "delta_rar": -1.1402,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 6.796,
+        "delta_rar": -1.1187,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 6.665,
+        "delta_rar": -1.1728,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6015",
+        "log_sigma": 6.55,
+        "delta_rar": -1.1671,
+        "Vmax": 166,
+        "Q_kin": 0.975
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 10.158,
+        "delta_rar": -1.6154,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 8.949,
+        "delta_rar": -1.3045,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 8.465,
+        "delta_rar": -1.2708,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 8.157,
+        "delta_rar": -1.2722,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 7.899,
+        "delta_rar": -1.2501,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6195",
+        "log_sigma": 7.467,
+        "delta_rar": -1.2418,
+        "Vmax": 258,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 9.218,
+        "delta_rar": -1.6574,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 8.266,
+        "delta_rar": -1.4807,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 7.822,
+        "delta_rar": -1.5151,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 7.528,
+        "delta_rar": -1.5067,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 7.309,
+        "delta_rar": -1.5136,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 7.139,
+        "delta_rar": -1.5208,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 6.993,
+        "delta_rar": -1.5206,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6503",
+        "log_sigma": 6.868,
+        "delta_rar": -1.498,
+        "Vmax": 121,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "NGC 6674",
+        "log_sigma": 8.51,
+        "delta_rar": -1.2828,
+        "Vmax": 291,
+        "Q_kin": 0.786
+      },
+      {
+        "name": "NGC 6674",
+        "log_sigma": 7.683,
+        "delta_rar": -1.4101,
+        "Vmax": 291,
+        "Q_kin": 0.786
+      },
+      {
+        "name": "NGC 6674",
+        "log_sigma": 7.267,
+        "delta_rar": -1.4591,
+        "Vmax": 291,
+        "Q_kin": 0.786
+      },
+      {
+        "name": "NGC 6674",
+        "log_sigma": 6.987,
+        "delta_rar": -1.4368,
+        "Vmax": 291,
+        "Q_kin": 0.786
+      },
+      {
+        "name": "NGC 6789",
+        "log_sigma": 7.499,
+        "delta_rar": -0.8908,
+        "Vmax": 60.4,
+        "Q_kin": 0.563
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 9.409,
+        "delta_rar": -1.4073,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 8.716,
+        "delta_rar": -1.3641,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 8.352,
+        "delta_rar": -1.2332,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 8.098,
+        "delta_rar": -1.1445,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.902,
+        "delta_rar": -1.129,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.741,
+        "delta_rar": -1.1429,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.606,
+        "delta_rar": -1.1722,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.489,
+        "delta_rar": -1.1619,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.385,
+        "delta_rar": -1.1666,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.288,
+        "delta_rar": -1.1614,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.205,
+        "delta_rar": -1.2179,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.129,
+        "delta_rar": -1.2449,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 7.06,
+        "delta_rar": -1.2338,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 6946",
+        "log_sigma": 6.995,
+        "delta_rar": -1.2613,
+        "Vmax": 181,
+        "Q_kin": 0.943
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 9.569,
+        "delta_rar": -1.4162,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 9.125,
+        "delta_rar": -1.3359,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 8.718,
+        "delta_rar": -1.337,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 8.366,
+        "delta_rar": -1.3722,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 8.118,
+        "delta_rar": -1.4107,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 7.921,
+        "delta_rar": -1.3913,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 7.764,
+        "delta_rar": -1.398,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 7.631,
+        "delta_rar": -1.3793,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7331",
+        "log_sigma": 7.513,
+        "delta_rar": -1.3935,
+        "Vmax": 257,
+        "Q_kin": 0.998
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 9.767,
+        "delta_rar": -2.4195,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 9.165,
+        "delta_rar": -1.8068,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 8.813,
+        "delta_rar": -1.4953,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 8.563,
+        "delta_rar": -1.3985,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 8.369,
+        "delta_rar": -1.3365,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 7.767,
+        "delta_rar": -1.1835,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 7.415,
+        "delta_rar": -1.0013,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 7.168,
+        "delta_rar": -0.8869,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 6.969,
+        "delta_rar": -0.8217,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 6.813,
+        "delta_rar": -0.7514,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 6.535,
+        "delta_rar": -0.8212,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7793",
+        "log_sigma": 6.267,
+        "delta_rar": -0.9636,
+        "Vmax": 116,
+        "Q_kin": 0.985
+      },
+      {
+        "name": "NGC 7814",
+        "log_sigma": 8.921,
+        "delta_rar": -1.1906,
+        "Vmax": 265,
+        "Q_kin": 0.84
+      },
+      {
+        "name": "NGC 7814",
+        "log_sigma": 8.259,
+        "delta_rar": -1.1995,
+        "Vmax": 265,
+        "Q_kin": 0.84
+      },
+      {
+        "name": "NGC 7814",
+        "log_sigma": 7.889,
+        "delta_rar": -1.2449,
+        "Vmax": 265,
+        "Q_kin": 0.84
+      },
+      {
+        "name": "NGC 7814",
+        "log_sigma": 7.626,
+        "delta_rar": -1.244,
+        "Vmax": 265,
+        "Q_kin": 0.84
+      },
+      {
+        "name": "PGC51017",
+        "log_sigma": 7.415,
+        "delta_rar": -1.957,
+        "Vmax": 20.5,
+        "Q_kin": 0.675
+      },
+      {
+        "name": "PGC51017",
+        "log_sigma": 6.286,
+        "delta_rar": -2.0283,
+        "Vmax": 20.5,
+        "Q_kin": 0.675
+      },
+      {
+        "name": "UGC 128",
+        "log_sigma": 7.901,
+        "delta_rar": -1.6796,
+        "Vmax": 134,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "UGC 128",
+        "log_sigma": 7.242,
+        "delta_rar": -1.5437,
+        "Vmax": 134,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "UGC 128",
+        "log_sigma": 6.868,
+        "delta_rar": -1.5093,
+        "Vmax": 134,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "UGC 128",
+        "log_sigma": 6.608,
+        "delta_rar": -1.5428,
+        "Vmax": 134,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "UGC 128",
+        "log_sigma": 6.41,
+        "delta_rar": -1.5222,
+        "Vmax": 134,
+        "Q_kin": 0.886
+      },
+      {
+        "name": "UGC 191",
+        "log_sigma": 8.527,
+        "delta_rar": -1.9871,
+        "Vmax": 83.85,
+        "Q_kin": 0.697
+      },
+      {
+        "name": "UGC 191",
+        "log_sigma": 7.682,
+        "delta_rar": -1.3493,
+        "Vmax": 83.85,
+        "Q_kin": 0.697
+      },
+      {
+        "name": "UGC 634",
+        "log_sigma": 8.399,
+        "delta_rar": -2.0226,
+        "Vmax": 108,
+        "Q_kin": 0.603
+      },
+      {
+        "name": "UGC 731",
+        "log_sigma": 8.935,
+        "delta_rar": -2.3457,
+        "Vmax": 74,
+        "Q_kin": 0.756
+      },
+      {
+        "name": "UGC 731",
+        "log_sigma": 7.537,
+        "delta_rar": -1.7122,
+        "Vmax": 74,
+        "Q_kin": 0.756
+      },
+      {
+        "name": "UGC 731",
+        "log_sigma": 7.027,
+        "delta_rar": -1.5462,
+        "Vmax": 74,
+        "Q_kin": 0.756
+      },
+      {
+        "name": "UGC 891",
+        "log_sigma": 8.308,
+        "delta_rar": -2.407,
+        "Vmax": 63.75,
+        "Q_kin": 0.619
+      },
+      {
+        "name": "UGC 891",
+        "log_sigma": 6.912,
+        "delta_rar": -1.5664,
+        "Vmax": 63.75,
+        "Q_kin": 0.619
+      },
+      {
+        "name": "UGC 1230",
+        "log_sigma": 7.627,
+        "delta_rar": -1.3624,
+        "Vmax": 113,
+        "Q_kin": 0.728
+      },
+      {
+        "name": "UGC 1230",
+        "log_sigma": 6.761,
+        "delta_rar": -1.2969,
+        "Vmax": 113,
+        "Q_kin": 0.728
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 9.6,
+        "delta_rar": -4.2801,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 7.728,
+        "delta_rar": -2.2511,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 7.178,
+        "delta_rar": -1.711,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 6.839,
+        "delta_rar": -1.408,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 6.6,
+        "delta_rar": -1.2148,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 6.328,
+        "delta_rar": -1.0868,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 1281",
+        "log_sigma": 6.01,
+        "delta_rar": -1.0428,
+        "Vmax": 56.9,
+        "Q_kin": 0.881
+      },
+      {
+        "name": "UGC 2023",
+        "log_sigma": 7.142,
+        "delta_rar": -1.543,
+        "Vmax": 58.8,
+        "Q_kin": 0.577
+      },
+      {
+        "name": "UGC 2259",
+        "log_sigma": 8.039,
+        "delta_rar": -1.5442,
+        "Vmax": 90,
+        "Q_kin": 0.678
+      },
+      {
+        "name": "UGC 2259",
+        "log_sigma": 7.302,
+        "delta_rar": -1.4636,
+        "Vmax": 90,
+        "Q_kin": 0.678
+      },
+      {
+        "name": "UGC 2455",
+        "log_sigma": 7.622,
+        "delta_rar": -1.9418,
+        "Vmax": 61,
+        "Q_kin": 0.617
+      },
+      {
+        "name": "UGC 2455",
+        "log_sigma": 6.887,
+        "delta_rar": -1.3906,
+        "Vmax": 61,
+        "Q_kin": 0.617
+      },
+      {
+        "name": "UGC 2487",
+        "log_sigma": 9.318,
+        "delta_rar": -1.3874,
+        "Vmax": 383,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "UGC 2487",
+        "log_sigma": 8.39,
+        "delta_rar": -1.3637,
+        "Vmax": 383,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "UGC 2487",
+        "log_sigma": 7.946,
+        "delta_rar": -1.4697,
+        "Vmax": 383,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "UGC 2487",
+        "log_sigma": 7.654,
+        "delta_rar": -1.4894,
+        "Vmax": 383,
+        "Q_kin": 0.825
+      },
+      {
+        "name": "UGC 2885",
+        "log_sigma": 9.641,
+        "delta_rar": -1.4104,
+        "Vmax": 305,
+        "Q_kin": 0.844
+      },
+      {
+        "name": "UGC 2885",
+        "log_sigma": 7.97,
+        "delta_rar": -1.2914,
+        "Vmax": 305,
+        "Q_kin": 0.844
+      },
+      {
+        "name": "UGC 2885",
+        "log_sigma": 7.526,
+        "delta_rar": -1.3081,
+        "Vmax": 305,
+        "Q_kin": 0.844
+      },
+      {
+        "name": "UGC 2885",
+        "log_sigma": 7.233,
+        "delta_rar": -1.2564,
+        "Vmax": 305,
+        "Q_kin": 0.844
+      },
+      {
+        "name": "UGC 2885",
+        "log_sigma": 7.014,
+        "delta_rar": -1.256,
+        "Vmax": 305,
+        "Q_kin": 0.844
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 9.82,
+        "delta_rar": -1.215,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 9.081,
+        "delta_rar": -1.1628,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 8.775,
+        "delta_rar": -1.1833,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 8.482,
+        "delta_rar": -1.1847,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 8.307,
+        "delta_rar": -1.1666,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 8.13,
+        "delta_rar": -1.1411,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 7.979,
+        "delta_rar": -1.1323,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 7.877,
+        "delta_rar": -1.1359,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 7.685,
+        "delta_rar": -1.1595,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 7.103,
+        "delta_rar": -1.1622,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2916",
+        "log_sigma": 6.752,
+        "delta_rar": -1.2908,
+        "Vmax": 218,
+        "Q_kin": 0.976
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 10.644,
+        "delta_rar": -1.0601,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 10.029,
+        "delta_rar": -1.0143,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 9.681,
+        "delta_rar": -0.9894,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 9.427,
+        "delta_rar": -0.9712,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 9.236,
+        "delta_rar": -0.9562,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 9.075,
+        "delta_rar": -0.9355,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.947,
+        "delta_rar": -0.9161,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.828,
+        "delta_rar": -0.8974,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.727,
+        "delta_rar": -0.8761,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.636,
+        "delta_rar": -0.8587,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.406,
+        "delta_rar": -0.8,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.241,
+        "delta_rar": -0.7572,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.186,
+        "delta_rar": -0.7454,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.1,
+        "delta_rar": -0.7279,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.055,
+        "delta_rar": -0.7192,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 8.011,
+        "delta_rar": -0.7135,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 7.902,
+        "delta_rar": -0.702,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 7.865,
+        "delta_rar": -0.6991,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 7.547,
+        "delta_rar": -0.7173,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 7.255,
+        "delta_rar": -0.7623,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 7.036,
+        "delta_rar": -0.7737,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.862,
+        "delta_rar": -0.813,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.717,
+        "delta_rar": -0.8413,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.596,
+        "delta_rar": -0.8575,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.487,
+        "delta_rar": -0.8606,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.39,
+        "delta_rar": -0.8738,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.303,
+        "delta_rar": -0.8738,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 2953",
+        "log_sigma": 6.223,
+        "delta_rar": -0.8539,
+        "Vmax": 319,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 10.959,
+        "delta_rar": -1.8365,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 9.418,
+        "delta_rar": -1.3466,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 8.678,
+        "delta_rar": -1.0925,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 8.46,
+        "delta_rar": -1.0448,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 8.285,
+        "delta_rar": -1.0324,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 8.14,
+        "delta_rar": -1.0389,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 8.016,
+        "delta_rar": -1.0607,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 7.88,
+        "delta_rar": -1.091,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 7.489,
+        "delta_rar": -1.0897,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 7.428,
+        "delta_rar": -1.0896,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 7.277,
+        "delta_rar": -1.1011,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3205",
+        "log_sigma": 6.927,
+        "delta_rar": -1.1413,
+        "Vmax": 237,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 10.254,
+        "delta_rar": -0.994,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 9.645,
+        "delta_rar": -1.0876,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 9.225,
+        "delta_rar": -1.1043,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 8.94,
+        "delta_rar": -1.0996,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 8.168,
+        "delta_rar": -1.2237,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 7.659,
+        "delta_rar": -1.1726,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 7.339,
+        "delta_rar": -1.1981,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3546",
+        "log_sigma": 7.057,
+        "delta_rar": -1.2155,
+        "Vmax": 262,
+        "Q_kin": 0.991
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 9.519,
+        "delta_rar": -1.4716,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 8.776,
+        "delta_rar": -1.4896,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 8.381,
+        "delta_rar": -1.4898,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 8.116,
+        "delta_rar": -1.4199,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 7.905,
+        "delta_rar": -1.3231,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 7.742,
+        "delta_rar": -1.2382,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 7.602,
+        "delta_rar": -1.186,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 7.021,
+        "delta_rar": -1.1703,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 6.691,
+        "delta_rar": -1.0588,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 6.419,
+        "delta_rar": -1.0429,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 6.066,
+        "delta_rar": -0.9473,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 3580",
+        "log_sigma": 5.717,
+        "delta_rar": -0.9541,
+        "Vmax": 131,
+        "Q_kin": 0.977
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 8.131,
+        "delta_rar": -1.8939,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 7.473,
+        "delta_rar": -1.6374,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 7.097,
+        "delta_rar": -1.5004,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 6.84,
+        "delta_rar": -1.2446,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 6.64,
+        "delta_rar": -1.0669,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4278",
+        "log_sigma": 6.478,
+        "delta_rar": -0.9819,
+        "Vmax": 92.8,
+        "Q_kin": 0.843
+      },
+      {
+        "name": "UGC 4305",
+        "log_sigma": 8.036,
+        "delta_rar": -2.261,
+        "Vmax": 37.3,
+        "Q_kin": 0.85
+      },
+      {
+        "name": "UGC 4305",
+        "log_sigma": 7.295,
+        "delta_rar": -1.632,
+        "Vmax": 37.3,
+        "Q_kin": 0.85
+      },
+      {
+        "name": "UGC 4305",
+        "log_sigma": 6.904,
+        "delta_rar": -1.7148,
+        "Vmax": 37.3,
+        "Q_kin": 0.85
+      },
+      {
+        "name": "UGC 4305",
+        "log_sigma": 6.636,
+        "delta_rar": -1.7864,
+        "Vmax": 37.3,
+        "Q_kin": 0.85
+      },
+      {
+        "name": "UGC 4305",
+        "log_sigma": 6.429,
+        "delta_rar": -1.6478,
+        "Vmax": 37.3,
+        "Q_kin": 0.85
+      },
+      {
+        "name": "UGC 4325",
+        "log_sigma": 9.163,
+        "delta_rar": -2.06,
+        "Vmax": 92.7,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGC 4325",
+        "log_sigma": 7.767,
+        "delta_rar": -1.3699,
+        "Vmax": 92.7,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGC 4483",
+        "log_sigma": 8.843,
+        "delta_rar": -2.7682,
+        "Vmax": 24.3,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "UGC 4483",
+        "log_sigma": 6.922,
+        "delta_rar": -1.5392,
+        "Vmax": 24.3,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "UGC 4499",
+        "log_sigma": 8.868,
+        "delta_rar": -2.424,
+        "Vmax": 74.3,
+        "Q_kin": 0.705
+      },
+      {
+        "name": "UGC 4499",
+        "log_sigma": 7.47,
+        "delta_rar": -1.5941,
+        "Vmax": 74.3,
+        "Q_kin": 0.705
+      },
+      {
+        "name": "UGC 4499",
+        "log_sigma": 6.961,
+        "delta_rar": -1.502,
+        "Vmax": 74.3,
+        "Q_kin": 0.705
+      },
+      {
+        "name": "UGC 5005",
+        "log_sigma": 7.31,
+        "delta_rar": -1.7162,
+        "Vmax": 100,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGC 5005",
+        "log_sigma": 6.277,
+        "delta_rar": -1.2689,
+        "Vmax": 100,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 11.479,
+        "delta_rar": -1.1801,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 10.108,
+        "delta_rar": -1.0034,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 9.593,
+        "delta_rar": -0.9684,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 9.272,
+        "delta_rar": -0.9533,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 9.038,
+        "delta_rar": -0.942,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.857,
+        "delta_rar": -0.9323,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.705,
+        "delta_rar": -0.927,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.575,
+        "delta_rar": -0.9222,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.465,
+        "delta_rar": -0.9213,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.365,
+        "delta_rar": -0.9205,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.297,
+        "delta_rar": -0.9201,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.195,
+        "delta_rar": -0.9229,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.06,
+        "delta_rar": -0.9257,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 8.004,
+        "delta_rar": -0.9254,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 7.577,
+        "delta_rar": -0.9273,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 7.18,
+        "delta_rar": -0.9264,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 6.854,
+        "delta_rar": -0.933,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 6.504,
+        "delta_rar": -1.0594,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5253",
+        "log_sigma": 6.254,
+        "delta_rar": -1.0268,
+        "Vmax": 248,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 5414",
+        "log_sigma": 7.406,
+        "delta_rar": -1.5636,
+        "Vmax": 61.4,
+        "Q_kin": 0.604
+      },
+      {
+        "name": "UGC 5716",
+        "log_sigma": 8.348,
+        "delta_rar": -1.9628,
+        "Vmax": 74.7,
+        "Q_kin": 0.747
+      },
+      {
+        "name": "UGC 5716",
+        "log_sigma": 7.395,
+        "delta_rar": -1.6741,
+        "Vmax": 74.7,
+        "Q_kin": 0.747
+      },
+      {
+        "name": "UGC 5716",
+        "log_sigma": 6.951,
+        "delta_rar": -1.6202,
+        "Vmax": 74.7,
+        "Q_kin": 0.747
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 9.321,
+        "delta_rar": -1.7896,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 8.193,
+        "delta_rar": -1.3935,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 7.718,
+        "delta_rar": -1.1149,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 7.331,
+        "delta_rar": -1.1224,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 6.88,
+        "delta_rar": -1.1575,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5721",
+        "log_sigma": 6.588,
+        "delta_rar": -1.1484,
+        "Vmax": 82.6,
+        "Q_kin": 0.903
+      },
+      {
+        "name": "UGC 5750",
+        "log_sigma": 7.256,
+        "delta_rar": -1.9867,
+        "Vmax": 78.9,
+        "Q_kin": 0.722
+      },
+      {
+        "name": "UGC 5750",
+        "log_sigma": 6.42,
+        "delta_rar": -1.3021,
+        "Vmax": 78.9,
+        "Q_kin": 0.722
+      },
+      {
+        "name": "UGC 5750",
+        "log_sigma": 5.341,
+        "delta_rar": -1.0853,
+        "Vmax": 78.9,
+        "Q_kin": 0.722
+      },
+      {
+        "name": "UGC 5764",
+        "log_sigma": 7.782,
+        "delta_rar": -1.5365,
+        "Vmax": 55.8,
+        "Q_kin": 0.677
+      },
+      {
+        "name": "UGC 5764",
+        "log_sigma": 7.18,
+        "delta_rar": -1.4301,
+        "Vmax": 55.8,
+        "Q_kin": 0.677
+      },
+      {
+        "name": "UGC 5829",
+        "log_sigma": 8.205,
+        "delta_rar": -2.1887,
+        "Vmax": 68.6,
+        "Q_kin": 0.657
+      },
+      {
+        "name": "UGC 5829",
+        "log_sigma": 7.253,
+        "delta_rar": -1.6937,
+        "Vmax": 68.6,
+        "Q_kin": 0.657
+      },
+      {
+        "name": "UGC 5829",
+        "log_sigma": 6.809,
+        "delta_rar": -1.4199,
+        "Vmax": 68.6,
+        "Q_kin": 0.657
+      },
+      {
+        "name": "UGC 5918",
+        "log_sigma": 7.614,
+        "delta_rar": -1.8318,
+        "Vmax": 44.5,
+        "Q_kin": 0.659
+      },
+      {
+        "name": "UGC 5918",
+        "log_sigma": 6.877,
+        "delta_rar": -1.6215,
+        "Vmax": 44.5,
+        "Q_kin": 0.659
+      },
+      {
+        "name": "UGC 5986",
+        "log_sigma": 8.557,
+        "delta_rar": -1.7424,
+        "Vmax": 116,
+        "Q_kin": 0.753
+      },
+      {
+        "name": "UGC 5986",
+        "log_sigma": 7.82,
+        "delta_rar": -1.307,
+        "Vmax": 116,
+        "Q_kin": 0.753
+      },
+      {
+        "name": "UGC 5986",
+        "log_sigma": 7.427,
+        "delta_rar": -1.2753,
+        "Vmax": 116,
+        "Q_kin": 0.753
+      },
+      {
+        "name": "UGC 5986",
+        "log_sigma": 7.158,
+        "delta_rar": -1.3449,
+        "Vmax": 116,
+        "Q_kin": 0.753
+      },
+      {
+        "name": "UGC 5999",
+        "log_sigma": 7.217,
+        "delta_rar": -1.623,
+        "Vmax": 100,
+        "Q_kin": 0.613
+      },
+      {
+        "name": "UGC 6399",
+        "log_sigma": 8.02,
+        "delta_rar": -1.7169,
+        "Vmax": 87.6,
+        "Q_kin": 0.691
+      },
+      {
+        "name": "UGC 6399",
+        "log_sigma": 7.281,
+        "delta_rar": -1.4284,
+        "Vmax": 87.6,
+        "Q_kin": 0.691
+      },
+      {
+        "name": "UGC 6446",
+        "log_sigma": 8.782,
+        "delta_rar": -1.8378,
+        "Vmax": 84.9,
+        "Q_kin": 0.815
+      },
+      {
+        "name": "UGC 6446",
+        "log_sigma": 7.825,
+        "delta_rar": -1.6134,
+        "Vmax": 84.9,
+        "Q_kin": 0.815
+      },
+      {
+        "name": "UGC 6446",
+        "log_sigma": 7.383,
+        "delta_rar": -1.4956,
+        "Vmax": 84.9,
+        "Q_kin": 0.815
+      },
+      {
+        "name": "UGC 6446",
+        "log_sigma": 7.075,
+        "delta_rar": -1.4488,
+        "Vmax": 84.9,
+        "Q_kin": 0.815
+      },
+      {
+        "name": "UGC 6614",
+        "log_sigma": 9.388,
+        "delta_rar": -1.4973,
+        "Vmax": 205,
+        "Q_kin": 0.763
+      },
+      {
+        "name": "UGC 6614",
+        "log_sigma": 8.211,
+        "delta_rar": -1.5919,
+        "Vmax": 205,
+        "Q_kin": 0.763
+      },
+      {
+        "name": "UGC 6614",
+        "log_sigma": 7.566,
+        "delta_rar": -1.4795,
+        "Vmax": 205,
+        "Q_kin": 0.763
+      },
+      {
+        "name": "UGC 6614",
+        "log_sigma": 6.786,
+        "delta_rar": -1.4344,
+        "Vmax": 205,
+        "Q_kin": 0.763
+      },
+      {
+        "name": "UGC 6628",
+        "log_sigma": 7.121,
+        "delta_rar": -1.8201,
+        "Vmax": 42.3,
+        "Q_kin": 0.693
+      },
+      {
+        "name": "UGC 6667",
+        "log_sigma": 8.907,
+        "delta_rar": -2.4047,
+        "Vmax": 85.7,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGC 6667",
+        "log_sigma": 7.505,
+        "delta_rar": -1.4687,
+        "Vmax": 85.7,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGC 6667",
+        "log_sigma": 6.996,
+        "delta_rar": -1.3781,
+        "Vmax": 85.7,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 9.956,
+        "delta_rar": -1.169,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 8.441,
+        "delta_rar": -1.0198,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 8.323,
+        "delta_rar": -1.0022,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 8.209,
+        "delta_rar": -0.981,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 8.1,
+        "delta_rar": -0.9724,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 8.004,
+        "delta_rar": -0.9639,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 7.88,
+        "delta_rar": -0.9594,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 7.424,
+        "delta_rar": -0.9269,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 7.234,
+        "delta_rar": -0.9265,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 6.843,
+        "delta_rar": -0.9297,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6786",
+        "log_sigma": 6.571,
+        "delta_rar": -0.9606,
+        "Vmax": 229,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 10.561,
+        "delta_rar": -0.948,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 9.811,
+        "delta_rar": -0.8573,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 9.421,
+        "delta_rar": -0.8687,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 9.096,
+        "delta_rar": -0.9728,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 8.666,
+        "delta_rar": -0.9672,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 8.392,
+        "delta_rar": -0.9311,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 8.301,
+        "delta_rar": -0.9342,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 8.142,
+        "delta_rar": -0.9443,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 8.064,
+        "delta_rar": -0.9476,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.948,
+        "delta_rar": -0.9322,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.905,
+        "delta_rar": -0.921,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.732,
+        "delta_rar": -0.8709,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.462,
+        "delta_rar": -0.9232,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.21,
+        "delta_rar": -0.991,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 7.02,
+        "delta_rar": -0.9187,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 6.86,
+        "delta_rar": -0.8829,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 6.712,
+        "delta_rar": -0.8862,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6787",
+        "log_sigma": 6.508,
+        "delta_rar": -0.8618,
+        "Vmax": 276,
+        "Q_kin": 0.999
+      },
+      {
+        "name": "UGC 6818",
+        "log_sigma": 7.415,
+        "delta_rar": -1.748,
+        "Vmax": 74.4,
+        "Q_kin": 0.679
+      },
+      {
+        "name": "UGC 6818",
+        "log_sigma": 6.815,
+        "delta_rar": -1.359,
+        "Vmax": 74.4,
+        "Q_kin": 0.679
+      },
+      {
+        "name": "UGC 6917",
+        "log_sigma": 8.125,
+        "delta_rar": -1.6158,
+        "Vmax": 111,
+        "Q_kin": 0.7
+      },
+      {
+        "name": "UGC 6917",
+        "log_sigma": 7.616,
+        "delta_rar": -1.5296,
+        "Vmax": 111,
+        "Q_kin": 0.7
+      },
+      {
+        "name": "UGC 6923",
+        "log_sigma": 8.849,
+        "delta_rar": -2.0388,
+        "Vmax": 81.1,
+        "Q_kin": 0.652
+      },
+      {
+        "name": "UGC 6923",
+        "log_sigma": 7.486,
+        "delta_rar": -1.4465,
+        "Vmax": 81.1,
+        "Q_kin": 0.652
+      },
+      {
+        "name": "UGC 6930",
+        "log_sigma": 8.064,
+        "delta_rar": -1.6611,
+        "Vmax": 109,
+        "Q_kin": 0.728
+      },
+      {
+        "name": "UGC 6930",
+        "log_sigma": 7.331,
+        "delta_rar": -1.5281,
+        "Vmax": 109,
+        "Q_kin": 0.728
+      },
+      {
+        "name": "UGC 6973",
+        "log_sigma": 9.402,
+        "delta_rar": -1.3509,
+        "Vmax": 180,
+        "Q_kin": 0.699
+      },
+      {
+        "name": "UGC 6973",
+        "log_sigma": 8.431,
+        "delta_rar": -1.332,
+        "Vmax": 180,
+        "Q_kin": 0.699
+      },
+      {
+        "name": "UGC 6973",
+        "log_sigma": 8.093,
+        "delta_rar": -1.2852,
+        "Vmax": 180,
+        "Q_kin": 0.699
+      },
+      {
+        "name": "UGC 6983",
+        "log_sigma": 8.301,
+        "delta_rar": -1.7049,
+        "Vmax": 113,
+        "Q_kin": 0.822
+      },
+      {
+        "name": "UGC 6983",
+        "log_sigma": 7.792,
+        "delta_rar": -1.5852,
+        "Vmax": 113,
+        "Q_kin": 0.822
+      },
+      {
+        "name": "UGC 6983",
+        "log_sigma": 7.472,
+        "delta_rar": -1.5601,
+        "Vmax": 113,
+        "Q_kin": 0.822
+      },
+      {
+        "name": "UGC 6983",
+        "log_sigma": 7.238,
+        "delta_rar": -1.5755,
+        "Vmax": 113,
+        "Q_kin": 0.822
+      },
+      {
+        "name": "UGC 7089",
+        "log_sigma": 7.953,
+        "delta_rar": -1.9717,
+        "Vmax": 79.1,
+        "Q_kin": 0.682
+      },
+      {
+        "name": "UGC 7089",
+        "log_sigma": 7.214,
+        "delta_rar": -1.5807,
+        "Vmax": 79.1,
+        "Q_kin": 0.682
+      },
+      {
+        "name": "UGC 7089",
+        "log_sigma": 6.905,
+        "delta_rar": -1.4642,
+        "Vmax": 79.1,
+        "Q_kin": 0.682
+      },
+      {
+        "name": "UGC 7125",
+        "log_sigma": 7.707,
+        "delta_rar": -1.9711,
+        "Vmax": 65.6,
+        "Q_kin": 0.768
+      },
+      {
+        "name": "UGC 7125",
+        "log_sigma": 6.973,
+        "delta_rar": -1.7631,
+        "Vmax": 65.6,
+        "Q_kin": 0.768
+      },
+      {
+        "name": "UGC 7125",
+        "log_sigma": 6.58,
+        "delta_rar": -1.708,
+        "Vmax": 65.6,
+        "Q_kin": 0.768
+      },
+      {
+        "name": "UGC 7151",
+        "log_sigma": 8.582,
+        "delta_rar": -1.9022,
+        "Vmax": 76.2,
+        "Q_kin": 0.709
+      },
+      {
+        "name": "UGC 7151",
+        "log_sigma": 7.628,
+        "delta_rar": -1.4886,
+        "Vmax": 76.2,
+        "Q_kin": 0.709
+      },
+      {
+        "name": "UGC 7151",
+        "log_sigma": 7.182,
+        "delta_rar": -1.4038,
+        "Vmax": 76.2,
+        "Q_kin": 0.709
+      },
+      {
+        "name": "UGC 7232",
+        "log_sigma": 7.763,
+        "delta_rar": -1.4337,
+        "Vmax": 44,
+        "Q_kin": 0.563
+      },
+      {
+        "name": "UGC 7261",
+        "log_sigma": 7.94,
+        "delta_rar": -1.6305,
+        "Vmax": 76.1,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "UGC 7261",
+        "log_sigma": 7.205,
+        "delta_rar": -1.5151,
+        "Vmax": 76.1,
+        "Q_kin": 0.674
+      },
+      {
+        "name": "UGC 7323",
+        "log_sigma": 7.768,
+        "delta_rar": -1.684,
+        "Vmax": 85.6,
+        "Q_kin": 0.669
+      },
+      {
+        "name": "UGC 7323",
+        "log_sigma": 7.168,
+        "delta_rar": -1.3019,
+        "Vmax": 85.6,
+        "Q_kin": 0.669
+      },
+      {
+        "name": "UGC 7399",
+        "log_sigma": 8.807,
+        "delta_rar": -1.6549,
+        "Vmax": 106,
+        "Q_kin": 0.688
+      },
+      {
+        "name": "UGC 7399",
+        "log_sigma": 7.848,
+        "delta_rar": -1.3867,
+        "Vmax": 106,
+        "Q_kin": 0.688
+      },
+      {
+        "name": "UGC 7399",
+        "log_sigma": 7.405,
+        "delta_rar": -1.2911,
+        "Vmax": 106,
+        "Q_kin": 0.688
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 8.369,
+        "delta_rar": -2.1461,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 7.767,
+        "delta_rar": -1.8221,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 7.415,
+        "delta_rar": -1.5571,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 7.167,
+        "delta_rar": -1.483,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 6.973,
+        "delta_rar": -1.4253,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 6.814,
+        "delta_rar": -1.4022,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7524",
+        "log_sigma": 6.679,
+        "delta_rar": -1.3559,
+        "Vmax": 83.8,
+        "Q_kin": 0.979
+      },
+      {
+        "name": "UGC 7559",
+        "log_sigma": 8.373,
+        "delta_rar": -2.6607,
+        "Vmax": 32.1,
+        "Q_kin": 0.652
+      },
+      {
+        "name": "UGC 7559",
+        "log_sigma": 6.975,
+        "delta_rar": -1.648,
+        "Vmax": 32.1,
+        "Q_kin": 0.652
+      },
+      {
+        "name": "UGC 7577",
+        "log_sigma": 7.343,
+        "delta_rar": -2.6382,
+        "Vmax": 17.8,
+        "Q_kin": 0.63
+      },
+      {
+        "name": "UGC 7577",
+        "log_sigma": 6.397,
+        "delta_rar": -1.9149,
+        "Vmax": 17.8,
+        "Q_kin": 0.63
+      },
+      {
+        "name": "UGC 7603",
+        "log_sigma": 9.218,
+        "delta_rar": -2.4224,
+        "Vmax": 64,
+        "Q_kin": 0.735
+      },
+      {
+        "name": "UGC 7603",
+        "log_sigma": 7.815,
+        "delta_rar": -1.4817,
+        "Vmax": 64,
+        "Q_kin": 0.735
+      },
+      {
+        "name": "UGC 7603",
+        "log_sigma": 7.304,
+        "delta_rar": -1.4143,
+        "Vmax": 64,
+        "Q_kin": 0.735
+      },
+      {
+        "name": "UGC 7608",
+        "log_sigma": 8.792,
+        "delta_rar": -2.7052,
+        "Vmax": 69.3,
+        "Q_kin": 0.631
+      },
+      {
+        "name": "UGC 7608",
+        "log_sigma": 7.397,
+        "delta_rar": -1.5355,
+        "Vmax": 69.3,
+        "Q_kin": 0.631
+      },
+      {
+        "name": "UGC 7690",
+        "log_sigma": 8.961,
+        "delta_rar": -1.8014,
+        "Vmax": 60.7,
+        "Q_kin": 0.675
+      },
+      {
+        "name": "UGC 7690",
+        "log_sigma": 7.563,
+        "delta_rar": -1.5782,
+        "Vmax": 60.7,
+        "Q_kin": 0.675
+      },
+      {
+        "name": "UGC 7866",
+        "log_sigma": 7.864,
+        "delta_rar": -2.029,
+        "Vmax": 33.1,
+        "Q_kin": 0.606
+      },
+      {
+        "name": "UGC 7866",
+        "log_sigma": 6.901,
+        "delta_rar": -1.6308,
+        "Vmax": 33.1,
+        "Q_kin": 0.606
+      },
+      {
+        "name": "UGC 8286",
+        "log_sigma": 8.482,
+        "delta_rar": -1.6907,
+        "Vmax": 84.3,
+        "Q_kin": 0.813
+      },
+      {
+        "name": "UGC 8286",
+        "log_sigma": 7.749,
+        "delta_rar": -1.4865,
+        "Vmax": 84.3,
+        "Q_kin": 0.813
+      },
+      {
+        "name": "UGC 8286",
+        "log_sigma": 7.354,
+        "delta_rar": -1.4213,
+        "Vmax": 84.3,
+        "Q_kin": 0.813
+      },
+      {
+        "name": "UGC 8286",
+        "log_sigma": 7.084,
+        "delta_rar": -1.4008,
+        "Vmax": 84.3,
+        "Q_kin": 0.813
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 9.188,
+        "delta_rar": -1.8927,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 8.238,
+        "delta_rar": -1.528,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 7.795,
+        "delta_rar": -1.4931,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 7.502,
+        "delta_rar": -1.4811,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 7.284,
+        "delta_rar": -1.4707,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 7.11,
+        "delta_rar": -1.4737,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 6.964,
+        "delta_rar": -1.4944,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8490",
+        "log_sigma": 6.84,
+        "delta_rar": -1.4976,
+        "Vmax": 80.1,
+        "Q_kin": 0.986
+      },
+      {
+        "name": "UGC 8550",
+        "log_sigma": 7.826,
+        "delta_rar": -1.6721,
+        "Vmax": 57.8,
+        "Q_kin": 0.723
+      },
+      {
+        "name": "UGC 8550",
+        "log_sigma": 7.226,
+        "delta_rar": -1.572,
+        "Vmax": 57.8,
+        "Q_kin": 0.723
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 10.897,
+        "delta_rar": -1.3883,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 9.515,
+        "delta_rar": -1.0841,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 8.998,
+        "delta_rar": -1.043,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 8.678,
+        "delta_rar": -1.0968,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.983,
+        "delta_rar": -1.1636,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.872,
+        "delta_rar": -1.1241,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.773,
+        "delta_rar": -1.1048,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.682,
+        "delta_rar": -1.0952,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.564,
+        "delta_rar": -1.1041,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 7.115,
+        "delta_rar": -1.1462,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8699",
+        "log_sigma": 6.762,
+        "delta_rar": -1.1168,
+        "Vmax": 202,
+        "Q_kin": 0.996
+      },
+      {
+        "name": "UGC 8837",
+        "log_sigma": 7.146,
+        "delta_rar": -1.8469,
+        "Vmax": 48,
+        "Q_kin": 0.638
+      },
+      {
+        "name": "UGC 8837",
+        "log_sigma": 6.54,
+        "delta_rar": -1.381,
+        "Vmax": 48,
+        "Q_kin": 0.638
+      },
+      {
+        "name": "UGC 9037",
+        "log_sigma": 8.412,
+        "delta_rar": -1.6879,
+        "Vmax": 160,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "UGC 9037",
+        "log_sigma": 7.9,
+        "delta_rar": -1.5636,
+        "Vmax": 160,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "UGC 9037",
+        "log_sigma": 7.584,
+        "delta_rar": -1.4672,
+        "Vmax": 160,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "UGC 9037",
+        "log_sigma": 7.348,
+        "delta_rar": -1.4443,
+        "Vmax": 160,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "UGC 9037",
+        "log_sigma": 7.167,
+        "delta_rar": -1.489,
+        "Vmax": 160,
+        "Q_kin": 0.868
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 10.603,
+        "delta_rar": -1.1305,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 9.649,
+        "delta_rar": -1.0867,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 9.205,
+        "delta_rar": -1.0759,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.911,
+        "delta_rar": -1.068,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.693,
+        "delta_rar": -1.0592,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.519,
+        "delta_rar": -1.0484,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.363,
+        "delta_rar": -1.0381,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.221,
+        "delta_rar": -1.0341,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 8.068,
+        "delta_rar": -1.0362,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 7.761,
+        "delta_rar": -1.0656,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 7.318,
+        "delta_rar": -1.1158,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 7.024,
+        "delta_rar": -1.1843,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 6.807,
+        "delta_rar": -1.1948,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 6.633,
+        "delta_rar": -1.1695,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 6.488,
+        "delta_rar": -1.2278,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 6.363,
+        "delta_rar": -1.243,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9133",
+        "log_sigma": 6.254,
+        "delta_rar": -1.2506,
+        "Vmax": 289,
+        "Q_kin": 0.99
+      },
+      {
+        "name": "UGC 9992",
+        "log_sigma": 7.627,
+        "delta_rar": -1.8653,
+        "Vmax": 34.3,
+        "Q_kin": 0.645
+      },
+      {
+        "name": "UGC 10310",
+        "log_sigma": 8.703,
+        "delta_rar": -2.2097,
+        "Vmax": 73.2,
+        "Q_kin": 0.676
+      },
+      {
+        "name": "UGC 10310",
+        "log_sigma": 7.302,
+        "delta_rar": -1.5433,
+        "Vmax": 73.2,
+        "Q_kin": 0.676
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 9.8,
+        "delta_rar": -2.2517,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 8.848,
+        "delta_rar": -1.4984,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 8.399,
+        "delta_rar": -1.2661,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 8.109,
+        "delta_rar": -1.0839,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 7.893,
+        "delta_rar": -0.971,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 7.654,
+        "delta_rar": -0.9266,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 7.368,
+        "delta_rar": -0.9198,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 7.051,
+        "delta_rar": -0.9719,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11455",
+        "log_sigma": 6.827,
+        "delta_rar": -0.9652,
+        "Vmax": 291,
+        "Q_kin": 0.983
+      },
+      {
+        "name": "UGC 11557",
+        "log_sigma": 8.29,
+        "delta_rar": -2.535,
+        "Vmax": 85,
+        "Q_kin": 0.758
+      },
+      {
+        "name": "UGC 11557",
+        "log_sigma": 7.11,
+        "delta_rar": -1.4238,
+        "Vmax": 85,
+        "Q_kin": 0.758
+      },
+      {
+        "name": "UGC 11557",
+        "log_sigma": 6.586,
+        "delta_rar": -1.2057,
+        "Vmax": 85,
+        "Q_kin": 0.758
+      },
+      {
+        "name": "UGC 11820",
+        "log_sigma": 8.499,
+        "delta_rar": -2.1971,
+        "Vmax": 84.45,
+        "Q_kin": 0.681
+      },
+      {
+        "name": "UGC 11820",
+        "log_sigma": 6.344,
+        "delta_rar": -1.1921,
+        "Vmax": 84.45,
+        "Q_kin": 0.681
+      },
+      {
+        "name": "UGC 11820",
+        "log_sigma": 5.388,
+        "delta_rar": -0.8897,
+        "Vmax": 84.45,
+        "Q_kin": 0.681
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 10.415,
+        "delta_rar": -1.1934,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.974,
+        "delta_rar": -1.0082,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.683,
+        "delta_rar": -0.927,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.46,
+        "delta_rar": -0.8995,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.288,
+        "delta_rar": -0.8955,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.14,
+        "delta_rar": -0.8957,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 9.045,
+        "delta_rar": -0.8941,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.765,
+        "delta_rar": -0.8844,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.681,
+        "delta_rar": -0.8835,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.589,
+        "delta_rar": -0.8885,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.505,
+        "delta_rar": -0.8968,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.443,
+        "delta_rar": -0.9024,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.384,
+        "delta_rar": -0.9081,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.333,
+        "delta_rar": -0.9077,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.255,
+        "delta_rar": -0.9041,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 11914",
+        "log_sigma": 8.042,
+        "delta_rar": -0.864,
+        "Vmax": 305,
+        "Q_kin": 0.984
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 9.055,
+        "delta_rar": -1.4284,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 8.226,
+        "delta_rar": -1.2721,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 7.809,
+        "delta_rar": -1.2151,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 7.529,
+        "delta_rar": -1.1795,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 7.318,
+        "delta_rar": -1.1927,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 7.147,
+        "delta_rar": -1.2385,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 7.005,
+        "delta_rar": -1.2568,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12506",
+        "log_sigma": 6.883,
+        "delta_rar": -1.2869,
+        "Vmax": 255,
+        "Q_kin": 0.963
+      },
+      {
+        "name": "UGC 12632",
+        "log_sigma": 7.876,
+        "delta_rar": -1.7751,
+        "Vmax": 73.2,
+        "Q_kin": 0.777
+      },
+      {
+        "name": "UGC 12632",
+        "log_sigma": 7.276,
+        "delta_rar": -1.612,
+        "Vmax": 73.2,
+        "Q_kin": 0.777
+      },
+      {
+        "name": "UGC 12632",
+        "log_sigma": 6.925,
+        "delta_rar": -1.5365,
+        "Vmax": 73.2,
+        "Q_kin": 0.777
+      },
+      {
+        "name": "UGC 12732",
+        "log_sigma": 9.14,
+        "delta_rar": -2.3494,
+        "Vmax": 98,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGC 12732",
+        "log_sigma": 7.742,
+        "delta_rar": -1.7175,
+        "Vmax": 98,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGC 12732",
+        "log_sigma": 7.232,
+        "delta_rar": -1.5944,
+        "Vmax": 98,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGC 12732",
+        "log_sigma": 6.911,
+        "delta_rar": -1.5153,
+        "Vmax": 98,
+        "Q_kin": 0.739
+      },
+      {
+        "name": "UGCA281",
+        "log_sigma": 8.878,
+        "delta_rar": -2.5639,
+        "Vmax": 29.5,
+        "Q_kin": 0.66
+      },
+      {
+        "name": "UGCA281",
+        "log_sigma": 7.048,
+        "delta_rar": -1.3654,
+        "Vmax": 29.5,
+        "Q_kin": 0.66
+      },
+      {
+        "name": "UGCA442",
+        "log_sigma": 7.904,
+        "delta_rar": -1.9931,
+        "Vmax": 57.8,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGCA442",
+        "log_sigma": 6.77,
+        "delta_rar": -1.4005,
+        "Vmax": 57.8,
+        "Q_kin": 0.706
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 8.79,
+        "delta_rar": -2.6649,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 8.004,
+        "delta_rar": -2.2293,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 7.586,
+        "delta_rar": -1.8573,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 7.314,
+        "delta_rar": -1.7193,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 7.1,
+        "delta_rar": -1.6591,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 6.929,
+        "delta_rar": -1.5477,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 6.79,
+        "delta_rar": -1.4903,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 6.667,
+        "delta_rar": -1.4667,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      },
+      {
+        "name": "UGCA444",
+        "log_sigma": 6.559,
+        "delta_rar": -1.374,
+        "Vmax": 38.3,
+        "Q_kin": 0.911
+      }
+    ],
+    "fitLine": [
+      {
+        "log_sigma": 4,
+        "delta_rar": -1.066566062116111
+      },
+      {
+        "log_sigma": 12,
+        "delta_rar": -1.7888066945277938
+      }
+    ]
   }
 }

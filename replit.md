@@ -72,7 +72,7 @@ A professional dark matter research tool built with React + Vite + Tailwind CSS.
 - `artifacts/galaxy-analyzer/public/stress-test-results.json` — Pre-computed stress test results across galaxy categories, regions, and correction factor correlations
 - `artifacts/galaxy-analyzer/public/deep-dive-results.json` — Deep dive: 8 outlier galaxy details, outlier vs normal comparison stats, curve shape analysis (rising/flat/declining), all galaxy properties for scatter plot
 - `artifacts/galaxy-analyzer/src/pages/rar-analysis.tsx` — RAR Residual Analysis: RAR baseline plot (McGaugh g†=1.2e-10), shape indicators (r_fid, η_rot, η_bar, S_out), Q_kin kinematic reliability index, second-variable search (Σ_bar vs ΔRAR at fixed Vmax), diversity test by quality tier, 4-plot analysis, summary
-- `artifacts/galaxy-analyzer/public/rar-analysis.json` — Pre-computed: per-galaxy shape indicators, RAR scatter data (3391 points), Q_kin diversity stats, correlations
+- `artifacts/galaxy-analyzer/public/rar-analysis.json` — Pre-computed: per-galaxy shape indicators, RAR scatter data (3391 points), Q_kin diversity stats, correlations, **density correction fit** (ΔRAR = a + b·log(Σ_bar), binned by Vmax: R² up to 0.52 in low-mass bins)
 - `artifacts/galaxy-analyzer/src/components/ui/glass-card.tsx` — Glassmorphism card component
 - `artifacts/galaxy-analyzer/src/components/layout.tsx` — Sidebar navigation layout
 
