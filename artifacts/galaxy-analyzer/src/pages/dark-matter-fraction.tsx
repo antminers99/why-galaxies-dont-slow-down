@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, ReferenceLine } from 'recharts';
-import { Eye, TrendingDown, Layers, ArrowLeftRight, CheckCircle2, XCircle, FlaskConical, Atom, BarChart3, Scale, Orbit } from 'lucide-react';
+import { Eye, TrendingDown, Layers, ArrowLeftRight, CheckCircle2, XCircle, FlaskConical, Atom, BarChart3, Scale, Orbit, ShieldAlert, Shuffle, ScanSearch } from 'lucide-react';
 
 interface FormResult {
   name: string; label: string;
@@ -19,6 +19,34 @@ interface DeepAnalysis {
     dmDominanceRadius: { slope: number; r: number; r2: number; n: number } | null;
     dmDomGalaxies: { name: string; logSigBar: number; rDMdomNorm: number; vmax: number }[];
     innerSlopeData: { slope: number; r: number; r2: number; n: number; galaxies: { name: string; alpha: number; logSigBar: number; vmax: number }[] } | null;
+  };
+}
+
+interface CircularityData {
+  photometricSigma: { slope: number; r: number; r2: number; partialR: number; n: number } | null;
+  luminosityProxy: { slope: number; r: number; r2: number; n: number };
+  geometricSigma: { slope: number; r: number; r2: number; n: number };
+  partialControlGbar: number;
+  verdict: string;
+}
+
+interface AltSigResult {
+  name: string; n: number; slope: number; r: number; r2: number; partialR: number;
+}
+
+interface SplitResult {
+  slope: number; r: number; n: number; label: string;
+}
+
+interface Diagnostics {
+  circularity: CircularityData;
+  altSigmaDefinitions: AltSigResult[];
+  selectionBias: {
+    massSplit: { low: SplitResult; high: SplitResult };
+    qualitySplit: { few: SplitResult; many: SplitResult };
+    inclinationSplit: { low: SplitResult; high: SplitResult };
+    permutationTest: { realR: number; pValue: number; nShuffles: number };
+    morphologyTypes: { type: number; n: number; meanFDM: number; meanLogSig: number; slope: number; r: number }[];
   };
 }
 
@@ -41,6 +69,7 @@ interface FDMData {
     samplePoints: { logSigBar: number; fDM: number; vmax: number; region: string }[];
   };
   deepAnalysis?: DeepAnalysis;
+  diagnostics?: Diagnostics;
 }
 
 function GlassCard({ children, glow, className }: { children: React.ReactNode; glow?: string; className?: string }) {
@@ -93,6 +122,7 @@ export default function DarkMatterFractionPage() {
   const s = data.sparc;
   const lt = data.littleThings;
   const deep = data.deepAnalysis;
+  const diag = data.diagnostics;
 
   const dwarfPts = s.samplePoints.filter(p => p.vmax < 80);
   const medPts = s.samplePoints.filter(p => p.vmax >= 80 && p.vmax < 150);
@@ -633,6 +663,141 @@ export default function DarkMatterFractionPage() {
                 )}
               </div>
             </GlassCard>
+
+            {diag && (
+              <>
+                <div className="border-t border-white/10 pt-6 mt-2">
+                  <h2 className="text-2xl font-display font-bold text-white mb-1">Diagnostics</h2>
+                  <p className="text-sm text-slate-400 mb-4">Circularity checks, alternative definitions, and selection bias tests.</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <GlassCard glow="emerald">
+                    <h3 className="text-sm font-display font-bold text-white mb-2 flex items-center gap-2">
+                      <ShieldAlert className="w-4 h-4 text-emerald-400" />
+                      Circularity Check
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-3">
+                      Is the correlation tautological? Σ_enc uses V_bar, and f_DM = 1 − V²_bar/V²_obs also uses V_bar.
+                      We test with <em>purely photometric</em> Σ (from disk surface brightness × Υ★).
+                    </p>
+                    <div className="space-y-2 mb-3">
+                      {diag.circularity.photometricSigma && (
+                        <div className="bg-white/5 rounded-lg p-3 flex items-center justify-between">
+                          <div>
+                            <div className="text-xs text-white font-medium">Σ_phot (from disk SB × Υ★)</div>
+                            <div className="text-[10px] text-slate-500">Completely independent of V_bar</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-sm font-mono text-emerald-400">r = {diag.circularity.photometricSigma.r.toFixed(3)}</div>
+                            <div className="text-[10px] text-slate-500">partial r|V = {diag.circularity.photometricSigma.partialR.toFixed(3)}</div>
+                          </div>
+                        </div>
+                      )}
+                      <div className="bg-white/5 rounded-lg p-3 flex items-center justify-between">
+                        <div>
+                          <div className="text-xs text-white font-medium">Σ_geom = Υ·L/(2πR²_disk)</div>
+                          <div className="text-[10px] text-slate-500">Luminosity + geometry only</div>
+                        </div>
+                        <div className="text-sm font-mono text-slate-300">r = {diag.circularity.geometricSigma.r.toFixed(3)}</div>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-3 flex items-center justify-between">
+                        <div>
+                          <div className="text-xs text-white font-medium">partial r(Σ_enc, f_DM | g_bar)</div>
+                          <div className="text-[10px] text-slate-500">Controlling for the shared variable</div>
+                        </div>
+                        <div className="text-sm font-mono text-amber-400">{diag.circularity.partialControlGbar.toFixed(3)}</div>
+                      </div>
+                    </div>
+                    <Badge pass={diag.circularity.verdict === 'cleared'} label="Circularity CLEARED — photometric Σ confirms" />
+                  </GlassCard>
+
+                  <GlassCard glow="violet">
+                    <h3 className="text-sm font-display font-bold text-white mb-2 flex items-center gap-2">
+                      <ScanSearch className="w-4 h-4 text-violet-400" />
+                      Alternative Σ Definitions
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-3">
+                      Does the result depend on how we define surface density?
+                    </p>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-xs font-mono">
+                        <thead>
+                          <tr className="border-b border-white/10 text-slate-400">
+                            <th className="text-left py-1.5 px-2">Definition</th>
+                            <th className="text-center py-1.5 px-2">n</th>
+                            <th className="text-center py-1.5 px-2">slope</th>
+                            <th className="text-center py-1.5 px-2">r</th>
+                            <th className="text-center py-1.5 px-2">pr|V</th>
+                            <th className="text-center py-1.5 px-2">b&lt;0</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {diag.altSigmaDefinitions.filter(a => !isNaN(a.slope)).map(a => (
+                            <tr key={a.name} className="border-b border-white/5">
+                              <td className="py-1.5 px-2 text-slate-300 text-[10px]">{a.name}</td>
+                              <td className="py-1.5 px-2 text-center text-slate-500">{a.n}</td>
+                              <td className="py-1.5 px-2 text-center text-violet-400">{a.slope.toFixed(4)}</td>
+                              <td className="py-1.5 px-2 text-center text-slate-300">{a.r.toFixed(3)}</td>
+                              <td className="py-1.5 px-2 text-center text-amber-400">{a.partialR.toFixed(3)}</td>
+                              <td className="py-1.5 px-2 text-center">{a.slope < 0 ? <span className="text-emerald-400">✓</span> : <span className="text-red-400">✗</span>}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="mt-3">
+                      <Badge pass={diag.altSigmaDefinitions.filter(a => !isNaN(a.slope)).every(a => a.slope < 0)} label="ALL definitions give negative slope" />
+                    </div>
+                  </GlassCard>
+                </div>
+
+                <GlassCard>
+                  <h3 className="text-sm font-display font-bold text-white mb-2 flex items-center gap-2">
+                    <Shuffle className="w-4 h-4 text-cyan-400" />
+                    Selection Bias Tests
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-3">
+                    Does the result survive splitting the sample in every possible way?
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
+                    {[
+                      { label: 'Mass Split', a: diag.selectionBias.massSplit.low, b: diag.selectionBias.massSplit.high },
+                      { label: 'Quality Split', a: diag.selectionBias.qualitySplit.few, b: diag.selectionBias.qualitySplit.many },
+                      { label: 'Inclination Split', a: diag.selectionBias.inclinationSplit.low, b: diag.selectionBias.inclinationSplit.high },
+                    ].map(({ label, a, b }) => (
+                      <div key={label} className="bg-white/5 rounded-xl p-3">
+                        <div className="text-xs font-medium text-white mb-2">{label}</div>
+                        <div className="space-y-1.5">
+                          <div className="flex justify-between text-[10px]">
+                            <span className="text-slate-400">{a.label}</span>
+                            <span className={a.slope < 0 ? 'text-emerald-400 font-mono' : 'text-red-400 font-mono'}>b={a.slope.toFixed(3)}, r={a.r.toFixed(3)}</span>
+                          </div>
+                          <div className="flex justify-between text-[10px]">
+                            <span className="text-slate-400">{b.label}</span>
+                            <span className={b.slope < 0 ? 'text-emerald-400 font-mono' : 'text-red-400 font-mono'}>b={b.slope.toFixed(3)}, r={b.r.toFixed(3)}</span>
+                          </div>
+                        </div>
+                        <div className="mt-1.5">
+                          <Badge pass={a.slope < 0 && b.slope < 0} label={a.slope < 0 && b.slope < 0 ? 'Both negative' : 'ISSUE'} />
+                        </div>
+                      </div>
+                    ))}
+                    <div className="bg-white/5 rounded-xl p-3">
+                      <div className="text-xs font-medium text-white mb-2">Permutation Test</div>
+                      <div className="text-center">
+                        <div className="text-lg font-mono font-bold text-cyan-400">p = {diag.selectionBias.permutationTest.pValue.toFixed(4)}</div>
+                        <div className="text-[10px] text-slate-500">{diag.selectionBias.permutationTest.nShuffles} random shuffles</div>
+                        <div className="text-[10px] text-slate-500">real r = {diag.selectionBias.permutationTest.realR.toFixed(4)}</div>
+                      </div>
+                      <div className="mt-1.5">
+                        <Badge pass={diag.selectionBias.permutationTest.pValue < 0.01} label="NOT due to chance" />
+                      </div>
+                    </div>
+                  </div>
+                </GlassCard>
+              </>
+            )}
 
             <GlassCard glow="rose">
               <h3 className="text-lg font-display font-bold text-white mb-3 flex items-center gap-2">
