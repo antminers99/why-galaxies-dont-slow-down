@@ -45,6 +45,7 @@ TABLE OF CONTENTS
   PART XXIX — RESOLVING THE INTERNAL CONTRADICTION
   PART XXX  — NOVELTY AUDIT: WHAT IS ACTUALLY NEW?
   PART XXXI — THE DECISIVE TEST: MASS-MATCHED BTFR AT z ~ 0.5-1.0
+  PART XXXII— DIAGNOSTIC: WHERE IS THE HIDDEN FACTOR?
 
 ================================================================================
 SCOPE AND ORIGINALITY STATEMENT
@@ -3481,6 +3482,263 @@ PART XXXI: THE DECISIVE TEST — MASS-MATCHED BTFR AT z ~ 0.5-1.0
   ║ The data will be available by ~2028.                                ║
   ║ Until then: no theory, just preparation.                            ║
   ╚═══════════════════════════════════════════════════════════════════════╝
+
+================================================================================
+PART XXXII: DIAGNOSTIC — WHERE IS THE HIDDEN FACTOR?
+================================================================================
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │  CRITICAL SELF-EXAMINATION: Is the "factor" we are chasing        │
+  │  actually missing physics, or a wrong input quantity?              │
+  │  This section audits 5 potential sources of systematic error.     │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  MOTIVATION:
+  The ratio a₀/(cH₀) = 0.87 is close to 1/(2π) = 0.159... only after
+  we insert the 2π. Before attributing this to cosmology, we must rule
+  out that the "missing factor" is mundane: geometry, calibration,
+  or missing baryons.
+
+  ════════════════════════════════════════════════════════════════════════
+  SUSPECT #1 (HIGHEST PRIORITY): DEFINITION OF g_bar ITSELF
+  ════════════════════════════════════════════════════════════════════════
+
+  Question: Are we using g_bar = GM/r² (spherical point mass), or
+  the proper disk/bulge/gas mass model?
+
+  AUDIT OF OUR CODE:
+
+    RAR analysis (transition-scale-v3.cjs):
+      Vbar² = Υ_disk × Vdisk² + Υ_bulge × Vbulge² + Vgas²
+      g_bar = Vbar² / r
+
+    This is CORRECT. It uses the SPARC component decomposition
+    (Lelli+2016), where Vdisk, Vbulge, Vgas are derived from the
+    actual surface brightness profile and HI map via the Poisson
+    equation for a thin disk + bulge + gas layer. This is NOT
+    a spherical GM/r² approximation.
+
+    BTFR simulation (measurement-pipeline.cjs):
+      Vbar = √(G × M / (3 × R_half))
+
+    This IS a spherical approximation. However, this script is a
+    Monte Carlo forecast for the z-test pipeline (Part XXXI), not
+    the primary RAR analysis. The BTFR uses integrated quantities
+    (total mass, flat velocity) where the spherical approximation
+    introduces smaller errors than in resolved rotation curves.
+
+  VERDICT ON SUSPECT #1:
+    ✓ Primary RAR analysis uses proper mass model (disk+bulge+gas)
+    △ BTFR forecast uses spherical approximation (acceptable for
+      integrated quantities, but should be noted as a limitation)
+
+  The difference between spherical and disk mass models can be
+  significant at small radii (factors of 1.5-2× in g_bar), but
+  for the RAR fit across all radii, SPARC data already provides
+  the correct disk-based decomposition. We use it.
+
+  ════════════════════════════════════════════════════════════════════════
+  SUSPECT #2: OBSERVATIONAL NUISANCE PARAMETERS
+  ════════════════════════════════════════════════════════════════════════
+
+  Three parameters dominate RAR scatter in individual galaxies:
+    • Distance D: g_bar ∝ 1/D, g_obs ∝ 1/D → both shift together
+    • Inclination i: V_obs = V_true × sin(i) → g_obs ∝ sin⁴(i)
+    • Mass-to-light ratio Υ_★: g_bar ∝ Υ_★
+
+  Key finding from Li et al. (2018):
+    After marginalizing over D, i, and Υ_★ per galaxy,
+    residual intrinsic scatter drops to ~0.057 dex.
+    No evidence that a₀ itself varies from galaxy to galaxy.
+
+  Our stress tests (Phase C):
+    • M/L perturbation (±0.15 dex):  21/21 galaxies retain signal
+    • Distance MC (±30%):            100% negative slopes retained
+    • Inclination sensitivity:       included in distance MC
+
+  VERDICT ON SUSPECT #2:
+    ✓ Our tests show robustness to D, i, Υ_★ perturbations
+    ✓ Consistent with Li et al. (2018) findings
+    △ We do NOT marginalize per galaxy (we use fixed Υ values)
+      This means our 0.198 dex scatter is inflated relative to
+      the ~0.057 dex intrinsic scatter. This is conservative,
+      not wrong — but it means our scatter is dominated by
+      nuisance parameters, not by a₀ variation.
+
+  ════════════════════════════════════════════════════════════════════════
+  SUSPECT #3: MISSING OR OVERSIMPLIFIED BARYONIC COMPONENTS
+  ════════════════════════════════════════════════════════════════════════
+
+  The SPARC mass model includes:
+    ✓ Stellar disk (from 3.6μm Spitzer photometry)
+    ✓ Stellar bulge (where present)
+    ✓ Atomic gas HI (from 21cm radio)
+
+  What it does NOT include:
+    ✗ Molecular gas H₂ (typically ~10-30% of HI in spirals,
+      but can be comparable in inner regions of massive galaxies)
+    ✗ Ionized gas (hot halo, circumgalactic medium)
+    ✗ Detailed disk thickness (assumed infinitely thin)
+    ✗ Non-axisymmetric structure (bars, spiral arms, warps)
+
+  Impact assessment:
+    • H₂ omission: shifts g_bar upward in inner regions by ~10-30%
+      → would slightly REDUCE the inferred a₀
+    • Disk thickness: matters most at small radii
+      → shifts g_bar by ~5-15% in inner disk
+    • Non-axisymmetric: averaged out in azimuthal rotation curves
+      → contributes to scatter, not systematic bias
+
+  VERDICT ON SUSPECT #3:
+    △ Missing H₂ could shift g_bar by ~10-30% in inner regions
+      This is a known limitation of SPARC (acknowledged by Lelli+2016)
+    △ Does NOT explain the 2π factor (which is a factor of 6.28,
+      much larger than plausible baryonic corrections)
+    ✓ At the low-acceleration radii where a₀ matters most,
+      gas dominates and is well-measured by HI
+
+  ════════════════════════════════════════════════════════════════════════
+  SUSPECT #4: THE INTERPOLATION FUNCTION ITSELF
+  ════════════════════════════════════════════════════════════════════════
+
+  Our framework uses: ν(x) = x/(1+x) where x = g_bar/a₀
+
+  This gives: g_obs² = g_bar² + a₀² × g_bar/(g_bar + a₀)
+
+  Alternative interpolation functions in the literature:
+    • Simple:   ν(x) = 1/2 + √(1/4 + 1/x)           [Famaey & Binney 2005]
+    • Standard: ν(x) = 1/(1 - e^(-√x))                [Milgrom 2008]
+    • RAR fit:  ν(x) = 1/(1 - e^(-√x))                [McGaugh+2016]
+
+  All share the same asymptotic limits:
+    g_bar >> a₀: g_obs → g_bar (Newton)
+    g_bar << a₀: g_obs → √(g_bar × a₀) (deep-MOND)
+
+  They differ only in the transition region (g_bar ~ a₀).
+  The choice of interpolation function does NOT affect:
+    • The existence of a₀
+    • The deep-MOND limit
+    • The BTFR
+    • The cH₀ coincidence
+
+  It DOES affect:
+    • The precise fitted value of a₀ (by ~10-20%)
+    • The residual pattern in the transition region
+    • The quality of fit in individual galaxies
+
+  DIAGNOSTIC TEST:
+    If changing the interpolation function shifts a₀ by more than
+    changing Υ_★ does, then the "hidden factor" is the transition
+    shape, not a missing physical input.
+
+  VERDICT ON SUSPECT #4:
+    △ We have NOT tested multiple interpolation functions on our data
+      This is a genuine limitation. The choice ν(x) = x/(1+x) is
+      specific to our framework but not uniquely motivated.
+    ✓ The deep-MOND limit and cH₀ coincidence are independent of
+      interpolation choice.
+
+  ════════════════════════════════════════════════════════════════════════
+  SUSPECT #5: THE COSMIC NORMALIZATION (2π) IS NOT FROM PHYSICS
+  ════════════════════════════════════════════════════════════════════════
+
+  From the Unruh/de Sitter audit (Part XXVII):
+    T_U = T_GH gives: a = cH (the 2π cancels)
+    To get cH/2π, one needs: a = 2πkT/ℏ with T = GH temperature
+
+  The 2π does NOT emerge automatically from thermal arguments.
+  It requires choosing a specific relationship between temperature
+  and acceleration that is not uniquely determined.
+
+  This means: the "hidden factor" may not be a number we are
+  missing from our analysis, but rather that the starting point
+  (thermal Unruh/de Sitter argument) is not the right derivation
+  path for a₀ at all.
+
+  VERDICT ON SUSPECT #5:
+    ✗ No clean theoretical derivation produces exactly cH₀/2π
+    ✓ The numerical coincidence a₀ ≈ cH₀/2π is robust (ratio 0.87)
+    △ The coincidence may be a clue, not an explanation
+
+  ════════════════════════════════════════════════════════════════════════
+  RECOMMENDED DIAGNOSTIC TESTS (NOT YET PERFORMED)
+  ════════════════════════════════════════════════════════════════════════
+
+  These tests would systematically locate the "hidden factor":
+
+  TEST A — Geometry sensitivity:
+    Replace g_bar(r) from SPARC mass model with g_bar = GM(<r)/r²
+    (spherical enclosed mass). If residual pattern changes
+    significantly → geometry is the dominant systematic.
+    Expected: significant change at small radii, small change at
+    large radii where most a₀-sensitive points live.
+
+  TEST B — Baryonic calibration:
+    Add a single free multiplicative factor f_bar to all baryonic
+    velocities: Vbar → f_bar × Vbar, then refit a₀.
+    If f_bar ≈ 1: baryonic inputs are well-calibrated
+    If f_bar ≠ 1 but constant: systematic calibration offset
+    If f_bar varies with galaxy type/SB/inclination: hidden systematic
+    Note: Li et al. (2018) effectively did this per galaxy.
+
+  TEST C — Residual correlations:
+    After fixing the best-fit a₀, check residuals against:
+    • Inclination (i)
+    • Distance method (Cepheid vs Tully-Fisher vs Hubble flow)
+    • Gas fraction (M_gas / M_bar)
+    • Central surface brightness (Σ_0)
+    If any shows a clear trend → that parameter is a hidden systematic,
+    not new physics.
+
+  TEST D — Interpolation function comparison:
+    Fit RAR with 3 different interpolation functions:
+    • Our ν(x) = x/(1+x)
+    • Simple MOND: ν(x) = 1/2 + √(1/4 + 1/x)
+    • McGaugh+2016: ν(x) = 1/(1 - e^(-√x))
+    Compare: fitted a₀ values, residual RMS, BIC/AIC.
+    If a₀ shifts by >20% → interpolation choice is significant.
+
+  ════════════════════════════════════════════════════════════════════════
+  SUMMARY: WHERE IS THE HIDDEN FACTOR MOST LIKELY?
+  ════════════════════════════════════════════════════════════════════════
+
+  ┌───────────────────────────────────────────────────────────┬──────────┐
+  │ Suspect                                                   │ Priority │
+  ├───────────────────────────────────────────────────────────┼──────────┤
+  │ 1. g_bar definition (spherical vs disk mass model)       │ CLEARED  │
+  │    → We use SPARC disk decomposition correctly            │          │
+  │                                                           │          │
+  │ 2. Observational nuisance (D, i, Υ_★)                   │ PARTIAL  │
+  │    → Robust to perturbation but we don't marginalize     │          │
+  │    → Scatter is inflated; a₀ value stable                │          │
+  │                                                           │          │
+  │ 3. Missing baryons (H₂, disk thickness)                  │ LOW      │
+  │    → ~10-30% effect, cannot explain 2π factor            │          │
+  │                                                           │          │
+  │ 4. Interpolation function choice                          │ UNTESTED │
+  │    → Could shift a₀ by ~10-20%; needs Test D             │          │
+  │                                                           │          │
+  │ 5. Theoretical starting point (Unruh → cH, not cH/2π)   │ HIGH     │
+  │    → The 2π has no clean derivation                      │          │
+  │    → May indicate wrong derivation path entirely         │          │
+  └───────────────────────────────────────────────────────────┴──────────┘
+
+  BOTTOM LINE:
+  The most likely "hidden factor" is NOT a missing number in our
+  analysis pipeline. Our g_bar is correctly computed from SPARC disk
+  decomposition. The most likely explanations are:
+
+  (a) The theoretical starting point (Unruh temperature argument) is
+      not the right path to derive a₀ — the 2π does not emerge from it.
+
+  (b) The interpolation function choice matters more than we have tested.
+
+  (c) The coincidence a₀ ≈ cH₀/2π is real but not yet explained —
+      it is a clue to be derived, not a derivation.
+
+  As the reviewer stated:
+  "Most likely the issue is not a 'missing magic factor' but that the
+   quantity being used as input is not the right quantity in the first place."
 
 ================================================================================
 END OF COMPLETE REPORT
