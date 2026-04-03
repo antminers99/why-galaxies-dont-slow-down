@@ -60,7 +60,7 @@ SCOPE AND ORIGINALITY STATEMENT
     - Three-family theoretical landscape [Famaey & McGaugh 2012]
 
   WHAT WE CONFIRMED (robustly, on 197 galaxies):
-    - RAR with 0.13 dex scatter (consistent with McGaugh+2016)
+    - RAR with 0.198 dex observed scatter (SPARC; cf. McGaugh+2016)
     - BTFR at 4.4σ significance
     - 5 stress tests showing robustness to systematic perturbations
     - 7 systematic robustness checks (M/L, distance, etc.)
@@ -342,6 +342,37 @@ COMBINED (SPARC + LITTLE THINGS)
   Global RMS: 0.2364 dex
   Median a₀: 2858.2 (km/s)²/kpc
   MAD: 0.457 dex
+
+┌─────────────────────────────────────────────────────────────────────┐
+│  SCATTER TAXONOMY — definitions for all scatter values in report   │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  σ_RAR (observed RMS on RAR):                                      │
+│    0.198 dex — SPARC-only, all 175 galaxies, single global a₀ fit │
+│    0.2364 dex — combined SPARC + LITTLE THINGS (197 galaxies)      │
+│    These are total observed scatter including measurement error,   │
+│    distance uncertainty, M/L variation, and inclination effects.   │
+│                                                                     │
+│  σ_intr (intrinsic scatter after marginalizing nuisance params):   │
+│    ~0.057 dex — from Li et al. (2018) individual-galaxy fits      │
+│    with Bayesian marginalization over distance, inclination, M/L.  │
+│    This is NOT our measurement; it is a literature reference.      │
+│                                                                     │
+│  σ_ΛCDM (simulated scatter from ΛCDM feedback models):            │
+│    0.08–0.17 dex RMS — range from cosmological hydro sims         │
+│    (EAGLE, IllustrisTNG, FIRE). Exceeds σ_intr.                   │
+│                                                                     │
+│  σ_bin (per-quartile scatter in binned analysis):                  │
+│    Q1: 0.573 dex, Q2: 0.462 dex, Q3: 0.355 dex, Q4: 0.331 dex  │
+│    These reflect per-galaxy a₀ variation within mass bins,         │
+│    dominated by individual-galaxy fitting noise, M/L, distance.   │
+│                                                                     │
+│  0.13 dex (Scope Statement):                                      │
+│    Approximate σ_RAR consistent with McGaugh+2016 reported value. │
+│    Our measured σ_RAR is 0.198 dex (SPARC) or 0.2364 (combined).  │
+│    Updated: Scope Statement now cites 0.198 dex for consistency.  │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 
 g_obs/g_bar RATIO vs g_bar (binned):
   log(g_bar)=0.93:  ratio=53.4  (n=6, very low acceleration)
@@ -826,7 +857,11 @@ THREE MODEL PREDICTIONS
   │ Cosmic Scale     │ a₀ × E(z) (scales with H(z)) │
   └──────────────────┴────────────────────────────┘
 
-  This is THE killer test that distinguishes the three hypotheses.
+  This is the cleanest available discriminator between constant-a₀,
+  H-tracking, and broad emergent/feedback classes of models.
+  Note: current high-z data already disfavor strong a₀ evolution
+  (Milgrom 2017 on Genzel+2017 data), but do not yet cleanly decide
+  between constant a₀ and modest H(z)-tracking.
 
 INTERACTIVE CONTROLS
   Redshift z: 0 → 3 (z=0 is now, z=3 is ~11.5 Gyr ago)
@@ -1183,6 +1218,12 @@ a₀ STABILITY UNDER DISTANCE PERTURBATION:
   Perturbed mean k:  1193 ± 4 (km/s)²/kpc
   95% CI:            [1187, 1198]
   CV:                0.3%
+  NOTE: k here is the perturbed-sample transition scale from the MC
+  resampling procedure, NOT the global a₀ = 3702 (km/s)²/kpc from
+  the full SPARC sample. The MC uses the combined 197-galaxy sample
+  (global a₀ = 1730 (km/s)²/kpc) with randomized distances. The key
+  result is the CV (0.3%): a₀ is stable under distance perturbation,
+  regardless of its absolute value.
   a₀ remains well-constrained even with ±30% distance noise.
 
 VERDICT: ✓ SIGNAL SURVIVES ±30% DISTANCE ERRORS.
@@ -2536,7 +2577,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
 
   ────────────────────────────────────────────────────────────────────────
 
-  Connection to our model:
+  Connection to our framework:
     Our formula uses:
       g_obs² = g_bar² + a₀²·g_bar/(g_bar + a₀)
 
@@ -2544,12 +2585,12 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     g_bar → 0:  g_obs² ≈ a₀·g_bar → 0,  so g_obs ≈ √(a₀·g_bar) → 0.
     This is standard deep-MOND behavior, NOT a floor.
 
-    Our model is CLOSER to MI than to MFE because it modifies the
+    Our framework is CLOSER to MI than to MFE because it modifies the
     observed acceleration, not the field equation.
 
     It gives the SAME deep limit as standard MI:
     - MI deep limit: g_obs = √(g_bar · a₀)  → goes to 0 as g_bar → 0
-    - Our model:     g_obs ≈ √(a₀ · g_bar)  → goes to 0 as g_bar → 0
+    - Our framework: g_obs ≈ √(a₀ · g_bar)  → goes to 0 as g_bar → 0
 
     The difference is in the interpolation function, not the asymptotic limits.
     a₀ remains a transition scale, not a minimum acceleration.
@@ -2642,24 +2683,24 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
   has the non-locality problem for general orbits.
 
   NEITHER produces a floor. Both give g → 0 as g_bar → 0.
-  [CORRECTED — Part XXIX] Our model also gives g → 0 as g_bar → 0.
+  [CORRECTED — Part XXIX] Our framework also gives g → 0 as g_bar → 0.
   All three share the same deep-MOND asymptotic limit.
 
   ════════════════════════════════════════════════════════════════════════
-  WHAT DISTINGUISHES OUR MODEL? (Corrected from earlier "floor" claim)
+  WHAT DISTINGUISHES OUR FRAMEWORK? (Corrected from earlier "floor" claim)
   ════════════════════════════════════════════════════════════════════════
 
   Standard MOND (both MI and MFE):
     Deep limit: g_obs = √(g_bar · a₀)
     As g_bar → 0: g_obs → 0
 
-  Our model (corrected):
+  Our framework (corrected):
     Deep limit: g_obs ≈ √(a₀ · g_bar)  (same as standard MOND)
     As g_bar → 0: g_obs → 0            (no floor)
 
-  The original claim in this report that our model has a "floor" was
+  The original claim in this report that our framework has a "floor" was
   INCORRECT (see Part XXIX for the full correction). What distinguishes
-  our model from standard MOND is:
+  our framework from standard MOND is:
 
   1. The specific interpolation function ν(x) = x/(1+x) rather than
      the standard MOND interpolation functions (simple or standard).
@@ -2668,7 +2709,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
 
   These are differences in the INTERPOLATION REGION (where g_bar ~ a₀),
   not in the asymptotic limits. In both the Newtonian limit (g >> a₀)
-  and the deep-MOND limit (g << a₀), our model converges to standard
+  and the deep-MOND limit (g << a₀), our framework converges to standard
   MOND behavior.
 
   The dynamical question becomes:
@@ -2684,7 +2725,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
   ┌─────────────────────────────────────────────────────────────────────┐
   │ STATUS (CORRECTED):                                                 │
   │                                                                     │
-  │ Our model is a MOND variant with specific interpolation and        │
+  │ Our framework is a MOND variant with specific interpolation and    │
   │ cosmologically fixed a₀. It does NOT produce a floor.              │
   │ It shares the same deep-MOND limit as MI and AQUAL.                │
   │ What it adds: a₀ = cH₀/2π constraint + z-evolution prediction.    │
@@ -2708,7 +2749,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     → g_obs = √(g_bar · a₀) at low acceleration (MOND behavior)
     → g_obs = g_bar at high acceleration (Newton)
 
-  [CORRECTED — Part XXIX] Our model also gives g_obs → 0 as g_bar → 0,
+  [CORRECTED — Part XXIX] Our framework also gives g_obs → 0 as g_bar → 0,
   so the dark-sector response law reproduces the same asymptotic limits.
   The difference is in the interpolation region.
 
@@ -2779,8 +2820,8 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     4. The 2π has a natural origin in Unruh/Euclidean periodicity
     5. But the Unruh/de Sitter threshold gives cH, not cH/2π (Part XXVII)
     6. MOND (MI or MFE) uses a₀ to produce BTFR and RAR correctly
-    7. Our model shares the same deep-MOND limit as MI and AQUAL
-    8. Our model fits the data but has no Lagrangian
+    7. Our framework shares the same deep-MOND limit as MI and AQUAL
+    8. Our framework fits the data but has no Lagrangian
     9. Dark-sector coupling could explain clusters but doesn't derive a₀
     10. No complete theory exists that satisfies all conditions
 
@@ -2817,7 +2858,7 @@ PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
   CLAIM (throughout the report):
     "There exists a minimum acceleration floor a₀"
     "g_obs → a₀ when g_bar → 0"
-    "Our model differs from MOND because g → a₀, not g → 0"
+    "Our framework differs from MOND because g → a₀, not g → 0"
 
   ACTUAL EQUATION (Part III):
     g_obs² = g_bar² + a₀² × g_bar / (g_bar + a₀)
@@ -2845,7 +2886,7 @@ PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
 
   ┌─────────────────────────────────────────────────────────────────────┐
   │ VERDICT: The equation written in Part III does NOT produce a       │
-  │ floor. It produces deep-MOND scaling. The claim that "our model   │
+  │ floor. It produces deep-MOND scaling. The claim that "our framework│
   │ has a floor" is INCORRECT given the current equation.             │
   │                                                                     │
   │ This is not a minor issue. It changes what we are trying to       │
@@ -2970,8 +3011,8 @@ PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
   OLD: "g_obs → a₀ when g_bar → 0"
   NEW: "g_obs → √(g_bar × a₀) when g_bar << a₀ (deep-MOND limit)"
 
-  OLD: "Our model differs from MOND because g → a₀, not g → 0"
-  NEW: "Our model is a MOND variant. It differs from standard MOND
+  OLD: "Our framework differs from MOND because g → a₀, not g → 0"
+  NEW: "Our framework is a MOND variant. It differs from standard MOND
         in the specific interpolation function and in fixing a₀ = cH₀/2π
         rather than treating a₀ as a free parameter"
 
@@ -3232,13 +3273,22 @@ PART XXX: WHAT IS ACTUALLY NEW IN THIS WORK? — NOVELTY AUDIT
   ║ If the z-test is done and a₀ evolves with H(z):                    ║
   ║   → Our framework becomes the measurement that matters              ║
   ║ If a₀ is constant:                                                  ║
-  ║   → Standard MOND is confirmed, our model is falsified             ║
+  ║   → Standard MOND is confirmed, our framework is falsified         ║
   ║   → But the pipeline design remains useful                         ║
   ╚═══════════════════════════════════════════════════════════════════════╝
 
 ================================================================================
 PART XXXI: THE DECISIVE TEST — MASS-MATCHED BTFR AT z ~ 0.5-1.0
 ================================================================================
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │  IMPORTANT: This section is a FORECAST PIPELINE, not an           │
+  │  observational result. No high-z data have been analyzed here.    │
+  │  The pipeline design assumes future JWST/NIRSpec + ALMA data      │
+  │  with caveats: beam smearing, pressure support, tracer            │
+  │  systematics, and departures from thin-disc assumptions remain    │
+  │  significant challenges at z > 0.5 (see Übler+2024, Rizzo+2023). │
+  └─────────────────────────────────────────────────────────────────────┘
 
   "Every theoretical framework in this report makes a different prediction
   about a₀(z). One observation settles it."

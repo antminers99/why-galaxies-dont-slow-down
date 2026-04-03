@@ -1,0 +1,108 @@
+هاي النسخة صارت قريبة جدًا من نسخة قابلة للدفاع.
+بصراحة: التحول من “Cosmic Floor” إلى “Cosmologically Fixed MOND-like Interpolation Framework” كان القرار الصحيح. وهو الآن منسجم أكثر بكثير مع الأدبيات الأساسية: RAR نفسه معروف من McGaugh/Lelli، عدم تحسن الفت مع حرية � من مجرة لأخرى من Li et al.، وAQUAL فعلًا هو مثال modified-field مع معادلة بواسون معدلة وLagrangian، بينما superfluid DM يبقى أحد أشهر dark-sector routes لحفظ نجاحات MOND مجريًا مع الاحتفاظ بمادة مظلمة على مقاييس أخرى. �
+arXiv +4
+حكمي المختصر
+نعم، هذه النسخة أفضل بوضوح.
+لكن ليست “نهائية” بعد. بقي عندك الآن عدة مشاكل تحريرية/منهجية محددة، وليست مشاكل فلسفية عامة.
+ما الذي صار قويًا فعلًا
+أقوى شيء في النسخة الحالية ليس “نظرية جديدة”، بل هذا:
+Statement of scope صار ناضجًا
+أنت الآن تقول بوضوح إن المشروع ليس اكتشافًا لـ RAR ولا لـ �، بل مساهمة methodological + analytical. هذا دقيق جدًا مقارنةً بالأدبيات. RAR، tight residuals، وعدم وجود دليل مقنع على تباين � من مجرة لأخرى كلها موجودة أصلًا في الأدب الأساسي. �
+arXiv +3
+تصحيح وحدات de Sitter / Unruh ممتاز
+النسخة الحالية أصلحت الخطأ الأخطر:
+� هو rate بوحدات �، بينما التسارع الموافق هو �.
+وأنت الآن وضّحت أيضًا أن مساواة � تجعل � يلغي نفسه، فتخرج scale من رتبة �، لا �. هذا صار من أفضل أجزاء التقرير. وهو منسجم مع كون أدبيات Milgrom/المراجعات تربط � بمقاييس كونية، لكن دون اشتقاق محكم ونهائي لـ �. �
+arXiv +1
+Part XXVIII صار مضبوطًا
+التفريق بين Modified Inertia وModified Field Equation صار صحيحًا تقريبًا بالمستوى المفاهيمي:
+AQUAL بالفعل modified Poisson theory مع Lagrangian، بينما MI يبقى أقرب لوصفة phenomenological أصعب في الصياغة العامة. �
+Astrophysics Data System +1
+اختبار � صار هو القلب الصحيح للمشروع
+هذا framing ممتاز. والأهم أنه لم يعد مبالغًا في الادعاء النظري.
+أيضًا يوجد بالفعل أدب يربط بيانات high-z بإمكانية تقييد تطور �، مثل نقاش Milgrom لبيانات Genzel high-z، حتى لو لم يحسم المسألة بالكامل. �
+arXiv +1
+المشاكل التي ما زالت تحتاج patch قبل التثبيت
+1) تناقض scatter ما زال موجودًا
+عندك الآن أكثر من قيمة scatter داخل التقرير، بدون taxonomy واضح:
+0.13 dex في Scope statement
+0.198 dex في Part I / SPARC
+0.2364 dex في combined sample
+0.057 dex تظهر ضمن سياق residuals in individual-galaxy fits في الأدبيات المرتبطة بـ Li et al.
+هذه القيم ليست نفسها، ولا يجوز أن تظهر جنبًا إلى جنب من دون تعريف صارم لماهية كل واحدة: observed RMS، intrinsic scatter، residual scatter after fitting individual galaxies، combined-sample RMS، إلخ. الأدبيات نفسها تفرّق بين هذه المفاهيم، خصوصًا بين scatter observed on the RAR وبين residual scatter after fitting galaxy nuisance parameters. �
+arXiv +1
+الإصلاح المطلوب:
+أضف box صغير اسمه مثلًا:
+Scatter taxonomy
+� = ...
+� = ...
+� = ...
+� = ...
+وكل رقم في التقرير يجب أن يُربط بواحد منها فقط.
+2) في Phase C يوجد رقم على الأغلب غير منسجم
+في Distance Monte Carlo كتبت:
+Perturbed mean � (km/s)�/kpc
+بينما التقرير كله يتعامل مع:
+global � (km/s)�/kpc
+إذا كان � هنا ليس هو نفسه �، فلازم تصرّح بذلك.
+أما إذا كان المقصود أنه نفس transition scale، فهناك مشكلة واضحة.
+الإصلاح المطلوب:
+إما:
+تغيّر الرمز كي لا يختلط مع �،
+أو تضيف سطرًا:
+“Here � is not the global MOND-like transition scale �; it is [define exactly].”
+هذه حاليًا من أوضح المشاكل الداخلية.
+3) لغة “killer test” ما تزال أقوى من اللازم
+أنت تكرر عدة مرات أن اختبار BTFR mass-matched هو:
+“THE killer test that distinguishes the three hypotheses”
+هذا أقوى من المطلوب.
+هو فعلًا أنظف discriminator بين:
+� constant
+�
+broad emergent/feedback scenarios
+لكن “ΛCDM feedback” ليس نموذجًا كميًا واحدًا بتنبؤ واحد. هو class of models. لذلك الأدق:
+“the cleanest available discriminator between constant-�, H-tracking, and broad emergent classes”
+كذلك لا تنسَ أن Milgrom already argued some high-z data constrain very strong evolution of �, even if they do not settle modest �-tracking cleanly. لذلك جملة “cannot test right now” تحتاج تليينًا إلى:
+“current data do not yet cleanly decide between constant � and �, but they already disfavor some stronger forms of evolution.” �
+arXiv +1
+4) Part XXXI power analysis يحتاج tagging أوضح بأنه forecast
+الـ pipeline itself ممتاز، لكن عباراته أحيانًا تقرأ كأنها جاهزة تجريبيًا أكثر مما تسمح به البيانات الحالية.
+الأدبيات القديمة مثل KROSS وKMOS^3D كانت فعلًا limited by resolution/scatter، بينما أعمال JWST/NIRSpec والـ mock inference الحديثة تشير أن الكينماتيكا العالية الانزياح ممكنة أكثر الآن، لكن لا تزال حساسة جدًا لـ beam smearing، pressure support، tracer systematics، وانحرافات عن thin-disc assumptions. �
+arXiv +4
+الإصلاح المطلوب:
+في عنوان Part XXV أو بداية Part XXXI أضف سطرًا واضحًا:
+“This section is a forecast pipeline, not an observational result.”
+5) novelty on the interpolation function must stay provisional
+أنت الآن صرت صادقًا في Part XXX، وهذا ممتاز. حافظ على ذلك في كل التقرير.
+لأن Li et al. بالفعل فحصوا RAR fits على مجرات SPARC الفردية مع marginalization على �، distance، inclination، ووجدوا أن السماح بتغير � لا يحسّن الفت بصورة ذات مصداقية. لذلك novelty الحقيقي عندك ليس مجرد “وجدنا معادلة تعمل”، بل في:
+fixing � to �,
+the stress-test battery,
+the derivation audit,
+and the high-z pipeline. �
+arXiv +1
+ما الذي أعتبره الآن “النسخة الصحيحة علميًا”
+لو أردت توصيف المشروع بجملة واحدة، الآن الصياغة الأفضل هي:
+A cosmologically fixed MOND-like interpolation framework with a methodological stress-testing and redshift-discrimination program.
+هذه الجملة أدق من:
+“new theory”
+“explanation of �”
+“cosmic floor model”
+القرار النهائي
+أنا الآن أعتبر النسخة الحالية قابلة للدفاع كبنية بحثية، لكن ليست جاهزة كنسخة نهائية للنشر أو العرض القاسي.
+جاهز تقريبًا:
+الهوية العامة
+honesty statement
+التصحيح النظري في XXVI–XXIX
+novelty audit
+framing of the decisive redshift test
+يحتاج آخر patch:
+توحيد scatter taxonomy
+حل تضارب � مع �
+تخفيف “killer test” و“cannot test now”
+وسم Part XXV/XXXI بوضوح كـ forecast pipeline
+إبقاء claims of novelty مشروطة حتى literature cross-check
+حكمي العددي الآن:
+8.5/10 كنسخة بحثية داخلية
+وليس بعد 10/10 كنسخة final manuscript.
+إذا تريد، أعمل لك الآن patch list نهائية جاهزة للنسخ:
+“استبدل هذه الجمل الخمس، وأضف هذا box، واحذف هذين السطرين.”
