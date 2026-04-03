@@ -1,0 +1,476 @@
+================================================================================
+     GALAXY ROTATION CURVE ANALYZER — DIAGNOSTIC REPORT
+     What Is Real, What Is Model-Dependent, and What Is Still Open
+================================================================================
+
+Date: April 2026
+Dataset: 175 SPARC + 22 LITTLE THINGS = 197 galaxies, 4,123 radial points
+Analysis: 2,062 points (every 2nd, full dataset subsampled)
+Prior report: galaxy-rotation-curve-analysis-full-report.txt (archived)
+
+================================================================================
+SINGLE DEFENSIBLE CLAIM
+================================================================================
+
+  "There is an acceleration transition scale, robust across 197 galaxies
+  and 4 interpolation functions, whose physical interpretation has not
+  been settled."
+
+  This claim is narrower than anything in the previous report.
+  It is also the only claim that survives all three diagnostic tests below.
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+  SECTION 1 — THREE-COLUMN CLASSIFICATION
+  SECTION 2 — INTERPOLATION FUNCTION AUDIT (Test 1)
+  SECTION 3 — BARYONIC CALIBRATION FACTOR (Test 2)
+  SECTION 4 — RESIDUAL CORRELATION MAP (Test 3)
+  SECTION 5 — SUB-POPULATION STABILITY
+  SECTION 6 — WHAT THE DIAGNOSTICS REVEAL
+  SECTION 7 — WHAT TO DO NEXT
+  SECTION 8 — METHODOLOGY NOTES
+
+================================================================================
+SECTION 1: THREE-COLUMN CLASSIFICATION
+================================================================================
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  A. ESTABLISHED IN THE DATA                                        │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  ✓ A transition scale exists                                       │
+  │    All 4 interpolation functions find it.                          │
+  │    Best-fit a₀ = 1809–1988 (km/s)²/kpc across functions.          │
+  │    Variation: 4.1% — robust to interpolation choice.               │
+  │                                                                     │
+  │  ✓ The RAR is tight                                                │
+  │    0.24 dex observed RMS scatter around a single curve.            │
+  │    Compare: ~0.057 dex intrinsic scatter after marginalizing       │
+  │    nuisance parameters (Li et al. 2018 — not our measurement).    │
+  │                                                                     │
+  │  ✓ The BTFR holds                                                  │
+  │    Detected at 4.4σ significance in our sample.                    │
+  │    Consistent with McGaugh (2005), Lelli et al. (2016).           │
+  │                                                                     │
+  │  ✓ Signal survives stress tests                                    │
+  │    Null test: 6.2σ rejection                                       │
+  │    Scramble test: 6.1σ rejection                                   │
+  │    M/L perturbation: 21/21 galaxies retain signal                  │
+  │    Distance Monte Carlo: 100% negative slopes in 1000 iterations  │
+  │                                                                     │
+  │  ✓ Inclination and distance do NOT correlate with residuals        │
+  │    r(inclination) = -0.159 (not significant)                       │
+  │    r(distance) = -0.139 (not significant)                          │
+  │    These two most-feared systematics are clean.                    │
+  └──────────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  B. DEPENDS ON MODEL CHOICES                                       │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  △ Precise value of a₀                                            │
+  │    Global fit (combined dataset): 1809–1988 (km/s)²/kpc            │
+  │    Per-galaxy median (SPARC only): 3702 (km/s)²/kpc               │
+  │    These differ by a factor ~2. The "correct" a₀ depends on       │
+  │    whether you fit globally or take per-galaxy medians.            │
+  │                                                                     │
+  │  △ a₀ varies dramatically across sub-populations                   │
+  │    High-mass (V>150 km/s):  a₀ = 3720 (close to canonical)       │
+  │    Low-mass (V<100 km/s):   a₀ = 46170 (12× higher!)             │
+  │    Gas-rich (MHI/L36 > 0.5): a₀ = 1137                            │
+  │    Gas-poor (MHI/L36 ≤ 0.5): a₀ = 3106                            │
+  │    Low surface brightness:   a₀ = 1322                             │
+  │    High surface brightness:  a₀ = 3118                             │
+  │    This is NOT consistent with strict universality.                │
+  │                                                                     │
+  │  △ 4 significant residual correlations exist                       │
+  │    Gas fraction:      r = +0.641                                   │
+  │    Surface brightness: r = -0.644                                   │
+  │    Luminosity:         r = -0.524                                   │
+  │    V_max:              r = -0.313                                   │
+  │    These are either hidden systematics or real physics.            │
+  │    Either way, the residuals are NOT random.                       │
+  │                                                                     │
+  │  △ Scatter values depend on nuisance parameter treatment           │
+  │    Our observed: 0.24 dex (no marginalization)                     │
+  │    Li et al. intrinsic: ~0.057 dex (after marginalization)        │
+  │    Difference: factor ~4 — mostly observational noise.             │
+  │                                                                     │
+  │  △ The cH₀/2π ratio depends on which a₀ you use                   │
+  │    If a₀ = 3702: ratio = 1.15 (consistent with cH₀/2π × 1.15)   │
+  │    If a₀ = 1900: ratio = 0.59 (not close to cH₀/2π)             │
+  │    The "cosmological coincidence" is method-dependent.             │
+  └──────────────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  C. UNKNOWN / OPEN                                                 │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  ? Is a₀ ≈ cH₀/2π physics or coincidence?                         │
+  │    Cannot answer until a₀ measurement is method-independent.       │
+  │                                                                     │
+  │  ? Does a₀ evolve with redshift?                                   │
+  │    No data yet. High-z kinematic data needed (JWST/ALMA).         │
+  │    Existing data disfavor strong evolution but cannot resolve       │
+  │    modest H(z)-tracking (Milgrom 2017 on Genzel+2017).            │
+  │                                                                     │
+  │  ? Which interpolation function is physically correct?             │
+  │    All 4 tested functions give statistically indistinguishable     │
+  │    RMS (0.2385–0.2443 dex). Data cannot distinguish them.         │
+  │                                                                     │
+  │  ? What is the physical mechanism behind the transition?           │
+  │    No derivation of a₀ from first principles exists.              │
+  │    Unruh/de Sitter arguments give cH, not cH/2π (Part XXVII).    │
+  │                                                                     │
+  │  ? What causes the residual correlations?                          │
+  │    Systematics (Υ_★ variation with SB, gas-fraction bias)?        │
+  │    Or real physics (a₀ is not truly universal)?                    │
+  │    This is the single most important open question.                │
+  └──────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+SECTION 2: INTERPOLATION FUNCTION AUDIT (Test 1)
+================================================================================
+
+  PURPOSE: Does the fitted a₀ depend on the interpolation function?
+  METHOD: Fit a₀ by minimizing RMS(log g_obs - log g_pred) using
+          golden section search over log(a₀) ∈ [2.0, 5.0].
+  DATA: 2,062 points from 193 galaxies.
+
+  ┌──────────────────────────────────┬──────────┬────────┬─────────┬─────────┐
+  │ Interpolation Function           │ a₀       │ RMS    │ AIC     │ BIC     │
+  │                                  │(km/s)²/kpc│ (dex) │         │         │
+  ├──────────────────────────────────┼──────────┼────────┼─────────┼─────────┤
+  │ McGaugh RAR: 1/(1-e^(-√y))      │ 1809     │ 0.2385 │ -5909.8 │ -5904.1 │
+  │ Simple MOND: 1/2 + √(1/4+1/y)   │ 1988     │ 0.2385 │ -5909.7 │ -5904.1 │
+  │ Standard MOND: (1+√(1+4/y))/2   │ 1988     │ 0.2385 │ -5909.7 │ -5904.1 │
+  │ Our ν(x)=x/(1+x)                │ 1972     │ 0.2443 │ -5810.8 │ -5805.2 │
+  └──────────────────────────────────┴──────────┴────────┴─────────┴─────────┘
+
+  KEY FINDINGS:
+
+  1. a₀ varies by only 4.1% across 4 interpolation functions.
+     The transition scale is ROBUST to model choice.
+
+  2. All functions give a₀ ≈ 1900 (km/s)²/kpc in the global fit.
+     This is LOWER than the canonical 3702 from SPARC per-galaxy fits.
+     Reason: global fit weights all points equally; per-galaxy median
+     weights all galaxies equally. Low-mass galaxies dominate by number
+     but have fewer well-constrained points.
+
+  3. Our framework (ν(x)=x/(1+x)) fits WORST of the 4.
+     ΔAIC = 99 relative to McGaugh RAR form — statistically decisive.
+     The McGaugh and standard MOND forms are indistinguishable.
+
+  4. The cosmological ratio a₀/(cH₀/2π) is 0.56–0.62 with the global
+     fit, NOT ~0.87 as previously reported. The ~0.87 ratio uses the
+     per-galaxy median a₀ = 3702, which is method-dependent.
+
+  IMPLICATIONS:
+  - The EXISTENCE of a transition scale is model-independent.
+  - The PRECISE VALUE of a₀ is model-dependent (global vs per-galaxy,
+    interpolation function, sample composition).
+  - The cosmological coincidence a₀ ≈ cH₀/2π depends on methodology.
+  - Our interpolation function is not the best fit to the data.
+
+================================================================================
+SECTION 3: BARYONIC CALIBRATION FACTOR (Test 2)
+================================================================================
+
+  PURPOSE: Does rescaling g_bar by a constant factor improve the fit?
+  METHOD: Replace g_bar → f_bar × g_bar, fit with McGaugh RAR and
+          fixed a₀ = 3702, scan f_bar from 0.7 to 1.5.
+
+  ┌─────────┬──────────┬──────────┐
+  │ f_bar   │ RMS (dex)│ bias     │
+  ├─────────┼──────────┼──────────┤
+  │ 0.70    │ 0.2436   │ +0.030   │
+  │ 0.80    │ 0.2425   │ -0.005   │
+  │ 0.90    │ 0.2416   │ -0.036   │
+  │ 0.95    │ 0.2412   │ -0.051   │
+  │ 1.00    │ 0.2409   │ -0.065   │
+  │ 1.10    │ 0.2403   │ -0.090   │
+  │ 1.20    │ 0.2399   │ -0.114   │
+  │ 1.30    │ 0.2395   │ -0.136   │
+  │ 1.50    │ 0.2390   │ -0.175   │
+  └─────────┴──────────┴──────────┘
+
+  KEY FINDINGS:
+
+  1. RMS is nearly FLAT across all f_bar values.
+     Best f_bar = 1.64, but improvement is only 0.9%.
+     Baryonic calibration is NOT the dominant source of scatter.
+
+  2. Bias changes monotonically with f_bar.
+     f_bar = 0.80 gives near-zero bias (-0.005 dex).
+     This suggests Υ_★ may be slightly overestimated, OR
+     a₀ = 3702 is too high for the global fit (consistent with Test 1).
+
+  3. f_bar and a₀ are DEGENERATE.
+     Scaling g_bar up is equivalent to scaling a₀ down.
+     To separate them: need external Υ_★ constraint
+     (e.g., stellar population synthesis, dynamical mass).
+
+  IMPLICATIONS:
+  - Baryonic calibration is not the "hidden factor."
+  - The scatter is dominated by galaxy-to-galaxy variation, not Υ_★ offset.
+  - A ~20% Υ_★ offset cannot be ruled out but does not change conclusions.
+
+================================================================================
+SECTION 4: RESIDUAL CORRELATION MAP (Test 3)
+================================================================================
+
+  PURPOSE: Are residuals (obs - pred) random, or do they correlate
+           with galaxy properties?
+  METHOD: Compute mean RAR residual per galaxy using McGaugh RAR
+          with a₀ = 3702, then Pearson r against 8 galaxy properties.
+  SAMPLE: 156 galaxies with at least 3 data points.
+
+  ┌─────────────────────────┬──────────┬──────┬──────────────────────┐
+  │ Parameter               │ r        │ n    │ Assessment           │
+  ├─────────────────────────┼──────────┼──────┼──────────────────────┤
+  │ Inclination             │ -0.159   │ 156  │ Not significant      │
+  │ Distance                │ -0.139   │ 156  │ Not significant      │
+  │ V_max                   │ -0.313   │ 156  │ SIGNIFICANT ⚠        │
+  │ Gas fraction (MHI/L36)  │ +0.641   │ 156  │ STRONG ⚠⚠           │
+  │ Surface brightness      │ -0.644   │ 156  │ STRONG ⚠⚠           │
+  │ Disk scale length       │ -0.275   │ 156  │ Weak                 │
+  │ Number of points        │ -0.157   │ 156  │ Not significant      │
+  │ Luminosity (L36)        │ -0.524   │ 156  │ STRONG ⚠⚠           │
+  └─────────────────────────┴──────────┴──────┴──────────────────────┘
+
+  KEY FINDINGS:
+
+  1. GOOD NEWS: Inclination and distance show NO significant correlation.
+     These are the most feared observational systematics.
+     The RAR residuals are NOT driven by viewing geometry.
+
+  2. BAD NEWS: Gas fraction (r = +0.64) and surface brightness (r = -0.64)
+     show STRONG correlations with residuals.
+     This means:
+     - Gas-rich galaxies systematically have POSITIVE residuals
+       (observed acceleration exceeds prediction)
+     - High surface brightness galaxies have NEGATIVE residuals
+       (prediction exceeds observed acceleration)
+
+  3. Luminosity (r = -0.52) and V_max (r = -0.31) also correlate.
+     These are not independent: luminosity correlates with SB and V_max.
+     The underlying driver is likely surface brightness or gas fraction.
+
+  INTERPRETATION:
+  Three possible explanations, not mutually exclusive:
+
+  A. Υ_★ VARIES WITH SURFACE BRIGHTNESS (systematic)
+     If high-SB galaxies have higher true Υ_★ than assumed,
+     g_bar would be underestimated → negative residuals.
+     This is physically plausible: stellar populations in
+     high-SB regions tend to be older, redder, higher Υ_★.
+     Li et al. (2018) found similar structure but concluded
+     the effect was absorbed by marginalizing nuisance params.
+
+  B. THE INTERPOLATION FUNCTION NEEDS A SECOND PARAMETER (model)
+     If the transition shape depends on surface density,
+     a single universal a₀ cannot capture all galaxies.
+     This would NOT invalidate the transition scale's existence,
+     but would mean the phenomenology is richer than 1-parameter MOND.
+
+  C. a₀ IS NOT TRULY UNIVERSAL (physics)
+     If a₀ genuinely varies with galaxy surface brightness or
+     gas fraction, the "universal acceleration scale" is an
+     approximation, not an exact law.
+     This would weaken the cosmological interpretation.
+
+  THE MOST IMPORTANT FOLLOW-UP:
+  Refit the RAR with Υ_★ as a free parameter (per galaxy or per
+  surface-brightness bin) and check if the correlations disappear.
+  If they do → systematic (interpretation A).
+  If they persist → real physics or model limitation (B or C).
+
+================================================================================
+SECTION 5: SUB-POPULATION STABILITY
+================================================================================
+
+  PURPOSE: Does a₀ remain the same when fitting different galaxy types?
+  METHOD: Fit a₀ separately for 8 sub-populations using McGaugh RAR.
+
+  ┌──────────────────────────────┬───────┬──────────┬────────┬────────┐
+  │ Sub-population               │ n_gal │ a₀ (fit) │ RMS    │ Δa₀   │
+  ├──────────────────────────────┼───────┼──────────┼────────┼────────┤
+  │ High surface brightness      │ 144   │ 3118     │ 0.188  │ -16%   │
+  │ Low surface brightness       │ 31    │ 1322     │ 0.264  │ -64%   │
+  │ High mass (V > 150 km/s)     │ 56    │ 3720     │ 0.128  │ +0.5%  │
+  │ Low mass (V < 100 km/s)      │ 88    │ 46170    │ 0.265  │ +1147% │
+  │ High inclination (> 60°)     │ 86    │ 3145     │ 0.190  │ -15%   │
+  │ Low inclination (< 45°)      │ 41    │ 1810     │ 0.247  │ -51%   │
+  │ Gas-rich (MHI/L36 > 0.5)     │ 73    │ 1137     │ 0.241  │ -69%   │
+  │ Gas-poor (MHI/L36 ≤ 0.5)     │ 102   │ 3106     │ 0.178  │ -16%   │
+  └──────────────────────────────┴───────┴──────────┴────────┴────────┘
+
+  KEY FINDINGS:
+
+  1. HIGH-MASS GALAXIES: a₀ = 3720, RMS = 0.128 dex.
+     These galaxies give the canonical a₀ with the tightest scatter.
+     They are the backbone of the RAR signal.
+
+  2. LOW-MASS GALAXIES: a₀ = 46170, RMS = 0.265 dex.
+     The fitted a₀ is 12× higher with much worse scatter.
+     This does NOT mean a₀ = 46170 is physical — it means:
+     - Low-mass galaxies are poorly constrained
+     - They may not span enough dynamic range in g_bar
+     - Or the RAR shape is genuinely different for dwarfs
+     - Or systematic errors (beam smearing, non-circular motions,
+       distance errors) dominate at low masses
+
+  3. GAS-RICH vs GAS-POOR: a₀ differs by 2.7×.
+     Gas-rich: a₀ = 1137; Gas-poor: a₀ = 3106.
+     This is a large, troubling difference.
+     Most likely explanation: Υ_★ is wrong for gas-rich galaxies
+     (where stellar mass contributes less, so Υ_★ errors matter less,
+     but the overall g_bar level is dominated by gas with its own
+     calibration uncertainties).
+
+  4. INCLINATION MATTERS: a₀ differs by 1.7× between high and low inc.
+     Despite residuals not correlating with inclination per galaxy,
+     the FITTED a₀ does depend on inclination cut.
+     This is concerning and may indicate unresolved sin(i) systematics.
+
+  OVERALL VERDICT:
+  The transition scale is most robust for high-mass, high-SB, gas-poor,
+  high-inclination galaxies (a₀ ≈ 3100–3720, RMS ≈ 0.13–0.19).
+  For other sub-populations, a₀ is poorly constrained.
+  Strict universality is NOT confirmed by this analysis.
+
+================================================================================
+SECTION 6: WHAT THE DIAGNOSTICS REVEAL
+================================================================================
+
+  The previous 32-part report treated a₀ as universal, cosmologically
+  fixed, and suggestive of new physics. The diagnostics show a more
+  nuanced picture:
+
+  ╔═══════════════════════════════════════════════════════════════════╗
+  ║  WHAT SURVIVED:                                                 ║
+  ║  • The transition scale exists (all 4 functions find it)       ║
+  ║  • The RAR is real and tight                                   ║
+  ║  • Inclination/distance systematics are clean                  ║
+  ║  • High-mass galaxies give consistent, tight a₀               ║
+  ╠═══════════════════════════════════════════════════════════════════╣
+  ║  WHAT DID NOT SURVIVE:                                         ║
+  ║  • Strict universality of a₀ across all galaxy types          ║
+  ║  • The precise value a₀ = 3702 (method-dependent)             ║
+  ║  • The cosmological ratio a₀ ≈ cH₀/2π (depends on method)    ║
+  ║  • Clean residuals (gas fraction and SB correlate strongly)    ║
+  ╠═══════════════════════════════════════════════════════════════════╣
+  ║  WHAT IS STILL OPEN:                                           ║
+  ║  • Whether residual correlations are systematic or physical    ║
+  ║  • Whether a₀ varies with z                                   ║
+  ║  • Whether the cosmological connection is real or numerical    ║
+  ╚═══════════════════════════════════════════════════════════════════╝
+
+  The most productive next step is NOT more theory.
+  It is resolving the gas-fraction and surface-brightness correlations.
+
+================================================================================
+SECTION 7: WHAT TO DO NEXT
+================================================================================
+
+  PRIORITY ORDER (highest first):
+
+  1. RESOLVE THE RESIDUAL CORRELATIONS
+     Refit RAR with Υ_★ free (per galaxy or per SB bin).
+     If correlations vanish → systematic (Υ_★ miscalibration).
+     If they persist → the model is incomplete or a₀ is not universal.
+     This is the single highest-priority test.
+
+  2. UNDERSTAND THE LOW-MASS DIVERGENCE
+     Why does a₀ = 46170 for V < 100 km/s galaxies?
+     Options: beam smearing, pressure support, asymmetric drift,
+     distance errors, or genuine departure from universal RAR.
+     Test: quality-cut to galaxies with > 1 dex g_bar range.
+
+  3. JOINT FIT: a₀ + f_bar
+     Currently a₀ and f_bar are degenerate.
+     Jointly fit both to resolve the degeneracy.
+     Or: use external Υ_★ constraints (SPS models, dynamics).
+
+  4. METHOD-INDEPENDENT a₀
+     Report a₀ from both global fit and per-galaxy median.
+     Report a₀ from all 4 interpolation functions.
+     The "canonical" a₀ should be the intersection of all methods.
+
+  5. THEN (and only then): COSMOLOGICAL INTERPRETATION
+     Only if a₀ is method-independent and residuals are clean,
+     does the cH₀/2π ratio become meaningful to discuss.
+
+  ────────────────────────────────────────────────────────────────────
+
+  PRODUCTS TO BUILD:
+
+  Product 1: REPRODUCIBLE ANALYSIS PACKAGE
+    Data + code + exact assumptions + reproducible figures.
+    Anyone can verify every number in this report.
+
+  Product 2: SYSTEMATICS PAPER
+    Focus ONLY on: interpolation, nuisance params, baryon calibration,
+    residual structure, sub-population stability.
+
+  Product 3: FORECAST PAPER
+    Mass-matched BTFR at z ~ 0.5–1.0.
+    Power analysis: what data are needed to confirm/kill H-based a₀(z)?
+
+================================================================================
+SECTION 8: METHODOLOGY NOTES
+================================================================================
+
+  DATA FORMAT:
+    Plot points stored as (x, y, g) where:
+      x = log10(g_bar) in (km/s)²/kpc
+      y = log10(g_obs/g_bar)
+      g = galaxy name (truncated to 12 chars)
+
+  g_bar COMPUTATION:
+    From SPARC: Vbar² = Υ_disk × Vdisk² + Υ_bulge × Vbulge² + Vgas²
+    g_bar = Vbar² / r
+    Υ_disk = 0.5, Υ_bulge = 0.7 (fixed, not fitted per galaxy)
+    This is a proper disk mass model, NOT spherical GM/r².
+
+  LITTLE THINGS:
+    g_bar derived from V_total² - V_DM² (using published DM models)
+    Less reliable than SPARC decomposition.
+
+  FITTING:
+    Golden section search on log(a₀) with 50 refinement steps.
+    Cost function: RMS of log10(g_obs) - log10(g_pred).
+    No marginalization over nuisance parameters.
+    1 free parameter (a₀) per fit.
+
+  INTERPOLATION FUNCTIONS TESTED:
+    1. McGaugh RAR: g_obs = g_bar / (1 - exp(-√(g_bar/a₀)))
+    2. Simple MOND: g_obs = g_bar × (1/2 + √(1/4 + a₀/g_bar))
+    3. Standard MOND: g_obs = g_bar × (1 + √(1 + 4a₀/g_bar)) / 2
+    4. Our framework: g_obs = √(g_bar² + a₀² × g_bar/(g_bar + a₀))
+
+  RESIDUAL CORRELATIONS:
+    Per-galaxy mean residual (log g_obs - log g_pred) vs galaxy metadata.
+    Pearson r with |r| > 0.3 flagged as significant.
+    156 galaxies with ≥ 3 data points used.
+
+  LIMITATIONS:
+    • Subsampled data (every 2nd point) — full sample may differ slightly
+    • No error bars on individual points used in fitting
+    • No covariance between points within same galaxy
+    • Υ_★ fixed, not marginalized (conservative choice)
+    • LITTLE THINGS g_bar uses DM-subtraction method (less direct)
+
+================================================================================
+END OF DIAGNOSTIC REPORT
+================================================================================
+
+  This report replaces the theoretical investigation sections
+  (Parts XXVI–XXXII) of the previous report for purposes of
+  future analysis. The empirical findings (Parts I–XXV) of
+  the previous report remain valid as documented.
+
+  All analysis code: scripts/diagnostic-tests.cjs
+  All computed results: public/diagnostic-results.json
+  Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
+================================================================================

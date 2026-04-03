@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-04-03T20:07:42.681Z",
+  "test1_interpolation": [
+    {
+      "name": "McGaugh RAR (e^-sqrt)",
+      "a0": 1809.4,
+      "logA0": 3.2575,
+      "rms": 0.2385,
+      "aic": -5909.8,
+      "bic": -5904.1
+    },
+    {
+      "name": "Simple MOND (1/2+sqrt)",
+      "a0": 1988.3,
+      "logA0": 3.2985,
+      "rms": 0.2385,
+      "aic": -5909.7,
+      "bic": -5904.1
+    },
+    {
+      "name": "Standard MOND",
+      "a0": 1988.3,
+      "logA0": 3.2985,
+      "rms": 0.2385,
+      "aic": -5909.7,
+      "bic": -5904.1
+    },
+    {
+      "name": "Our framework v(x)=x/(1+x)",
+      "a0": 1972.1,
+      "logA0": 3.2949,
+      "rms": 0.2443,
+      "aic": -5810.8,
+      "bic": -5805.2
+    }
+  ],
+  "test1_a0_range_pct": 4.1,
+  "test2_fbar": {
+    "bestFbar": 1.64,
+    "bestRMS": 0.2387,
+    "baselineRMS": 0.2409,
+    "improvement_pct": 0.9,
+    "verdict": "SIGNIFICANT OFFSET"
+  },
+  "test3_residuals": [
+    {
+      "param": "Inclination (i)",
+      "r": -0.159,
+      "n": 156,
+      "significant": false
+    },
+    {
+      "param": "Distance (D)",
+      "r": -0.139,
+      "n": 156,
+      "significant": false
+    },
+    {
+      "param": "V_max",
+      "r": -0.313,
+      "n": 156,
+      "significant": true
+    },
+    {
+      "param": "Gas fraction (MHI/L36)",
+      "r": 0.641,
+      "n": 156,
+      "significant": true
+    },
+    {
+      "param": "Surface brightness",
+      "r": -0.644,
+      "n": 156,
+      "significant": true
+    },
+    {
+      "param": "Disk scale (Rdisk)",
+      "r": -0.275,
+      "n": 156,
+      "significant": false
+    },
+    {
+      "param": "Number of points",
+      "r": -0.157,
+      "n": 156,
+      "significant": false
+    },
+    {
+      "param": "Luminosity (L36)",
+      "r": -0.524,
+      "n": 156,
+      "significant": true
+    }
+  ],
+  "claim": "There is an acceleration transition scale, robust across 197 galaxies and 4 interpolation functions, whose physical interpretation has not been settled."
+}

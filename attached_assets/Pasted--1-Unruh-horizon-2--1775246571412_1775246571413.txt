@@ -1,0 +1,142 @@
+اعمل هيك، بالترتيب:
+1) وقّف مطاردة التفسير النهائي مؤقتًا
+لا تروح الآن على:
+كم
+Unruh
+horizon
+“ليش 2π”
+هذا كله مرحلة ثانية.
+الآن شغلتك الأساسية: تثبت شو الموجود فعلًا بالبيانات، وشو سببه ليس artifact.
+2) اعمل “ورقة تشخيص” وليس “ورقة نظرية”
+عنوانها الداخلي يكون تقريبًا:
+What is real, what is model-dependent, and what is still open
+وفيها 3 أعمدة فقط:
+ثابت بالبيانات
+وجود transition scale
+RAR
+BTFR
+universality تقريبًا
+cluster failure الجزئي
+يعتمد على الاختيار
+interpolation function
+�
+distance/inclination treatment
+baryonic calibration
+sample cuts
+غير معروف
+هل � فعلاً = � كفيزياء؟
+هل مجرد coincidence؟
+هل � يتغير؟
+هاي أهم من أي تنظير الآن.
+3) أول اختبار لازم تعمله: Interpolation audit
+هذا أهم شيء ناقص عندكم حاليًا.
+بدك تركّب 3 أو 4 دوال interpolation على نفس البيانات ونفس cuts:
+دالتك الحالية
+simple MOND
+McGaugh RAR form
+standard MOND form
+وقارن:
+best-fit �
+RMS
+AIC/BIC
+residual pattern
+هل يبقى claim الكوني نفسه أم يضعف؟
+لماذا هذا أول اختبار؟
+لأنو لو � يتغير 10–20% فقط بسبب شكل الدالة، فجزء من “العامل المخفي” قد يكون اختيار النموذج وليس فيزياء جديدة.
+4) ثاني اختبار: baryonic calibration factor
+بدك تضيف عامل واحد فقط:
+أو بشكل مكافئ تعديل موحّد على �.
+ثم اسأل:
+هل �؟
+هل ثابت لكل العيّنات؟
+هل يختلف مع surface brightness أو morphology أو gas fraction؟
+إذا طلع:
+� قريب جدًا من 1 → ممتاز
+� لكن ثابت → عندك offset calibration
+� يتغير مع نوع المجرة → عندك hidden systematic مهم
+هذا اختبار قوي جدًا ومباشر.
+5) ثالث اختبار: Residual correlation map
+بعد ما تثبّت أفضل fit، اعمل residuals ضد:
+inclination
+distance method
+gas fraction
+central surface brightness
+radius / �
+morphology
+quality flag
+number of points
+bulge fraction
+الهدف:
+هل البواقي عشوائية، أم في parameter عم يصرخ قدامك؟
+إذا لقيت trend واضح، هذا كنز.
+قد يكون هذا “العامل الذي أمامنا ولسا ما شفناه”.
+6) افصل بين سؤالين وما تخلطهم
+لازم من الآن تعمل split واضح:
+A. سؤال وصفي
+ما هو أفضل قانون phenomenological؟
+B. سؤال سببي
+لماذا هذا القانون موجود أصلًا؟
+أغلب الخلط عندكم جاي من دمج السؤالين.
+إذا حليت A جيدًا، B يصير أنظف كثير.
+7) اكتب claim واحد فقط
+لازم يكون claimكم الرئيسي الآن:
+هناك acceleration transition scale robust في بيانات المجرات، لكن تفسيرها الفيزيائي لم يُحسم بعد.
+مو:
+“أثبتنا cosmic origin”
+“أسقطنا dark matter”
+“وجدنا نظرية جديدة”
+الclaim الضيق هو الذي ينجو.
+8) إذا بدك “تحسم الجدل”، اشتغل على هذا المنتج
+ليس تقرير طويل.
+بل 3 منتجات محددة:
+المنتج 1
+Reproducible analysis package
+data
+code
+exact assumptions
+same figures reproducible
+المنتج 2
+Systematics paper يركز فقط على:
+interpolation
+nuisance params
+baryon calibration
+residual structure
+المنتج 3
+Forecast paper لـ:
+mass-matched BTFR at redshift
+power analysis
+what data are needed to kill/confirm H-based origin
+9) اليوم تحديدًا شو تعمل؟
+ابدأ بهذا الجدول:
+اليوم
+ثبّت dataset النهائي
+ثبّت cuts النهائية
+ثبّت version واحد من pipeline
+بعده مباشرة
+شغّل 4 fits مختلفة لـ interpolation functions
+ثم
+طلع جدول واحد فيه:
+�
+RMS
+AIC/BIC
+CV score
+residual trend significance
+ثم
+اعمل baryonic calibration test بعامل �
+ثم
+اعمل residual map كامل
+10) القرار الاستراتيجي
+لا تدخل الفيزياء الكمية الآن.
+ادخلها فقط إذا بقي عندك بعد كل هذا:
+signal robust
+model dependence قليلة
+residuals نظيفة
+claim survives independent replication
+ساعتها الكم يصير محاولة تفسير محترمة، وليس هروبًا من التشخيص.
+الخلاصة
+الآن لا “تفسّر”.
+الآن نظّف، افصل، اختبر، وقس.
+أول خطوة صحيحة من الآن:
+اعمل مقارنة interpolation functions + baryonic calibration factor
+هذان الاختباران غالبًا سيكشفان أين فعلاً يوجد العامل المخفي.
+أعطيك مباشرة قالب عملي للجدول الذي لازم تملأه من التحليل، بندًا بندًا.
