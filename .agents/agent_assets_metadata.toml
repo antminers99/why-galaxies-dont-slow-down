@@ -5,7 +5,7 @@ generated = []
 id = "IFzMELSZu5XqonY6PPckb"
 uri = "file://artifacts/galaxy-analyzer/galaxy-rotation-curve-analysis-full-report.txt"
 type = "text"
-title = "Galaxy Rotation Curve Analysis - Complete Report (22 Parts)"
+title = "Galaxy Rotation Curve Analysis - Complete Report (22 Parts, 1000 lines)"
 
 [[outputs]]
 id = "X5AT-26xbitRV5O4TxsBL"
