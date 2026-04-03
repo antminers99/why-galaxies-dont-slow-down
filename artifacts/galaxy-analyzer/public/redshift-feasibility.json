@@ -1,0 +1,255 @@
+{
+  "date": "2026-04-03T16:54:27.213Z",
+  "description": "Redshift Test Feasibility Analysis",
+  "signalTable": [
+    {
+      "z": 0.5,
+      "Ez": 1.3221667822177352,
+      "Hz": 89.11404112147537,
+      "a0_ratio": 1.3221667822177352,
+      "delta_a0_pct": 32.21667822177352,
+      "delta_Vflat_pct": 7.231297370514622
+    },
+    {
+      "z": 1,
+      "Ez": 1.7902513789968157,
+      "Hz": 120.66294294438539,
+      "a0_ratio": 1.7902513789968157,
+      "delta_a0_pct": 79.02513789968157,
+      "delta_Vflat_pct": 15.672069120847421
+    },
+    {
+      "z": 1.5,
+      "Ez": 2.3678840765544247,
+      "Hz": 159.59538675976825,
+      "a0_ratio": 2.3678840765544247,
+      "delta_a0_pct": 136.78840765544246,
+      "delta_Vflat_pct": 24.048097864968554
+    },
+    {
+      "z": 2,
+      "Ez": 3.031501278244824,
+      "Hz": 204.32318615370116,
+      "a0_ratio": 3.031501278244824,
+      "delta_a0_pct": 203.1501278244824,
+      "delta_Vflat_pct": 31.951532619327928
+    },
+    {
+      "z": 2.5,
+      "Ez": 3.767044597559206,
+      "Hz": 253.8988058754905,
+      "a0_ratio": 3.767044597559206,
+      "delta_a0_pct": 276.7044597559206,
+      "delta_Vflat_pct": 39.31574138751772
+    },
+    {
+      "z": 3,
+      "Ez": 4.565632486304608,
+      "Hz": 307.7236295769306,
+      "a0_ratio": 4.565632486304608,
+      "delta_a0_pct": 356.5632486304608,
+      "delta_Vflat_pct": 46.175718575109734
+    }
+  ],
+  "errorBudget": [
+    {
+      "source": "Rotation velocity (V)",
+      "typical_z0": "5-10 km/s",
+      "typical_z1": "15-30 km/s",
+      "impact": "σ(a₀)/a₀ ∝ 4×σ(V)/V"
+    },
+    {
+      "source": "Inclination (i)",
+      "typical_z0": "2-5°",
+      "typical_z1": "5-15°",
+      "impact": "V_true = V_obs/sin(i)"
+    },
+    {
+      "source": "Baryonic mass (M_bar)",
+      "typical_z0": "0.1-0.3 dex",
+      "typical_z1": "0.3-0.5 dex",
+      "impact": "σ(a₀)/a₀ ∝ σ(M)/M"
+    },
+    {
+      "source": "Distance",
+      "typical_z0": "10-20%",
+      "typical_z1": "5% (redshift)",
+      "impact": "Better at high z (Hubble flow)"
+    },
+    {
+      "source": "Beam smearing",
+      "typical_z0": "resolved",
+      "typical_z1": "1-3 kpc",
+      "impact": "Lowers observed V_max"
+    },
+    {
+      "source": "Asymmetric drift",
+      "typical_z0": "small",
+      "typical_z1": "significant",
+      "impact": "High-z galaxies are turbulent"
+    }
+  ],
+  "existingSurveys": [
+    {
+      "name": "KROSS (Tiley+2019)",
+      "zRange": "0.6-1.0",
+      "nGalaxies": 586,
+      "method": "Hα IFS (KMOS)",
+      "resolution": "~5 kpc",
+      "vPrecision": "~20-30 km/s",
+      "a0Constraint": "Cannot resolve RAR; only BTFR",
+      "usability": "BTFR slope at z~0.9 consistent with z=0 within errors"
+    },
+    {
+      "name": "KGES/KMOS3D (Übler+2017)",
+      "zRange": "0.6-2.6",
+      "nGalaxies": 240,
+      "method": "Hα/[NII] IFS",
+      "resolution": "~4-6 kpc",
+      "vPrecision": "~15-25 km/s",
+      "a0Constraint": "Rotation curves flat but noisy; a₀ not directly constrained",
+      "usability": "Falling RCs at z>2 complicate interpretation"
+    },
+    {
+      "name": "ALPINE (Faisst+2020)",
+      "zRange": "4.4-5.9",
+      "nGalaxies": 118,
+      "method": "[CII] 158μm (ALMA)",
+      "resolution": "~1-2 kpc",
+      "vPrecision": "~30-50 km/s",
+      "a0Constraint": "Too few resolution elements; only integrated kinematics",
+      "usability": "Extreme z; hints of rotation but no a₀ constraint"
+    },
+    {
+      "name": "Genzel+2017/2020 (6 disks)",
+      "zRange": "0.9-2.4",
+      "nGalaxies": 6,
+      "method": "Hα+CO IFS (KMOS/SINFONI)",
+      "resolution": "~2-3 kpc",
+      "vPrecision": "~10-20 km/s",
+      "a0Constraint": "Reported \"declining RCs\" → interpreted as baryon-dominated",
+      "usability": "Key tension: if RCs truly decline, a₀ may be higher (supporting Floor?)"
+    },
+    {
+      "name": "JWST NIRSpec IFS (Cycle 1-3)",
+      "zRange": "1-3",
+      "nGalaxies": "~20-50 (ongoing)",
+      "method": "Hα/[OIII] IFS",
+      "resolution": "~0.5-2 kpc",
+      "vPrecision": "~10-15 km/s (expected)",
+      "a0Constraint": "First chance to resolve RAR at z>1",
+      "usability": "BEST PROSPECT — sufficient resolution for point-level RAR"
+    },
+    {
+      "name": "ALMA Band 6/7 CO/[CII]",
+      "zRange": "1-6",
+      "nGalaxies": "~50-100 (archival)",
+      "method": "mm-wave interferometry",
+      "resolution": "~0.5-1 kpc (long baselines)",
+      "vPrecision": "~5-15 km/s",
+      "a0Constraint": "Can resolve RAR if combined with stellar mass maps",
+      "usability": "Complementary to JWST; cold gas tracer"
+    }
+  ],
+  "powerAnalysis": {
+    "z": 1,
+    "signal_deltaV_frac": 0.1567206912084742,
+    "results": [
+      {
+        "sigmaV_frac": 0.05,
+        "N_3σ": 1,
+        "N_5σ": 3
+      },
+      {
+        "sigmaV_frac": 0.1,
+        "N_3σ": 4,
+        "N_5σ": 11
+      },
+      {
+        "sigmaV_frac": 0.15,
+        "N_3σ": 9,
+        "N_5σ": 23
+      },
+      {
+        "sigmaV_frac": 0.2,
+        "N_3σ": 15,
+        "N_5σ": 41
+      },
+      {
+        "sigmaV_frac": 0.25,
+        "N_3σ": 23,
+        "N_5σ": 64
+      },
+      {
+        "sigmaV_frac": 0.3,
+        "N_3σ": 33,
+        "N_5σ": 92
+      }
+    ]
+  },
+  "btfrProxy": [
+    {
+      "z": 0,
+      "norm_floor": 1,
+      "norm_mond": 1,
+      "delta_pct": 0,
+      "V_shift_pct": 0
+    },
+    {
+      "z": 0.5,
+      "norm_floor": 1.3221667822177352,
+      "norm_mond": 1,
+      "delta_pct": 32.21667822177352,
+      "V_shift_pct": 7.231297370514622
+    },
+    {
+      "z": 1,
+      "norm_floor": 1.7902513789968157,
+      "norm_mond": 1,
+      "delta_pct": 79.02513789968157,
+      "V_shift_pct": 15.672069120847421
+    },
+    {
+      "z": 1.5,
+      "norm_floor": 2.3678840765544247,
+      "norm_mond": 1,
+      "delta_pct": 136.78840765544246,
+      "V_shift_pct": 24.048097864968554
+    },
+    {
+      "z": 2,
+      "norm_floor": 3.031501278244824,
+      "norm_mond": 1,
+      "delta_pct": 203.1501278244824,
+      "V_shift_pct": 31.951532619327928
+    }
+  ],
+  "honestAssessment": {
+    "canTestNow": false,
+    "canTestSoon": "marginally (2-3σ with JWST Cycle 3-5)",
+    "canTestDefinitively": "yes, with ELT/TMT + ALMA (2030+)",
+    "bestProxyNow": "BTFR normalization at z~0.5-1.0",
+    "mainObstacle": "BTFR scatter (~0.2 dex) vs signal (~0.06-0.23 dex)",
+    "alternativeTests": [
+      "Lensing mass vs kinematic mass at z~0.5-1 (different a₀ → different M_dyn/M_lens)",
+      "Tully-Fisher intercept evolution in cluster surveys (e.g., CLASH, HFF)",
+      "Velocity dispersion of dwarf satellites at z~0.5 (JWST ultra-deep)"
+    ]
+  },
+  "timeline": {
+    "now": {
+      "verdict": "CANNOT distinguish",
+      "reason": "errors ~0.2 dex, signal ~0.06 dex"
+    },
+    "near": {
+      "verdict": "MARGINAL 2-3σ",
+      "reason": "JWST NIRSpec IFS, ~50 galaxies",
+      "when": "2025-2028"
+    },
+    "future": {
+      "verdict": "DEFINITIVE 5σ",
+      "reason": "ELT/TMT + ALMA, point-level RAR",
+      "when": "2030+"
+    }
+  }
+}

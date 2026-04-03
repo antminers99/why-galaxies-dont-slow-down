@@ -1,11 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
-import { Telescope, CheckCircle2, XCircle, Sparkles, Info } from 'lucide-react';
+import { Telescope, CheckCircle2, XCircle, Sparkles, Info, Clock, AlertTriangle, BarChart3 } from 'lucide-react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, ReferenceLine, Legend,
-  ErrorBar, ComposedChart, Scatter, Area
+  ErrorBar, ComposedChart, Scatter, Area,
+  BarChart, Bar, Cell
 } from 'recharts';
 
 const G_KPC = 4.3009e-6;
@@ -77,12 +78,28 @@ function MathBlock({ children }: { children: React.ReactNode }) {
   );
 }
 
+interface FeasibilityData {
+  signalTable: Array<{ z: number; Ez: number; delta_a0_pct: number; delta_Vflat_pct: number }>;
+  existingSurveys: Array<{ name: string; zRange: string; nGalaxies: string | number; method: string; resolution: string; vPrecision: string; a0Constraint: string; usability: string }>;
+  powerAnalysis: { signal_deltaV_frac: number; results: Array<{ sigmaV_frac: number; 'N_3\u03C3': number; 'N_5\u03C3': number }> };
+  timeline: { now: { verdict: string }; near: { verdict: string; when: string }; future: { verdict: string; when: string } };
+  honestAssessment: { canTestNow: boolean; canTestSoon: string; canTestDefinitively: string; mainObstacle: string; alternativeTests: string[] };
+}
+
 export default function RedshiftLabPage() {
   const [z, setZ] = useState(1.0);
   const [omM, setOmM] = useState(0.315);
   const [omL, setOmL] = useState(0.685);
   const [flatUniverse, setFlatUniverse] = useState(true);
   const [refMass] = useState(1e11);
+  const [feasibility, setFeasibility] = useState<FeasibilityData | null>(null);
+
+  useEffect(() => {
+    fetch(import.meta.env.BASE_URL + 'redshift-feasibility.json')
+      .then(r => r.json())
+      .then(d => setFeasibility(d))
+      .catch(() => {});
+  }, []);
 
   const e = useMemo(() => Ez(z, omM, omL), [z, omM, omL]);
   const hZ = useMemo(() => Hz(z, omM, omL), [z, omM, omL]);
@@ -574,6 +591,135 @@ export default function RedshiftLabPage() {
             </div>
           </div>
         </GlassCard>
+
+        {feasibility && (
+          <>
+            <GlassCard glow="amber">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-red-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">7</div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Feasibility Analysis: Can We Actually Test This?</h3>
+                  <p className="text-xs text-slate-400">Honest power analysis with real observational constraints</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <XCircle className="w-4 h-4 text-red-400" />
+                    <span className="text-xs font-bold text-red-400">NOW (2024-25)</span>
+                  </div>
+                  <p className="text-sm font-bold text-white">{feasibility.timeline.now.verdict}</p>
+                  <p className="text-xs text-slate-400 mt-1">Errors too large vs signal</p>
+                </div>
+                <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-4 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <AlertTriangle className="w-4 h-4 text-amber-400" />
+                    <span className="text-xs font-bold text-amber-400">NEAR ({feasibility.timeline.near.when})</span>
+                  </div>
+                  <p className="text-sm font-bold text-white">{feasibility.timeline.near.verdict}</p>
+                  <p className="text-xs text-slate-400 mt-1">JWST NIRSpec IFS</p>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span className="text-xs font-bold text-emerald-400">FUTURE ({feasibility.timeline.future.when})</span>
+                  </div>
+                  <p className="text-sm font-bold text-white">{feasibility.timeline.future.verdict}</p>
+                  <p className="text-xs text-slate-400 mt-1">ELT/TMT + ALMA</p>
+                </div>
+              </div>
+
+              <h4 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 text-amber-400" />
+                Power Analysis: How Many Galaxies at z{"\u223C"}1?
+              </h4>
+              <p className="text-xs text-slate-400 mb-3">
+                Signal: {"\u0394"}V/V = {(feasibility.powerAnalysis.signal_deltaV_frac * 100).toFixed(1)}% at z=1.
+                How many galaxies needed to detect this shift?
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-2 px-3 text-slate-400">{"\u03C3"}(V)/V per galaxy</th>
+                      <th className="text-center py-2 px-3 text-slate-400">N for 3{"\u03C3"}</th>
+                      <th className="text-center py-2 px-3 text-slate-400">N for 5{"\u03C3"}</th>
+                      <th className="text-center py-2 px-3 text-slate-400">Instrument</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {feasibility.powerAnalysis.results.map((r, i) => {
+                      const instruments = ['ELT (ideal)', 'JWST (best)', 'JWST (typical)', 'KMOS3D', 'Ground AO', 'Seeing-limited'];
+                      return (
+                        <tr key={i} className="border-b border-white/5">
+                          <td className="py-2 px-3 text-slate-300 font-mono">{(r.sigmaV_frac * 100).toFixed(0)}%</td>
+                          <td className={`py-2 px-3 text-center font-mono font-bold ${r['N_3\u03C3'] <= 30 ? 'text-emerald-400' : r['N_3\u03C3'] <= 80 ? 'text-amber-400' : 'text-red-400'}`}>{r['N_3\u03C3']}</td>
+                          <td className={`py-2 px-3 text-center font-mono font-bold ${r['N_5\u03C3'] <= 50 ? 'text-emerald-400' : r['N_5\u03C3'] <= 150 ? 'text-amber-400' : 'text-red-400'}`}>{r['N_5\u03C3']}</td>
+                          <td className="py-2 px-3 text-center text-slate-500">{instruments[i] || ''}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-500 mt-3 italic">
+                Green = feasible with existing/planned programs. Amber = possible with dedicated survey. Red = impractical.
+              </p>
+            </GlassCard>
+
+            <GlassCard glow="cyan">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">8</div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Existing High-z Surveys</h3>
+                  <p className="text-xs text-slate-400">What rotation curve data exists at z {">"} 0.5?</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {feasibility.existingSurveys.map((s, i) => {
+                  const isBest = s.name.includes('JWST');
+                  return (
+                    <div key={i} className={`p-3 rounded-xl border ${isBest ? 'border-cyan-500/30 bg-cyan-500/5' : 'border-white/5 bg-slate-800/30'}`}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-sm font-bold ${isBest ? 'text-cyan-400' : 'text-white'}`}>{s.name}</span>
+                        <span className="text-xs text-slate-500">z = {s.zRange}, N = {s.nGalaxies}</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs mb-2">
+                        <div><span className="text-slate-500">Method:</span> <span className="text-slate-300">{s.method}</span></div>
+                        <div><span className="text-slate-500">Resolution:</span> <span className="text-slate-300">{s.resolution}</span></div>
+                      </div>
+                      <p className="text-xs text-slate-400">{s.usability}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </GlassCard>
+
+            <GlassCard glow="purple">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">9</div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">Alternative External Tests</h3>
+                  <p className="text-xs text-slate-400">If direct RAR at high z is too hard, what else?</p>
+                </div>
+              </div>
+              <div className="space-y-3">
+                {feasibility.honestAssessment.alternativeTests.map((t, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-xs font-bold flex-shrink-0 mt-0.5">{i + 1}</div>
+                    <p className="text-sm text-slate-300">{t}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 bg-purple-500/5 border border-purple-500/20 rounded-xl p-3">
+                <p className="text-xs text-slate-400">
+                  <span className="text-purple-400 font-bold">Main obstacle:</span> {feasibility.honestAssessment.mainObstacle}
+                </p>
+              </div>
+            </GlassCard>
+          </>
+        )}
 
         <GlassCard>
           <div className="flex items-center gap-3 mb-4">

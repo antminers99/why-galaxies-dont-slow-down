@@ -37,6 +37,7 @@ TABLE OF CONTENTS
   PART XXI  — PHYSICAL CONSTANTS USED
   PART XXII — HONEST VERDICT
   PART XXIII— PHASE C: TRYING TO BREAK THE IDEA
+  PART XXIV — REDSHIFT TEST FEASIBILITY
 
 ================================================================================
 PART I: ROBUST EMPIRICAL FINDINGS
@@ -1177,6 +1178,179 @@ or cosmological coupling) remains open. What is no longer open is
 whether the signal itself is an artifact — it is not.
 
 Next step: Phase A (can a₀(z) be measured observationally?).
+
+================================================================================
+PART XXIV: REDSHIFT TEST FEASIBILITY — THE KILLER PREDICTION
+================================================================================
+
+"If a₀ = cH₀/2π, then a₀(z) = cH(z)/2π — distant galaxies should show
+a larger acceleration floor. This is the single most discriminating test."
+
+The Cosmic Floor makes a unique, falsifiable prediction that separates
+it from both MOND (a₀ = constant) and ΛCDM (no specific a₀ prediction):
+the acceleration scale must evolve with redshift as a₀(z) = a₀(0) × E(z).
+
+────────────────────────────────────────────────────────────────────────
+SIGNAL SIZE
+────────────────────────────────────────────────────────────────────────
+
+  z     E(z)    H(z) km/s/Mpc   Δa₀/a₀    ΔV_flat/V_flat
+  0.5   1.322   89.1            +32.2%     +7.2%
+  1.0   1.790   120.7           +79.0%     +15.7%
+  1.5   2.368   159.6           +136.8%    +24.0%
+  2.0   3.032   204.3           +203.2%    +32.0%
+  3.0   4.566   307.7           +356.6%    +46.2%
+
+Key numbers: At z=1, a₀ increases 79% (large!) but V_flat increases
+only 15.7% (because V ∝ a₀^(1/4)). The velocity shift is the
+accessible observable; 15.7% is measurable but challenging.
+
+────────────────────────────────────────────────────────────────────────
+THE BTFR AS PROXY TEST
+────────────────────────────────────────────────────────────────────────
+
+The Baryonic Tully-Fisher Relation V⁴ = G·M_bar·a₀ provides the
+cleanest test. At fixed baryonic mass:
+  - Cosmic Floor: V⁴ ∝ a₀(z) ∝ E(z) → normalization INCREASES with z
+  - MOND: V⁴ ∝ a₀ = const → normalization UNCHANGED
+  - ΛCDM: no specific prediction (depends on feedback prescriptions)
+
+At z=1 the BTFR normalization should shift by +0.25 dex (= log10(1.79)).
+This is larger than the expected per-galaxy BTFR scatter (~0.15-0.20 dex)
+but requires a sample of >20 galaxies to detect at 3σ.
+
+────────────────────────────────────────────────────────────────────────
+ERROR BUDGET (why this is hard)
+────────────────────────────────────────────────────────────────────────
+
+  Source                  z~0             z~1             Impact
+  Rotation velocity V     5-10 km/s       15-30 km/s      σ(a₀)/a₀ ∝ 4×σ(V)/V
+  Inclination i           2-5°            5-15°           V_true = V_obs/sin(i)
+  Baryonic mass M_bar     0.1-0.3 dex     0.3-0.5 dex     σ(a₀)/a₀ ∝ σ(M)/M
+  Distance                10-20%          5% (Hubble)     BETTER at high z
+  Beam smearing           resolved        1-3 kpc         Lowers apparent V_max
+  Asymmetric drift        small           significant     High-z = turbulent
+
+Critical insight: distance errors are actually SMALLER at high z
+(dominated by Hubble flow rather than peculiar velocities). But
+inclination, beam smearing, and turbulence are WORSE.
+
+────────────────────────────────────────────────────────────────────────
+EXISTING HIGH-z ROTATION CURVE DATA
+────────────────────────────────────────────────────────────────────────
+
+  1. KROSS (Tiley+2019): 586 galaxies at z~0.6-1.0
+     Hα IFS (KMOS), resolution ~5 kpc
+     BTFR slope consistent with z=0 within errors
+     BUT: errors ~0.2 dex, signal ~0.06 dex at z=0.8
+     VERDICT: Cannot constrain a₀(z)
+
+  2. KMOS3D (Übler+2017): 240 galaxies at z~0.6-2.6
+     Hα/[NII] IFS, resolution ~4-6 kpc
+     Rotation curves flat but noisy
+     VERDICT: Not sufficient for a₀ measurement
+
+  3. Genzel+2017/2020: 6 massive disks at z~0.9-2.4
+     Hα+CO IFS, resolution ~2-3 kpc
+     Reported "declining rotation curves" → baryon-dominated?
+     AMBIGUOUS: if RCs truly decline, could support higher a₀ at z>1
+
+  4. ALPINE (Faisst+2020): 118 galaxies at z~4.4-5.9
+     [CII] ALMA, too few resolution elements
+     VERDICT: Only integrated kinematics
+
+  5. JWST NIRSpec IFS (Cycle 1-3): ~20-50 galaxies at z~1-3
+     Hα/[OIII], resolution ~0.5-2 kpc, V precision ~10-15 km/s
+     BEST PROSPECT: first chance to resolve RAR at z>1
+
+  6. ALMA Band 6/7: ~50-100 archival at z~1-6
+     mm-wave interferometry, resolution ~0.5-1 kpc
+     Complementary cold gas tracer
+
+────────────────────────────────────────────────────────────────────────
+POWER ANALYSIS
+────────────────────────────────────────────────────────────────────────
+
+How many galaxies at z~1 are needed to detect ΔV/V = 15.7%?
+
+  σ(V)/V per galaxy    N for 3σ    N for 5σ
+  5%                   3           8
+  10%                  12          34
+  15%                  28          76
+  20%                  49          135
+  25%                  77          211
+  30%                  110         305
+
+With JWST-quality data (σ ≈ 10-15%): ~12-28 galaxies for 3σ.
+This is within reach of existing JWST programs.
+
+────────────────────────────────────────────────────────────────────────
+REALISTIC TIMELINE
+────────────────────────────────────────────────────────────────────────
+
+  NOW (2024-2025): CANNOT DISTINGUISH
+    KROSS/KMOS3D data: errors too large vs signal at z~0.8
+    BTFR scatter ~0.2 dex vs signal ~0.06 dex
+
+  NEAR (JWST Cycle 3-5, 2025-2028): MARGINAL 2-3σ
+    NIRSpec IFS of ~20-50 galaxies at z~1-2
+    BTFR scatter ~0.15 dex vs signal ~0.25 dex at z=1
+    First realistic chance for detection
+
+  FUTURE (ELT/TMT + ALMA, 2030+): DEFINITIVE 5σ
+    30m-class telescopes: resolution ~0.1-0.5 kpc at z~1
+    Point-level RAR at z~1 with ~50 galaxies
+    Can directly fit a₀(z) from the RAR shape
+
+────────────────────────────────────────────────────────────────────────
+ALTERNATIVE EXTERNAL TESTS
+────────────────────────────────────────────────────────────────────────
+
+If direct RAR measurement at high z proves too difficult, three
+alternative tests could provide indirect evidence:
+
+  1. Lensing mass vs kinematic mass at z~0.5-1
+     If a₀(z) > a₀(0), then M_dyn > M_lens for low-Σ systems
+     The ratio M_dyn/M_lens should increase with z
+
+  2. Tully-Fisher intercept in cluster surveys (CLASH, HFF)
+     Cluster galaxies at z~0.5 already have photometry
+     TF intercept shift is the most accessible existing test
+
+  3. Dwarf satellite velocity dispersions at z~0.5
+     JWST ultra-deep spectroscopy of dwarf satellites
+     a₀(z=0.5) ~32% higher → σ_v ~7% higher
+
+────────────────────────────────────────────────────────────────────────
+THE GENZEL PUZZLE
+────────────────────────────────────────────────────────────────────────
+
+Genzel+2017/2020 reported "declining rotation curves" at z~1-2,
+interpreted as evidence for baryon-dominated massive galaxies
+at cosmic noon. Under the Cosmic Floor:
+  - Higher a₀ at z~1 means stronger floor → V_flat HIGHER
+  - "Declining" appearance may be: insufficient radial extent,
+    beam smearing, or unaccounted pressure support (σ/V > 0.5)
+  - This data is AMBIGUOUS and cannot distinguish interpretations
+
+────────────────────────────────────────────────────────────────────────
+HONEST ASSESSMENT
+────────────────────────────────────────────────────────────────────────
+
+Can we test a₀(z) = cH(z)/2π right now? NO.
+
+Current high-z data is insufficient to discriminate Cosmic Floor
+from MOND at the required precision. The signal (15.7% V shift at
+z=1) is comparable to per-galaxy errors (10-20%).
+
+The prediction IS testable, and JWST provides the first realistic
+opportunity within ~3-5 years. But honest science requires admitting
+that we cannot claim observational support for the redshift evolution
+prediction today.
+
+What we CAN say: the prediction is specific, quantitative, and
+falsifiable. It is the strongest argument for taking the Cosmic
+Floor model seriously as a candidate for follow-up observation.
 
 ================================================================================
 PROPOSED MODEL NAME
