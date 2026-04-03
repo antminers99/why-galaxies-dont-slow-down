@@ -1,0 +1,216 @@
+{
+  "version": "6.0.0",
+  "timestamp": "2026-04-03T23:24:15.006Z",
+  "description": "Phase 6: Matched-sample split resolution",
+  "baseline": {
+    "label": "GOLD+i45 baseline",
+    "nGal": 59,
+    "a0": 3633,
+    "logA0": 3.5602,
+    "se": 0.0405,
+    "tau": 0.2912,
+    "I2": 92.4,
+    "ratio": 1.1299,
+    "lo1sig": 1846,
+    "hi1sig": 7149
+  },
+  "threshold": "< 0.05 dex = RESOLVED, 0.05-0.10 = INCONCLUSIVE, > 0.10 = UNRESOLVED",
+  "splits": {
+    "Distance": {
+      "raw": {
+        "delta_dex": 0.1051,
+        "delta_pct": 25.1,
+        "r1": {
+          "label": "Precise (TRGB/Ceph/SN)",
+          "nGal": 17,
+          "a0": 4243,
+          "logA0": 3.6277,
+          "se": 0.0667,
+          "tau": 0.2569,
+          "I2": 93,
+          "ratio": 1.3197,
+          "lo1sig": 2303,
+          "hi1sig": 7818
+        },
+        "r2": {
+          "label": "Hubble flow",
+          "nGal": 30,
+          "a0": 3331,
+          "logA0": 3.5226,
+          "se": 0.0609,
+          "tau": 0.3154,
+          "I2": 93,
+          "ratio": 1.036,
+          "lo1sig": 1590,
+          "hi1sig": 6979
+        }
+      },
+      "matched": {
+        "delta_dex": 0.1247,
+        "delta_pct": 29.1,
+        "r1": {
+          "label": "Matched precise",
+          "nGal": 17,
+          "a0": 4243,
+          "logA0": 3.6277,
+          "se": 0.0667,
+          "tau": 0.2569,
+          "I2": 93,
+          "ratio": 1.3197,
+          "lo1sig": 2303,
+          "hi1sig": 7818
+        },
+        "r2": {
+          "label": "Matched Hubble-flow",
+          "nGal": 17,
+          "a0": 3184,
+          "logA0": 3.503,
+          "se": 0.0659,
+          "tau": 0.2465,
+          "I2": 87.3,
+          "ratio": 0.9904,
+          "lo1sig": 1769,
+          "hi1sig": 5731
+        }
+      },
+      "jackknife": {
+        "delta": 0.0954,
+        "se": 0.093,
+        "tStat": 1.03,
+        "significant": false
+      },
+      "verdict": "UNRESOLVED"
+    },
+    "Inclination": {
+      "raw": {
+        "delta_dex": 0.1526,
+        "delta_pct": 32.6,
+        "r1": {
+          "label": "Inc >= 60",
+          "nGal": 43,
+          "a0": 3995,
+          "logA0": 3.6016,
+          "se": 0.0453,
+          "tau": 0.2771,
+          "I2": 91.8,
+          "ratio": 1.2426,
+          "lo1sig": 2093,
+          "hi1sig": 7627
+        },
+        "r2": {
+          "label": "Inc 45-59",
+          "nGal": 16,
+          "a0": 2812,
+          "logA0": 3.449,
+          "se": 0.0801,
+          "tau": 0.301,
+          "I2": 92.2,
+          "ratio": 0.8745,
+          "lo1sig": 1373,
+          "hi1sig": 5760
+        }
+      },
+      "matched": {
+        "delta_dex": 0.1718,
+        "delta_pct": 37.5,
+        "r1": {
+          "label": "Matched inc>=60",
+          "nGal": 16,
+          "a0": 4176,
+          "logA0": 3.6208,
+          "se": 0.0814,
+          "tau": 0.3063,
+          "I2": 92.5,
+          "ratio": 1.2988,
+          "lo1sig": 2013,
+          "hi1sig": 8664
+        },
+        "r2": {
+          "label": "Matched inc 45-59",
+          "nGal": 16,
+          "a0": 2812,
+          "logA0": 3.449,
+          "se": 0.0801,
+          "tau": 0.301,
+          "I2": 92.2,
+          "ratio": 0.8745,
+          "lo1sig": 1373,
+          "hi1sig": 5760
+        }
+      },
+      "jackknife": {
+        "delta": 0.1526,
+        "se": 0.0995,
+        "tStat": 1.53,
+        "significant": false
+      },
+      "verdict": "UNRESOLVED"
+    },
+    "Velocity": {
+      "raw": {
+        "delta_dex": 0.1349,
+        "delta_pct": 34.7,
+        "r1": {
+          "label": "Vmax > 150",
+          "nGal": 41,
+          "a0": 3463,
+          "logA0": 3.5395,
+          "se": 0.0501,
+          "tau": 0.3035,
+          "I2": 93.9,
+          "ratio": 1.0771,
+          "lo1sig": 1705,
+          "hi1sig": 7032
+        },
+        "r2": {
+          "label": "Vmax 80-150",
+          "nGal": 12,
+          "a0": 4725,
+          "logA0": 3.6744,
+          "se": 0.0513,
+          "tau": 0.1413,
+          "I2": 67.7,
+          "ratio": 1.4694,
+          "lo1sig": 3342,
+          "hi1sig": 6679
+        }
+      },
+      "matched": {
+        "delta_dex": 0.0615,
+        "delta_pct": 17.2,
+        "r1": {
+          "label": "Matched Vmax>150",
+          "nGal": 12,
+          "a0": 4101,
+          "logA0": 3.6129,
+          "se": 0.0907,
+          "tau": 0.298,
+          "I2": 94,
+          "ratio": 1.2754,
+          "lo1sig": 2001,
+          "hi1sig": 8402
+        },
+        "r2": {
+          "label": "Matched Vmax 80-150",
+          "nGal": 12,
+          "a0": 4725,
+          "logA0": 3.6744,
+          "se": 0.0513,
+          "tau": 0.1413,
+          "I2": 67.7,
+          "ratio": 1.4694,
+          "lo1sig": 3342,
+          "hi1sig": 6679
+        }
+      },
+      "jackknife": {
+        "delta": 0.0712,
+        "se": 0.092,
+        "tStat": 0.77,
+        "significant": false
+      },
+      "verdict": "INCONCLUSIVE"
+    }
+  },
+  "overall": "UNRESOLVED"
+}

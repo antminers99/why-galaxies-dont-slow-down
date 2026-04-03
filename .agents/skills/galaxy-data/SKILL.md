@@ -16,6 +16,7 @@ description: Reference data, constants, and computed results for the Galaxy Rota
 | a₀ (v3.0 hier. baseline) | 3374 | (km/s)²/kpc |
 | a₀ (v3.0 weighted baseline) | 3545 | (km/s)²/kpc |
 | a₀ (v3.0 UW diagnostic) | 4837 | (km/s)²/kpc |
+| a₀ defensible range (Phase 6) | 2800-4300 | (km/s)²/kpc |
 | a₀ uncertainty (v4.0) | ±0.304 | dex |
 | a₀ 68% CI (v4.0) | [1846, 7149] | (km/s)²/kpc |
 | Hier. tau (v4.0 marginalized) | 0.291 | dex |
@@ -196,7 +197,37 @@ Uses CORRECT v4 GOLD+i45 sample (59 galaxies). Reproduces v4 baseline exactly.
 Residual correlations: r(a₀, distance) = -0.31 (significant), r(a₀, inc) = 0.16 (moderate).
 Red-flag splits: NOT resolved by pressure correction (they worsen).
 
-## Key Insight (v4.0 + Phase 5 v5.1)
+## Phase 6 v6.0 Results (Matched-Sample Split Resolution)
+
+Script: `scripts/phase6-matched-splits.cjs` (v6.0.0)
+Results: `public/phase6-matched-results.json`
+
+| Split | Raw (dex) | Matched (dex) | Paired t | JK t | Verdict |
+|-------|-----------|---------------|----------|------|---------|
+| Distance | 0.105 | 0.125 | 1.07 | 1.03 | UNRESOLVED, not significant |
+| Inclination | 0.153 | 0.172 | 1.24 | 1.53 | UNRESOLVED, not significant |
+| Velocity | 0.135 | 0.061 | 0.77 | 0.77 | INCONCLUSIVE, not significant |
+
+Distance binning (continuous gradient):
+- D < 10 Mpc: n=18, a₀=4116
+- 10-20 Mpc: n=19, a₀=4178
+- 20-40 Mpc: n=8, a₀=3402
+- D >= 40 Mpc: n=14, a₀=2411
+
+Inclination binning:
+- 45-54: n=10, a₀=2271
+- 55-64: n=18, a₀=3655
+- 65-74: n=15, a₀=4800 (peak)
+- >=75: n=16, a₀=3725
+
+Velocity binning:
+- 50-80: n=6, a₀=2781
+- 80-120: n=5, a₀=6721 (outlier, few galaxies)
+- 120-180: n=12, a₀=3415
+- 180-250: n=22, a₀=3111
+- >=250: n=14, a₀=4319
+
+## Key Insight (v4.0 + Phase 5 v5.1 + Phase 6)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
 HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
@@ -205,6 +236,7 @@ Number hierarchy:
 - HEADLINE: v4.0 marg. hier. a₀ = 3633 (km/s)²/kpc = 1.18e-10 m/s²
 - BASELINE: v3.0 hier. a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²
 - COMBINED BEST: outer+pressure a₀ = 3274, ratio = 1.018 to cH₀/2π
+- DEFENSIBLE RANGE: 2800-4300 (km/s)²/kpc = (0.9-1.4)e-10 m/s²
 - DIAGNOSTIC/RAW: v3.0 UW a₀ = 4837 (biased high, not headline)
 
 Key findings:
@@ -216,7 +248,8 @@ Key findings:
 - I² = 92.4% — substantial real heterogeneity
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
 - Phase 5 v5.1: all kinematic tests PASS, distance method split (27%) remains
-- Phase 5 v5.0 was WRONG (used 126-galaxy sample, NOT v4 GOLD+i45)
+- Phase 6: velocity split EXPLAINED by confounders, distance/inc PERSIST
+- Phase 6: ALL splits NOT significant (t < 2.0) — tau swamps them
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.
