@@ -1487,5 +1487,114 @@ PROPOSED MODEL NAME
   "Dark matter knows where the light is — and it shouldn't."
 
 ================================================================================
+PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
+================================================================================
+
+  Date: Phase D — From Phenomenon to Explanation
+
+  NOTEBOOK 1: WHAT MUST BE EXPLAINED (5 Facts, No Philosophy)
+
+  F1: An acceleration scale a₀ ≈ 1.2×10⁻¹⁰ m/s² appears in galaxy dynamics
+      Evidence: RAR, BTFR, rotation curves (175 SPARC + 22 LITTLE THINGS)
+      Robustness: Survives 4 breaking tests (null 6.2σ, scramble 6.1σ, M/L 21/21, distance MC 100%)
+
+  F2: a₀ is approximately universal across galaxy types
+      Evidence: No systematic mass/size dependence (partial r|Vmax = −0.656)
+      Caveat: Per-galaxy scatter 0.33-0.57 dex (observational noise, not physical)
+
+  F3: a₀ ≈ cH₀/2π to within ~10%
+      Evidence: cH₀/2π = 1.04×10⁻¹⁰ m/s² vs observed 1.2×10⁻¹⁰ m/s²
+      Caveat: Could be numerological coincidence — NOT yet ruled out
+
+  F4: g_obs = f(g_bar) is tight (RAR scatter < 0.13 dex)
+      Implication: DM distribution tracks baryons precisely, or gravity changes
+
+  F5: a₀ works for galaxies but NOT fully for clusters
+      Evidence: Floor reduces deficit ~43%, residual ~52.5% remains
+
+  ────────────────────────────────────────────────────────────────────────
+
+  CONDITIONS FOR A SUCCESSFUL EXPLANATION
+
+  C1: DERIVE a₀ (not insert it by hand)
+  C2: Explain universality (galaxy-independent)
+  C3: Explain cH₀ proximity (cosmology ↔ local dynamics link)
+  C4: Recover Newtonian limit (g → g_bar when g_bar >> a₀)
+  C5: Predict or explain cluster shortfall
+  C6: Have a mechanism (field equation, action, or physical process)
+
+  ────────────────────────────────────────────────────────────────────────
+
+  NOTEBOOK 2: THREE CANDIDATE FAMILIES
+
+  FAMILY A: Modified Gravity (MOND, AQUAL, TeVeS)
+    Core idea: Law of gravity changes below a₀
+    C1: ✗ (a₀ inserted)  C2: ✓  C3: ✗  C4: ✓  C5: ✗  C6: △
+    Score: 2.5/6
+    Verdict: Describes well, does not explain
+
+  FAMILY B: Baryon-Coupled Dark Matter (feedback, SIDM, superfluid DM)
+    Core idea: DM exists but tracks baryons
+    C1: △  C2: △  C3: ✗  C4: ✓  C5: ✓  C6: ✓
+    Score: 4.0/6
+    Verdict: Explains clusters, struggles with RAR tightness and cH₀
+
+  FAMILY C: Cosmological Emergent Effect (Cosmic Floor, Verlinde)
+    Core idea: Cosmic expansion creates local acceleration floor
+    C1: △  C2: ✓  C3: ✓  C4: ✓  C5: △  C6: ✗
+    Score: 4.0/6
+    Verdict: Best for universality & cH₀, but LACKS MECHANISM
+
+  ────────────────────────────────────────────────────────────────────────
+
+  NOTEBOOK 3: DERIVATION ATTEMPTS
+
+  Attempt 1: de Sitter Horizon
+    a_dS = c√(Λ/3) = 7.065×10⁻¹¹ m/s²
+    Ratio to a₀: 0.59 — within factor 2, but too small
+
+  Attempt 2: Hubble Scale
+    cH₀ = 6.534×10⁻¹⁰ m/s² — 5.4× too large
+    cH₀/2π = 1.040×10⁻¹⁰ m/s² — ratio 0.87, best match
+    The 2π NEEDS a physical reason (not arbitrary)
+
+  Attempt 3: Unruh Temperature
+    T_dS = ℏ√(Λ/3)/(2πk_B) = 2.725×10⁻³⁰ K
+    T_Unruh(a₀) = ℏa₀/(2πck_B) = 4.612×10⁻³⁰ K
+    Argument: If universe has minimum temperature T_dS,
+    then minimum acceleration a_min = 2πck_BT_dS/ℏ = c√(Λ/3)
+    Result: Same number as de Sitter — gives a REASON but same problem
+
+  Attempt 4: H₀ vs Λ Discriminant
+    Using H₀: a₀ changes with redshift (a₀(z) ∝ H(z))
+    Using √Λ: a₀ is constant forever
+    KEY: These predictions DIVERGE at z > 0.5
+    This IS our testable prediction from the Pipeline page
+
+  Attempt 5: Dimensional Analysis Summary
+    cH₀/2π gives ratio 0.87 to a₀ — best of all combinations
+    c√(Λ/3) gives ratio 0.59
+    No combination exactly matches without a specific geometric factor
+
+  ────────────────────────────────────────────────────────────────────────
+
+  THE MAIN OPEN QUESTION
+
+  "Why does cH₀ appear as a local acceleration in galaxies?"
+
+  This is THE question. Not "what is dark matter?" Not "is MOND right?"
+
+  Most promising paths:
+  1. Unruh/horizon → a₀ ~ c√(Λ/3) naturally, but factor ~0.6 off
+  2. H(z) dependence → testable, diverges from MOND at z > 0.5
+  3. The 2π factor → ω vs f, horizon circumference, or vacuum modes
+  4. Cluster failure → constrains mechanism (52.5% unexplained)
+
+  Honest Status:
+  We have a well-defined question, several derivation paths,
+  and a testable prediction. We do NOT yet have a mechanism.
+  The gap between "motivated formula" and "derived theory" is real.
+
+================================================================================
 END OF COMPLETE REPORT
 ================================================================================

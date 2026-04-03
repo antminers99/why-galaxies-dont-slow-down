@@ -1,0 +1,163 @@
+{
+  "date": "2026-04-03T17:38:41.078Z",
+  "description": "Theoretical Investigation: Why does a₀ exist?",
+  "facts": [
+    {
+      "id": "F1",
+      "statement": "An acceleration scale a₀ ≈ 1.2×10⁻¹⁰ m/s² appears in galaxy dynamics",
+      "evidence": "RAR, BTFR, rotation curves of 175 SPARC + 22 LITTLE THINGS galaxies",
+      "robustness": "Survives 4 breaking tests (null, scramble, M/L, distance)"
+    },
+    {
+      "id": "F2",
+      "statement": "a₀ is approximately universal across galaxy types",
+      "evidence": "Per-galaxy scatter 0.33-0.57 dex (observational), no systematic mass/size dependence (partial r|Vmax = -0.656)",
+      "caveat": "Scatter is large enough to hide weak dependencies"
+    },
+    {
+      "id": "F3",
+      "statement": "a₀ ≈ cH₀/2π to within ~10%",
+      "evidence": "cH₀/2π = 1.04×10⁻¹⁰ m/s², observed a₀ = 1.2×10⁻¹⁰ m/s²",
+      "caveat": "Could be numerological coincidence (not yet ruled out)"
+    },
+    {
+      "id": "F4",
+      "statement": "The relationship g_obs = f(g_bar) is tight with minimal scatter",
+      "evidence": "RAR scatter < 0.13 dex (McGaugh+2016), our analysis confirms",
+      "implication": "Dark matter \"knows\" where baryons are — or gravity itself changes"
+    },
+    {
+      "id": "F5",
+      "statement": "a₀ works for galaxies but NOT fully for clusters",
+      "evidence": "Floor reduces Newton deficit by ~43% in clusters, ~52.5% residual remains",
+      "implication": "Any explanation must account for cluster failure or predict additional physics"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "C1",
+      "condition": "DERIVE a₀ as a scale (not insert it by hand)",
+      "test": "Does the theory predict a₀ without being told about it?"
+    },
+    {
+      "id": "C2",
+      "condition": "Explain universality (weak mass/size dependence)",
+      "test": "Does the derived a₀ depend on galaxy properties?"
+    },
+    {
+      "id": "C3",
+      "condition": "Explain cH₀ proximity",
+      "test": "Does cosmology naturally enter the local dynamics?"
+    },
+    {
+      "id": "C4",
+      "condition": "Recover Newtonian limit at high acceleration",
+      "test": "Does g → g_bar when g_bar >> a₀?"
+    },
+    {
+      "id": "C5",
+      "condition": "Predict or explain cluster shortfall",
+      "test": "Why does a₀ underperform in clusters?"
+    },
+    {
+      "id": "C6",
+      "condition": "Have a mechanism (not just a formula)",
+      "test": "Is there a field equation, action, or physical process?"
+    }
+  ],
+  "families": {
+    "modifiedGravity": {
+      "name": "Modified Gravity (MOND-like)",
+      "scores": {
+        "C1": 0,
+        "C2": 1,
+        "C3": 0,
+        "C4": 1,
+        "C5": 0,
+        "C6": 0.5
+      },
+      "total": 2.5
+    },
+    "baryonDM": {
+      "name": "Baryon-Coupled Dark Matter",
+      "scores": {
+        "C1": 0.5,
+        "C2": 0.5,
+        "C3": 0,
+        "C4": 1,
+        "C5": 1,
+        "C6": 1
+      },
+      "total": 4
+    },
+    "cosmological": {
+      "name": "Cosmological Emergent Effect",
+      "scores": {
+        "C1": 0.5,
+        "C2": 1,
+        "C3": 1,
+        "C4": 1,
+        "C5": 0.5,
+        "C6": 0
+      },
+      "total": 4
+    }
+  },
+  "derivations": {
+    "deSitter": {
+      "a_dS": 1.823612206583406e-18,
+      "ratio_to_a0": 1.519676838819505e-8,
+      "verdict": "Within factor ~0.6, but missing 2π and too small"
+    },
+    "hubble": {
+      "cH0": 6.53564e-10,
+      "cH0_2pi": 1.0401794122691149e-10,
+      "ratio_to_a0": 0.866816176890929,
+      "verdict": "Best match (ratio 0.87), but 2π needs physical justification"
+    },
+    "unruh": {
+      "T_dS": 7.395708321436918e-39,
+      "T_Unruh_a0": 4.866632255303669e-31,
+      "ratio": 1.519676838819505e-8,
+      "verdict": "Provides a REASON (minimum temperature), but gives same number as de Sitter"
+    },
+    "dimensional": [
+      {
+        "formula": "cH₀",
+        "value": 6.53564e-10,
+        "ratio": 5.446366666666667
+      },
+      {
+        "formula": "cH₀/2π",
+        "value": 1.0401794122691149e-10,
+        "ratio": 0.866816176890929
+      },
+      {
+        "formula": "c√(Λ/3)",
+        "value": 1.823612206583406e-18,
+        "ratio": 1.519676838819505e-8
+      },
+      {
+        "formula": "c²√Λ",
+        "value": 9.469449807325541e-10,
+        "ratio": 7.891208172771284
+      },
+      {
+        "formula": "(Λc⁴/6G)^(1/2)/c",
+        "value": 1.5784266015275938e-13,
+        "ratio": 0.001315355501272995
+      },
+      {
+        "formula": "Gc²ρ_vac^(1/2)",
+        "value": 4.6309766285085063e-7,
+        "ratio": 3859.147190423755
+      }
+    ]
+  },
+  "mainQuestion": "Why does cH₀ appear as a local acceleration in galaxies?",
+  "mostPromisingPaths": [
+    "Unruh/horizon argument with proper 2π derivation",
+    "H(z) dependence as testable discriminant",
+    "Cluster failure as constraint on mechanism"
+  ]
+}

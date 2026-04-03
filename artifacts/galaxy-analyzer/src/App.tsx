@@ -24,6 +24,7 @@ import RedshiftLabPage from "@/pages/redshift-lab";
 import ClusterTestPage from "@/pages/cluster-test";
 import BreakTestPage from "@/pages/break-test";
 import PipelinePage from "@/pages/pipeline";
+import WhyA0Page from "@/pages/why-a0";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ function Router() {
       <Route path="/cluster-test" component={ClusterTestPage} />
       <Route path="/break-test" component={BreakTestPage} />
       <Route path="/pipeline" component={PipelinePage} />
+      <Route path="/why-a0" component={WhyA0Page} />
       <Route component={NotFound} />
     </Switch>
   );
