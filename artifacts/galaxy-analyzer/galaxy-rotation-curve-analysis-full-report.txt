@@ -1,6 +1,6 @@
 ================================================================================
      GALAXY ROTATION CURVE ANALYZER — COMPLETE RESEARCH REPORT
-     Cosmic Acceleration Scale Model
+     Cosmologically Fixed MOND-like Interpolation Framework
      "Dark matter knows where the light is — and it shouldn't."
 ================================================================================
 
@@ -45,6 +45,38 @@ TABLE OF CONTENTS
   PART XXIX — RESOLVING THE INTERNAL CONTRADICTION
   PART XXX  — NOVELTY AUDIT: WHAT IS ACTUALLY NEW?
   PART XXXI — THE DECISIVE TEST: MASS-MATCHED BTFR AT z ~ 0.5-1.0
+
+================================================================================
+SCOPE AND ORIGINALITY STATEMENT
+================================================================================
+
+  WHAT IS KNOWN (prior literature — we did not discover these):
+    - The acceleration scale a₀ ≈ 1.2×10⁻¹⁰ m/s² [Milgrom 1983]
+    - The Radial Acceleration Relation [McGaugh+2016, Lelli+2017]
+    - The Baryonic Tully-Fisher Relation [McGaugh 2005, Lelli+2016]
+    - Deep-MOND limit g_obs = √(g_bar·a₀) [Milgrom 1983]
+    - Numerical proximity a₀ ≈ cH₀ [Milgrom 1983, Sanders 2002]
+    - Cluster failure of MOND [Sanders 1999, Angus+2008]
+    - Three-family theoretical landscape [Famaey & McGaugh 2012]
+
+  WHAT WE CONFIRMED (robustly, on 197 galaxies):
+    - RAR with 0.13 dex scatter (consistent with McGaugh+2016)
+    - BTFR at 4.4σ significance
+    - 5 stress tests showing robustness to systematic perturbations
+    - 7 systematic robustness checks (M/L, distance, etc.)
+    - Cluster deficit reduction of ~43% (degenerate with MOND)
+
+  WHAT MAY BE NEW (requires formal literature check — see Part XXX):
+    - The specific stress-test battery as unified methodology
+    - Explicit Unruh/de Sitter derivation audit showing T_U = T_GH
+      gives a = cH, NOT cH/2π (2π cancels)
+    - Mass-matched BTFR pipeline design with power analysis
+    - The self-correction: our equation is MOND-like (Part XXIX),
+      not a "floor" — this changed the project's identity
+
+  THIS REPORT IS: a methodological + analytical contribution.
+  THIS REPORT IS NOT: a new theory, a new observation, or a new
+  explanation for a₀.
 
 ================================================================================
 PART I: ROBUST EMPIRICAL FINDINGS
@@ -223,9 +255,11 @@ B. BARYON-HALO SELF-REGULATION (Feedback)
    ✗ No mechanism produces exactly cH₀/2π
    ✗ Must explain why no galaxy property modulates a₀
 
-C. COSMIC ACCELERATION SCALE (Our Hypothesis)
+C. COSMOLOGICAL SCALE-SETTING (Our Framework)
    a₀ = cH₀/2π is not coincidence — the cosmic expansion sets the
    transition scale below which dynamics change from Newtonian to MOND-like.
+   NOTE: This is a parameterization of known MOND phenomenology, not
+   a new theory. What distinguishes it: a₀ is fixed, not fitted.
    ✓ Explains the cH₀ coincidence
    ✓ Explains why a₀ is universal (set by cosmology, not galaxies)
    ✓ Explains why the compensation is "simple" (one variable)
@@ -905,7 +939,7 @@ ROBUST EMPIRICAL FINDINGS
 THE THREE HYPOTHESES
   A. Modified Gravity — new fundamental law
   B. Baryon-Halo Self-Regulation — feedback in ΛCDM
-  C. Cosmic Acceleration Scale — cosmological connection
+  C. Cosmological Scale-Setting — a₀ = cH₀/2π framework
 
 FOUR DISCRIMINATING TESTS
 
@@ -1471,23 +1505,31 @@ THE GOLDEN RULE:
 shift reveals itself."
 
 ================================================================================
-PROPOSED MODEL NAME
+FRAMEWORK DESCRIPTION
 ================================================================================
 
-  Cosmic Acceleration Scale Model
+  Cosmologically Fixed MOND-like Interpolation Framework
 
-  Core claim: There exists a transition acceleration scale a₀ = cH₀/2π
-  set by cosmology, below which the relationship between observed and
-  baryonic acceleration transitions from Newtonian to deep-MOND.
-  Given standard baryonic inputs, the model introduces no extra
-  galaxy-by-galaxy tuning parameters and naturally produces:
-    1. Newtonian gravity at high acceleration
-    2. The Radial Acceleration Relation (RAR)
-    3. Flat rotation curves
-    4. The Baryonic Tully-Fisher Relation (V⁴ = GMa₀)
+  What this is:
+    A MOND variant with a specific interpolation function ν(x) = x/(1+x)
+    and a₀ = cH₀/2π fixed by cosmology (not a free parameter).
+    This is NOT a new theory — it is a specific parameterization of the
+    known MOND phenomenology with a cosmological constraint on a₀.
 
-  Status: Empirically motivated, not yet a complete theory.
-  Missing: physical mechanism, relativistic formulation, cluster validation.
+  What it produces (all known in prior literature):
+    1. Newtonian gravity at high acceleration  [standard MOND]
+    2. The Radial Acceleration Relation (RAR)  [McGaugh+2016]
+    3. Flat rotation curves                     [Milgrom 1983]
+    4. The Baryonic Tully-Fisher Relation       [McGaugh 2005]
+
+  What it adds beyond standard MOND:
+    - a₀ is not free: fixed at cH₀/2π
+    - Specific interpolation: ν(x) = x/(1+x)
+    - Prediction: a₀ evolves with z as a₀(z) = cH(z)/2π
+
+  Status: Empirically motivated framework, not a theory.
+  Missing: physical mechanism, Lagrangian, relativistic formulation,
+  cluster solution. See Part XXX for honest novelty assessment.
 
   Golden Sentence:
   "Dark matter knows where the light is — and it shouldn't."
@@ -1545,7 +1587,7 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
     Score: 4.0/6
     Verdict: Explains clusters, struggles with RAR tightness and cH₀
 
-  FAMILY C: Cosmological Emergent Effect (Cosmic Scale, Verlinde)
+  FAMILY C: Cosmological Emergent Effect (cH/2π framework, Verlinde)
     Core idea: Cosmic expansion sets local acceleration transition scale
     C1: △  C2: ✓  C3: ✓  C4: ✓  C5: △  C6: ✗
     Score: 4.0/6
@@ -1556,8 +1598,11 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
   NOTEBOOK 3: DERIVATION ATTEMPTS
 
   Attempt 1: de Sitter Horizon
-    a_dS = c√(Λ/3) = 7.065×10⁻¹¹ m/s²
-    Ratio to a₀: 0.59 — within factor 2, but too small
+    [CORRECTED — see Part XXVII] c√(Λ/3) is H_∞ (a rate, units 1/s), NOT
+    an acceleration. The correct surface gravity is:
+    κ_dS = c²√(Λ/3) = c × H_∞ = 5.47×10⁻¹⁰ m/s²
+    Ratio κ_dS/a₀ = 4.6 — too LARGE, not too small
+    With 2π: κ_dS/2π = 8.7×10⁻¹¹ m/s², ratio 0.72 to a₀
 
   Attempt 2: Hubble Scale
     cH₀ = 6.534×10⁻¹⁰ m/s² — 5.4× too large
@@ -1565,11 +1610,11 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
     The 2π NEEDS a physical reason (not arbitrary)
 
   Attempt 3: Unruh Temperature
-    T_dS = ℏ√(Λ/3)/(2πk_B) = 2.725×10⁻³⁰ K
-    T_Unruh(a₀) = ℏa₀/(2πck_B) = 4.612×10⁻³⁰ K
-    Argument: If universe has minimum temperature T_dS,
-    then minimum acceleration a_min = 2πck_BT_dS/ℏ = c√(Λ/3)
-    Result: Same number as de Sitter — gives a REASON but same problem
+    T_GH = ℏH_∞/(2πk_B) where H_∞ = c√(Λ/3) [rate, in s⁻¹]
+    T_Unruh(a) = ℏa/(2πck_B)
+    Setting T_U = T_GH: a = c × H_∞ = c²√(Λ/3) = κ_dS = 5.47×10⁻¹⁰ m/s²
+    [CORRECTED] The 2π cancels (see Part XXVII step-by-step derivation).
+    Result: Gives a = cH, not cH/2π. The threshold is κ_dS = 4.6× a₀.
 
   Attempt 4: H₀ vs Λ Discriminant
     Using H₀: a₀ changes with redshift (a₀(z) ∝ H(z))
@@ -1579,7 +1624,8 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
 
   Attempt 5: Dimensional Analysis Summary
     cH₀/2π gives ratio 0.87 to a₀ — best of all combinations
-    c√(Λ/3) gives ratio 0.59
+    κ_dS/2π = c²√(Λ/3)/(2π) gives ratio 0.72
+    κ_dS = c²√(Λ/3) gives 4.6× (too large without geometric factor)
     No combination exactly matches without a specific geometric factor
 
   ────────────────────────────────────────────────────────────────────────
@@ -1591,7 +1637,7 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
   This is THE question. Not "what is dark matter?" Not "is MOND right?"
 
   Most promising paths:
-  1. Unruh/horizon → a₀ ~ c√(Λ/3) naturally, but factor ~0.6 off
+  1. Unruh/horizon → κ_dS = c²√(Λ/3) = 5.47×10⁻¹⁰ (4.6× a₀, off by large factor)
   2. H(z) dependence → testable, diverges from MOND at z > 0.5
   3. The 2π factor → ω vs f, horizon circumference, or vacuum modes
   4. Cluster failure → constrains mechanism (52.5% unexplained)
@@ -1617,9 +1663,12 @@ PART XXVI-A: WHY 2π?
   │   accelerated observer produces kT = ℏa/(2πc).                    │
   │ Natural or inserted? NATURAL — it comes from the periodicity      │
   │   of Euclidean time in Rindler space (period β = 2πc/a).          │
-  │ Does it give a₀? It gives a_min = c√(Λ/3) = 7.07×10⁻¹¹ m/s².    │
-  │   Ratio to a₀: 0.59. Order of magnitude yes, exact no.           │
-  │ Verdict: 2π is natural here, but the base scale is too small.     │
+  │ Does it give a₀? [CORRECTED] Setting T_U = T_GH gives             │
+  │   a = cH_∞ = c²√(Λ/3) = κ_dS = 5.47×10⁻¹⁰ m/s² (the 2π        │
+  │   cancels). Ratio κ_dS/a₀ = 4.6 — too LARGE.                    │
+  │   With an extra 2π: κ_dS/2π = 8.7×10⁻¹¹, ratio 0.72.            │
+  │ Verdict: 2π is natural in the Unruh formula, but it cancels       │
+  │   when equating T_U = T_GH, giving the wrong scale.               │
   └─────────────────────────────────────────────────────────────────────┘
 
   ┌─────────────────────────────────────────────────────────────────────┐
@@ -1670,7 +1719,7 @@ PART XXVI-A: WHY 2π?
   ┌──────────────────────┬────────────┬──────────────┬─────────────────┐
   │ Candidate            │ 2π natural?│ Gives a₀?    │ Status          │
   ├──────────────────────┼────────────┼──────────────┼─────────────────┤
-  │ Unruh factor         │ Yes        │ ~0.59× (low) │ Natural but off │
+  │ Unruh factor         │ Yes        │ 4.6× (high)  │ 2π cancels out  │
   │ Angular frequency    │ Semi       │ ~0.87× (best)│ Best match      │
   │ Horizon circumference│ Plausible  │ ~0.87×       │ Elegant, unproven│
   │ Vacuum modes         │ Yes        │ ~10⁻⁵² (no) │ Fails           │
@@ -1694,11 +1743,11 @@ PART XXVI-B: H₀ OR Λ?
 
   ┌───────────┬─────────────────┬─────────────────────────────────────────┐
   │ Property  │ Hubble-based    │ Λ-based                                │
-  │           │ a₀ = cH/2π      │ a₀ = c√(Λ/3)                          │
+  │           │ a₀ = cH/2π      │ a₀ = κ_dS/2π = c²√(Λ/3)/(2π)         │
   ├───────────┼─────────────────┼─────────────────────────────────────────┤
-  │ Formula   │ a₀(z) = cH(z)/2π│ a₀ = c√(Λ/3) = const                 │
-  │ Value now │ 1.04×10⁻¹⁰      │ 7.07×10⁻¹¹                            │
-  │ Ratio     │ 0.87            │ 0.59                                    │
+  │ Formula   │ a₀(z) = cH(z)/2π│ a₀ = κ_dS/2π = const                  │
+  │ Value now │ 1.04×10⁻¹⁰      │ 8.7×10⁻¹¹ [κ_dS = 5.47×10⁻¹⁰]       │
+  │ Ratio     │ 0.87            │ 0.72 [κ_dS/2π] or 4.6 [κ_dS raw]      │
   │ Changes   │ YES — a₀ grows  │ NO — a₀ is a true constant             │
   │ with z?   │ as H(z) grows   │                                         │
   │ At z=1    │ a₀ increases    │ a₀ unchanged                            │
@@ -1707,7 +1756,7 @@ PART XXVI-B: H₀ OR Λ?
   │ shift z=1 │                 │                                         │
   │ Explains  │ Redshift        │ Λ is fundamental, a₀ is too            │
   │           │ evolution       │                                         │
-  │ Fails at  │ Needs mechanism │ Numerical match worse (0.59 not 0.87)  │
+  │ Fails at  │ Needs mechanism │ κ_dS raw is 4.6× a₀; /2π gives 0.72×  │
   │           │ for H→local     │ Epoch problem: why now?                │
   └───────────┴─────────────────┴─────────────────────────────────────────┘
 
@@ -1735,7 +1784,7 @@ PART XXVI-B: H₀ OR Λ?
      If a₀ = cH/2π, then a₀ was different in the past.
      Galaxies at z=2 had a₀ ~3× larger.
      Did MOND-like behavior look different then? Testable in principle.
-     If a₀ = c√(Λ/3), no epoch problem — a₀ is always the same.
+     If a₀ = κ_dS/2π = c²√(Λ/3)/(2π), no epoch problem — a₀ is always the same.
 
   The discriminant:
   ╔═══════════════════════════════════════════════════════════════════════╗
@@ -1765,26 +1814,26 @@ PART XXVI-C: THE THREE PATHS
 
   Core argument:
     In de Sitter space, there is a cosmological horizon at R = c/H.
-    This horizon has a surface gravity κ = c√(Λ/3) = H_∞·c.
-    Any particle in a de Sitter universe cannot be accelerated
-    below κ without falling below the horizon's own gravitational
-    scale. Therefore a_min = κ = c√(Λ/3).
+    This horizon has a surface gravity κ_dS = c × H_∞ = c²√(Λ/3).
+    [CORRECTED] √(Λ/3) is in m⁻¹; multiplied by c gives H_∞ in s⁻¹ (a rate).
+    The surface gravity (acceleration) is κ_dS = c × H_∞ = 5.47×10⁻¹⁰ m/s².
 
   What it explains:
     - Global scale: a₀ comes from cosmology, not galaxy properties
     - Universality: same Λ everywhere → same a₀ everywhere
-    - Newton limit: κ only matters when g_bar → 0
+    - Newton limit: κ_dS only matters when g_bar → 0
 
   What it fails:
-    - Numerical match: c√(Λ/3) = 7.07×10⁻¹¹, needs factor ~1.7 to reach a₀
-    - 2π: does not naturally produce the 2π factor
+    - Numerical match: κ_dS = 5.47×10⁻¹⁰ = 4.6× a₀ (too LARGE, not too small)
+      With 2π: κ_dS/2π = 8.7×10⁻¹¹ = 0.72× a₀ (closer but still off)
+    - 2π: requires an additional 2π factor to approach a₀
     - Mechanism: surface gravity of a horizon is not the same as
       modifying dynamics inside a galaxy. How does the horizon "reach in"?
     - Clusters: no prediction for the ~52.5% residual
     - Redshift: predicts constant a₀ (Λ-model), not H-evolving
 
   Open questions specific to this path:
-    - Is the factor 1.7 fixable, or is it a sign of a wrong framework?
+    - κ_dS/2π gives ratio 0.72 — is the remaining factor 1.4 fixable?
     - Can horizon thermodynamics provide the mechanism?
 
   ──── PATH 2: Unruh / Thermodynamic ────
@@ -1797,7 +1846,8 @@ PART XXVI-C: THE THREE PATHS
     the particle's acceleration from the cosmic background. Below this
     threshold, inertia (= resistance to acceleration) is modified.
 
-    Threshold: T_U(a_min) = T_dS → a_min = c√(Λ/3)
+    Threshold: T_U(a_min) = T_GH → a_min = c × H_∞ = κ_dS = 5.47×10⁻¹⁰ m/s²
+    [CORRECTED] The 2π in T_U cancels with the 2π in T_GH (see Part XXVII).
 
     This is the Milgrom-Unruh connection (see also: Verlinde 2016,
     McCulloch 2007, Smolin 2017).
@@ -1806,12 +1856,12 @@ PART XXVI-C: THE THREE PATHS
     - WHY a₀ appears: it is the boundary where local and cosmic
       thermal scales merge
     - Universality: cosmic temperature is the same everywhere
-    - Newton limit: T_U >> T_dS means acceleration is "sharp"
+    - Newton limit: T_U >> T_GH means acceleration is "sharp"
       and inertia is standard Newtonian
-    - 2π: appears naturally from the Unruh formula
 
   What it fails:
-    - Same base scale problem: a_min = c√(Λ/3) = 0.59 × a₀
+    - 2π cancellation: T_U = T_GH gives a = cH_∞ (the 2π cancels out),
+      so κ_dS = 5.47×10⁻¹⁰ = 4.6× a₀ — too large, not too small
     - Mechanism inside galaxies: Unruh radiation is a QFT result for
       uniformly accelerated observers in flat space. Real galaxy
       dynamics involve non-uniform, curved spacetime. The translation
@@ -1874,7 +1924,7 @@ PART XXVI-C: THE THREE PATHS
   ┌─────────────────┬──────────────┬──────────────┬──────────────┐
   │ Condition       │ de Sitter    │ Unruh/Thermo │ Dark-Sector  │
   ├─────────────────┼──────────────┼──────────────┼──────────────┤
-  │ C1: Derive a₀   │ △ (0.59×)    │ △ (0.59×)    │ ✗ (fitted)   │
+  │ C1: Derive a₀   │ △ (4.6× raw) │ △ (4.6× raw) │ ✗ (fitted)   │
   │ C2: Universality│ ✓            │ ✓            │ △            │
   │ C3: cH₀ link    │ △ (Λ, not H) │ △ (Λ, not H) │ ✗            │
   │ C4: Newton limit│ ✓            │ ✓            │ ✓            │
@@ -1908,7 +1958,8 @@ PART XXVI-D: WHEN CAN WE SAY "WE FOUND AN EXPLANATION"?
   │ dark-sector model — derive an acceleration scale a_pred such that  │
   │ 0.5 < a_pred/a₀ < 2.0, with the factor explained (not free).     │
   │                                                                     │
-  │ Current status: de Sitter gives 0.59×, Hubble gives 0.87×.        │
+  │ Current status: de Sitter κ_dS = 4.6× (κ_dS/2π = 0.72×).         │
+  │ Hubble gives cH₀/2π = 0.87×.                                     │
   │ Neither is derived from first principles with the factor fixed.    │
   └─────────────────────────────────────────────────────────────────────┘
 
@@ -1962,10 +2013,10 @@ PART XXVI-D: WHEN CAN WE SAY "WE FOUND AN EXPLANATION"?
   ║  Any proposal that does not satisfy all four criteria is an         ║
   ║  EXPLANATORY HYPOTHESIS, not an explanation.                        ║
   ║                                                                     ║
-  ║  This includes our own Cosmic Scale model.                         ║
+  ║  This includes our own framework (MOND + a₀ = cH₀/2π).            ║
   ║  It satisfies Criteria 2 and 3. It partially satisfies 1.         ║
   ║  It does not satisfy 4 (cluster residual).                         ║
-  ║  Therefore: it is a well-motivated hypothesis, not an explanation. ║
+  ║  Therefore: it is a well-motivated framework, not an explanation.  ║
   ╚═══════════════════════════════════════════════════════════════════════╝
 
   ────────────────────────────────────────────────────────────────────────
