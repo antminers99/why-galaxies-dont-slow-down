@@ -1596,5 +1596,395 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
   The gap between "motivated formula" and "derived theory" is real.
 
 ================================================================================
+PART XXVI-A: WHY 2π?
+================================================================================
+
+  The observed relation is a₀ ≈ cH₀/2π, not cH₀.
+  The factor 2π is either a physical clue or a numerical patch.
+  Four candidate origins:
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ Candidate 1: Unruh factor                                         │
+  │                                                                     │
+  │ Origin: Unruh temperature T_U = ℏa/(2πck_B). The 2π appears       │
+  │   because the thermal partition function of a uniformly            │
+  │   accelerated observer produces kT = ℏa/(2πc).                    │
+  │ Natural or inserted? NATURAL — it comes from the periodicity      │
+  │   of Euclidean time in Rindler space (period β = 2πc/a).          │
+  │ Does it give a₀? It gives a_min = c√(Λ/3) = 7.07×10⁻¹¹ m/s².    │
+  │   Ratio to a₀: 0.59. Order of magnitude yes, exact no.           │
+  │ Verdict: 2π is natural here, but the base scale is too small.     │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ Candidate 2: Angular vs cyclic frequency (ω = 2πf)                │
+  │                                                                     │
+  │ Origin: H₀ is a rate (inverse time). If the relevant quantity is   │
+  │   the angular frequency ω = 2πH₀, then a₀ = c·H₀/(2π) = c/ω.    │
+  │   Equivalently: the Hubble time t_H = 1/H₀ defines a frequency   │
+  │   f = 1/t_H, and ω = 2πf. Then a₀ = c/(2π·t_H) = cH₀/2π.       │
+  │ Natural or inserted? SEMI-NATURAL — the conversion is standard    │
+  │   but it requires justification for why ω matters, not f.         │
+  │ Does it give a₀? cH₀/2π = 1.04×10⁻¹⁰ m/s². Ratio: 0.87.        │
+  │   Best numerical match of all candidates.                          │
+  │ Verdict: Best match, but the physical reason to prefer ω over f   │
+  │   is not established. Could be: periodicity in circular orbits,   │
+  │   or a de Broglie-like condition on the Hubble sphere.            │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ Candidate 3: Horizon circumference geometry                        │
+  │                                                                     │
+  │ Origin: Hubble radius R_H = c/H₀. Circumference = 2πR_H.         │
+  │   If the relevant scale is the circumference (not the radius),    │
+  │   then a = c²/(2πR_H) = cH₀/2π.                                  │
+  │ Natural or inserted? PLAUSIBLE — holographic and entropic gravity  │
+  │   arguments use horizon area/circumference as fundamental.        │
+  │ Does it give a₀? Same as Candidate 2: cH₀/2π = 1.04×10⁻¹⁰.     │
+  │ Verdict: Geometrically elegant but lacks a specific derivation    │
+  │   showing why circumference, not radius, sets local dynamics.     │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ Candidate 4: Vacuum mode quantization                              │
+  │                                                                     │
+  │ Origin: If vacuum fluctuations have a longest allowed mode set     │
+  │   by the Hubble horizon, λ_max = 2πR_H = 2πc/H₀. The minimum    │
+  │   momentum is p_min = ℏ/λ_max = ℏH₀/(2πc). A minimum force      │
+  │   or acceleration could arise from dp/dt ~ p_min × H₀.           │
+  │ Natural or inserted? SPECULATIVE — requires a specific model of   │
+  │   how vacuum modes couple to gravitational dynamics.               │
+  │ Does it give a₀? Gives ℏH₀²/(2πc) ≈ 10⁻⁶² m/s². No.            │
+  │   The dimensional analysis fails unless mass enters differently.  │
+  │ Verdict: Does not work as stated. The 2π is natural (Fourier)     │
+  │   but the scale is completely wrong.                               │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Summary:
+  ┌──────────────────────┬────────────┬──────────────┬─────────────────┐
+  │ Candidate            │ 2π natural?│ Gives a₀?    │ Status          │
+  ├──────────────────────┼────────────┼──────────────┼─────────────────┤
+  │ Unruh factor         │ Yes        │ ~0.59× (low) │ Natural but off │
+  │ Angular frequency    │ Semi       │ ~0.87× (best)│ Best match      │
+  │ Horizon circumference│ Plausible  │ ~0.87×       │ Elegant, unproven│
+  │ Vacuum modes         │ Yes        │ ~10⁻⁵² (no) │ Fails           │
+  └──────────────────────┴────────────┴──────────────┴─────────────────┘
+
+  Conclusion on 2π:
+  Candidates 2 and 3 give the best numerical match but lack a
+  first-principles derivation. Candidate 1 (Unruh) has the deepest
+  physics but gives the wrong base scale. Candidate 4 fails.
+
+  The question remains open:
+  Is 2π a physical clue (pointing to periodicity/geometry) or a patch?
+  If physical, it likely points to horizon geometry or ω-vs-f physics.
+
+================================================================================
+PART XXVI-B: H₀ OR Λ?
+================================================================================
+
+  This is the central theoretical discriminant.
+  Two mutually exclusive possibilities exist for the origin of a₀:
+
+  ┌───────────┬─────────────────┬─────────────────────────────────────────┐
+  │ Property  │ Hubble-based    │ Λ-based                                │
+  │           │ a₀ = cH/2π      │ a₀ = c√(Λ/3)                          │
+  ├───────────┼─────────────────┼─────────────────────────────────────────┤
+  │ Formula   │ a₀(z) = cH(z)/2π│ a₀ = c√(Λ/3) = const                 │
+  │ Value now │ 1.04×10⁻¹⁰      │ 7.07×10⁻¹¹                            │
+  │ Ratio     │ 0.87            │ 0.59                                    │
+  │ Changes   │ YES — a₀ grows  │ NO — a₀ is a true constant             │
+  │ with z?   │ as H(z) grows   │                                         │
+  │ At z=1    │ a₀ increases    │ a₀ unchanged                            │
+  │           │ ~79% (H(1)/H(0))│                                         │
+  │ V_flat    │ shifts ~15.7%   │ no shift                                │
+  │ shift z=1 │                 │                                         │
+  │ Explains  │ Redshift        │ Λ is fundamental, a₀ is too            │
+  │           │ evolution       │                                         │
+  │ Fails at  │ Needs mechanism │ Numerical match worse (0.59 not 0.87)  │
+  │           │ for H→local     │ Epoch problem: why now?                │
+  └───────────┴─────────────────┴─────────────────────────────────────────┘
+
+  Key differences:
+
+  1. Redshift evolution
+     H-based: a₀(z=1) = cH(1)/2π ≈ 1.79 × a₀(z=0)
+     Λ-based: a₀(z=1) = a₀(z=0) exactly
+     → V_flat shifts by ~15.7% in H-model, 0% in Λ-model
+     → This is measurable with JWST mass-matched BTFR (Part XXV)
+
+  2. Far-future behavior
+     H-based: a₀ → cH_∞/2π = c²√(Λ/3)/2π as H → H_∞ = c√(Λ/3)
+       So H-based converges to Λ-based in the far future.
+     Λ-based: a₀ unchanged forever
+
+  3. Matter dependence
+     H-based: H² = H₀²[Ω_m(1+z)³ + Ω_Λ]
+       → a₀ depends on matter density through H(z)
+       → This means a₀ "knows about" both matter AND dark energy
+     Λ-based: a₀ depends only on Λ
+       → Pure vacuum energy origin, matter irrelevant
+
+  4. The epoch problem
+     If a₀ = cH/2π, then a₀ was different in the past.
+     Galaxies at z=2 had a₀ ~3× larger.
+     Did MOND-like behavior look different then? Testable in principle.
+     If a₀ = c√(Λ/3), no epoch problem — a₀ is always the same.
+
+  The discriminant:
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║  Mass-matched BTFR at z ~ 0.5–1.0 distinguishes the two models.   ║
+  ║  H-model predicts V_flat shift of 8–16%. Λ-model predicts 0%.     ║
+  ║  Required: 20 mass-matched galaxies per redshift bin.              ║
+  ║  Instrument: JWST NIRSpec IFS (now) or ELT/HARMONI (2030+).       ║
+  ║  This is the single most important theoretical test available.     ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+  There is also a third possibility:
+
+  Hybrid: a₀ = f(H, Λ) — some function of both.
+    Example: a₀ = c·(H² + Λc²/3)^(1/2) / 2π
+    This gives a₀(z=0) = cH₀/2π (since H₀² ≈ Λc²/3 at current epoch)
+    and converges to Λ-based in the far future.
+    Distinguishing hybrid from pure-H requires z > 2 measurements.
+    Status: Speculative, no physical motivation yet.
+
+================================================================================
+PART XXVI-C: THE THREE PATHS
+================================================================================
+
+  Three derivation paths, evaluated against the 6 conditions (C1–C6).
+
+  ──── PATH 1: de Sitter / Horizon ────
+
+  Core argument:
+    In de Sitter space, there is a cosmological horizon at R = c/H.
+    This horizon has a surface gravity κ = c√(Λ/3) = H_∞·c.
+    Any particle in a de Sitter universe cannot be accelerated
+    below κ without falling below the horizon's own gravitational
+    scale. Therefore a_min = κ = c√(Λ/3).
+
+  What it explains:
+    - Global scale: a₀ comes from cosmology, not galaxy properties
+    - Universality: same Λ everywhere → same a₀ everywhere
+    - Newton limit: κ only matters when g_bar → 0
+
+  What it fails:
+    - Numerical match: c√(Λ/3) = 7.07×10⁻¹¹, needs factor ~1.7 to reach a₀
+    - 2π: does not naturally produce the 2π factor
+    - Mechanism: surface gravity of a horizon is not the same as
+      modifying dynamics inside a galaxy. How does the horizon "reach in"?
+    - Clusters: no prediction for the ~52.5% residual
+    - Redshift: predicts constant a₀ (Λ-model), not H-evolving
+
+  Open questions specific to this path:
+    - Is the factor 1.7 fixable, or is it a sign of a wrong framework?
+    - Can horizon thermodynamics provide the mechanism?
+
+  ──── PATH 2: Unruh / Thermodynamic ────
+
+  Core argument:
+    A uniformly accelerated observer sees thermal radiation at
+    T_U = ℏa/(2πck_B). The universe itself has a de Sitter temperature
+    T_dS = ℏc√(Λ/3)/(2πk_B). When a particle's acceleration is so low
+    that T_U(a) < T_dS, the Unruh effect can no longer distinguish
+    the particle's acceleration from the cosmic background. Below this
+    threshold, inertia (= resistance to acceleration) is modified.
+
+    Threshold: T_U(a_min) = T_dS → a_min = c√(Λ/3)
+
+    This is the Milgrom-Unruh connection (see also: Verlinde 2016,
+    McCulloch 2007, Smolin 2017).
+
+  What it explains:
+    - WHY a₀ appears: it is the boundary where local and cosmic
+      thermal scales merge
+    - Universality: cosmic temperature is the same everywhere
+    - Newton limit: T_U >> T_dS means acceleration is "sharp"
+      and inertia is standard Newtonian
+    - 2π: appears naturally from the Unruh formula
+
+  What it fails:
+    - Same base scale problem: a_min = c√(Λ/3) = 0.59 × a₀
+    - Mechanism inside galaxies: Unruh radiation is a QFT result for
+      uniformly accelerated observers in flat space. Real galaxy
+      dynamics involve non-uniform, curved spacetime. The translation
+      from "Unruh threshold" to "rotation curve modification" is not
+      established.
+    - Clusters: no specific prediction
+    - If we use H₀ instead of √(Λ/3) in the Unruh argument:
+      T_H = ℏH₀/(2πk_B) gives a_min = cH₀ (no 2π in a_min).
+      Then a₀ = cH₀, not cH₀/2π. Off by factor 2π in the
+      opposite direction. The 2π arithmetic is subtle here.
+
+  Open questions specific to this path:
+    - Can the Unruh argument be made rigorous in curved spacetime?
+    - Which temperature (T_dS or T_H = ℏH₀/2πk_B) is the right
+      cosmic reference? They differ by factor H₀/H_∞ ≈ 1.23.
+    - Is modified inertia the right physical picture, or is it
+      modified gravity? (They are observationally different.)
+
+  ──── PATH 3: Dark-Sector Coupling ────
+
+  Core argument:
+    Dark matter exists (as in ΛCDM), but its distribution is not
+    independent of baryons. A coupling mechanism — gravitational
+    feedback, self-interaction, phase transition (superfluid DM),
+    or dark photon mediation — forces DM halos to track baryon
+    distributions below a critical acceleration.
+
+    The scale a₀ emerges from the coupling physics, not from
+    cosmology directly. Example: in superfluid DM (Berezhiani &
+    Khoury 2015), the superfluid phonon force mimics MOND below
+    a critical acceleration set by the DM particle mass and
+    self-coupling.
+
+  What it explains:
+    - Clusters: DM is real, so clusters work naturally
+    - Newton limit: standard gravity + DM at high density
+    - Mechanism: has one (coupling/feedback/phase transition)
+    - RAR tightness: potentially, if coupling is deterministic
+
+  What it fails:
+    - cH₀ coincidence: no natural reason for a₀ ~ cH₀/2π
+      The coupling constant would have to be tuned.
+    - Universality: coupling depends on formation history.
+      Why is the scatter so small?
+    - a₀ derivation: in superfluid DM, a₀ depends on DM particle
+      parameters (mass, coupling). These are free parameters.
+      a₀ is fitted, not derived.
+    - Redshift evolution: depends on model specifics. Some predict
+      evolution, some don't. Not a clean prediction.
+
+  Open questions specific to this path:
+    - Can any DM coupling model predict a₀ ≈ cH₀/2π from particle
+      physics parameters alone?
+    - Can feedback models reproduce RAR scatter < 0.13 dex?
+    - Is superfluid DM phase transition radius the right scale
+      to produce the a₀ transition?
+
+  ──── Evaluation Table ────
+
+  ┌─────────────────┬──────────────┬──────────────┬──────────────┐
+  │ Condition       │ de Sitter    │ Unruh/Thermo │ Dark-Sector  │
+  ├─────────────────┼──────────────┼──────────────┼──────────────┤
+  │ C1: Derive a₀   │ △ (0.59×)    │ △ (0.59×)    │ ✗ (fitted)   │
+  │ C2: Universality│ ✓            │ ✓            │ △            │
+  │ C3: cH₀ link    │ △ (Λ, not H) │ △ (Λ, not H) │ ✗            │
+  │ C4: Newton limit│ ✓            │ ✓            │ ✓            │
+  │ C5: Clusters    │ ✗            │ ✗            │ ✓            │
+  │ C6: Mechanism   │ ✗            │ △ (conceptual)│ ✓           │
+  ├─────────────────┼──────────────┼──────────────┼──────────────┤
+  │ Score           │ 3.0/6        │ 3.5/6        │ 3.5/6        │
+  └─────────────────┴──────────────┴──────────────┴──────────────┘
+
+  No path scores above 4. None is a complete explanation.
+
+  Observation:
+    Paths 1+2 (cosmological) are strong on universality and cH₀,
+    weak on clusters and mechanism.
+    Path 3 (dark-sector) is strong on clusters and mechanism,
+    weak on universality and cH₀.
+    A complete theory may need to combine elements:
+    cosmological scale-setting + dark-sector implementation.
+    But this is speculation, not a result.
+
+================================================================================
+PART XXVI-D: WHEN CAN WE SAY "WE FOUND AN EXPLANATION"?
+================================================================================
+
+  Four necessary conditions. All four must be met simultaneously.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ CRITERION 1: Derive a scale within factor 2 of a₀                 │
+  │                                                                     │
+  │ From an action, field equation, thermodynamic argument, or         │
+  │ dark-sector model — derive an acceleration scale a_pred such that  │
+  │ 0.5 < a_pred/a₀ < 2.0, with the factor explained (not free).     │
+  │                                                                     │
+  │ Current status: de Sitter gives 0.59×, Hubble gives 0.87×.        │
+  │ Neither is derived from first principles with the factor fixed.    │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ CRITERION 2: Explain universality without per-galaxy tuning        │
+  │                                                                     │
+  │ The explanation must predict that a₀ does not depend on:           │
+  │   - Galaxy mass (10⁷ to 10¹¹ M_sun range)                         │
+  │   - Galaxy size (1 to 30 kpc range)                                │
+  │   - Surface brightness (HSB to LSB)                                │
+  │   - Formation history                                               │
+  │ Observed scatter: < 0.13 dex in RAR. Any explanation must          │
+  │ reproduce this tightness, not just the mean value.                 │
+  │                                                                     │
+  │ Current status: Cosmological paths satisfy this by construction.   │
+  │ Dark-sector path struggles — feedback is stochastic.               │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ CRITERION 3: Reproduce known phenomenology                         │
+  │                                                                     │
+  │ The explanation must quantitatively recover:                        │
+  │   - RAR: g_obs = f(g_bar) with correct shape and scatter          │
+  │   - BTFR: V_flat⁴ = G·M·a₀ with correct slope and normalization  │
+  │   - Rotation curves: correct shape for HSB and LSB galaxies       │
+  │   - Newtonian limit: g_obs → g_bar when g_bar >> a₀              │
+  │                                                                     │
+  │ Current status: All three families can fit these, but fitting      │
+  │ is not deriving. The question is whether the fits are predictions  │
+  │ or post-hoc adjustments.                                           │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ CRITERION 4: Not contradict clusters, lensing, or CMB              │
+  │                                                                     │
+  │ The explanation must not:                                           │
+  │   - Make clusters worse than ΛCDM (current residual: ~52.5%)      │
+  │   - Violate gravitational lensing constraints                      │
+  │   - Conflict with CMB power spectrum                               │
+  │   - Predict effects already ruled out by solar system tests        │
+  │                                                                     │
+  │ Current status: Modified gravity struggles here. Dark-sector       │
+  │ passes. Cosmological emergent is untested at these scales.         │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ────────────────────────────────────────────────────────────────────────
+
+  The hard rule:
+
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║  Any proposal that does not satisfy all four criteria is an         ║
+  ║  EXPLANATORY HYPOTHESIS, not an explanation.                        ║
+  ║                                                                     ║
+  ║  This includes our own Cosmic Floor model.                         ║
+  ║  It satisfies Criteria 2 and 3. It partially satisfies 1.         ║
+  ║  It does not satisfy 4 (cluster residual).                         ║
+  ║  Therefore: it is a well-motivated hypothesis, not an explanation. ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+  ────────────────────────────────────────────────────────────────────────
+
+  Where we stand:
+
+  What we have:
+    - A precisely defined question (why does cH₀ enter local dynamics?)
+    - 5 empirical facts any theory must address
+    - 6 testable conditions for filtering proposals
+    - 3 derivation paths, none complete
+    - 1 decisive observational test (mass-matched BTFR at z~1)
+    - 1 measurement pipeline ready for execution
+
+  What we do not have:
+    - A mechanism
+    - A derivation of the 2π factor from first principles
+    - A resolution of the cluster problem
+    - Proof that a₀ ~ cH₀ is not a coincidence
+
+  The single best next step:
+    Resolve whether a₀ tracks H(z) or is constant.
+    This determines whether the origin is dynamical (H) or structural (Λ).
+    Everything else follows from this answer.
+
+================================================================================
 END OF COMPLETE REPORT
 ================================================================================
