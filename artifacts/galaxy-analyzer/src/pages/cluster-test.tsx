@@ -103,6 +103,10 @@ interface ClusterResult {
   floorOvershoot: boolean;
   mondMissing: number;
   mondOvershoot: boolean;
+  newtonDMFrac: number;
+  floorDMFrac: number;
+  mondDMFrac: number;
+  lcdmDMFrac: number;
   baryonFrac: number;
   notes: string;
   temperature: number;
@@ -121,6 +125,12 @@ export default function ClusterTestPage() {
       const floorDev = (1 - (fSigma * fSigma) / (c.observedSigma * c.observedSigma)) * 100;
       const mondDev = (1 - (mSigma * mSigma) / (c.observedSigma * c.observedSigma)) * 100;
 
+      const newtonDMFrac = Math.max(0, 1 - c.baryonicMass / c.totalMass) * 100;
+      const floorMassEquiv = (fSigma * fSigma) / (c.observedSigma * c.observedSigma) * c.totalMass;
+      const floorDMFrac = Math.max(0, 1 - floorMassEquiv / c.totalMass) * 100;
+      const mondMassEquiv = (mSigma * mSigma) / (c.observedSigma * c.observedSigma) * c.totalMass;
+      const mondDMFrac = Math.max(0, 1 - mondMassEquiv / c.totalMass) * 100;
+
       return {
         name: c.name,
         observed: c.observedSigma,
@@ -133,6 +143,10 @@ export default function ClusterTestPage() {
         floorOvershoot: floorDev < 0,
         mondMissing: parseFloat(Math.abs(mondDev).toFixed(1)),
         mondOvershoot: mondDev < 0,
+        newtonDMFrac: parseFloat(newtonDMFrac.toFixed(1)),
+        floorDMFrac: parseFloat(floorDMFrac.toFixed(1)),
+        mondDMFrac: parseFloat(mondDMFrac.toFixed(1)),
+        lcdmDMFrac: 0,
         baryonFrac: parseFloat(((c.baryonicMass / c.totalMass) * 100).toFixed(1)),
         notes: c.notes,
         temperature: c.temperature,
@@ -320,6 +334,47 @@ export default function ClusterTestPage() {
             <div className="text-xs text-slate-500">(comparable to Floor)</div>
           </div>
         </div>
+
+        <GlassCard glow="amber">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">!</div>
+            <div>
+              <h3 className="text-lg font-bold text-white">Residual Dark Matter Fraction</h3>
+              <p className="text-xs text-slate-400">How much dark matter each model still requires in clusters</p>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left py-2 px-2 text-slate-400">Cluster</th>
+                  <th className="text-right py-2 px-2 text-orange-400">Newton DM%</th>
+                  <th className="text-right py-2 px-2 text-amber-400">Floor residual DM%</th>
+                  <th className="text-right py-2 px-2 text-violet-400">MOND residual DM%</th>
+                  <th className="text-right py-2 px-2 text-cyan-400">{"\u039B"}CDM residual DM%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {results.map(r => (
+                  <tr key={r.name} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                    <td className="py-2 px-2 text-white font-medium">{r.name}</td>
+                    <td className="py-2 px-2 text-right font-mono text-orange-400">{r.newtonDMFrac}%</td>
+                    <td className="py-2 px-2 text-right font-mono text-amber-400">{r.floorDMFrac}%</td>
+                    <td className="py-2 px-2 text-right font-mono text-violet-400">{r.mondDMFrac}%</td>
+                    <td className="py-2 px-2 text-right font-mono text-cyan-400">{r.lcdmDMFrac}% (by design)</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-3 text-xs text-slate-500 italic">
+            Newton requires ~85% dark matter. Floor and MOND reduce this to ~{avgFloorDeficit}% residual.
+            {"\u039B"}CDM matches by construction (DM is a free parameter). The honest comparison: Floor and MOND
+            explain ~{deficitReduction}% of the cluster dynamics from baryons alone, but still need some dark component.
+          </div>
+        </GlassCard>
 
         <GlassCard glow="purple">
           <div className="flex items-center gap-3 mb-5">

@@ -1,19 +1,17 @@
 import React, { useState, useMemo } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
-import { Telescope, ArrowRight, CheckCircle2, XCircle, TrendingUp, Atom, Sparkles, Info } from 'lucide-react';
+import { Telescope, CheckCircle2, XCircle, Sparkles, Info } from 'lucide-react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, ReferenceLine, Legend,
-  ErrorBar, ComposedChart, Scatter, ScatterChart, Area
+  ErrorBar, ComposedChart, Scatter, Area
 } from 'recharts';
 
 const G_KPC = 4.3009e-6;
 const A0_LOCAL = 3702;
 const A0_MS2 = 1.2e-10;
-const C_KMS = 2.998e5;
 const H0_KMS_MPC = 67.4;
-const H0_SI = H0_KMS_MPC * 1e3 / (3.0857e22);
 
 function Ez(z: number, omM: number, omL: number): number {
   return Math.sqrt(omM * Math.pow(1 + z, 3) + omL);
@@ -86,6 +84,7 @@ export default function RedshiftLabPage() {
   const [z, setZ] = useState(1.0);
   const [omM, setOmM] = useState(0.315);
   const [omL, setOmL] = useState(0.685);
+  const [flatUniverse, setFlatUniverse] = useState(true);
   const [refMass] = useState(1e11);
 
   const e = useMemo(() => Ez(z, omM, omL), [z, omM, omL]);
@@ -242,13 +241,38 @@ export default function RedshiftLabPage() {
               <input
                 type="range" min={0.1} max={0.5} step={0.005}
                 value={omM}
-                onChange={(e) => { const v = Number(e.target.value); setOmM(v); setOmL(1 - v); }}
+                onChange={(e) => { const v = Number(e.target.value); setOmM(v); if (flatUniverse) setOmL(1 - v); }}
                 className="w-full accent-cyan-500"
               />
               <div className="flex justify-between text-xs text-slate-500 mt-1">
                 <span>0.1</span>
                 <span>Planck: 0.315</span>
                 <span>0.5</span>
+              </div>
+            </div>
+
+            <div>
+              <div className="flex justify-between items-end mb-2">
+                <label className="font-mono text-emerald-400 font-medium text-sm">{"\u03A9"}{"\u039B"}</label>
+                <span className="font-mono text-xs text-white">{omL.toFixed(3)}</span>
+              </div>
+              <input
+                type="range" min={0.0} max={1.0} step={0.005}
+                value={omL}
+                onChange={(e) => { const v = Number(e.target.value); setOmL(v); if (flatUniverse) setOmM(1 - v); }}
+                className="w-full accent-emerald-500"
+                disabled={flatUniverse}
+              />
+              <div className="flex items-center gap-2 mt-1">
+                <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={flatUniverse}
+                    onChange={(e) => { setFlatUniverse(e.target.checked); if (e.target.checked) setOmL(1 - omM); }}
+                    className="accent-emerald-500"
+                  />
+                  Flat universe ({"\u03A9"}{"\u2098"}+{"\u03A9"}{"\u039B"}=1)
+                </label>
               </div>
             </div>
 
@@ -273,9 +297,11 @@ export default function RedshiftLabPage() {
                   </div>
                 </div>
               </div>
-              <div className="text-xs text-slate-500">
-                {"\u03A9"}{"\u039B"} = {omL.toFixed(3)} (flat universe: {"\u03A9"}{"\u2098"} + {"\u03A9"}{"\u039B"} = 1)
-              </div>
+              {!flatUniverse && (omM + omL) !== 1 && (
+                <div className="text-xs text-amber-400">
+                  {"\u26A0"} Non-flat: {"\u03A9"}{"\u2098"}+{"\u03A9"}{"\u039B"} = {(omM + omL).toFixed(3)} {(omM + omL) > 1 ? "(closed)" : "(open)"}
+                </div>
+              )}
             </div>
           </div>
         </GlassCard>
