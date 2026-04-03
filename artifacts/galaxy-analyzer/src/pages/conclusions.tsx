@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout';
 import { GlassCard } from '@/components/ui/glass-card';
-import { ScrollText, CheckCircle2, HelpCircle, FlaskConical, AlertTriangle, ArrowRight, Telescope, Orbit, BarChart3, Waypoints } from 'lucide-react';
+import { ScrollText, CheckCircle2, FlaskConical, AlertTriangle, ArrowRight, Telescope, Orbit, BarChart3, Waypoints } from 'lucide-react';
 
 interface TransitionData {
   a0_corrected: number;
+  a0_ms2: number;
   nPoints: number;
   nGalaxies: number;
   collapse: { rmsWithCorrectA0: number };
@@ -12,6 +13,7 @@ interface TransitionData {
 }
 
 interface PhiData {
+  model: { epsilon: number; oneOver2Pi: number; cH0_ms2: number };
   calibration: { nGalaxies: number; cvImprovement: number };
   otherVariables: { rVmax: number; rRmax: number };
   rVmaxA0: number;
@@ -21,14 +23,10 @@ interface PhiData {
 interface SimA0Data {
   observational: {
     combined: { globalA0: number; globalRMS: number; madA0: number; nGalaxies: number; nPoints: number };
+    sparc: { nGalaxies: number; nPoints: number; globalRMS: number; madA0: number; scatterA0: number };
   };
   simulations: Array<{ name: string; scatter: string; universal: boolean; feedbackDependent: string }>;
 }
-
-const A0_MS2 = 1.2e-10;
-const C_KMS = 299792.458;
-const H0_KMS_MPC = 70;
-const H0_PER_S = H0_KMS_MPC / 3.0857e19;
 
 export default function ConclusionsPage() {
   const [transition, setTransition] = useState<TransitionData | null>(null);
@@ -43,18 +41,24 @@ export default function ConclusionsPage() {
     ]).then(([t, p, s]) => { setTransition(t); setPhi(p); setSimA0(s); });
   }, []);
 
-  const epsilon = A0_MS2 / (C_KMS * 1000 * H0_PER_S);
-  const cH0_ms2 = C_KMS * 1000 * H0_PER_S;
+  const a0_ms2 = transition ? transition.a0_ms2 : 1.2e-10;
+  const a0_kpc = transition ? transition.a0_corrected : 3702;
+  const cH0_ms2 = phi ? phi.model.cH0_ms2 : 6.801e-10;
+  const epsilon = phi ? phi.model.epsilon : 0.1764;
+  const oneOver2Pi = phi ? phi.model.oneOver2Pi : 0.1592;
   const predicted = cH0_ms2 / (2 * Math.PI);
-  const matchPct = ((1 - Math.abs(predicted - A0_MS2) / A0_MS2) * 100).toFixed(0);
+  const matchPct = ((1 - Math.abs(predicted - a0_ms2) / a0_ms2) * 100).toFixed(0);
+  const cosmologyRatio = transition ? transition.cosmology.ratio : 0.176;
 
-  const nGalaxies = transition ? transition.nGalaxies : 193;
-  const nPoints = transition ? transition.nPoints : 4123;
+  const sparcNGalaxies = simA0 ? simA0.observational.sparc.nGalaxies : 175;
+  const sparcNPoints = simA0 ? simA0.observational.sparc.nPoints : 3391;
+  const sparcRMS = simA0 ? simA0.observational.sparc.globalRMS : 0.198;
+  const sparcScatter = simA0 ? simA0.observational.sparc.scatterA0 : 0.605;
   const rms = transition ? transition.collapse.rmsWithCorrectA0 : 0.24;
   const rVmax = phi ? phi.rVmaxA0 : 0.10;
   const rRmax = phi ? phi.otherVariables.rRmax : -0.04;
   const cvWorse = phi ? phi.calibration.cvImprovement : -13;
-  const obsScatter = simA0 ? simA0.observational.combined.madA0 : 0.457;
+  const obsMAD = simA0 ? simA0.observational.combined.madA0 : 0.457;
 
   return (
     <Layout>
@@ -79,7 +83,7 @@ export default function ConclusionsPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">I</div>
             <div>
               <h2 className="text-xl font-bold text-white">What We Know for Certain</h2>
-              <p className="text-xs text-slate-400">Empirical facts from {nGalaxies} galaxies, {nPoints.toLocaleString()} data points</p>
+              <p className="text-xs text-slate-400">Empirical facts from {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {sparcNPoints.toLocaleString()} data points</p>
             </div>
           </div>
 
@@ -90,10 +94,10 @@ export default function ConclusionsPage() {
                 <h3 className="text-sm font-bold text-emerald-300">a{"\u2080"} exists</h3>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                There is a characteristic acceleration scale a{"\u2080"} {"\u2248"} 1.2 {"\u00D7"} 10{"\u207B\u00B9\u2070"} m/s{"\u00B2"} ({"\u2248"} 3702 (km/s){"\u00B2"}/kpc)
+                There is a characteristic acceleration scale a{"\u2080"} {"\u2248"} {a0_ms2.toExponential(1)} m/s{"\u00B2"} ({"\u2248"} {a0_kpc} (km/s){"\u00B2"}/kpc)
                 below which the observed gravitational acceleration systematically exceeds
-                what baryonic matter alone predicts. This is detected across all {nGalaxies} galaxies
-                with {rms} dex scatter.
+                what baryonic matter alone predicts. This is detected across all {sparcNGalaxies} galaxies
+                with {sparcRMS} dex scatter.
               </p>
             </div>
 
@@ -131,7 +135,8 @@ export default function ConclusionsPage() {
               <p className="text-xs text-slate-300 leading-relaxed">
                 The observed value matches the cosmological prediction within {matchPct}%.
                 Predicted: {predicted.toExponential(2)} m/s{"\u00B2"}.
-                Observed: {A0_MS2.toExponential(1)} m/s{"\u00B2"}.
+                Observed: {a0_ms2.toExponential(1)} m/s{"\u00B2"}.
+                {"\u03B5"} = {epsilon} vs 1/(2{"\u03C0"}) = {oneOver2Pi}.
                 This is either a deep physical connection or a remarkable numerical coincidence.
                 {"\u039B"}CDM has no explanation for this match.
               </p>
@@ -263,7 +268,7 @@ export default function ConclusionsPage() {
                   <div className="text-xs text-rose-400 font-bold mb-1">Problems:</div>
                   <ul className="text-xs text-slate-300 space-y-1 list-none">
                     <li>{"\u2717"} Different feedback models give different a{"\u2080"}</li>
-                    <li>{"\u2717"} Simulated scatter (0.08{"\u2013"}0.17 dex) exceeds observed (0.057 dex)</li>
+                    <li>{"\u2717"} Simulated scatter (0.08{"\u2013"}0.17 dex) exceeds observed ({obsMAD} dex MAD)</li>
                     <li>{"\u2717"} No mechanism produces exactly cH{"\u2080"}/2{"\u03C0"}</li>
                     <li>{"\u2717"} Must explain why no galaxy property modulates a{"\u2080"}</li>
                   </ul>
@@ -415,11 +420,11 @@ export default function ConclusionsPage() {
                   a{"\u2080"} = cH{"\u2080"} / 2{"\u03C0"}
                 </div>
                 <div className="text-sm text-slate-400 mt-2">
-                  {predicted.toExponential(2)} m/s{"\u00B2"} predicted {"\u2014"} {A0_MS2.toExponential(1)} m/s{"\u00B2"} observed
+                  {predicted.toExponential(2)} m/s{"\u00B2"} predicted {"\u2014"} {a0_ms2.toExponential(1)} m/s{"\u00B2"} observed
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-4 leading-relaxed italic">
-                Based on analysis of {nGalaxies} SPARC + LITTLE THINGS galaxies, {nPoints.toLocaleString()} rotation curve measurements,
+                Based on analysis of {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {sparcNPoints.toLocaleString()} rotation curve measurements,
                 with 0 free parameters.
               </p>
             </div>
