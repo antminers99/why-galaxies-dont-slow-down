@@ -37,7 +37,7 @@ The project is structured as a pnpm monorepo, facilitating shared libraries and 
     *   **Optimization:** 2-phase grid search optimizer for model parameters.
     *   **Analysis Tools:** Discovery Mode for anomalies, per-galaxy MSE table, residual analysis, generalization score.
     *   **Research Lab:** Full benchmark across all formulas and galaxies, regional analysis, k-consistency scoring, units normalization.
-    *   **Advanced Research Pages:** Correlations Explorer, Theoretical Framework (derivation, Law Test, density profiles), Stress Test (outlier analysis, categories), RAR Residual Analysis (density correction fit, validation pipeline), Validation Pipeline (statistical tests, replication, Monte Carlo), Discovery (density-corrected RAR law), External Replication (LITTLE THINGS data), Dark Matter Fraction, Baryon-Halo Coupling.
+    *   **Advanced Research Pages:** Correlations Explorer, Theoretical Framework (derivation, Law Test, density profiles), Stress Test (outlier analysis, categories), RAR Residual Analysis (density correction fit, validation pipeline), Validation Pipeline (statistical tests, replication, Monte Carlo), Discovery (density-corrected RAR law), External Replication (LITTLE THINGS data), Dark Matter Fraction, Baryon-Halo Coupling, Redshift Lab, Cluster Test, Break Test (Phase C: 4 robustness tests — null test, Σ_bar scramble, M/L stress, distance Monte Carlo).
 *   **Design System:** Constants like `G = 4.3009e-6 kpc·(km/s)²/M_sun` are used. Formula validation is performed using `mathjs` before persistence.
 
 **API Server (Backend - `api-server`):**

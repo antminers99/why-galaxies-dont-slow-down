@@ -22,6 +22,7 @@ import ConclusionsPage from "@/pages/conclusions";
 import EquationPage from "@/pages/equation";
 import RedshiftLabPage from "@/pages/redshift-lab";
 import ClusterTestPage from "@/pages/cluster-test";
+import BreakTestPage from "@/pages/break-test";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/equation" component={EquationPage} />
       <Route path="/redshift-lab" component={RedshiftLabPage} />
       <Route path="/cluster-test" component={ClusterTestPage} />
+      <Route path="/break-test" component={BreakTestPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -36,6 +36,7 @@ TABLE OF CONTENTS
   PART XX   — MODEL BUILDER FORMULAS
   PART XXI  — PHYSICAL CONSTANTS USED
   PART XXII — HONEST VERDICT
+  PART XXIII— PHASE C: TRYING TO BREAK THE IDEA
 
 ================================================================================
 PART I: ROBUST EMPIRICAL FINDINGS
@@ -1039,6 +1040,143 @@ scale this close to cH₀/2π appears in the data:
   a₀ = cH₀ / 2π
 
   1.08×10⁻¹⁰ m/s² predicted — 1.2×10⁻¹⁰ m/s² observed
+
+================================================================================
+PART XXIII: PHASE C — TRYING TO BREAK THE IDEA
+================================================================================
+
+"If you can't break your own idea, it starts to deserve a physical
+explanation. If you can break it, you've saved yourself years."
+
+Four rigorous tests were applied to determine whether the observed
+signal (f_DM anti-correlation with Σ_bar, universal a₀) is a genuine
+physical phenomenon or an artifact of methodology, assumptions, or data.
+
+BASELINE (Real Signal)
+  Dataset: 175 galaxies with valid Σ_bar and V_max
+  Slope b = −0.1696
+  Simple r = −0.4733
+  Partial r|V_max = −0.6339
+
+────────────────────────────────────────────────────────────────────────
+TEST 1: NULL TEST (Scrambled ΔR AR)
+────────────────────────────────────────────────────────────────────────
+Method: Shuffle the RAR residuals (meanDeltaOuter) randomly across
+galaxies 1000 times, breaking any real correlation. Then re-compute
+the slope and r against log(Σ_bar).
+
+If the signal is an artifact of the analysis pipeline or data structure,
+it should survive shuffling. If it's real, shuffling should destroy it.
+
+Results (1000 shuffles):
+  Mean null slope:    −0.0005 ± 0.0271
+  Real slope:         −0.1696
+  p-value (slope):    < 0.001 (0/1000 as extreme)
+  p-value (r):        < 0.001 (0/1000 as extreme)
+  Significance:       −6.2σ
+
+VERDICT: ✓ SIGNAL IS REAL — shuffling kills it completely.
+No shuffle out of 1000 produced a slope as steep as the real one.
+
+────────────────────────────────────────────────────────────────────────
+TEST 2: Σ_bar SCRAMBLE (Galaxy Label Permutation)
+────────────────────────────────────────────────────────────────────────
+Method: Randomly reassign Σ_bar values between galaxies 1000 times,
+keeping the RAR residuals in place. This tests whether the Σ_bar–ΔRAR
+coupling is specific or coincidental.
+
+Results (1000 permutations):
+  Mean scrambled slope:     −0.0001 ± 0.0278
+  Real slope:               −0.1696
+  p-value (slope):          < 0.001
+  p-value (partial r):      < 0.001
+  Significance:             −6.1σ
+  Mean scrambled partial r: −0.0004 (vs real −0.6339)
+
+VERDICT: ✓ COUPLING IS REAL — scrambling Σ_bar destroys it.
+The correlation is specific to each galaxy's own Σ_bar, not a
+statistical artifact of the distribution.
+
+────────────────────────────────────────────────────────────────────────
+TEST 3: EXTREME M/L STRESS TEST (Proper Recomputation)
+────────────────────────────────────────────────────────────────────────
+Method: Recompute the full analysis pipeline with 21 different
+combinations of Υ_disk (0.2 to 0.8) and Υ_bulge (0.5, 0.7, 1.0).
+This uses properly recomputed g_bar, f_DM, and Σ_bar for each M/L
+value — not simple rescaling.
+
+Results (from RAR sensitivity grid, 21 Υ combinations):
+  Υ_d=0.2, Υ_b=0.5:  b=−0.095, r=−0.304, partial r=−0.598
+  Υ_d=0.3, Υ_b=0.7:  b=−0.141, r=−0.434, partial r=−0.640
+  Υ_d=0.5, Υ_b=0.7:  b=−0.178, r=−0.515, partial r=−0.656
+  Υ_d=0.7, Υ_b=1.0:  b=−0.207, r=−0.594, partial r=−0.670
+  Υ_d=0.8, Υ_b=1.0:  b=−0.210, r=−0.613, partial r=−0.667
+
+  ALL 21 combinations: slope is NEGATIVE
+  Slope range: −0.095 to −0.210
+  Partial r range: −0.598 to −0.670
+
+VERDICT: ✓ SIGNAL SURVIVES ALL M/L VALUES.
+Even the most extreme M/L assumptions (Υ_disk = 0.2, which is
+unrealistically low) cannot eliminate the anti-correlation.
+The signal is weakened but never reversed.
+
+────────────────────────────────────────────────────────────────────────
+TEST 4: DISTANCE PERTURBATION MONTE CARLO (±30%)
+────────────────────────────────────────────────────────────────────────
+Method: For each of 1000 iterations, perturb every galaxy's distance
+by ±30% (Gaussian). Propagate through: Σ_bar ∝ 1/D², V ∝ √D,
+ΔRAR shifts. Then recompute slope and partial r.
+
+This is a severe test: 30% distance errors are larger than typical
+SPARC uncertainties (10-20%).
+
+Results (1000 iterations, ±30% Gaussian):
+  Mean perturbed slope:     −0.150 ± 0.010
+  95% CI:                   [−0.170, −0.132]
+  Fraction slope negative:  100.0%
+  Mean partial r:           −0.494 (real: −0.634)
+  Fraction partial r neg:   100.0%
+
+a₀ STABILITY UNDER DISTANCE PERTURBATION:
+  Perturbed mean k:  1193 ± 4 (km/s)²/kpc
+  95% CI:            [1187, 1198]
+  CV:                0.3%
+  a₀ remains well-constrained even with ±30% distance noise.
+
+VERDICT: ✓ SIGNAL SURVIVES ±30% DISTANCE ERRORS.
+In 1000/1000 iterations, both slope and partial r remained negative.
+The slope is weakened (~12% reduction) but never eliminated.
+
+════════════════════════════════════════════════════════════════════════
+OVERALL PHASE C RESULT
+════════════════════════════════════════════════════════════════════════
+
+  ✓ Test 1: Null Test (shuffled ΔRAR)           — p < 0.001, 6.2σ
+  ✓ Test 2: Σ_bar Scramble (permutation)        — p < 0.001, 6.1σ
+  ✓ Test 3: Extreme M/L (Υ = 0.2–0.8, 21 combos) — ALL slopes negative
+  ✓ Test 4: Distance Monte Carlo (±30%)         — 100% negative
+
+  Result: 4/4 tests passed.
+
+THE SIGNAL SURVIVES ALL FOUR BREAKING ATTEMPTS.
+It is NOT an artifact of:
+  - Random pairing (null test p < 0.001)
+  - Σ_bar labeling (scramble p < 0.001)
+  - M/L assumptions (21 Υ combinations, all negative)
+  - Distance errors (±30% → 100% still negative)
+
+CONCLUSION: The phenomenon is robust enough to warrant physical
+interpretation. The f_DM–Σ_bar anti-correlation and the characteristic
+acceleration scale a₀ are genuine features of the data that cannot be
+attributed to the tested systematic effects.
+
+NOTE: This does NOT prove the Cosmic Floor hypothesis. It proves that
+the PHENOMENON is real. The interpretation (modified gravity, feedback,
+or cosmological coupling) remains open. What is no longer open is
+whether the signal itself is an artifact — it is not.
+
+Next step: Phase A (can a₀(z) be measured observationally?).
 
 ================================================================================
 PROPOSED MODEL NAME
