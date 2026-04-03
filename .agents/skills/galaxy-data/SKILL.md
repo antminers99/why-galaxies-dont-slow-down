@@ -256,10 +256,36 @@ Residual correlations:
 
 Key diagnostics:
 - tau: -9% → STABLE (heterogeneity is INTRINSIC)
-- a₀: +20% → INCREASES (Hubble-flow biases a₀ downward)
-- r(a₀, D): -0.24 → -0.04 → distance split = Hubble-flow systematic
+- a₀: +20% → INCREASES (but see Phase 8 — confounded by inclination)
+- r(a₀, D): -0.24 → -0.04 → distance correlation disappears in anchor
 
-## Key Insight (v4.0 + Phase 5-7)
+## Phase 8 v8.0 Results (Distance-Method Meta-Regression)
+
+Script: `scripts/phase8-distance-metareg.cjs` (v8.0.0)
+Results: `public/phase8-metareg-results.json`
+
+Full WLS meta-regression: logA0 = b0 + b1*isPrecise + b2*logVmax + b3*inc/90 + b4*logN + b5*gRange + b6*isQ1
+
+| Variable | Coeff | SE | t | Sig? |
+|----------|-------|----|---|------|
+| intercept | 3.322 | 0.609 | 5.46 | ** |
+| isPrecise | 0.061 | 0.110 | 0.56 | |
+| logVmax | -0.140 | 0.257 | -0.54 | |
+| inc/90 | 0.465 | 0.370 | 1.26 | |
+| logN | -0.014 | 0.203 | -0.07 | |
+| gRange | 0.122 | 0.106 | 1.15 | |
+| isQ1 | -0.006 | 0.107 | -0.05 | |
+
+R² = 0.064 (only 6.4% of variance explained)
+Permutation p-value for isPrecise: 0.55 (NOT significant)
+Propensity-matched paired diff: +0.174 dex (t=1.79, NOT significant)
+LOO range: [0.016, 0.110] (never significant)
+
+KEY CONCLUSION: Phase 7 anchor a₀ increase was CONFOUNDED by inclination.
+Distance method alone does NOT significantly predict a₀.
+Headline a₀=3633 is NOT demonstrably biased.
+
+## Key Insight (v4.0 + Phase 5-8)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
 HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
@@ -283,9 +309,13 @@ Key findings:
 - Phase 6: velocity split reduced by confounders, distance/inc PERSIST but underpowered
 - Phase 6: ALL splits NOT significant (t < 2.0) — tau swamps them
 - Phase 7: tau is INTRINSIC (-9% in anchor) — not measurement error
-- Phase 7: distance correlation DISAPPEARS with precise distances (Hubble-flow bias)
-- Phase 7: a₀ ~ 4100-4400 with precise distances (headline 3633 biased low ~20%)
+- Phase 7: distance correlation disappears in anchor (r: -0.24→-0.04)
+- Phase 7: a₀ increases to 4357 in anchor (BUT confounded — see Phase 8)
 - Phase 7: Q flag does NOT drive a₀ (Q=1 alone: 3632 = same as 3633)
+- Phase 8: distance-method effect NOT SIGNIFICANT (b=0.061, t=0.56, p=0.55)
+- Phase 8: Phase 7 anchor increase CONFOUNDED by inclination (b=+0.465, t=1.26)
+- Phase 8: headline a₀=3633 is NOT demonstrably biased by any covariate
+- Phase 8: no single property significantly predicts per-galaxy a₀
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.

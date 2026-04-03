@@ -1,0 +1,230 @@
+{
+  "version": "8.0.0",
+  "timestamp": "2026-04-03T23:47:17.775Z",
+  "description": "Phase 8: Distance-method matched meta-regression",
+  "unadjusted": {
+    "precise": {
+      "label": "Precise (fD=2,3,5)",
+      "nGal": 17,
+      "a0": 4243,
+      "logA0": 3.6277,
+      "se": 0.0667,
+      "tau": 0.2569,
+      "I2": 93,
+      "lo1sig": 2303,
+      "hi1sig": 7818
+    },
+    "hubbleFlow": {
+      "label": "Hubble-flow (fD=1)",
+      "nGal": 30,
+      "a0": 3331,
+      "logA0": 3.5226,
+      "se": 0.0609,
+      "tau": 0.3154,
+      "I2": 93,
+      "lo1sig": 1590,
+      "hi1sig": 6979
+    },
+    "UMaCluster": {
+      "label": "UMa cluster (fD=4)",
+      "nGal": 12,
+      "a0": 3604,
+      "logA0": 3.5567,
+      "se": 0.1045,
+      "tau": 0.341,
+      "I2": 89.6,
+      "lo1sig": 1585,
+      "hi1sig": 8193
+    },
+    "all": {
+      "label": "GOLD+i45 (all)",
+      "nGal": 59,
+      "a0": 3633,
+      "logA0": 3.5602,
+      "se": 0.0405,
+      "tau": 0.2912,
+      "I2": 92.4,
+      "lo1sig": 1846,
+      "hi1sig": 7149
+    }
+  },
+  "fullRegression": {
+    "coefficients": [
+      {
+        "name": "intercept",
+        "coeff": 3.3219452080684664,
+        "se": 0.6087866082111841,
+        "t": 5.456666035787872
+      },
+      {
+        "name": "isPrecise",
+        "coeff": 0.06097241878999954,
+        "se": 0.10951711115186562,
+        "t": 0.5567387429115991
+      },
+      {
+        "name": "logVmax",
+        "coeff": -0.13960807592942126,
+        "se": 0.2568286580513953,
+        "t": -0.5435844932129169
+      },
+      {
+        "name": "inc/90",
+        "coeff": 0.46473071124185567,
+        "se": 0.36970151443632315,
+        "t": 1.2570430282126968
+      },
+      {
+        "name": "logN",
+        "coeff": -0.013836981535137662,
+        "se": 0.20266944823798627,
+        "t": -0.06827364289702645
+      },
+      {
+        "name": "gRange",
+        "coeff": 0.12209308199542622,
+        "se": 0.10576888125592562,
+        "t": 1.1543384079103707
+      },
+      {
+        "name": "isQ1",
+        "coeff": -0.005660649772440372,
+        "se": 0.10724273432243771,
+        "t": -0.052783527091177784
+      }
+    ],
+    "R2": 0.06358596648986237,
+    "n": 59,
+    "p": 7
+  },
+  "propensityMatching": {
+    "nPairs": 16,
+    "meanDiff": 0.174,
+    "seDiff": 0.0974,
+    "tStat": 1.79,
+    "pairs": [
+      {
+        "precise": "NGC0024",
+        "hubble": "NGC4559",
+        "diff": 0.5613
+      },
+      {
+        "precise": "NGC0891",
+        "hubble": "NGC0801",
+        "diff": 0.7594
+      },
+      {
+        "precise": "NGC1705",
+        "hubble": "F571-8",
+        "diff": 0.4007
+      },
+      {
+        "precise": "NGC2403",
+        "hubble": "NGC6015",
+        "diff": 0.545
+      },
+      {
+        "precise": "NGC2683",
+        "hubble": "UGC02885",
+        "diff": -0.1403
+      },
+      {
+        "precise": "NGC2841",
+        "hubble": "NGC3521",
+        "diff": -0.0522
+      },
+      {
+        "precise": "NGC2915",
+        "hubble": "UGC05721",
+        "diff": -0.0457
+      },
+      {
+        "precise": "NGC3198",
+        "hubble": "NGC1003",
+        "diff": -0.0078
+      },
+      {
+        "precise": "NGC3741",
+        "hubble": "UGC00128",
+        "diff": 0.0835
+      },
+      {
+        "precise": "NGC5005",
+        "hubble": "NGC6195",
+        "diff": 0.5867
+      },
+      {
+        "precise": "NGC5055",
+        "hubble": "NGC0289",
+        "diff": 0.3439
+      },
+      {
+        "precise": "NGC5907",
+        "hubble": "IC4202",
+        "diff": -0.9505
+      },
+      {
+        "precise": "NGC6503",
+        "hubble": "UGC03580",
+        "diff": 0.0068
+      },
+      {
+        "precise": "NGC7331",
+        "hubble": "UGC03205",
+        "diff": 0.3019
+      },
+      {
+        "precise": "NGC7814",
+        "hubble": "NGC5033",
+        "diff": 0.2028
+      },
+      {
+        "precise": "UGC08490",
+        "hubble": "UGC09037",
+        "diff": 0.1889
+      }
+    ]
+  },
+  "permutationTest": {
+    "observedCoeff": 0.061,
+    "nPermutations": 10000,
+    "nMoreExtreme": 5674,
+    "pValue": 0.5674
+  },
+  "leaveOneOut": {
+    "mean": 0.061,
+    "sd": 0.0153,
+    "range": [
+      0.0155,
+      0.1101
+    ],
+    "mostInfluential": [
+      {
+        "dropped": "NGC2683",
+        "coeff": 0.1101,
+        "t": 0.98
+      },
+      {
+        "dropped": "LT_DDO_50",
+        "coeff": 0.0155,
+        "t": 0.15
+      },
+      {
+        "dropped": "NGC5907",
+        "coeff": 0.1054,
+        "t": 0.98
+      },
+      {
+        "dropped": "NGC2915",
+        "coeff": 0.0258,
+        "t": 0.23
+      },
+      {
+        "dropped": "NGC5005",
+        "coeff": 0.032,
+        "t": 0.28
+      }
+    ]
+  },
+  "verdict": "NOT SIGNIFICANT"
+}

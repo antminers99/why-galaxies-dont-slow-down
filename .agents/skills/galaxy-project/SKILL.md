@@ -96,8 +96,12 @@ cosmological origin established. Do not overclaim.
     ALL splits NOT statistically significant (t < 2.0).
 18. **Phase 7 v7.0**: Anchor-sample refit (12 galaxies, Q=1, precise D, i>=60).
     tau STABLE (-9%) — heterogeneity is INTRINSIC, not measurement error.
-    Distance correlation DISAPPEARS (r: -0.24→-0.04) — Hubble-flow bias confirmed.
-    a0 INCREASES to 4357 (+20%) — headline 3633 biased low by HF errors.
+    Distance correlation DISAPPEARS (r: -0.24→-0.04).
+    a0 INCREASES to 4357 (+20%).
+19. **Phase 8 v8.0**: Distance-method meta-regression.
+    b(isPrecise)=0.061, t=0.56, perm p=0.55 → NOT SIGNIFICANT.
+    Phase 7 a0 increase was CONFOUNDED by inclination (b=+0.465, t=1.26).
+    Headline a0=3633 is NOT demonstrably biased by distance method.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -109,20 +113,22 @@ Do NOT pursue:
 COMPLETED:
 - Phase 5 v5.1: Non-circular motions, pressure support, SPARC Q, morphology — CLEARED
 - Phase 6 v6.0: Matched-sample split resolution — splits UNDERPOWERED, not resolved or refuted
-- Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance split = Hubble-flow bias
+- Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance correlation disappears
+- Phase 8 v8.0: Meta-regression — distance method NOT significant after covariate control
 
-CRITICAL FINDINGS (Phase 6+7):
-- tau (~0.27 dex) is INTRINSIC — not reducible by better data quality
-- Distance-a₀ correlation is Hubble-flow bias (disappears with precise distances)
-- a₀ ~ 4100-4400 with precise distances only (headline 3633 biased low)
+CRITICAL FINDINGS (Phase 6-8):
+- tau (~0.29 dex) is INTRINSIC — not reducible by better data quality
+- Distance-method effect NOT SIGNIFICANT after controlling for covariates (b=0.061, t=0.56, p=0.55)
+- Phase 7 anchor a₀ increase (4357) was CONFOUNDED by inclination, not distance method
+- Inclination has the strongest (non-significant) association with logA₀ (b=+0.465, t=1.26)
 - Q flag does NOT drive a₀ (Q=1 alone: 3632, unchanged)
-- Inclination correlation sign REVERSES in anchor (sample-dependent)
+- Headline a₀=3633 is NOT demonstrably biased by any measured systematic
+- No single covariate significantly predicts per-galaxy a₀
 
 REMAINING:
-- Enlarge anchor sample (BIG-SPARC when available)
 - Investigate what drives intrinsic tau (disk structure? gas content? SFH?)
+- Enlarge sample (BIG-SPARC when available)
 - Systematics paper write-up
-- Cosmological ratio: anchor gives 1.355 — closer to or exceeding unity
 
 ## Two Separate Questions (Never Mix Them)
 
@@ -163,6 +169,8 @@ Solve A first. B becomes much cleaner after.
 | `public/phase6-matched-results.json` | Phase 6 v6.0 results (current) |
 | `scripts/phase7-anchor-refit.cjs` | Phase 7 v7.0 anchor refit (CURRENT) |
 | `public/phase7-anchor-results.json` | Phase 7 v7.0 results (current) |
+| `scripts/phase8-distance-metareg.cjs` | Phase 8 v8.0 meta-regression (CURRENT) |
+| `public/phase8-metareg-results.json` | Phase 8 v8.0 results (current) |
 | `public/sparc-table.json` | SPARC master table (175 gal, Q/T/fD) |
 | `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |

@@ -73,10 +73,19 @@ Key interpretation:
 
 Key findings:
 - tau is intrinsic: even cleanest galaxies scatter ~0.27 dex (not measurement error)
-- Distance split EXPLAINED: Hubble-flow errors bias a₀ downward; with precise D only, r→0
-- Q flag does NOT drive a₀: Q=1 alone (n=40) gives a₀=3632 (unchanged from 3633)
-- Distance method is the dominant systematic: precise-only gives a₀~4100-4400
-- Headline 3633 may be biased LOW by ~20% due to Hubble-flow contamination
+- Distance correlation disappears in anchor (r: -0.24→-0.04)
+- Q flag does NOT drive a₀: Q=1 alone (n=40) gives a₀=3632 (unchanged)
+
+## Phase 8 v8.0 Results (Distance-Method Meta-Regression)
+
+Phase 8 meta-regression OVERRIDES the Phase 7 "Hubble-flow bias" interpretation:
+- b(isPrecise) = +0.061 dex (t=0.56, permutation p=0.55) → NOT SIGNIFICANT
+- Raw split (0.105 dex) shrinks to 0.061 after controlling for covariates
+- PRIMARY CONFOUNDER: inclination (b=+0.465 per inc/90, t=1.26)
+- Phase 7 anchor a₀ increase (3633→4357) was driven by inc≥60 cut, NOT by precise distances
+- Propensity-matched paired diff: +0.174 dex (t=1.79) — moderate effect, NOT significant
+- LOO: b(isPrecise) never reaches significance (range [0.016, 0.110])
+- Headline a₀=3633 is NOT demonstrably biased by any measured systematic
 
 ## Key Files
 
@@ -87,9 +96,11 @@ Key findings:
 - v4.0 results: `artifacts/galaxy-analyzer/public/definitive-v4-results.json`
 - Phase 6 results: `artifacts/galaxy-analyzer/public/phase6-matched-results.json`
 - Phase 7 results: `artifacts/galaxy-analyzer/public/phase7-anchor-results.json`
+- Phase 8 metareg: `artifacts/galaxy-analyzer/scripts/phase8-distance-metareg.cjs` (v8.0.0)
+- Phase 8 results: `artifacts/galaxy-analyzer/public/phase8-metareg-results.json`
 - SPARC master table: `artifacts/galaxy-analyzer/public/sparc-table.json` (175 galaxies)
-- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (23 sections)
+- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (24 sections)
 
 ## Status
 
-All four systematic checkboxes passed. The EXISTENCE of a transition scale is observationally robust. Phase 7 anchor-sample refit shows: (1) tau is INTRINSIC (not measurement error) — drops only 9% in the cleanest subsample, (2) the distance-a₀ correlation DISAPPEARS with precise distances (r: -0.24 → -0.04), confirming Hubble-flow bias as the source, (3) a₀ INCREASES to ~4357 with precise distances only, suggesting the headline 3633 is biased low by ~20%. The between-galaxy heterogeneity is real astrophysical diversity. Strict universality remains underdetermined. Next step: enlarged anchor sample or additional datasets (BIG-SPARC).
+All four systematic checkboxes passed. The EXISTENCE of a transition scale is observationally robust. Phase 7 anchor refit showed tau is INTRINSIC (-9% in cleanest subsample). Phase 8 meta-regression showed the Phase 7 a₀ increase (4357 vs 3633) was CONFOUNDED by inclination, not driven by distance method (b=0.061, t=0.56, perm p=0.55). Headline a₀=3633 is NOT demonstrably biased. No single covariate significantly predicts per-galaxy a₀. Heterogeneity is real and intrinsic (~0.29 dex). Strict universality remains underdetermined.

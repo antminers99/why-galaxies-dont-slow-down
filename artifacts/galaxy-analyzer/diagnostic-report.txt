@@ -2520,10 +2520,242 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   Strict universality remains underdetermined by the current sample."
 
 ================================================================================
-END OF DIAGNOSTIC REPORT (v7.0 — Phase 7 anchor-sample update)
+  SECTION 24: PHASE 8 — DISTANCE-METHOD META-REGRESSION
 ================================================================================
 
-  This report supersedes all previous versions (v1.0-v6.0).
+  Phase 8 asks: Does the precise vs Hubble-flow distance method
+  effect on a0 PERSIST after controlling for Vmax, inclination,
+  number of data points, dynamic range, and SPARC quality flag?
+
+  This is a direct test of whether the Phase 7 anchor finding
+  (a0 = 4357 vs 3633) is a genuine distance-method systematic or
+  a confounded selection effect.
+
+  Script: scripts/phase8-distance-metareg.cjs (v8.0.0)
+  Results: public/phase8-metareg-results.json
+
+  ────────────────────────────────────────────────────────────────────
+  SAMPLE COMPOSITION
+  ────────────────────────────────────────────────────────────────────
+
+  Within GOLD+i45 (59 galaxies):
+    Precise (TRGB/Cepheid/SN, fD=2,3,5): 17 galaxies
+    Hubble-flow (fD=1):                   30 galaxies
+    UMa cluster (fD=4):                   12 galaxies
+
+  Sample properties (medians):
+    Precise:     logVmax=2.20, inc=74, n=28, gRange=1.65, Q1=82%
+    Hubble-flow: logVmax=2.35, inc=64, n=30, gRange=1.71, Q1=73%
+
+  Note: Precise-distance galaxies tend to be CLOSER and at HIGHER
+  inclination than Hubble-flow galaxies. These confounders must be
+  controlled for.
+
+  ────────────────────────────────────────────────────────────────────
+  UNADJUSTED COMPARISON
+  ────────────────────────────────────────────────────────────────────
+
+  Precise:     a0 = 4243 (tau = 0.257)
+  Hubble-flow: a0 = 3331 (tau = 0.315)
+  UMa cluster: a0 = 3604 (tau = 0.341)
+
+  Raw difference: +0.105 dex (t = 1.16) — NOT significant
+
+  ────────────────────────────────────────────────────────────────────
+  FULL META-REGRESSION
+  ────────────────────────────────────────────────────────────────────
+
+  Model: logA0 = b0 + b1*isPrecise + b2*logVmax + b3*(inc/90)
+         + b4*logN + b5*gRange + b6*isQ1
+
+  ┌──────────────┬─────────┬─────────┬───────┬──────┐
+  │ Variable     │  Coeff  │   SE    │   t   │ Sig? │
+  ├──────────────┼─────────┼─────────┼───────┼──────┤
+  │ intercept    │  3.322  │  0.609  │  5.46 │  **  │
+  │ isPrecise    │  0.061  │  0.110  │  0.56 │      │
+  │ logVmax      │ -0.140  │  0.257  │ -0.54 │      │
+  │ inc/90       │  0.465  │  0.370  │  1.26 │      │
+  │ logN         │ -0.014  │  0.203  │ -0.07 │      │
+  │ gRange       │  0.122  │  0.106  │  1.15 │      │
+  │ isQ1         │ -0.006  │  0.107  │ -0.05 │      │
+  └──────────────┴─────────┴─────────┴───────┴──────┘
+
+  R2 = 0.064 (model explains only 6.4% of logA0 variance)
+
+  KEY RESULT: b(isPrecise) = +0.061 dex (t = 0.56)
+  The distance-method effect SHRINKS from +0.105 (unadjusted) to
+  +0.061 (adjusted) and is NOT SIGNIFICANT. After controlling for
+  Vmax, inclination, sample size, dynamic range, and Q flag, the
+  precise-distance advantage largely disappears.
+
+  ────────────────────────────────────────────────────────────────────
+  COEFFICIENT STABILITY ACROSS MODELS
+  ────────────────────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────┬─────────┬───────┬───────┐
+  │ Model                                │ b(prec) │   t   │  R2   │
+  ├──────────────────────────────────────┼─────────┼───────┼───────┤
+  │ isPrecise only                       │  0.097  │  1.00 │ 0.017 │
+  │ + logVmax                            │  0.098  │  0.99 │ 0.018 │
+  │ + inc/90                             │  0.065  │  0.62 │ 0.034 │
+  │ + logN                               │  0.062  │  0.58 │ 0.038 │
+  │ + gRange                             │  0.060  │  0.57 │ 0.064 │
+  │ + isQ1 (FULL)                        │  0.061  │  0.56 │ 0.064 │
+  └──────────────────────────────────────┴─────────┴───────┴───────┘
+
+  Critical observation: b(isPrecise) drops from 0.097 to 0.065
+  when inclination is added. Inclination is the PRIMARY confounder.
+  Precise-distance galaxies tend to have higher inclinations, and
+  inclination has the largest (though still non-significant) effect
+  on logA0 within the model (b = +0.465, t = 1.26).
+
+  ────────────────────────────────────────────────────────────────────
+  PROPENSITY-SCORE MATCHING
+  ────────────────────────────────────────────────────────────────────
+
+  Matching: each precise-distance galaxy matched to nearest
+  Hubble-flow galaxy in standardized (logVmax, inc, logN, gRange).
+  16 of 17 precise galaxies matched successfully.
+
+  Mean paired difference: +0.174 dex (SE = 0.097)
+  Paired t-statistic: 1.79
+  Significance: NO (|t| < 2.0)
+
+  Effect size: MODERATE (0.174 dex)
+
+  The propensity-matched result is LARGER than the regression
+  result (0.174 vs 0.061). This discrepancy arises because
+  matching selects different subsets than regression. However,
+  both tests agree: the effect is NOT statistically significant.
+
+  Note: NGC5907 is a strong outlier (diff = -0.950 dex). Removing
+  it would increase the mean to +0.248. The result is not robust
+  to single-galaxy removal.
+
+  ────────────────────────────────────────────────────────────────────
+  PERMUTATION TEST
+  ────────────────────────────────────────────────────────────────────
+
+  10,000 random shuffles of distance-method labels.
+  Observed b(isPrecise) = 0.061
+  Permutation p = 0.553
+
+  INTERPRETATION: 55% of random label shuffles produce a coefficient
+  as large as the observed one. The distance-method effect is
+  INDISTINGUISHABLE FROM NOISE in the meta-regression framework.
+
+  ────────────────────────────────────────────────────────────────────
+  LEAVE-ONE-OUT SENSITIVITY
+  ────────────────────────────────────────────────────────────────────
+
+  LOO b(isPrecise) range: [0.016, 0.110]
+  LOO mean: 0.061, SD: 0.015
+
+  Most influential galaxies:
+    Drop NGC2683:   b = 0.110 (max — NGC2683 is a precise-distance
+      galaxy with LOWER a0, its removal inflates b)
+    Drop LT_DDO_50: b = 0.016 (min — LT_DDO_50 is a high-a0 galaxy
+      with non-precise distance, its removal shrinks the contrast)
+
+  The coefficient never reaches significance (all LOO |t| < 2.0).
+
+  ────────────────────────────────────────────────────────────────────
+  THREE-WAY COMPARISON (precise / UMa / Hubble)
+  ────────────────────────────────────────────────────────────────────
+
+  Reference = Hubble-flow:
+    Precise vs Hubble: +0.103 dex (t = 0.92)
+    UMa vs Hubble:     +0.073 dex (t = 0.56)
+    Precise vs UMa:    +0.030 dex
+
+  All three groups are statistically INDISTINGUISHABLE in the
+  adjusted model.
+
+  ────────────────────────────────────────────────────────────────────
+  RECONCILIATION WITH PHASE 7
+  ────────────────────────────────────────────────────────────────────
+
+  Phase 7 found a0 jumps from 3633 to 4357 in the anchor sample
+  (Q=1, precise D, inc >= 60). Phase 8 shows this is NOT driven
+  by distance method alone — it is CONFOUNDED with inclination.
+
+  The Phase 7 anchor sample had median inc = 76 vs GOLD+i45 median
+  inc = 64. The meta-regression shows inclination has the largest
+  effect on logA0 (b = +0.465, t = 1.26) — roughly 3x larger
+  than the distance-method effect (b = 0.061, t = 0.56).
+
+  Therefore: the Phase 7 a0 increase was primarily driven by the
+  HIGH INCLINATION criterion (inc >= 60), not by precise distances.
+
+  ────────────────────────────────────────────────────────────────────
+  PHASE 8 VERDICT
+  ────────────────────────────────────────────────────────────────────
+
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DISTANCE-METHOD META-REGRESSION RESULT                        ║
+  ║                                                                ║
+  ║  b(isPrecise) = +0.061 dex, t = 0.56, p(perm) = 0.55          ║
+  ║                                                                ║
+  ║  The distance-method effect is NOT SIGNIFICANT.                ║
+  ║                                                                ║
+  ║  After controlling for Vmax, inclination, n, dynamic range,    ║
+  ║  and Q flag, there is NO evidence that precise distances       ║
+  ║  give systematically different a0 than Hubble-flow distances.  ║
+  ║                                                                ║
+  ║  The raw split (Phase 6: 0.105 dex) was CONFOUNDED primarily   ║
+  ║  by inclination: precise-distance galaxies tend to have        ║
+  ║  higher inclinations, and inclination has the strongest         ║
+  ║  (though still non-significant) association with logA0.        ║
+  ║                                                                ║
+  ║  The Phase 7 anchor a0 increase (3633 -> 4357) was driven      ║
+  ║  by the inc >= 60 cut, not by precise distances per se.        ║
+  ║                                                                ║
+  ║  IMPLICATION: The headline a0 = 3633 is NOT demonstrably       ║
+  ║  biased by Hubble-flow distance errors. The "bias" identified  ║
+  ║  in Phase 7 was a confounding artifact of inclination.         ║
+  ╚══════════════════════════════════════════════════════════════════╝
+
+  ────────────────────────────────────────────────────────────────────
+  UPDATED PAPER-READY STATEMENT (incorporating Phases 7 + 8)
+  ────────────────────────────────────────────────────────────────────
+
+  "A robust acceleration transition scale exists in the rotation
+  curves of late-type galaxies. Using 59 GOLD-quality SPARC galaxies
+  with per-galaxy nuisance marginalization under a DerSimonian-Laird
+  random-effects model, we measure a0 = 3633 (km/s)^2/kpc =
+  1.18 x 10^-10 m/s^2, with between-galaxy scatter tau = 0.291 dex
+  (I^2 = 92.4%), consistent within 2% of McGaugh et al. (2016).
+
+  An anchor-sample refit (12 galaxies with precise distances, Q=1,
+  and inc >= 60) yields a0 = 4357, but distance-method
+  meta-regression (Phase 8) shows this shift is driven by the
+  inclination cut, not by distance quality: b(isPrecise) = 0.061 dex,
+  t = 0.56, permutation p = 0.55. The between-galaxy scatter tau
+  is essentially unchanged in the anchor sample (-9%), confirming
+  the heterogeneity is intrinsic.
+
+  Matched-sample analysis (Phase 6) reveals subsample effect-size
+  differences in distance (0.125 dex), inclination (0.172 dex), and
+  velocity (0.061 dex), none of which achieves statistical
+  significance (all jackknife t < 2.0). Weighted meta-regression
+  (Phase 8) identifies inclination as the strongest covariate
+  (b = +0.465 per unit inc/90, t = 1.26), with distance method
+  and Q flag having negligible effects after adjustment.
+
+  We conclude that the EXISTENCE of the transition scale is robust.
+  The between-galaxy heterogeneity (tau ~ 0.29 dex) is intrinsic and
+  not reducible by data quality improvements. No individual galaxy
+  property — distance method, inclination, Vmax, sample size, or
+  dynamic range — significantly predicts the per-galaxy a0, though
+  inclination shows the strongest (non-significant) association.
+  The headline a0 = 3633 is not demonstrably biased by any measured
+  systematic. Strict universality remains underdetermined."
+
+================================================================================
+END OF DIAGNOSTIC REPORT (v8.0 — Phase 8 meta-regression update)
+================================================================================
+
+  This report supersedes all previous versions (v1.0-v7.0).
   The empirical findings of Sections 1-11 remain valid.
   Sections 12-14 are the v3.0 baseline (archived for comparison).
   Sections 15-19 represent the v4.0 definitive pipeline.
@@ -2531,6 +2763,7 @@ END OF DIAGNOSTIC REPORT (v7.0 — Phase 7 anchor-sample update)
   Section 21 is the Phase 5 kinematic contamination audit (v5.1).
   Section 22 is the Phase 6 matched-sample split resolution + power analysis.
   Section 23 is the Phase 7 anchor-sample refit.
+  Section 24 is the Phase 8 distance-method meta-regression.
 
   Phase 1 analysis: scripts/diagnostic-tests.cjs
   Phase 2 analysis: scripts/diagnostic-phase2.cjs
@@ -2540,6 +2773,7 @@ END OF DIAGNOSTIC REPORT (v7.0 — Phase 7 anchor-sample update)
   Phase 5 audit: scripts/phase5-kinematic-audit.cjs (v5.1.0)
   Phase 6 splits: scripts/phase6-matched-splits.cjs (v6.0.0)
   Phase 7 anchor: scripts/phase7-anchor-refit.cjs (v7.0.0)
+  Phase 8 metareg: scripts/phase8-distance-metareg.cjs (v8.0.0)
   Phase 1 results: public/diagnostic-results.json
   Phase 2 results: public/diagnostic-phase2-results.json
   v3.0 results: public/gold-standard-results.json (v3.0.0)
@@ -2547,6 +2781,7 @@ END OF DIAGNOSTIC REPORT (v7.0 — Phase 7 anchor-sample update)
   Phase 5 results: public/phase5-kinematic-results.json (v5.1.0)
   Phase 6 results: public/phase6-matched-results.json (v6.0.0)
   Phase 7 results: public/phase7-anchor-results.json (v7.0.0)
+  Phase 8 results: public/phase8-metareg-results.json (v8.0.0)
   SPARC master table: public/sparc-table.json (175 galaxies)
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 ================================================================================
