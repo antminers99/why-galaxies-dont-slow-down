@@ -55,7 +55,6 @@ export default function ConclusionsPage() {
   const rVmax = phi ? phi.rVmaxA0 : 0.10;
   const rRmax = phi ? phi.otherVariables.rRmax : -0.04;
   const cvWorse = phi ? phi.calibration.cvImprovement : -13;
-  const obsMAD = simA0 ? simA0.observational.combined.madA0 : 0.457;
 
   return (
     <Layout>
@@ -80,7 +79,7 @@ export default function ConclusionsPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">I</div>
             <div>
               <h2 className="text-xl font-bold text-white">What We Know for Certain</h2>
-              <p className="text-xs text-slate-400">Empirical facts from {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {nPoints.toLocaleString()} data points</p>
+              <p className="text-xs text-slate-400">Empirical facts from {sparcNGalaxies} SPARC galaxies (+ LITTLE THINGS dwarfs), {nPoints.toLocaleString()} data points</p>
             </div>
           </div>
 
@@ -265,7 +264,7 @@ export default function ConclusionsPage() {
                   <div className="text-xs text-rose-400 font-bold mb-1">Problems:</div>
                   <ul className="text-xs text-slate-300 space-y-1 list-none">
                     <li>{"\u2717"} Different feedback models give different a{"\u2080"}</li>
-                    <li>{"\u2717"} Simulated scatter (0.08{"\u2013"}0.17 dex) exceeds observed ({obsMAD} dex MAD)</li>
+                    <li>{"\u2717"} Simulated scatter (0.08{"\u2013"}0.17 dex RMS) exceeds observed (0.057 dex intrinsic, McGaugh+2016)</li>
                     <li>{"\u2717"} No mechanism produces exactly cH{"\u2080"}/2{"\u03C0"}</li>
                     <li>{"\u2717"} Must explain why no galaxy property modulates a{"\u2080"}</li>
                   </ul>
@@ -421,7 +420,7 @@ export default function ConclusionsPage() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-4 leading-relaxed italic">
-                Based on analysis of {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {nPoints.toLocaleString()} rotation curve measurements,
+                Based on analysis of {sparcNGalaxies} SPARC galaxies (+ LITTLE THINGS dwarfs), {nPoints.toLocaleString()} rotation curve measurements,
                 with 0 free parameters.
               </p>
             </div>
