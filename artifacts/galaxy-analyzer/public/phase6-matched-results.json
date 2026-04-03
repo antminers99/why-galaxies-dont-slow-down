@@ -79,7 +79,7 @@
         "tStat": 1.03,
         "significant": false
       },
-      "verdict": "UNRESOLVED"
+      "verdict": "UNDERPOWERED"
     },
     "Inclination": {
       "raw": {
@@ -144,7 +144,7 @@
         "tStat": 1.53,
         "significant": false
       },
-      "verdict": "UNRESOLVED"
+      "verdict": "UNDERPOWERED"
     },
     "Velocity": {
       "raw": {
@@ -209,8 +209,58 @@
         "tStat": 0.77,
         "significant": false
       },
-      "verdict": "INCONCLUSIVE"
+      "verdict": "REDUCED_BY_MATCHING_UNDERPOWERED"
     }
   },
-  "overall": "UNRESOLVED"
+  "overall": "UNDERDETERMINED_BY_SAMPLE_SIZE",
+  "powerAnalysis": {
+    "description": "Galaxies needed to detect observed effect sizes at stated significance",
+    "currentSample": 59,
+    "forT2": {
+      "Inclination": {
+        "nNeeded": 101,
+        "ratio": 1.7,
+        "effectDex": 0.153
+      },
+      "Distance": {
+        "nNeeded": 227,
+        "ratio": 3.8,
+        "effectDex": 0.095
+      },
+      "Velocity": {
+        "nNeeded": 397,
+        "ratio": 6.7,
+        "effectDex": 0.071
+      }
+    },
+    "for80pct": {
+      "Inclination": {
+        "nNeeded": 198,
+        "ratio": 3.4
+      },
+      "Distance": {
+        "nNeeded": 444,
+        "ratio": 7.5
+      },
+      "Velocity": {
+        "nNeeded": 777,
+        "ratio": 13.2
+      }
+    },
+    "matchedPairs": {
+      "Distance": {
+        "currentPairs": 17,
+        "neededPairs": 60
+      },
+      "Inclination": {
+        "currentPairs": 16,
+        "neededPairs": 42
+      },
+      "Velocity": {
+        "currentPairs": 12,
+        "neededPairs": 105
+      }
+    }
+  },
+  "paperStatement": "A robust acceleration transition scale exists in galaxy rotation curves. The EXISTENCE of the scale is observationally robust. Whether its PRECISE VALUE is strictly universal cannot be determined with the current sample of 59 galaxies. The limiting factor is statistical power, not methodology."
 }

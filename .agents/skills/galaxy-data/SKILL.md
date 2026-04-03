@@ -204,9 +204,17 @@ Results: `public/phase6-matched-results.json`
 
 | Split | Raw (dex) | Matched (dex) | Paired t | JK t | Verdict |
 |-------|-----------|---------------|----------|------|---------|
-| Distance | 0.105 | 0.125 | 1.07 | 1.03 | UNRESOLVED, not significant |
-| Inclination | 0.153 | 0.172 | 1.24 | 1.53 | UNRESOLVED, not significant |
-| Velocity | 0.135 | 0.061 | 0.77 | 0.77 | INCONCLUSIVE, not significant |
+| Distance | 0.105 | 0.125 | 1.07 | 1.03 | Underpowered |
+| Inclination | 0.153 | 0.172 | 1.24 | 1.53 | Underpowered |
+| Velocity | 0.135 | 0.061 | 0.77 | 0.77 | Reduced by matching |
+
+Power analysis (galaxies needed to reach t=2.0 / 80% power):
+- Inclination: ~101 / ~198 (closest to detection, 1.7x current)
+- Distance: ~227 / ~444 (3.8x current)
+- Velocity: ~397 / ~777 (6.7x current)
+
+Phase 6 verdict: UNDERDETERMINED by current sample size.
+Splits not refuted, not confirmed. Problem is sample size, not pipeline.
 
 Distance binning (continuous gradient):
 - D < 10 Mpc: n=18, a₀=4116

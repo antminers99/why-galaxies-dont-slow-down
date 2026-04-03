@@ -25,21 +25,22 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-We independently recover a₀ ≈ 1.18×10⁻¹⁰ m/s² from 175 SPARC + 22 LITTLE THINGS galaxies, within 2% of the McGaugh+2016 value. The Radial Acceleration Relation is confirmed as a tight empirical law. Phase 5 v5.1 kinematic contamination audit showed a₀ survives non-circular motion tests (0.006 dex) and pressure support corrections (+0.033 dex). Phase 6 matched-sample analysis attempted to resolve three remaining red-flag splits: Distance (0.125 dex matched, t=1.07) — UNRESOLVED but not significant. Inclination (0.172 dex matched, t=1.24) — UNRESOLVED but not significant. Velocity (0.061 dex matched, t=0.77) — INCONCLUSIVE, largely explained by distance/inc confounders. None of the splits reach statistical significance (all t < 2.0) because galaxy-to-galaxy scatter (tau=0.29 dex) swamps the split effects. The transition scale is real and robust; the precise value is limited by residual systematics.
+We independently recover a₀ ≈ 1.18×10⁻¹⁰ m/s² from 175 SPARC + 22 LITTLE THINGS galaxies, within 2% of the McGaugh+2016 value. The Radial Acceleration Relation is confirmed as a tight empirical law. Phase 5 v5.1 kinematic contamination audit showed a₀ survives non-circular motion tests (0.006 dex) and pressure support corrections (+0.033 dex). Phase 6 matched-sample analysis found: the three remaining red-flag splits have non-trivial effect sizes (distance 0.125 dex, inclination 0.172 dex, velocity 0.061 dex), but NONE reach statistical significance (all t < 2.0). Phase 6 did NOT refute these splits, and did NOT confirm them — it showed the current 59-galaxy sample is UNDERPOWERED to decide. The EXISTENCE of the transition scale is robust. Whether its PRECISE VALUE is strictly universal cannot be determined with current data. The limiting factor is sample size, not methodology. Power analysis: need ~101-397 GOLD+i45 galaxies (1.7-6.7x current) to resolve.
 
 ## Phase 6 Key Results (Matched-Sample Split Resolution)
 
 | Split | Raw (dex) | Matched (dex) | JK t-stat | Verdict |
 |-------|-----------|---------------|-----------|---------|
-| Distance (precise vs HF) | 0.105 (25%) | 0.125 (29%) | 1.03 | UNRESOLVED, not significant |
-| Inclination (≥60 vs 45-59) | 0.153 (33%) | 0.172 (38%) | 1.53 | UNRESOLVED, not significant |
-| Velocity (>150 vs 80-150) | 0.135 (35%) | 0.061 (17%) | 0.77 | INCONCLUSIVE, not significant |
+| Distance (precise vs HF) | 0.105 (25%) | 0.125 (29%) | 1.03 | Underpowered (need ~227 gal) |
+| Inclination (≥60 vs 45-59) | 0.153 (33%) | 0.172 (38%) | 1.53 | Underpowered (need ~101 gal) |
+| Velocity (>150 vs 80-150) | 0.135 (35%) | 0.061 (17%) | 0.77 | Reduced by matching (need ~397 gal) |
 
-Key insights:
-- Velocity split is LARGELY EXPLAINED by confounders (drops 0.135→0.061 dex after matching)
-- Distance split PERSISTS and shows monotonic trend: D<20→a₀~4150, D>40→a₀~2411
-- Inclination split PERSISTS and INCREASES after matching (sin(i) deprojection effect)
-- ALL splits are NOT statistically significant (t < 2.0) — tau swamps them
+Key interpretation:
+- Phase 6 did NOT kill the splits, and did NOT confirm them
+- The splits have non-trivial effect sizes but are NOT statistically significant (all t<2.0)
+- This is a SAMPLE SIZE problem: 59 galaxies is underpowered to resolve effects of this size
+- Velocity split reduced by matching (confounders), distance/inclination persist
+- Power analysis: need 101-397 GOLD+i45 galaxies (currently 59)
 
 ## Phase 5 v5.1 Key Results (Kinematic Audit)
 
@@ -70,4 +71,4 @@ Key insights:
 
 ## Status
 
-All four systematic checkboxes passed. The transition scale a₀ ≈ 1.2×10⁻¹⁰ m/s² is observationally robust. Phase 6 shows the precise value is limited by distance systematics (0.125 dex), inclination systematics (0.172 dex), and irreducible scatter (tau=0.291 dex). None of these splits are statistically significant. Defensible range: a₀ = 2800-4300 (km/s)²/kpc = (0.9-1.4)×10⁻¹⁰ m/s².
+All four systematic checkboxes passed. The EXISTENCE of a transition scale a₀ ≈ 1.2×10⁻¹⁰ m/s² is observationally robust. Phase 6 shows the current 59-galaxy sample is UNDERPOWERED to determine whether the precise a₀ value is strictly universal or varies with distance/inclination/mass. The splits have non-trivial effect sizes but no statistical significance — the problem is now sample size, not methodology. Defensible range: a₀ = 2800-4300 (km/s)²/kpc = (0.9-1.4)×10⁻¹⁰ m/s². Next step: enlarged sample (~100-400 GOLD-quality galaxies) or additional datasets.

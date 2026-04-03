@@ -2212,65 +2212,133 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   │ Velocity      │ 0.071      │ 0.092      │ 0.77       │ No        │
   └───────────────┴────────────┴────────────┴────────────┴───────────┘
 
-  NONE of the three splits reach t >= 2.0. This means that with
-  59 galaxies, the sample simply does not have the statistical
-  power to distinguish these splits from noise. The large scatter
-  (tau ~ 0.29 dex) swamps the split effects (0.07 - 0.15 dex).
+  NONE of the three splits reach t >= 2.0. This does NOT mean
+  the splits are absent — it means the current sample of 59
+  galaxies is UNDERPOWERED to determine whether these effect-size
+  differences are real systematics or statistical fluctuations.
+
+  ────────────────────────────────────────────────────────────────────
+  POWER ANALYSIS
+  ────────────────────────────────────────────────────────────────────
+
+  If the observed effect sizes are the TRUE effects, how many
+  GOLD+i45 galaxies would be needed to achieve t >= 2.0?
+
+  ┌───────────────┬────────────┬───────────┬───────────┬───────────┐
+  │ Split         │ Effect     │ Current n │ Need n    │ Ratio     │
+  │               │ (dex)      │           │ (t=2.0)   │           │
+  ├───────────────┼────────────┼───────────┼───────────┼───────────┤
+  │ Inclination   │ 0.153      │ 59        │ ~101      │ 1.7x      │
+  │ Distance      │ 0.095      │ 59        │ ~227      │ 3.8x      │
+  │ Velocity      │ 0.071      │ 59        │ ~397      │ 6.7x      │
+  └───────────────┴────────────┴───────────┴───────────┴───────────┘
+
+  For 80% power at alpha = 0.05 (two-sided):
+    Inclination:  ~198 galaxies (3.4x current)
+    Distance:     ~444 galaxies (7.5x current)
+    Velocity:     ~777 galaxies (13.2x current)
+
+  From matched-pair analysis:
+    Distance:     need ~60 matched pairs (currently 17)
+    Inclination:  need ~42 matched pairs (currently 16)
+    Velocity:     need ~105 matched pairs (currently 12)
+
+  KEY INSIGHT: The inclination split is the closest to detection
+  (needs only 1.7x current sample). The distance and velocity
+  splits require substantially larger samples. This is a SAMPLE
+  SIZE problem, not a pipeline problem.
 
   ────────────────────────────────────────────────────────────────────
   PHASE 6 VERDICT
   ────────────────────────────────────────────────────────────────────
 
   ╔══════════════════════════════════════════════════════════════════╗
-  ║  PHASE 6 RESULT:                                                ║
+  ║  PHASE 6 RESULT: UNDERDETERMINED BY CURRENT SAMPLE SIZE        ║
   ║                                                                  ║
-  ║  Distance split:    0.125 dex matched, t=1.07 => UNRESOLVED    ║
-  ║  Inclination split: 0.172 dex matched, t=1.24 => UNRESOLVED    ║
-  ║  Velocity split:    0.061 dex matched, t=0.77 => INCONCLUSIVE  ║
+  ║  Phase 6 did NOT refute the three red-flag splits.              ║
+  ║  Phase 6 did NOT confirm them either.                           ║
+  ║  Phase 6 showed the data are UNDERPOWERED to decide.            ║
   ║                                                                  ║
-  ║  KEY FINDING: None of the splits are statistically significant  ║
-  ║  (all t < 2.0). The sample of 59 galaxies lacks the power to   ║
-  ║  distinguish these effects from scatter.                        ║
+  ║  Distance split:    0.125 dex matched, t=1.07                  ║
+  ║    Effect persists at substantial size. Not significant.        ║
+  ║    Need ~227 GOLD+i45 galaxies to resolve (3.8x current).      ║
+  ║                                                                  ║
+  ║  Inclination split: 0.172 dex matched, t=1.24                  ║
+  ║    Largest effect, persists after matching. Not significant.    ║
+  ║    Need ~101 galaxies to resolve (1.7x current). Closest.      ║
+  ║                                                                  ║
+  ║  Velocity split:    0.061 dex matched, t=0.77                  ║
+  ║    Substantially reduced by matching (0.135 -> 0.061 dex).     ║
+  ║    Consistent with velocity proxying for distance/inc.         ║
+  ║    Need ~397 galaxies to resolve (6.7x current).               ║
   ║                                                                  ║
   ║  WHAT THIS MEANS:                                               ║
   ║                                                                  ║
-  ║  1. The velocity split (35% raw) REDUCES after matching on      ║
-  ║     distance and inclination, dropping to 0.061 dex (17%) —    ║
-  ║     INCONCLUSIVE. Consistent with velocity proxying distance.  ║
+  ║  The project has advanced from "there are red flags" to:       ║
+  ║  "there are effect-size differences, but we lack sufficient    ║
+  ║  statistical evidence that they are real."                      ║
   ║                                                                  ║
-  ║  2. The distance split (25% raw) PERSISTS after matching        ║
-  ║     (0.125 dex) and shows a monotonic trend with D.            ║
-  ║     Cannot distinguish Hubble-flow bias from real effect.      ║
-  ║                                                                  ║
-  ║  3. The inclination split (33% raw) PERSISTS and INCREASES      ║
-  ║     after matching (0.172 dex). Consistent with sin(i)         ║
-  ║     deprojection systematics, but underpowered to confirm.     ║
-  ║                                                                  ║
-  ║  4. HOWEVER: none of these effects are statistically detected  ║
-  ║     (all t < 2.0). With tau ~ 0.29 dex, the galaxy-to-galaxy  ║
-  ║     scatter is 2-4x larger than the splits themselves.         ║
+  ║  This is a significant step forward. The transition scale is   ║
+  ║  robust. Whether its PRECISE VALUE is universal or varies      ║
+  ║  with galaxy properties CANNOT BE DETERMINED with 59 galaxies. ║
+  ║  The limiting factor is now sample size, not methodology.      ║
   ╚══════════════════════════════════════════════════════════════════╝
 
   CONCLUSION:
 
-  There is a real, robust transition acceleration scale in galaxy
-  rotation curves. The v4.0 headline value a0 = 3633 (km/s)^2/kpc
-  (= 1.18e-10 m/s^2) stands as the most defensible single number.
+  There is a real, robust acceleration transition scale in galaxy
+  rotation curves. After cleaning, marginalization, hierarchical
+  modeling, and matched-sample testing (Phases 1-6), no subsample
+  split has achieved definitive statistical significance, despite
+  some effect-size differences persisting in distance and inclination.
 
-  The precise value is limited by:
-    (a) Distance systematics (nearby vs distant: ~0.10-0.13 dex)
-    (b) Inclination systematics (sin(i) deprojection: ~0.15-0.17 dex)
-    (c) Irreducible scatter (tau = 0.29 dex)
+  Therefore it cannot currently be determined whether these
+  differences are genuine systematics or fluctuations arising from
+  the large between-galaxy scatter (tau = 0.29 dex).
 
-  The velocity split is NOT an independent effect — it is explained
-  by distance and inclination confounders.
+  The v4.0 headline value a0 = 3633 (km/s)^2/kpc (= 1.18e-10 m/s^2)
+  remains the most defensible single number. Its strict universality
+  (independence from all sample properties) is neither confirmed
+  nor refuted by the current data.
 
   Defensible range: a0 = 2800-4300 (km/s)^2/kpc = (0.9-1.4)e-10 m/s^2
-  This range spans the splits and is dominated by tau.
+  This range spans the observed subsample variation and is dominated
+  by the between-galaxy heterogeneity (tau = 0.29 dex).
 
   The cosmological ratio a0/(cH0/2pi) = 0.87-1.34 across subsamples,
   with the headline value at 1.13. Consistency with unity is possible
   but not established with current statistical power.
+
+  ────────────────────────────────────────────────────────────────────
+  PAPER-READY STATEMENT
+  ────────────────────────────────────────────────────────────────────
+
+  "A robust acceleration transition scale exists in the rotation
+  curves of late-type galaxies. Using 59 GOLD-quality SPARC galaxies
+  (Vmax >= 50 km/s, inc >= 45 deg, n >= 5 points, g_bar dynamic range
+  >= 1 dex) with per-galaxy stellar mass-to-light ratio and distance
+  marginalization under a DerSimonian-Laird random-effects model, we
+  measure a0 = 3633 (km/s)^2/kpc = 1.18 x 10^-10 m/s^2, with
+  between-galaxy scatter tau = 0.291 dex (I^2 = 92.4%). This is
+  consistent within 2% of the McGaugh et al. (2016) value of
+  1.20 x 10^-10 m/s^2.
+
+  Matched-sample analysis reveals effect-size differences associated
+  with distance measurement method (0.125 dex), inclination bin
+  (0.172 dex), and maximum rotation velocity (0.061 dex). However,
+  none of these splits achieves statistical significance (jackknife
+  t = 1.03, 1.53, 0.77 respectively; all < 2.0). Power analysis
+  indicates that resolving these splits at the 5% significance level
+  would require approximately 100-400 GOLD-quality galaxies,
+  depending on the split. The velocity effect is substantially
+  reduced by matching on distance and inclination, suggesting it
+  is not an independent systematic.
+
+  We conclude that the EXISTENCE of the transition scale is
+  observationally robust, but whether its PRECISE VALUE is strictly
+  universal — independent of distance, inclination, and galaxy mass
+  — cannot be determined with the current sample of 59 galaxies.
+  The limiting factor is statistical power, not methodology."
 
 ================================================================================
 END OF DIAGNOSTIC REPORT (v6.0 — Phase 6 matched-sample update)

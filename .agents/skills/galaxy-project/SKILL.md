@@ -104,7 +104,16 @@ Do NOT pursue:
 
 COMPLETED:
 - Phase 5 v5.1: Non-circular motions, pressure support, SPARC Q, morphology — CLEARED
-- Phase 6 v6.0: Matched-sample split resolution — velocity EXPLAINED, distance/inc PERSIST but not significant
+- Phase 6 v6.0: Matched-sample split resolution — showed splits UNDERPOWERED, not resolved or refuted
+
+CRITICAL FINDING (Phase 6):
+- The problem is now SAMPLE SIZE, not methodology
+- 59 galaxies cannot distinguish effect-size splits from noise (tau=0.29 dex swamps them)
+- Need ~101-397 GOLD+i45 galaxies to resolve (1.7-6.7x current)
+
+PRIORITY 1 (next step):
+- Enlarge sample: add datasets, relax cuts strategically, or combine surveys
+- Power analysis done: inclination closest to detection (need 101 gal, 1.7x)
 
 REMAINING:
 - Cosmological ratio interpretation (a₀/(cH₀/2π) = 0.87-1.34 across subsamples)
