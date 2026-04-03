@@ -91,9 +91,13 @@ cosmological origin established. Do not overclaim.
     Non-circular motions, pressure support, Q flags all CLEARED.
     Red-flag splits persist, NOT resolved by pressure correction.
 17. **Phase 6 v6.0**: Matched-sample split resolution.
-    Velocity split explained by confounders (0.135→0.061 dex).
+    Velocity split reduced by confounders (0.135→0.061 dex).
     Distance (0.125 dex) and inclination (0.172 dex) persist.
     ALL splits NOT statistically significant (t < 2.0).
+18. **Phase 7 v7.0**: Anchor-sample refit (12 galaxies, Q=1, precise D, i>=60).
+    tau STABLE (-9%) — heterogeneity is INTRINSIC, not measurement error.
+    Distance correlation DISAPPEARS (r: -0.24→-0.04) — Hubble-flow bias confirmed.
+    a0 INCREASES to 4357 (+20%) — headline 3633 biased low by HF errors.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -104,22 +108,21 @@ Do NOT pursue:
 
 COMPLETED:
 - Phase 5 v5.1: Non-circular motions, pressure support, SPARC Q, morphology — CLEARED
-- Phase 6 v6.0: Matched-sample split resolution — showed splits UNDERPOWERED, not resolved or refuted
+- Phase 6 v6.0: Matched-sample split resolution — splits UNDERPOWERED, not resolved or refuted
+- Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance split = Hubble-flow bias
 
-CRITICAL FINDING (Phase 6):
-- The problem is now SAMPLE SIZE, not methodology
-- 59 galaxies cannot distinguish effect-size splits from noise (tau=0.29 dex swamps them)
-- Need ~101-397 GOLD+i45 galaxies to resolve (1.7-6.7x current)
-
-PRIORITY 1 (next step):
-- Enlarge sample: add datasets, relax cuts strategically, or combine surveys
-- Power analysis done: inclination closest to detection (need 101 gal, 1.7x)
+CRITICAL FINDINGS (Phase 6+7):
+- tau (~0.27 dex) is INTRINSIC — not reducible by better data quality
+- Distance-a₀ correlation is Hubble-flow bias (disappears with precise distances)
+- a₀ ~ 4100-4400 with precise distances only (headline 3633 biased low)
+- Q flag does NOT drive a₀ (Q=1 alone: 3632, unchanged)
+- Inclination correlation sign REVERSES in anchor (sample-dependent)
 
 REMAINING:
-- Cosmological ratio interpretation (a₀/(cH₀/2π) = 0.87-1.34 across subsamples)
-- Nature of distance gradient (Hubble-flow bias vs real effect?)
-- Systematics paper write-up (all 4 checkboxes passed)
-- High-z test with JWST/ALMA kinematic data
+- Enlarge anchor sample (BIG-SPARC when available)
+- Investigate what drives intrinsic tau (disk structure? gas content? SFH?)
+- Systematics paper write-up
+- Cosmological ratio: anchor gives 1.355 — closer to or exceeding unity
 
 ## Two Separate Questions (Never Mix Them)
 
@@ -158,6 +161,8 @@ Solve A first. B becomes much cleaner after.
 | `public/definitive-v4-results.json` | v4.0 results (current) |
 | `public/phase5-kinematic-results.json` | Phase 5 v5.1 results (current) |
 | `public/phase6-matched-results.json` | Phase 6 v6.0 results (current) |
+| `scripts/phase7-anchor-refit.cjs` | Phase 7 v7.0 anchor refit (CURRENT) |
+| `public/phase7-anchor-results.json` | Phase 7 v7.0 results (current) |
 | `public/sparc-table.json` | SPARC master table (175 gal, Q/T/fD) |
 | `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |

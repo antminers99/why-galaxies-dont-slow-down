@@ -1,0 +1,101 @@
+{
+  "version": "7.0.0",
+  "timestamp": "2026-04-03T23:41:00.253Z",
+  "description": "Phase 7: Anchor-sample refit with highest-quality galaxies",
+  "baseline": {
+    "label": "GOLD+i45 (full)",
+    "nGal": 59,
+    "a0": 3633,
+    "logA0": 3.5602,
+    "se": 0.0405,
+    "tau": 0.2912,
+    "I2": 92.4,
+    "ratio": 1.1299,
+    "lo1sig": 1846,
+    "hi1sig": 7149
+  },
+  "tiers": {
+    "tier1_strict": {
+      "label": "ANCHOR (strict)",
+      "nGal": 12,
+      "a0": 4357,
+      "logA0": 3.6392,
+      "se": 0.0816,
+      "tau": 0.265,
+      "I2": 93.9,
+      "ratio": 1.3551,
+      "lo1sig": 2301,
+      "hi1sig": 8251
+    },
+    "tier1_galaxies": [
+      "NGC2841",
+      "NGC5005",
+      "NGC7814",
+      "NGC7331",
+      "NGC5907",
+      "NGC0891",
+      "NGC3198",
+      "NGC2403",
+      "NGC6503",
+      "NGC0024",
+      "UGC01281",
+      "NGC3741"
+    ],
+    "tier2_withUMa": {
+      "label": "ANCHOR+UMa (Q=1, fD!=1, i>=60)",
+      "nGal": 15,
+      "a0": 4131,
+      "logA0": 3.6161,
+      "se": 0.0741,
+      "tau": 0.2686,
+      "I2": 93.3,
+      "ratio": 1.2848,
+      "lo1sig": 2175,
+      "hi1sig": 7846
+    },
+    "tier3_relaxInc": {
+      "label": "ANCHOR (precise+Q1, inc>=45)",
+      "nGal": 14,
+      "a0": 4124,
+      "logA0": 3.6153,
+      "se": 0.0709,
+      "tau": 0.2481,
+      "I2": 93.3,
+      "ratio": 1.2825,
+      "lo1sig": 2277,
+      "hi1sig": 7470
+    },
+    "tier4_Q1only": {
+      "label": "Q=1 only (all dist methods)",
+      "nGal": 40,
+      "a0": 3632,
+      "logA0": 3.5602,
+      "se": 0.0464,
+      "tau": 0.273,
+      "I2": 92.1,
+      "ratio": 1.1297,
+      "lo1sig": 1920,
+      "hi1sig": 6873
+    },
+    "tier5_precDist": {
+      "label": "Precise dist only (any Q)",
+      "nGal": 17,
+      "a0": 4243,
+      "logA0": 3.6277,
+      "se": 0.0667,
+      "tau": 0.2569,
+      "I2": 93,
+      "ratio": 1.3197,
+      "lo1sig": 2303,
+      "hi1sig": 7818
+    }
+  },
+  "diagnostics": {
+    "tauChange_pct": -9,
+    "a0Shift_dex": 0.079,
+    "baselineDistCorr": -0.2352,
+    "anchorDistCorr": -0.0356,
+    "tauInterpretation": "STABLE",
+    "a0Interpretation": "INCREASES"
+  }
+}

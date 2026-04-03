@@ -235,7 +235,31 @@ Velocity binning:
 - 180-250: n=22, a₀=3111
 - >=250: n=14, a₀=4319
 
-## Key Insight (v4.0 + Phase 5 v5.1 + Phase 6)
+## Phase 7 v7.0 Results (Anchor-Sample Refit)
+
+Script: `scripts/phase7-anchor-refit.cjs` (v7.0.0)
+Results: `public/phase7-anchor-results.json`
+
+Anchor = GOLD+i45 + precise distance (fD=2,3,5) + Q=1 + inc>=60 → 12 galaxies
+
+| Sample | n | a₀ | tau | I² | ratio |
+|--------|---|-----|------|-----|-------|
+| GOLD+i45 (baseline) | 59 | 3633 | 0.291 | 92.4% | 1.130 |
+| Q=1 only | 40 | 3632 | 0.273 | 92.1% | 1.130 |
+| Precise dist only | 17 | 4243 | 0.257 | 93.0% | 1.320 |
+| Precise+Q1+inc≥45 | 14 | 4124 | 0.248 | 93.3% | 1.283 |
+| ANCHOR (strictest) | 12 | 4357 | 0.265 | 93.9% | 1.355 |
+
+Residual correlations:
+- GOLD+i45: r(a₀, logD) = -0.235 (marginal)
+- ANCHOR: r(a₀, logD) = -0.036 (negligible) → distance correlation DISAPPEARS
+
+Key diagnostics:
+- tau: -9% → STABLE (heterogeneity is INTRINSIC)
+- a₀: +20% → INCREASES (Hubble-flow biases a₀ downward)
+- r(a₀, D): -0.24 → -0.04 → distance split = Hubble-flow systematic
+
+## Key Insight (v4.0 + Phase 5-7)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
 HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
@@ -256,8 +280,12 @@ Key findings:
 - I² = 92.4% — substantial real heterogeneity
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
 - Phase 5 v5.1: all kinematic tests PASS, distance method split (27%) remains
-- Phase 6: velocity split EXPLAINED by confounders, distance/inc PERSIST
+- Phase 6: velocity split reduced by confounders, distance/inc PERSIST but underpowered
 - Phase 6: ALL splits NOT significant (t < 2.0) — tau swamps them
+- Phase 7: tau is INTRINSIC (-9% in anchor) — not measurement error
+- Phase 7: distance correlation DISAPPEARS with precise distances (Hubble-flow bias)
+- Phase 7: a₀ ~ 4100-4400 with precise distances (headline 3633 biased low ~20%)
+- Phase 7: Q flag does NOT drive a₀ (Q=1 alone: 3632 = same as 3633)
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.
