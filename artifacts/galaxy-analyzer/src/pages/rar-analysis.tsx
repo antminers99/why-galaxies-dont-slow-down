@@ -246,7 +246,7 @@ export default function RARAnalysisPage() {
                     <span className="text-sm font-semibold text-white">{d.tier}</span>
                     <span className="text-xs text-slate-400">n = {d.n}</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-2 text-xs">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs">
                     <div>
                       <div className="text-slate-500">σ(k_ratio)</div>
                       <div className="font-mono text-cyan-400">{d.scatter_k_ratio.toFixed(3)}</div>

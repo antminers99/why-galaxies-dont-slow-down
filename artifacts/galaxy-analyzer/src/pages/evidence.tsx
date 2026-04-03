@@ -701,7 +701,7 @@ export default function EvidencePage() {
                     {excess.bins.map((metricBins: { metric: string; bins: Array<{ bin: string; skipped?: boolean; sigma?: number; deltaB?: number }> }, mi: number) => (
                       <div key={mi}>
                         <h5 className="text-xs font-bold text-slate-300 mb-2">{metricBins.metric}</h5>
-                        <div className="grid grid-cols-3 gap-2">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                           {metricBins.bins.filter((b: { skipped?: boolean }) => !b.skipped).map((b: { bin: string; sigma?: number; deltaB?: number }, bi: number) => {
                             const sig = b.sigma || 0;
                             const sigColor = sig >= 3 ? 'text-emerald-400' : sig >= 2 ? 'text-cyan-400' : 'text-slate-400';

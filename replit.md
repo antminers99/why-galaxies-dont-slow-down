@@ -26,7 +26,7 @@ The project is structured as a pnpm monorepo, facilitating shared libraries and 
 
 **Galaxy Rotation Curve Analyzer (Frontend - `galaxy-analyzer`):**
 
-*   **UI/UX:** Dark space theme with glassmorphism cards. Uses `cyan/teal` for observed data, `orange dashed` for Newtonian models, `purple solid` for custom models, and `amber` for anomalies. Fonts include Space Grotesk (display), Inter (sans), and JetBrains Mono (monospace).
+*   **UI/UX:** Dark space theme with glassmorphism cards. Uses `cyan/teal` for observed data, `orange dashed` for Newtonian models, `purple solid` for custom models, and `amber` for anomalies. Fonts include Space Grotesk (display), Inter (sans), and JetBrains Mono (monospace). **Fully responsive**: sidebar collapses to hamburger menu on screens < 1024px; grids use responsive breakpoints (grid-cols-1 → md:grid-cols-2/3); GlassCard padding adapts to screen size.
 *   **Technical Stack:** React 19, Vite, Tailwind CSS v4, Recharts for visualization, mathjs for formula parsing, PapaParse for CSV, Framer Motion for animations. It is a fully client-side application.
 *   **Key Features:**
     *   **Data Handling:** Dataset upload (.csv/.dat), parsing, and preview. Integration of 175 SPARC galaxies with 3,391 data points.

@@ -79,10 +79,10 @@ export default function AnalysisPage() {
 
   return (
     <Layout>
-      <header className="flex justify-between items-end mb-6">
+      <header className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-6">
         <div>
-          <h1 className="text-3xl font-bold">Rotation Curve Analysis</h1>
-          <p className="text-slate-400 mt-1">Visualize, compare, and discover where models fail.</p>
+          <h1 className="text-2xl md:text-3xl font-bold">Rotation Curve Analysis</h1>
+          <p className="text-slate-400 mt-1 text-sm md:text-base">Visualize, compare, and discover where models fail.</p>
         </div>
         <button 
           onClick={exportGraph}

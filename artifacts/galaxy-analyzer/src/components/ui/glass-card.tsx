@@ -26,7 +26,7 @@ export function GlassCard({ className, children, glow = 'none', animate = true, 
   return (
     <Component 
       className={cn(
-        "glass-card rounded-2xl p-6 relative overflow-hidden",
+        "glass-card rounded-2xl p-4 sm:p-6 relative overflow-hidden",
         glowClasses[glow],
         className
       )}

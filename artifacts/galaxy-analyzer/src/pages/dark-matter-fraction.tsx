@@ -1251,7 +1251,7 @@ export default function DarkMatterFractionPage() {
                           </ScatterChart>
                         </ResponsiveContainer>
                       </div>
-                      <div className="grid grid-cols-3 gap-2 mt-2">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
                         {sim.byType.map(t => (
                           <div key={t.type} className="text-center bg-white/5 rounded-lg p-1.5">
                             <div className="text-[9px] text-slate-500 capitalize">{t.type}</div>

@@ -284,27 +284,27 @@ export default function BaryonHaloCouplingPage() {
   return (
     <Layout>
       <div className="space-y-8">
-        <div className="flex items-start justify-between">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-display font-bold text-white flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
-                <Link2 className="w-7 h-7 text-white" />
+            <h1 className="text-2xl md:text-3xl font-display font-bold text-white flex items-center gap-3">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-violet-500/20 flex-shrink-0">
+                <Link2 className="w-5 h-5 md:w-7 md:h-7 text-white" />
               </div>
               Baryon–Halo Coupling
             </h1>
-            <p className="text-slate-400 mt-2 max-w-2xl">
+            <p className="text-slate-400 mt-2 max-w-2xl text-sm md:text-base">
               Does baryonic surface density track dark matter halo structure itself — not just f_DM?
               If V_DM, r_DMdom, and inner slope all correlate with Sigma_bar after removing Vmax dependence,
               baryons couple directly to halo properties.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-shrink-0">
             {excess && (
-              <div className={`px-5 py-3 rounded-2xl text-sm font-bold ${excess.isDiscovery ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse' : 'bg-violet-500/20 text-violet-400 border border-violet-500/30'}`}>
+              <div className={`px-4 py-2 md:px-5 md:py-3 rounded-2xl text-xs md:text-sm font-bold ${excess.isDiscovery ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse' : 'bg-violet-500/20 text-violet-400 border border-violet-500/30'}`}>
                 {excess.maxSigma.toFixed(1)}σ EXCESS
               </div>
             )}
-            <div className={`px-5 py-3 rounded-2xl text-sm font-bold ${coupling.couplingWins ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}`}>
+            <div className={`px-4 py-2 md:px-5 md:py-3 rounded-2xl text-xs md:text-sm font-bold ${coupling.couplingWins ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'}`}>
               {coupling.passCount}/6 TESTS PASS
             </div>
           </div>
@@ -339,7 +339,7 @@ export default function BaryonHaloCouplingPage() {
           <div className="space-y-6">
             <SectionHeader icon={Activity} title="Phase 1: Coupling Fingerprint" subtitle="Raw correlations + partial r controlling for Vmax + bootstrap CI" />
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {fp.map((f, i) => (
                 <GlassCard key={i} glow={f.matchesExpected ? 'cyan' : 'rose'}>
                   <div className="flex items-center justify-between mb-3">
@@ -357,7 +357,7 @@ export default function BaryonHaloCouplingPage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <GlassCard>
                 <h4 className="text-sm font-bold text-white mb-2">V_DM vs Sigma_bar</h4>
                 <CouplingScatterPlot
@@ -442,7 +442,7 @@ export default function BaryonHaloCouplingPage() {
                 {coupling.massBins.filter(b => !b.skipped).map((b, i) => (
                   <div key={i} className="bg-white/5 rounded-xl p-4">
                     <div className="text-sm font-bold text-white mb-2">{b.label}</div>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       <StatBox label="n" value={String(b.n)} />
                       <StatBox label="slope" value={b.slope?.toFixed(4) || '-'} />
                       <StatBox label="r" value={b.r?.toFixed(4) || '-'} color={Math.abs(b.r || 0) > 0.3 ? 'text-cyan-400' : 'text-slate-400'} />
@@ -470,7 +470,7 @@ export default function BaryonHaloCouplingPage() {
                       <span className="text-sm text-slate-300">Inner (r {'<'} 0.5 r_max)</span>
                       {io.innerStronger.vdm && <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Stronger</span>}
                     </div>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                       <StatBox label="r" value={io.innerVDM.r.toFixed(4)} color="text-cyan-400" />
                       <StatBox label="partial r" value={io.innerVDM.partialR.toFixed(4)} />
                       <StatBox label="n" value={String(io.innerVDM.n)} />
@@ -481,7 +481,7 @@ export default function BaryonHaloCouplingPage() {
                       <span className="text-sm text-slate-300">Outer (r {'≥'} 0.5 r_max)</span>
                       {!io.innerStronger.vdm && <span className="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Stronger</span>}
                     </div>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                       <StatBox label="r" value={io.outerVDM.r.toFixed(4)} color="text-cyan-400" />
                       <StatBox label="partial r" value={io.outerVDM.partialR.toFixed(4)} />
                       <StatBox label="n" value={String(io.outerVDM.n)} />
@@ -550,7 +550,7 @@ export default function BaryonHaloCouplingPage() {
               A significant residual correlation proves Sigma_bar carries independent information about halo structure beyond what galaxy mass provides.
             </p>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { key: 'vdm' as const, label: 'Delta V_DM', color: 'cyan' },
                 { key: 'rDMdom' as const, label: 'Delta r_DMdom', color: 'emerald' },
@@ -630,7 +630,7 @@ export default function BaryonHaloCouplingPage() {
               </div>
             </GlassCard>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {excess.global.map((g, i) => {
                 const sigColor = g.sigma >= 5 ? 'text-amber-400' : g.sigma >= 3 ? 'text-emerald-400' : g.sigma >= 2 ? 'text-cyan-400' : 'text-slate-400';
                 const glowType = g.sigma >= 5 ? 'amber' as const : g.sigma >= 3 ? 'emerald' as const : 'cyan' as const;
@@ -683,7 +683,7 @@ export default function BaryonHaloCouplingPage() {
                 {excess.bins.map((metricBins, mi) => (
                   <div key={mi}>
                     <h4 className="text-sm font-bold text-white mb-3">{metricBins.metric}</h4>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       {metricBins.bins.filter(b => !b.skipped).map((b, bi) => {
                         const sig = b.sigma || 0;
                         const sigColor = sig >= 3 ? 'text-emerald-400' : sig >= 2 ? 'text-cyan-400' : 'text-slate-400';
@@ -711,7 +711,7 @@ export default function BaryonHaloCouplingPage() {
 
             <GlassCard glow={excess.predictiveTest.sigmaImproves ? 'emerald' : 'amber'}>
               <SectionHeader icon={FlaskConical} title="Predictive Test" subtitle="Does Sigma_bar add predictive power beyond Vmax alone?" />
-              <div className="grid grid-cols-3 gap-4 mb-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 <StatBox label="MSE (Sigma only)" value={excess.predictiveTest.mseSigmaOnly.toFixed(4)} color="text-slate-400" />
                 <StatBox label="MSE (Vmax only)" value={excess.predictiveTest.mseVmaxOnly.toFixed(4)} color="text-cyan-400" />
                 <StatBox label="MSE (Both)" value={excess.predictiveTest.mseCombined.toFixed(4)} color="text-emerald-400" sub={`${excess.predictiveTest.improvementPct}% improvement`} />

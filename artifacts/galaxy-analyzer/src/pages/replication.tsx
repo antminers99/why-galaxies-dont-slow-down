@@ -169,7 +169,7 @@ export default function ReplicationPage() {
               SPARC (Primary Dataset)
             </h3>
             <p className="text-xs text-slate-500 mb-3">175 galaxies · Lelli et al. 2016 · Spitzer 3.6μm + multi-survey HI</p>
-            <div className="grid grid-cols-3 divide-x divide-white/10 mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-white/10 mb-3">
               <StatBox label="Slope b" value={sparcB.toFixed(3)} />
               <StatBox label="Partial r|V_max" value="−0.656" />
               <StatBox label="n galaxies" value="175" />
@@ -194,7 +194,7 @@ export default function ReplicationPage() {
               LITTLE THINGS (Replication)
             </h3>
             <p className="text-xs text-slate-500 mb-3">22 dwarf irregulars · Oh et al. 2015 · VLA HI + Spitzer 3.6μm</p>
-            <div className="grid grid-cols-3 divide-x divide-white/10 mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-white/10 mb-3">
               <StatBox label="Slope b" value={lt.simpleRegression.slope.toFixed(3)} color="emerald" />
               <StatBox label="Partial r|V_max" value={lt.partialCorrelation.rPartial.toFixed(3)} color="emerald" />
               <StatBox label="n galaxies" value={String(lt.nGalaxies)} color="emerald" />

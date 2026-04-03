@@ -410,7 +410,7 @@ export default function ModelProposalPage() {
               <div className="text-4xl font-mono text-amber-400 font-bold mb-4">
                 a{"\u2080"} = cH{"\u2080"} / 2{"\u03C0"}
               </div>
-              <div className="grid grid-cols-3 gap-4 text-xs">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                 <div className="text-center">
                   <div className="text-slate-400">Predicted</div>
                   <div className="text-lg font-bold text-cyan-400 font-mono">{(cH0_ms2 / (2 * Math.PI)).toExponential(2)}</div>

@@ -452,7 +452,7 @@ export default function StressTestPage() {
                 <p className="text-xs text-slate-400 mb-3">
                   Galaxies classified by rotation curve shape at large radii (ratio of outer velocity to mid velocity):
                 </p>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   <div className="p-2 bg-slate-900/50 rounded-lg text-center">
                     <div className="text-xs text-emerald-400 font-semibold">Rising (n={deepDive.curveShape.rising.n})</div>
                     <div className="text-lg font-bold font-mono text-emerald-400">{deepDive.curveShape.rising.avgKRatio.toFixed(3)}</div>
