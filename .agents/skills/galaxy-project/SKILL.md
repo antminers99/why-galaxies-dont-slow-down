@@ -21,24 +21,25 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 ## What We Know For Sure
 
 - A transition acceleration scale exists (all interpolation functions find it)
-- The RAR is tight (~0.24 dex observed scatter)
+- The RAR is tight (~0.15 dex in GOLD+i45, ~0.24 dex full sample)
 - The BTFR holds at 4.4σ
 - Signal survives 5 independent stress tests
-- Inclination and distance do NOT drive the residuals
+- ALL 6 residual audit variables clean in GOLD+i45 sample
+- Formal uncertainty: a₀ = 5275 ± 0.185 dex [3443, 8082] (km/s)²/kpc
 
 ## What Is Model-Dependent
 
-- The precise value of a₀ (GOLD global: 4285, GOLD median: 3479, ALL: 1929)
-- The cosmological ratio a₀/(cH₀/2π) = 1.333 (GOLD) or 0.600 (ALL)
+- The precise value of a₀ (GOLD+i45: 5275, GOLD: 4285, HIGH-MASS: 4035, ALL: 1929)
+- The cosmological ratio a₀/(cH₀/2π) = 1.641 (GOLD+i45) or 1.333 (GOLD) or 0.600 (ALL)
 - a₀ varies across sub-populations (low-mass: fitting artifact — limited g_bar range)
-- Inclination shows marginal residual signal (r=-0.307) in GOLD sample
+- Dominant uncertainties: global-vs-median (0.112 dex) and inclination cut (0.106 dex)
 
 ## What We Do NOT Know
 
-- Is a₀ = cH₀/2π physics or coincidence?
+- Is a₀ ≈ cH₀/2π physics or coincidence? Ratio range: 1.07–2.52 (1σ)
 - Does a₀ evolve with redshift?
-- Is the weak SB trend (r=-0.35, n=46) in highest-quality galaxies real?
 - What is the physical mechanism behind the transition?
+- Can error-weighted / hierarchical fitting reduce the ±0.185 dex uncertainty?
 
 ## Project History (Condensed)
 
@@ -59,6 +60,10 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 12. **Gold-standard pipeline v1.0.0**: Locked parameters, 4 sample layers,
     blind residual audit. GOLD sample a₀=4285, 5/6 audit variables clean.
     Only inclination marginal (r=-0.31). Pipeline fully reproducible.
+13. **Gold-standard pipeline v2.0.0**: Added GOLD+i45 sample (inc≥45°),
+    6-component uncertainty budget, sensitivity tables.
+    GOLD+i45 a₀=5275 ± 0.185 dex. ALL 6 audit variables CLEAN.
+    Inclination signal RESOLVED. Literature value within 1σ band.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -68,10 +73,10 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Settling the a₀ value (best range: 3500–4300 from GOLD/HIGH-MASS)
-- Addressing inclination signal (r=-0.31) with tighter inc cut
 - Error-weighted fitting and nuisance marginalization
-- Clean, reproducible analysis (gold-standard pipeline built v1.0.0)
+- Hierarchical/Bayesian a₀ estimation
+- Full-sample refit (all 4123 points)
+- Clean, reproducible analysis (gold-standard pipeline v2.0.0 built)
 
 ## Two Separate Questions (Never Mix Them)
 

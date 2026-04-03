@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "timestamp": "2026-04-03T20:32:43.484Z",
+  "version": "2.0.0",
+  "timestamp": "2026-04-03T21:09:12.601Z",
   "lockedParameters": {
     "upsilonDisk": 0.5,
     "upsilonBulge": 0.7,
@@ -29,6 +29,11 @@
       "nPts": 872,
       "cuts": "V>=50, inc>=30, n>=5, range>=1.0"
     },
+    "goldTight": {
+      "nGal": 47,
+      "nPts": 767,
+      "cuts": "V>=50, inc>=45, n>=5, range>=1.0"
+    },
     "highMass": {
       "nGal": 56,
       "nPts": 820,
@@ -36,7 +41,7 @@
     }
   },
   "globalFits": {
-    "ALL (global fit)": {
+    "ALL": {
       "results": [
         {
           "func": "McGaugh RAR",
@@ -63,11 +68,15 @@
           "n": 2062
         }
       ],
+      "nGal": 175,
+      "nPts": 2062,
       "meanA0": 1928.6,
       "spread": 9.3,
+      "a0_ms2": 6.251e-11,
+      "ratio_cH0": 0.6,
       "bestRMS": 0.2385
     },
-    "CLEAN sample": {
+    "CLEAN": {
       "results": [
         {
           "func": "McGaugh RAR",
@@ -94,11 +103,15 @@
           "n": 1141
         }
       ],
+      "nGal": 78,
+      "nPts": 1141,
       "meanA0": 4882.8,
       "spread": 12.9,
+      "a0_ms2": 1.583e-10,
+      "ratio_cH0": 1.519,
       "bestRMS": 0.1444
     },
-    "GOLD sample": {
+    "GOLD": {
       "results": [
         {
           "func": "McGaugh RAR",
@@ -125,11 +138,50 @@
           "n": 872
         }
       ],
+      "nGal": 52,
+      "nPts": 872,
       "meanA0": 4285.4,
       "spread": 12.3,
+      "a0_ms2": 1.389e-10,
+      "ratio_cH0": 1.333,
       "bestRMS": 0.1434
     },
-    "HIGH-MASS (V>150)": {
+    "GOLD+i45": {
+      "results": [
+        {
+          "func": "McGaugh RAR",
+          "a0": 4837.262750759508,
+          "logA0": 3.684599678065686,
+          "rms": 0.14657929946837203,
+          "bias": -0.05032021273681735,
+          "n": 767
+        },
+        {
+          "func": "Simple MOND",
+          "a0": 5494.2678760250055,
+          "logA0": 3.7399098298649234,
+          "rms": 0.1466724396834061,
+          "bias": -0.0755336590330963,
+          "n": 767
+        },
+        {
+          "func": "Standard MOND",
+          "a0": 5494.2678760250055,
+          "logA0": 3.7399098298649234,
+          "rms": 0.1466724396834061,
+          "bias": -0.0755336590330963,
+          "n": 767
+        }
+      ],
+      "nGal": 47,
+      "nPts": 767,
+      "meanA0": 5275.3,
+      "spread": 12.5,
+      "a0_ms2": 1.71e-10,
+      "ratio_cH0": 1.641,
+      "bestRMS": 0.1466
+    },
+    "HIGH-MASS": {
       "results": [
         {
           "func": "McGaugh RAR",
@@ -156,8 +208,12 @@
           "n": 820
         }
       ],
+      "nGal": 56,
+      "nPts": 820,
       "meanA0": 4035.1,
       "spread": 11.7,
+      "a0_ms2": 1.308e-10,
+      "ratio_cH0": 1.255,
       "bestRMS": 0.1279
     }
   },
@@ -180,6 +236,12 @@
       "a0": 3479,
       "mad": 0.347
     },
+    "goldTight": {
+      "n": 39,
+      "medianLogA0": 3.61,
+      "a0": 4074,
+      "mad": 0.304
+    },
     "highMass": {
       "n": 42,
       "medianLogA0": 3.516,
@@ -187,75 +249,287 @@
       "mad": 0.383
     }
   },
-  "goldResidualAudit": {
-    "a0Used": 3933.9,
-    "auditClean": false,
-    "correlations": [
-      {
-        "variable": "V_max",
-        "r": 0.143,
-        "n": 52,
-        "significant": false
-      },
-      {
-        "variable": "Surface brightness",
-        "r": -0.085,
-        "n": 52,
-        "significant": false
-      },
-      {
-        "variable": "Gas fraction",
-        "r": -0.056,
-        "n": 52,
-        "significant": false
-      },
-      {
-        "variable": "Luminosity",
-        "r": -0.072,
-        "n": 52,
-        "significant": false
-      },
-      {
-        "variable": "Inclination",
-        "r": -0.307,
-        "n": 52,
-        "significant": true
-      },
-      {
-        "variable": "Distance",
-        "r": -0.151,
-        "n": 52,
-        "significant": false
-      }
-    ]
+  "residualAudit": {
+    "gold": {
+      "sampleName": "GOLD",
+      "nGalaxies": 52,
+      "a0Used": 3933.947282231792,
+      "clean": false,
+      "correlations": [
+        {
+          "variable": "V_max",
+          "r": 0.143,
+          "n": 52,
+          "significant": false
+        },
+        {
+          "variable": "Surface brightness",
+          "r": -0.085,
+          "n": 52,
+          "significant": false
+        },
+        {
+          "variable": "Gas fraction",
+          "r": -0.056,
+          "n": 52,
+          "significant": false
+        },
+        {
+          "variable": "Luminosity",
+          "r": -0.072,
+          "n": 52,
+          "significant": false
+        },
+        {
+          "variable": "Inclination",
+          "r": -0.307,
+          "n": 52,
+          "significant": true
+        },
+        {
+          "variable": "Distance",
+          "r": -0.151,
+          "n": 52,
+          "significant": false
+        }
+      ]
+    },
+    "goldTight": {
+      "sampleName": "GOLD+i45",
+      "nGalaxies": 47,
+      "a0Used": 4837.262750759508,
+      "clean": true,
+      "correlations": [
+        {
+          "variable": "V_max",
+          "r": 0.095,
+          "n": 47,
+          "significant": false
+        },
+        {
+          "variable": "Surface brightness",
+          "r": -0.091,
+          "n": 47,
+          "significant": false
+        },
+        {
+          "variable": "Gas fraction",
+          "r": 0.003,
+          "n": 47,
+          "significant": false
+        },
+        {
+          "variable": "Luminosity",
+          "r": -0.104,
+          "n": 47,
+          "significant": false
+        },
+        {
+          "variable": "Inclination",
+          "r": -0.285,
+          "n": 47,
+          "significant": false
+        },
+        {
+          "variable": "Distance",
+          "r": -0.191,
+          "n": 47,
+          "significant": false
+        }
+      ]
+    }
   },
-  "goldInterpStability": {
-    "results": [
+  "interpStability": {
+    "goldTight": [
       {
         "func": "McGaugh RAR",
-        "a0": 3933.9,
-        "rms": 0.1434
+        "a0": 4837.3,
+        "rms": 0.1466
       },
       {
         "func": "Simple MOND",
-        "a0": 4461.1,
-        "rms": 0.1436
+        "a0": 5494.3,
+        "rms": 0.1467
       },
       {
         "func": "Standard MOND",
-        "a0": 4461.1,
-        "rms": 0.1436
+        "a0": 5494.3,
+        "rms": 0.1467
       }
     ],
-    "spreadPct": 12.3
+    "spreadPct": 12.5
+  },
+  "uncertaintyBudget": {
+    "components": [
+      {
+        "source": "Interpolation function",
+        "halfRange_dex": 0.0277
+      },
+      {
+        "source": "Sample selection",
+        "halfRange_dex": 0.0582
+      },
+      {
+        "source": "Global vs per-galaxy",
+        "halfRange_dex": 0.1122
+      },
+      {
+        "source": "Υ★ (±15%)",
+        "halfRange_dex": 0.0656
+      },
+      {
+        "source": "Inclination cut",
+        "halfRange_dex": 0.1064
+      },
+      {
+        "source": "Dynamic range cut",
+        "halfRange_dex": 0.0441
+      }
+    ],
+    "total_dex": 0.1853,
+    "refLogA0": 3.7222,
+    "a0_lower": 3443,
+    "a0_upper": 8082
+  },
+  "sensitivityTests": {
+    "upsilon": [
+      {
+        "factor": 0.85,
+        "a0": 4112,
+        "logA0": 3.614
+      },
+      {
+        "factor": 0.9,
+        "a0": 4354,
+        "logA0": 3.6388
+      },
+      {
+        "factor": 0.95,
+        "a0": 4595,
+        "logA0": 3.6623
+      },
+      {
+        "factor": 1,
+        "a0": 4837,
+        "logA0": 3.6846
+      },
+      {
+        "factor": 1.05,
+        "a0": 5079,
+        "logA0": 3.7058
+      },
+      {
+        "factor": 1.1,
+        "a0": 5321,
+        "logA0": 3.726
+      },
+      {
+        "factor": 1.15,
+        "a0": 5563,
+        "logA0": 3.7453
+      }
+    ],
+    "inclination": [
+      {
+        "incCut": 30,
+        "nGal": 52,
+        "a0": 3934,
+        "logA0": 3.5948,
+        "rms": 0.1434
+      },
+      {
+        "incCut": 35,
+        "nGal": 51,
+        "a0": 4487,
+        "logA0": 3.652,
+        "rms": 0.1437
+      },
+      {
+        "incCut": 40,
+        "nGal": 47,
+        "a0": 4837,
+        "logA0": 3.6846,
+        "rms": 0.1466
+      },
+      {
+        "incCut": 45,
+        "nGal": 47,
+        "a0": 4837,
+        "logA0": 3.6846,
+        "rms": 0.1466
+      },
+      {
+        "incCut": 50,
+        "nGal": 45,
+        "a0": 5074,
+        "logA0": 3.7053,
+        "rms": 0.1472
+      },
+      {
+        "incCut": 55,
+        "nGal": 39,
+        "a0": 6420,
+        "logA0": 3.8076,
+        "rms": 0.1562
+      },
+      {
+        "incCut": 60,
+        "nGal": 34,
+        "a0": 5940,
+        "logA0": 3.7738,
+        "rms": 0.1591
+      }
+    ],
+    "dynamicRange": [
+      {
+        "minRange": 0.5,
+        "nGal": 79,
+        "a0": 4759,
+        "logA0": 3.6776
+      },
+      {
+        "minRange": 0.8,
+        "nGal": 56,
+        "a0": 4627,
+        "logA0": 3.6653
+      },
+      {
+        "minRange": 1,
+        "nGal": 47,
+        "a0": 4837,
+        "logA0": 3.6846
+      },
+      {
+        "minRange": 1.2,
+        "nGal": 38,
+        "a0": 5006,
+        "logA0": 3.6995
+      },
+      {
+        "minRange": 1.5,
+        "nGal": 24,
+        "a0": 4370,
+        "logA0": 3.6405
+      },
+      {
+        "minRange": 2,
+        "nGal": 10,
+        "a0": 5355,
+        "logA0": 3.7287
+      }
+    ]
   },
   "recommendedMeasurement": {
-    "sample": "GOLD",
+    "sample": "GOLD+i45",
     "method": "global fit (mean of 3 interpolation functions)",
-    "a0_galUnits": 4285.4,
-    "a0_ms2": 1.389e-10,
-    "ratio_cH0_2pi": 1.333,
-    "residualAuditPassed": false,
-    "interpSpreadPct": 12.3
+    "a0_galUnits": 5275.3,
+    "a0_ms2": 1.71e-10,
+    "ratio_cH0_2pi": 1.641,
+    "logA0": 3.7222,
+    "uncertainty_dex": 0.1853,
+    "a0_lower": 3443,
+    "a0_upper": 8082,
+    "residualAuditPassed": true,
+    "interpSpreadPct": 12.5
   }
 }
