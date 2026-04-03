@@ -1,0 +1,282 @@
+{
+  "version": "5.0.0",
+  "timestamp": "2026-04-03T22:47:53.441Z",
+  "description": "Phase 5: Kinematic Contamination Audit — non-circular motions + pressure support",
+  "baseline": {
+    "label": "GOLD+i45 baseline",
+    "nGal": 126,
+    "a0": 3051,
+    "logA0": 3.4844,
+    "se": 0.0632,
+    "tau": 0.7047,
+    "I2": 100,
+    "ratio": 0.9489
+  },
+  "test1_innerOuter": {
+    "inner": {
+      "label": "Inner only",
+      "nGal": 58,
+      "a0": 2813,
+      "logA0": 3.4491,
+      "se": 0.0831,
+      "tau": 0.6179,
+      "I2": 100,
+      "ratio": 0.8748
+    },
+    "outer": {
+      "label": "Outer only",
+      "nGal": 117,
+      "a0": 2608,
+      "logA0": 3.4163,
+      "se": 0.0207,
+      "tau": 0.2091,
+      "I2": 100,
+      "ratio": 0.8111
+    },
+    "delta_dex": 0.03279999999999994
+  },
+  "test1_Qkin": {
+    "highQ": {
+      "label": "Q_kin >= 0.9",
+      "nGal": 82,
+      "a0": 3652,
+      "logA0": 3.5625,
+      "se": 0.047,
+      "tau": 0.4182,
+      "I2": 100,
+      "ratio": 1.1357
+    },
+    "lowQ": {
+      "label": "Q_kin < 0.9",
+      "nGal": 44,
+      "a0": 2188,
+      "logA0": 3.34,
+      "se": 0.1575,
+      "tau": 1.0408,
+      "I2": 100,
+      "ratio": 0.6803
+    }
+  },
+  "test1_etaRot": {
+    "highEta": {
+      "label": "eta_rot >= median",
+      "nGal": 63,
+      "a0": 3628,
+      "logA0": 3.5596,
+      "se": 0.0911,
+      "tau": 0.7203,
+      "I2": 100,
+      "ratio": 1.1283
+    },
+    "lowEta": {
+      "label": "eta_rot < median",
+      "nGal": 63,
+      "a0": 2560,
+      "logA0": 3.4082,
+      "se": 0.0948,
+      "tau": 0.7459,
+      "I2": 100,
+      "ratio": 0.7962
+    }
+  },
+  "test1_Sout": {
+    "highSout": {
+      "label": "S_out >= median (symmetric)",
+      "nGal": 60,
+      "a0": 2758,
+      "logA0": 3.4407,
+      "se": 0.1341,
+      "tau": 1.0336,
+      "I2": 100,
+      "ratio": 0.8579
+    },
+    "lowSout": {
+      "label": "S_out < median (asymmetric)",
+      "nGal": 66,
+      "a0": 3345,
+      "logA0": 3.5244,
+      "se": 0.0527,
+      "tau": 0.4238,
+      "I2": 100,
+      "ratio": 1.0403
+    }
+  },
+  "test2_pressureCorrection": {
+    "corrected": {
+      "label": "GOLD+i45 pressure-corrected",
+      "nGal": 126,
+      "a0": 3445,
+      "logA0": 3.5372,
+      "se": 0.0572,
+      "tau": 0.6365,
+      "I2": 100,
+      "ratio": 1.0713
+    },
+    "shift_dex": 0.05279999999999996,
+    "tau_change": -0.06820000000000004,
+    "byMass": {
+      "lowVmax": {
+        "label": "Vmax<80 corrected",
+        "nGal": 35,
+        "a0": 2152,
+        "logA0": 3.3327,
+        "se": 0.0813,
+        "tau": 0.4686,
+        "I2": 99.7,
+        "ratio": 0.6691
+      },
+      "midVmax": {
+        "label": "Vmax 80-150 corrected",
+        "nGal": 41,
+        "a0": 4647,
+        "logA0": 3.6672,
+        "se": 0.1243,
+        "tau": 0.7903,
+        "I2": 100,
+        "ratio": 1.4454
+      },
+      "highVmax": {
+        "label": "Vmax>150 corrected",
+        "nGal": 50,
+        "a0": 3737,
+        "logA0": 3.5726,
+        "se": 0.0683,
+        "tau": 0.4804,
+        "I2": 100,
+        "ratio": 1.1623
+      }
+    },
+    "byFgas": {
+      "highFgas": {
+        "label": "fgas>=0.3 corrected",
+        "nGal": 75,
+        "a0": 3373,
+        "logA0": 3.528,
+        "se": 0.0316,
+        "tau": 0.2586,
+        "I2": 100,
+        "ratio": 1.049
+      },
+      "lowFgas": {
+        "label": "fgas<0.3 corrected",
+        "nGal": 51,
+        "a0": 3616,
+        "logA0": 3.5582,
+        "se": 0.1178,
+        "tau": 0.8385,
+        "I2": 100,
+        "ratio": 1.1245
+      }
+    }
+  },
+  "test3_redFlags": {
+    "distance": {
+      "near": {
+        "label": "D<15 corrected",
+        "nGal": 59,
+        "a0": 3500,
+        "logA0": 3.5441,
+        "se": 0.1031,
+        "tau": 0.7875,
+        "I2": 100,
+        "ratio": 1.0886
+      },
+      "far": {
+        "label": "D>=15 corrected",
+        "nGal": 67,
+        "a0": 3390,
+        "logA0": 3.5302,
+        "se": 0.0592,
+        "tau": 0.4779,
+        "I2": 100,
+        "ratio": 1.0543
+      },
+      "split_pct": 3.605375286791216
+    },
+    "inclination": {
+      "high": {
+        "label": "inc>=60 corrected",
+        "nGal": 87,
+        "a0": 3601,
+        "logA0": 3.5565,
+        "se": 0.0724,
+        "tau": 0.6699,
+        "I2": 100,
+        "ratio": 1.1201
+      },
+      "low": {
+        "label": "inc 45-60 corrected",
+        "nGal": 39,
+        "a0": 3100,
+        "logA0": 3.4913,
+        "se": 0.0493,
+        "tau": 0.2973,
+        "I2": 100,
+        "ratio": 0.9641
+      },
+      "split_pct": 16.420845624385446
+    },
+    "velocity": {
+      "high": {
+        "label": "Vmax>150 corrected",
+        "nGal": 50,
+        "a0": 3737,
+        "logA0": 3.5726,
+        "se": 0.0683,
+        "tau": 0.4804,
+        "I2": 100,
+        "ratio": 1.1623
+      },
+      "mid": {
+        "label": "Vmax 80-150 corrected",
+        "nGal": 41,
+        "a0": 4647,
+        "logA0": 3.6672,
+        "se": 0.1243,
+        "tau": 0.7903,
+        "I2": 100,
+        "ratio": 1.4454
+      },
+      "split_pct": 29.826286463454604
+    }
+  },
+  "test4_outerCorrected": {
+    "label": "Outer + pressure corrected",
+    "nGal": 117,
+    "a0": 2961,
+    "logA0": 3.4715,
+    "se": 0.018,
+    "tau": 0.1782,
+    "I2": 100,
+    "ratio": 0.921
+  },
+  "test5_residualCorrelations": {
+    "before": {
+      "Vmax": 0.238,
+      "distance": 0.032,
+      "inc": 0.134,
+      "fgas": -0.136,
+      "Q_kin": 0.223
+    },
+    "after": {
+      "Vmax": 0.147,
+      "distance": -0.027,
+      "inc": 0.134,
+      "fgas": -0.054,
+      "Q_kin": 0.189
+    }
+  },
+  "verdict": {
+    "pass": true,
+    "summary": "a0 survives kinematic contamination tests",
+    "details": [
+      "PASS: Pressure correction shifts a0 by only 0.053 dex (<0.15)",
+      "PASS: Inner-outer split = 0.033 dex (<0.2) — non-circular motions controlled"
+    ],
+    "redFlagChanges": [
+      "Distance: 35% -> 3.6%",
+      "Inclination: 42% -> 16.4%",
+      "Velocity: 36% -> 29.8%"
+    ]
+  }
+}

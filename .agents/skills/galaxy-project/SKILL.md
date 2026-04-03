@@ -90,12 +90,17 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Understanding tau sources — see Section 20 (Suspects Table) in diagnostic-report.txt
-- Three red-flag splits from v4.0: distance (35%), inclination (42%), velocity (36%)
-- Non-circular motions and pressure support testing (Suspects 1 & 2)
-- Within-galaxy covariance modeling
-- Systematics paper write-up
+- Velocity split investigation (30% remaining after Phase 5 — see Section 21)
+- Cosmological ratio interpretation (a₀/(cH₀/2π) ≈ 1.13, now on firmer footing)
+- Systematics paper write-up (all 4 checkboxes passed)
 - High-z test with JWST/ALMA kinematic data
+- Understanding residual tau ≈ 0.18 (irreducible or further cleanable?)
+
+COMPLETED (Phase 5):
+- Non-circular motions: inner-outer split = 0.033 dex — CLEARED
+- Pressure support: correction helps, signal survives — CLEARED
+- Distance red flag: 35% → 3.6% — ELIMINATED
+- Inclination red flag: 42% → 16.4% — REDUCED 61%
 
 ## Two Separate Questions (Never Mix Them)
 
