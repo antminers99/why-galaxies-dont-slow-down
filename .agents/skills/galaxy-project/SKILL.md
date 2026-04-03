@@ -90,7 +90,9 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Understanding tau sources (distance errors, bars, environment)
+- Understanding tau sources — see Section 20 (Suspects Table) in diagnostic-report.txt
+- Three red-flag splits from v4.0: distance (35%), inclination (42%), velocity (36%)
+- Non-circular motions and pressure support testing (Suspects 1 & 2)
 - Within-galaxy covariance modeling
 - Systematics paper write-up
 - High-z test with JWST/ALMA kinematic data

@@ -16,10 +16,11 @@ I prefer detailed explanations and clear communication. Please ask before making
 
 **CRITICAL**: The PRIMARY report is now `artifacts/galaxy-analyzer/diagnostic-report.txt`. All future analysis work and edits go here. The old theoretical report (`galaxy-rotation-curve-analysis-full-report.txt`) is ARCHIVED — read-only reference.
 
-**Skills**: Three custom skills store all project data and context:
+**Skills**: Four custom skills store all project data and context:
 - `galaxy-data` — Physical constants, dataset summaries, computed test results
 - `galaxy-analysis` — How to run scripts, edit reports, code patterns
 - `galaxy-project` — Project context, current status, strategic direction
+- `galaxy-summary` — Quick executive summary of current definitive result (a₀, status, caveats)
 
 ## System Architecture
 

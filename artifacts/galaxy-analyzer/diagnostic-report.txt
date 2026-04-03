@@ -1466,6 +1466,283 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
     - Between-galaxy heterogeneity is fully understood
 
 ================================================================================
+  SECTION 20: SYSTEMATIC SUSPECTS TABLE
+================================================================================
+
+  A formal audit of all known factors that could bias or inflate the
+  measured a₀ and its scatter. Each factor is ranked by priority,
+  with a description of the mechanism, current mitigation status,
+  proposed test, and elimination criterion.
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  PRIORITY: HIGH                                                 │
+  └─────────────────────────────────────────────────────────────────┘
+
+  SUSPECT 1: Non-circular motions (bars, spiral arms, warps)
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Bars and spiral arms create streaming motions that
+                make the measured line-of-sight velocity deviate from
+                the true circular velocity. This strikes at the heart
+                of the a₀ inference because g_obs = V²/R assumes
+                circular orbits.
+  Bias on a₀:  Can shift individual galaxy a₀ estimates by 10-30%
+                in either direction; increases tau.
+  Current status:
+    - SPARC quality flags (Q=1,2) exclude worst cases
+    - GOLD sample removes Q=3 galaxies
+    - No explicit non-circular motion correction applied
+  Proposed test:
+    - Compare a₀ for barred vs unbarred galaxies (from morphological
+      classification)
+    - Use harmonic decomposition of velocity fields (where 2D data
+      exists) to quantify non-circular fraction
+    - Check if residuals from RAR correlate with bar strength proxy
+  Elimination criterion:
+    Barred and unbarred subsamples yield a₀ consistent within 1-sigma,
+    AND residuals show no correlation with bar strength.
+
+  SUSPECT 2: Pressure support / asymmetric drift / gas disequilibrium
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    In dwarf and gas-rich galaxies, the gas may not be in
+                clean circular equilibrium. Turbulent pressure support
+                means V_circ > V_measured, making g_obs too low.
+                Bursty star formation can temporarily reshape the
+                potential, causing time-dependent RC distortions.
+  Bias on a₀:  Systematically lowers g_obs in dwarfs, pushing their
+                a₀ estimates higher and inflating tau.
+  Current status:
+    - No pressure support correction applied
+    - GOLD+i45 sample partially mitigates by excluding low-quality
+      dwarfs, but fgas>0.3 subsample still included
+    - v4.0 fgas split shows fgas<0.3 gives a₀=3712 vs fgas>=0.3
+      gives a₀=3500 (6% difference) — weak evidence
+  Proposed test:
+    - Apply asymmetric drift correction: V²_circ = V²_rot + R/rho *
+      d(rho * sigma²)/dR where available
+    - Compare a₀ for galaxies with known sigma_gas measurements
+    - Exclude all galaxies with fgas > 0.5 and check a₀ stability
+  Elimination criterion:
+    a₀ shifts < 0.05 dex after asymmetric drift correction,
+    AND fgas split gives < 5% difference.
+
+  SUSPECT 3: Mass-to-light ratio Y★
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    The stellar contribution to g_bar depends on Y★.
+                If Y★ is wrong, g_bar is wrong, shifting the RAR
+                intercept and thus a₀.
+  Bias on a₀:  Y★ too high -> g_bar too high -> a₀ shifts down.
+                v4.0 showed +7.7% shift when marginalizing Y★.
+  Current status:
+    - v4.0 marginalizes over Y★ = [0.20, 0.80] with Gaussian prior
+      N(0.50, 0.12²) — MITIGATED
+    - Residual contribution to uncertainty: 0.020 dex
+    - Key finding: marginalization does NOT reduce tau
+  Proposed test:
+    - Use SPS-based per-galaxy Y★ estimates (where available) instead
+      of uniform prior
+    - Check if a₀ changes with different prior widths (0.08 vs 0.15)
+  Elimination criterion:
+    Already partially eliminated. Full elimination requires
+    SPS-based Y★ giving consistent a₀ within 0.03 dex.
+
+  SUSPECT 4: Distance uncertainties
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Distance errors propagate as V² ~ D and R ~ D,
+                so g_obs ~ V²/R ~ D while g_bar ~ D⁻².
+                This creates correlated errors along both RAR axes.
+  Bias on a₀:  Can inflate scatter and bias hierarchical mean if
+                distance errors are asymmetric.
+  Current status:
+    - v4.0 marginalizes over deltaLogD = [-0.1, +0.1] with
+      N(0, 0.07²) prior — MITIGATED
+    - Residual contribution: 0.015 dex
+    - Distance split: D<15 gives a₀=4358 vs D>=15 gives a₀=3238
+      (35% difference — LARGE, needs attention)
+  Proposed test:
+    - Use only galaxies with Cepheid/TRGB distances (highest quality)
+    - Check if distance split shrinks with narrower prior or
+      independent distance estimates
+  Elimination criterion:
+    Distance split reduces to < 10% difference after restricting
+    to Cepheid/TRGB distances.
+
+  SUSPECT 5: Within-galaxy covariance / weighting bias
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Points within the same galaxy share systematic errors
+                (distance, Y★, inclination). Treating them as
+                independent inflates effective sample size and can
+                bias a₀ toward galaxies with more data points.
+  Bias on a₀:  Direction depends on which galaxies are oversampled.
+                v3 unweighted vs hierarchical: 4837 vs 3374 (43%!).
+  Current status:
+    - v4.0 hierarchical model treats each galaxy as one estimate
+      with its own uncertainty — MITIGATED
+    - Between-galaxy heterogeneity (tau) absorbs excess scatter
+    - I² = 92.4% confirms galaxies are not interchangeable
+  Proposed test:
+    - Compare with inverse-variance weighting at galaxy level
+    - Bootstrap galaxies (not points) and check CI coverage
+  Elimination criterion:
+    Already mitigated by hierarchical model. Bootstrap galaxy-level
+    CIs should cover nominal 68%/95% rates.
+
+  SUSPECT 6: Inclination errors
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    V_rot = V_los / sin(i). At low inclination, small
+                errors in i cause large errors in V_rot (and thus
+                g_obs). This is particularly severe below i = 40°.
+  Bias on a₀:  Low-inclination galaxies have inflated V_rot
+                uncertainties, scattering a₀ estimates.
+  Current status:
+    - GOLD+i45 sample requires i >= 45° — MITIGATED
+    - v4.0 inclination split: inc>=60 gives a₀=3995 vs inc 45-60
+      gives a₀=2812 (42% difference — CONCERNING)
+    - Residual uncertainty contribution: 0.021 dex
+  Proposed test:
+    - Restrict to i >= 60° only and check a₀ stability
+    - Apply per-galaxy inclination marginalization (not done in v4.0)
+  Elimination criterion:
+    i>=60 subsample gives a₀ within 0.05 dex of i>=45 subsample.
+    NOTE: Current data FAILS this — 42% split is a red flag.
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  PRIORITY: MEDIUM                                               │
+  └─────────────────────────────────────────────────────────────────┘
+
+  SUSPECT 7: Gas disk flaring / disk thickness
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Standard decompositions assume infinitely thin disks.
+                Late-type and dwarf galaxies often have thick, flared
+                gas disks whose vertical structure changes the
+                gravitational potential at large radii.
+  Bias on a₀:  Overestimates g_bar_gas at large R, shifting a₀
+                slightly upward.
+  Current status:
+    - SPARC uses standard thin-disk decomposition
+    - No correction applied
+  Proposed test:
+    - Compare thin-disk vs finite-thickness g_bar for a subset
+      of galaxies with known HI scale heights
+  Elimination criterion:
+    Thin vs thick disk g_bar differ by < 5% at outer radii for
+    the majority of the sample.
+
+  SUSPECT 8: Beam smearing (angular resolution)
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Finite beam size smooths the inner velocity gradient,
+                making the RC rise more slowly. This suppresses inner
+                g_obs, creating artificial "cusp-core" signatures and
+                biasing the inner RAR.
+  Bias on a₀:  Suppresses g_obs in the inner regions where the RAR
+                transition happens, potentially shifting a₀.
+  Current status:
+    - SPARC compilation uses heterogeneous angular resolution
+    - No explicit beam smearing correction
+    - Inner points are included in the fit
+  Proposed test:
+    - Exclude inner 2 beam widths for each galaxy and refit
+    - Compare a₀ from inner-only vs outer-only radii
+  Elimination criterion:
+    a₀ from R > 2*beam is within 0.05 dex of full-radius a₀.
+
+  SUSPECT 9: Environmental / external field effects
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    In MOND, the external gravitational field from
+                neighboring structures can break the strong equivalence
+                principle and alter the effective a₀ for satellite or
+                cluster galaxies (external field effect, EFE).
+  Bias on a₀:  If EFE is real, galaxies in dense environments would
+                show different a₀ than isolated galaxies, inflating
+                population scatter.
+  Current status:
+    - SPARC sample is mostly field galaxies
+    - No environmental classification applied
+  Proposed test:
+    - Classify galaxies by environmental density (field vs group
+      vs cluster proximity)
+    - Compare a₀ for isolated vs non-isolated subsamples
+  Elimination criterion:
+    Isolated and non-isolated subsamples agree within 1-sigma.
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  PRIORITY: LOW                                                  │
+  └─────────────────────────────────────────────────────────────────┘
+
+  SUSPECT 10: Sample selection / dynamic range
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Low-mass galaxies with narrow dynamic range in g_bar
+                may not constrain the RAR transition at all, yielding
+                unreliable a₀ estimates that inflate scatter.
+  Bias on a₀:  Spurious outlier estimates from unconstrained fits.
+  Current status:
+    - GOLD sample requires Q<=2 — partially mitigated
+    - n>=20 points vs n<20: a₀=3724 vs 3465 (7%, acceptable)
+    - Vmax>150 vs 80-150: a₀=3463 vs 4725 (36%, LARGE)
+  Proposed test:
+    - Require minimum dynamic range in log(g_bar): at least 1 dex
+    - Check if removing narrow-range galaxies reduces tau
+  Elimination criterion:
+    Excluding narrow-range galaxies changes a₀ by < 5% and
+    reduces tau by > 0.05 dex.
+
+  SUSPECT 11: Three-body problem / chaotic orbits
+  ─────────────────────────────────────────────────────────────────
+  Mechanism:    Classical three-body chaos in gravitational dynamics.
+                In galaxies, orbits in barred/triaxial potentials
+                can be chaotic, but RC extraction uses collective
+                smooth potential, not individual orbits.
+  Bias on a₀:  Negligible for rotation curves. Bars already captured
+                by Suspect 1 (non-circular motions).
+  Current status:
+    - Not relevant for smooth-potential RC analysis
+    - Bars and triaxial potentials covered under Suspect 1
+  Proposed test:
+    - Not required for current analysis scope
+  Elimination criterion:
+    N/A — this is not a primary suspect for RC-based a₀.
+
+  ────────────────────────────────────────────────────────────────────
+  SUMMARY: RED FLAGS FROM v4.0 SUBSAMPLE SPLITS
+  ────────────────────────────────────────────────────────────────────
+
+  The v4.0 ratio stability test revealed three significant splits
+  that demand investigation:
+
+  1. DISTANCE: D<15 vs D>=15 gives 35% difference (Suspect 4)
+     -> Possible distance-dependent bias or environmental effect
+  2. INCLINATION: i>=60 vs i=45-60 gives 42% difference (Suspect 6)
+     -> sin(i) correction may be insufficient for moderate i
+  3. VELOCITY: Vmax>150 vs Vmax 80-150 gives 36% difference (#10)
+     -> Low-Vmax galaxies may not constrain the RAR transition
+
+  These are the three doors to investigate next. If controlling for
+  these factors reduces tau significantly, the remaining scatter may
+  be measurement-driven rather than physical. If tau persists, the
+  heterogeneity is intrinsic to galaxy populations.
+
+  ────────────────────────────────────────────────────────────────────
+  DECISION FRAMEWORK
+  ────────────────────────────────────────────────────────────────────
+
+  The key question is:
+
+    Does a₀ remain approximately constant after strict control of:
+      (1) non-circular motions,
+      (2) pressure support / disequilibrium,
+      (3) per-galaxy Y★ + distance + inclination,
+      (4) weighting + covariance?
+
+  If YES -> a₀ is a robust physical scale, and the cosmological
+            connection (cH₀/2pi) deserves deeper investigation.
+
+  If NO  -> The "constant" is an artifact of measurement
+            systematics, gas dynamics, and/or sample selection,
+            not a new law of physics.
+
+  Current status: (1) not tested, (2) not tested, (3) DONE (v4.0),
+  (4) DONE (hierarchical model). Two of four boxes are checked.
+
+================================================================================
 END OF DIAGNOSTIC REPORT (v4.0)
 ================================================================================
 
@@ -1473,6 +1750,7 @@ END OF DIAGNOSTIC REPORT (v4.0)
   The empirical findings of Sections 1-11 remain valid.
   Sections 12-14 are the v3.0 baseline (archived for comparison).
   Sections 15-19 represent the v4.0 definitive pipeline.
+  Section 20 is the systematic suspects audit.
 
   Phase 1 analysis: scripts/diagnostic-tests.cjs
   Phase 2 analysis: scripts/diagnostic-phase2.cjs
