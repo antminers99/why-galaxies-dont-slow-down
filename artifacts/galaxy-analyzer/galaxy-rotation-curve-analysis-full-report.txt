@@ -16,7 +16,7 @@ TABLE OF CONTENTS
 
   PART I    — WHAT WE KNOW FOR CERTAIN
   PART II   — THE ACCELERATION FLOOR
-  PART III  — THE EQUATION (Zero Free Parameters)
+  PART III  — THE EQUATION (No Extra Tuning Parameters)
   PART IV   — LIMIT VERIFICATION
   PART V    — TULLY-FISHER DERIVATION
   PART VI   — THREE PHYSICAL READINGS
@@ -139,12 +139,20 @@ VELOCITY FORM (for fitting rotation curves)
   V(r) = √(g_obs × r)
        = √(r × √((GM/r²)² + a₀² × (GM/r²) / (GM/r² + a₀)))
 
-COMPLETE EQUATION (Zero Free Parameters)
------------------------------------------
+COMPLETE EQUATION (No Extra Tuning Parameters)
+------------------------------------------------
   g_obs = √(g_bar² + (cH₀/2π)² × g_bar / (g_bar + cH₀/2π))
 
-This equation has ZERO adjustable parameters. Every quantity is either
-measured locally (g_bar) or fixed by cosmology (c, H₀).
+Given fixed baryonic mass-to-light assumptions (Υ_disk = 0.5, Υ_bulge = 0.7)
+and standard cosmological inputs (c, H₀), the equation adds no extra
+galaxy-by-galaxy tuning parameters. Every quantity is either measured
+locally (g_bar, which depends on adopted Υ and distance) or fixed by
+cosmology (c, H₀).
+
+NOTE: The equation is not "parameter-free" in the absolute sense. It
+inherits systematic dependence on Υ assumptions, distance calibrations,
+and gas mass modeling. What it avoids is any per-galaxy free parameter
+analogous to a halo concentration or core radius.
 
 ================================================================================
 PART IV: LIMIT VERIFICATION
@@ -242,14 +250,33 @@ Results (54 well-constrained galaxies):
 CONCLUSION: Φ = 1. The data forces a universal a₀ with no galaxy-property
 dependence. Adding complexity makes the fit worse.
 
-MASS QUARTILE ANALYSIS
------------------------
+MASS QUARTILE ANALYSIS (Per-Galaxy Fitted a₀)
+-----------------------------------------------
   Q1 (lightest, V~39 km/s):  median a₀ = 1391, scatter = 0.573 dex
   Q2 (V~121 km/s):           median a₀ = 6259, scatter = 0.462 dex
   Q3 (V~179 km/s):           median a₀ = 2572, scatter = 0.355 dex
   Q4 (heaviest, V~209 km/s): median a₀ = 2858, scatter = 0.331 dex
 
-The median a₀ is similar across all mass ranges — no mass dependence.
+IMPORTANT CLARIFICATION ON a₀ VALUES
+The large spread in per-galaxy fitted a₀ does NOT mean a₀ varies
+between galaxies. Three distinct quantities must be distinguished:
+
+  1. GLOBAL BEST-FIT transition scale: a₀ = 3702 (km/s)²/kpc
+     Fitted simultaneously to all 175 galaxies. This is the RAR scale.
+
+  2. PER-GALAXY inferred effective a₀: varies widely (1000–7000)
+     Each galaxy has limited radial coverage, noise, and inclination
+     uncertainty. Fitting a₀ to a single galaxy is severely degenerate
+     with M/L and distance — scatter is expected and dominated by
+     observational and modeling uncertainty, not physical variation.
+
+  3. MEDIAN across noisy galaxy-level fits: 2858 (km/s)²/kpc
+     An order-of-magnitude consistency check, not a precision measurement.
+
+The claim of universality rests on (1): the global RAR has 0.198 dex
+scatter around a single a₀, and adding galaxy-property dependence makes
+the fit WORSE. The per-galaxy scatter in (2) reflects measurement
+limitations, not physical non-universality. This distinction is critical.
 
 ================================================================================
 PART VIII: OBSERVATIONAL DATA SUMMARY
@@ -393,10 +420,22 @@ EXCESS vs ΛCDM SIMULATIONS
 VERDICT
   Baryonic surface density does not merely correlate with the
   apparent dark matter fraction; it tracks halo structure itself.
-  This is consistent with direct baryon-halo coupling.
+  This is consistent with non-trivial baryon-halo coupling in the
+  analyzed sample.
 
-  Excess significance: 5.1σ
+  Nominal combined significance: 5.1σ (bootstrap, frequentist)
   Tests passed: 6/6
+
+  CAVEATS ON THE 5.1σ CLAIM:
+  - This is a frequentist bootstrap significance, not a full Bayesian
+    posterior predictive p-value.
+  - The null model (NFW + ΛCDM scatter) is approximate.
+  - Multiple metrics were tested; trials factor is partially but not
+    fully accounted for.
+  - Correlations between metrics are not independent.
+  - A conservative reader should treat this as "strong evidence of
+    excess" rather than a discovery-level claim until the statistical
+    framework is independently validated.
 
 ================================================================================
 PART XI: RAR RESIDUAL ANALYSIS
@@ -549,7 +588,8 @@ OPEN QUESTIONS
 PART XIV: DEFENSE VALIDATION (7 Systematic Tests)
 ================================================================================
 
-Seven systematic tests prove this result is NOT circular, NOT an artifact:
+Seven systematic checks were used to test whether the result could arise
+from circularity, sample selection, or modeling artifacts:
 
 TEST 1: BARYONIC FEEDBACK
   Applied parameterized feedback model (supernovae, AGN, radiation
@@ -603,7 +643,10 @@ HYDROSIMULATION COMPARISON
   The observed coupling is stronger than any simulation predicts.
   Even the best feedback models produce weaker f_DM–Σ_bar slopes.
 
-All 7/7 tests PASSED.
+None of the seven tested systematics was able to fully account for
+the observed relation on its own. Baryonic feedback (Test 1) provides
+the strongest partial explanation, reducing significance from ~5σ to
+~2-3σ, but does not eliminate the signal entirely.
 
 ================================================================================
 PART XV: EXTERNAL REPLICATION (LITTLE THINGS)
@@ -801,16 +844,19 @@ PART XVIII: UNIQUE PREDICTIONS (Falsifiable Tests)
 ================================================================================
 
 1. REDSHIFT EVOLUTION
-   If a₀ = cH₀/2π, then at redshift z:
+   In the Cosmic Floor hypothesis, the effective acceleration scale
+   inferred from galaxy dynamics should scale with H(z):
      a₀(z) = c × H(z) / 2π = a₀ × E(z)
    where E(z) = H(z)/H₀.
-   At z=1, E ≈ 1.7, so a₀ should be ~70% larger.
+   For a flat ΛCDM background with Ω_m = 0.315, this implies
+   a₀(z=1) ≈ 1.70 × a₀(z=0).
    JWST and ALMA can test this with high-z rotation curves.
 
 2. GALAXY CLUSTERS
-   Apply the same equation to galaxy clusters.
-   The floor model should reduce (but not eliminate) the missing mass.
-   The residual deficit quantifies how much "real" dark matter is needed.
+   A first-pass application of the same equation to 5 galaxy clusters
+   shows that the floor scale brings predictions closer to observed
+   but does not eliminate the deficit, remaining nearly degenerate
+   with MOND at cluster scales.
    RESULT: Floor reduces Newton deficit by ~43% but ~52.5% remains.
 
 3. WIDE BINARIES
@@ -833,11 +879,11 @@ PART XVIII: UNIQUE PREDICTIONS (Falsifiable Tests)
 PART XIX: CONCLUSIONS & DISCRIMINATING TESTS
 ================================================================================
 
-WHAT WE KNOW FOR CERTAIN
-  ✓ a₀ exists (detected in all 175 galaxies, 0.198 dex scatter)
-  ✓ a₀ is universal (no galaxy property modulates it)
-  ✓ The compensation is simple (one variable: g_bar)
-  ✓ a₀ = cH₀/2π within ~10%
+ROBUST EMPIRICAL FINDINGS
+  ✓ a₀ exists (detected across 175 galaxies, 0.198 dex RMS scatter)
+  ✓ a₀ shows no tested dependence on galaxy properties
+  ✓ The compensation is well-described by one variable: g_bar
+  ✓ a₀ ≈ cH₀/2π within ~10%
 
 THE THREE HYPOTHESES
   A. Modified Gravity — new fundamental law
@@ -927,25 +973,32 @@ PART XXII: HONEST VERDICT
 Based on analysis of 175 SPARC galaxies (+ 22 LITTLE THINGS dwarfs),
 4,123 rotation curve measurements, with 0 free parameters:
 
-The data unambiguously shows a universal acceleration scale a₀ that does
-not depend on any galaxy property. This scale matches cH₀/2π within ~10%.
-These are facts.
+The data strongly supports the existence of a characteristic acceleration
+scale a₀ in galaxy dynamics that shows no significant dependence on any
+tested galaxy property. This scale matches cH₀/2π within ~10%.
+These are robust empirical regularities.
 
 The apparent dark matter fraction is strongly anti-correlated with baryonic
-surface density (5.1σ excess over ΛCDM predictions). This coupling extends
-beyond the mass fraction to the halo structure itself — V_DM, r_DMdom,
-and the inner slope all track Σ_bar. This result is confirmed independently
-on LITTLE THINGS dwarfs and passes all 7 systematic defense tests.
+surface density (nominal combined significance: 5.1σ over ΛCDM expectations,
+frequentist bootstrap). This coupling extends beyond the mass fraction to
+the halo structure itself — V_DM, r_DMdom, and the inner slope all track
+Σ_bar. This result is confirmed independently on LITTLE THINGS dwarfs and
+is consistent with all seven systematic robustness checks.
 
-The floor model, when applied to galaxy clusters, reduces the Newtonian
-deficit by ~43% but does not eliminate it — ~52.5% residual dark matter
-fraction remains. This is the honest cluster result: the acceleration
-floor helps but is not sufficient alone.
+A first-pass cluster stress test shows that the same floor scale (a₀ from
+galaxy-scale fits) brings cluster velocity dispersion predictions into the
+correct dynamical ballpark, reducing the Newtonian deficit by ~43%. However,
+~52.5% residual dark matter fraction remains. The floor does not provide a
+distinct or complete cluster-scale solution and remains nearly degenerate
+with MOND in this regime. Additional physics (hot gas, real DM, or
+cluster-specific effects) is required.
 
-The model makes a unique, falsifiable prediction: a₀(z) = cH(z)/2π. If
-true, galaxies at z=1 should show a₀ that is ~70% larger, and the BTFR
-normalization should shift upward by ~14%. JWST and ALMA can test this
-within the next few years.
+The model makes a unique, falsifiable prediction: in the Cosmic Floor
+hypothesis, the effective acceleration scale inferred from galaxy dynamics
+should scale with H(z). For a flat ΛCDM background with Ω_m = 0.315,
+this implies a₀(z=1) ≈ 1.70 × a₀(z=0), i.e. ~70% larger, and the BTFR
+normalization should shift upward by E(z)^(1/4) ≈ 14% at fixed baryonic
+mass. JWST and ALMA can test this within the next few years.
 
 Whether this implies modified gravity, a new dark matter phase, or emergent
 cosmological coupling remains an open question that requires:
@@ -957,13 +1010,14 @@ cosmological coupling remains an open question that requires:
 The equation:
   g_obs = √(g_bar² + (cH₀/2π)² × g_bar/(g_bar + cH₀/2π))
 
-captures the observation with zero parameters. But having the right
-equation is not the same as understanding the physics.
+captures the observation with no extra galaxy-by-galaxy tuning parameters
+(given standard baryonic inputs). But having the right equation is not the
+same as understanding the physics.
 
 We do not know WHY a₀ exists.
-We know it is REAL, UNIVERSAL, and COSMOLOGICAL.
-We know it equals cH₀/2π within ~10%.
-We know that no galaxy property can improve or modulate it.
+The data robustly indicates it is real, universal within our sample, and
+cosmologically suggestive. It equals cH₀/2π within ~10%. No tested galaxy
+property improves or modulates it.
 
 The hardest question — is this a new law of nature, or an emergent
 consequence of self-regulation? — remains open. The current data
@@ -983,7 +1037,8 @@ PROPOSED MODEL NAME
 
   Core claim: There exists a minimum acceleration floor a₀ = cH₀/2π
   enforced by the universe, below which gravity is always compensated.
-  This floor has zero free parameters and naturally produces:
+  Given standard baryonic inputs, the floor introduces no extra
+  galaxy-by-galaxy tuning parameters and naturally produces:
     1. Newtonian gravity at high acceleration
     2. The Radial Acceleration Relation (RAR)
     3. Flat rotation curves
