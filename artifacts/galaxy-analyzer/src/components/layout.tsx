@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useRoute, useLocation } from "wouter";
-import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen, Shield, Crosshair, TestTube2, Eye, Link2, ShieldCheck, ScrollText, Menu, X, Sigma, Telescope, Orbit, Hammer } from 'lucide-react';
+import { Upload, Activity, FlaskConical, LayoutDashboard, Atom, Microscope, TrendingUp, BookOpen, Shield, Crosshair, TestTube2, Eye, Link2, ShieldCheck, ScrollText, Menu, X, Sigma, Telescope, Orbit, Hammer, GitBranch } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NavItem = ({ href, icon: Icon, label, onClick }: { href: string, icon: any, label: string, onClick?: () => void }) => {
@@ -57,6 +57,7 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
           <NavItem href="/redshift-lab" icon={Telescope} label="Redshift Lab" onClick={onNavClick} />
           <NavItem href="/cluster-test" icon={Orbit} label="Cluster Test" onClick={onNavClick} />
           <NavItem href="/break-test" icon={Hammer} label="Break Test" onClick={onNavClick} />
+          <NavItem href="/pipeline" icon={GitBranch} label="Pipeline" onClick={onNavClick} />
         </nav>
       </div>
       

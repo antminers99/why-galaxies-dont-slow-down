@@ -38,6 +38,7 @@ TABLE OF CONTENTS
   PART XXII — HONEST VERDICT
   PART XXIII— PHASE C: TRYING TO BREAK THE IDEA
   PART XXIV — REDSHIFT TEST FEASIBILITY
+  PART XXV  — MEASUREMENT PIPELINE
 
 ================================================================================
 PART I: ROBUST EMPIRICAL FINDINGS
@@ -1351,6 +1352,118 @@ prediction today.
 What we CAN say: the prediction is specific, quantitative, and
 falsifiable. It is the strongest argument for taking the Cosmic
 Floor model seriously as a candidate for follow-up observation.
+
+================================================================================
+PART XXV: MEASUREMENT PIPELINE — HOW TO EXTRACT THE SIGNAL
+================================================================================
+
+"We don't make the signal bigger — we make the noise smaller
+until the signal shows through."
+
+The 15.7% V_flat shift at z=1 is buried in ~12-35% per-galaxy noise.
+Six measurement strategies were simulated (500 Monte Carlo trials each)
+to determine which approach can extract the signal.
+
+Simulation parameters:
+  σ(V)/V = 12%, σ(log M) = 0.35 dex, σ(inc) = 8°
+  z_low = 0, z_high = 1, N_MC = 500
+
+────────────────────────────────────────────────────────────────────────
+6 METHODS TESTED
+────────────────────────────────────────────────────────────────────────
+
+  1. NAIVE: Compare mean V_flat(z=0) vs V_flat(z=1)
+     → 20% detection at N=20, 58% at N=100
+     Poor: mass distribution mismatch dominates
+
+  2. MASS-MATCHED BTFR: Bin by mass, compare V within each bin
+     → 93% detection at N=20, 100% at N=50
+     ★ WINNER: mass matching removes the dominant systematic
+
+  3. RATIO V_obs/V_bar: Use the ratio instead of absolute V
+     → 16% detection at N=20, 55% at N=100
+     Disappointing: ratio cancels some systematics but not mass scatter
+
+  4. GLOBAL a₀ FIT: Fit a₀ directly to all galaxies at z=1
+     → Significant bias (−37%): mass errors propagate into a₀
+     Not recommended as primary method
+
+  5. STACKED DIFFERENTIAL: Compare z-bins, fit trend with z
+     → 72% positive trend at N=20, 86% at N=100
+     Good as consistency check, not as primary detection
+
+  6. OPTIMAL COMBINED: Ratio + mass matching + global fit + multi-z
+     → The combination is not yet properly calibrated
+     Needs more work on the bias correction
+
+────────────────────────────────────────────────────────────────────────
+KEY RESULT: DETECTION POWER COMPARISON
+────────────────────────────────────────────────────────────────────────
+
+  Method                   N=20    N=50    N=100
+  Naive V_flat             20%     33%     58%
+  ★ Mass-matched BTFR      93%     99%     100%
+  Ratio V/V_bar            16%     35%     55%
+  Global a₀ fit            30%     22%     14%
+  Stacked differential     72%     78%     86%
+  Optimal combined         17%      7%      2%
+
+THE MASS-MATCHED BTFR IS OVERWHELMINGLY SUPERIOR.
+
+Why? Because mass uncertainty is the dominant noise source at high z.
+When you bin galaxies by mass and compare V within each bin:
+  - Mass scatter is controlled (same mass → same bin)
+  - The V shift becomes the only variable
+  - √N stacking reduces random V errors
+
+With just 20 galaxies matched in mass bins: 93% detection rate.
+
+────────────────────────────────────────────────────────────────────────
+RECOMMENDED PIPELINE (5 Steps)
+────────────────────────────────────────────────────────────────────────
+
+  STEP 1: Sample Selection
+    Target: 30-50 galaxies at z = 0.5-1.5
+    Mass range: 10⁹ - 10¹¹ M☉ (match SPARC range)
+    Inclination: 30° - 75° (reliable V_rot)
+    Instrument: JWST NIRSpec IFS (Hα) + ALMA CO(2-1)
+
+  STEP 2: Measurement
+    Extract V_flat from tilted-ring fit (single number per galaxy)
+    Measure M_bar from SED fitting + gas mass
+    Critical: mass estimation must be independent of kinematics
+
+  STEP 3: Mass-Matched Comparison
+    Sort both z=0 (SPARC) and z>0 samples into mass bins:
+      [10⁹-10⁹·⁵, 10⁹·⁵-10¹⁰, 10¹⁰-10¹⁰·⁵, 10¹⁰·⁵-10¹¹]
+    Within each bin: compare mean V_flat(z>0) / mean V_flat(z=0)
+    Weight-average across bins
+
+  STEP 4: Fit the Evolution
+    Model: V_flat(z) / V_flat(0) = E(z)^(α/4) at fixed M_bar
+    Cosmic Floor predicts α = 1
+    MOND predicts α = 0
+    Measure α ± σ(α)
+
+  STEP 5: Significance Assessment
+    Likelihood ratio test: α=1 vs α=0
+    Bootstrap 95% CI on α
+    Require ≥3σ for detection claim
+
+────────────────────────────────────────────────────────────────────────
+LESSONS LEARNED
+────────────────────────────────────────────────────────────────────────
+
+  1. Don't try to measure a₀ directly at high z — too many degeneracies
+  2. Mass matching is the single most important strategy
+  3. V_flat is better than full rotation curves (less noise)
+  4. The ratio method helps in theory but not enough in practice
+  5. Multi-z binning gives a trend but requires many galaxies
+  6. 20 mass-matched galaxies > 100 unmatched galaxies
+
+THE GOLDEN RULE:
+"Compare like with like. Control the mass, and the velocity
+shift reveals itself."
 
 ================================================================================
 PROPOSED MODEL NAME

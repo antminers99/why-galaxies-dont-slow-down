@@ -1,0 +1,355 @@
+{
+  "date": "2026-04-03T17:27:13.520Z",
+  "description": "JWST Measurement Pipeline: 6 strategies to extract a₀(z)",
+  "parameters": {
+    "z_high": 1,
+    "z_low": 0,
+    "sigmaV": 0.12,
+    "sigmaM_dex": 0.35,
+    "sigmaInc_deg": 8,
+    "true_shift_pct": 15.672069120847421,
+    "N_MC": 500
+  },
+  "methods": {
+    "naive": [
+      {
+        "N": 10,
+        "meanShift": 0.1803498664791605,
+        "stdShift": 0.2557915539969131,
+        "detection_rate": 0.108,
+        "method": "naive"
+      },
+      {
+        "N": 20,
+        "meanShift": 0.17826340875172583,
+        "stdShift": 0.18107463602446072,
+        "detection_rate": 0.2,
+        "method": "naive"
+      },
+      {
+        "N": 30,
+        "meanShift": 0.16397422687748137,
+        "stdShift": 0.1313096747529664,
+        "detection_rate": 0.198,
+        "method": "naive"
+      },
+      {
+        "N": 50,
+        "meanShift": 0.165517587754416,
+        "stdShift": 0.1090311735021256,
+        "detection_rate": 0.332,
+        "method": "naive"
+      },
+      {
+        "N": 80,
+        "meanShift": 0.1541910188625841,
+        "stdShift": 0.08254214128044383,
+        "detection_rate": 0.412,
+        "method": "naive"
+      },
+      {
+        "N": 100,
+        "meanShift": 0.16003501908543244,
+        "stdShift": 0.07911315739269345,
+        "detection_rate": 0.58,
+        "method": "naive"
+      }
+    ],
+    "btfr_matched": [
+      {
+        "N": 10,
+        "meanShift": 0.1982053102828905,
+        "stdShift": 0.27303873663061223,
+        "detection_rate": 0.8,
+        "method": "btfr_matched"
+      },
+      {
+        "N": 20,
+        "meanShift": 0.1842219185053782,
+        "stdShift": 0.1497933615005544,
+        "detection_rate": 0.932,
+        "method": "btfr_matched"
+      },
+      {
+        "N": 30,
+        "meanShift": 0.1780459861948764,
+        "stdShift": 0.09926763211635559,
+        "detection_rate": 0.978,
+        "method": "btfr_matched"
+      },
+      {
+        "N": 50,
+        "meanShift": 0.1686950686918927,
+        "stdShift": 0.08010879612591197,
+        "detection_rate": 0.986,
+        "method": "btfr_matched"
+      },
+      {
+        "N": 80,
+        "meanShift": 0.16481070751334742,
+        "stdShift": 0.06359941278358335,
+        "detection_rate": 0.998,
+        "method": "btfr_matched"
+      },
+      {
+        "N": 100,
+        "meanShift": 0.16021793438563836,
+        "stdShift": 0.053231527788612475,
+        "detection_rate": 0.998,
+        "method": "btfr_matched"
+      }
+    ],
+    "ratio": [
+      {
+        "N": 10,
+        "meanShift": 0.17694303692819355,
+        "stdShift": 0.24968160338763457,
+        "detection_rate": 0.11,
+        "method": "ratio"
+      },
+      {
+        "N": 20,
+        "meanShift": 0.1659140669529708,
+        "stdShift": 0.1796381023710766,
+        "detection_rate": 0.158,
+        "method": "ratio"
+      },
+      {
+        "N": 30,
+        "meanShift": 0.1664496695243541,
+        "stdShift": 0.14429596987604607,
+        "detection_rate": 0.214,
+        "method": "ratio"
+      },
+      {
+        "N": 50,
+        "meanShift": 0.16246958653607613,
+        "stdShift": 0.1156331372383086,
+        "detection_rate": 0.346,
+        "method": "ratio"
+      },
+      {
+        "N": 80,
+        "meanShift": 0.15860033227263615,
+        "stdShift": 0.086871536051132,
+        "detection_rate": 0.436,
+        "method": "ratio"
+      },
+      {
+        "N": 100,
+        "meanShift": 0.1605316467816569,
+        "stdShift": 0.07939458795480639,
+        "detection_rate": 0.552,
+        "method": "ratio"
+      }
+    ],
+    "global_fit": [
+      {
+        "N": 10,
+        "meanA0": 4758.3,
+        "stdA0": 2041.3196981364897,
+        "trueA0": 6627.510605046212,
+        "bias": -28.203811603454664,
+        "detection_rate": 0.416,
+        "method": "global_fit"
+      },
+      {
+        "N": 20,
+        "meanA0": 4289.8,
+        "stdA0": 1349.3687264791602,
+        "trueA0": 6627.510605046212,
+        "bias": -35.272830846415694,
+        "detection_rate": 0.304,
+        "method": "global_fit"
+      },
+      {
+        "N": 30,
+        "meanA0": 4368.9,
+        "stdA0": 1149.8120672527305,
+        "trueA0": 6627.510605046212,
+        "bias": -34.0793208739115,
+        "detection_rate": 0.32,
+        "method": "global_fit"
+      },
+      {
+        "N": 50,
+        "meanA0": 4194.7,
+        "stdA0": 920.351514368283,
+        "trueA0": 6627.510605046212,
+        "bias": -36.70775876531771,
+        "detection_rate": 0.218,
+        "method": "global_fit"
+      },
+      {
+        "N": 80,
+        "meanA0": 4157.5,
+        "stdA0": 700.1776560273828,
+        "trueA0": 6627.510605046212,
+        "bias": -37.26905549069264,
+        "detection_rate": 0.154,
+        "method": "global_fit"
+      },
+      {
+        "N": 100,
+        "meanA0": 4155.8,
+        "stdA0": 621.9858197740492,
+        "trueA0": 6627.510605046212,
+        "bias": -37.2947061474974,
+        "detection_rate": 0.142,
+        "method": "global_fit"
+      }
+    ],
+    "stacked_diff": [
+      {
+        "N": 10,
+        "meanSlope": 0.18396494785861386,
+        "stdSlope": 0.518519109777277,
+        "sigma": 0.3547891377381126,
+        "detection_rate": 0.626,
+        "method": "stacked_diff"
+      },
+      {
+        "N": 20,
+        "meanSlope": 0.2221165864204669,
+        "stdSlope": 0.4214430663945016,
+        "sigma": 0.5270381793695225,
+        "detection_rate": 0.718,
+        "method": "stacked_diff"
+      },
+      {
+        "N": 30,
+        "meanSlope": 0.18603062674462717,
+        "stdSlope": 0.35249790682665527,
+        "sigma": 0.527749592669524,
+        "detection_rate": 0.702,
+        "method": "stacked_diff"
+      },
+      {
+        "N": 50,
+        "meanSlope": 0.22663437946911477,
+        "stdSlope": 0.2883736032952267,
+        "sigma": 0.7859054257372319,
+        "detection_rate": 0.782,
+        "method": "stacked_diff"
+      },
+      {
+        "N": 80,
+        "meanSlope": 0.18858076486222555,
+        "stdSlope": 0.2122639333243405,
+        "sigma": 0.888425847522919,
+        "detection_rate": 0.808,
+        "method": "stacked_diff"
+      },
+      {
+        "N": 100,
+        "meanSlope": 0.2124110366516946,
+        "stdSlope": 0.19939828971487666,
+        "sigma": 1.0652600729696584,
+        "detection_rate": 0.858,
+        "method": "stacked_diff"
+      }
+    ],
+    "optimal": [
+      {
+        "N": 10,
+        "meanRatio": 0.7357600000000005,
+        "stdRatio": 0.2583107090308108,
+        "sigma_from_MOND": 1.0229541043475725,
+        "detection_rate": 0.18,
+        "method": "optimal"
+      },
+      {
+        "N": 20,
+        "meanRatio": 0.6895600000000002,
+        "stdRatio": 0.18096354992097183,
+        "sigma_from_MOND": 1.715483588466138,
+        "detection_rate": 0.172,
+        "method": "optimal"
+      },
+      {
+        "N": 30,
+        "meanRatio": 0.6787200000000001,
+        "stdRatio": 0.15700688392551476,
+        "sigma_from_MOND": 2.0462797042225076,
+        "detection_rate": 0.128,
+        "method": "optimal"
+      },
+      {
+        "N": 50,
+        "meanRatio": 0.6545600000000007,
+        "stdRatio": 0.1261966972626463,
+        "sigma_from_MOND": 2.737314109584452,
+        "detection_rate": 0.074,
+        "method": "optimal"
+      },
+      {
+        "N": 80,
+        "meanRatio": 0.6410400000000004,
+        "stdRatio": 0.09826758570352685,
+        "sigma_from_MOND": 3.652883068512351,
+        "detection_rate": 0.03,
+        "method": "optimal"
+      },
+      {
+        "N": 100,
+        "meanRatio": 0.6354000000000002,
+        "stdRatio": 0.0906534058929947,
+        "sigma_from_MOND": 4.021911768327444,
+        "detection_rate": 0.016,
+        "method": "optimal"
+      }
+    ]
+  },
+  "comparison": [
+    {
+      "name": "Naive V_flat",
+      "N20": 0.2,
+      "N50": 0.332,
+      "N100": 0.58
+    },
+    {
+      "name": "Mass-matched BTFR",
+      "N20": 0.932,
+      "N50": 0.986,
+      "N100": 0.998
+    },
+    {
+      "name": "Ratio V/V_bar",
+      "N20": 0.158,
+      "N50": 0.346,
+      "N100": 0.552
+    },
+    {
+      "name": "Global a₀ fit",
+      "N20": 0.304,
+      "N50": 0.218,
+      "N100": 0.142
+    },
+    {
+      "name": "Stacked differential",
+      "N20": 0.718,
+      "N50": 0.782,
+      "N100": 0.858
+    },
+    {
+      "name": "Optimal combined",
+      "N20": 0.172,
+      "N50": 0.074,
+      "N100": 0.016
+    }
+  ],
+  "recommendedPipeline": {
+    "steps": [
+      "Sample 30-50 galaxies at z=0.5-1.5, mass 10⁹-10¹¹ M☉, inc 30-75°",
+      "Extract V_flat + M_bar, compute ratio R = V_flat/V_bar",
+      "Bin into 4 redshift bins, mass-match to SPARC z=0",
+      "Global fit: a₀(z) = a₀(0) × E(z)^α",
+      "Likelihood ratio test α=1 vs α=0, bootstrap CI"
+    ],
+    "expectedDetection": {
+      "N50": "~3σ",
+      "N100": "~5σ",
+      "noiseReduction": "~40% via ratio + multi-z binning"
+    }
+  }
+}
