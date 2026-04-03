@@ -19,6 +19,7 @@ import EvidencePage from "@/pages/evidence";
 import DefensePage from "@/pages/defense";
 import ModelProposalPage from "@/pages/model-proposal";
 import ConclusionsPage from "@/pages/conclusions";
+import EquationPage from "@/pages/equation";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -42,6 +43,7 @@ function Router() {
       <Route path="/defense" component={DefensePage} />
       <Route path="/model" component={ModelProposalPage} />
       <Route path="/conclusions" component={ConclusionsPage} />
+      <Route path="/equation" component={EquationPage} />
       <Route component={NotFound} />
     </Switch>
   );
