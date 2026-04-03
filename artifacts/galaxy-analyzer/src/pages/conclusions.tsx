@@ -50,7 +50,7 @@ export default function ConclusionsPage() {
   const mismatchPct = (Math.abs(predicted - a0_ms2) / a0_ms2 * 100).toFixed(0);
 
   const nPoints = simA0 ? simA0.observational.combined.nPoints : 4123;
-  const combinedRMS = simA0 ? simA0.observational.combined.globalRMS : 0.236;
+  const sparcRMS = simA0 ? simA0.observational.sparc.globalRMS : 0.198;
   const sparcNGalaxies = simA0 ? simA0.observational.sparc.nGalaxies : 175;
   const rVmax = phi ? phi.rVmaxA0 : 0.10;
   const rRmax = phi ? phi.otherVariables.rRmax : -0.04;
@@ -93,7 +93,7 @@ export default function ConclusionsPage() {
                 There is a characteristic acceleration scale a{"\u2080"} {"\u2248"} {a0_ms2.toExponential(1)} m/s{"\u00B2"} ({"\u2248"} {a0_kpc} (km/s){"\u00B2"}/kpc)
                 below which the observed gravitational acceleration systematically exceeds
                 what baryonic matter alone predicts. This is detected across all {sparcNGalaxies} galaxies
-                with {combinedRMS} dex scatter.
+                with {sparcRMS} dex scatter.
               </p>
             </div>
 
