@@ -18,6 +18,7 @@ import BaryonHaloCouplingPage from "@/pages/baryon-halo-coupling";
 import EvidencePage from "@/pages/evidence";
 import DefensePage from "@/pages/defense";
 import ModelProposalPage from "@/pages/model-proposal";
+import ConclusionsPage from "@/pages/conclusions";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/baryon-halo-coupling" component={BaryonHaloCouplingPage} />
       <Route path="/defense" component={DefensePage} />
       <Route path="/model" component={ModelProposalPage} />
+      <Route path="/conclusions" component={ConclusionsPage} />
       <Route component={NotFound} />
     </Switch>
   );
