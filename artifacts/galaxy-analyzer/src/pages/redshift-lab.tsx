@@ -58,16 +58,13 @@ function generateMockJWSTData(z: number, omM: number, omL: number) {
     const trueA0 = A0_MS2 * e;
     const noise = (rand() - 0.5) * 0.15;
     const measured = trueA0 * (1 + noise);
-    const errUp = trueA0 * (0.12 + 0.05 * zv);
-    const errDown = trueA0 * (0.10 + 0.04 * zv);
+    const errSize = trueA0 * (0.11 + 0.045 * zv);
     return {
       z: zv,
       measured: measured * 1e10,
-      errUp: errUp * 1e10,
-      errDown: errDown * 1e10,
+      errorBar: errSize * 1e10,
       cosmicFloor: (A0_MS2 * e) * 1e10,
       mond: A0_MS2 * 1e10,
-      lcdm: null as number | null,
     };
   });
 }
@@ -346,13 +343,8 @@ export default function RedshiftLabPage() {
                 <Line type="monotone" dataKey="cosmicFloor" stroke="#f59e0b" strokeWidth={3} dot={false} name="Cosmic Floor" />
                 <Line type="monotone" dataKey="mond" stroke="#8b5cf6" strokeWidth={2} strokeDasharray="8 4" dot={false} name="MOND (constant)" />
                 <ReferenceLine x={z} stroke="rgba(255,255,255,0.3)" strokeDasharray="4 4" label={{ value: 'z=' + z.toFixed(1), fill: 'rgba(255,255,255,0.5)', fontSize: 11 }} />
-                {mockData.map((d, i) => (
-                  <ReferenceLine key={i} x={d.z} y={d.measured} ifOverflow="extendDomain">
-                    {null}
-                  </ReferenceLine>
-                ))}
                 <Scatter data={mockData} dataKey="measured" fill="#22d3ee" name="Mock JWST">
-                  <ErrorBar dataKey="errUp" width={4} strokeWidth={1.5} stroke="#22d3ee" direction="y" />
+                  <ErrorBar dataKey="errorBar" width={4} strokeWidth={1.5} stroke="#22d3ee" direction="y" />
                 </Scatter>
                 <Legend
                   wrapperStyle={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)' }}
