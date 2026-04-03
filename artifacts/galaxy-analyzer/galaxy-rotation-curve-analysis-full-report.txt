@@ -2390,5 +2390,396 @@ PART XXVII: FIRST DERIVATION ATTEMPT — UNRUH / de SITTER, STEP BY STEP
   the derivation problem.
 
 ================================================================================
+PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
+================================================================================
+
+  The question has shifted:
+    OLD: "Why is a₀ = cH₀/2π?"
+    NEW: "Given that a₀ exists, what dynamical equation produces the RAR?"
+
+  Part XXVII showed that Unruh/de Sitter gives the right order but not
+  the exact value. The thermal derivation is suggestive but incomplete.
+  We now set aside the ORIGIN of a₀ and ask: what LAW uses it?
+
+  Two candidate dynamical frameworks:
+    A. Modified Inertia (MI): the response of matter to force changes at low a
+    B. Modified Field Equation (MFE): the gravitational field equation changes
+
+  These are NOT the same physics. They make different predictions.
+
+  ════════════════════════════════════════════════════════════════════════
+  FRAMEWORK A: MODIFIED INERTIA
+  ════════════════════════════════════════════════════════════════════════
+
+  Core idea:
+    Newton's second law F = ma is exact at high acceleration.
+    At low acceleration (a << a₀), the effective inertial mass changes:
+
+      F = m · μ(a/a₀) · a
+
+    where μ(x) → 1 when x >> 1 (Newton recovered)
+    and   μ(x) → x when x << 1 (deep-MOND limit)
+
+    Equivalently: the "felt" acceleration a_felt relates to Newtonian a_N by:
+
+      a_N = a_felt · μ(a_felt/a₀)
+
+    This is Milgrom's original MOND formulation (1983).
+
+  What it predicts:
+    In the deep regime (a_felt << a₀):
+      a_N = a_felt · (a_felt/a₀) = a_felt²/a₀
+      → a_felt = √(a_N · a₀)
+
+    For circular orbits: a_felt = V²/r, a_N = GM/r²
+      V²/r = √(GM/r² · a₀)
+      V⁴ = GM · a₀
+      → V_flat = (GMa₀)^(1/4)
+
+    This IS the Baryonic Tully-Fisher Relation. It falls out directly.
+
+  How it connects to RAR:
+    The RAR is g_obs = f(g_bar) where g_bar = a_N and g_obs = a_felt.
+    MI says: g_bar = g_obs · μ(g_obs/a₀)
+    Solving for g_obs: g_obs = ν(g_bar/a₀) · g_bar
+
+    With the "simple" interpolation function:
+      ν(y) = [1 + √(1 + 4/y)] / 2
+
+    This produces the exact shape of the observed RAR.
+
+  Strengths:
+    ✓ BTFR derived, not fitted
+    ✓ RAR shape predicted
+    ✓ Newton limit automatic
+    ✓ Single parameter a₀ — universal
+    ✓ Works for both HSB and LSB galaxies
+
+  Weaknesses:
+    ✗ a₀ is inserted, not derived
+    ✗ The interpolation function μ(x) is not unique — many forms work
+    ✗ Modified inertia is non-local in general (Milgrom 1994):
+      if F = m·μ·a, then in non-circular orbits the equation depends
+      on the ENTIRE trajectory, not just instantaneous state.
+      This makes it hard to formulate as a local field theory.
+    ✗ No relativistic completion that works fully
+    ✗ Clusters: still needs ~2× more mass
+
+  The non-locality problem (critical):
+    Milgrom (1994) showed that MI applied to non-circular orbits
+    requires knowledge of the orbit's future and past. This is because
+    the modification depends on |a|, which for a general orbit depends
+    on the path. In circular orbits this problem disappears (|a| = V²/r
+    is constant). But for stars on eccentric orbits, or for systems
+    without symmetry, MI becomes non-local in time.
+
+    This is a deep theoretical problem, not a technicality.
+    It means MI as stated is not a complete theory — it's a prescription
+    that works for symmetric cases.
+
+  ────────────────────────────────────────────────────────────────────────
+
+  Connection to cosmic floor model:
+    Our Floor formula uses:
+      g_obs = √(r · √((g_bar)² + a₀²·g_bar/(g_bar + a₀)))
+
+    This is an interpolation between Newton (g_bar >> a₀) and a floor
+    (g_obs → a₀ when g_bar → 0). It is CLOSER to MI than to MFE
+    because it modifies the observed acceleration, not the field equation.
+
+    But it differs from standard MI:
+    - MI deep limit: g_obs = √(g_bar · a₀)  → goes to 0 as g_bar → 0
+    - Floor model: g_obs → a₀                → stays finite
+
+    The Floor model has a FLOOR. Standard MI does not.
+    This difference matters at the very lowest accelerations.
+
+  ════════════════════════════════════════════════════════════════════════
+  FRAMEWORK B: MODIFIED FIELD EQUATION (AQUAL / modified Poisson)
+  ════════════════════════════════════════════════════════════════════════
+
+  Core idea:
+    The gravitational potential Φ obeys a modified Poisson equation:
+
+      ∇·[μ(|∇Φ|/a₀) ∇Φ] = 4πGρ
+
+    where μ(x) → 1 for x >> 1 and μ(x) → x for x << 1.
+
+    This is AQUAL (AQUAdratic Lagrangian), Bekenstein & Milgrom 1984.
+
+  Key difference from MI:
+    In MI, you modify the LEFT side of F = ma (the inertia).
+    In MFE, you modify the gravitational FIELD itself (the force).
+
+    For spherically symmetric systems, MI and MFE give identical results.
+    For non-symmetric systems, they differ.
+
+  The Lagrangian:
+    AQUAL has a well-defined action:
+
+      S = -∫ d³x [a₀²/(8πG)] F(|∇Φ|²/a₀²) + ∫ d³x ρΦ
+
+    where F'(s) = μ(√s).
+
+    This is a genuine field theory with:
+    - A Lagrangian
+    - Euler-Lagrange equations
+    - Conservation laws
+    - Local dynamics (no non-locality problem)
+
+  What it predicts:
+    For spherical symmetry: same as MI (BTFR, RAR, rotation curves).
+    For non-spherical: different from MI.
+
+    Key prediction unique to MFE:
+      The External Field Effect (EFE).
+      A galaxy falling in an external field g_ext modifies the
+      INTERNAL dynamics even if g_ext is uniform. This violates
+      the Strong Equivalence Principle.
+
+      In MI: a uniform external field can be transformed away (SEP holds).
+      In MFE: it cannot (SEP violated).
+
+    EFE has been claimed detected in some dwarf galaxies
+    (Chae et al. 2020, but debated — Freundlich et al. 2022).
+
+  Strengths:
+    ✓ BTFR and RAR derived (same as MI for spherical)
+    ✓ Has a Lagrangian — proper field theory
+    ✓ Local dynamics — no non-locality problem
+    ✓ Makes a unique prediction (EFE) testable in principle
+    ✓ Newton limit automatic
+
+  Weaknesses:
+    ✗ a₀ is still inserted as a parameter
+    ✗ μ(x) is not unique
+    ✗ No satisfactory relativistic extension (TeVeS has problems)
+    ✗ Clusters: same problem as MI
+    ✗ The Lagrangian F(s) has no deeper derivation
+
+  ════════════════════════════════════════════════════════════════════════
+  HEAD-TO-HEAD COMPARISON
+  ════════════════════════════════════════════════════════════════════════
+
+  ┌─────────────────────────┬──────────────────┬──────────────────┐
+  │ Property                │ Modified Inertia │ Modified Field   │
+  ├─────────────────────────┼──────────────────┼──────────────────┤
+  │ BTFR                    │ ✓ derived        │ ✓ derived        │
+  │ RAR shape               │ ✓ derived        │ ✓ derived        │
+  │ Newton limit            │ ✓                │ ✓                │
+  │ Spherical systems       │ identical        │ identical        │
+  │ Non-spherical systems   │ NON-LOCAL        │ local (AQUAL)    │
+  │ Has Lagrangian          │ ✗ (not known)    │ ✓                │
+  │ External Field Effect   │ ✗ (SEP holds)    │ ✓ (SEP violated) │
+  │ a₀ derived?             │ ✗ (inserted)     │ ✗ (inserted)     │
+  │ Clusters                │ ✗                │ ✗                │
+  │ Relativistic version    │ ✗                │ ✗ (TeVeS broken) │
+  │ Floor behavior (g→a₀)   │ ✗ (g→0)          │ ✗ (g→0)          │
+  └─────────────────────────┴──────────────────┴──────────────────┘
+
+  Verdict: MFE (AQUAL) is more complete as a theory (has Lagrangian,
+  is local, makes a unique testable prediction). MI is simpler but
+  has the non-locality problem for general orbits.
+
+  NEITHER produces a floor. Both give g → 0 as g_bar → 0.
+  Our Floor model differs from both in this critical aspect.
+
+  ════════════════════════════════════════════════════════════════════════
+  THE FLOOR DIFFERENCE
+  ════════════════════════════════════════════════════════════════════════
+
+  Standard MOND (both MI and MFE):
+    Deep limit: g_obs = √(g_bar · a₀)
+    As g_bar → 0: g_obs → 0
+
+  Floor model:
+    Deep limit: g_obs → a₀ (constant floor)
+    As g_bar → 0: g_obs → a₀ ≠ 0
+
+  This is a genuine physical difference, not a fitting choice.
+
+  Observational test:
+    At very large radii where g_bar → 0:
+    MOND predicts V → 0 (rotation curves eventually decline)
+    Floor predicts V → √(a₀ · r) (rotation curves keep rising)
+
+    In practice: very few data points exist at g_bar << a₀.
+    The difference is hard to measure with current data.
+    But it is in principle testable with HI 21cm observations
+    at very large galactic radii (5-10 disk scale lengths).
+
+  What dynamics could produce a floor?
+
+    Option 1: Additive acceleration
+      g_obs = g_Newton + a₀  (always present)
+      Problem: violates Newton limit. At g_bar >> a₀, g_obs ≈ g_bar + a₀ ≈ g_bar ✓
+      Actually this works for Newton limit! And gives a floor.
+      But: it doesn't give BTFR. V² = GM/r + a₀·r → not V⁴ = GMa₀.
+
+    Option 2: Quadrature addition
+      g_obs = √(g_bar² + a₀²)
+      Problem: at g_bar >> a₀, g_obs ≈ g_bar ✓ (Newton limit)
+      At g_bar → 0: g_obs → a₀ ✓ (floor)
+      But: doesn't give MOND behavior √(g_bar · a₀) in transition.
+      V² = √((GM/r²)² + a₀²) · r → not BTFR.
+
+    Option 3: MOND + floor (our actual model)
+      g_obs² = g_bar · a₀ + a₀² (modified deep limit)
+      This gives: g_obs → a₀ at g_bar → 0 (floor)
+      And: g_obs → √(g_bar · a₀) at g_bar → a₀ (MOND-like)
+      And: g_obs → g_bar at g_bar >> a₀ (Newton)
+
+      This is effectively what our formula does.
+      But: this is an interpolation, not a field equation.
+
+  The dynamical question for the Floor:
+
+    Is there a field equation — with a Lagrangian — that produces:
+    (a) Newton at high g
+    (b) MOND-like transition
+    (c) Floor at very low g
+
+    No known Lagrangian does this. AQUAL gives (a) and (b) but not (c).
+
+    To get (c), you might need:
+    - A cosmological constant term in the modified Poisson equation
+    - A dark energy contribution to the gravitational field
+    - Or: a₀ enters as a VACUUM acceleration, always present
+
+    Example (speculative):
+
+      ∇·[μ(|∇Φ|/a₀) ∇Φ] = 4πGρ + Λ_eff
+
+    where Λ_eff produces a background acceleration a₀.
+    This would give a floor. But Λ_eff needs to produce exactly a₀.
+    We're back to the origin question.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ STATUS:                                                             │
+  │                                                                     │
+  │ Standard MOND (MI or MFE) gives BTFR and RAR but NOT a floor.    │
+  │ Our Floor model adds a floor but has no Lagrangian.                │
+  │ Combining AQUAL + floor requires a vacuum acceleration term.       │
+  │ That term would need to be a₀ = cH₀/2π — circular.               │
+  │                                                                     │
+  │ No known field theory produces Newton + MOND + floor together.     │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  THIRD OPTION: DARK-SECTOR RESPONSE LAW
+  ════════════════════════════════════════════════════════════════════════
+
+  Instead of modifying gravity or inertia, keep Newton exact and add
+  a dark-sector field that RESPONDS to baryonic matter:
+
+    g_obs = g_bar + g_dark(g_bar)
+
+  where g_dark is the acceleration from a dark field that depends
+  on the local baryonic acceleration.
+
+  If g_dark(g_bar) = √(g_bar · a₀) - g_bar when g_bar < a₀:
+    → g_obs = √(g_bar · a₀) at low acceleration (MOND behavior)
+    → g_obs = g_bar at high acceleration (Newton)
+
+  If g_dark(g_bar) = √(g_bar · a₀ + a₀²) - g_bar:
+    → g_obs → a₀ at g_bar → 0 (floor!)
+    → g_obs → √(g_bar · a₀) at intermediate (MOND-like)
+    → g_obs → g_bar at high (Newton)
+
+  This is mathematically equivalent to our Floor model, but interpreted
+  differently: gravity is Newtonian, but a dark field adds acceleration.
+
+  Advantages:
+    ✓ Keeps Newton/GR intact
+    ✓ Can produce a floor naturally (dark field has minimum energy density)
+    ✓ Could explain clusters (dark field is real, has its own dynamics)
+    ✓ The function g_dark(g_bar) is the RAR itself
+
+  Challenges:
+    ✗ What IS the dark field? (scalar? vector? tensor?)
+    ✗ Why does it couple to g_bar specifically?
+    ✗ Why is the coupling set by a₀ ≈ cH₀/2π?
+    ✗ Need a Lagrangian for the dark field
+
+  Connection to superfluid DM (Berezhiani & Khoury 2015):
+    In this model, DM forms a superfluid inside galaxies.
+    The phonon excitations of the superfluid produce a force:
+    F_phonon ∝ √(a₀ · g_bar) → gives MOND behavior
+    At cluster scales, the superfluid phase breaks → normal DM behavior.
+    This could explain both the RAR and the cluster gap.
+
+    But: the superfluid DM model has several free parameters
+    (DM particle mass, self-coupling, phonon coupling to baryons)
+    and a₀ is effectively fitted, not derived.
+
+  ════════════════════════════════════════════════════════════════════════
+  EVALUATION TABLE: THREE DYNAMICAL FRAMEWORKS + FLOOR
+  ════════════════════════════════════════════════════════════════════════
+
+  ┌────────────────┬─────────┬──────────┬──────────┬──────────────┐
+  │                │ Mod.    │ Mod.     │ Dark     │ Our Floor    │
+  │ Criterion      │ Inertia │ Field    │ Sector   │ (empirical)  │
+  ├────────────────┼─────────┼──────────┼──────────┼──────────────┤
+  │ BTFR           │ ✓       │ ✓        │ ✓        │ ✓            │
+  │ RAR            │ ✓       │ ✓        │ ✓        │ ✓            │
+  │ Newton limit   │ ✓       │ ✓        │ ✓        │ ✓            │
+  │ Floor (g→a₀)   │ ✗       │ ✗        │ possible │ ✓ (by design)│
+  │ Lagrangian     │ ✗       │ ✓ (AQUAL)│ possible │ ✗            │
+  │ Local          │ ✗       │ ✓        │ ✓        │ ✓            │
+  │ Clusters       │ ✗       │ ✗        │ ✓        │ △ (43%)      │
+  │ a₀ derived     │ ✗       │ ✗        │ ✗        │ ✗            │
+  │ Relativistic   │ ✗       │ ✗        │ possible │ ✗            │
+  │ EFE predicted  │ ✗       │ ✓        │ depends  │ not tested   │
+  └────────────────┴─────────┴──────────┴──────────┴──────────────┘
+
+  No single framework satisfies everything. But the pattern is clear:
+
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║ The most promising complete theory would likely combine:            ║
+  ║                                                                     ║
+  ║   1. A modified field equation (like AQUAL) for the Lagrangian     ║
+  ║   2. A vacuum/cosmological term for the floor                      ║
+  ║   3. A dark-sector component for clusters                          ║
+  ║                                                                     ║
+  ║ This is not a theory yet. It is a wish list.                       ║
+  ║ Each ingredient exists separately. No one has combined them.       ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+  ════════════════════════════════════════════════════════════════════════
+  THE HONEST SUMMARY
+  ════════════════════════════════════════════════════════════════════════
+
+  What we know:
+    1. An acceleration scale a₀ ≈ 1.2×10⁻¹⁰ m/s² exists (5 facts, 4 breaking tests)
+    2. It is approximately universal (partial r = -0.656, no mass/size dependence)
+    3. It is numerically close to cH₀/2π (ratio 0.87)
+    4. The 2π has a natural origin in Unruh/Euclidean periodicity
+    5. But the Unruh/de Sitter threshold gives cH, not cH/2π (Part XXVII)
+    6. MOND (MI or MFE) uses a₀ to produce BTFR and RAR correctly
+    7. Neither MOND variant produces a floor
+    8. Our Floor model fits the data but has no Lagrangian
+    9. Dark-sector coupling could explain clusters but doesn't derive a₀
+    10. No complete theory exists that satisfies all conditions
+
+  What we eliminated:
+    - Pure Unruh/de Sitter derivation (breaks at threshold, Part XXVII)
+    - Vacuum mode quantization (wrong scale by 10⁵², Part XXVI-A)
+    - Simple additive acceleration (doesn't give BTFR)
+    - Simple quadrature (doesn't give MOND transition)
+
+  What remains open:
+    - Origin of the exact factor in a₀ = cH₀/2π
+    - The field equation that produces Newton + MOND + floor
+    - The dark-sector model that explains both galaxies and clusters
+    - Whether a₀ tracks H(z) or is constant (the decisive test)
+
+  The next logical step:
+    Not more theory. More data.
+    The mass-matched BTFR test at z ~ 0.5-1.0 (Part XXV) will determine
+    whether a₀ is dynamical (H-based) or structural (Λ-based).
+    This single observation constrains ALL three dynamical frameworks.
+    Until that data exists, the theoretical landscape remains degenerate.
+
+================================================================================
 END OF COMPLETE REPORT
 ================================================================================
