@@ -14,7 +14,12 @@ The project addresses a critical need in astrophysics for tools that facilitate 
 
 I prefer detailed explanations and clear communication. Please ask before making major changes. I appreciate an iterative development approach.
 
-**CRITICAL**: All results, experiments, analyses, and findings MUST be written to the full report file at `artifacts/galaxy-analyzer/galaxy-rotation-curve-analysis-full-report.txt`. This file is the master record of ALL research. Whenever new work is done (new pages, new analyses, new data), the report file MUST be updated FIRST with all results. The report is the priority — it contains everything.
+**CRITICAL**: The PRIMARY report is now `artifacts/galaxy-analyzer/diagnostic-report.txt`. All future analysis work and edits go here. The old theoretical report (`galaxy-rotation-curve-analysis-full-report.txt`) is ARCHIVED — read-only reference.
+
+**Skills**: Three custom skills store all project data and context:
+- `galaxy-data` — Physical constants, dataset summaries, computed test results
+- `galaxy-analysis` — How to run scripts, edit reports, code patterns
+- `galaxy-project` — Project context, current status, strategic direction
 
 ## System Architecture
 

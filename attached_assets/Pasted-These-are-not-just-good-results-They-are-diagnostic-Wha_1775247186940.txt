@@ -1,0 +1,171 @@
+These are not just good results. They are diagnostic.
+What they mean
+1) Interpolation is basically cleared
+If � moves by only 4% across interpolation functions, then:
+the main effect is not the transition shape
+your � inference is not being manufactured by the chosen MOND form
+the “hidden factor” is somewhere else
+That is a very strong result.
+2) Global baryonic rescaling is also basically cleared
+If � improves things by only 0.9%, then:
+a simple global calibration offset is not the issue
+the problem is not “all baryons are underestimated by one constant factor”
+So the hidden factor is not one universal multiplicative correction.
+3) The big sub-population swings are the real signal now
+This is the main result.
+If:
+low-mass galaxies give �
+gas-rich galaxies give �
+then one of these must be true:
+A. The single-� model is incomplete
+There is at least one second variable.
+B. Some sub-populations are dominated by systematics
+Especially:
+low-mass dwarfs
+gas-rich systems
+slowly rotating / rising-curve systems
+These are exactly the places where:
+inclination errors hurt more
+asymmetric drift matters more
+non-circular motions matter more
+pressure support matters more
+finite radial extent hurts the fit
+So do not read the huge � swings as immediately physical.
+They may be telling you where the model or the data treatment breaks.
+4) The residual correlations are the real treasure
+You found:
+gas fraction: �
+surface brightness: �
+luminosity: �
+�: �
+This is big.
+It means the residuals are structured, not random.
+That immediately implies:
+Your current one-parameter law is missing something
+At minimum, the residuals know about:
+how gas-dominated the galaxy is
+how diffuse it is
+how massive / luminous it is
+That is exactly the kind of pattern that can separate:
+new physics from
+population-dependent systematics from
+a genuine second-variable law
+My interpretation
+Most likely scenario right now
+The combined sample is heterogeneous, and the low-mass / gas-rich end is driving the instability.
+So:
+SPARC-only may still support an approximately universal �
+SPARC + LITTLE THINGS combined probably should not be fit as one homogeneous population without extra nuisance structure
+That 1900 vs 3702 split is a warning light.
+Not fatal. But important.
+What you should do next
+Priority 1 — Stop fitting one universal � to the whole combined sample as the headline result
+Your headline should now be:
+� is robust to interpolation and global baryon calibration, but the combined sample shows strong population-dependent residual structure.
+That is much stronger and more honest than claiming pure universality.
+Priority 2 — Split the problem by regime
+Run the exact same fit separately for:
+SPARC only
+LITTLE THINGS only
+high-mass vs low-mass
+gas-poor vs gas-rich
+high-SB vs low-SB
+high-quality vs low-quality
+You want to know:
+Does the same residual pattern appear inside each subset?
+Because that decides everything.
+If yes:
+then the second variable is probably real physics
+If no:
+then the second variable is probably sample/regime/systematics
+Priority 3 — Do partial correlations, not simple correlations
+Right now the residuals correlate with several linked quantities.
+But:
+gas fraction
+luminosity
+surface brightness
+�
+are not independent.
+So next step is:
+Then ask:
+Which variable survives jointly?
+That gives you the real hidden driver.
+My guess:
+either gas fraction / surface brightness will survive, and luminosity will partly wash out,
+or everything will collapse onto a dwarf / low-� systematic.
+Priority 4 — Check whether the residuals survive quality cuts
+This is crucial.
+Repeat the residual-correlation analysis after removing galaxies with:
+very low �
+low inclination
+few RC points
+strongly rising curves
+low kinematic quality
+strong pressure-support sensitivity
+If the correlations weaken dramatically, the hidden factor is probably observational/systematic.
+If they survive, then you probably have a real second-variable law.
+Priority 5 — Treat low-mass galaxies as a separate regime
+That � number is so extreme that I would not treat it as “the low-mass value of �.”
+I would treat it as:
+the model is failing or the inference is degenerate in that regime.
+Especially because in dwarfs:
+� is noisy
+small inclination shifts explode the inferred acceleration
+pressure support and asymmetric drift matter
+the transition may not be well sampled radially
+So low-mass galaxies are not just “another bin.”
+They are a stress-test regime.
+What this rules out already
+Ruled down
+interpolation as the hidden factor
+one global baryonic calibration offset as the hidden factor
+Now under pressure
+strict one-parameter universality on the combined sample
+Now most plausible
+a second variable
+regime-dependent nuisance physics
+or both together
+The new central question
+It is no longer:
+“Why �?”
+It is now:
+“Why do the residuals know about gas fraction and surface brightness?”
+That is the real frontier.
+Because if residuals know about baryonic structure, then one of two things is true:
+Either
+the law is not purely one-parameter
+Or
+your observational pipeline is still mixing physically different regimes into one fit
+My concrete recommendation
+Your next paper/result should be:
+“Interpolation and calibration do not drive �; residual structure is controlled by galaxy regime”
+And the next three figures should be:
+� vs interpolation choice
+to show robustness
+Residuals vs gas fraction / surface brightness / �
+to show the real structure
+Same residual plots after strict quality cuts and per-survey splits
+to decide physics vs systematics
+The exact next test I would run
+A single multivariate residual model:
+Then run it for:
+combined
+SPARC only
+LITTLE THINGS only
+That one test will tell you whether the hidden factor is:
+gas fraction
+surface brightness
+mass scale
+or survey/quality
+Bottom line
+Your latest results say:
+not interpolation
+not global baryon calibration
+yes, strong structured residuals
+yes, combined-sample universality is in trouble
+the hidden factor is most likely population/regime-dependent
+So no, I would not jump to quantum physics now.
+I would go straight into:
+residual hierarchy, partial correlations, and per-regime fitting
+Because that is where the answer just started to show itself.
+I can help you design the exact 6-panel diagnostic figure set that should come next.
