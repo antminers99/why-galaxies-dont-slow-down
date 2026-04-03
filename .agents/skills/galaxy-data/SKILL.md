@@ -11,19 +11,20 @@ description: Reference data, constants, and computed results for the Galaxy Rota
 |----------|-------|-------|
 | a₀ (canonical, McGaugh 2016) | 1.2×10⁻¹⁰ | m/s² |
 | a₀ in galaxy units | 3703 | (km/s)²/kpc |
-| a₀ (GOLD+i45 unweighted) | 4837 | (km/s)²/kpc |
-| a₀ (GOLD+i45 weighted) | 3545 | (km/s)²/kpc |
-| a₀ (GOLD+i45 hierarchical) | 3374 | (km/s)²/kpc |
-| a₀ (GOLD+i45 hier. median) | 4074 | (km/s)²/kpc |
-| a₀ uncertainty (v3.0) | ±0.295 | dex |
-| a₀ 1σ range | [2454, 9537] | (km/s)²/kpc |
-| Hier. tau (between-galaxy) | 0.245 | dex |
-| Hier. I² | 89.4 | % |
+| a₀ (v4.0 marg. hierarchical) | 3633 | (km/s)²/kpc |
+| a₀ (v4.0 marg. hier. median) | 3848 | (km/s)²/kpc |
+| a₀ (v3.0 hier. baseline) | 3374 | (km/s)²/kpc |
+| a₀ (v3.0 weighted baseline) | 3545 | (km/s)²/kpc |
+| a₀ (v3.0 UW diagnostic) | 4837 | (km/s)²/kpc |
+| a₀ uncertainty (v4.0) | ±0.304 | dex |
+| a₀ 68% CI (v4.0) | [1846, 7149] | (km/s)²/kpc |
+| Hier. tau (v4.0 marginalized) | 0.291 | dex |
+| Hier. I² (v4.0) | 92.4 | % |
 | c | 299,792,458 | m/s |
 | H₀ | 67.4 | km/s/Mpc |
 | cH₀ | 6.548×10⁻¹⁰ | m/s² |
 | cH₀/2π | 1.042×10⁻¹⁰ | m/s² |
-| a₀/(cH₀/2π) | 1.504 (UW), 1.102 (W), 1.049 (Hier) | — |
+| a₀/(cH₀/2π) | 1.130 (v4.0), 1.049 (v3.0 Hier), 1.504 (v3.0 UW) | — |
 | 1 (km/s)²/kpc → m/s² | 3.241×10⁻¹⁴ | conversion |
 | Υ_disk (fixed) | 0.5 | M☉/L☉ |
 | Υ_bulge (fixed) | 0.7 | M☉/L☉ |
@@ -131,71 +132,66 @@ High vs low quality gives SAME a₀ (3024 vs 3029) — reassuring.
 | Distance MC (±30%, 1000 iter) | 100% negative slopes |
 | CV = 0.3% under distance perturbation | a₀ stable |
 
-### Pipeline v3.0.0 Results (April 2026)
+### Pipeline v4.0.0 Results (April 2026) — CURRENT DEFINITIVE
+
+Script: `scripts/definitive-v4.cjs`
+Results: `public/definitive-v4-results.json`
+
+**v4.0 upgrades:** Full sample (3755 pts, not subsampled), per-galaxy Y* marginalization (13 Y* x 5 dD grid = 65 evaluations/galaxy), distance marginalization.
+
+**v4.0 Marginalized Hierarchical (DerSimonian-Laird):**
+
+| Sample | n_gal | a₀(marg) | tau (dex) | I² | a₀/(cH₀/2π) |
+|--------|-------|----------|-----------|-----|-------------|
+| ALL | 165 | 2630 | 0.449 | 94.9% | 0.818 |
+| CLEAN | 84 | 3616 | 0.280 | 91.1% | 1.125 |
+| GOLD | 64 | 3626 | 0.270 | 92.0% | 1.128 |
+| GOLD+i45 | 59 | 3633 | 0.291 | 92.4% | 1.130 |
+| HIGH-MASS | 56 | 3405 | 0.280 | 92.5% | 1.059 |
+
+**Ratio stability test (v4.0, GOLD+i45 splits):**
+- 11 splits tested, ratio range: 0.875 - 1.469
+- Mean ratio: 1.149, Std: 0.162, CV: 14.1%
+- Verdict: MODERATE variation — suggestive but not compelling
+
+**Uncertainty Budget (v4.0, 7 components):**
+
+| Source | v3.0 (dex) | v4.0 (dex) |
+|--------|----------|----------|
+| Estimator method | ±0.078 | ±0.078 |
+| Sample selection | ±0.058 | ±0.014 |
+| Y_star (fixed/marg) | ±0.066 | ±0.020 |
+| Inclination cut | ±0.106 | ±0.021 |
+| Distance (marg) | (n/a) | ±0.015 |
+| Dynamic range cut | ±0.044 | ±0.044 |
+| Hier. tau (intrinsic) | ±0.245 | ±0.291 |
+| **TOTAL** | **±0.295** | **±0.304** |
+
+### Pipeline v3.0.0 Results (archived baseline)
 
 Script: `scripts/final-measurement-v3.cjs`
 Results: `public/gold-standard-results.json` (v3.0.0)
 
-**McGaugh-only unweighted fits:**
+v3.0 GOLD+i45: UW=4837, W=3545, Hier=3374, tau=0.245, I²=89.4%
+(2062 subsampled points, fixed Y*=0.5, 47 galaxies)
 
-| Sample | n_gal | n_pts | a₀ (km/s)²/kpc | RMS | a₀/(cH₀/2π) |
-|--------|-------|-------|----------------|-----|-------------|
-| ALL | 175 | 1698 | 2670 | 0.200 | 0.830 |
-| CLEAN | 78 | 1141 | 4463 | 0.144 | 1.388 |
-| GOLD | 52 | 872 | 3934 | 0.143 | 1.223 |
-| GOLD+i45 | 47 | 767 | 4837 | 0.147 | 1.504 |
-| HIGH-MASS | 56 | 820 | 3720 | 0.128 | 1.157 |
-
-**Error-weighted fits:**
-
-| Sample | a₀ (km/s)²/kpc | wRMS | a₀/(cH₀/2π) | Delta vs UW |
-|--------|----------------|------|-------------|-------------|
-| GOLD+i45 | 3545 | 0.118 | 1.102 | -26.7% |
-| HIGH-MASS | 3732 | 0.133 | 1.161 | +0.3% |
-
-**Hierarchical (DerSimonian-Laird) results:**
-
-| Sample | n_gal | Hier. mean | tau (dex) | I² | a₀/(cH₀/2π) |
-|--------|-------|-----------|-----------|-----|-------------|
-| GOLD+i45 | 39 | 3374 | 0.245 | 89.4% | 1.049 |
-| GOLD | 44 | 3370 | 0.242 | 89.5% | 1.048 |
-
-**Three-estimator convergence (GOLD+i45):**
-
-| Estimator | a₀ | log(a₀) | a₀/(cH₀/2π) |
-|-----------|-----|---------|-------------|
-| Unweighted | 4837 | 3.685 | 1.504 |
-| Weighted | 3545 | 3.550 | 1.102 |
-| Hierarchical | 3374 | 3.528 | 1.049 |
-
-**Uncertainty Budget (v3.0, 6 components):**
-
-| Source | ±σ (dex) |
-|--------|----------|
-| Estimator method (UW/W/Hier) | ±0.078 |
-| Sample selection | ±0.058 |
-| Υ★ (±15%) | ±0.066 |
-| Inclination cut | ±0.106 |
-| Dynamic range cut | ±0.044 |
-| Hier. tau (intrinsic scatter) | ±0.245 |
-| **TOTAL** | **±0.295** |
-
-## Key Insight (v3.0)
+## Key Insight (v4.0)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
-HEADLINE number = hierarchical a₀ = 3374 (most defensible estimate).
+HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
 
 Number hierarchy:
-- HEADLINE: hierarchical a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²
-- SUPPORTING: weighted a₀ = 3545 (km/s)²/kpc = 1.15e-10 m/s²
-- DIAGNOSTIC/RAW: unweighted a₀ = 4837 (biased high, not headline)
+- HEADLINE: v4.0 marg. hier. a₀ = 3633 (km/s)²/kpc = 1.18e-10 m/s²
+- BASELINE: v3.0 hier. a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²
+- DIAGNOSTIC/RAW: v3.0 UW a₀ = 4837 (biased high, not headline)
 
 Key findings:
-- ALL 6 residual audit variables clean (inclination resolved with inc>=45)
-- Total uncertainty: ±0.295 dex (dominated by between-galaxy tau = 0.245)
-- Literature (3703 = 1.20e-10 m/s²) within 1σ band
-- Hierarchical a₀/(cH₀/2π) = 1.049 — suggestive, not compelling
-- I² = 89.4% — substantial real heterogeneity between galaxies
+- v4.0 a₀ is within 2% of literature (3703 = 1.20e-10 m/s²)
+- Y* marginalization shifts a₀ +7.7% but does NOT reduce tau
+- Population heterogeneity (tau=0.291 dex) is real, not Y*-driven
+- Ratio stability: moderate (CV=14.1%), range [0.875, 1.469]
+- Total uncertainty: ±0.304 dex (dominated by tau=0.291)
+- I² = 92.4% — substantial real heterogeneity
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,

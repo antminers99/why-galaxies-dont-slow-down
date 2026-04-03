@@ -84,6 +84,8 @@ The project is structured as a pnpm monorepo, facilitating shared libraries and 
 *   **Data Sources:** SPARC database (Lelli, McGaugh & Schombert 2016), LITTLE THINGS (Oh et al. 2015 via VizieR)
 
 ### Key Analysis Scripts
+*   `scripts/definitive-v4.cjs` — **CURRENT DEFINITIVE PIPELINE (v4.0)**: Full sample (3755 pts), per-galaxy Y* + distance marginalization (65 grid evals/galaxy), DerSimonian-Laird hierarchical model. HEADLINE: a₀=3633, tau=0.291, I²=92.4%, ratio=1.130. Includes 11-split ratio stability test (CV=14.1%).
+*   `scripts/final-measurement-v3.cjs` — v3.0 pipeline (archived baseline): 2062 subsampled pts, fixed Y*, hier. a₀=3374.
 *   `scripts/fdm-coupling.cjs` — Coupling analysis: V_DM, r_DMdom, α vs Σ_bar with partial correlations, bootstrap CIs, residual tests, inner/outer splits. 6/6 tests pass.
 *   `scripts/fdm-coupling-excess.cjs` — Coupling excess vs ΛCDM: 50×300 mock galaxies, Δb comparison with 10,000 bootstrap. Results: r_DMdom 5.1σ, V_DM 3.8σ, α 2.7σ. Predictive test: Σ_bar improves V_DM prediction by 16.6% over Vmax alone.
 *   `scripts/fdm-excess.cjs` — Discovery proof: Δb per Vmax bin (observed − ΛCDM), 10,000 bootstrap. Overall Δb = −0.034 (2.1σ).

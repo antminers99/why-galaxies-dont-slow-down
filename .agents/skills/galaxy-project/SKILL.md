@@ -10,13 +10,16 @@ description: Project context, goals, current status, and strategic direction for
 A data analysis tool studying the Radial Acceleration Relation (RAR) across
 197 galaxies (175 SPARC + 22 LITTLE THINGS). Built with React + Vite.
 
-## Single Defensible Claim (v3.0)
+## Single Defensible Claim (v4.0)
 
 > "There is a real acceleration transition scale in galaxy rotation curves.
-> Our most defensible estimate is the hierarchical McGaugh-only value
-> a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s², with substantial between-galaxy
-> heterogeneity (tau = 0.245 dex) and total systematic uncertainty ±0.295 dex.
-> The literature value (1.20e-10 m/s²) falls within our 1σ band."
+> After per-galaxy Y* marginalization and hierarchical modeling on the full
+> (not subsampled) dataset, our most defensible estimate is
+> a₀ = 3633 (km/s)²/kpc = 1.18e-10 m/s², with substantial between-galaxy
+> heterogeneity (tau = 0.291 dex, I²=92.4%) and total systematic
+> uncertainty ±0.304 dex. The literature value (1.20e-10 m/s²) falls
+> within our 1σ band. The cosmological ratio a₀/(cH₀/2π) = 1.13 is
+> suggestive but shows moderate variation across subsamples (CV = 14.1%)."
 
 NOT claimed: a₀ universal constant, dark matter solved, MOND proved,
 cosmological origin established. Do not overclaim.
@@ -24,28 +27,29 @@ cosmological origin established. Do not overclaim.
 ## What We Know For Sure
 
 - A transition acceleration scale exists (McGaugh RAR finds it in all samples)
-- HEADLINE: a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s² (hierarchical, most defensible)
-- Supporting: weighted a₀ = 3545; diagnostic/raw: unweighted a₀ = 4837
+- HEADLINE: a₀ = 3633 (km/s)²/kpc = 1.18e-10 m/s² (v4.0 marg. hier.)
+- v3.0 baseline: hier. a₀ = 3374; diagnostic/raw: UW a₀ = 4837
+- v4.0 is within 2% of literature (3703 = 1.20e-10 m/s²)
 - The RAR is tight (~0.147 dex in GOLD+i45, ~0.200 dex full sample)
 - The BTFR holds at 4.4σ
 - Signal survives 5 independent stress tests
 - ALL 6 residual audit variables clean in GOLD+i45 sample
-- Formal uncertainty: ±0.295 dex (dominated by between-galaxy tau = 0.245)
-- Literature (3703) within 1σ band
+- Y* marginalization does NOT reduce tau — heterogeneity is real
+- Formal uncertainty: ±0.304 dex (dominated by between-galaxy tau = 0.291)
 
 ## What Is Model-Dependent
 
-- Precise a₀ depends on estimator: UW=4837, W=3545, Hier=3374
-- Cosmological ratio: 1.504 (UW), 1.102 (W), 1.049 (Hier)
-- Between-galaxy heterogeneity: I²=89.4%, tau=0.245 dex
-- Dominant uncertainties: hierarchical tau (0.245) and inclination cut (0.106)
+- Precise a₀ depends on method: v4.0 marg=3633, v3.0 hier=3374, v3.0 UW=4837
+- Cosmological ratio: 1.130 (v4.0), 1.049 (v3.0 Hier), 1.504 (v3.0 UW)
+- Between-galaxy heterogeneity: I²=92.4%, tau=0.291 dex
+- Ratio stability: CV=14.1% across 11 subsample splits
 
 ## What We Do NOT Know
 
-- Is a₀ ≈ cH₀/2π physics or coincidence? Hier ratio=1.049 but systematic ±0.295
-- What drives the between-galaxy scatter (tau=0.245 dex)?
+- Is a₀ ≈ cH₀/2π physics or coincidence? Ratio=1.13 but CV=14.1%
+- What drives the between-galaxy scatter (tau=0.291 dex)?
+  (Y* marginalization only accounts for +0.046 dex of tau increase)
 - Does a₀ evolve with redshift?
-- Can per-galaxy Υ★ marginalization reduce tau?
 
 ## Project History (Condensed)
 
@@ -72,7 +76,11 @@ cosmological origin established. Do not overclaim.
     error-weighted fit, DerSimonian-Laird hierarchical random-effects model.
     Three estimators converge: UW=4837, W=3545, Hier=3374.
     tau=0.245 dex, I²=89.4%, total budget ±0.295 dex.
-    Literature (3703) within 1σ band. Report updated to 17 sections.
+15. **Pipeline v4.0.0**: Full sample (3755 pts, not subsampled), per-galaxy
+    Y* + distance marginalization (65 grid evals/galaxy), hierarchical DL.
+    a₀=3633, tau=0.291, I²=92.4%, total budget ±0.304 dex.
+    Within 2% of literature. Y* marg does NOT reduce tau.
+    Ratio stability test: 11 splits, CV=14.1%. Report updated to 19 sections.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -82,10 +90,10 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Per-galaxy Υ★ marginalization
-- Individual distance error incorporation
-- Full-sample refit (all 4123 points, pending raw SPARC data)
+- Understanding tau sources (distance errors, bars, environment)
+- Within-galaxy covariance modeling
 - Systematics paper write-up
+- High-z test with JWST/ALMA kinematic data
 
 ## Two Separate Questions (Never Mix Them)
 
@@ -114,12 +122,14 @@ Solve A first. B becomes much cleaner after.
 |------|---------|
 | `diagnostic-report.txt` | PRIMARY report (edit this one) |
 | `galaxy-rotation-curve-analysis-full-report.txt` | ARCHIVED (read-only) |
-| `scripts/final-measurement-v3.cjs` | v3.0 pipeline (current) |
+| `scripts/definitive-v4.cjs` | v4.0 pipeline (CURRENT DEFINITIVE) |
+| `scripts/final-measurement-v3.cjs` | v3.0 pipeline (archived baseline) |
 | `scripts/gold-standard-pipeline.cjs` | v2.0 pipeline (archived) |
 | `scripts/diagnostic-tests.cjs` | Phase 1 diagnostics |
 | `scripts/transition-scale-v3.cjs` | Core RAR analysis |
-| `public/gold-standard-results.json` | v3.0 results (current) |
+| `public/definitive-v4-results.json` | v4.0 results (current) |
+| `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |
-| `public/rar-analysis-real.json` | Per-galaxy metadata |
+| `public/rar-analysis-real.json` | Per-galaxy metadata (3391 SPARC pts) |
 | `public/transition-scale.json` | Full RAR + fitting output |
 | `replit.md` | Project documentation |

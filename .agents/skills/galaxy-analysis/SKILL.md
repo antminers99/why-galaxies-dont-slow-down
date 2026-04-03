@@ -12,6 +12,8 @@ artifacts/galaxy-analyzer/
 ├── diagnostic-report.txt              ← PRIMARY report (use for all future edits)
 ├── galaxy-rotation-curve-analysis-full-report.txt  ← ARCHIVED (32 parts, ~3745 lines)
 ├── scripts/
+│   ├── definitive-v4.cjs             ← v4.0 DEFINITIVE PIPELINE (current)
+│   ├── final-measurement-v3.cjs      ← v3.0 pipeline (archived baseline)
 │   ├── diagnostic-tests.cjs           ← Main diagnostic pipeline (3 tests)
 │   ├── transition-scale-v3.cjs        ← Core RAR analysis (SPARC + LT data)
 │   ├── measurement-pipeline.cjs       ← BTFR MC simulation
@@ -20,9 +22,10 @@ artifacts/galaxy-analyzer/
 │   ├── theoretical-framework.cjs      ← Theoretical audit
 │   └── [20+ other analysis scripts]
 ├── public/
+│   ├── definitive-v4-results.json    ← v4.0 results (CURRENT)
 │   ├── diagnostic-results.json        ← Latest test results
 │   ├── transition-scale.json          ← Full RAR analysis output
-│   ├── rar-analysis-real.json         ← Per-galaxy metadata (175 SPARC)
+│   ├── rar-analysis-real.json         ← Per-galaxy metadata (3391 SPARC pts)
 │   ├── break-test-results.json        ← Stress test results
 │   └── [15+ other result files]
 └── src/
