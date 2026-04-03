@@ -5,7 +5,7 @@ import { Telescope, ArrowRight, CheckCircle2, XCircle, TrendingUp, Atom, Sparkle
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, ReferenceLine, Legend,
-  ErrorBar, ComposedChart, Scatter, ScatterChart
+  ErrorBar, ComposedChart, Scatter, ScatterChart, Area
 } from 'recharts';
 
 const G_KPC = 4.3009e-6;
@@ -95,13 +95,18 @@ export default function RedshiftLabPage() {
 
   const evolutionData = useMemo(() => {
     const points = [];
+    const seed = 42;
     for (let zi = 0; zi <= 3.0; zi += 0.05) {
       const ei = Ez(zi, omM, omL);
+      const idx = Math.round(zi * 20);
+      const scatter = Math.sin(idx * 7.3 + seed) * 0.1 + Math.cos(idx * 3.1) * 0.05;
       points.push({
         z: parseFloat(zi.toFixed(2)),
         cosmicFloor: parseFloat((A0_MS2 * ei * 1e10).toFixed(4)),
         mond: parseFloat((A0_MS2 * 1e10).toFixed(4)),
-        lcdmBand: parseFloat((A0_MS2 * (0.9 + 0.2 * Math.random()) * 1e10).toFixed(4)),
+        lcdmUpper: parseFloat((A0_MS2 * (1.15 + scatter) * 1e10).toFixed(4)),
+        lcdmLower: parseFloat((A0_MS2 * (0.85 + scatter) * 1e10).toFixed(4)),
+        lcdmMid: parseFloat((A0_MS2 * (1.0 + scatter) * 1e10).toFixed(4)),
       });
     }
     return points;
@@ -303,13 +308,17 @@ export default function RedshiftLabPage() {
                 <Tooltip
                   contentStyle={{ backgroundColor: 'rgba(15,23,42,0.95)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '12px', fontSize: '12px' }}
                   formatter={(value: number, name: string) => {
-                    const labels: Record<string, string> = { cosmicFloor: 'Cosmic Floor', mond: 'MOND (constant)', lcdmBand: '\u039BCDM (no prediction)' };
+                    const labels: Record<string, string> = { cosmicFloor: 'Cosmic Floor', mond: 'MOND (constant)', lcdmMid: '\u039BCDM (emergent, scattered)' };
+                    if (name === 'lcdmUpper' || name === 'lcdmLower') return [null, null];
                     return [value.toFixed(3) + ' \u00D710\u207B\u00B9\u2070 m/s\u00B2', labels[name] || name];
                   }}
                   labelFormatter={(v) => 'z = ' + Number(v).toFixed(2)}
                 />
+                <Area type="monotone" dataKey="lcdmUpper" stroke="none" fill="rgba(239,68,68,0.1)" legendType="none" />
+                <Area type="monotone" dataKey="lcdmLower" stroke="none" fill="rgba(10,14,26,1)" legendType="none" />
+                <Line type="monotone" dataKey="lcdmMid" stroke="#ef4444" strokeWidth={1.5} strokeDasharray="4 4" dot={false} name={"\u039BCDM (no prediction)"} />
                 <Line type="monotone" dataKey="cosmicFloor" stroke="#f59e0b" strokeWidth={3} dot={false} name="Cosmic Floor" />
-                <Line type="monotone" dataKey="mond" stroke="#8b5cf6" strokeWidth={2} strokeDasharray="8 4" dot={false} name="MOND" />
+                <Line type="monotone" dataKey="mond" stroke="#8b5cf6" strokeWidth={2} strokeDasharray="8 4" dot={false} name="MOND (constant)" />
                 <ReferenceLine x={z} stroke="rgba(255,255,255,0.3)" strokeDasharray="4 4" label={{ value: 'z=' + z.toFixed(1), fill: 'rgba(255,255,255,0.5)', fontSize: 11 }} />
                 {mockData.map((d, i) => (
                   <ReferenceLine key={i} x={d.z} y={d.measured} ifOverflow="extendDomain">

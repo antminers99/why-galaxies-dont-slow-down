@@ -151,6 +151,24 @@ export default function ClusterTestPage() {
   const overshootCount = useMemo(() => results.filter(r => r.floorOvershoot).length, [results]);
   const undershootCount = useMemo(() => results.filter(r => !r.floorOvershoot).length, [results]);
 
+  const avgNewtonDeficit = useMemo(() => {
+    return (results.reduce((s, r) => s + r.newtonMissing, 0) / results.length).toFixed(1);
+  }, [results]);
+
+  const avgFloorDeficit = useMemo(() => {
+    return (results.reduce((s, r) => s + r.floorDeviation, 0) / results.length).toFixed(1);
+  }, [results]);
+
+  const avgMondDeficit = useMemo(() => {
+    return (results.reduce((s, r) => s + r.mondMissing, 0) / results.length).toFixed(1);
+  }, [results]);
+
+  const deficitReduction = useMemo(() => {
+    const avgNewton = results.reduce((s, r) => s + r.newtonMissing, 0) / results.length;
+    const avgFloor = results.reduce((s, r) => s + r.floorDeviation, 0) / results.length;
+    return ((avgNewton - avgFloor) / avgNewton * 100).toFixed(0);
+  }, [results]);
+
   const velocityComparisonData = useMemo(() => {
     return results.map(r => ({
       name: r.name,
@@ -284,6 +302,24 @@ export default function ClusterTestPage() {
             </ResponsiveContainer>
           </div>
         </GlassCard>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-500/20 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold font-mono text-orange-400">{avgNewtonDeficit}%</div>
+            <div className="text-xs text-slate-400 mt-1">Avg Newton deficit</div>
+            <div className="text-xs text-slate-500">(baryons only)</div>
+          </div>
+          <div className="bg-gradient-to-br from-amber-500/10 to-amber-500/5 border border-amber-500/20 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold font-mono text-amber-400">{avgFloorDeficit}%</div>
+            <div className="text-xs text-slate-400 mt-1">Avg Floor deficit</div>
+            <div className="text-xs text-slate-500">{deficitReduction}% reduction from Newton</div>
+          </div>
+          <div className="bg-gradient-to-br from-violet-500/10 to-violet-500/5 border border-violet-500/20 rounded-xl p-5 text-center">
+            <div className="text-3xl font-bold font-mono text-violet-400">{avgMondDeficit}%</div>
+            <div className="text-xs text-slate-400 mt-1">Avg MOND deficit</div>
+            <div className="text-xs text-slate-500">(comparable to Floor)</div>
+          </div>
+        </div>
 
         <GlassCard glow="purple">
           <div className="flex items-center gap-3 mb-5">
@@ -531,7 +567,7 @@ export default function ClusterTestPage() {
                 <h4 className="text-sm font-bold text-rose-400">What remains unexplained</h4>
               </div>
               <ul className="text-xs text-slate-300 space-y-1">
-                <li>{"\u2022"} Undershoots in all 5 clusters {"\u2014"} still needs ~30-70% more mass</li>
+                <li>{"\u2022"} Undershoots in {undershootCount}/{results.length} clusters {"\u2014"} still needs ~30-70% more mass</li>
                 <li>{"\u2022"} This is the well-known "cluster problem" for all modified gravity theories</li>
                 <li>{"\u2022"} The Bullet Cluster lensing offset still requires collisionless dark matter</li>
                 <li>{"\u2022"} Cluster mass estimates have large systematics (X-ray vs. lensing vary 2{"\u00D7"})</li>
