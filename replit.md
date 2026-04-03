@@ -14,6 +14,8 @@ The project addresses a critical need in astrophysics for tools that facilitate 
 
 I prefer detailed explanations and clear communication. Please ask before making major changes. I appreciate an iterative development approach.
 
+**CRITICAL**: All results, experiments, analyses, and findings MUST be written to the full report file at `artifacts/galaxy-analyzer/galaxy-rotation-curve-analysis-full-report.txt`. This file is the master record of ALL research. Whenever new work is done (new pages, new analyses, new data), the report file MUST be updated FIRST with all results. The report is the priority — it contains everything.
+
 ## System Architecture
 
 The project is structured as a pnpm monorepo, facilitating shared libraries and independent application development.
