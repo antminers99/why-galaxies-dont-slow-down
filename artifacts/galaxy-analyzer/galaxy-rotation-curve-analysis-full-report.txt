@@ -2781,5 +2781,295 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     Until that data exists, the theoretical landscape remains degenerate.
 
 ================================================================================
+PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
+================================================================================
+
+  A critical inconsistency exists in this report and must be fixed
+  before any further theoretical work.
+
+  ════════════════════════════════════════════════════════════════════════
+  THE CONTRADICTION
+  ════════════════════════════════════════════════════════════════════════
+
+  CLAIM (throughout the report):
+    "There exists a minimum acceleration floor a₀"
+    "g_obs → a₀ when g_bar → 0"
+    "Our model differs from MOND because g → a₀, not g → 0"
+
+  ACTUAL EQUATION (Part III):
+    g_obs² = g_bar² + a₀² × g_bar / (g_bar + a₀)
+
+  ACTUAL LIMIT (algebraic, not numerical):
+    When g_bar → 0:
+      Second term = a₀² × g_bar / (g_bar + a₀) → a₀² × 0 / a₀ = 0
+      First term = g_bar² → 0
+      Therefore: g_obs² → 0
+      Therefore: g_obs → 0
+
+    This is NOT a floor. This is deep-MOND behavior.
+
+  PROOF (more carefully):
+    Let g_bar = ε where ε → 0.
+    g_obs² = ε² + a₀² × ε/(ε + a₀)
+           = ε² + a₀²ε/(a₀ + ε)
+           ≈ ε² + a₀ε         (for ε << a₀)
+           ≈ a₀ε              (dominant term)
+
+    g_obs ≈ √(a₀ × ε) = √(a₀ × g_bar)
+
+    This is EXACTLY the deep-MOND limit: g_obs = √(g_bar × a₀).
+    There is NO floor. g_obs → 0 as g_bar → 0.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ VERDICT: The equation written in Part III does NOT produce a       │
+  │ floor. It produces deep-MOND scaling. The claim that "our model   │
+  │ has a floor" is INCORRECT given the current equation.             │
+  │                                                                     │
+  │ This is not a minor issue. It changes what we are trying to       │
+  │ explain. Every reference to "floor" in this report is either      │
+  │ wrong or refers to something different from the equation.         │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  WHAT THE EQUATION ACTUALLY IS
+  ════════════════════════════════════════════════════════════════════════
+
+  The equation g_obs = √(g_bar² + a₀² × g_bar/(g_bar + a₀)) is:
+
+  1. A smooth interpolation between Newton (high g_bar) and
+     deep-MOND (low g_bar)
+  2. The interpolation function is ν(x) = x/(1+x) where x = g_bar/a₀
+  3. In the deep limit: g_obs ∝ √(g_bar × a₀) — same as standard MOND
+  4. It does NOT have a non-zero minimum
+  5. It is NOT an "acceleration floor" in the literal sense
+
+  The name "Cosmic Acceleration Floor" is therefore MISLEADING if
+  taken literally. The equation produces a SCALE, not a FLOOR.
+
+  What a₀ actually does in this equation:
+    - It sets the transition scale between Newton and MOND
+    - Below a₀, the relationship changes from g_obs ≈ g_bar to g_obs ≈ √(g_bar·a₀)
+    - This is the same role a₀ plays in standard MOND
+    - The only difference from MOND is the specific interpolation function
+
+  ════════════════════════════════════════════════════════════════════════
+  TWO OPTIONS GOING FORWARD
+  ════════════════════════════════════════════════════════════════════════
+
+  OPTION 1: Accept that the equation is MOND-like, rename accordingly
+
+    If g_obs = √(g_bar² + a₀²·g_bar/(g_bar+a₀)) is the correct equation:
+    - Stop calling it a "floor"
+    - Call it a "cosmic acceleration scale" or "transition scale"
+    - The model is then a MOND variant with a specific interpolation
+      function and a₀ = cH₀/2π
+    - What's new: the specific interpolation, the cH₀/2π value,
+      and the stress-testing methodology — not the physics
+
+    Consequences:
+    - Simpler, more honest
+    - Easier to compare with existing MOND literature
+    - The 5 facts in Notebook 1 remain valid
+    - The novelty is narrower but cleaner
+
+  OPTION 2: Write a TRUE floor equation
+
+    If the physical claim is genuinely that g_obs → a₀ (not 0):
+    - The equation must be changed to reflect this
+    - A true floor equation would be:
+
+      g_obs = √(g_bar² + a₀²)              [Simple quadrature]
+
+      This gives:
+      g_bar >> a₀: g_obs ≈ g_bar            ✓ Newton
+      g_bar → 0:   g_obs → a₀              ✓ Floor
+      g_bar ~ a₀:  g_obs ≈ √2 × a₀         (transition)
+
+      But: does NOT give BTFR. V⁴ ≠ GMa₀.
+      At low g_bar: V² = a₀r → V ∝ √r (rising, not flat).
+
+    - Alternatively:
+
+      g_obs = √(g_bar × a₀ + a₀²)          [MOND + floor]
+
+      This gives:
+      g_bar >> a₀: g_obs ≈ √(g_bar × a₀) ≈ g_bar? No.
+        Actually: g_bar >> a₀ → g_obs ≈ √(g_bar × a₀), not g_bar.
+        Newton limit fails! This doesn't work.
+
+    - Better:
+
+      g_obs = g_bar × ν(g_bar/a₀) where ν includes a floor:
+      g_obs = g_bar/2 × [1 + √(1 + 4a₀/g_bar)] + a₀    [ad hoc]
+
+      This adds a₀ as a constant. Newton limit: g_obs ≈ g_bar + a₀ ≈ g_bar.
+      Floor: g_obs → √(g_bar·a₀) + a₀ → a₀.
+      But: violates Newton at moderate g_bar (adds ~a₀ everywhere).
+
+    - The fundamental problem: producing Newton + MOND + floor
+      simultaneously is very constrained. No simple formula does it.
+
+    Consequences:
+    - Need to find a new equation (or prove the current one wrong)
+    - Would genuinely be different from standard MOND
+    - But observationally hard to distinguish (very few data at g_bar → 0)
+    - Risk of overcomplicating without observational warrant
+
+  ════════════════════════════════════════════════════════════════════════
+  THE DECISION
+  ════════════════════════════════════════════════════════════════════════
+
+  Based on the algebra, the honest decision is:
+
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║ OPTION 1 IS CORRECT.                                                ║
+  ║                                                                     ║
+  ║ The equation as written is a MOND variant, not a floor model.      ║
+  ║ The term "floor" has been used loosely to mean "a₀ sets the scale  ║
+  ║ where dynamics change" — which is true but is what MOND also says. ║
+  ║                                                                     ║
+  ║ Going forward:                                                      ║
+  ║ - "Floor" means "transition scale", not "minimum acceleration"     ║
+  ║ - The model is a specific MOND interpolation with a₀ = cH₀/2π     ║
+  ║ - The claim is about the SCALE and its ORIGIN, not about a         ║
+  ║   non-zero minimum acceleration                                    ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+  ════════════════════════════════════════════════════════════════════════
+  WHAT CHANGES IN THE REPORT
+  ════════════════════════════════════════════════════════════════════════
+
+  Corrected language:
+
+  OLD: "minimum acceleration floor"
+  NEW: "acceleration transition scale"
+
+  OLD: "g_obs → a₀ when g_bar → 0"
+  NEW: "g_obs → √(g_bar × a₀) when g_bar << a₀ (deep-MOND limit)"
+
+  OLD: "Our model differs from MOND because g → a₀, not g → 0"
+  NEW: "Our model is a MOND variant. It differs from standard MOND
+        in the specific interpolation function and in fixing a₀ = cH₀/2π
+        rather than treating a₀ as a free parameter"
+
+  OLD: "Floor reduces Newton deficit by ~43% in clusters"
+  NEW: "The MOND-like transition scale reduces Newton deficit by ~43%
+        in clusters (same as standard MOND with the same a₀)"
+
+  The 5 facts in Notebook 1 (Part XXVI) remain VALID:
+    F1: a₀ exists — yes
+    F2: approximately universal — yes
+    F3: ≈ cH₀/2π — yes
+    F4: tight RAR — yes
+    F5: doesn't fully fix clusters — yes
+
+  What changes: the INTERPRETATION, not the data or the equation.
+  The equation was always MOND-like. The language was wrong.
+
+  ════════════════════════════════════════════════════════════════════════
+  REVISED 5 FACTS (corrected)
+  ════════════════════════════════════════════════════════════════════════
+
+  F1: An acceleration scale a₀ ≈ 1.2×10⁻¹⁰ m/s² appears as a
+      transition scale in galaxy dynamics. Below a₀, the relation
+      between observed and baryonic acceleration changes from linear
+      (Newtonian) to square-root (deep-MOND).
+
+  F2: a₀ is approximately universal — no systematic dependence on
+      galaxy mass, size, or surface brightness.
+
+  F3: a₀ ≈ cH₀/2π to within ~13%, suggesting a cosmological origin
+      for a quantity that appears in local galactic dynamics.
+
+  F4: The g_obs = f(g_bar) relation (RAR) is tight, with intrinsic
+      scatter < 0.13 dex. This is reproduced by our interpolation
+      with a₀ = cH₀/2π and no per-galaxy parameters.
+
+  F5: Applying the same a₀ and interpolation to galaxy clusters
+      reduces the Newton deficit by ~43%, but ~52.5% remains.
+      This is consistent with standard MOND behavior in clusters.
+
+  ════════════════════════════════════════════════════════════════════════
+  WHAT IS ACTUALLY NEW IN OUR WORK (novelty audit, preliminary)
+  ════════════════════════════════════════════════════════════════════════
+
+  NOT new (established in literature):
+    - Existence of a₀ and RAR (McGaugh+2016, Lelli+2017)
+    - BTFR and its tightness (McGaugh 2012)
+    - MOND behavior in galaxies (Milgrom 1983, reviews: Famaey & McGaugh 2012)
+    - Numerical proximity a₀ ≈ cH₀ (Milgrom 1983, 1999)
+    - MOND failure in clusters (Sanders 2003, Angus 2009)
+    - Three-family landscape (modified gravity / DM / emergent)
+    - Unruh/de Sitter connection to a₀ (Milgrom 1999, McCulloch 2007)
+
+  POTENTIALLY new (requires detailed comparison):
+    1. Systematic stress-testing program (null/scramble/M-L/distance MC)
+       applied to a specific interpolation with a₀ = cH₀/2π.
+       Similar spirit to Li+2018 but different methodology.
+
+    2. Specific interpolation function ν(x) = x/(1+x) combined with
+       the constraint a₀ = cH₀/2π (not fitted).
+       Need to check: is this exact interpolation in the literature?
+
+    3. Mass-matched BTFR pipeline for z-evolution test with power
+       analysis showing 93% detection at N=20.
+       The general idea of testing a₀(z) exists (Milgrom 2015),
+       but the specific pipeline design may be new.
+
+    4. Unified application to SPARC + LITTLE THINGS + clusters under
+       one formula with zero per-galaxy tuning.
+       Need to compare with Li+2018, Desmond 2017.
+
+    5. The explicit derivation attempt (Part XXVII) showing exactly
+       where Unruh/de Sitter breaks (2π cancellation) is a clear
+       pedagogical contribution, even if not a physics result.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ HONEST ASSESSMENT:                                                  │
+  │                                                                     │
+  │ Our work is primarily a METHODOLOGICAL contribution, not a         │
+  │ THEORETICAL one. We did not discover a₀, the RAR, or the cH₀     │
+  │ connection. What we built:                                         │
+  │                                                                     │
+  │ - A rigorous testing framework (stress tests)                      │
+  │ - A specific observational pipeline (mass-matched BTFR)            │
+  │ - A clear theoretical audit (what works, what breaks, where)       │
+  │ - An honest assessment of what is and isn't explained              │
+  │                                                                     │
+  │ This is valuable but different from "we found a new explanation."  │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  WHAT TO DO NEXT (revised roadmap)
+  ════════════════════════════════════════════════════════════════════════
+
+  Phase 1: DONE (this Part)
+    ✓ Fix the floor vs deep-MOND contradiction
+    ✓ Revise the 5 facts
+    ✓ Preliminary novelty audit
+
+  Phase 2: NEEDED
+    Detailed novelty audit against 6 key papers:
+    - McGaugh+2016 (RAR)
+    - Lelli+2017 (One Law)
+    - Famaey & McGaugh 2012 (MOND review)
+    - Li+2018 (RAR fitting)
+    - Berezhiani & Khoury 2015 (superfluid DM)
+    - Milgrom 2015 (MOND predictions for high-z)
+    For each: what they showed, what we showed, what's actually new.
+
+  Phase 3: NEEDED
+    Accept the split:
+    A. Scale-setting (where does a₀ come from?) — OPEN, may need
+       new physics or data (z-evolution test)
+    B. Dynamics (what law uses a₀?) — our equation is a specific
+       MOND interpolation, its novelty depends on Phase 2 audit
+
+  Phase 4: THE TEST
+    Mass-matched BTFR at z ~ 0.5–1.0
+    This is the single discriminant between H-based and Λ-based origin.
+    Everything else is secondary until this is resolved.
+
+================================================================================
 END OF COMPLETE REPORT
 ================================================================================
