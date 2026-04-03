@@ -165,6 +165,22 @@ export const FORMULA_PRESETS: FormulaPreset[] = [
     description: 'v = sqrt(GM/r + k*ln(1+r/a))',
     physicalMeaning: 'NFW-inspired logarithmic dark matter halo profile — widely used in astrophysics.',
     category: 'additive'
+  },
+  {
+    id: 'accel_floor',
+    name: 'Acceleration Floor (a\u2080)',
+    formula: 'sqrt(r * sqrt((G * M / r^2)^2 + a^2 * (G * M / r^2) / (G * M / r^2 + a)))',
+    description: 'g_obs = \u221A(g_bar\u00B2 + a\u2080\u00B2 \u00D7 g_bar/(g_bar+a\u2080)), V = \u221A(g_obs \u00D7 r)',
+    physicalMeaning: 'Acceleration-based model: the universe enforces a minimum acceleration floor a\u2080. Recovers Newton at high g, gives RAR + flat rotation at low g. Use a = a\u2080 in (km/s)\u00B2/kpc.',
+    category: 'acceleration'
+  },
+  {
+    id: 'accel_floor_cosmo',
+    name: 'Cosmic Floor (cH\u2080/2\u03C0)',
+    formula: 'sqrt(r * sqrt((G * M / r^2)^2 + 3702^2 * (G * M / r^2) / (G * M / r^2 + 3702)))',
+    description: 'a\u2080 = cH\u2080/2\u03C0 \u2248 3702 (km/s)\u00B2/kpc — zero free parameters',
+    physicalMeaning: 'The acceleration floor is fixed by cosmology: a\u2080 = cH\u2080/2\u03C0. No adjustable parameters beyond G and M. Predicts flat rotation, RAR, and Tully-Fisher simultaneously.',
+    category: 'acceleration'
   }
 ];
 
@@ -204,8 +220,8 @@ const defaultParams: ModelParams = {
   G: 4.3009e-6,
   M: 1e11,
   k: 50,
-  a: 5,
-  formula: "sqrt((G * M) / r + k * r)",
+  a: 3702,
+  formula: "sqrt(r * sqrt((G * M / r^2)^2 + a^2 * (G * M / r^2) / (G * M / r^2 + a)))",
 };
 
 const SAMPLE_DATASETS: Record<string, Dataset> = SPARC_DATASETS;

@@ -67,9 +67,10 @@ export default function ModelsPage() {
   };
 
   const categories = [
+    { id: 'acceleration', label: 'Acceleration-Based', color: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
     { id: 'additive', label: 'Additive Term', color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30' },
-    { id: 'modified_gravity', label: 'Modified Gravity', color: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
-    { id: 'transition', label: 'Transition', color: 'text-purple-400 bg-purple-500/10 border-purple-500/30' }
+    { id: 'modified_gravity', label: 'Modified Gravity', color: 'text-purple-400 bg-purple-500/10 border-purple-500/30' },
+    { id: 'transition', label: 'Transition', color: 'text-slate-400 bg-slate-500/10 border-slate-500/30' }
   ];
 
   const filteredPresets = activeCategory 
@@ -169,11 +170,11 @@ export default function ModelsPage() {
 
               <div>
                 <div className="flex justify-between items-end mb-2">
-                  <label className="font-mono text-rose-400 font-medium text-sm">a <span className="text-slate-500 text-xs font-sans">(Core Radius)</span></label>
-                  <span className="font-mono text-xs">{modelParams.a.toFixed(1)} kpc</span>
+                  <label className="font-mono text-rose-400 font-medium text-sm">a <span className="text-slate-500 text-xs font-sans">(a{"\u2080"} / Core Radius)</span></label>
+                  <span className="font-mono text-xs">{modelParams.a > 100 ? modelParams.a.toFixed(0) : modelParams.a.toFixed(1)} {modelParams.a > 100 ? "(km/s)\u00B2/kpc" : "kpc"}</span>
                 </div>
                 <input 
-                  type="range" min={0.1} max={30} step={0.1}
+                  type="range" min={0.1} max={10000} step={modelParams.a > 100 ? 10 : 0.1}
                   value={modelParams.a}
                   onChange={(e) => updateModelParams({ a: Number(e.target.value) })}
                   className="w-full accent-rose-500"
