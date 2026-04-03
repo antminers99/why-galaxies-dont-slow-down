@@ -1,0 +1,299 @@
+================================================================================
+  THE COSMIC ACCELERATION FLOOR: AN EMPIRICAL LAW WITH ZERO EXTRA
+  GALAXY-BY-GALAXY PARAMETERS AND A FALSIFIABLE HIGH-z PREDICTION
+================================================================================
+
+  Condensed Manuscript Draft
+  April 2026
+
+================================================================================
+ABSTRACT
+================================================================================
+
+We report an empirical acceleration law for galaxy rotation curves that
+introduces no extra galaxy-by-galaxy tuning parameters beyond standard
+baryonic mass modeling. Using 175 SPARC galaxies and 22 LITTLE THINGS
+dwarfs (4,123 rotation-curve measurements), we find:
+
+(1) A characteristic acceleration scale a_0 ~ 1.2e-10 m/s^2 below which
+observed gravity systematically exceeds the baryonic prediction. The
+transition is well-described by a single interpolating function of one
+variable (g_bar), with 0.198 dex RMS scatter. No tested galaxy property
+(mass, size, surface brightness, morphology) reduces the scatter or
+modulates a_0.
+
+(2) The observed scale matches the cosmological combination cH_0/2pi to
+within ~10%. Given fixed mass-to-light ratios and cosmological inputs,
+the resulting equation g_obs = sqrt(g_bar^2 + (cH_0/2pi)^2 * g_bar /
+(g_bar + cH_0/2pi)) contains no adjustable per-galaxy parameters and
+naturally recovers Newtonian gravity at high acceleration, the Radial
+Acceleration Relation (RAR), flat rotation curves, and the Baryonic
+Tully-Fisher Relation V^4 = GM*a_0.
+
+(3) A first-pass application to five galaxy clusters shows the same
+scale reduces the Newtonian mass deficit by ~43%, but ~52.5% residual
+dark matter fraction remains, nearly degenerate with MOND at cluster
+scales.
+
+(4) The model makes a unique, falsifiable prediction: if a_0 = cH(z)/2pi,
+then the effective acceleration floor should scale with the Hubble
+parameter as a_0(z) = a_0 * E(z), implying a_0 is ~70% larger at z=1
+and the BTFR normalization shifts upward by ~14%. JWST and ALMA high-z
+rotation curves can test this within the next few years.
+
+We present three competing interpretations (modified gravity, baryon-halo
+self-regulation, and cosmological acceleration floor) and four
+discriminating tests. The equation captures the data; the physics remains
+open.
+
+================================================================================
+1. INTRODUCTION
+================================================================================
+
+Galaxy rotation curves have provided the most direct evidence for the
+"missing mass" problem since the work of Rubin & Ford (1970). The
+observed rotational velocities in the outer regions of disk galaxies
+systematically exceed predictions from the visible baryonic matter,
+implying either unseen mass (dark matter) or a modification of
+gravitational dynamics.
+
+A remarkable empirical regularity has emerged from large rotation-curve
+surveys: the Radial Acceleration Relation (RAR), first quantified by
+McGaugh et al. (2016) using the SPARC database. The RAR shows that
+observed gravitational acceleration g_obs correlates tightly with baryonic
+acceleration g_bar through a single function, with intrinsic scatter of
+only ~0.057 dex (Lelli et al. 2017).
+
+The characteristic transition scale a_0 ~ 1.2e-10 m/s^2 has been
+recognized since Milgrom (1983) in the context of Modified Newtonian
+Dynamics (MOND). A persistent numerical coincidence — that a_0 is close
+to cH_0 — has been noted by multiple authors but lacks a consensus
+explanation within LCDM.
+
+In this work, we present an empirical formulation that:
+  - Captures the RAR with no extra per-galaxy parameters
+  - Explicitly ties the transition scale to cH_0/2pi
+  - Makes a unique, testable prediction for high-redshift evolution
+  - Honestly confronts its limitations at cluster scales
+
+================================================================================
+2. DATA AND ASSUMPTIONS
+================================================================================
+
+PRIMARY DATASET: SPARC (Lelli et al. 2016)
+  175 galaxies with Spitzer 3.6um photometry and multi-survey HI
+  3,391 individual rotation-curve points
+  Mass-to-light ratios: Y_disk = 0.5 M_sun/L_sun, Y_bulge = 0.7
+
+REPLICATION DATASET: LITTLE THINGS (Oh et al. 2015)
+  22 dwarf irregular galaxies
+  VLA HI + Spitzer 3.6um
+  Independent observers, independent instrument
+
+COMBINED: 197 galaxies, 4,123 data points
+
+BARYONIC MASS MODEL:
+  V_bar^2(r) = Y_disk * V_disk^2 + Y_bulge * V_bulge^2 + V_gas^2
+  g_bar(r) = V_bar^2(r) / r
+
+COSMOLOGICAL INPUTS:
+  c = 2.998e5 km/s
+  H_0 = 67.4 km/s/Mpc (Planck 2018)
+  G = 4.3009e-6 kpc*(km/s)^2/M_sun
+
+NOTE: The equation is not "parameter-free" in the absolute sense. It
+inherits systematic dependence on Y assumptions, distance calibrations,
+and gas mass modeling. What it avoids is any per-galaxy free parameter
+analogous to a halo concentration or core radius.
+
+================================================================================
+3. THE EMPIRICAL ACCELERATION LAW
+================================================================================
+
+EQUATION:
+  g_obs = sqrt(g_bar^2 + a_0^2 * g_bar / (g_bar + a_0))
+
+where a_0 = cH_0/2pi = 1.08e-10 m/s^2.
+
+LIMITS:
+  g_bar >> a_0:  g_obs -> g_bar        (Newtonian regime recovered)
+  g_bar << a_0:  g_obs -> sqrt(g_bar*a_0)  (deep MOND / RAR regime)
+
+BTFR DERIVATION:
+  In the low-acceleration limit: V^4 = G * M_bar * a_0
+  This is the Baryonic Tully-Fisher Relation, derived rather than assumed.
+
+GLOBAL FIT:
+  a_0 = 3702 (km/s)^2/kpc = 1.2e-10 m/s^2
+  RMS scatter: 0.198 dex across 175 galaxies
+
+================================================================================
+4. UNIVERSALITY TESTS
+================================================================================
+
+(a) NO GALAXY-PROPERTY DEPENDENCE:
+  Correlation of a_0 with V_max:  r = 0.10
+  Correlation of a_0 with R_max:  r = -0.04
+  Correlation of a_0 with n_pts:  r = 0.17
+
+  Adding surface brightness dependence Phi(Sigma_bar) makes the fit
+  WORSE (cross-validated improvement: -13.35%).
+
+(b) PER-GALAXY vs GLOBAL a_0:
+  Per-galaxy fitted a_0 values show large scatter (0.33-0.57 dex by
+  mass quartile). This reflects observational/modeling degeneracies,
+  not physical variation. The universality claim rests on the global
+  RAR fit, not on individual galaxy estimates.
+
+(c) DARK MATTER FRACTION ANTI-CORRELATION:
+  f_DM is strongly anti-correlated with Sigma_bar:
+    slope b = -0.178, partial r|V_max = -0.656, p < 1e-6
+  This persists across all mass bins, inner and outer radii, and
+  alternative density definitions.
+  Nominal combined excess over LCDM expectations: 5.1 sigma
+  (frequentist bootstrap; see caveats in full report).
+
+(d) INDEPENDENT REPLICATION (LITTLE THINGS):
+  Same negative slope, same partial correlation direction.
+  Robust across Y_disk sensitivity and Monte Carlo tests.
+
+================================================================================
+5. RELATION TO cH_0
+================================================================================
+
+OBSERVED:   a_0 = 1.2e-10 m/s^2
+PREDICTED:  cH_0/2pi = 1.08e-10 m/s^2
+MISMATCH:   ~10%
+
+The ratio epsilon = a_0/(cH_0) = 0.176 is close to 1/(2pi) = 0.159.
+
+This numerical coincidence has been noted since Milgrom (1983) but has
+no consensus explanation. It could indicate:
+  - A deep physical connection between cosmic expansion and local gravity
+  - An emergent property of baryon-halo self-regulation in LCDM
+  - A numerical coincidence
+
+We adopt the cosmological identification a_0 = cH_0/2pi as a working
+hypothesis, which makes the equation fully specified by standard inputs.
+
+================================================================================
+6. CLUSTER AND NON-GALACTIC STRESS TESTS
+================================================================================
+
+CLUSTER TEST (5 clusters: Coma, Perseus, Bullet, Virgo, Abell 2029):
+  The same equation with virial correction (sigma = v_c/sqrt(3)):
+  - Newton (baryons only): ~92.3% deficit
+  - Floor model: ~52.5% deficit (43% reduction from Newton)
+  - MOND: ~52.5% deficit (comparable to Floor)
+
+  The floor brings predictions closer to observed but does not provide
+  a distinct or complete cluster-scale solution. It remains nearly
+  degenerate with MOND in this regime. Additional physics is required.
+
+BULLET CLUSTER:
+  The floor model does not address the spatial offset between dark and
+  baryonic mass observed via gravitational lensing, which remains an
+  important constraint on any modified gravity interpretation.
+
+================================================================================
+7. REDSHIFT PREDICTION (THE KILLER TEST)
+================================================================================
+
+If a_0 = cH(z)/2pi, then:
+  a_0(z) = a_0 * E(z)
+  E(z) = H(z)/H_0 = sqrt(Omega_m*(1+z)^3 + Omega_Lambda)
+
+For Planck cosmology (Omega_m = 0.315):
+  At z=1: E = 1.70, so a_0(z=1) = 1.70 * a_0(z=0)
+
+IMPORTANT DISTINCTION:
+  - The acceleration floor increases by ~70% at z=1
+  - The flat rotation velocity V_flat ~ a_0^(1/4) increases by ~14%
+  - These are different quantities and must not be confused
+
+THREE-WAY DISCRIMINATION:
+  MOND:          a_0 = constant at all z     (no evolution)
+  Cosmic Floor:  a_0 ~ E(z)                 (tracks H(z))
+  LCDM/Feedback: no specific prediction      (a_0 is emergent)
+
+  If a_0 rises with z:     CONFIRMS Floor, KILLS MOND
+  If a_0 constant at all z: KILLS Floor, CONFIRMS MOND
+  If a_0 varies randomly:   KILLS both, supports LCDM
+
+REQUIRED DATA:
+  JWST high-z rotation curves (z = 0.5 - 3)
+  ALMA gas kinematics at high redshift
+
+================================================================================
+8. DISCUSSION: THREE COMPETING INTERPRETATIONS
+================================================================================
+
+A. MODIFIED GRAVITY (MOND-like)
+  The equation is the fundamental law; gravity changes below a_0.
+  + Simple, one law for all galaxies
+  + Tight scatter, no formation-history dependence
+  - Fails in galaxy clusters
+  - No complete relativistic theory
+  - Does not explain why a_0 ~ cH_0
+
+B. BARYON-HALO SELF-REGULATION
+  Dark matter exists; RAR emerges from CDM + baryonic feedback.
+  + Works within standard LCDM
+  + Compatible with CMB, large-scale structure
+  - Different feedback models give different a_0
+  - Simulated RAR scatter exceeds observed
+  - No mechanism produces exactly cH_0/2pi
+
+C. COSMIC ACCELERATION FLOOR (This Work)
+  a_0 = cH_0/2pi is physical; cosmic expansion creates a minimum
+  acceleration floor coupled to local gravity.
+  + Explains the cH_0 coincidence
+  + Explains universality (set by cosmology, not galaxies)
+  + Makes falsifiable high-z prediction
+  - No known physical mechanism connects H_0 to galaxy interiors
+  - The 1/(2pi) factor lacks rigorous derivation
+  - Does not specify whether DM exists or gravity is modified
+
+================================================================================
+9. CONCLUSION
+================================================================================
+
+Galaxy rotation-curve data from 197 galaxies (4,123 measurements)
+strongly support the existence of a characteristic acceleration scale
+near 1.2e-10 m/s^2, together with a tight one-variable relation between
+baryonic and observed acceleration.
+
+An empirical formula tied to cH_0/2pi reproduces the observed limits and
+naturally yields the Baryonic Tully-Fisher Relation, with no extra
+galaxy-by-galaxy tuning parameters given standard baryonic inputs.
+
+However, this remains an empirical law rather than a physical theory, and
+its interpretation — modified gravity, baryon-coupled dark sector physics,
+or cosmological emergence — remains open. The most discriminating test is
+the redshift evolution of a_0: if a_0 tracks H(z), MOND is ruled out;
+if a_0 is constant, the cosmic floor hypothesis is ruled out. JWST and
+ALMA data within the next few years will settle this question.
+
+A first-pass cluster stress test shows the acceleration floor improves
+Newtonian predictions by ~43% but does not eliminate the missing mass,
+remaining nearly degenerate with MOND. The Bullet Cluster spatial offset
+between dark and baryonic mass is not addressed.
+
+The equation captures the observation. The physics remains open.
+
+Having the right equation is not the same as understanding the physics.
+
+================================================================================
+REFERENCES
+================================================================================
+
+Lelli, F., McGaugh, S.S., Schombert, J.M. 2016, AJ, 152, 157 (SPARC)
+Lelli, F., McGaugh, S.S., Schombert, J.M., Pawlowski, M.S. 2017, ApJ, 836, 152
+McGaugh, S.S., Lelli, F., Schombert, J.M. 2016, PRL, 117, 201101 (RAR)
+Milgrom, M. 1983, ApJ, 270, 365 (MOND)
+Oh, S.-H. et al. 2015, AJ, 149, 180 (LITTLE THINGS)
+Planck Collaboration 2018, A&A, 641, A6
+
+================================================================================
+END
+================================================================================
