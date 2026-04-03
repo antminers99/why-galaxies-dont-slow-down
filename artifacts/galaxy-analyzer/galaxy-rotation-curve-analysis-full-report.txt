@@ -1,6 +1,6 @@
 ================================================================================
      GALAXY ROTATION CURVE ANALYZER — COMPLETE RESEARCH REPORT
-     Cosmic Acceleration Floor Model
+     Cosmic Acceleration Scale Model
      "Dark matter knows where the light is — and it shouldn't."
 ================================================================================
 
@@ -15,7 +15,7 @@ TABLE OF CONTENTS
 ================================================================================
 
   PART I    — ROBUST EMPIRICAL FINDINGS
-  PART II   — THE ACCELERATION FLOOR
+  PART II   — THE ACCELERATION TRANSITION SCALE
   PART III  — THE EQUATION (No Extra Tuning Parameters)
   PART IV   — LIMIT VERIFICATION
   PART V    — TULLY-FISHER DERIVATION
@@ -39,6 +39,12 @@ TABLE OF CONTENTS
   PART XXIII— PHASE C: TRYING TO BREAK THE IDEA
   PART XXIV — REDSHIFT TEST FEASIBILITY
   PART XXV  — MEASUREMENT PIPELINE
+  PART XXVI-A/B/C/D — THEORETICAL INVESTIGATION (Why 2π?, H₀ vs Λ, etc.)
+  PART XXVII— UNRUH/de SITTER DERIVATION AUDIT
+  PART XXVIII— MODIFIED INERTIA vs MODIFIED FIELD vs DARK SECTOR
+  PART XXIX — RESOLVING THE INTERNAL CONTRADICTION
+  PART XXX  — NOVELTY AUDIT: WHAT IS ACTUALLY NEW?
+  PART XXXI — THE DECISIVE TEST: MASS-MATCHED BTFR AT z ~ 0.5-1.0
 
 ================================================================================
 PART I: ROBUST EMPIRICAL FINDINGS
@@ -90,25 +96,24 @@ This is either a deep physical connection or a remarkable numerical
 coincidence. ΛCDM has no explanation for this match.
 
 ================================================================================
-PART II: THE ACCELERATION FLOOR
+PART II: THE ACCELERATION TRANSITION SCALE
 ================================================================================
 
-Below a₀, gravity is always compensated — identically, in every galaxy,
-regardless of its mass, size, or type. The compensation follows a single
-universal rule and the threshold happens to equal the speed of light
-times the Hubble constant, divided by 2π.
+Below a₀, the relationship between observed and baryonic acceleration
+changes from linear (Newtonian) to square-root (deep-MOND). This
+transition is universal, simple, and cosmological.
 
-Three remarkable properties of the floor:
+Three remarkable properties of the transition scale:
 
-1. IT IS UNIVERSAL — The same floor applies to every galaxy. Tiny dwarfs
+1. IT IS UNIVERSAL — The same scale applies to every galaxy. Tiny dwarfs
    with V_max ~ 40 km/s and giant spirals with V_max ~ 250 km/s show
-   the same transition scale, despite vastly different formation histories.
+   the same transition, despite vastly different formation histories.
 
 2. IT IS SIMPLE — The compensation is a function of one variable (g_bar)
    only. We tried adding surface brightness, mass, and size as second
    variables — they all make the prediction WORSE, not better.
 
-3. IT IS COSMOLOGICAL — The floor value (a₀) equals cH₀/2π within ~10%.
+3. IT IS COSMOLOGICAL — The transition scale (a₀) equals cH₀/2π within ~10%.
    This connects a purely local measurement (galaxy rotation curves) to
    the largest scale in physics (the expansion of the universe).
 
@@ -127,7 +132,7 @@ Two measurable accelerations at every point in every galaxy:
   g_bar = GM_bar(r) / r²    (baryonic prediction)
   g_obs = V²(r) / r          (observed from rotation curve)
 
-CORE EQUATION (Acceleration Floor Form)
+CORE EQUATION (MOND-like Transition Form)
 ----------------------------------------
   g_obs² = g_bar² + a₀² × ν(g_bar/a₀)
 
@@ -218,9 +223,9 @@ B. BARYON-HALO SELF-REGULATION (Feedback)
    ✗ No mechanism produces exactly cH₀/2π
    ✗ Must explain why no galaxy property modulates a₀
 
-C. COSMIC ACCELERATION FLOOR (Our Hypothesis)
-   a₀ = cH₀/2π is not coincidence — the cosmic expansion creates a
-   minimum acceleration floor that couples to local gravity.
+C. COSMIC ACCELERATION SCALE (Our Hypothesis)
+   a₀ = cH₀/2π is not coincidence — the cosmic expansion sets the
+   transition scale below which dynamics change from Newtonian to MOND-like.
    ✓ Explains the cH₀ coincidence
    ✓ Explains why a₀ is universal (set by cosmology, not galaxies)
    ✓ Explains why the compensation is "simple" (one variable)
@@ -689,7 +694,7 @@ SIGNIFICANCE
 PART XVI: CLUSTER STRESS TEST (5 Galaxy Clusters)
 ================================================================================
 
-"If the floor model is universal, it must say something about clusters
+"If the transition scale is universal, it must say something about clusters
 — even if it can't explain them fully."
 
 WHY CLUSTERS MATTER
@@ -703,7 +708,7 @@ THE TEST
   to 5 well-known clusters with virial correction (σ = v_c/√3).
 
 HONEST EXPECTATION
-  We do NOT expect the floor to eliminate all missing mass in clusters.
+  We do NOT expect a₀ to eliminate all missing mass in clusters.
   A partial reduction would still be physically meaningful.
   A total explanation would be extraordinary.
 
@@ -719,7 +724,7 @@ CLUSTER DATA & RESULTS (with virial correction σ = v_c/√3)
 
 VELOCITY DISPERSION PREDICTIONS (σ in km/s)
 
-  Cluster      Observed  Newton(bary)  Floor   MOND
+  Cluster      Observed  Newton(bary)  a₀-model MOND
   ──────────────────────────────────────────────────
   Coma         1000      (low)         (mid)   (mid)
   Perseus      1280      (low)         (mid)   (mid)
@@ -727,42 +732,42 @@ VELOCITY DISPERSION PREDICTIONS (σ in km/s)
   Virgo         760      (low)         (mid)   (mid)
   Abell 2029   1160      (low)         (mid)   (mid)
 
-  All clusters: Floor and MOND predict HIGHER than Newton but
+  All clusters: a₀-model and MOND predict HIGHER than Newton but
   still UNDERSHOOT the observed values.
 
 AGGREGATE RESULTS
   Average Newton deficit:  ~92.3% (baryons only)
-  Average Floor deficit:   ~52.5%
-  Average MOND deficit:    ~52.5% (comparable to Floor)
-  Deficit reduction:       ~43% (Newton → Floor)
+  Average a₀-model deficit: ~52.5%
+  Average MOND deficit:    ~52.5% (comparable to a₀-model)
+  Deficit reduction:       ~43% (Newton → a₀-model)
 
 RESIDUAL DARK MATTER FRACTION
   Newton requires ~85% dark matter.
-  Floor and MOND reduce this to ~52.5% residual.
+  a₀-model and MOND reduce this to ~52.5% residual.
   ΛCDM matches by construction (DM is a free parameter).
 
-  The honest comparison: Floor and MOND explain ~43% of the cluster
+  The honest comparison: a₀-model and MOND explain ~43% of the cluster
   dynamics from baryons alone, but still need some dark component.
 
 KEY FINDING
-  The floor model (with same a₀ from galaxies) brings cluster
+  The a₀-model (with same a₀ from galaxies) brings cluster
   predictions significantly closer to observed but does not eliminate
   the deficit. It overshoots in 0/5 clusters and undershoots in 5/5.
-  This means the floor effect is in the right ballpark but not a
+  This means the MOND-like correction is in the right ballpark but not a
   perfect match — consistent with additional physics (real DM, gas
   dynamics) playing a role.
 
 RADIAL PROFILES
   Each cluster has a radial velocity profile showing:
   - Observed (DM+baryons): highest
-  - Cosmic Floor: middle
-  - MOND: similar to Floor
+  - Cosmic Scale model: middle
+  - MOND: similar to a₀-model
   - Newton (baryons only): lowest
 
 NOTE ON BULLET CLUSTER
   Post-merger cluster with DM-baryon separation observed via lensing.
   This is often cited as direct evidence for particle dark matter.
-  The floor model does not address the spatial offset between dark
+  The a₀-model does not address the spatial offset between dark
   and baryonic mass — this remains an important constraint.
 
 ================================================================================
@@ -770,12 +775,12 @@ PART XVII: REDSHIFT EVOLUTION LAB
 ================================================================================
 
 "If a₀ = cH₀/2π, then a₀(z) = cH(z)/2π — and distant galaxies
-should show a larger acceleration floor."
+should show a larger transition scale."
 
 THE CORE PREDICTION
   If a₀ is truly set by cosmology (a₀ = cH/2π), then it must change
   with the Hubble parameter H(z). Since H was larger in the past,
-  galaxies at high redshift should have a LARGER acceleration floor:
+  galaxies at high redshift should have a LARGER transition scale:
 
   a₀(z) = cH(z)/2π = a₀ × E(z)
   E(z) = H(z)/H₀ = √(Ω_m(1+z)³ + Ω_Λ)
@@ -784,7 +789,7 @@ THREE MODEL PREDICTIONS
   ┌──────────────────┬────────────────────────────┐
   │ MOND             │ a₀ = constant (never changes) │
   │ ΛCDM / Feedback  │ No prediction (a₀ is emergent)│
-  │ Cosmic Floor     │ a₀ × E(z) (scales with H(z)) │
+  │ Cosmic Scale     │ a₀ × E(z) (scales with H(z)) │
   └──────────────────┴────────────────────────────┘
 
   This is THE killer test that distinguishes the three hypotheses.
@@ -804,18 +809,18 @@ COMPUTED VALUES AT z=1 (default)
 a₀ EVOLUTION CHART
   Three tracks plotted from z=0 to z=3:
   - MOND: flat horizontal line (constant a₀)
-  - Cosmic Floor: rising curve (a₀ × E(z))
+  - Cosmic Scale: rising curve (a₀ × E(z))
   - ΛCDM: scattered band (no specific prediction)
   Mock JWST data points with error bars overlaid
 
 ROTATION CURVES: z=0 vs z=N
   Same galaxy (M = 10¹¹ M☉) at two epochs:
   - Newtonian curve: identical (gravity doesn't change with expansion)
-  - Floor z=0: standard flat curve
-  - Floor z=N: flat part sits HIGHER (larger a₀)
+  - a₀-model z=0: standard flat curve
+  - a₀-model z=N: flat part sits HIGHER (larger a₀)
 
   IMPORTANT DISTINCTION:
-  - The acceleration floor a₀ itself increases by ~70% at z=1
+  - The transition scale a₀ itself increases by ~70% at z=1
   - But the flat rotation velocity V_flat scales as a₀^(1/4)
   - So V_flat increases by only E(z)^(1/4) ≈ 1.70^(0.25) ≈ 14%
   - The 70% applies to the acceleration scale, NOT to velocity
@@ -830,7 +835,7 @@ TULLY-FISHER AT z=0 vs z=N
 FALSIFIABILITY DECISION TABLE
   ┌─────────────┬──────────┬──────────┬──────────┐
   │ Observation  │ Cosmic   │ MOND     │ ΛCDM     │
-  │              │ Floor    │          │          │
+  │              │ Scale    │          │          │
   ├─────────────┼──────────┼──────────┼──────────┤
   │ a₀ rises     │ CONFIRM  │ KILL     │ Neutral  │
   │ with z       │          │          │          │
@@ -856,7 +861,7 @@ PART XVIII: UNIQUE PREDICTIONS (Falsifiable Tests)
 ================================================================================
 
 1. REDSHIFT EVOLUTION
-   In the Cosmic Floor hypothesis, the effective acceleration scale
+   In the Cosmic Scale hypothesis, the effective acceleration scale
    inferred from galaxy dynamics should scale with H(z):
      a₀(z) = c × H(z) / 2π = a₀ × E(z)
    where E(z) = H(z)/H₀.
@@ -866,10 +871,10 @@ PART XVIII: UNIQUE PREDICTIONS (Falsifiable Tests)
 
 2. GALAXY CLUSTERS
    A first-pass application of the same equation to 5 galaxy clusters
-   shows that the floor scale brings predictions closer to observed
-   but does not eliminate the deficit, remaining nearly degenerate
-   with MOND at cluster scales.
-   RESULT: Floor reduces Newton deficit by ~43% but ~52.5% remains.
+   shows that a₀ brings predictions closer to observed but does not
+   eliminate the deficit, remaining nearly degenerate with MOND at
+   cluster scales.
+   RESULT: a₀-model reduces Newton deficit by ~43% but ~52.5% remains.
 
 3. WIDE BINARIES
    At separations > 7000 AU, binary star orbits enter g < a₀.
@@ -900,7 +905,7 @@ ROBUST EMPIRICAL FINDINGS
 THE THREE HYPOTHESES
   A. Modified Gravity — new fundamental law
   B. Baryon-Halo Self-Regulation — feedback in ΛCDM
-  C. Cosmic Acceleration Floor — cosmological connection
+  C. Cosmic Acceleration Scale — cosmological connection
 
 FOUR DISCRIMINATING TESTS
 
@@ -941,11 +946,11 @@ PART XX: MODEL BUILDER FORMULAS
 
 ACCELERATION-BASED (Recommended):
 
-1. Acceleration Floor (adjustable a₀):
+1. Transition Scale (adjustable a₀):
    V(r) = √(r × √((G×M/r²)² + a₀² × (G×M/r²) / (G×M/r²+ a₀)))
    Parameters: G, M, a₀ (in (km/s)²/kpc)
 
-2. Cosmic Floor (zero free parameters):
+2. Cosmic Scale (zero free parameters):
    Same as above with a₀ = 3702 (km/s)²/kpc
    Only G and M are adjustable.
 
@@ -998,15 +1003,15 @@ the halo structure itself — V_DM, r_DMdom, and the inner slope all track
 Σ_bar. This result is confirmed independently on LITTLE THINGS dwarfs and
 is consistent with all seven systematic robustness checks.
 
-A first-pass cluster stress test shows that the same floor scale (a₀ from
+A first-pass cluster stress test shows that the same transition scale (a₀ from
 galaxy-scale fits) brings cluster velocity dispersion predictions into the
 correct dynamical ballpark, reducing the Newtonian deficit by ~43%. However,
-~52.5% residual dark matter fraction remains. The floor does not provide a
+~52.5% residual dark matter fraction remains. The a₀-model does not provide a
 distinct or complete cluster-scale solution and remains nearly degenerate
 with MOND in this regime. Additional physics (hot gas, real DM, or
 cluster-specific effects) is required.
 
-The model makes a unique, falsifiable prediction: in the Cosmic Floor
+The model makes a unique, falsifiable prediction: in the Cosmic Scale
 hypothesis, the effective acceleration scale inferred from galaxy dynamics
 should scale with H(z). For a flat ΛCDM background with Ω_m = 0.315,
 this implies a₀(z=1) ≈ 1.70 × a₀(z=0), i.e. ~70% larger, and the BTFR
@@ -1173,7 +1178,7 @@ interpretation. The f_DM–Σ_bar anti-correlation and the characteristic
 acceleration scale a₀ are genuine features of the data that cannot be
 attributed to the tested systematic effects.
 
-NOTE: This does NOT prove the Cosmic Floor hypothesis. It proves that
+NOTE: This does NOT prove the Cosmic Scale hypothesis. It proves that
 the PHENOMENON is real. The interpretation (modified gravity, feedback,
 or cosmological coupling) remains open. What is no longer open is
 whether the signal itself is an artifact — it is not.
@@ -1185,9 +1190,9 @@ PART XXIV: REDSHIFT TEST FEASIBILITY — THE KILLER PREDICTION
 ================================================================================
 
 "If a₀ = cH₀/2π, then a₀(z) = cH(z)/2π — distant galaxies should show
-a larger acceleration floor. This is the single most discriminating test."
+a larger transition scale. This is the single most discriminating test."
 
-The Cosmic Floor makes a unique, falsifiable prediction that separates
+The Cosmic Scale model makes a unique, falsifiable prediction that separates
 it from both MOND (a₀ = constant) and ΛCDM (no specific a₀ prediction):
 the acceleration scale must evolve with redshift as a₀(z) = a₀(0) × E(z).
 
@@ -1212,7 +1217,7 @@ THE BTFR AS PROXY TEST
 
 The Baryonic Tully-Fisher Relation V⁴ = G·M_bar·a₀ provides the
 cleanest test. At fixed baryonic mass:
-  - Cosmic Floor: V⁴ ∝ a₀(z) ∝ E(z) → normalization INCREASES with z
+  - Cosmic Scale: V⁴ ∝ a₀(z) ∝ E(z) → normalization INCREASES with z
   - MOND: V⁴ ∝ a₀ = const → normalization UNCHANGED
   - ΛCDM: no specific prediction (depends on feedback prescriptions)
 
@@ -1328,8 +1333,8 @@ THE GENZEL PUZZLE
 
 Genzel+2017/2020 reported "declining rotation curves" at z~1-2,
 interpreted as evidence for baryon-dominated massive galaxies
-at cosmic noon. Under the Cosmic Floor:
-  - Higher a₀ at z~1 means stronger floor → V_flat HIGHER
+at cosmic noon. Under the Cosmic Scale model:
+  - Higher a₀ at z~1 means stronger transition effect → V_flat HIGHER
   - "Declining" appearance may be: insufficient radial extent,
     beam smearing, or unaccounted pressure support (σ/V > 0.5)
   - This data is AMBIGUOUS and cannot distinguish interpretations
@@ -1340,7 +1345,7 @@ HONEST ASSESSMENT
 
 Can we test a₀(z) = cH(z)/2π right now? NO.
 
-Current high-z data is insufficient to discriminate Cosmic Floor
+Current high-z data is insufficient to discriminate Cosmic Scale model
 from MOND at the required precision. The signal (15.7% V shift at
 z=1) is comparable to per-galaxy errors (10-20%).
 
@@ -1351,7 +1356,7 @@ prediction today.
 
 What we CAN say: the prediction is specific, quantitative, and
 falsifiable. It is the strongest argument for taking the Cosmic
-Floor model seriously as a candidate for follow-up observation.
+Scale model seriously as a candidate for follow-up observation.
 
 ================================================================================
 PART XXV: MEASUREMENT PIPELINE — HOW TO EXTRACT THE SIGNAL
@@ -1441,7 +1446,7 @@ RECOMMENDED PIPELINE (5 Steps)
 
   STEP 4: Fit the Evolution
     Model: V_flat(z) / V_flat(0) = E(z)^(α/4) at fixed M_bar
-    Cosmic Floor predicts α = 1
+    Cosmic Scale predicts α = 1
     MOND predicts α = 0
     Measure α ± σ(α)
 
@@ -1469,11 +1474,12 @@ shift reveals itself."
 PROPOSED MODEL NAME
 ================================================================================
 
-  Cosmic Acceleration Floor Model
+  Cosmic Acceleration Scale Model
 
-  Core claim: There exists a minimum acceleration floor a₀ = cH₀/2π
-  enforced by the universe, below which gravity is always compensated.
-  Given standard baryonic inputs, the floor introduces no extra
+  Core claim: There exists a transition acceleration scale a₀ = cH₀/2π
+  set by cosmology, below which the relationship between observed and
+  baryonic acceleration transitions from Newtonian to deep-MOND.
+  Given standard baryonic inputs, the model introduces no extra
   galaxy-by-galaxy tuning parameters and naturally produces:
     1. Newtonian gravity at high acceleration
     2. The Radial Acceleration Relation (RAR)
@@ -1510,7 +1516,7 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
       Implication: DM distribution tracks baryons precisely, or gravity changes
 
   F5: a₀ works for galaxies but NOT fully for clusters
-      Evidence: Floor reduces deficit ~43%, residual ~52.5% remains
+      Evidence: a₀-model reduces deficit ~43%, residual ~52.5% remains
 
   ────────────────────────────────────────────────────────────────────────
 
@@ -1539,8 +1545,8 @@ PART XXVI: THEORETICAL INVESTIGATION — WHY DOES a₀ EXIST?
     Score: 4.0/6
     Verdict: Explains clusters, struggles with RAR tightness and cH₀
 
-  FAMILY C: Cosmological Emergent Effect (Cosmic Floor, Verlinde)
-    Core idea: Cosmic expansion creates local acceleration floor
+  FAMILY C: Cosmological Emergent Effect (Cosmic Scale, Verlinde)
+    Core idea: Cosmic expansion sets local acceleration transition scale
     C1: △  C2: ✓  C3: ✓  C4: ✓  C5: △  C6: ✗
     Score: 4.0/6
     Verdict: Best for universality & cH₀, but LACKS MECHANISM
@@ -1956,7 +1962,7 @@ PART XXVI-D: WHEN CAN WE SAY "WE FOUND AN EXPLANATION"?
   ║  Any proposal that does not satisfy all four criteria is an         ║
   ║  EXPLANATORY HYPOTHESIS, not an explanation.                        ║
   ║                                                                     ║
-  ║  This includes our own Cosmic Floor model.                         ║
+  ║  This includes our own Cosmic Scale model.                         ║
   ║  It satisfies Criteria 2 and 3. It partially satisfies 1.         ║
   ║  It does not satisfy 4 (cluster residual).                         ║
   ║  Therefore: it is a well-motivated hypothesis, not an explanation. ║
@@ -2372,7 +2378,7 @@ PART XXVII: FIRST DERIVATION ATTEMPT — UNRUH / de SITTER, STEP BY STEP
 
   3. Accept the factor and focus on the mechanism
      Take a₀ ≈ cH₀/(2π) as empirical (for now), and focus on:
-     HOW does any acceleration floor modify galaxy dynamics?
+     HOW does the acceleration transition scale modify galaxy dynamics?
      What is the field equation or force law?
      This skips the derivation problem and attacks the mechanism gap.
 
@@ -2479,20 +2485,23 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
 
   ────────────────────────────────────────────────────────────────────────
 
-  Connection to cosmic floor model:
-    Our Floor formula uses:
-      g_obs = √(r · √((g_bar)² + a₀²·g_bar/(g_bar + a₀)))
+  Connection to our model:
+    Our formula uses:
+      g_obs² = g_bar² + a₀²·g_bar/(g_bar + a₀)
 
-    This is an interpolation between Newton (g_bar >> a₀) and a floor
-    (g_obs → a₀ when g_bar → 0). It is CLOSER to MI than to MFE
-    because it modifies the observed acceleration, not the field equation.
+    [CORRECTED — see Part XXIX] The deep-MOND limit of this equation is:
+    g_bar → 0:  g_obs² ≈ a₀·g_bar → 0,  so g_obs ≈ √(a₀·g_bar) → 0.
+    This is standard deep-MOND behavior, NOT a floor.
 
-    But it differs from standard MI:
+    Our model is CLOSER to MI than to MFE because it modifies the
+    observed acceleration, not the field equation.
+
+    It gives the SAME deep limit as standard MI:
     - MI deep limit: g_obs = √(g_bar · a₀)  → goes to 0 as g_bar → 0
-    - Floor model: g_obs → a₀                → stays finite
+    - Our model:     g_obs ≈ √(a₀ · g_bar)  → goes to 0 as g_bar → 0
 
-    The Floor model has a FLOOR. Standard MI does not.
-    This difference matters at the very lowest accelerations.
+    The difference is in the interpolation function, not the asymptotic limits.
+    a₀ remains a transition scale, not a minimum acceleration.
 
   ════════════════════════════════════════════════════════════════════════
   FRAMEWORK B: MODIFIED FIELD EQUATION (AQUAL / modified Poisson)
@@ -2574,7 +2583,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
   │ a₀ derived?             │ ✗ (inserted)     │ ✗ (inserted)     │
   │ Clusters                │ ✗                │ ✗                │
   │ Relativistic version    │ ✗                │ ✗ (TeVeS broken) │
-  │ Floor behavior (g→a₀)   │ ✗ (g→0)          │ ✗ (g→0)          │
+  │ Deep limit (g_bar→0)    │ g→0              │ g→0              │
   └─────────────────────────┴──────────────────┴──────────────────┘
 
   Verdict: MFE (AQUAL) is more complete as a theory (has Lagrangian,
@@ -2582,87 +2591,54 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
   has the non-locality problem for general orbits.
 
   NEITHER produces a floor. Both give g → 0 as g_bar → 0.
-  Our Floor model differs from both in this critical aspect.
+  [CORRECTED — Part XXIX] Our model also gives g → 0 as g_bar → 0.
+  All three share the same deep-MOND asymptotic limit.
 
   ════════════════════════════════════════════════════════════════════════
-  THE FLOOR DIFFERENCE
+  WHAT DISTINGUISHES OUR MODEL? (Corrected from earlier "floor" claim)
   ════════════════════════════════════════════════════════════════════════
 
   Standard MOND (both MI and MFE):
     Deep limit: g_obs = √(g_bar · a₀)
     As g_bar → 0: g_obs → 0
 
-  Floor model:
-    Deep limit: g_obs → a₀ (constant floor)
-    As g_bar → 0: g_obs → a₀ ≠ 0
+  Our model (corrected):
+    Deep limit: g_obs ≈ √(a₀ · g_bar)  (same as standard MOND)
+    As g_bar → 0: g_obs → 0            (no floor)
 
-  This is a genuine physical difference, not a fitting choice.
+  The original claim in this report that our model has a "floor" was
+  INCORRECT (see Part XXIX for the full correction). What distinguishes
+  our model from standard MOND is:
 
-  Observational test:
-    At very large radii where g_bar → 0:
-    MOND predicts V → 0 (rotation curves eventually decline)
-    Floor predicts V → √(a₀ · r) (rotation curves keep rising)
+  1. The specific interpolation function ν(x) = x/(1+x) rather than
+     the standard MOND interpolation functions (simple or standard).
+  2. The constraint a₀ = cH₀/2π (cosmologically fixed, not free).
+  3. The prediction that a₀ evolves with redshift as a₀(z) = cH(z)/2π.
 
-    In practice: very few data points exist at g_bar << a₀.
-    The difference is hard to measure with current data.
-    But it is in principle testable with HI 21cm observations
-    at very large galactic radii (5-10 disk scale lengths).
+  These are differences in the INTERPOLATION REGION (where g_bar ~ a₀),
+  not in the asymptotic limits. In both the Newtonian limit (g >> a₀)
+  and the deep-MOND limit (g << a₀), our model converges to standard
+  MOND behavior.
 
-  What dynamics could produce a floor?
-
-    Option 1: Additive acceleration
-      g_obs = g_Newton + a₀  (always present)
-      Problem: violates Newton limit. At g_bar >> a₀, g_obs ≈ g_bar + a₀ ≈ g_bar ✓
-      Actually this works for Newton limit! And gives a floor.
-      But: it doesn't give BTFR. V² = GM/r + a₀·r → not V⁴ = GMa₀.
-
-    Option 2: Quadrature addition
-      g_obs = √(g_bar² + a₀²)
-      Problem: at g_bar >> a₀, g_obs ≈ g_bar ✓ (Newton limit)
-      At g_bar → 0: g_obs → a₀ ✓ (floor)
-      But: doesn't give MOND behavior √(g_bar · a₀) in transition.
-      V² = √((GM/r²)² + a₀²) · r → not BTFR.
-
-    Option 3: MOND + floor (our actual model)
-      g_obs² = g_bar · a₀ + a₀² (modified deep limit)
-      This gives: g_obs → a₀ at g_bar → 0 (floor)
-      And: g_obs → √(g_bar · a₀) at g_bar → a₀ (MOND-like)
-      And: g_obs → g_bar at g_bar >> a₀ (Newton)
-
-      This is effectively what our formula does.
-      But: this is an interpolation, not a field equation.
-
-  The dynamical question for the Floor:
+  The dynamical question becomes:
 
     Is there a field equation — with a Lagrangian — that produces:
     (a) Newton at high g
-    (b) MOND-like transition
-    (c) Floor at very low g
+    (b) MOND-like transition with ν(x) = x/(1+x) interpolation
+    (c) a₀ = cH₀/2π from cosmological inputs
 
-    No known Lagrangian does this. AQUAL gives (a) and (b) but not (c).
-
-    To get (c), you might need:
-    - A cosmological constant term in the modified Poisson equation
-    - A dark energy contribution to the gravitational field
-    - Or: a₀ enters as a VACUUM acceleration, always present
-
-    Example (speculative):
-
-      ∇·[μ(|∇Φ|/a₀) ∇Φ] = 4πGρ + Λ_eff
-
-    where Λ_eff produces a background acceleration a₀.
-    This would give a floor. But Λ_eff needs to produce exactly a₀.
-    We're back to the origin question.
+    Standard AQUAL achieves (a) and the general form of (b).
+    No known framework achieves (c) from first principles.
 
   ┌─────────────────────────────────────────────────────────────────────┐
-  │ STATUS:                                                             │
+  │ STATUS (CORRECTED):                                                 │
   │                                                                     │
-  │ Standard MOND (MI or MFE) gives BTFR and RAR but NOT a floor.    │
-  │ Our Floor model adds a floor but has no Lagrangian.                │
-  │ Combining AQUAL + floor requires a vacuum acceleration term.       │
-  │ That term would need to be a₀ = cH₀/2π — circular.               │
+  │ Our model is a MOND variant with specific interpolation and        │
+  │ cosmologically fixed a₀. It does NOT produce a floor.              │
+  │ It shares the same deep-MOND limit as MI and AQUAL.                │
+  │ What it adds: a₀ = cH₀/2π constraint + z-evolution prediction.    │
   │                                                                     │
-  │ No known field theory produces Newton + MOND + floor together.     │
+  │ The open question: why cH₀/2π? (see Parts XXVI-XXVII)             │
   └─────────────────────────────────────────────────────────────────────┘
 
   ════════════════════════════════════════════════════════════════════════
@@ -2681,17 +2657,13 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     → g_obs = √(g_bar · a₀) at low acceleration (MOND behavior)
     → g_obs = g_bar at high acceleration (Newton)
 
-  If g_dark(g_bar) = √(g_bar · a₀ + a₀²) - g_bar:
-    → g_obs → a₀ at g_bar → 0 (floor!)
-    → g_obs → √(g_bar · a₀) at intermediate (MOND-like)
-    → g_obs → g_bar at high (Newton)
-
-  This is mathematically equivalent to our Floor model, but interpreted
-  differently: gravity is Newtonian, but a dark field adds acceleration.
+  [CORRECTED — Part XXIX] Our model also gives g_obs → 0 as g_bar → 0,
+  so the dark-sector response law reproduces the same asymptotic limits.
+  The difference is in the interpolation region.
 
   Advantages:
     ✓ Keeps Newton/GR intact
-    ✓ Can produce a floor naturally (dark field has minimum energy density)
+    ✓ Dark field naturally provides a transition scale
     ✓ Could explain clusters (dark field is real, has its own dynamics)
     ✓ The function g_dark(g_bar) is the RAR itself
 
@@ -2713,17 +2685,17 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     and a₀ is effectively fitted, not derived.
 
   ════════════════════════════════════════════════════════════════════════
-  EVALUATION TABLE: THREE DYNAMICAL FRAMEWORKS + FLOOR
+  EVALUATION TABLE: THREE DYNAMICAL FRAMEWORKS + OUR MODEL
   ════════════════════════════════════════════════════════════════════════
 
   ┌────────────────┬─────────┬──────────┬──────────┬──────────────┐
-  │                │ Mod.    │ Mod.     │ Dark     │ Our Floor    │
+  │                │ Mod.    │ Mod.     │ Dark     │ Our Model    │
   │ Criterion      │ Inertia │ Field    │ Sector   │ (empirical)  │
   ├────────────────┼─────────┼──────────┼──────────┼──────────────┤
   │ BTFR           │ ✓       │ ✓        │ ✓        │ ✓            │
   │ RAR            │ ✓       │ ✓        │ ✓        │ ✓            │
   │ Newton limit   │ ✓       │ ✓        │ ✓        │ ✓            │
-  │ Floor (g→a₀)   │ ✗       │ ✗        │ possible │ ✓ (by design)│
+  │ Deep-MOND (g→0)│ ✓       │ ✓        │ ✓        │ ✓            │
   │ Lagrangian     │ ✗       │ ✓ (AQUAL)│ possible │ ✗            │
   │ Local          │ ✗       │ ✓        │ ✓        │ ✓            │
   │ Clusters       │ ✗       │ ✗        │ ✓        │ △ (43%)      │
@@ -2738,7 +2710,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
   ║ The most promising complete theory would likely combine:            ║
   ║                                                                     ║
   ║   1. A modified field equation (like AQUAL) for the Lagrangian     ║
-  ║   2. A vacuum/cosmological term for the floor                      ║
+  ║   2. A cosmological mechanism linking a₀ to H₀                    ║
   ║   3. A dark-sector component for clusters                          ║
   ║                                                                     ║
   ║ This is not a theory yet. It is a wish list.                       ║
@@ -2756,8 +2728,8 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
     4. The 2π has a natural origin in Unruh/Euclidean periodicity
     5. But the Unruh/de Sitter threshold gives cH, not cH/2π (Part XXVII)
     6. MOND (MI or MFE) uses a₀ to produce BTFR and RAR correctly
-    7. Neither MOND variant produces a floor
-    8. Our Floor model fits the data but has no Lagrangian
+    7. Our model shares the same deep-MOND limit as MI and AQUAL
+    8. Our model fits the data but has no Lagrangian
     9. Dark-sector coupling could explain clusters but doesn't derive a₀
     10. No complete theory exists that satisfies all conditions
 
@@ -2769,7 +2741,7 @@ PART XXVIII: THE DYNAMICAL QUESTION — MODIFIED INERTIA vs MODIFIED FIELD
 
   What remains open:
     - Origin of the exact factor in a₀ = cH₀/2π
-    - The field equation that produces Newton + MOND + floor
+    - The field equation that produces the specific ν(x)=x/(1+x) interpolation
     - The dark-sector model that explains both galaxies and clusters
     - Whether a₀ tracks H(z) or is constant (the decisive test)
 
@@ -2966,6 +2938,10 @@ PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
   What changes: the INTERPRETATION, not the data or the equation.
   The equation was always MOND-like. The language was wrong.
 
+  STATUS: All corrections from this Part have been applied to Parts I-XXVIII.
+  "Cosmic Acceleration Floor" → "Cosmic Acceleration Scale" throughout.
+  "Floor" → "transition scale" or "a₀-model" where contextually appropriate.
+
   ════════════════════════════════════════════════════════════════════════
   REVISED 5 FACTS (corrected)
   ════════════════════════════════════════════════════════════════════════
@@ -3069,6 +3045,341 @@ PART XXIX: RESOLVING THE INTERNAL CONTRADICTION — FLOOR vs DEEP-MOND
     Mass-matched BTFR at z ~ 0.5–1.0
     This is the single discriminant between H-based and Λ-based origin.
     Everything else is secondary until this is resolved.
+
+================================================================================
+PART XXX: WHAT IS ACTUALLY NEW IN THIS WORK? — NOVELTY AUDIT
+================================================================================
+
+  Before any further theoretical development, we must answer one question
+  honestly: what here is new, and what is established science with better
+  packaging?
+
+  ════════════════════════════════════════════════════════════════════════
+  THREE-COLUMN NOVELTY TABLE
+  ════════════════════════════════════════════════════════════════════════
+
+  ┌──────────────────────────┬──────────────────────────┬──────────────────────────┐
+  │ KNOWN (PRIOR LITERATURE) │ CONFIRMED BY US (ROBUST) │ POSSIBLY NEW (OUR WORK)  │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ Radial Acceleration      │ RAR reproduced on 175    │ Stress-test methodology: │
+  │ Relation (RAR)           │ SPARC + 22 LITTLE THINGS │ M/L scramble, distance   │
+  │ McGaugh+2016, Lelli+2017 │ with 0.13 dex scatter    │ scramble, Hubble scramble │
+  │                          │ (consistent with theirs) │ galaxy removal, mass-bin  │
+  │                          │                          │ independence tests        │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ Baryonic Tully-Fisher    │ BTFR reproduced with     │ Mass-matched BTFR        │
+  │ Relation (BTFR)          │ V⁴ ∝ M_bar, slope ~4    │ pipeline with power      │
+  │ McGaugh+2000/2005,       │ at 4.4σ significance     │ analysis (93% power at   │
+  │ Lelli+2016               │                          │ N=20 per bin, 15.7%      │
+  │                          │                          │ signal, 10% noise)       │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ MOND deep limit:         │ Our equation gives       │ Specific interpolation:  │
+  │ g_obs = √(g_bar·a₀)     │ same deep-MOND limit     │ ν(x) = x/(1+x) in the   │
+  │ Milgrom 1983             │ (verified algebraically  │ form g² = g_bar² +       │
+  │                          │ in Part XXIX)            │ a₀²·ν(g_bar/a₀)         │
+  │                          │                          │ Status: may be equivalent│
+  │                          │                          │ to known interpolation   │
+  │                          │                          │ — needs formal check     │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ a₀ ≈ cH₀ coincidence    │ Confirmed: ratio = 0.87  │ Explicit Unruh/de Sitter │
+  │ Milgrom 1983, 1999       │ (cH₀/2π = 1.04×10⁻¹⁰   │ derivation audit showing │
+  │ Sanders 2002             │ vs a₀ = 1.2×10⁻¹⁰ m/s²) │ EXACT breaking point:    │
+  │ Famaey & McGaugh 2012   │                          │ T_U = T_dS gives a = cH, │
+  │                          │                          │ NOT cH/2π (2π cancels).  │
+  │                          │                          │ May be new explicit       │
+  │                          │                          │ result in literature.     │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ Cluster failure of MOND  │ Same a₀ on 5 clusters:   │ Direct quantitative      │
+  │ Sanders 1999, 2003       │ reduces deficit by 43%,  │ comparison showing our   │
+  │ The et al. 2000          │ ~52.5% residual DM       │ model is degenerate with │
+  │ Angus+2008               │ fraction remains         │ MOND at cluster scale    │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ Three theoretical        │ Scored all three against │ Combined H₀ vs Λ         │
+  │ families: MOND, ΛCDM     │ 6 criteria (C1-C6), all │ discriminant: H-based    │
+  │ feedback, emergent        │ score ≤ 4/6             │ predicts a₀(z=1) +70%,  │
+  │ Milgrom, Mo+1998,        │                          │ Λ-based predicts         │
+  │ Verlinde 2016            │                          │ constant. Single test    │
+  │                          │                          │ distinguishes all three. │
+  ├──────────────────────────┼──────────────────────────┼──────────────────────────┤
+  │ z-evolution prediction   │ Quantified: 15.7% V     │ Full observational       │
+  │ (concept exists in       │ shift at z=1, power      │ pipeline design with     │
+  │ Milgrom 2015, but as     │ analysis shows 93%       │ mass matching, bootstrap │
+  │ general expectation)     │ detection power at       │ significance, and        │
+  │                          │ N=20 per mass bin        │ systematic budget        │
+  └──────────────────────────┴──────────────────────────┴──────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  ASSESSMENT: WHAT TYPE OF CONTRIBUTION IS THIS?
+  ════════════════════════════════════════════════════════════════════════
+
+  This work is NOT:
+    ✗ A new theory (no new Lagrangian, no new force law)
+    ✗ A new observation (all data from SPARC/LITTLE THINGS)
+    ✗ A discovery of a₀ or the RAR (McGaugh, Lelli, Famaey did that)
+    ✗ The first cH₀ observation (Milgrom 1983)
+
+  This work IS:
+    ✓ A MOND variant with fixed a₀ = cH₀/2π (not fitted)
+    ✓ A systematic stress-testing framework (5 breaking tests)
+    ✓ A rigorous robustness validation (7 systematic checks)
+    ✓ An explicit theoretical audit (what derives, what breaks, where)
+    ✓ A specific observational pipeline design for the z-test
+    ✓ An honest assessment framework (what we know vs what we claim)
+
+  The contribution type is: METHODOLOGICAL + ANALYTICAL.
+  We provide a testing framework, not a theory.
+  We provide an observational plan, not an observation.
+  We provide an audit of existing ideas, not a new idea.
+
+  ════════════════════════════════════════════════════════════════════════
+  ITEMS REQUIRING FORMAL LITERATURE CHECK
+  ════════════════════════════════════════════════════════════════════════
+
+  Before claiming novelty on anything, these must be checked against
+  the existing literature:
+
+  1. INTERPOLATION FUNCTION: Is ν(x) = x/(1+x) in the form
+     g² = g_bar² + a₀²·ν(g_bar/a₀) already published?
+     Check: Li+2018, McGaugh+2016, Zhao & Famaey 2006,
+     Famaey & Binney 2005 interpolation catalogue.
+     If yes: our equation reduces to a known MOND interpolation.
+     If no: this specific functional form may be a minor contribution.
+
+  2. STRESS-TEST METHODOLOGY: Has the specific set of breaking tests
+     (M/L scramble, distance scramble, Hubble scramble, galaxy removal,
+     mass-bin independence) been published as a unified protocol?
+     Check: Lelli+2017 does M/L variations. Li+2018 does fits.
+     The full 5-test battery as a methodology may be new.
+
+  3. MASS-MATCHED BTFR PIPELINE: Has anyone designed a mass-matched
+     BTFR z-evolution test with explicit power analysis?
+     Check: Milgrom 2015 predicts evolution. Di Cintio & Lelli 2016 test BTFR.
+     The specific mass-matching + power analysis pipeline may be new.
+
+  4. UNRUH/de SITTER AUDIT: Has anyone shown explicitly that
+     T_U(a) = T_dS → a = cH (not cH/2π) because the 2π cancels?
+     Check: Milgrom 1999, Verlinde 2016, Smolin 2017.
+     If no: this explicit breaking-point identification is new.
+
+  ════════════════════════════════════════════════════════════════════════
+  THE HONEST ANSWER
+  ════════════════════════════════════════════════════════════════════════
+
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║ We are NOT building a new theory.                                   ║
+  ║ We ARE building a strong testing framework for an existing idea.    ║
+  ║                                                                     ║
+  ║ The idea (a₀ ≈ cH₀, MOND, RAR) belongs to Milgrom, McGaugh,      ║
+  ║ Lelli, Famaey, and others.                                         ║
+  ║                                                                     ║
+  ║ What we add:                                                        ║
+  ║   1. A specific interpolation with a₀ FIXED by cosmology           ║
+  ║   2. A stress-testing methodology to prove robustness               ║
+  ║   3. An explicit audit of where derivation attempts break           ║
+  ║   4. A concrete observational pipeline to settle the question       ║
+  ║                                                                     ║
+  ║ If the z-test is done and a₀ evolves with H(z):                    ║
+  ║   → Our framework becomes the measurement that matters              ║
+  ║ If a₀ is constant:                                                  ║
+  ║   → Standard MOND is confirmed, our model is falsified             ║
+  ║   → But the pipeline design remains useful                         ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+================================================================================
+PART XXXI: THE DECISIVE TEST — MASS-MATCHED BTFR AT z ~ 0.5-1.0
+================================================================================
+
+  "Every theoretical framework in this report makes a different prediction
+  about a₀(z). One observation settles it."
+
+  ════════════════════════════════════════════════════════════════════════
+  WHY THIS TEST AND NO OTHER
+  ════════════════════════════════════════════════════════════════════════
+
+  Three-way discriminant:
+
+  ┌────────────────────┬─────────────────────────────────────────────────┐
+  │ Model              │ Prediction for a₀(z)                           │
+  ├────────────────────┼─────────────────────────────────────────────────┤
+  │ Cosmic Scale       │ a₀(z) = cH(z)/2π = a₀ × E(z)                 │
+  │ (H-based)          │ a₀ grows by ~70% at z=1                       │
+  │                    │ BTFR normalization shifts +0.25 dex at z=1     │
+  ├────────────────────┼─────────────────────────────────────────────────┤
+  │ Standard MOND      │ a₀ = constant at all z                        │
+  │ (fundamental       │ BTFR normalization unchanged                   │
+  │ constant)          │                                                │
+  ├────────────────────┼─────────────────────────────────────────────────┤
+  │ Λ-based scale      │ a₀ = c²√(Λ/3) = constant (Λ is constant)     │
+  │ (dark energy)      │ BTFR normalization unchanged                   │
+  ├────────────────────┼─────────────────────────────────────────────────┤
+  │ ΛCDM feedback      │ a₀ varies chaotically with epoch               │
+  │                    │ BTFR scatter increases at high z               │
+  │                    │ No specific normalization prediction            │
+  └────────────────────┴─────────────────────────────────────────────────┘
+
+  The H-based model (ours) is the ONLY one predicting a systematic,
+  monotonic increase in BTFR normalization with redshift. This makes it
+  the cleanest falsifiable target.
+
+  ════════════════════════════════════════════════════════════════════════
+  THE OBSERVABLE: BTFR NORMALIZATION RATIO
+  ════════════════════════════════════════════════════════════════════════
+
+  Define:
+    R(z) = <V_flat⁴(z)> / <V_flat⁴(z=0)>   at fixed M_bar
+
+  Predictions:
+    Cosmic Scale:   R(z) = E(z) = √(Ω_m(1+z)³ + Ω_Λ)
+    MOND:           R(z) = 1.0 for all z
+    Λ-based:        R(z) = 1.0 for all z
+
+  At z = 0.5:  E(0.5) = 1.28  →  R = 1.28  →  ΔV/V = 1.28^(1/4) - 1 = 6.4%
+  At z = 1.0:  E(1.0) = 1.70  →  R = 1.70  →  ΔV/V = 1.70^(1/4) - 1 = 14.2%
+  At z = 1.5:  E(1.5) = 2.22  →  R = 2.22  →  ΔV/V = 2.22^(1/4) - 1 = 22.1%
+
+  The signal grows rapidly with z. The ideal range is z = 0.5-1.0:
+  large enough signal, but galaxies still well-resolved by JWST/ALMA.
+
+  ════════════════════════════════════════════════════════════════════════
+  PIPELINE DESIGN (5 STEPS)
+  ════════════════════════════════════════════════════════════════════════
+
+  STEP 1: LOCAL CALIBRATION SAMPLE
+  ────────────────────────────────────────────────────────────────────────
+    Source: SPARC (Lelli+2016)
+    N = 175 galaxies with resolved rotation curves
+    For each galaxy: M_bar (stellar + gas), V_flat (flat-regime velocity)
+    Fit local BTFR: log V_flat = (1/4) log M_bar + C₀
+    Record normalization C₀ with bootstrap confidence interval
+    Divide into 4 mass bins:
+      Bin 1: log M_bar = 8.5-9.5 (dwarfs)
+      Bin 2: log M_bar = 9.5-10.0 (intermediate)
+      Bin 3: log M_bar = 10.0-10.5 (massive)
+      Bin 4: log M_bar = 10.5-11.5 (giant spirals)
+
+  STEP 2: HIGH-z SAMPLE SELECTION
+  ────────────────────────────────────────────────────────────────────────
+    Source: JWST NIRSpec IFU + ALMA CO/[CII] kinematics
+    Target: 60-80 galaxies at z = 0.5-1.0
+    Requirements:
+      (a) Spatially resolved rotation curves (≥ 5 independent points)
+      (b) Baryonic mass from SED fitting (stellar) + CO/[CII] (gas)
+      (c) Inclination > 30° (to avoid sin(i) errors)
+      (d) V/σ > 2 (rotation-dominated, not dispersion-dominated)
+      (e) No major mergers or strong bars
+    Mass matching: select high-z galaxies to populate same 4 mass bins
+    with ≥ 15-20 per bin.
+
+  STEP 3: SYSTEMATIC BUDGET
+  ────────────────────────────────────────────────────────────────────────
+    Per-galaxy uncertainties:
+      - V_flat:  ±10-15% (beam smearing, inclination, pressure support)
+      - M_bar:   ±0.2 dex (SED fitting, IMF, gas fraction)
+      - Distance: ±5% (from spectroscopic redshift + cosmology)
+
+    Systematic floors:
+      - IMF evolution: could shift M_bar by ±0.1 dex at z=1
+      - Gas fraction: higher at z=1, may bias M_bar if not properly measured
+      - Beam smearing: systematically LOWERS V_flat → biases AGAINST our signal
+        (conservative: if we detect +14%, it's not beam smearing)
+      - Selection effects: star-forming galaxies preferentially selected at high z
+
+    Mitigation:
+      - Mass matching eliminates mass-dependent systematics
+      - Bootstrap resampling accounts for per-galaxy scatter
+      - Beam smearing correction using forward-modeled kinematic fits
+      - Multiple gas tracers (CO for z<1, [CII] for z>1) for cross-check
+
+  STEP 4: STATISTICAL ANALYSIS
+  ────────────────────────────────────────────────────────────────────────
+    Primary test:
+      Fit R(z) = E(z)^α across mass-matched bins
+      H₀ (null): α = 0 (no evolution → MOND / Λ-based)
+      H₁ (alternative): α = 1 (evolution → H-based scale)
+
+    Test statistic:
+      Likelihood ratio: Λ = -2 ln(L(α=0) / L(α=α_best))
+      Distributed as χ²(1) under the null
+
+    Power analysis (pre-registration):
+      Signal: α = 1 → ΔR = 0.70 at z=1
+      Noise per bin: σ(R) ≈ 4σ(V)/V × √(1/N_bin) ≈ 0.10 at N=20
+      SNR = 0.70 / 0.10 = 7.0 → detection power > 99% at 3σ threshold
+
+      At z = 0.5: signal = 0.28, noise = 0.10 → SNR = 2.8 → power ~80%
+      At z = 1.0: signal = 0.70, noise = 0.10 → SNR = 7.0 → power ~99%
+
+    Minimum viable experiment:
+      20 galaxies per mass bin × 4 bins = 80 galaxies at z = 0.5-1.0
+      This gives 3σ detection power of 93% at z=1 (conservative estimate)
+
+  STEP 5: DECISION TREE
+  ────────────────────────────────────────────────────────────────────────
+    RESULT: α = 1.0 ± 0.15
+      → Cosmic Scale model CONFIRMED
+      → a₀ tracks H(z), cosmological origin strongly supported
+      → Standard MOND falsified (a₀ is not a fundamental constant)
+      → Next: derive the mechanism linking H to local dynamics
+
+    RESULT: α = 0.0 ± 0.15
+      → Cosmic Scale model FALSIFIED
+      → a₀ does not evolve with z
+      → MOND or Λ-based origin supported
+      → cH₀/2π is a numerical coincidence (or Λ-based, which is constant)
+
+    RESULT: α = 0.5 ± 0.3 (ambiguous)
+      → Need more data (increase N or extend to z > 1)
+      → Or: a₀ evolves more weakly than E(z)
+      → Consider H(z)^β model and fit β
+
+    RESULT: scatter increases dramatically at high z
+      → ΛCDM feedback model may be correct
+      → a₀ is emergent from galaxy formation, not fundamental
+      → No clean BTFR exists at high z
+
+  ════════════════════════════════════════════════════════════════════════
+  TIMELINE AND FEASIBILITY
+  ════════════════════════════════════════════════════════════════════════
+
+  Current status (2026):
+    - JWST Cycle 1-3 data: ~20-30 galaxies with resolved kinematics at z~0.5-1
+    - ALMA archive: ~10-15 CO-detected disks at z~0.5-1
+    - Total available: ~30-40 galaxies (below minimum of 80)
+    - Conclusion: not yet feasible at full power
+
+  Near-term (2027-2028):
+    - JWST Cycle 4-5: IFU surveys (COSMOS-Web, PRIMER, JADES follow-up)
+    - ALMA large programs targeting disk kinematics
+    - Expected: ~60-100 suitable galaxies by 2028
+    - Conclusion: feasible with dedicated program
+
+  Optimal strategy:
+    - Propose a JWST+ALMA joint program targeting 80 disk galaxies at z=0.5-1.0
+    - Pre-select from photometric surveys (COSMOS2020, CANDELS)
+    - Mass-match to local SPARC sample before observing
+    - Pre-register the analysis pipeline and decision thresholds
+
+  ════════════════════════════════════════════════════════════════════════
+  FINAL STATEMENT
+  ════════════════════════════════════════════════════════════════════════
+
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║ This entire project reduces to ONE question:                        ║
+  ║                                                                     ║
+  ║   Does a₀ evolve with H(z)?                                        ║
+  ║                                                                     ║
+  ║ If YES: the cosmic acceleration scale is real, a₀ = cH(z)/2π,     ║
+  ║   and the connection between galaxy dynamics and cosmic expansion   ║
+  ║   is physical, not numerical.                                       ║
+  ║                                                                     ║
+  ║ If NO: a₀ is either a fundamental constant (MOND), a Λ-derived    ║
+  ║   scale (dark energy), or an emergent property (feedback).          ║
+  ║   The cH₀/2π coincidence remains unexplained.                     ║
+  ║                                                                     ║
+  ║ The mass-matched BTFR pipeline is designed to answer this.         ║
+  ║ The data will be available by ~2028.                                ║
+  ║ Until then: no theory, just preparation.                            ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
 
 ================================================================================
 END OF COMPLETE REPORT
