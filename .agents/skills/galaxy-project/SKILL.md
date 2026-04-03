@@ -28,10 +28,10 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 
 ## What Is Model-Dependent
 
-- The precise value of a₀ (2670 global fit vs 3720 high-mass only)
-- The cosmological ratio a₀ ≈ cH₀/2π (depends on which a₀)
+- The precise value of a₀ (GOLD global: 4285, GOLD median: 3479, ALL: 1929)
+- The cosmological ratio a₀/(cH₀/2π) = 1.333 (GOLD) or 0.600 (ALL)
 - a₀ varies across sub-populations (low-mass: fitting artifact — limited g_bar range)
-- Residuals track Vmax (r=+0.41) but vanish under quality cuts
+- Inclination shows marginal residual signal (r=-0.307) in GOLD sample
 
 ## What We Do NOT Know
 
@@ -56,6 +56,9 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
     Corrected analysis shows gas/SB correlations were ARTIFACTS.
     Real picture: residuals clean for well-constrained galaxies.
     Low-mass a₀ divergence = fitting artifact (limited g_bar range).
+12. **Gold-standard pipeline v1.0.0**: Locked parameters, 4 sample layers,
+    blind residual audit. GOLD sample a₀=4285, 5/6 audit variables clean.
+    Only inclination marginal (r=-0.31). Pipeline fully reproducible.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -65,10 +68,10 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Settling the a₀ value (range: 2670–3720)
-- Investigating weak SB trend in 46 highest-quality galaxies
-- Method-independent a₀ measurement
-- Clean, reproducible analysis
+- Settling the a₀ value (best range: 3500–4300 from GOLD/HIGH-MASS)
+- Addressing inclination signal (r=-0.31) with tighter inc cut
+- Error-weighted fitting and nuisance marginalization
+- Clean, reproducible analysis (gold-standard pipeline built v1.0.0)
 
 ## Two Separate Questions (Never Mix Them)
 

@@ -1,0 +1,133 @@
+تمام. خزّنتها.
+إذا بدك تكفّي وتقرّب من الحسم، امشِ بهذا الترتيب
+1) ثبّت السؤال الأساسي
+لا تلاحق 10 أسئلة مع بعض. اختصر المشروع كله بسؤال واحد:
+هل � ثابت فعلًا بعد تنظيف كل الـ systematics، أم أنه يتبدل مع نوع العينة وطريقة القياس؟
+هذا هو السؤال الذي يسبق:
+هل � meaningful؟
+هل في فيزياء جديدة؟
+هل MOND أو feedback أو cosmology؟
+إذا هذا لم يُحسم، كل شيء بعده يبقى هشًّا.
+2) اعمل “نسخة محكمة” من القياس
+بدك تبني gold-standard pipeline. يعني نسخة واحدة نهائية من التحليل لا تتغير كل يوم.
+لازم تتضمن:
+نفس dataset دائمًا
+نفس cuts دائمًا
+نفس تعريف residual دائمًا
+نفس طريقة fit دائمًا
+نفس interpolation set دائمًا
+نفس units دائمًا
+نفس logging و reproducibility
+الهدف هنا: أي رقم يطلع لاحقًا لازم يكون قابلًا لإعادة الإنتاج 100%.
+3) افصل القياسات إلى أربع طبقات
+لا تعطي رقم � واحد فقط. من الآن وصاعدًا دائمًا اعرض:
+Global fit
+Per-galaxy median
+High-quality / large dynamic-range sample
+High-mass only
+بعدها تسأل:
+أي واحد منهم هو القياس الفيزيائي الحقيقي؟
+هذا أهم من محاولة تفسير � الآن.
+4) اعتبر low-mass galaxies “ضعيفة التقييد” لا “ناقضة للنموذج”
+التقرير الجديد يقول بوضوح إن كثير من low-mass systems لا تملك dynamic range كافي لتقييد �.
+إذًا عمليًا:
+لا تستخدمها لتحديد القيمة النهائية لـ �
+استخدمها فقط كـ consistency / stress sample
+القياس الأساسي يجب أن يأتي من galaxies التي:
+تملك � range كبير
+عدد نقاط جيد
+ميل مناسب
+curves نظيفة
+5) اعمل ورقة Systematics قبل أي ورقة “تفسير”
+هذا أهم قرار استراتيجي.
+الورقة الأولى الأقوى ليست:
+“وجدنا أصل �”
+بل:
+“بعد تصحيح الأخطاء، اختبار الدوال، وفصل العينات، ما الذي يبقى robust فعلًا من ظاهرة �؟”
+هذه الورقة تبني لك أرضية صلبة.
+6) نفّذ 6 اختبارات حاسمة قبل أي claim كبير
+أ. Full-sample refit بدون subsampling
+لأنك الآن تستخدم subsampled radial points.
+لازم تعيد كل شيء على الـ full sample.
+ب. Error-weighted fitting
+ليس فقط RMS عادي.
+بدك:
+weighted likelihood
+أو hierarchical/Bayesian model
+ج. Per-galaxy nuisance marginalization
+على الأقل على:
+distance
+inclination
+�
+حتى تعرف: هل تشتت � حقيقي أم nuisance-driven؟
+د. Interpolation comparison proper
+بـ:
+AIC/BIC
+posterior predictive checks
+residual maps
+per-regime stability
+هـ. Dynamic-range selection function
+اعمل معيارًا رسميًا:
+أي galaxy لا يملك � range كافي لا يدخل في قياس �
+و. Blind residual audit
+بعد fit نهائي، افحص residuals ضد:
+�
+�
+SB
+gas fraction
+morphology
+inclination
+distance method
+إذا بقيت نظيفة، claimك يقوى جدًا.
+7) الحسم الحقيقي له ثلاث مراحل
+لا يوجد “حسم عالمي” بخطوة واحدة. الحسم يأتي هكذا:
+المرحلة 1 — حسم رصدي داخلي
+إثبات أن:
+transition scale موجود
+robust
+ليس bug
+ليس artifact من interpolation أو calibration
+المرحلة 2 — حسم منهجي
+إثبات أن:
+قيمة � لا تنهار عند تغيير methodology المعقولة
+أو تحديد بالضبط متى ولماذا تتغير
+المرحلة 3 — حسم فيزيائي
+بعدها فقط تسأل:
+هل � ثابت؟
+هل قريب من � بحق؟
+هل هناك redshift evolution؟
+هل هذا يدعم MOND أم cosmological scaling أم emergent feedback؟
+إذا هدفك “الحسم العالمي”، هذا هو الطريق الفعلي
+المسار الأقوى:
+ورقة diagnostics/systematics
+ورقة قياس � clean sample / hierarchical fit
+ورقة forecast أو pipeline لـ redshift test
+لاحقًا فقط: ورقة تفسير نظري
+ماذا لا أنصحك به الآن
+لا تدخل الآن في:
+Unruh/de Sitter derivation بعمق
+quantum foundations
+“العامل الخفي 2π”
+ادعاء أصل كوني نهائي
+ليش؟
+لأن القياس نفسه لم يُقفل بعد بالكامل.
+قبل تفسير �، لازم تثبّت ماذا تقيس أصلًا.
+الخطة العملية المختصرة جدًا
+خلال المرحلة القادمة، اشتغل فقط على هذا:
+الهدف المركزي:
+Produce a defensible measurement of � with explicit sample dependence and uncertainty budget.
+المخرجات:
+جدول نهائي للقيم بحسب العينة
+pipeline reproducible
+clean-sample definition
+weighted fit
+nuisance treatment
+residual audit نهائي
+abstract قوي لورقة systematics
+الحكم الصريح
+إذا بدك توصل لشيء قوي فعلًا:
+لا تروح الآن على “شو هو � نظريًا”
+روح أولًا على:
+“كيف أقيس � بطريقة ما عاد يقدر حدا يكسرها؟”
+هذا هو الطريق الحقيقي إلى الحسم.
+أقدر أرتّب لك الخطوة الجاية مباشرة كـ خطة عمل 30 يوم لهذا المشروع.

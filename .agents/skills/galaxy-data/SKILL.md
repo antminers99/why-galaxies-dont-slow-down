@@ -11,12 +11,13 @@ description: Reference data, constants, and computed results for the Galaxy Rota
 |----------|-------|-------|
 | a₀ (canonical) | 1.2×10⁻¹⁰ | m/s² |
 | a₀ in galaxy units | 3702 | (km/s)²/kpc |
-| a₀ (global fit, combined) | 1730.4 | (km/s)²/kpc |
+| a₀ (GOLD global fit) | 4285 | (km/s)²/kpc |
+| a₀ (ALL global fit) | 1929 | (km/s)²/kpc |
 | c | 299,792,458 | m/s |
 | H₀ | 67.4 | km/s/Mpc |
 | cH₀ | 6.548×10⁻¹⁰ | m/s² |
 | cH₀/2π | 1.042×10⁻¹⁰ | m/s² |
-| a₀/(cH₀/2π) | 0.87 (per-galaxy median) or 0.56–0.62 (global fit) | — |
+| a₀/(cH₀/2π) | 1.333 (GOLD global) or 1.083 (GOLD median) or 0.600 (ALL global) | — |
 | κ_dS = c²√(Λ/3) | 5.47×10⁻¹⁰ | m/s² |
 | κ_dS/2π | 8.7×10⁻¹¹ | m/s² |
 | 1 (km/s)²/kpc → m/s² | 3.241×10⁻¹⁴ | conversion |
@@ -125,11 +126,51 @@ High vs low quality gives SAME a₀ (3024 vs 3029) — reassuring.
 | Distance MC (±30%, 1000 iter) | 100% negative slopes |
 | CV = 0.3% under distance perturbation | a₀ stable |
 
+### Gold-Standard Pipeline v1.0.0 Results (April 2026)
+
+Script: `scripts/gold-standard-pipeline.cjs`
+Results: `public/gold-standard-results.json`
+
+**4-Layer Global Fits (mean of 3 interpolation functions):**
+
+| Sample | n_gal | n_pts | a₀ (km/s)²/kpc | a₀ (m/s²) | a₀/(cH₀/2π) |
+|--------|-------|-------|----------------|-----------|-------------|
+| ALL | 175 | 2062 | 1929 | 6.25×10⁻¹¹ | 0.600 |
+| CLEAN | 78 | 1141 | 4883 | 1.58×10⁻¹⁰ | 1.519 |
+| GOLD | 52 | 872 | 4285 | 1.39×10⁻¹⁰ | 1.333 |
+| HIGH-MASS | 56 | 820 | 4035 | 1.31×10⁻¹⁰ | 1.255 |
+
+**Per-Galaxy Medians:**
+
+| Sample | n | median a₀ | MAD (dex) |
+|--------|---|----------|-----------|
+| ALL | 73 | 2270 | 0.558 |
+| CLEAN | 58 | 3277 | 0.399 |
+| GOLD | 44 | 3479 | 0.347 |
+| HIGH-MASS | 42 | 3277 | 0.383 |
+
+**Blind Residual Audit (GOLD, 52 galaxies):**
+
+| Variable | r | Verdict |
+|----------|---|---------|
+| V_max | +0.143 | CLEAN |
+| Surface brightness | -0.085 | CLEAN |
+| Gas fraction | -0.056 | CLEAN |
+| Luminosity | -0.072 | CLEAN |
+| Inclination | -0.307 | MARGINAL ⚠ |
+| Distance | -0.151 | CLEAN |
+
+5/6 variables clean. Inclination marginal (r=-0.31).
+
+**Low-mass stress test:** a₀ = 104,713 (at fit boundary). Cannot constrain a₀.
+
 ## Key Insight
 
 The transition scale EXISTS and is robust. The picture is SIMPLER than Phase 1 suggested:
 - Residuals are clean for well-constrained galaxies (g_bar range >1 dex)
 - Gas fraction and SB do NOT correlate with residuals (Phase 1 was a bug)
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
-- Precise a₀ value is method-dependent (2670 global vs 3720 high-mass)
-- The cosmological ratio a₀ ≈ cH₀/2π depends on which a₀ you use
+- GOLD sample recommended: a₀ = 4285 ± 12.3% interpolation spread
+- Best estimate range: 3500–4300 (GOLD + HIGH-MASS convergence zone)
+- Inclination is the only remaining marginal signal (r=-0.31, addressable)
+- The cosmological ratio a₀/(cH₀/2π) = 1.333 for GOLD global fit

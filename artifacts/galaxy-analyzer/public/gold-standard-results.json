@@ -1,0 +1,261 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-04-03T20:32:43.484Z",
+  "lockedParameters": {
+    "upsilonDisk": 0.5,
+    "upsilonBulge": 0.7,
+    "interpolations": [
+      "McGaugh RAR",
+      "Simple MOND",
+      "Standard MOND"
+    ],
+    "fitRange": "log(a0) in [2.0, 5.0]",
+    "residualDef": "log10(gobs) - log10(interpFunc(gbar, a0))",
+    "units": "(km/s)^2/kpc",
+    "ms2Conv": 3.241e-14
+  },
+  "samples": {
+    "all": {
+      "nGal": 175,
+      "nPts": 2062
+    },
+    "clean": {
+      "nGal": 78,
+      "nPts": 1141,
+      "cuts": "V>=80, inc>=30, n>=5, range>=0.5"
+    },
+    "gold": {
+      "nGal": 52,
+      "nPts": 872,
+      "cuts": "V>=50, inc>=30, n>=5, range>=1.0"
+    },
+    "highMass": {
+      "nGal": 56,
+      "nPts": 820,
+      "cuts": "V>150"
+    }
+  },
+  "globalFits": {
+    "ALL (global fit)": {
+      "results": [
+        {
+          "func": "McGaugh RAR",
+          "a0": 1809.413796533216,
+          "logA0": 3.2575378974294473,
+          "rms": 0.23847193557870489,
+          "bias": 0.048294164547211235,
+          "n": 2062
+        },
+        {
+          "func": "Simple MOND",
+          "a0": 1988.2616855783247,
+          "logA0": 3.2984735436042456,
+          "rms": 0.2384734197200594,
+          "bias": 0.028333022867035082,
+          "n": 2062
+        },
+        {
+          "func": "Standard MOND",
+          "a0": 1988.2616855783247,
+          "logA0": 3.2984735436042456,
+          "rms": 0.2384734197200594,
+          "bias": 0.028333022867035082,
+          "n": 2062
+        }
+      ],
+      "meanA0": 1928.6,
+      "spread": 9.3,
+      "bestRMS": 0.2385
+    },
+    "CLEAN sample": {
+      "results": [
+        {
+          "func": "McGaugh RAR",
+          "a0": 4462.722301720339,
+          "logA0": 3.649599863183182,
+          "rms": 0.1444326790218388,
+          "bias": -0.02931876372613146,
+          "n": 1141
+        },
+        {
+          "func": "Simple MOND",
+          "a0": 5092.893633713422,
+          "logA0": 3.706964605928052,
+          "rms": 0.14455356372503447,
+          "bias": -0.05515553809154852,
+          "n": 1141
+        },
+        {
+          "func": "Standard MOND",
+          "a0": 5092.893633713422,
+          "logA0": 3.706964605928052,
+          "rms": 0.14455356372503447,
+          "bias": -0.05515553809154852,
+          "n": 1141
+        }
+      ],
+      "meanA0": 4882.8,
+      "spread": 12.9,
+      "bestRMS": 0.1444
+    },
+    "GOLD sample": {
+      "results": [
+        {
+          "func": "McGaugh RAR",
+          "a0": 3933.947282231792,
+          "logA0": 3.5948285357589063,
+          "rms": 0.14340848029558778,
+          "bias": -0.01479948317614087,
+          "n": 872
+        },
+        {
+          "func": "Simple MOND",
+          "a0": 4461.058636672697,
+          "logA0": 3.6494379316962293,
+          "rms": 0.1435600721609032,
+          "bias": -0.03968480580364837,
+          "n": 872
+        },
+        {
+          "func": "Standard MOND",
+          "a0": 4461.058636672697,
+          "logA0": 3.6494379316962293,
+          "rms": 0.1435600721609032,
+          "bias": -0.03968480580364837,
+          "n": 872
+        }
+      ],
+      "meanA0": 4285.4,
+      "spread": 12.3,
+      "bestRMS": 0.1434
+    },
+    "HIGH-MASS (V>150)": {
+      "results": [
+        {
+          "func": "McGaugh RAR",
+          "a0": 3719.745037552591,
+          "logA0": 3.570513173059651,
+          "rms": 0.12785592360333803,
+          "bias": -0.0009407664513202602,
+          "n": 820
+        },
+        {
+          "func": "Simple MOND",
+          "a0": 4192.807098303575,
+          "logA0": 3.6225048819434074,
+          "rms": 0.12801856364603112,
+          "bias": -0.024957616576855166,
+          "n": 820
+        },
+        {
+          "func": "Standard MOND",
+          "a0": 4192.807098303575,
+          "logA0": 3.6225048819434074,
+          "rms": 0.12801856364603112,
+          "bias": -0.024957616576855166,
+          "n": 820
+        }
+      ],
+      "meanA0": 4035.1,
+      "spread": 11.7,
+      "bestRMS": 0.1279
+    }
+  },
+  "perGalaxyMedians": {
+    "all": {
+      "n": 73,
+      "medianLogA0": 3.356,
+      "a0": 2270,
+      "mad": 0.558
+    },
+    "clean": {
+      "n": 58,
+      "medianLogA0": 3.516,
+      "a0": 3277,
+      "mad": 0.399
+    },
+    "gold": {
+      "n": 44,
+      "medianLogA0": 3.541,
+      "a0": 3479,
+      "mad": 0.347
+    },
+    "highMass": {
+      "n": 42,
+      "medianLogA0": 3.516,
+      "a0": 3277,
+      "mad": 0.383
+    }
+  },
+  "goldResidualAudit": {
+    "a0Used": 3933.9,
+    "auditClean": false,
+    "correlations": [
+      {
+        "variable": "V_max",
+        "r": 0.143,
+        "n": 52,
+        "significant": false
+      },
+      {
+        "variable": "Surface brightness",
+        "r": -0.085,
+        "n": 52,
+        "significant": false
+      },
+      {
+        "variable": "Gas fraction",
+        "r": -0.056,
+        "n": 52,
+        "significant": false
+      },
+      {
+        "variable": "Luminosity",
+        "r": -0.072,
+        "n": 52,
+        "significant": false
+      },
+      {
+        "variable": "Inclination",
+        "r": -0.307,
+        "n": 52,
+        "significant": true
+      },
+      {
+        "variable": "Distance",
+        "r": -0.151,
+        "n": 52,
+        "significant": false
+      }
+    ]
+  },
+  "goldInterpStability": {
+    "results": [
+      {
+        "func": "McGaugh RAR",
+        "a0": 3933.9,
+        "rms": 0.1434
+      },
+      {
+        "func": "Simple MOND",
+        "a0": 4461.1,
+        "rms": 0.1436
+      },
+      {
+        "func": "Standard MOND",
+        "a0": 4461.1,
+        "rms": 0.1436
+      }
+    ],
+    "spreadPct": 12.3
+  },
+  "recommendedMeasurement": {
+    "sample": "GOLD",
+    "method": "global fit (mean of 3 interpolation functions)",
+    "a0_galUnits": 4285.4,
+    "a0_ms2": 1.389e-10,
+    "ratio_cH0_2pi": 1.333,
+    "residualAuditPassed": false,
+    "interpSpreadPct": 12.3
+  }
+}
