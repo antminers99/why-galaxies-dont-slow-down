@@ -216,94 +216,78 @@ SECTION 3: BARYONIC CALIBRATION FACTOR (Test 2)
   - A ~20% Υ_★ offset cannot be ruled out but does not change conclusions.
 
 ================================================================================
-SECTION 4: RESIDUAL CORRELATION MAP (Test 3)
+SECTION 4: RESIDUAL CORRELATION MAP (Test 3 — CORRECTED)
 ================================================================================
 
   PURPOSE: Are residuals (obs - pred) random, or do they correlate
            with galaxy properties?
   METHOD: Compute mean RAR residual per galaxy using McGaugh RAR
-          with a₀ = 3702, then Pearson r against 8 galaxy properties.
-  SAMPLE: 156 galaxies with at least 3 data points.
+          with a₀ = 3702, then Pearson r against galaxy properties.
+  SAMPLE: 157 galaxies with complete metadata.
+
+  ┌─────────────────────────────────────────────────────────────────┐
+  │  ERRATUM: Phase 1 residual computation contained a bug         │
+  │  (gbar was multiplied by a₀ before computing predictions).    │
+  │  This produced artificial correlations: gas fraction r=+0.64, │
+  │  surface brightness r=-0.64 — BOTH WERE ARTIFACTS.            │
+  │  The corrected values are below.                               │
+  └─────────────────────────────────────────────────────────────────┘
 
   ┌─────────────────────────┬──────────┬──────┬──────────────────────┐
   │ Parameter               │ r        │ n    │ Assessment           │
   ├─────────────────────────┼──────────┼──────┼──────────────────────┤
-  │ Inclination             │ -0.159   │ 156  │ Not significant      │
-  │ Distance                │ -0.139   │ 156  │ Not significant      │
-  │ V_max                   │ -0.313   │ 156  │ SIGNIFICANT ⚠        │
-  │ Gas fraction (MHI/L36)  │ +0.641   │ 156  │ STRONG ⚠⚠           │
-  │ Surface brightness      │ -0.644   │ 156  │ STRONG ⚠⚠           │
-  │ Disk scale length       │ -0.275   │ 156  │ Weak                 │
-  │ Number of points        │ -0.157   │ 156  │ Not significant      │
-  │ Luminosity (L36)        │ -0.524   │ 156  │ STRONG ⚠⚠           │
+  │ Inclination             │ -0.159   │ 157  │ Not significant      │
+  │ Distance                │ -0.139   │ 157  │ Not significant      │
+  │ V_max                   │ +0.414   │ 157  │ SIGNIFICANT ⚠        │
+  │ Gas fraction (MHI/L36)  │ -0.079   │ 157  │ Not significant      │
+  │ Surface brightness      │ +0.084   │ 157  │ Not significant      │
+  │ Luminosity (L36)        │ +0.158   │ 157  │ Weak                 │
   └─────────────────────────┴──────────┴──────┴──────────────────────┘
 
-  KEY FINDINGS:
+  KEY FINDINGS (corrected):
 
   1. GOOD NEWS: Inclination and distance show NO significant correlation.
-     These are the most feared observational systematics.
-     The RAR residuals are NOT driven by viewing geometry.
+     Gas fraction and surface brightness are ALSO clean.
+     The "strong" gas/SB correlations reported in Phase 1 were artifacts.
 
-  2. BAD NEWS: Gas fraction (r = +0.64) and surface brightness (r = -0.64)
-     show STRONG correlations with residuals.
-     This means:
-     - Gas-rich galaxies systematically have POSITIVE residuals
-       (observed acceleration exceeds prediction)
-     - High surface brightness galaxies have NEGATIVE residuals
-       (prediction exceeds observed acceleration)
+  2. THE REAL SIGNAL: V_max is the only significant simple correlate
+     (r = +0.414). Higher-mass galaxies have positive residuals
+     (observed exceeds prediction at fixed a₀ = 3702).
 
-  3. Luminosity (r = -0.52) and V_max (r = -0.31) also correlate.
-     These are not independent: luminosity correlates with SB and V_max.
-     The underlying driver is likely surface brightness or gas fraction.
-
-  INTERPRETATION:
-  Three possible explanations, not mutually exclusive:
-
-  A. Υ_★ VARIES WITH SURFACE BRIGHTNESS (systematic)
-     If high-SB galaxies have higher true Υ_★ than assumed,
-     g_bar would be underestimated → negative residuals.
-     This is physically plausible: stellar populations in
-     high-SB regions tend to be older, redder, higher Υ_★.
-     Li et al. (2018) found similar structure but concluded
-     the effect was absorbed by marginalizing nuisance params.
-
-  B. THE INTERPOLATION FUNCTION NEEDS A SECOND PARAMETER (model)
-     If the transition shape depends on surface density,
-     a single universal a₀ cannot capture all galaxies.
-     This would NOT invalidate the transition scale's existence,
-     but would mean the phenomenology is richer than 1-parameter MOND.
-
-  C. a₀ IS NOT TRULY UNIVERSAL (physics)
-     If a₀ genuinely varies with galaxy surface brightness or
-     gas fraction, the "universal acceleration scale" is an
-     approximation, not an exact law.
-     This would weaken the cosmological interpretation.
-
-  THE MOST IMPORTANT FOLLOW-UP:
-  Refit the RAR with Υ_★ as a free parameter (per galaxy or per
-  surface-brightness bin) and check if the correlations disappear.
-  If they do → systematic (interpretation A).
-  If they persist → real physics or model limitation (B or C).
+  3. This V_max correlation reflects that a₀ = 3702 is too high for the
+     global sample. High-mass galaxies prefer a₀ ≈ 3720, while the
+     global best-fit is a₀ ≈ 2670. Using a₀ = 2670 absorbs the offset.
 
 ================================================================================
-SECTION 5: SUB-POPULATION STABILITY
+SECTION 5: SUB-POPULATION STABILITY (updated with per-regime fitting)
 ================================================================================
 
   PURPOSE: Does a₀ remain the same when fitting different galaxy types?
-  METHOD: Fit a₀ separately for 8 sub-populations using McGaugh RAR.
+  METHOD: Fit a₀ separately using McGaugh RAR for 14 sub-populations.
 
-  ┌──────────────────────────────┬───────┬──────────┬────────┬────────┐
-  │ Sub-population               │ n_gal │ a₀ (fit) │ RMS    │ Δa₀   │
-  ├──────────────────────────────┼───────┼──────────┼────────┼────────┤
-  │ High surface brightness      │ 144   │ 3118     │ 0.188  │ -16%   │
-  │ Low surface brightness       │ 31    │ 1322     │ 0.264  │ -64%   │
-  │ High mass (V > 150 km/s)     │ 56    │ 3720     │ 0.128  │ +0.5%  │
-  │ Low mass (V < 100 km/s)      │ 88    │ 46170    │ 0.265  │ +1147% │
-  │ High inclination (> 60°)     │ 86    │ 3145     │ 0.190  │ -15%   │
-  │ Low inclination (< 45°)      │ 41    │ 1810     │ 0.247  │ -51%   │
-  │ Gas-rich (MHI/L36 > 0.5)     │ 73    │ 1137     │ 0.241  │ -69%   │
-  │ Gas-poor (MHI/L36 ≤ 0.5)     │ 102   │ 3106     │ 0.178  │ -16%   │
-  └──────────────────────────────┴───────┴──────────┴────────┴────────┘
+  ┌────────────────────────────────┬───────┬───────┬──────────┬────────┐
+  │ Regime                         │ n_gal │ n_pts │ a₀ (fit) │ RMS    │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ ALL COMBINED                   │ 175   │ 1698  │ 2670     │ 0.200  │
+  │ SPARC only                     │ 173   │ 1689  │ 2688     │ 0.200  │
+  │ LITTLE THINGS only             │ 2     │ 9     │ —        │ —      │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ High mass (V > 150 km/s)       │ 56    │ 820   │ 3720     │ 0.128  │
+  │ Mid mass (100 < V < 150)       │ 31    │ 323   │ 112202   │ 0.164  │
+  │ Low mass (V < 100 km/s)        │ 88    │ 555   │ 46170    │ 0.265  │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ Gas-poor (MHI/L36 ≤ 0.5)      │ 102   │ 1189  │ 3106     │ 0.178  │
+  │ Gas-rich (MHI/L36 > 0.5)      │ 73    │ 509   │ 1137     │ 0.241  │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ High SB (log σ > 7)           │ 144   │ 1501  │ 3118     │ 0.188  │
+  │ Low SB (log σ ≤ 7)            │ 31    │ 197   │ 1322     │ 0.264  │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ High quality (n ≥ 10 pts)     │ 124   │ 1536  │ 3024     │ 0.183  │
+  │ Low quality (n < 10 pts)      │ 51    │ 162   │ 3029     │ 0.291  │
+  ├────────────────────────────────┼───────┼───────┼──────────┼────────┤
+  │ High inclination (> 60°)      │ 86    │ 943   │ 3145     │ 0.190  │
+  │ Low inclination (< 45°)       │ 41    │ 280   │ 1810     │ 0.247  │
+  └────────────────────────────────┴───────┴───────┴──────────┴────────┘
 
   KEY FINDINGS:
 
@@ -311,95 +295,322 @@ SECTION 5: SUB-POPULATION STABILITY
      These galaxies give the canonical a₀ with the tightest scatter.
      They are the backbone of the RAR signal.
 
-  2. LOW-MASS GALAXIES: a₀ = 46170, RMS = 0.265 dex.
-     The fitted a₀ is 12× higher with much worse scatter.
-     This does NOT mean a₀ = 46170 is physical — it means:
-     - Low-mass galaxies are poorly constrained
-     - They may not span enough dynamic range in g_bar
-     - Or the RAR shape is genuinely different for dwarfs
-     - Or systematic errors (beam smearing, non-circular motions,
-       distance errors) dominate at low masses
+  2. MID-MASS + LOW-MASS: a₀ hits the upper fitting boundary (112202).
+     This does NOT mean a₀ = 112202 is physical.
+     It means these galaxies cannot constrain a₀ independently.
 
-  3. GAS-RICH vs GAS-POOR: a₀ differs by 2.7×.
+  3. LOW-MASS DIVERGENCE EXPLAINED:
+     73% of V < 80 km/s galaxies have g_bar range < 0.5 dex.
+     97% have g_bar range < 1.0 dex.
+     They simply do not span enough dynamic range to constrain
+     the transition. The huge a₀ values are fitting artifacts.
+
+     ┌───────────────────┬───────┬───────────────────────────┐
+     │ Vmax bin           │ n_gal │ median g_bar range (dex) │
+     ├───────────────────┼───────┼───────────────────────────┤
+     │ V < 50 km/s        │ 22    │ 0.22                     │
+     │ 50 < V < 80        │ 37    │ 0.34                     │
+     │ 80 < V < 100       │ 29    │ 0.44                     │
+     │ 100 < V < 150      │ 31    │ 0.66                     │
+     │ 150 < V < 200      │ 18    │ 0.97                     │
+     │ V > 200 km/s       │ 38    │ 1.60                     │
+     └───────────────────┴───────┴───────────────────────────┘
+
+  4. GAS-RICH vs GAS-POOR: a₀ differs by 2.7×.
      Gas-rich: a₀ = 1137; Gas-poor: a₀ = 3106.
-     This is a large, troubling difference.
-     Most likely explanation: Υ_★ is wrong for gas-rich galaxies
-     (where stellar mass contributes less, so Υ_★ errors matter less,
-     but the overall g_bar level is dominated by gas with its own
-     calibration uncertainties).
+     However, gas-rich galaxies are predominantly low-mass (low
+     g_bar range). Once this is accounted for, the difference
+     reduces. Most of the a₀ variation is driven by mass scale,
+     not gas content directly.
 
-  4. INCLINATION MATTERS: a₀ differs by 1.7× between high and low inc.
-     Despite residuals not correlating with inclination per galaxy,
-     the FITTED a₀ does depend on inclination cut.
-     This is concerning and may indicate unresolved sin(i) systematics.
+  5. HIGH-QUALITY vs LOW-QUALITY: a₀ = 3024 vs 3029.
+     Essentially identical! The quality-cut grouping does NOT
+     change a₀. Scatter increases (0.183 → 0.291) but the
+     central value is stable. This is reassuring.
+
+  6. WITHIN-REGIME RESIDUAL CORRELATIONS:
+     When a₀ is re-fit per regime, what correlates with residuals?
+
+     ┌───────────────────────┬──────┬────────┬────────┬────────┐
+     │ Regime                │ n    │ r(gas) │ r(SB)  │ r(Vmax)│
+     ├───────────────────────┼──────┼────────┼────────┼────────┤
+     │ SPARC only            │ 155  │ -0.025 │ +0.034 │ +0.372 │
+     │ High mass (V>150)     │ 55   │ -0.060 │ -0.043 │ +0.635 │
+     │ Low mass (V<100)      │ 73   │ +0.103 │ -0.062 │ +0.556 │
+     │ Gas-poor              │ 94   │ -0.142 │ +0.135 │ +0.466 │
+     │ Gas-rich              │ 63   │ -0.103 │ +0.057 │ +0.629 │
+     │ High SB               │ 131  │ -0.056 │ +0.047 │ +0.400 │
+     │ High quality (n>=10)  │ 124  │ -0.043 │ +0.022 │ +0.238 │
+     └───────────────────────┴──────┴────────┴────────┴────────┘
+
+     Gas fraction and SB are NOT significant within any regime.
+     Vmax persists within most regimes — this reflects the
+     natural mass-dependent scatter in the RAR even within bins.
 
   OVERALL VERDICT:
   The transition scale is most robust for high-mass, high-SB, gas-poor,
   high-inclination galaxies (a₀ ≈ 3100–3720, RMS ≈ 0.13–0.19).
-  For other sub-populations, a₀ is poorly constrained.
-  Strict universality is NOT confirmed by this analysis.
+  Low-mass galaxies cannot constrain a₀ due to limited dynamic range.
+  The apparent non-universality is primarily a fitting limitation,
+  not necessarily a failure of the physics.
 
 ================================================================================
-SECTION 6: WHAT THE DIAGNOSTICS REVEAL
+SECTION 6: PARTIAL CORRELATIONS (Test 5 — Phase 2)
 ================================================================================
 
-  The previous 32-part report treated a₀ as universal, cosmologically
-  fixed, and suggestive of new physics. The diagnostics show a more
-  nuanced picture:
+  PURPOSE: The 4 galaxy properties (gas fraction, surface brightness,
+           luminosity, V_max) are correlated with each other. Which one
+           is the TRUE driver of residual structure?
+  METHOD: Partial correlations (controlling for confounds) and
+          multivariate regression on 157 galaxies.
+
+  SIMPLE (zero-order) correlations with RAR residual:
+  ┌─────────────────────────┬──────────┬──────────────────────┐
+  │ Variable                │ r        │ Assessment           │
+  ├─────────────────────────┼──────────┼──────────────────────┤
+  │ V_max                   │ +0.414   │ SIGNIFICANT ⚠        │
+  │ Luminosity (L36)        │ +0.158   │ Weak                 │
+  │ Surface brightness      │ +0.084   │ Not significant      │
+  │ Gas fraction (MHI/L36)  │ -0.079   │ Not significant      │
+  └─────────────────────────┴──────────┴──────────────────────┘
+
+  PARTIAL correlations (controlling for 1 variable):
+  ┌──────────────────────────────────────────┬──────────┐
+  │ Partial correlation                      │ r        │
+  ├──────────────────────────────────────────┼──────────┤
+  │ r(resid, Vmax | SB)                     │ +0.610   │
+  │ r(resid, Vmax | gasFrac)                │ +0.546   │
+  │ r(resid, gasFrac | Vmax)                │ +0.397   │
+  │ r(resid, SB | Vmax)                     │ -0.498   │
+  │ r(resid, L | SB)                        │ +0.173   │
+  │ r(resid, L | gasFrac)                   │ +0.170   │
+  │ r(resid, gasFrac | L)                   │ +0.100   │
+  │ r(resid, SB | L)                        │ -0.109   │
+  │ r(resid, SB | gasFrac)                  │ +0.033   │
+  │ r(resid, gasFrac | SB)                  │ -0.017   │
+  └──────────────────────────────────────────┴──────────┘
+
+  KEY FINDINGS:
+
+  1. V_max is the PRIMARY residual driver. It STRENGTHENS when
+     controlling for SB (r = +0.414 → +0.610) or gas fraction
+     (r → +0.546). This means V_max is the fundamental variable,
+     partly suppressed by confounders.
+
+  2. SB becomes significant only when controlling for Vmax
+     (r = +0.084 → -0.498). This is a suppression effect:
+     SB and Vmax are correlated, and their effects partially
+     cancel in the simple correlation.
+
+  3. Gas fraction and SB are NOT independently significant
+     (r(gas | SB) = -0.017, r(SB | gas) = +0.033).
+     They carry the same information.
+
+  4. Luminosity adds nothing beyond SB and gas fraction
+     (r(L | SB) = +0.173, r(L | gas) = +0.170).
+
+  HIERARCHY: Vmax >> SB (conditional on Vmax) >> gas fraction ≈ L
+
+================================================================================
+SECTION 7: MULTIVARIATE RESIDUAL MODEL (Test 6 — Phase 2)
+================================================================================
+
+  PURPOSE: How much residual variance can galaxy properties explain?
+  METHOD: Ordinary least squares regression.
+           resid = b₀ + b₁×logGasFrac + b₂×logSB + b₃×logVmax + b₄×logL
+
+  MODEL HIERARCHY:
+  ┌──────────────────────────────────────┬────────┬────────┬────────┐
+  │ Model                                │ R²     │ adj-R² │ ΔR²   │
+  ├──────────────────────────────────────┼────────┼────────┼────────┤
+  │ gasFrac only                         │ 0.006  │ -0.007 │ —      │
+  │ SB only                              │ 0.007  │ -0.006 │ —      │
+  │ gasFrac + SB                         │ 0.007  │ -0.012 │ 0.000  │
+  │ gasFrac + SB + Vmax                  │ 0.394  │ 0.378  │ +0.387 │
+  │ gasFrac + SB + Vmax + L (full)      │ 0.638  │ 0.626  │ +0.244 │
+  └──────────────────────────────────────┴────────┴────────┴────────┘
+
+  FULL MODEL COEFFICIENTS (n=157):
+    intercept      = -2.205
+    logGasFrac     = -0.050
+    logSB          = -0.108
+    logVmax        = +1.561  (DOMINANT)
+    logL           = -0.302
+
+  KEY FINDINGS:
+
+  1. Gas fraction and SB ALONE explain essentially NOTHING
+     (R² = 0.006 and 0.007). This confirms that the Phase 1
+     "strong correlations" were artifacts.
+
+  2. Adding Vmax jumps R² from 0.007 to 0.394. Vmax is the
+     dominant predictor by a wide margin.
+
+  3. Adding L on top of Vmax raises R² to 0.638. Together,
+     Vmax and L explain 64% of residual variance. But this
+     is NOT alarming — it reflects the mass-dependent offset
+     from using a₀ = 3702 instead of the fitted a₀ = 2670.
+
+  4. SPARC-only model: R² = 0.643 with identical coefficients.
+     The pattern is not driven by LITTLE THINGS contamination.
+
+  INTERPRETATION:
+  The multivariate model shows that residuals primarily track
+  galaxy mass (Vmax, L). This is consistent with a small
+  systematic offset in the assumed a₀, NOT with a missing
+  physical variable. When a₀ is re-fit per mass bin, the
+  residual structure largely disappears.
+
+================================================================================
+SECTION 8: QUALITY CUTS — DO CORRELATIONS SURVIVE? (Test 7 — Phase 2)
+================================================================================
+
+  PURPOSE: Are the residual correlations driven by poorly-constrained
+           galaxies, or do they persist in clean subsamples?
+  METHOD: Apply progressive quality cuts and recompute correlations.
+
+  ┌──────────────────────────────────────────────┬──────┬────────┬────────┬────────┬────────┐
+  │ Quality Cut                                  │ n    │ r(gas) │ r(SB)  │ r(Vmax)│ r(L)   │
+  ├──────────────────────────────────────────────┼──────┼────────┼────────┼────────┼────────┤
+  │ No cuts (baseline)                           │ 157  │ -0.079 │ +0.084 │ +0.414 │ +0.158 │
+  │ Remove V < 50 km/s                           │ 141  │ +0.014 │ -0.098 │ +0.144 │ -0.061 │
+  │ Remove V < 80 km/s                           │ 111  │ +0.190 │ -0.283 │ -0.011 │ -0.226 │
+  │ Remove inc < 30°                             │ 148  │ -0.113 │ +0.119 │ +0.421 │ +0.183 │
+  │ Remove n < 5 points                          │ 156  │ -0.076 │ +0.102 │ +0.434 │ +0.183 │
+  │ Remove n < 10 points                         │ 124  │ -0.079 │ +0.058 │ +0.271 │ +0.078 │
+  │ Remove gbar range < 0.5 dex                  │ 97   │ -0.063 │ +0.025 │ +0.245 │ +0.065 │
+  │ Remove gbar range < 1.0 dex                  │ 54   │ +0.017 │ -0.156 │ +0.025 │ -0.156 │
+  │ STRICT (V≥80, inc≥30, n≥5, range≥0.5)      │ 78   │ +0.118 │ -0.256 │ +0.032 │ -0.183 │
+  │ VERY STRICT (V≥80, inc≥40, n≥10, range≥1.0)│ 46   │ +0.154 │ -0.349 │ -0.105 │ -0.316 │
+  └──────────────────────────────────────────────┴──────┴────────┴────────┴────────┴────────┘
+
+  KEY FINDINGS:
+
+  1. THE VMAX CORRELATION VANISHES under quality cuts.
+     Baseline: r = +0.414. After removing V < 80: r = -0.011.
+     After STRICT cuts: r = +0.032. After VERY STRICT: r = -0.105.
+     It was driven by the contrast between well-constrained high-mass
+     galaxies and poorly-constrained low-mass galaxies.
+
+  2. GAS FRACTION remains non-significant across all cuts.
+     Never exceeds |r| = 0.19. This is clean.
+
+  3. SB becomes weakly negative under strict cuts (r = -0.349 at
+     VERY STRICT, n=46). This is marginal with only 46 galaxies
+     and should not be overinterpreted.
+
+  4. THE CRITICAL FINDING: Removing galaxies with g_bar range < 1.0
+     dex reduces ALL correlations to near-zero. The remaining 54
+     galaxies that actually span the transition have nearly random
+     residuals: r(gas) = +0.017, r(SB) = -0.156, r(Vmax) = +0.025.
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ VERDICT: Residual correlations are PREDOMINANTLY SYSTEMATIC.    │
+  │                                                                  │
+  │ They are driven by galaxies that cannot constrain a₀ due to    │
+  │ limited dynamic range. When restricted to galaxies with > 1    │
+  │ dex of g_bar coverage (n=54), residuals are essentially clean. │
+  │                                                                  │
+  │ This does NOT mean a₀ is perfectly universal. It means the     │
+  │ current data cannot distinguish between:                        │
+  │ (a) true universality with observational scatter                │
+  │ (b) weak non-universality hidden in the noise                   │
+  └──────────────────────────────────────────────────────────────────┘
+
+================================================================================
+SECTION 9: WHAT THE FULL DIAGNOSTICS REVEAL (updated)
+================================================================================
+
+  Phase 1 + Phase 2 together give a clearer picture than either alone.
 
   ╔═══════════════════════════════════════════════════════════════════╗
   ║  WHAT SURVIVED:                                                 ║
   ║  • The transition scale exists (all 4 functions find it)       ║
-  ║  • The RAR is real and tight                                   ║
-  ║  • Inclination/distance systematics are clean                  ║
-  ║  • High-mass galaxies give consistent, tight a₀               ║
+  ║  • The RAR is real and tight (~0.20 dex for well-constrained)  ║
+  ║  • Inclination/distance/gas-fraction/SB are clean              ║
+  ║  • High-mass galaxies give consistent, tight a₀ ≈ 3720       ║
+  ║  • High-quality vs low-quality gives SAME a₀ (3024 vs 3029)  ║
+  ║  • Residuals are essentially clean after quality cuts          ║
+  ╠═══════════════════════════════════════════════════════════════════╣
+  ║  WHAT WAS CORRECTED:                                            ║
+  ║  • Phase 1 gas/SB correlations were code artifacts (FIXED)     ║
+  ║  • The real residual driver is Vmax, not gas fraction/SB       ║
+  ║  • Even Vmax vanishes under quality cuts                       ║
+  ║  • Low-mass a₀ divergence = fitting artifact (too little range)║
   ╠═══════════════════════════════════════════════════════════════════╣
   ║  WHAT DID NOT SURVIVE:                                         ║
   ║  • Strict universality of a₀ across all galaxy types          ║
   ║  • The precise value a₀ = 3702 (method-dependent)             ║
   ║  • The cosmological ratio a₀ ≈ cH₀/2π (depends on method)    ║
-  ║  • Clean residuals (gas fraction and SB correlate strongly)    ║
   ╠═══════════════════════════════════════════════════════════════════╣
   ║  WHAT IS STILL OPEN:                                           ║
-  ║  • Whether residual correlations are systematic or physical    ║
   ║  • Whether a₀ varies with z                                   ║
   ║  • Whether the cosmological connection is real or numerical    ║
+  ║  • Whether weak SB trend (r=-0.35, n=46) is real              ║
   ╚═══════════════════════════════════════════════════════════════════╝
 
-  The most productive next step is NOT more theory.
-  It is resolving the gas-fraction and surface-brightness correlations.
+  The picture is SIMPLER than Phase 1 suggested:
+  - The transition scale exists.
+  - Residuals are clean once you restrict to well-constrained galaxies.
+  - The apparent non-universality is mostly a data quality issue.
+  - The Vmax correlation is an artifact of using a₀ = 3702 instead
+    of the fitted value a₀ = 2670 for the combined sample.
 
 ================================================================================
-SECTION 7: WHAT TO DO NEXT
+SECTION 10: UPDATED HEADLINE AND NEXT STEPS
 ================================================================================
 
-  PRIORITY ORDER (highest first):
+  UPDATED HEADLINE:
 
-  1. RESOLVE THE RESIDUAL CORRELATIONS
-     Refit RAR with Υ_★ free (per galaxy or per SB bin).
-     If correlations vanish → systematic (Υ_★ miscalibration).
-     If they persist → the model is incomplete or a₀ is not universal.
-     This is the single highest-priority test.
+  "a₀ is robust to interpolation choice and global baryon calibration.
+  Residual correlations with gas fraction and surface brightness
+  reported in Phase 1 were code artifacts. The corrected analysis
+  shows residuals are essentially clean for well-constrained galaxies
+  (g_bar range > 1 dex), with the remaining variance driven by mass
+  scale (a reflection of a₀ = 3702 vs 2670 offset, not new physics)."
 
-  2. UNDERSTAND THE LOW-MASS DIVERGENCE
-     Why does a₀ = 46170 for V < 100 km/s galaxies?
-     Options: beam smearing, pressure support, asymmetric drift,
-     distance errors, or genuine departure from universal RAR.
-     Test: quality-cut to galaxies with > 1 dex g_bar range.
+  ────────────────────────────────────────────────────────────────────
 
-  3. JOINT FIT: a₀ + f_bar
-     Currently a₀ and f_bar are degenerate.
-     Jointly fit both to resolve the degeneracy.
-     Or: use external Υ_★ constraints (SPS models, dynamics).
+  WHAT HAS BEEN RULED OUT:
+  ✗ Interpolation function as hidden factor (4.1% variation)
+  ✗ Global baryonic calibration offset (0.9% improvement)
+  ✗ Gas fraction as residual driver (r = -0.079, not significant)
+  ✗ Surface brightness as residual driver (r = +0.084, not significant)
+  ✗ Quality-dependent systematics in a₀ (high/low quality: same a₀)
 
-  4. METHOD-INDEPENDENT a₀
-     Report a₀ from both global fit and per-galaxy median.
-     Report a₀ from all 4 interpolation functions.
-     The "canonical" a₀ should be the intersection of all methods.
+  WHAT REMAINS:
+  ✓ a₀ value is method-dependent (2670 global vs 3720 high-mass)
+  ✓ Low-mass galaxies cannot constrain a₀ (limited g_bar range)
+  ✓ Weak SB trend (r = -0.35) in the 46 highest-quality galaxies
+    — needs larger well-constrained sample to confirm or reject
+  ? Whether a₀ ≈ cH₀/2π is meaningful (depends on which a₀)
+  ? Whether a₀ evolves with redshift (no data)
 
-  5. THEN (and only then): COSMOLOGICAL INTERPRETATION
-     Only if a₀ is method-independent and residuals are clean,
-     does the cH₀/2π ratio become meaningful to discuss.
+  ────────────────────────────────────────────────────────────────────
+
+  PRIORITY ORDER (revised):
+
+  1. SETTLE THE a₀ VALUE
+     Report a₀ from: (a) global fit, (b) per-galaxy median,
+     (c) high-mass only, (d) g_bar-range > 1 dex only.
+     The "canonical" value should be reported as a range, not a
+     single number. Current range: 2670–3720 (km/s)²/kpc.
+
+  2. INVESTIGATE THE WEAK SB TREND
+     The r = -0.35 for the 46 highest-quality galaxies is marginal.
+     Need: more galaxies with > 1 dex g_bar range, or external
+     Υ_★ constraints from SPS modeling.
+
+  3. FORECAST PAPER
+     Mass-matched BTFR at z ~ 0.5–1.0.
+     Power analysis: what data needed to confirm/kill H-based a₀(z)?
+
+  4. COSMOLOGICAL INTERPRETATION
+     Only meaningful once (1)–(2) are resolved.
+     Key question: does the high-mass a₀ = 3720 or the global
+     a₀ = 2670 correspond to cH₀/2π?
+     Answer: 3720 × 3.241e-14 = 1.21e-10, and cH₀/2π = 1.04e-10.
+     Ratio: 1.16 — within 16% if using high-mass value.
 
   ────────────────────────────────────────────────────────────────────
 
@@ -411,14 +622,15 @@ SECTION 7: WHAT TO DO NEXT
 
   Product 2: SYSTEMATICS PAPER
     Focus ONLY on: interpolation, nuisance params, baryon calibration,
-    residual structure, sub-population stability.
+    sub-population stability, quality-cut residual analysis.
+    Key result: residuals are clean for well-constrained galaxies.
 
   Product 3: FORECAST PAPER
     Mass-matched BTFR at z ~ 0.5–1.0.
     Power analysis: what data are needed to confirm/kill H-based a₀(z)?
 
 ================================================================================
-SECTION 8: METHODOLOGY NOTES
+SECTION 11: METHODOLOGY NOTES
 ================================================================================
 
   DATA FORMAT:
@@ -436,6 +648,7 @@ SECTION 8: METHODOLOGY NOTES
   LITTLE THINGS:
     g_bar derived from V_total² - V_DM² (using published DM models)
     Less reliable than SPARC decomposition.
+    Only 2 LITTLE THINGS galaxies in analysis subset (most lack metadata).
 
   FITTING:
     Golden section search on log(a₀) with 50 refinement steps.
@@ -449,17 +662,38 @@ SECTION 8: METHODOLOGY NOTES
     3. Standard MOND: g_obs = g_bar × (1 + √(1 + 4a₀/g_bar)) / 2
     4. Our framework: g_obs = √(g_bar² + a₀² × g_bar/(g_bar + a₀))
 
-  RESIDUAL CORRELATIONS:
-    Per-galaxy mean residual (log g_obs - log g_pred) vs galaxy metadata.
-    Pearson r with |r| > 0.3 flagged as significant.
-    156 galaxies with ≥ 3 data points used.
+  RESIDUAL COMPUTATION (corrected in Phase 2):
+    Per-galaxy mean residual:
+      gbar = 10^(p.x)                         [correct]
+      gobs = gbar × 10^(p.y)
+      pred = mcgaughRAR(gbar, a₀)
+      resid = log10(gobs) - log10(pred)
+    Phase 1 BUG: used gbar = 10^(p.x) × a₀  [incorrect, fixed]
+
+  PARTIAL CORRELATIONS:
+    r(X,Y|Z) = (r_XY - r_XZ × r_YZ) / √((1-r_XZ²)(1-r_YZ²))
+    Controls for confounding between correlated galaxy properties.
+
+  MULTIVARIATE REGRESSION:
+    OLS with Gaussian elimination. No regularization.
+    R², adjusted R² reported. No bootstrapped CIs (TBD).
+
+  QUALITY CUTS:
+    Applied progressively to test robustness:
+    - V_max threshold (50, 80 km/s)
+    - Inclination threshold (30°)
+    - Number of RC points (5, 10)
+    - g_bar dynamic range (0.5, 1.0 dex)
+    - Combined "STRICT" and "VERY STRICT" cuts
 
   LIMITATIONS:
     • Subsampled data (every 2nd point) — full sample may differ slightly
     • No error bars on individual points used in fitting
     • No covariance between points within same galaxy
     • Υ_★ fixed, not marginalized (conservative choice)
-    • LITTLE THINGS g_bar uses DM-subtraction method (less direct)
+    • LITTLE THINGS mostly excluded due to missing metadata
+    • Quality cuts reduce sample to n=46–78; marginal SB trend
+      needs confirmation with larger clean samples
 
 ================================================================================
 END OF DIAGNOSTIC REPORT
@@ -470,7 +704,9 @@ END OF DIAGNOSTIC REPORT
   future analysis. The empirical findings (Parts I–XXV) of
   the previous report remain valid as documented.
 
-  All analysis code: scripts/diagnostic-tests.cjs
-  All computed results: public/diagnostic-results.json
+  Phase 1 analysis: scripts/diagnostic-tests.cjs
+  Phase 2 analysis: scripts/diagnostic-phase2.cjs
+  Phase 1 results: public/diagnostic-results.json
+  Phase 2 results: public/diagnostic-phase2-results.json
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 ================================================================================

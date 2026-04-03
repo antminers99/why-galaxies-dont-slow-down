@@ -1,0 +1,428 @@
+{
+  "timestamp": "2026-04-03T20:17:22.815Z",
+  "test4_regimes": [
+    {
+      "name": "ALL COMBINED",
+      "nGal": 175,
+      "nPts": 1698,
+      "a0": 2669.9,
+      "rms": 0.1998,
+      "logA0": 3.426
+    },
+    {
+      "name": "SPARC only",
+      "nGal": 173,
+      "nPts": 1689,
+      "a0": 2687.7,
+      "rms": 0.1999,
+      "logA0": 3.429
+    },
+    {
+      "name": "LITTLE THINGS only",
+      "nGal": 2,
+      "nPts": 9,
+      "a0": null,
+      "rms": null
+    },
+    {
+      "name": "High mass (V>150)",
+      "nGal": 56,
+      "nPts": 820,
+      "a0": 3719.7,
+      "rms": 0.1279,
+      "logA0": 3.571
+    },
+    {
+      "name": "Mid mass (100<V<150)",
+      "nGal": 31,
+      "nPts": 323,
+      "a0": 112201.8,
+      "rms": 0.1643,
+      "logA0": 5.05
+    },
+    {
+      "name": "Low mass (V<100)",
+      "nGal": 88,
+      "nPts": 555,
+      "a0": 46170.1,
+      "rms": 0.2654,
+      "logA0": 4.664
+    },
+    {
+      "name": "Gas-poor (MHI/L<0.5)",
+      "nGal": 102,
+      "nPts": 1189,
+      "a0": 3106.1,
+      "rms": 0.1784,
+      "logA0": 3.492
+    },
+    {
+      "name": "Gas-rich (MHI/L>0.5)",
+      "nGal": 73,
+      "nPts": 509,
+      "a0": 1136.6,
+      "rms": 0.2414,
+      "logA0": 3.056
+    },
+    {
+      "name": "High SB (log>7)",
+      "nGal": 144,
+      "nPts": 1501,
+      "a0": 3118.3,
+      "rms": 0.1881,
+      "logA0": 3.494
+    },
+    {
+      "name": "Low SB (log<=7)",
+      "nGal": 31,
+      "nPts": 197,
+      "a0": 1321.7,
+      "rms": 0.2644,
+      "logA0": 3.121
+    },
+    {
+      "name": "High quality (n>=10)",
+      "nGal": 124,
+      "nPts": 1536,
+      "a0": 3024,
+      "rms": 0.1832,
+      "logA0": 3.481
+    },
+    {
+      "name": "Low quality (n<10)",
+      "nGal": 51,
+      "nPts": 162,
+      "a0": 3029.3,
+      "rms": 0.2914,
+      "logA0": 3.481
+    },
+    {
+      "name": "High inc (>60deg)",
+      "nGal": 86,
+      "nPts": 943,
+      "a0": 3144.9,
+      "rms": 0.1897,
+      "logA0": 3.498
+    },
+    {
+      "name": "Low inc (<45deg)",
+      "nGal": 41,
+      "nPts": 280,
+      "a0": 1809.8,
+      "rms": 0.2473,
+      "logA0": 3.258
+    }
+  ],
+  "test4_regimeResidCorrs": [
+    {
+      "regime": "SPARC only",
+      "n": 155,
+      "a0": 2688,
+      "rGasFrac": -0.025,
+      "rSB": 0.034,
+      "rVmax": 0.372,
+      "rL": 0.11
+    },
+    {
+      "regime": "High mass (V>150)",
+      "n": 55,
+      "a0": 3720,
+      "rGasFrac": -0.06,
+      "rSB": -0.043,
+      "rVmax": 0.635,
+      "rL": 0.236
+    },
+    {
+      "regime": "Low mass (V<100)",
+      "n": 73,
+      "a0": 46170,
+      "rGasFrac": 0.103,
+      "rSB": -0.062,
+      "rVmax": 0.556,
+      "rL": -0.027
+    },
+    {
+      "regime": "Gas-poor",
+      "n": 94,
+      "a0": 3106,
+      "rGasFrac": -0.142,
+      "rSB": 0.135,
+      "rVmax": 0.466,
+      "rL": 0.207
+    },
+    {
+      "regime": "Gas-rich",
+      "n": 63,
+      "a0": 1137,
+      "rGasFrac": -0.103,
+      "rSB": 0.057,
+      "rVmax": 0.629,
+      "rL": 0.251
+    },
+    {
+      "regime": "High SB",
+      "n": 131,
+      "a0": 3118,
+      "rGasFrac": -0.056,
+      "rSB": 0.047,
+      "rVmax": 0.4,
+      "rL": 0.144
+    },
+    {
+      "regime": "High quality (n>=10)",
+      "n": 124,
+      "a0": 3024,
+      "rGasFrac": -0.043,
+      "rSB": 0.022,
+      "rVmax": 0.238,
+      "rL": 0.046
+    }
+  ],
+  "test5_partialCorrelations": [
+    {
+      "variable": "gasFrac",
+      "controlling": "SB",
+      "r": -0.017,
+      "n": 157
+    },
+    {
+      "variable": "gasFrac",
+      "controlling": "Vmax",
+      "r": 0.397,
+      "n": 157
+    },
+    {
+      "variable": "gasFrac",
+      "controlling": "L",
+      "r": 0.1,
+      "n": 157
+    },
+    {
+      "variable": "SB",
+      "controlling": "gasFrac",
+      "r": 0.033,
+      "n": 157
+    },
+    {
+      "variable": "SB",
+      "controlling": "Vmax",
+      "r": -0.498,
+      "n": 157
+    },
+    {
+      "variable": "SB",
+      "controlling": "L",
+      "r": -0.109,
+      "n": 157
+    },
+    {
+      "variable": "Vmax",
+      "controlling": "gasFrac",
+      "r": 0.546,
+      "n": 157
+    },
+    {
+      "variable": "Vmax",
+      "controlling": "SB",
+      "r": 0.61,
+      "n": 157
+    },
+    {
+      "variable": "L",
+      "controlling": "gasFrac",
+      "r": 0.17,
+      "n": 157
+    },
+    {
+      "variable": "L",
+      "controlling": "SB",
+      "r": 0.173,
+      "n": 157
+    }
+  ],
+  "test6_multivariate": {
+    "full": {
+      "rSq": 0.6375,
+      "adjRSq": 0.6255,
+      "coeffs": {
+        "intercept": -2.2046,
+        "logGasFrac": -0.0495,
+        "logSB": -0.1081,
+        "logVmax": 1.5605,
+        "logL": -0.3023
+      }
+    },
+    "gasOnly": {
+      "rSq": 0.0063,
+      "adjRSq": -0.0066
+    },
+    "sbOnly": {
+      "rSq": 0.007,
+      "adjRSq": -0.0059
+    },
+    "gasSB": {
+      "rSq": 0.0073,
+      "adjRSq": -0.0121
+    },
+    "gasSBVmax": {
+      "rSq": 0.3936,
+      "adjRSq": 0.3776
+    }
+  },
+  "test6_perSurvey": {
+    "SPARC": {
+      "n": 155,
+      "rSq": 0.6428,
+      "adjRSq": 0.6308,
+      "coeffs": {
+        "intercept": -2.2748,
+        "logGasFrac": -0.0435,
+        "logSB": -0.1008,
+        "logVmax": 1.5727,
+        "logL": -0.3087
+      }
+    },
+    "LITTLE THINGS": {
+      "n": 2,
+      "rSq": null
+    }
+  },
+  "test7_qualityCuts": [
+    {
+      "cut": "No cuts (baseline)",
+      "n": 157,
+      "rGas": -0.079,
+      "rSB": 0.084,
+      "rVmax": 0.414,
+      "rL": 0.158
+    },
+    {
+      "cut": "Remove V<50 km/s",
+      "n": 141,
+      "rGas": 0.014,
+      "rSB": -0.098,
+      "rVmax": 0.144,
+      "rL": -0.061
+    },
+    {
+      "cut": "Remove V<80 km/s",
+      "n": 111,
+      "rGas": 0.19,
+      "rSB": -0.283,
+      "rVmax": -0.011,
+      "rL": -0.226
+    },
+    {
+      "cut": "Remove inc<30deg",
+      "n": 148,
+      "rGas": -0.113,
+      "rSB": 0.119,
+      "rVmax": 0.421,
+      "rL": 0.183
+    },
+    {
+      "cut": "Remove n<5 points",
+      "n": 156,
+      "rGas": -0.076,
+      "rSB": 0.102,
+      "rVmax": 0.434,
+      "rL": 0.183
+    },
+    {
+      "cut": "Remove n<10 points",
+      "n": 124,
+      "rGas": -0.079,
+      "rSB": 0.058,
+      "rVmax": 0.271,
+      "rL": 0.078
+    },
+    {
+      "cut": "Remove gbar range<0.5dex",
+      "n": 97,
+      "rGas": -0.063,
+      "rSB": 0.025,
+      "rVmax": 0.245,
+      "rL": 0.065
+    },
+    {
+      "cut": "Remove gbar range<1.0dex",
+      "n": 54,
+      "rGas": 0.017,
+      "rSB": -0.156,
+      "rVmax": 0.025,
+      "rL": -0.156
+    },
+    {
+      "cut": "STRICT: V>=80,inc>=30,n>=5,range>=0.5",
+      "n": 78,
+      "rGas": 0.118,
+      "rSB": -0.256,
+      "rVmax": 0.032,
+      "rL": -0.183
+    },
+    {
+      "cut": "VERY STRICT: V>=80,inc>=40,n>=10,range>=1.0",
+      "n": 46,
+      "rGas": 0.154,
+      "rSB": -0.349,
+      "rVmax": -0.105,
+      "rL": -0.316
+    }
+  ],
+  "test8_vmaxBins": [
+    {
+      "bin": "V < 50 km/s",
+      "nGal": 22,
+      "nPts": 100,
+      "a0": 112201.8,
+      "rms": 0.27,
+      "medGbarRange": 0.22
+    },
+    {
+      "bin": "50 < V < 80",
+      "nGal": 37,
+      "nPts": 212,
+      "a0": 112201.8,
+      "rms": 0.2536,
+      "medGbarRange": 0.34
+    },
+    {
+      "bin": "80 < V < 100",
+      "nGal": 29,
+      "nPts": 243,
+      "a0": 112201.8,
+      "rms": 0.2132,
+      "medGbarRange": 0.44
+    },
+    {
+      "bin": "100 < V < 150",
+      "nGal": 31,
+      "nPts": 323,
+      "a0": 112201.8,
+      "rms": 0.1643,
+      "medGbarRange": 0.66
+    },
+    {
+      "bin": "150 < V < 200",
+      "nGal": 18,
+      "nPts": 201,
+      "a0": 18322.2,
+      "rms": 0.1238,
+      "medGbarRange": 0.97
+    },
+    {
+      "bin": "V > 200 km/s",
+      "nGal": 38,
+      "nPts": 619,
+      "a0": 4405.8,
+      "rms": 0.1165,
+      "medGbarRange": 1.6
+    }
+  ],
+  "synthesis": {
+    "dominantVariable": "surface brightness",
+    "fullModelRSq": 0.6375,
+    "correlationsSurviveQualityCuts": false,
+    "headline": "a0 robust to interpolation/calibration; combined sample shows population-dependent residual structure"
+  }
+}

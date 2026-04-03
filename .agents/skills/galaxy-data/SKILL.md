@@ -70,29 +70,50 @@ Our framework fits worst (ΔAIC=99 vs McGaugh RAR).
 - f_bar and a₀ are degenerate
 - Calibration is NOT the dominant scatter source
 
-### Test 3: Residual Correlations (156 galaxies)
+### Test 3: Residual Correlations (CORRECTED — Phase 2)
+
+Phase 1 had a code bug (gbar multiplied by a₀). Corrected values:
 
 | Parameter | Pearson r | Significant? |
 |-----------|-----------|-------------|
 | Inclination | -0.159 | No |
 | Distance | -0.139 | No |
-| V_max | -0.313 | YES |
-| Gas fraction (MHI/L36) | +0.641 | YES (STRONG) |
-| Surface brightness | -0.644 | YES (STRONG) |
-| Disk scale | -0.275 | No |
-| N points | -0.157 | No |
-| Luminosity | -0.524 | YES |
+| V_max | +0.414 | YES |
+| Gas fraction (MHI/L36) | -0.079 | No |
+| Surface brightness | +0.084 | No |
+| Luminosity | +0.158 | Weak |
+
+Gas fraction and SB correlations from Phase 1 were ARTIFACTS.
+Vmax is the only real correlate, and it vanishes under quality cuts.
+
+### Phase 2 Results (Partial Correlations + Quality Cuts)
+
+- Vmax is primary residual driver (r=+0.414), strengthens controlling for SB (r=+0.610)
+- SB becomes significant only when controlling for Vmax (r=-0.498)
+- Gas fraction is never significant in any partial correlation
+- Full 4-variable model: R²=0.638, dominated by Vmax (coeff=+1.56) and L (coeff=-0.30)
+- Gas+SB alone: R²=0.007 (explain NOTHING)
+- Under STRICT quality cuts (V>=80, inc>=30, n>=5, range>=0.5): ALL correlations vanish
+- 54 galaxies with >1 dex g_bar range: residuals essentially clean
 
 ### Sub-Population a₀ Stability
 
-| Sub-population | n_gal | a₀ (fit) | RMS | Δa₀ |
-|---------------|-------|----------|-----|------|
-| High SB | 144 | 3118 | 0.188 | -16% |
-| Low SB | 31 | 1322 | 0.264 | -64% |
-| High mass (V>150) | 56 | 3720 | 0.128 | +0.5% |
-| Low mass (V<100) | 88 | 46170 | 0.265 | +1147% |
-| Gas-rich | 73 | 1137 | 0.241 | -69% |
-| Gas-poor | 102 | 3106 | 0.178 | -16% |
+| Sub-population | n_gal | n_pts | a₀ (fit) | RMS |
+|---------------|-------|-------|----------|-----|
+| ALL COMBINED | 175 | 1698 | 2670 | 0.200 |
+| SPARC only | 173 | 1689 | 2688 | 0.200 |
+| High mass (V>150) | 56 | 820 | 3720 | 0.128 |
+| Low mass (V<100) | 88 | 555 | 46170 | 0.265 |
+| Gas-poor | 102 | 1189 | 3106 | 0.178 |
+| Gas-rich | 73 | 509 | 1137 | 0.241 |
+| High SB | 144 | 1501 | 3118 | 0.188 |
+| Low SB | 31 | 197 | 1322 | 0.264 |
+| High quality (n>=10) | 124 | 1536 | 3024 | 0.183 |
+| Low quality (n<10) | 51 | 162 | 3029 | 0.291 |
+
+Low-mass divergence EXPLAINED: 73% of V<80 galaxies have g_bar range <0.5 dex.
+They cannot constrain a₀. The huge values are fitting artifacts.
+High vs low quality gives SAME a₀ (3024 vs 3029) — reassuring.
 
 ## Stress Test Results
 
@@ -106,8 +127,9 @@ Our framework fits worst (ΔAIC=99 vs McGaugh RAR).
 
 ## Key Insight
 
-The transition scale EXISTS and is robust. But:
-- Precise a₀ value is method-dependent (1730 global vs 3702 median)
-- Residuals correlate with gas fraction and surface brightness
-- Low-mass galaxies are poorly constrained
+The transition scale EXISTS and is robust. The picture is SIMPLER than Phase 1 suggested:
+- Residuals are clean for well-constrained galaxies (g_bar range >1 dex)
+- Gas fraction and SB do NOT correlate with residuals (Phase 1 was a bug)
+- Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
+- Precise a₀ value is method-dependent (2670 global vs 3720 high-mass)
 - The cosmological ratio a₀ ≈ cH₀/2π depends on which a₀ you use

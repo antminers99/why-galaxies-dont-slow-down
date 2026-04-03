@@ -28,16 +28,16 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 
 ## What Is Model-Dependent
 
-- The precise value of a₀ (1730 global fit vs 3702 per-galaxy median)
+- The precise value of a₀ (2670 global fit vs 3720 high-mass only)
 - The cosmological ratio a₀ ≈ cH₀/2π (depends on which a₀)
-- a₀ varies significantly across sub-populations (low-mass: 12× off)
-- Residuals correlate with gas fraction (+0.64) and surface brightness (-0.64)
+- a₀ varies across sub-populations (low-mass: fitting artifact — limited g_bar range)
+- Residuals track Vmax (r=+0.41) but vanish under quality cuts
 
 ## What We Do NOT Know
 
 - Is a₀ = cH₀/2π physics or coincidence?
 - Does a₀ evolve with redshift?
-- What causes the residual correlations (systematics or physics)?
+- Is the weak SB trend (r=-0.35, n=46) in highest-quality galaxies real?
 - What is the physical mechanism behind the transition?
 
 ## Project History (Condensed)
@@ -52,6 +52,10 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 8. Diagnosed hidden factor sources (Part XXXII)
 9. **PIVOT**: Created diagnostic report with 3 actual computational tests
 10. Diagnostic tests revealed: residual correlations are the #1 open issue
+11. **Phase 2 diagnostics**: Found Phase 1 residual bug (gbar*a₀ error).
+    Corrected analysis shows gas/SB correlations were ARTIFACTS.
+    Real picture: residuals clean for well-constrained galaxies.
+    Low-mass a₀ divergence = fitting artifact (limited g_bar range).
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -61,8 +65,8 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Resolving residual correlations (gas fraction, surface brightness)
-- Understanding low-mass galaxy divergence
+- Settling the a₀ value (range: 2670–3720)
+- Investigating weak SB trend in 46 highest-quality galaxies
 - Method-independent a₀ measurement
 - Clean, reproducible analysis
 

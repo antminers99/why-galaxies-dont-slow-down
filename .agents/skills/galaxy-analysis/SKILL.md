@@ -105,14 +105,20 @@ When editing React components:
 
 ## Key Open Questions (priority order)
 
-1. Why do residuals correlate with gas fraction (r=+0.64) and surface brightness (r=-0.64)?
-2. Why does a₀ = 46170 for low-mass galaxies (V < 100 km/s)?
+1. What is the correct a₀ value? (range: 2670 global – 3720 high-mass)
+2. Is the weak SB trend (r=-0.35, n=46) in highest-quality galaxies real?
 3. Is the cosmological ratio a₀ ≈ cH₀/2π real or method-dependent?
 4. Does a₀ evolve with redshift?
 
+## Resolved Questions
+
+- Gas fraction / SB residual correlations: ARTIFACTS (Phase 1 code bug, corrected)
+- Low-mass a₀ divergence: FITTING ARTIFACT (73% have <0.5 dex g_bar range)
+- Quality-dependent a₀: NOT an issue (high/low quality give same a₀)
+
 ## Next Tests Needed
 
-1. Refit RAR with Υ★ free (per galaxy or per SB bin) — check if residual correlations vanish
-2. Quality-cut to galaxies with >1 dex g_bar range — check low-mass divergence
+1. Settle a₀ value across methods (global, per-galaxy, high-mass, range>1dex)
+2. Investigate weak SB trend in 46 well-constrained galaxies
 3. Joint fit of a₀ + f_bar to resolve degeneracy
 4. Report a₀ from all methods for method-independent comparison
