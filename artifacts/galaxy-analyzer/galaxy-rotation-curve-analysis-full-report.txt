@@ -1986,5 +1986,409 @@ PART XXVI-D: WHEN CAN WE SAY "WE FOUND AN EXPLANATION"?
     Everything else follows from this answer.
 
 ================================================================================
+PART XXVII: FIRST DERIVATION ATTEMPT — UNRUH / de SITTER, STEP BY STEP
+================================================================================
+
+  Goal: Start from physics, not from data. See if a₀ comes out.
+  Method: Follow the logic to its conclusion. Mark exactly where it breaks.
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 1: THE UNRUH EFFECT (established physics)
+  ════════════════════════════════════════════════════════════════════════
+
+  Result (Unruh 1976, Fulling 1973, Davies 1975):
+    A uniformly accelerated observer in Minkowski vacuum sees a
+    thermal bath at temperature:
+
+      T_U = ℏa / (2πck_B)
+
+  This is not controversial. It follows from:
+    - Quantization of a scalar field in Rindler coordinates
+    - The Bogoliubov transformation between Rindler and Minkowski vacua
+    - The periodicity of Euclidean time: β = 2πc/a
+
+  Key point: The 2π is NOT inserted by hand.
+    It comes from the periodicity condition in imaginary time.
+    The Euclidean Rindler metric has period 2πc/a in τ_E.
+    The KMS (Kubo-Martin-Schwinger) condition requires β = 1/kT.
+    Therefore T = ℏa/(2πck_B).
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ STATUS: The 2π has a rigorous origin in the Unruh effect.         │
+  │ It is NOT a patch. It comes from Euclidean periodicity.           │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 2: THE de SITTER TEMPERATURE (established physics)
+  ════════════════════════════════════════════════════════════════════════
+
+  Result (Gibbons & Hawking 1977):
+    An observer in de Sitter space (Λ > 0) sees a thermal bath at:
+
+      T_dS = ℏH_Λ / (2πk_B)
+
+    where H_Λ = c√(Λ/3) is the asymptotic Hubble parameter.
+
+  This is the same structure as the Unruh effect, but the
+  "acceleration" is replaced by c·H_Λ (the surface gravity
+  of the cosmological horizon):
+
+      κ_dS = c·H_Λ = c²√(Λ/3)
+
+  Numerically:
+    H_Λ = c√(Λ/3) = √(1.11×10⁻⁵² × (3×10⁸)² / 3) = 1.88×10⁻¹⁸ s⁻¹
+    T_dS = ℏH_Λ/(2πk_B) = (1.055×10⁻³⁴)(1.88×10⁻¹⁸)/((6.28)(1.381×10⁻²³))
+         = 2.28×10⁻³⁰ K
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ STATUS: de Sitter space has a temperature. This is established.   │
+  │ The temperature is ~10⁻³⁰ K. Extremely cold, but not zero.       │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 3: THE THRESHOLD ARGUMENT (the key step)
+  ════════════════════════════════════════════════════════════════════════
+
+  Conjecture (Milgrom 1999, McCulloch 2007, Verlinde 2016 variants):
+
+    When a particle's acceleration a is large, its Unruh temperature
+    T_U(a) >> T_dS. The particle "sees" its own acceleration clearly
+    against the cosmic thermal background. Inertia works normally.
+
+    When a drops so low that T_U(a) ≈ T_dS, the Unruh bath merges
+    with the cosmic background. The particle can no longer "feel" its
+    own acceleration distinctly. Inertia is modified.
+
+    The threshold is:
+
+      T_U(a_min) = T_dS
+      ℏa_min/(2πck_B) = ℏH_Λ/(2πk_B)
+      a_min = c·H_Λ = c²√(Λ/3)
+
+  Numerically:
+    a_min = c²√(Λ/3) = (3×10⁸)² × √(1.11×10⁻⁵² / 3)
+          = 9×10¹⁶ × 6.08×10⁻²⁷
+          ≈ 5.5×10⁻¹⁰ m/s²
+
+    Wait — let me redo this carefully:
+    √(Λ/3) = √(3.7×10⁻⁵³) = 6.08×10⁻²⁷ m⁻¹
+    c√(Λ/3) = 3×10⁸ × 6.08×10⁻²⁷ = 1.82×10⁻¹⁸ s⁻¹ = H_Λ ✓
+    c²√(Λ/3) = 3×10⁸ × 1.82×10⁻¹⁸ = 5.47×10⁻¹⁰ m/s²
+
+    Hmm. That gives 5.5×10⁻¹⁰, not 7.07×10⁻¹¹.
+
+    Correction — the confusion is between c√(Λ/3) and c²√(Λ/3):
+    H_Λ = c√(Λ/3) has units s⁻¹? No.
+    √(Λ/3) has units m⁻¹ (since Λ has units m⁻²).
+    c√(Λ/3) has units m/s × m⁻¹ = s⁻¹. This is H_Λ.
+    The surface gravity κ = cH_Λ = c²√(Λ/3) has units m/s².
+
+    Let me be precise:
+    Λ = 1.11×10⁻⁵² m⁻²
+    √(Λ/3) = √(3.70×10⁻⁵³) = 6.08×10⁻²⁷ m⁻¹
+    H_Λ = c × 6.08×10⁻²⁷ = 1.825×10⁻¹⁸ s⁻¹
+    κ = c × H_Λ = 3×10⁸ × 1.825×10⁻¹⁸ = 5.47×10⁻¹⁰ m/s²
+
+    But this is κ = c²√(Λ/3) ≈ 5.5×10⁻¹⁰ m/s².
+    This is ~4.6× a₀, not 0.59× a₀.
+
+    The discrepancy from Part XXVI used a different formula.
+    Let me reconcile:
+
+    In Part XXVI: "a_dS = c√(Λ/3) = 7.065×10⁻¹¹ m/s²"
+    But c√(Λ/3) has units s⁻¹, not m/s². This was H_Λ, not a_dS.
+    To get acceleration: a_dS = c × H_Λ = c²√(Λ/3) = 5.47×10⁻¹⁰ m/s².
+
+    CORRECTION: The script in Part XXVI computed c√(Λ/3) with c in m/s
+    and √(Λ/3) in m⁻¹, getting 1.82×10⁻¹⁸ m⁻¹·m/s = 1.82×10⁻¹⁸ s⁻¹,
+    then CALLED this an acceleration. This was a units error.
+
+    The correct acceleration from de Sitter surface gravity is:
+    κ_dS = c²√(Λ/3) = 5.47×10⁻¹⁰ m/s²
+
+    Ratio κ_dS / a₀ = 5.47×10⁻¹⁰ / 1.2×10⁻¹⁰ = 4.6
+
+    So de Sitter surface gravity is ~4.6× LARGER than a₀, not smaller.
+
+    Meanwhile: cH₀ = 3×10⁸ × 2.18×10⁻¹⁸ = 6.54×10⁻¹⁰ m/s²
+    cH₀/2π = 1.04×10⁻¹⁰ m/s²
+    κ_dS/2π = 5.47×10⁻¹⁰/(2π) = 8.7×10⁻¹¹ m/s²
+
+    So:
+    κ_dS/2π = 8.7×10⁻¹¹ m/s², ratio 0.72 to a₀
+    cH₀/2π = 1.04×10⁻¹⁰ m/s², ratio 0.87 to a₀
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ UNITS CORRECTION:                                                   │
+  │                                                                     │
+  │ Previous Part XXVI had a units error in Attempt 1.                 │
+  │ c√(Λ/3) is a RATE (s⁻¹), not an acceleration.                    │
+  │ The correct de Sitter acceleration is c²√(Λ/3) = 5.47×10⁻¹⁰ m/s²│
+  │ This is 4.6× a₀, not 0.59× a₀.                                   │
+  │                                                                     │
+  │ After dividing by 2π (from Unruh formula):                        │
+  │ κ_dS / 2π = 8.7×10⁻¹¹ m/s², ratio 0.72 to a₀.                  │
+  │                                                                     │
+  │ This is closer than previously reported, but still off by ~28%.   │
+  │ The Hubble version cH₀/2π = 1.04×10⁻¹⁰ remains the best match.  │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  Back to the threshold argument with corrected numbers:
+
+    T_U(a) = T_dS
+    ℏa/(2πck_B) = ℏc√(Λ/3)/(2πk_B)
+
+    Note: the 2π cancels on both sides!
+
+    a_threshold = c²√(Λ/3) = κ_dS = 5.47×10⁻¹⁰ m/s²
+
+    This is 4.6× a₀. Too large by a factor of ~4.6.
+    Or equivalently, a₀ = κ_dS / 4.6.
+
+    If we instead set the threshold using H₀ (not H_Λ):
+    T_U(a) = T_H where T_H = ℏH₀/(2πk_B)
+    a_threshold = cH₀ = 6.54×10⁻¹⁰ m/s²
+    This is 5.4× a₀. Even worse.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ RESULT OF STEP 3:                                                   │
+  │                                                                     │
+  │ The naive threshold argument gives a_threshold ~ 5×10⁻¹⁰ m/s²,   │
+  │ which is ~4.6–5.4× larger than a₀.                                │
+  │                                                                     │
+  │ The argument does NOT give a₀ directly.                            │
+  │ Something else must reduce the scale by factor ~5.                 │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 4: WHERE THE 2π RE-ENTERS
+  ════════════════════════════════════════════════════════════════════════
+
+  In Step 3, the 2π cancelled because both sides had the Unruh form.
+  But a₀ ≈ cH₀/2π, which means a factor of 2π IS present in the
+  relationship between a₀ and cH₀.
+
+  Where could it come from?
+
+  The threshold gives a_threshold = cH (either H₀ or H_Λ).
+  The observation gives a₀ ≈ cH₀/2π.
+  The ratio is a₀/a_threshold = 1/2π ≈ 0.16.
+
+  Possible origins of this extra 1/2π:
+
+  Option A: The threshold is not T_U = T_dS, but T_U = T_dS/(2π)
+    This would require a physical reason for the extra factor.
+    No known argument provides this.
+
+  Option B: The transition is not sharp but gradual.
+    If the interpolation function is μ(x) = x/(1+x) where x = a/a₀,
+    then the "effective" threshold (where μ = 0.5) is at a = a₀,
+    but the onset of deviation begins at a ~ 2π × a₀.
+    This reverses the logic: a₀ is the midpoint, not the onset.
+
+  Option C: The relevant cosmic scale is ω = H/(2π), not H itself.
+    If H₀ is a frequency f, the angular frequency is ω = 2πf = 2πH₀.
+    The Unruh temperature for this angular frequency:
+    T = ℏ(cω)/(2πck_B) = ℏω/(2πk_B) = ℏ(2πH₀)/(2πk_B) = ℏH₀/k_B
+    The threshold: ℏa/(2πck_B) = ℏH₀/k_B
+    a = 2πcH₀ = 4.11×10⁻⁹ m/s². WORSE. 34× a₀.
+
+  Option D: The relationship is not a threshold but a geometric mean.
+    a₀ = √(a_N × κ_dS) is the MOND deep limit (Milgrom's formula).
+    When a_N = a₀: a₀ = √(a₀ × κ_dS), so a₀ = κ_dS. Circular.
+    When a_N → 0: a → √(a_N × a₀) → MOND behavior.
+    This doesn't explain a₀ itself, it uses a₀.
+
+  Option E: a₀ appears as cH₀/2π because a₀ = ℏH₀/(2πk_BT₀) × c²
+    where T₀ is some reference temperature. But this introduces
+    a new free parameter T₀, so it explains nothing.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ RESULT OF STEP 4:                                                   │
+  │                                                                     │
+  │ None of the five options explain where the 1/2π factor comes from │
+  │ in the threshold argument. The Unruh derivation gives cH, not     │
+  │ cH/2π. The extra factor remains unexplained.                       │
+  │                                                                     │
+  │ This is where the Unruh/de Sitter derivation BREAKS.              │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 5: WHAT IF WE USE H₀ INSTEAD OF H_Λ?
+  ════════════════════════════════════════════════════════════════════════
+
+  The de Sitter temperature uses H_Λ = c√(Λ/3) = 1.82×10⁻¹⁸ s⁻¹.
+  The current Hubble parameter is H₀ = 2.18×10⁻¹⁸ s⁻¹.
+  Ratio: H₀/H_Λ = 1.20.
+
+  These differ because we are not in pure de Sitter — matter exists.
+  H₀² = H_Λ²(Ω_Λ) + H_Λ²(Ω_m)(1+z)³/Ω_Λ at z=0:
+  H₀² = H_Λ² × (Ω_Λ + Ω_m)/Ω_Λ = H_Λ² × 1/Ω_Λ ≈ H_Λ²/0.7
+
+  If the relevant temperature is set by the CURRENT horizon
+  (which includes matter), not the asymptotic de Sitter horizon:
+
+    T_current = ℏH₀/(2πk_B)    (not ℏH_Λ/2πk_B)
+
+  Then the threshold:
+    a_threshold = cH₀ = 6.54×10⁻¹⁰ m/s² (5.4× a₀, same problem)
+
+  But: cH₀/2π = 1.04×10⁻¹⁰ m/s² = 0.87 × a₀
+
+  So the observation says: a₀ ≈ cH₀/2π = (cH₀) × (1/2π)
+  The Unruh threshold says: a_threshold = cH₀
+
+  The mystery: where does the extra 1/2π come from?
+
+  One possibility that hasn't been explored:
+    The Unruh temperature formula itself contains 2π.
+    If the COSMIC temperature is T = ℏH₀/k_B (without the 2π),
+    but the LOCAL Unruh temperature keeps its 2π:
+    T_U(a) = ℏa/(2πck_B)
+
+    Setting T_U(a₀) = T_cosmic:
+    ℏa₀/(2πck_B) = ℏH₀/k_B
+    a₀ = 2πcH₀ = 4.1×10⁻⁹. No — even worse.
+
+  The reverse:
+    If T_cosmic = ℏH₀/(2πk_B) (standard de Sitter form)
+    and local threshold has NO 2π:
+    a₀/c = H₀/(2π)
+    a₀ = cH₀/2π ← This matches!
+
+    But what physical argument removes the 2π from the local side
+    while keeping it on the cosmic side? None known.
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ RESULT OF STEP 5:                                                   │
+  │                                                                     │
+  │ Using H₀ instead of H_Λ slightly improves the match               │
+  │ (because H₀ > H_Λ) but does not solve the 2π problem.            │
+  │                                                                     │
+  │ The formula a₀ = cH₀/2π works numerically but cannot be           │
+  │ derived from the Unruh/de Sitter framework as currently stated.   │
+  │ The 2π factor enters the Unruh formula symmetrically on both      │
+  │ sides and cancels in the threshold equation.                       │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 6: WHAT THE ATTEMPT ACHIEVED AND WHERE IT BROKE
+  ════════════════════════════════════════════════════════════════════════
+
+  ACHIEVED:
+  ✓ The Unruh effect naturally involves 2π (from Euclidean periodicity)
+  ✓ de Sitter space has a temperature set by the cosmological constant
+  ✓ A threshold argument gives an acceleration scale ~ cH (right order)
+  ✓ The framework connects cosmology to local acceleration (C3 goal)
+  ✓ Units correction: κ_dS/2π = 8.7×10⁻¹¹ is within 28% of a₀
+
+  BROKE:
+  ✗ The threshold equation gives a_threshold = cH, not cH/2π
+  ✗ The 2π cancels in the T_U = T_dS equation
+  ✗ No known physical argument re-introduces 1/2π on one side only
+  ✗ No mechanism connecting "Unruh threshold" → "rotation curve modification"
+  ✗ No prediction for cluster behavior
+
+  THE PRECISE BREAKING POINT:
+  ╔═══════════════════════════════════════════════════════════════════════╗
+  ║ The derivation breaks at the step:                                  ║
+  ║                                                                     ║
+  ║   T_U(a₀) = T_dS  →  a₀ = cH  (not cH/2π)                       ║
+  ║                                                                     ║
+  ║ To get a₀ = cH/2π, one of these must be true:                     ║
+  ║                                                                     ║
+  ║   (a) The cosmic temperature is NOT ℏH/(2πk_B)                    ║
+  ║       → violates Gibbons-Hawking                                   ║
+  ║                                                                     ║
+  ║   (b) The local threshold is NOT T_U = T_cosmic                   ║
+  ║       → needs a different criterion                                ║
+  ║                                                                     ║
+  ║   (c) The relationship between a₀ and cH involves an extra        ║
+  ║       geometric/dimensional factor not captured by temperature      ║
+  ║       comparison alone                                              ║
+  ║                                                                     ║
+  ║ Option (c) is the most promising. It suggests that the             ║
+  ║ temperature comparison is necessary but not sufficient —            ║
+  ║ something about the geometry of the horizon or the structure       ║
+  ║ of the coupling introduces the factor.                             ║
+  ╚═══════════════════════════════════════════════════════════════════════╝
+
+  ════════════════════════════════════════════════════════════════════════
+  STEP 7: THE HONEST VERDICT
+  ════════════════════════════════════════════════════════════════════════
+
+  The Unruh/de Sitter path is the most physically motivated of the
+  three paths (XXVI-C). It provides:
+    - A reason for an acceleration scale to exist (temperature threshold)
+    - A connection to cosmology (de Sitter horizon)
+    - A natural 2π (Euclidean periodicity)
+    - An order-of-magnitude match
+
+  But it does NOT provide:
+    - An exact derivation of a₀ = cH₀/2π
+    - A mechanism for how this threshold modifies galaxy dynamics
+    - A reason to prefer H₀ over H_Λ
+    - A prediction for clusters
+
+  Status of the Unruh/de Sitter derivation:
+
+  ┌─────────────────────────────────────────────────────────────────────┐
+  │ SUGGESTIVE but INCOMPLETE.                                         │
+  │                                                                     │
+  │ It gets within a factor of ~5 (without 2π correction) or          │
+  │ within ~28% (with κ_dS/2π) of a₀.                                │
+  │ It provides physical motivation but not a derivation.              │
+  │                                                                     │
+  │ The missing piece is likely NOT more temperature arithmetic,       │
+  │ but rather a physical model of HOW the threshold translates       │
+  │ into modified dynamics inside a galaxy.                            │
+  │                                                                     │
+  │ Until that model exists, this remains a suggestive analogy,        │
+  │ not a theory.                                                       │
+  └─────────────────────────────────────────────────────────────────────┘
+
+  ════════════════════════════════════════════════════════════════════════
+  NEXT: What to try after this failure
+  ════════════════════════════════════════════════════════════════════════
+
+  The Unruh/de Sitter path got closest to explaining the 2π and the
+  cosmic connection, but broke at the threshold equation.
+
+  Three options forward:
+
+  1. Fix the threshold argument
+     Look for a modified criterion where 2π survives.
+     Example: energy comparison instead of temperature comparison.
+     E_U = k_B T_U = ℏa/(2πc). E_dS = k_B T_dS = ℏH/(2π).
+     Setting E_U/c = ℏa/(2πc²) equal to ℏH/(2πc):
+     a/(2πc) = H/(2πc) → a = cH. Same result. 2π still cancels.
+
+  2. Try a different physical picture entirely
+     Instead of temperature threshold, try:
+     - Holographic entropy bound (bits on the horizon → acceleration)
+     - Modified dispersion relation from Λ
+     - Vacuum polarization screening at large distances
+     These are separate investigations, each needing its own Part.
+
+  3. Accept the factor and focus on the mechanism
+     Take a₀ ≈ cH₀/(2π) as empirical (for now), and focus on:
+     HOW does any acceleration floor modify galaxy dynamics?
+     What is the field equation or force law?
+     This skips the derivation problem and attacks the mechanism gap.
+
+  Recommendation: Option 3 is the most productive next step.
+  The derivation problem (where does the exact value come from?) may
+  require physics we don't yet have. But the mechanism problem (how
+  does a₀ affect orbits?) can be attacked with existing tools.
+
+  The question shifts from:
+    "Why is a₀ = cH₀/2π?"
+  to:
+    "Given that a₀ exists, what dynamical equation produces the RAR?"
+
+  This is a more tractable question and may circle back to illuminate
+  the derivation problem.
+
+================================================================================
 END OF COMPLETE REPORT
 ================================================================================
