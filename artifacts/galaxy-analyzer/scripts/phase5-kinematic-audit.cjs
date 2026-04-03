@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const VERSION = "5.0.0";
+const VERSION = "5.1.0";
 const TIMESTAMP = new Date().toISOString();
 
 const UPSILON_FID = 0.5;
@@ -15,8 +15,23 @@ const SIGMA_HI = 10.0;
 const rarData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'rar-analysis-real.json'), 'utf8'));
 const tsData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'transition-scale.json'), 'utf8'));
 
+let sparcTable = null;
+const sparcTablePath = path.join(__dirname, '..', 'public', 'sparc-table.json');
+if (fs.existsSync(sparcTablePath)) {
+  sparcTable = JSON.parse(fs.readFileSync(sparcTablePath, 'utf8'));
+}
+
+let hasRotmod = false;
+const rotmodDir = '/tmp/rotmod';
+if (fs.existsSync(rotmodDir)) {
+  const rotFiles = fs.readdirSync(rotmodDir).filter(f => f.endsWith('_rotmod.dat'));
+  hasRotmod = rotFiles.length >= 170;
+}
+
 function log(msg) { console.log(msg); }
 function sep() { log("\u2500".repeat(72)); }
+function pad(s, n) { return String(s).padEnd(n); }
+function padr(s, n) { return String(s).padStart(n); }
 
 function mcgaughRAR(gbar, a0) {
   const y = gbar / a0;
@@ -83,19 +98,21 @@ const dlogDGrid = [-0.10, -0.05, 0.00, 0.05, 0.10];
 function marginalizeSingleGalaxy(gal) {
   if (gal.points.length < 5) return null;
 
+  const baseLogGbar = gal.points.map(p => p.logGbar);
+  const baseLogGobs = gal.points.map(p => p.logGobs);
+
   const gridResults = [];
   for (const upsilon of upsilonGrid) {
     const scale = upsilon / UPSILON_FID;
     const gbarAdj = (gal.isLT || gal.fgas >= 0.99)
       ? 0.0
       : Math.log10(scale * (1 - gal.fgas) + gal.fgas);
-    const adjLogGbar = gal.points.map(p => p.logGbar + gbarAdj);
+    const adjLogGbar = baseLogGbar.map(v => v + gbarAdj);
 
     for (const dlogD of dlogDGrid) {
-      const adjLogGobs = gal.points.map(p => p.logGobs - dlogD);
+      const adjLogGobs = baseLogGobs.map(v => v - dlogD);
       const fit = fitA0(adjLogGbar, adjLogGobs);
       if (!fit || fit.a0 > 1e5 || fit.a0 < 10) continue;
-
       const priorW = gaussPrior(upsilon, 0.50, 0.12) * gaussPrior(dlogD, 0.0, 0.07);
       gridResults.push({ ...fit, upsilon, dlogD, priorW });
     }
@@ -105,13 +122,14 @@ function marginalizeSingleGalaxy(gal) {
 
   const minChi2 = Math.min(...gridResults.map(r => r.chi2));
   const n = gal.points.length;
+  const sigma2Hat = Math.max(minChi2 / (n - 1), 1e-6);
   const bestRMS = Math.sqrt(minChi2 / n);
   const withinSE2 = bestRMS * bestRMS / n;
 
   let sumW = 0, sumWlogA = 0, sumWlogA2 = 0;
   for (const r of gridResults) {
     const relChi2 = r.chi2 - minChi2;
-    const w = Math.exp(-0.5 * relChi2 / withinSE2) * r.priorW;
+    const w = Math.exp(-0.5 * relChi2 / sigma2Hat) * r.priorW;
     if (!isFinite(w)) continue;
     sumW += w;
     sumWlogA += w * r.logA0;
@@ -121,7 +139,10 @@ function marginalizeSingleGalaxy(gal) {
   if (sumW <= 0) return null;
   const meanLogA = sumWlogA / sumW;
   const varLogA = sumWlogA2 / sumW - meanLogA * meanLogA;
-  const seLogA = Math.sqrt(Math.max(varLogA, 1e-8));
+  const totalSE2 = varLogA + withinSE2;
+  const seLogA = Math.sqrt(Math.max(totalSE2, 1e-8));
+
+  const gRange = Math.max(...baseLogGbar) - Math.min(...baseLogGbar);
 
   return {
     name: gal.name,
@@ -133,8 +154,14 @@ function marginalizeSingleGalaxy(gal) {
     distance: gal.distance,
     inc: gal.inc,
     fgas: gal.fgas,
+    gRange: gRange,
     Rdisk: gal.Rdisk || 1.0,
     Q_kin: gal.Q_kin || 0.7,
+    Q_sparc: gal.Q_sparc,
+    T: gal.T,
+    eD: gal.eD,
+    eInc: gal.eInc,
+    fD: gal.fD,
     eta_rot: gal.eta_rot || 0,
     S_out: gal.S_out || 1.0,
     isLT: !!gal.isLT
@@ -162,29 +189,52 @@ function hierarchicalDL(galEsts, label) {
   const I2 = Q > 0 ? Math.max(0, (Q - (k - 1)) / Q * 100) : 0;
   const a0 = Math.pow(10, muRE);
   const ratio = a0 / CH0_2PI_GAL;
-  return { label, nGal: k, a0: Math.round(a0), logA0: +muRE.toFixed(4), se: +seRE.toFixed(4), tau: +tau.toFixed(4), I2: +I2.toFixed(1), ratio: +ratio.toFixed(4) };
+  const lo1sig = Math.pow(10, muRE - Math.sqrt(seRE * seRE + tau2));
+  const hi1sig = Math.pow(10, muRE + Math.sqrt(seRE * seRE + tau2));
+  return {
+    label, nGal: k, a0: Math.round(a0),
+    logA0: +muRE.toFixed(4), se: +seRE.toFixed(4),
+    tau: +tau.toFixed(4), I2: +I2.toFixed(1),
+    ratio: +ratio.toFixed(4),
+    lo1sig: Math.round(lo1sig), hi1sig: Math.round(hi1sig)
+  };
 }
 
 log("================================================================================");
-log("  PHASE 5: KINEMATIC CONTAMINATION AUDIT");
+log("  PHASE 5 v5.1: KINEMATIC CONTAMINATION AUDIT (CORRECTED)");
 log("================================================================================");
 log("  Version: " + VERSION);
 log("  Date: " + TIMESTAMP);
+log("  SPARC master table: " + (sparcTable ? "LOADED (" + sparcTable.length + " galaxies)" : "NOT FOUND"));
+log("  SPARC rotmod files: " + (hasRotmod ? "AVAILABLE" : "NOT AVAILABLE"));
 log("  Purpose: Test whether a0 survives non-circular motion and pressure");
-log("           support corrections — the two remaining unchecked systematics.");
+log("           support corrections using CORRECT v4 sample definitions.");
 log("");
+
+const sparcLookup = {};
+if (sparcTable) {
+  for (const g of sparcTable) sparcLookup[g.name] = g;
+}
 
 const galaxyMap = {};
 for (const g of rarData.perGalaxy) {
   const Mgas = 1.33 * g.MHI;
   const Mstar = UPSILON_FID * g.L36;
   const fgas = (Mgas + Mstar > 0) ? Mgas / (Mgas + Mstar) : 0.5;
+  const sparc = sparcLookup[g.name] || {};
   galaxyMap[g.name] = {
     name: g.name, inc: g.inc, distance: g.distance,
     L36: g.L36, MHI: g.MHI, Vmax: g.Vmax, fgas: fgas,
-    Rdisk: g.Rdisk || 1.0,
+    Rdisk: g.Rdisk || sparc.Rdisk || 1.0,
     Q_kin: g.Q_kin, eta_rot: g.eta_rot, eta_bar: g.eta_bar,
     S_out: g.S_out, sigma_bar: g.sigma_bar,
+    Q_sparc: sparc.Q || null,
+    T: sparc.T !== undefined ? sparc.T : null,
+    eD: sparc.eD || null,
+    eInc: sparc.eInc || null,
+    fD: sparc.fD || null,
+    Vflat: sparc.Vflat || null,
+    RHI: sparc.RHI || null,
     points: [], pointsFull: []
   };
 }
@@ -206,6 +256,7 @@ for (const p of tsData.plotPoints) {
         name: p.g, inc: 60, distance: 5.0, L36: 0, MHI: 0,
         Vmax: 50, fgas: 0.5, Rdisk: 1.0, Q_kin: 0.7,
         eta_rot: 0, eta_bar: 0, S_out: 1.0, sigma_bar: 0,
+        Q_sparc: null, T: null, eD: null, eInc: null, fD: null,
         points: [], pointsFull: [], isLT: true
       };
     }
@@ -218,131 +269,185 @@ for (const p of tsData.plotPoints) {
 
 const allGalaxies = Object.values(galaxyMap).filter(g => g.points.length >= 5);
 const sparcGals = allGalaxies.filter(g => !g.isLT);
-const goldI45 = sparcGals.filter(g => g.Q_kin >= 0.7 && g.inc >= 45);
 
 log("  Total galaxies (n>=5): " + allGalaxies.length);
 log("  SPARC galaxies: " + sparcGals.length);
-log("  GOLD+i45 baseline: " + goldI45.length);
+
+if (sparcTable) {
+  log("  SPARC Q=1 (high): " + sparcGals.filter(g => g.Q_sparc === 1).length);
+  log("  SPARC Q=2 (medium): " + sparcGals.filter(g => g.Q_sparc === 2).length);
+  log("  SPARC Q=3 (low): " + sparcGals.filter(g => g.Q_sparc === 3).length);
+  log("  Hubble types: " + JSON.stringify(sparcGals.reduce((a, g) => {
+    if (g.T === null) return a;
+    const m = { 0: 'S0', 1: 'Sa', 2: 'Sab', 3: 'Sb', 4: 'Sbc', 5: 'Sc', 6: 'Scd', 7: 'Sd', 8: 'Sdm', 9: 'Sm', 10: 'Im', 11: 'BCD' };
+    const k = m[g.T] || 'T' + g.T;
+    a[k] = (a[k] || 0) + 1; return a;
+  }, {})));
+}
+
+log("");
+
+sep();
+log("  STEP 0: MARGINALIZE ALL GALAXIES (using v4 method)");
+sep();
+log("");
+
+const margAll = [];
+let nMarg = 0;
+for (const gal of allGalaxies) {
+  const est = marginalizeSingleGalaxy(gal);
+  if (est) {
+    margAll.push(est);
+    nMarg++;
+  }
+}
+log("  Marginalized: " + nMarg + " galaxies");
+log("");
+
+function selectAndHier(label, filterFn) {
+  const gals = margAll.filter(filterFn);
+  const result = hierarchicalDL(gals, label);
+  return result;
+}
+
+const goldI45Filter = g => g.Vmax >= 50 && g.inc >= 45 && g.n >= 5 && g.gRange >= 1.0;
+const goldI45 = margAll.filter(goldI45Filter);
+const baseline = hierarchicalDL(goldI45, "GOLD+i45 (v4 def)");
+
+log("  SAMPLE SIZES (v4 definitions):");
+log("  ALL:        " + margAll.filter(g => true).length);
+log("  CLEAN:      " + margAll.filter(g => g.Vmax >= 80 && g.inc >= 30 && g.n >= 5 && g.gRange >= 0.5).length);
+log("  GOLD:       " + margAll.filter(g => g.Vmax >= 50 && g.inc >= 30 && g.n >= 5 && g.gRange >= 1.0).length);
+log("  GOLD+i45:   " + goldI45.length + " galaxies  <-- THIS IS THE CORRECT SAMPLE");
+log("  HIGH-MASS:  " + margAll.filter(g => g.Vmax > 150).length);
+log("  LOW-MASS:   " + margAll.filter(g => g.Vmax < 80).length);
+log("");
+
+function printResult(r) {
+  if (!r) { log("    (insufficient data)"); return; }
+  log("    " + pad(r.label, 30) + " n=" + padr(r.nGal, 4) +
+    " a0=" + padr(r.a0, 5) + " tau=" + padr(r.tau, 7) +
+    " ratio=" + padr(r.ratio, 7) + " 68%=[" + r.lo1sig + "," + r.hi1sig + "]");
+}
+
+log("  BASELINE (matching v4.0):");
+printResult(baseline);
 log("");
 
 sep();
 log("  TEST 1: NON-CIRCULAR MOTION PROXIES");
 sep();
 log("");
-log("  Without explicit bar/morphology classification, we use available");
-log("  kinematic proxies from the SPARC data:");
-log("    Q_kin  — kinematic data quality indicator");
-log("    isInner — inner vs outer radial points");
-log("    eta_rot — rotation curve quality metric");
-log("    S_out  — outer slope symmetry");
+
+log("  TEST 1A: Inner vs Outer radii");
+log("  (Using v4 GOLD+i45 galaxies, split by isInner flag)");
 log("");
 
-log("  TEST 1A: Inner vs Outer radii (key non-circular motion diagnostic)");
-log("  Non-circular motions (bars, spirals) are strongest in inner regions.");
-log("  If they bias a0, inner-only and outer-only fits should disagree.");
-log("");
-
-function fitSubsetPoints(galaxies, pointFilter, label) {
-  const galEsts = [];
-  for (const gal of galaxies) {
-    const pts = gal.points.filter(pointFilter);
-    if (pts.length < 5) continue;
-    const subGal = { ...gal, points: pts };
-    const est = marginalizeSingleGalaxy(subGal);
-    if (est) galEsts.push(est);
+function buildSubsetGalaxies(sourceGals, pointFilter) {
+  const results = [];
+  for (const est of sourceGals) {
+    const gal = galaxyMap[est.name];
+    if (!gal) continue;
+    const filtPts = gal.points.filter(pointFilter);
+    if (filtPts.length < 5) continue;
+    const subGal = { ...gal, points: filtPts };
+    const subEst = marginalizeSingleGalaxy(subGal);
+    if (subEst && subEst.gRange >= 0.3) results.push(subEst);
   }
-  if (galEsts.length < 5) return null;
-  return hierarchicalDL(galEsts, label);
+  return results;
 }
 
-const innerResult = fitSubsetPoints(goldI45, p => p.isInner, "Inner only");
-const outerResult = fitSubsetPoints(goldI45, p => !p.isInner, "Outer only");
+const goldI45Names = new Set(goldI45.map(g => g.name));
+const goldI45Gals = allGalaxies.filter(g => goldI45Names.has(g.name));
 
-const margGoldI45 = [];
-for (const gal of goldI45) {
-  const est = marginalizeSingleGalaxy(gal);
-  if (est) margGoldI45.push(est);
-}
-const baseline = hierarchicalDL(margGoldI45, "GOLD+i45 baseline");
+const innerEsts = buildSubsetGalaxies(goldI45, p => p.isInner);
+const outerEsts = buildSubsetGalaxies(goldI45, p => !p.isInner);
+const innerResult = hierarchicalDL(innerEsts, "Inner only (GOLD+i45)");
+const outerResult = hierarchicalDL(outerEsts, "Outer only (GOLD+i45)");
 
-function printResult(r) {
-  if (!r) { log("    (insufficient data)"); return; }
-  log("    " + r.label + ": n=" + r.nGal + " gal, a0=" + r.a0 +
-    " (km/s)^2/kpc, tau=" + r.tau + ", ratio=" + r.ratio);
-}
-
-log("  Results (per-galaxy marginalized, then hierarchical DL):");
 printResult(baseline);
 printResult(innerResult);
 printResult(outerResult);
 
-if (baseline && innerResult && outerResult) {
-  const innerDelta = Math.abs(innerResult.logA0 - baseline.logA0);
-  const outerDelta = Math.abs(outerResult.logA0 - baseline.logA0);
-  const innerOuterDelta = Math.abs(innerResult.logA0 - outerResult.logA0);
+if (innerResult && outerResult) {
+  const ioD = Math.abs(innerResult.logA0 - outerResult.logA0);
   log("");
-  log("  Inner-Outer split: " + (innerOuterDelta * 100 / baseline.logA0).toFixed(1) + "% difference");
-  log("  Delta log(a0): inner-outer = " + innerOuterDelta.toFixed(3) + " dex");
-  log("  Interpretation: " + (innerOuterDelta < 0.1 ? "SMALL — non-circular motions not dominant" :
-    innerOuterDelta < 0.2 ? "MODERATE — some non-circular contamination" :
-      "LARGE — non-circular motions are a major concern"));
+  log("  Inner-outer delta: " + ioD.toFixed(3) + " dex (" +
+    (Math.abs(innerResult.a0 - outerResult.a0) / baseline.a0 * 100).toFixed(1) + "%)");
+  log("  " + (ioD < 0.1 ? "PASS: non-circular motions NOT dominant" :
+    ioD < 0.2 ? "WARNING: moderate non-circular contamination" :
+      "FAIL: non-circular motions are a major concern"));
+  log("  Outer tau: " + outerResult.tau + " vs full tau: " + baseline.tau +
+    (outerResult.tau < baseline.tau ? " (outer is cleaner)" : ""));
 }
 
 log("");
-log("  TEST 1B: Kinematic quality Q_kin split");
-log("  Higher Q_kin = better kinematic data, less contamination.");
+log("  TEST 1B: SPARC Quality flag Q split (from master table)");
 log("");
 
-const highQ = margGoldI45.filter(g => g.Q_kin >= 0.9);
-const lowQ = margGoldI45.filter(g => g.Q_kin < 0.9);
-const hqResult = hierarchicalDL(highQ, "Q_kin >= 0.9");
-const lqResult = hierarchicalDL(lowQ, "Q_kin < 0.9");
-
-printResult(hqResult);
-printResult(lqResult);
-
-if (hqResult && lqResult) {
-  const qDelta = Math.abs(hqResult.logA0 - lqResult.logA0);
-  log("  Q_kin split delta: " + qDelta.toFixed(3) + " dex (" +
-    (Math.abs(hqResult.a0 - lqResult.a0) / baseline.a0 * 100).toFixed(1) + "% of baseline)");
+if (sparcTable) {
+  const q1 = goldI45.filter(g => g.Q_sparc === 1);
+  const q2 = goldI45.filter(g => g.Q_sparc === 2);
+  const q12 = goldI45.filter(g => g.Q_sparc <= 2);
+  const q3 = goldI45.filter(g => g.Q_sparc === 3);
+  const q1r = hierarchicalDL(q1, "Q=1 (high quality)");
+  const q2r = hierarchicalDL(q2, "Q=2 (medium quality)");
+  const q12r = hierarchicalDL(q12, "Q<=2 (high+medium)");
+  const q3r = hierarchicalDL(q3, "Q=3 (low quality)");
+  printResult(q1r);
+  printResult(q2r);
+  printResult(q12r);
+  printResult(q3r);
+  if (q1r && q2r) {
+    log("  Q=1 vs Q=2 delta: " + Math.abs(q1r.logA0 - q2r.logA0).toFixed(3) + " dex");
+  }
+} else {
+  log("  (SPARC master table not available)");
 }
 
 log("");
-log("  TEST 1C: Rotation quality eta_rot split");
+log("  TEST 1C: Hubble type split (early vs late spirals)");
 log("");
 
-const medEtaRot = median(margGoldI45.map(g => g.eta_rot));
-const highEta = margGoldI45.filter(g => g.eta_rot >= medEtaRot);
-const lowEta = margGoldI45.filter(g => g.eta_rot < medEtaRot);
-const heResult = hierarchicalDL(highEta, "eta_rot >= median");
-const leResult = hierarchicalDL(lowEta, "eta_rot < median");
-
-printResult(heResult);
-printResult(leResult);
-
-if (heResult && leResult) {
-  const eDelta = Math.abs(heResult.logA0 - leResult.logA0);
-  log("  eta_rot split delta: " + eDelta.toFixed(3) + " dex");
+if (sparcTable) {
+  const early = goldI45.filter(g => g.T !== null && g.T <= 5);
+  const late = goldI45.filter(g => g.T !== null && g.T > 5);
+  const earlyR = hierarchicalDL(early, "Early type (T<=5, S0-Sc)");
+  const lateR = hierarchicalDL(late, "Late type (T>5, Scd-BCD)");
+  printResult(earlyR);
+  printResult(lateR);
+  if (earlyR && lateR) {
+    const tDelta = Math.abs(earlyR.logA0 - lateR.logA0);
+    log("  Morphology delta: " + tDelta.toFixed(3) + " dex (" +
+      (Math.abs(earlyR.a0 - lateR.a0) / baseline.a0 * 100).toFixed(1) + "%)");
+  }
 }
 
 log("");
-log("  TEST 1D: Outer slope symmetry S_out split");
+log("  TEST 1D: Kinematic quality Q_kin split");
 log("");
 
-const medSout = median(sparcGals.map(g => g.S_out));
-const highSout = margGoldI45.filter(g => g.S_out >= medSout);
-const lowSout = margGoldI45.filter(g => g.S_out < medSout);
-const hsResult = hierarchicalDL(highSout, "S_out >= median (symmetric)");
-const lsResult = hierarchicalDL(lowSout, "S_out < median (asymmetric)");
+const highQk = goldI45.filter(g => g.Q_kin >= 0.9);
+const lowQk = goldI45.filter(g => g.Q_kin < 0.9);
+const hqR = hierarchicalDL(highQk, "Q_kin >= 0.9");
+const lqR = hierarchicalDL(lowQk, "Q_kin < 0.9");
+printResult(hqR);
+printResult(lqR);
 
-printResult(hsResult);
-printResult(lsResult);
+log("");
+log("  TEST 1E: Distance method quality");
+log("");
 
-if (hsResult && lsResult) {
-  const sDelta = Math.abs(hsResult.logA0 - lsResult.logA0);
-  log("  S_out split delta: " + sDelta.toFixed(3) + " dex");
-  log("  Interpretation: " + (sDelta < 0.1 ? "SMALL — asymmetry not biasing a0" :
-    "NOTABLE — asymmetric RCs yield different a0"));
+if (sparcTable) {
+  const precise = goldI45.filter(g => g.fD === 2 || g.fD === 3 || g.fD === 5);
+  const hubbleFlow = goldI45.filter(g => g.fD === 1);
+  const precR = hierarchicalDL(precise, "TRGB/Cepheid/SN dist.");
+  const hfR = hierarchicalDL(hubbleFlow, "Hubble flow dist.");
+  printResult(precR);
+  printResult(hfR);
+  if (precR && hfR) {
+    log("  Distance method delta: " + Math.abs(precR.logA0 - hfR.logA0).toFixed(3) + " dex");
+  }
 }
 
 sep();
@@ -351,216 +456,167 @@ sep();
 log("  TEST 2: PRESSURE SUPPORT / ASYMMETRIC DRIFT CORRECTION");
 sep();
 log("");
-log("  Applying first-order asymmetric drift correction:");
-log("  g_obs_corrected = g_obs + sigma_HI^2 / h_gas");
-log("  where sigma_HI = " + SIGMA_HI + " km/s (standard HI dispersion)");
-log("  and h_gas = 2 * Rdisk (gas scale length ~ 2x stellar scale length)");
-log("");
-log("  This correction is largest for low-mass galaxies where");
-log("  sigma^2/h_gas is comparable to g_obs.");
+log("  sigma_HI = " + SIGMA_HI + " km/s, h_gas = 2*Rdisk");
+log("  Correction: g_obs_corr = g_obs + sigma^2/h_gas (in (km/s)^2/kpc)");
 log("");
 
-function applyPressureCorrection(gal) {
-  const h_gas = 2.0 * (gal.Rdisk || 1.0);
-  const correctionGal = SIGMA_HI * SIGMA_HI / h_gas;
-
-  const correctedPoints = gal.points.map(p => {
+function applyPressureCorrection(galName, points, Rdisk) {
+  const h_gas = 2.0 * (Rdisk || 1.0);
+  const corrGal = SIGMA_HI * SIGMA_HI / h_gas;
+  return points.map(p => {
     const gobs = Math.pow(10, p.logGobs);
-    const gobs_corr = gobs + correctionGal;
-    return {
-      ...p,
-      logGobs: Math.log10(gobs_corr),
-      logGobs_orig: p.logGobs,
-      correction_dex: Math.log10(gobs_corr) - p.logGobs
-    };
+    const gobs_corr = gobs + corrGal;
+    return { ...p, logGobs: Math.log10(gobs_corr), correction_dex: Math.log10(gobs_corr) - p.logGobs };
   });
-
-  return { ...gal, points: correctedPoints, pressureCorrGal: correctionGal };
 }
 
-const correctedGalaxies = goldI45.map(g => applyPressureCorrection(g));
-
-const lowVmax = correctedGalaxies.filter(g => g.Vmax < 80);
-const highVmax = correctedGalaxies.filter(g => g.Vmax >= 80);
-const dwarfs = correctedGalaxies.filter(g => g.fgas >= 0.5);
-
-log("  Correction magnitudes (sample statistics):");
-const allCorr = correctedGalaxies.flatMap(g => g.points.map(p => p.correction_dex));
-log("    Mean correction: " + (allCorr.reduce((a, b) => a + b, 0) / allCorr.length).toFixed(4) + " dex");
-log("    Median correction: " + median(allCorr).toFixed(4) + " dex");
-log("    Max correction: " + Math.max(...allCorr).toFixed(4) + " dex");
-log("");
-
-const lowVmaxCorr = correctedGalaxies.filter(g => g.Vmax < 80).flatMap(g => g.points.map(p => p.correction_dex));
-const hiVmaxCorr = correctedGalaxies.filter(g => g.Vmax >= 80).flatMap(g => g.points.map(p => p.correction_dex));
-if (lowVmaxCorr.length > 0) log("    Mean correction (Vmax<80): " + (lowVmaxCorr.reduce((a, b) => a + b, 0) / lowVmaxCorr.length).toFixed(4) + " dex");
-if (hiVmaxCorr.length > 0) log("    Mean correction (Vmax>=80): " + (hiVmaxCorr.reduce((a, b) => a + b, 0) / hiVmaxCorr.length).toFixed(4) + " dex");
-log("");
-
-log("  TEST 2A: Full GOLD+i45 before vs after pressure correction");
-log("");
-
-const margCorrected = [];
-for (const gal of correctedGalaxies) {
-  const est = marginalizeSingleGalaxy(gal);
-  if (est) margCorrected.push(est);
+const goldI45Corrected = [];
+for (const est of goldI45) {
+  const gal = galaxyMap[est.name];
+  if (!gal) continue;
+  const corrPts = applyPressureCorrection(est.name, gal.points, gal.Rdisk);
+  const corrGal = { ...gal, points: corrPts };
+  const corrEst = marginalizeSingleGalaxy(corrGal);
+  if (corrEst && corrEst.gRange >= 1.0) goldI45Corrected.push(corrEst);
 }
-const corrBaseline = hierarchicalDL(margCorrected, "GOLD+i45 pressure-corrected");
 
-log("  Before correction:");
+const corrBaseline = hierarchicalDL(goldI45Corrected, "GOLD+i45 pressure-corrected");
+
+log("  Correction magnitudes:");
+const allCorr = [];
+for (const est of goldI45) {
+  const gal = galaxyMap[est.name];
+  if (!gal) continue;
+  const corrPts = applyPressureCorrection(est.name, gal.points, gal.Rdisk);
+  corrPts.forEach(p => allCorr.push(p.correction_dex));
+}
+log("    Mean: " + (allCorr.reduce((a, b) => a + b, 0) / allCorr.length).toFixed(4) + " dex");
+log("    Median: " + median(allCorr).toFixed(4) + " dex");
+log("    Max: " + Math.max(...allCorr).toFixed(4) + " dex");
+
+const lowVmaxCorr = [];
+const hiVmaxCorr = [];
+for (const est of goldI45) {
+  const gal = galaxyMap[est.name];
+  if (!gal) continue;
+  const corrPts = applyPressureCorrection(est.name, gal.points, gal.Rdisk);
+  if (gal.Vmax < 100) corrPts.forEach(p => lowVmaxCorr.push(p.correction_dex));
+  else corrPts.forEach(p => hiVmaxCorr.push(p.correction_dex));
+}
+if (lowVmaxCorr.length) log("    Mean (Vmax<100): " + (lowVmaxCorr.reduce((a, b) => a + b, 0) / lowVmaxCorr.length).toFixed(4) + " dex");
+if (hiVmaxCorr.length) log("    Mean (Vmax>=100): " + (hiVmaxCorr.reduce((a, b) => a + b, 0) / hiVmaxCorr.length).toFixed(4) + " dex");
+
+log("");
+log("  TEST 2A: Before vs After (GOLD+i45)");
+log("");
 printResult(baseline);
-log("  After pressure correction:");
 printResult(corrBaseline);
 
 if (baseline && corrBaseline) {
   const shift = corrBaseline.logA0 - baseline.logA0;
-  const shiftPct = (Math.pow(10, corrBaseline.logA0) / Math.pow(10, baseline.logA0) - 1) * 100;
-  const tauChange = corrBaseline.tau - baseline.tau;
+  const shiftPct = (corrBaseline.a0 / baseline.a0 - 1) * 100;
   log("");
   log("  Shift: " + (shiftPct > 0 ? "+" : "") + shiftPct.toFixed(1) + "% (" +
     (shift > 0 ? "+" : "") + shift.toFixed(4) + " dex)");
-  log("  Tau change: " + (tauChange > 0 ? "+" : "") + tauChange.toFixed(4) + " dex");
-  log("  Interpretation: " + (Math.abs(shiftPct) < 5 ? "SMALL shift" :
-    Math.abs(shiftPct) < 15 ? "MODERATE shift" : "LARGE shift") +
-    "; tau " + (tauChange < -0.02 ? "DECREASED (correction helps)" :
-      tauChange > 0.02 ? "INCREASED (correction hurts)" : "STABLE"));
+  log("  Tau: " + baseline.tau + " -> " + corrBaseline.tau +
+    " (delta=" + (corrBaseline.tau - baseline.tau).toFixed(4) + ")");
 }
 
 log("");
-log("  TEST 2B: Pressure correction impact by mass regime");
+log("  TEST 2B: By mass regime (corrected)");
 log("");
 
-const corrLowVmax = margCorrected.filter(g => g.Vmax < 80);
-const corrMidVmax = margCorrected.filter(g => g.Vmax >= 80 && g.Vmax <= 150);
-const corrHighVmax = margCorrected.filter(g => g.Vmax > 150);
-
-const clv = hierarchicalDL(corrLowVmax, "Vmax<80 corrected");
-const cmv = hierarchicalDL(corrMidVmax, "Vmax 80-150 corrected");
-const chv = hierarchicalDL(corrHighVmax, "Vmax>150 corrected");
-
-printResult(clv);
-printResult(cmv);
-printResult(chv);
+const corrLV = goldI45Corrected.filter(g => g.Vmax < 100);
+const corrMV = goldI45Corrected.filter(g => g.Vmax >= 100 && g.Vmax <= 150);
+const corrHV = goldI45Corrected.filter(g => g.Vmax > 150);
+printResult(hierarchicalDL(corrLV, "Vmax<100 corrected"));
+printResult(hierarchicalDL(corrMV, "Vmax 100-150 corrected"));
+printResult(hierarchicalDL(corrHV, "Vmax>150 corrected"));
 
 log("");
-log("  TEST 2C: Pressure correction impact on gas-rich galaxies");
+log("  TEST 2C: By gas fraction (corrected)");
 log("");
-
-const corrHighFgas = margCorrected.filter(g => g.fgas >= 0.3);
-const corrLowFgas = margCorrected.filter(g => g.fgas < 0.3);
-const cfh = hierarchicalDL(corrHighFgas, "fgas>=0.3 corrected");
-const cfl = hierarchicalDL(corrLowFgas, "fgas<0.3 corrected");
-
-printResult(cfh);
-printResult(cfl);
+printResult(hierarchicalDL(goldI45Corrected.filter(g => g.fgas >= 0.3), "fgas>=0.3 corrected"));
+printResult(hierarchicalDL(goldI45Corrected.filter(g => g.fgas < 0.3), "fgas<0.3 corrected"));
 
 sep();
 log("");
 sep();
-log("  TEST 3: RED FLAG RE-EXAMINATION AFTER CORRECTIONS");
+log("  TEST 3: RED FLAG RE-EXAMINATION");
 sep();
 log("");
-log("  Re-testing the three v4.0 red-flag splits with pressure correction applied.");
-log("");
 
-log("  RED FLAG 1: Distance split (v4.0: 35% difference)");
-const corrDlt15 = margCorrected.filter(g => g.distance < 15);
-const corrDge15 = margCorrected.filter(g => g.distance >= 15);
-const cdl = hierarchicalDL(corrDlt15, "D<15 corrected");
-const cdh = hierarchicalDL(corrDge15, "D>=15 corrected");
-printResult(cdl);
-printResult(cdh);
-if (cdl && cdh) {
-  const dPct = Math.abs(cdl.a0 - cdh.a0) / baseline.a0 * 100;
-  log("  Distance split: " + dPct.toFixed(1) + "% (was 35% in v4.0)");
-  log("  " + (dPct < 20 ? "IMPROVED" : dPct < 35 ? "SLIGHTLY IMPROVED" : "NO IMPROVEMENT"));
+function printRedFlag(name, v4pct, beforeFilter, afterFilter, ests, corrEsts) {
+  const b1 = hierarchicalDL(ests.filter(beforeFilter), name + " before");
+  const b2 = hierarchicalDL(ests.filter(afterFilter), name + " before (comp)");
+  const a1 = hierarchicalDL(corrEsts.filter(beforeFilter), name + " corrected");
+  const a2 = hierarchicalDL(corrEsts.filter(afterFilter), name + " corrected (comp)");
+
+  log("  " + name.toUpperCase() + " (v4.0: " + v4pct + "% difference):");
+  if (b1 && b2) {
+    const bp = Math.abs(b1.a0 - b2.a0) / baseline.a0 * 100;
+    log("    Before corr: " + b1.a0 + " vs " + b2.a0 + " (" + bp.toFixed(1) + "%)");
+  }
+  if (a1 && a2) {
+    const ap = Math.abs(a1.a0 - a2.a0) / baseline.a0 * 100;
+    log("    After corr:  " + a1.a0 + " vs " + a2.a0 + " (" + ap.toFixed(1) + "%)");
+    log("    " + (ap < v4pct * 0.5 ? "IMPROVED SIGNIFICANTLY" :
+      ap < v4pct * 0.8 ? "IMPROVED" : "NO SIGNIFICANT IMPROVEMENT"));
+  }
+  log("");
+  return { before: b1 && b2 ? Math.abs(b1.a0 - b2.a0) / baseline.a0 * 100 : null,
+           after: a1 && a2 ? Math.abs(a1.a0 - a2.a0) / baseline.a0 * 100 : null };
 }
 
-log("");
-log("  RED FLAG 2: Inclination split (v4.0: 42% difference)");
-const corrIge60 = margCorrected.filter(g => g.inc >= 60);
-const corrI45_60 = margCorrected.filter(g => g.inc >= 45 && g.inc < 60);
-const cih = hierarchicalDL(corrIge60, "inc>=60 corrected");
-const cil = hierarchicalDL(corrI45_60, "inc 45-60 corrected");
-printResult(cih);
-printResult(cil);
-if (cih && cil) {
-  const iPct = Math.abs(cih.a0 - cil.a0) / baseline.a0 * 100;
-  log("  Inclination split: " + iPct.toFixed(1) + "% (was 42% in v4.0)");
-  log("  " + (iPct < 20 ? "IMPROVED" : iPct < 35 ? "SLIGHTLY IMPROVED" : "NO IMPROVEMENT"));
-}
-
-log("");
-log("  RED FLAG 3: Velocity split (v4.0: 36% difference)");
-const corrVhi = margCorrected.filter(g => g.Vmax > 150);
-const corrVmid = margCorrected.filter(g => g.Vmax >= 80 && g.Vmax <= 150);
-printResult(chv);
-printResult(cmv);
-if (chv && cmv) {
-  const vPct = Math.abs(chv.a0 - cmv.a0) / baseline.a0 * 100;
-  log("  Velocity split: " + vPct.toFixed(1) + "% (was 36% in v4.0)");
-  log("  " + (vPct < 20 ? "IMPROVED" : vPct < 35 ? "SLIGHTLY IMPROVED" : "NO IMPROVEMENT"));
-}
+const rfDist = printRedFlag("Distance", 35,
+  g => g.distance < 15, g => g.distance >= 15, goldI45, goldI45Corrected);
+const rfInc = printRedFlag("Inclination", 42,
+  g => g.inc >= 60, g => g.inc >= 45 && g.inc < 60, goldI45, goldI45Corrected);
+const rfVel = printRedFlag("Velocity", 36,
+  g => g.Vmax > 150, g => g.Vmax >= 80 && g.Vmax <= 150, goldI45, goldI45Corrected);
 
 sep();
 log("");
 sep();
-log("  TEST 4: COMBINED ANALYSIS — OUTER-ONLY + PRESSURE CORRECTED");
+log("  TEST 4: COMBINED — OUTER + PRESSURE CORRECTED");
 sep();
 log("");
-log("  The strongest test: restrict to outer radii (minimal bar/non-circular");
-log("  contamination) AND apply pressure support correction.");
-log("");
 
-const correctedForOuter = goldI45.map(g => {
-  const corrGal = applyPressureCorrection(g);
-  const outerPts = corrGal.points.filter(p => !p.isInner);
-  return { ...corrGal, points: outerPts };
-});
-
-const margOuterCorr = [];
-for (const gal of correctedForOuter) {
-  const est = marginalizeSingleGalaxy(gal);
-  if (est) margOuterCorr.push(est);
+const outerCorrEsts = [];
+for (const est of goldI45) {
+  const gal = galaxyMap[est.name];
+  if (!gal) continue;
+  const outerPts = gal.points.filter(p => !p.isInner);
+  if (outerPts.length < 5) continue;
+  const corrPts = applyPressureCorrection(est.name, outerPts, gal.Rdisk);
+  const corrGal = { ...gal, points: corrPts };
+  const corrEst = marginalizeSingleGalaxy(corrGal);
+  if (corrEst && corrEst.gRange >= 0.5) outerCorrEsts.push(corrEst);
 }
-const outerCorrResult = hierarchicalDL(margOuterCorr, "Outer + pressure corrected");
+const outerCorrResult = hierarchicalDL(outerCorrEsts, "Outer + pressure corr (GOLD)");
 
-log("  v4.0 baseline (full, uncorrected):");
+log("  v4.0 baseline (GOLD+i45):");
 printResult(baseline);
-log("  Outer-only (no pressure corr):");
+log("  Outer-only:");
 printResult(outerResult);
+log("  Pressure-corrected:");
+printResult(corrBaseline);
 log("  Outer + pressure corrected:");
 printResult(outerCorrResult);
 
 if (baseline && outerCorrResult) {
   const totalShift = Math.abs(outerCorrResult.logA0 - baseline.logA0);
-  const totalPct = Math.abs(outerCorrResult.a0 - baseline.a0) / baseline.a0 * 100;
-  const tauDelta = outerCorrResult.tau - baseline.tau;
   log("");
-  log("  Total shift from baseline: " + totalPct.toFixed(1) + "% (" + totalShift.toFixed(3) + " dex)");
-  log("  Tau change: " + (tauDelta > 0 ? "+" : "") + tauDelta.toFixed(4));
-  log("  I2 change: " + baseline.I2 + "% -> " + outerCorrResult.I2 + "%");
+  log("  Total shift from baseline: " + (Math.abs(outerCorrResult.a0 - baseline.a0) / baseline.a0 * 100).toFixed(1) + "% (" + totalShift.toFixed(3) + " dex)");
+  log("  Tau: " + baseline.tau + " -> " + outerCorrResult.tau);
 }
 
 sep();
 log("");
 sep();
-log("  TEST 5: RESIDUAL ANALYSIS");
+log("  TEST 5: RESIDUAL CORRELATIONS");
 sep();
 log("");
-
-function computeResiduals(galEsts, a0) {
-  return galEsts.map(g => ({
-    name: g.name,
-    logA0: g.logA0,
-    residual: g.logA0 - Math.log10(a0),
-    Vmax: g.Vmax,
-    distance: g.distance,
-    inc: g.inc,
-    fgas: g.fgas,
-    Q_kin: g.Q_kin
-  }));
-}
 
 function pearsonR(xs, ys) {
   const n = xs.length;
@@ -570,37 +626,33 @@ function pearsonR(xs, ys) {
   let num = 0, dx2 = 0, dy2 = 0;
   for (let i = 0; i < n; i++) {
     const dx = xs[i] - mx, dy = ys[i] - my;
-    num += dx * dy;
-    dx2 += dx * dx;
-    dy2 += dy * dy;
+    num += dx * dy; dx2 += dx * dx; dy2 += dy * dy;
   }
-  return num / Math.sqrt(dx2 * dy2);
+  return (dx2 > 0 && dy2 > 0) ? num / Math.sqrt(dx2 * dy2) : 0;
 }
 
-const residsBefore = computeResiduals(margGoldI45, baseline.a0);
-const residsAfter = computeResiduals(margCorrected, corrBaseline ? corrBaseline.a0 : baseline.a0);
+function computeResidCorrs(ests, refA0, label) {
+  const props = ['Vmax', 'distance', 'inc', 'fgas', 'Q_kin'];
+  log("  " + label + ":");
+  for (const prop of props) {
+    const valid = ests.filter(g => g[prop] !== undefined && g[prop] !== null);
+    const r = pearsonR(valid.map(g => g[prop]), valid.map(g => g.logA0 - Math.log10(refA0)));
+    log("    r(residual, " + pad(prop, 10) + ") = " + padr(r.toFixed(3), 7) +
+      (Math.abs(r) > 0.3 ? " *** SIGNIFICANT" : Math.abs(r) > 0.15 ? " * moderate" : ""));
+  }
+  if (sparcTable) {
+    const withT = ests.filter(g => g.T !== null && g.T !== undefined);
+    if (withT.length > 5) {
+      const r = pearsonR(withT.map(g => g.T), withT.map(g => g.logA0 - Math.log10(refA0)));
+      log("    r(residual, " + pad("HubbleT", 10) + ") = " + padr(r.toFixed(3), 7) +
+        (Math.abs(r) > 0.3 ? " *** SIGNIFICANT" : Math.abs(r) > 0.15 ? " * moderate" : ""));
+    }
+  }
+}
 
-log("  Correlations of per-galaxy a0 residuals with galaxy properties:");
+computeResidCorrs(goldI45, baseline.a0, "BEFORE pressure correction");
 log("");
-log("  BEFORE pressure correction:");
-const props = ['Vmax', 'distance', 'inc', 'fgas', 'Q_kin'];
-for (const prop of props) {
-  const vals = residsBefore.map(r => r[prop]).filter(v => v !== undefined);
-  const res = residsBefore.filter(r => r[prop] !== undefined).map(r => r.residual);
-  const r = pearsonR(vals, res);
-  log("    r(residual, " + prop + ") = " + r.toFixed(3) +
-    (Math.abs(r) > 0.3 ? " *** SIGNIFICANT" : Math.abs(r) > 0.15 ? " * moderate" : " (weak)"));
-}
-
-log("");
-log("  AFTER pressure correction:");
-for (const prop of props) {
-  const vals = residsAfter.map(r => r[prop]).filter(v => v !== undefined);
-  const res = residsAfter.filter(r => r[prop] !== undefined).map(r => r.residual);
-  const r = pearsonR(vals, res);
-  log("    r(residual, " + prop + ") = " + r.toFixed(3) +
-    (Math.abs(r) > 0.3 ? " *** SIGNIFICANT" : Math.abs(r) > 0.15 ? " * moderate" : " (weak)"));
-}
+computeResidCorrs(goldI45Corrected, corrBaseline ? corrBaseline.a0 : baseline.a0, "AFTER pressure correction");
 
 sep();
 log("");
@@ -609,121 +661,108 @@ log("  PHASE 5 VERDICT");
 sep();
 log("");
 
-const results = {
+const verdictLines = [];
+let passCount = 0, failCount = 0;
+
+if (innerResult && outerResult) {
+  const ioD = Math.abs(innerResult.logA0 - outerResult.logA0);
+  if (ioD < 0.15) {
+    verdictLines.push("PASS: Inner-outer split = " + ioD.toFixed(3) + " dex — non-circular motions controlled");
+    passCount++;
+  } else {
+    verdictLines.push("CONCERN: Inner-outer split = " + ioD.toFixed(3) + " dex");
+    failCount++;
+  }
+}
+
+if (baseline && corrBaseline) {
+  const shift = Math.abs(corrBaseline.logA0 - baseline.logA0);
+  if (shift < 0.15) {
+    verdictLines.push("PASS: Pressure correction shift = " + shift.toFixed(3) + " dex (<0.15)");
+    passCount++;
+  } else {
+    verdictLines.push("CONCERN: Pressure correction shift = " + shift.toFixed(3) + " dex");
+    failCount++;
+  }
+  const tauD = corrBaseline.tau - baseline.tau;
+  verdictLines.push("INFO: Tau change with pressure corr: " + (tauD > 0 ? "+" : "") + tauD.toFixed(4));
+}
+
+if (outerCorrResult) {
+  const shift = Math.abs(outerCorrResult.logA0 - baseline.logA0);
+  verdictLines.push("INFO: Combined (outer+pressure) shift = " + shift.toFixed(3) + " dex, tau = " + outerCorrResult.tau);
+}
+
+const redFlags = [];
+if (rfDist.before !== null && rfDist.after !== null)
+  redFlags.push("Distance: " + rfDist.before.toFixed(1) + "% -> " + rfDist.after.toFixed(1) + "%");
+if (rfInc.before !== null && rfInc.after !== null)
+  redFlags.push("Inclination: " + rfInc.before.toFixed(1) + "% -> " + rfInc.after.toFixed(1) + "%");
+if (rfVel.before !== null && rfVel.after !== null)
+  redFlags.push("Velocity: " + rfVel.before.toFixed(1) + "% -> " + rfVel.after.toFixed(1) + "%");
+
+for (const v of verdictLines) log("  " + v);
+log("");
+if (redFlags.length > 0) {
+  log("  Red flag changes:");
+  for (const rf of redFlags) log("    " + rf);
+}
+
+const overallPass = passCount >= 2 && failCount === 0;
+log("");
+log("  OVERALL: " + (overallPass ? "PASS — a0 survives kinematic contamination tests" :
+  "MIXED — some concerns remain"));
+
+const output = {
   version: VERSION,
   timestamp: TIMESTAMP,
-  description: "Phase 5: Kinematic Contamination Audit — non-circular motions + pressure support",
+  description: "Phase 5 v5.1: Kinematic Contamination Audit (corrected sample definitions)",
+  dataSource: {
+    sparcTable: !!sparcTable,
+    rotmodFiles: hasRotmod,
+    sparcGalaxies: sparcGals.length,
+    goldI45Count: goldI45.length
+  },
   baseline: baseline,
   test1_innerOuter: {
     inner: innerResult,
     outer: outerResult,
-    delta_dex: innerResult && outerResult ? Math.abs(innerResult.logA0 - outerResult.logA0) : null
+    delta_dex: innerResult && outerResult ? +Math.abs(innerResult.logA0 - outerResult.logA0).toFixed(4) : null
   },
-  test1_Qkin: {
-    highQ: hqResult,
-    lowQ: lqResult
-  },
-  test1_etaRot: {
-    highEta: heResult,
-    lowEta: leResult
-  },
-  test1_Sout: {
-    highSout: hsResult,
-    lowSout: lsResult
-  },
+  test1_sparcQ: sparcTable ? {
+    q1: hierarchicalDL(goldI45.filter(g => g.Q_sparc === 1), "Q=1"),
+    q2: hierarchicalDL(goldI45.filter(g => g.Q_sparc === 2), "Q=2"),
+    q12: hierarchicalDL(goldI45.filter(g => g.Q_sparc <= 2), "Q<=2"),
+    q3: hierarchicalDL(goldI45.filter(g => g.Q_sparc === 3), "Q=3")
+  } : null,
+  test1_hubbleType: sparcTable ? {
+    early: hierarchicalDL(goldI45.filter(g => g.T !== null && g.T <= 5), "Early (T<=5)"),
+    late: hierarchicalDL(goldI45.filter(g => g.T !== null && g.T > 5), "Late (T>5)")
+  } : null,
+  test1_Qkin: { highQ: hqR, lowQ: lqR },
   test2_pressureCorrection: {
     corrected: corrBaseline,
-    shift_dex: baseline && corrBaseline ? corrBaseline.logA0 - baseline.logA0 : null,
-    tau_change: baseline && corrBaseline ? corrBaseline.tau - baseline.tau : null,
-    byMass: { lowVmax: clv, midVmax: cmv, highVmax: chv },
-    byFgas: { highFgas: cfh, lowFgas: cfl }
+    shift_dex: baseline && corrBaseline ? +(corrBaseline.logA0 - baseline.logA0).toFixed(4) : null,
+    tau_change: baseline && corrBaseline ? +(corrBaseline.tau - baseline.tau).toFixed(4) : null
   },
   test3_redFlags: {
-    distance: { near: cdl, far: cdh, split_pct: cdl && cdh ? Math.abs(cdl.a0 - cdh.a0) / baseline.a0 * 100 : null },
-    inclination: { high: cih, low: cil, split_pct: cih && cil ? Math.abs(cih.a0 - cil.a0) / baseline.a0 * 100 : null },
-    velocity: { high: chv, mid: cmv, split_pct: chv && cmv ? Math.abs(chv.a0 - cmv.a0) / baseline.a0 * 100 : null }
+    distance: rfDist,
+    inclination: rfInc,
+    velocity: rfVel
   },
   test4_outerCorrected: outerCorrResult,
-  test5_residualCorrelations: {
-    before: {},
-    after: {}
+  verdict: {
+    pass: overallPass,
+    passCount, failCount,
+    summary: overallPass ? "a0 survives kinematic contamination tests" : "Mixed results — some concerns remain",
+    details: verdictLines,
+    redFlagChanges: redFlags
   }
 };
-
-for (const prop of props) {
-  const valsBefore = residsBefore.map(r => r[prop]).filter(v => v !== undefined);
-  const resBefore = residsBefore.filter(r => r[prop] !== undefined).map(r => r.residual);
-  results.test5_residualCorrelations.before[prop] = +pearsonR(valsBefore, resBefore).toFixed(3);
-
-  const valsAfter = residsAfter.map(r => r[prop]).filter(v => v !== undefined);
-  const resAfter = residsAfter.filter(r => r[prop] !== undefined).map(r => r.residual);
-  results.test5_residualCorrelations.after[prop] = +pearsonR(valsAfter, resAfter).toFixed(3);
-}
-
-let pass = true;
-let verdictLines = [];
-
-if (baseline && corrBaseline) {
-  const shift = Math.abs(corrBaseline.logA0 - baseline.logA0);
-  if (shift > 0.15) {
-    pass = false;
-    verdictLines.push("FAIL: Pressure correction shifts a0 by " + shift.toFixed(3) + " dex (>0.15)");
-  } else {
-    verdictLines.push("PASS: Pressure correction shifts a0 by only " + shift.toFixed(3) + " dex (<0.15)");
-  }
-}
-
-if (innerResult && outerResult) {
-  const ioSplit = Math.abs(innerResult.logA0 - outerResult.logA0);
-  if (ioSplit > 0.2) {
-    pass = false;
-    verdictLines.push("FAIL: Inner-outer split = " + ioSplit.toFixed(3) + " dex (>0.2) — non-circular contamination");
-  } else {
-    verdictLines.push("PASS: Inner-outer split = " + ioSplit.toFixed(3) + " dex (<0.2) — non-circular motions controlled");
-  }
-}
-
-const redFlagImproved = [];
-if (results.test3_redFlags.distance.split_pct !== null) {
-  const before = 35;
-  const after = results.test3_redFlags.distance.split_pct;
-  redFlagImproved.push("Distance: " + before + "% -> " + after.toFixed(1) + "%");
-  if (after > 30) verdictLines.push("FLAG: Distance split still large (" + after.toFixed(1) + "%)");
-}
-if (results.test3_redFlags.inclination.split_pct !== null) {
-  const before = 42;
-  const after = results.test3_redFlags.inclination.split_pct;
-  redFlagImproved.push("Inclination: " + before + "% -> " + after.toFixed(1) + "%");
-  if (after > 30) verdictLines.push("FLAG: Inclination split still large (" + after.toFixed(1) + "%)");
-}
-if (results.test3_redFlags.velocity.split_pct !== null) {
-  const before = 36;
-  const after = results.test3_redFlags.velocity.split_pct;
-  redFlagImproved.push("Velocity: " + before + "% -> " + after.toFixed(1) + "%");
-  if (after > 30) verdictLines.push("FLAG: Velocity split still large (" + after.toFixed(1) + "%)");
-}
-
-results.verdict = {
-  pass: pass,
-  summary: pass ? "a0 survives kinematic contamination tests" : "a0 shows sensitivity to kinematic corrections",
-  details: verdictLines,
-  redFlagChanges: redFlagImproved
-};
-
-for (const line of verdictLines) {
-  log("  " + line);
-}
-log("");
-if (redFlagImproved.length > 0) {
-  log("  Red flag changes after pressure correction:");
-  for (const rf of redFlagImproved) log("    " + rf);
-}
-log("");
-log("  OVERALL: " + results.verdict.summary);
-log("");
 
 const outPath = path.join(__dirname, '..', 'public', 'phase5-kinematic-results.json');
-fs.writeFileSync(outPath, JSON.stringify(results, null, 2));
+fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
+log("");
 log("  Results saved to: public/phase5-kinematic-results.json");
 log("");
 log("================================================================================");

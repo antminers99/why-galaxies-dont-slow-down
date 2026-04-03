@@ -90,17 +90,24 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Velocity split investigation (30% remaining after Phase 5 — see Section 21)
-- Cosmological ratio interpretation (a₀/(cH₀/2π) ≈ 1.13, now on firmer footing)
+- Distance method split investigation (27% — largest remaining systematic)
+- Distance residual correlation (r = -0.31, significant)
+- Red-flag splits still unresolved (distance 31-47%, inc 33-39%, vel 35-46%)
+- Cosmological ratio interpretation (a₀/(cH₀/2π) = 1.0-1.2 across corrections)
 - Systematics paper write-up (all 4 checkboxes passed)
 - High-z test with JWST/ALMA kinematic data
-- Understanding residual tau ≈ 0.18 (irreducible or further cleanable?)
 
-COMPLETED (Phase 5):
-- Non-circular motions: inner-outer split = 0.033 dex — CLEARED
-- Pressure support: correction helps, signal survives — CLEARED
-- Distance red flag: 35% → 3.6% — ELIMINATED
-- Inclination red flag: 42% → 16.4% — REDUCED 61%
+COMPLETED (Phase 5 v5.1 corrected):
+- Non-circular motions: inner-outer split = 0.006 dex — CLEARED
+- Pressure support: +0.033 dex shift, tau unchanged — CLEARED (minor)
+- SPARC Q flags: Q=1 vs Q=2 delta = 0.016 dex — CLEARED
+- Hubble morphology: early vs late delta = 0.048 dex — CLEARED
+- Q_kin within GOLD+i45: 0.002 dex — CLEARED
+
+NOT RESOLVED (Phase 5 v5.1):
+- Distance, inclination, velocity red-flag splits persist
+- Pressure correction makes them WORSE, not better
+- These are intrinsic sample systematics, not kinematic contamination
 
 ## Two Separate Questions (Never Mix Them)
 
@@ -130,11 +137,14 @@ Solve A first. B becomes much cleaner after.
 | `diagnostic-report.txt` | PRIMARY report (edit this one) |
 | `galaxy-rotation-curve-analysis-full-report.txt` | ARCHIVED (read-only) |
 | `scripts/definitive-v4.cjs` | v4.0 pipeline (CURRENT DEFINITIVE) |
+| `scripts/phase5-kinematic-audit.cjs` | Phase 5 v5.1 audit (CURRENT) |
 | `scripts/final-measurement-v3.cjs` | v3.0 pipeline (archived baseline) |
 | `scripts/gold-standard-pipeline.cjs` | v2.0 pipeline (archived) |
 | `scripts/diagnostic-tests.cjs` | Phase 1 diagnostics |
 | `scripts/transition-scale-v3.cjs` | Core RAR analysis |
 | `public/definitive-v4-results.json` | v4.0 results (current) |
+| `public/phase5-kinematic-results.json` | Phase 5 v5.1 results (current) |
+| `public/sparc-table.json` | SPARC master table (175 gal, Q/T/fD) |
 | `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |
 | `public/rar-analysis-real.json` | Per-galaxy metadata (3391 SPARC pts) |

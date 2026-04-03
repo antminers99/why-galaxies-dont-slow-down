@@ -1744,16 +1744,24 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   ALL FOUR BOXES ARE NOW CHECKED. See Section 21.
 
 ================================================================================
-  SECTION 21: PHASE 5 — KINEMATIC CONTAMINATION AUDIT
+  SECTION 21: PHASE 5 — KINEMATIC CONTAMINATION AUDIT (v5.1 CORRECTED)
 ================================================================================
 
   Phase 5 tests the two remaining unchecked systematics:
     (1) Non-circular motions (bars, spirals, warps)
     (2) Pressure support / asymmetric drift / gas disequilibrium
 
-  Script: scripts/phase5-kinematic-audit.cjs
+  Script: scripts/phase5-kinematic-audit.cjs (v5.1.0)
   Results: public/phase5-kinematic-results.json
-  Sample: 126 galaxies (Q_kin >= 0.7, inc >= 45, n >= 5)
+  Sample: v4 GOLD+i45 = 59 galaxies (Vmax>=50, inc>=45, n>=5, gRange>=1.0)
+  SPARC master table: 175 galaxies with Q flags, Hubble types, distance methods
+  SPARC rotmod files: 175 galaxies with resolved rotation curves
+
+  NOTE: v5.0 results (reported in previous version of this section) used
+  an INCORRECT sample of 126 galaxies (Q_kin>=0.7, inc>=45, n>=5) that
+  did NOT match the v4 GOLD+i45 definition. All v5.0 numbers are
+  SUPERSEDED by the v5.1 results below, which use the correct 59-galaxy
+  sample and reproduce the v4 baseline exactly (a0=3633, tau=0.291).
 
   ────────────────────────────────────────────────────────────────────
   TEST 1: NON-CIRCULAR MOTION PROXIES
@@ -1761,45 +1769,65 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
 
   1A. Inner vs Outer radii
       Non-circular motions are strongest in inner regions (bars,
-      nuclear spirals). If they contaminate a₀, inner-only and
+      nuclear spirals). If they contaminate a0, inner-only and
       outer-only fits should disagree.
 
-      Baseline (full):     n=126 gal, a₀=3051, tau=0.705, ratio=0.949
-      Inner only:          n=58 gal,  a₀=2813, tau=0.618, ratio=0.875
-      Outer only:          n=117 gal, a₀=2608, tau=0.209, ratio=0.811
+      Baseline (GOLD+i45):  n=59 gal, a0=3633, tau=0.291, ratio=1.130
+      Inner only:           n=30 gal, a0=3174, tau=0.356, ratio=0.987
+      Outer only:           n=56 gal, a0=3131, tau=0.310, ratio=0.974
 
-      Inner-outer delta: 0.033 dex (0.9%)
-      VERDICT: SMALL — non-circular motions are NOT the dominant
-      source of scatter. The inner and outer regions give consistent a₀.
+      Inner-outer delta: 0.006 dex (1.2%)
+      VERDICT: NEGLIGIBLE. Non-circular motions do NOT bias a0.
+      Inner and outer regions give essentially identical a0 values.
 
-      Critical finding: outer-only tau = 0.209 vs full tau = 0.705.
-      This means much of the scatter comes from inner points, but the
-      MEAN a₀ is not biased by non-circular motions.
+  1B. SPARC Quality flag Q split (from Lelli+2016 master table)
+      Q=1 (high):     n=40, a0=3632, tau=0.273, ratio=1.130
+      Q=2 (medium):   n=14, a0=3501, tau=0.319, ratio=1.089
+      Q<=2 combined:  n=57, a0=3504, tau=0.287, ratio=1.090
+      Q=3 (low):      n<3 in GOLD+i45 (insufficient data)
 
-  1B. Kinematic quality Q_kin split
-      Q_kin >= 0.9: n=82, a₀=3652, tau=0.418, ratio=1.136
-      Q_kin < 0.9:  n=44, a₀=2188, tau=1.041, ratio=0.680
-      Delta: 0.223 dex (48%)
+      Q=1 vs Q=2 delta: 0.016 dex (3.6%)
+      VERDICT: NEGLIGIBLE. Data quality flag has no meaningful effect.
 
-      IMPORTANT: Low Q_kin galaxies give much lower a₀ with enormous
-      scatter (tau=1.04). This validates the GOLD sample selection.
-      The Q_kin >= 0.9 subsample gives a₀ = 3652, consistent with
-      v4.0 headline (3633).
+  1C. Hubble type split (early vs late spirals)
+      Using SPARC morphological types (T: 0=S0...11=BCD)
 
-  1C. Rotation quality eta_rot split
-      eta_rot >= median: n=63, a₀=3628, tau=0.720, ratio=1.128
-      eta_rot < median:  n=63, a₀=2560, tau=0.746, ratio=0.796
-      Delta: 0.151 dex
+      Early type (T<=5, S0-Sc):  n=43, a0=3642, tau=0.298, ratio=1.133
+      Late type (T>5, Scd-BCD):  n=13, a0=4066, tau=0.213, ratio=1.265
 
-  1D. Outer slope symmetry S_out split
-      S_out >= median: n=60, a₀=2758, tau=1.034, ratio=0.858
-      S_out < median:  n=66, a₀=3345, tau=0.424, ratio=1.040
-      Delta: 0.084 dex — SMALL
+      Morphology delta: 0.048 dex (11.7%)
+      VERDICT: SMALL. Late-types trend slightly higher but within
+      uncertainty. Late-type tau is LOWER (0.213 vs 0.298), meaning
+      late-type spirals show less scatter in a0.
 
-  TEST 1 SUMMARY: Non-circular motions do NOT systematically bias a₀.
-  The inner-outer split is only 0.033 dex. However, kinematic quality
-  strongly affects scatter (Q_kin >= 0.9 gives tau=0.42 vs 1.04).
-  The GOLD/high-Q_kin sample selection is justified and essential.
+  1D. Kinematic quality Q_kin split
+      Q_kin >= 0.9:  n=40, a0=3632, tau=0.273, ratio=1.130
+      Q_kin < 0.9:   n=19, a0=3614, tau=0.354, ratio=1.124
+
+      Delta: 0.002 dex (0.5%)
+      VERDICT: NEGLIGIBLE. Within the GOLD+i45 sample, Q_kin split
+      produces essentially no difference in a0. This is a major
+      improvement over the v5.0 analysis (which used a much broader
+      sample and showed a 48% Q_kin split).
+
+  1E. Distance method quality
+      TRGB/Cepheid/SN distances: n=17, a0=4243, tau=0.257, ratio=1.320
+      Hubble flow distances:     n=30, a0=3331, tau=0.315, ratio=1.036
+
+      Delta: 0.105 dex (27%)
+      VERDICT: MODERATE. Galaxies with precise (non-Hubble) distances
+      give a0 ~ 4243, while Hubble flow distances give a0 ~ 3331.
+      This 27% split is the largest systematic effect found in Phase 5.
+      Possible explanations: (a) Hubble flow errors pull a0 down via
+      distance-dependent V_circ errors, or (b) the precise-distance
+      subsample is biased toward nearby galaxies with higher a0.
+      The r(residual, distance) = -0.25 correlation supports this.
+
+  TEST 1 SUMMARY: Non-circular motions do NOT systematically bias a0.
+  The inner-outer split is only 0.006 dex. SPARC Q flags and kinematic
+  quality (within GOLD+i45) produce negligible differences. The largest
+  effect is the distance method split (0.105 dex), which deserves
+  continued investigation but does not invalidate the measurement.
 
   ────────────────────────────────────────────────────────────────────
   TEST 2: PRESSURE SUPPORT / ASYMMETRIC DRIFT CORRECTION
@@ -1811,31 +1839,37 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
     h_gas = 2 * Rdisk (gas scale length ~ 2x stellar)
 
   Correction magnitudes:
-    Mean:   0.013 dex (all), 0.053 dex (Vmax<80), 0.005 dex (Vmax>=80)
-    Median: 0.004 dex
-    Max:    0.724 dex (extreme dwarfs)
+    Mean (all):     0.011 dex
+    Median:         0.003 dex
+    Max:            0.349 dex
+    Mean (Vmax<100): 0.060 dex
+    Mean (Vmax>=100): 0.003 dex
 
-  2A. Before vs After (full sample)
-      Before: a₀=3051, tau=0.705, ratio=0.949
-      After:  a₀=3445, tau=0.637, ratio=1.071
+  2A. Before vs After (GOLD+i45)
+      Before: a0=3633, tau=0.291, ratio=1.130
+      After:  a0=3918, tau=0.292, ratio=1.219
 
-      Shift: +12.9% (+0.053 dex)
-      Tau change: -0.068 dex
-      VERDICT: Pressure correction shifts a₀ TOWARD literature value
-      and REDUCES scatter. This is physically correct behavior —
-      dwarfs were underestimating V_circ, pulling a₀ down.
+      Shift: +7.8% (+0.033 dex)
+      Tau change: essentially zero (+0.0004)
+      VERDICT: Pressure correction shifts a0 UPWARD by ~8%, which is
+      small relative to the overall uncertainty. Importantly, tau does
+      NOT increase, meaning the correction does not introduce noise.
 
-  2B. By mass regime
-      Vmax<80 corrected:  n=35, a₀=2152, tau=0.469, ratio=0.669
-      Vmax 80-150 corr:   n=41, a₀=4647, tau=0.790, ratio=1.445
-      Vmax>150 corrected: n=50, a₀=3737, tau=0.480, ratio=1.162
+  2B. By mass regime (corrected)
+      Vmax<100 corrected:   n=9,  a0=5171, tau=0.363, ratio=1.608
+      Vmax 100-150 corr:    n=9,  a0=4612, tau=0.107, ratio=1.434
+      Vmax>150 corrected:   n=41, a0=3563, tau=0.303, ratio=1.108
 
-  2C. By gas fraction
-      fgas>=0.3 corrected: n=75, a₀=3373, tau=0.259, ratio=1.049
-      fgas<0.3 corrected:  n=51, a₀=3616, tau=0.839, ratio=1.125
+      The Vmax 100-150 bin has the LOWEST tau (0.107) — these
+      intermediate-mass galaxies are the most homogeneous.
 
-      Gas-rich subsample after correction: tau=0.259 (was ~0.70 before).
-      This is the lowest tau achieved in the entire project.
+  2C. By gas fraction (corrected)
+      fgas>=0.3 corrected:  n=22, a0=4088, tau=0.293, ratio=1.272
+      fgas<0.3 corrected:   n=37, a0=3824, tau=0.296, ratio=1.189
+
+      After correction, gas-rich and gas-poor subsamples converge
+      (delta = 0.029 dex), suggesting pressure correction properly
+      accounts for gas-dominated systems.
 
   ────────────────────────────────────────────────────────────────────
   TEST 3: RED FLAG RE-EXAMINATION AFTER PRESSURE CORRECTION
@@ -1843,19 +1877,32 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
 
   The v4.0 red-flag splits, re-tested with pressure correction:
 
-  ┌──────────────┬────────────┬────────────┬──────────────┐
-  │ Split        │ v4.0 (raw) │ Phase 5    │ Change       │
-  ├──────────────┼────────────┼────────────┼──────────────┤
-  │ Distance     │ 35%        │ 3.6%       │ ELIMINATED   │
-  │ Inclination  │ 42%        │ 16.4%      │ -61%         │
-  │ Velocity     │ 36%        │ 29.8%      │ -17%         │
-  └──────────────┴────────────┴────────────┴──────────────┘
+  ┌──────────────┬────────────┬──────────────────────┬──────────────┐
+  │ Split        │ v4.0 (raw) │ Phase 5 before/after │ Status       │
+  ├──────────────┼────────────┼──────────────────────┼──────────────┤
+  │ Distance     │ 35%        │ 30.8% / 46.7%        │ WORSENED     │
+  │ Inclination  │ 42%        │ 32.6% / 38.8%        │ WORSENED     │
+  │ Velocity     │ 36%        │ 34.7% / 46.1%        │ WORSENED     │
+  └──────────────┴────────────┴──────────────────────┴──────────────┘
 
-  The distance split is essentially ELIMINATED by pressure correction.
-  The inclination split is substantially reduced.
-  The velocity split remains concerning (30%) — likely driven by
-  mid-Vmax (80-150) galaxies having fundamentally different bar/spiral
-  structure than high-Vmax galaxies.
+  IMPORTANT CORRECTION: The v5.0 report claimed pressure correction
+  ELIMINATED the distance split and reduced inclination by 61%.
+  This was WRONG — it was an artifact of using the wrong (126-galaxy)
+  sample that included many dwarfs below the GOLD+i45 threshold.
+
+  With the correct GOLD+i45 sample, pressure correction WORSENS all
+  three red-flag splits. This happens because the correction pushes
+  low-Vmax galaxies further from high-Vmax galaxies. Within the
+  GOLD+i45 sample, the galaxies already have Vmax>=50, so pressure
+  support is a minor effect for most, but it disproportionately
+  affects the few low-mass galaxies in the sample.
+
+  INTERPRETATION: The distance, inclination, and velocity splits are
+  NOT caused by pressure support. They reflect genuine systematic
+  differences in the sample (possibly distance-dependent selection
+  effects, inclination-dependent beam smearing, or mass-dependent
+  stellar population effects). These splits represent the primary
+  remaining systematic uncertainty in the a0 measurement.
 
   ────────────────────────────────────────────────────────────────────
   TEST 4: COMBINED — OUTER ONLY + PRESSURE CORRECTED
@@ -1864,124 +1911,162 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   The most aggressive cleaning: exclude inner radii (removes bar
   contamination) AND apply pressure support correction.
 
-  v4.0 baseline:            a₀=3051, tau=0.705
-  Outer-only (uncorrected): a₀=2608, tau=0.209
-  Outer + pressure corr:    a₀=2961, tau=0.178
+  v4.0 baseline (GOLD+i45): a0=3633, tau=0.291
+  Outer-only (uncorrected): a0=3131, tau=0.310
+  Pressure-corrected:       a0=3918, tau=0.292
+  Outer + pressure corr:    a0=3274, tau=0.312
 
-  Combined shift from baseline: only 2.9% (0.013 dex)
-  Tau: 0.705 → 0.178 (DRAMATIC reduction: -75%)
+  Combined shift from baseline: 9.9% (0.045 dex)
+  Tau: 0.291 -> 0.312 (slight increase)
 
-  This is the key result: when BOTH kinematic contaminants are
-  cleaned, tau drops from 0.705 to 0.178 and a₀ barely moves.
-  The transition scale is robust. Most of the scatter was
-  coming from inner-region kinematics and pressure support in
-  dwarfs, NOT from genuine variation in a₀.
+  The combined corrected a0 = 3274, with ratio = 1.018 to cH0/2pi.
+  This is remarkably close to the cosmological prediction.
+
+  NOTE: Unlike the v5.0 report (which claimed 75% tau reduction),
+  the corrected analysis shows tau is essentially stable through
+  these corrections. The GOLD+i45 sample already excludes the
+  worst kinematic offenders, so further cleaning has limited effect.
 
   ────────────────────────────────────────────────────────────────────
   TEST 5: RESIDUAL CORRELATIONS
   ────────────────────────────────────────────────────────────────────
 
-  Pearson r between per-galaxy a₀ residuals and galaxy properties:
+  Pearson r between per-galaxy a0 residuals and galaxy properties:
 
   ┌───────────┬───────────────┬────────────────┐
   │ Property  │ Before corr.  │ After corr.    │
   ├───────────┼───────────────┼────────────────┤
-  │ Vmax      │ 0.238 *       │ 0.147 (weak)   │
-  │ distance  │ 0.032 (weak)  │ -0.027 (weak)  │
-  │ inc       │ 0.134 (weak)  │ 0.134 (weak)   │
-  │ fgas      │ -0.136 (weak) │ -0.054 (weak)  │
-  │ Q_kin     │ 0.223 *       │ 0.189 *        │
+  │ Vmax      │ -0.023        │ -0.132         │
+  │ distance  │ -0.246 *      │ -0.310 ***     │
+  │ inc       │  0.159 *      │  0.157 *       │
+  │ fgas      │ -0.050        │  0.057         │
+  │ Q_kin     │ -0.068        │ -0.094         │
+  │ Hubble T  │  0.015        │  0.106         │
   └───────────┴───────────────┴────────────────┘
 
-  After correction: Vmax and fgas correlations weakened (good).
-  Q_kin remains moderately correlated — this is expected, as
-  kinematic quality is a meta-property, not a physical variable.
-  No residual shows r > 0.3 (no strong systematic dependence).
+  (* = |r| > 0.15 moderate, *** = |r| > 0.30 significant)
+
+  KEY FINDING: Distance is the only property with a significant
+  residual correlation (r = -0.31 after correction). This means
+  more distant galaxies tend to have LOWER a0. Possible causes:
+    (a) Hubble flow distance errors
+    (b) Resolution/beam effects at larger distances
+    (c) Selection bias (distant galaxies are preferentially massive)
+
+  Inclination shows a moderate positive correlation (r ~ 0.16),
+  consistent with the inclination split seen in Test 3.
+
+  No correlation with Vmax, fgas, Q_kin, or Hubble type exceeds
+  the significance threshold (|r| > 0.30).
 
   ────────────────────────────────────────────────────────────────────
-  PHASE 5 VERDICT
+  PHASE 5 VERDICT (v5.1 CORRECTED)
   ────────────────────────────────────────────────────────────────────
 
   ╔══════════════════════════════════════════════════════════════════╗
-  ║  PHASE 5 RESULT: PASS                                          ║
+  ║  PHASE 5 RESULT: PASS (with caveats)                           ║
   ║                                                                  ║
-  ║  (1) Non-circular motions: Inner-outer split = 0.033 dex        ║
-  ║      Non-circular motions do NOT bias a₀.                       ║
+  ║  (1) Non-circular motions: Inner-outer split = 0.006 dex        ║
+  ║      Non-circular motions do NOT bias a0.                       ║
   ║      VERDICT: Suspect CLEARED.                                  ║
   ║                                                                  ║
-  ║  (2) Pressure support: shift = +0.053 dex, tau drops 0.068     ║
-  ║      Correction improves consistency, does not destroy signal.  ║
-  ║      VERDICT: Suspect CLEARED (actually helps).                 ║
+  ║  (2) Pressure support: shift = +0.033 dex, tau unchanged       ║
+  ║      Correction shifts a0 by ~8%, does not destroy signal.     ║
+  ║      VERDICT: Suspect CLEARED (minor effect only).              ║
   ║                                                                  ║
-  ║  Combined (outer + pressure corr): tau drops 75% (0.705→0.178) ║
-  ║  while a₀ shifts only 2.9%. The transition scale is robust.    ║
+  ║  (3) SPARC quality: Q=1 vs Q=2 delta = 0.016 dex              ║
+  ║      Data quality has no meaningful effect.                     ║
+  ║      VERDICT: Suspect CLEARED.                                  ║
   ║                                                                  ║
-  ║  Red flags resolved:                                            ║
-  ║    Distance:    35% → 3.6%  (ELIMINATED)                       ║
-  ║    Inclination: 42% → 16.4% (REDUCED 61%)                     ║
-  ║    Velocity:    36% → 29.8% (REDUCED 17%, still concerning)    ║
+  ║  (4) Morphology: Early vs late type delta = 0.048 dex          ║
+  ║      Small effect, late-types slightly higher.                  ║
+  ║      VERDICT: Suspect CLEARED.                                  ║
+  ║                                                                  ║
+  ║  REMAINING CONCERN: Distance method split = 0.105 dex (27%)    ║
+  ║  Precise distances give a0 ~ 4243, Hubble flow gives 3331.    ║
+  ║  Residual r(a0, distance) = -0.31 is significant.             ║
+  ║                                                                  ║
+  ║  Red flag splits NOT resolved by pressure correction:           ║
+  ║    Distance:    35% -> 31% before / 47% after correction       ║
+  ║    Inclination: 42% -> 33% before / 39% after correction       ║
+  ║    Velocity:    36% -> 35% before / 46% after correction       ║
+  ║  These splits are intrinsic to the sample, not driven by       ║
+  ║  pressure support or non-circular motions.                      ║
+  ║                                                                  ║
+  ║  Combined best estimate (outer + pressure corr):                ║
+  ║    a0 = 3274 (km/s)^2/kpc = 1.06e-10 m/s^2                   ║
+  ║    ratio to cH0/2pi = 1.018                                    ║
+  ║    tau = 0.312, 68% CI = [1584, 6769]                          ║
   ║                                                                  ║
   ║  DECISION FRAMEWORK STATUS: ALL 4 BOXES CHECKED                ║
-  ║    (1) Non-circular motions  ✓ (Phase 5)                       ║
-  ║    (2) Pressure support      ✓ (Phase 5)                       ║
-  ║    (3) Y★ + distance + inc   ✓ (v4.0 marginalization)          ║
-  ║    (4) Weighting/covariance  ✓ (v4.0 hierarchical model)       ║
-  ║                                                                  ║
-  ║  CONCLUSION: The acceleration transition scale a₀ ≈ 1.2e-10    ║
-  ║  m/s² is observationally robust. It survives all four major     ║
-  ║  systematic tests. The remaining scatter (tau ≈ 0.18 in the    ║
-  ║  cleanest subsample) may be irreducible population variance     ║
-  ║  or residual measurement uncertainty.                           ║
+  ║    (1) Non-circular motions  [PASSED] (Phase 5)                ║
+  ║    (2) Pressure support      [PASSED] (Phase 5)                ║
+  ║    (3) Y-star + dist + inc   [PASSED] (v4.0 marginalization)   ║
+  ║    (4) Weighting/covariance  [PASSED] (v4.0 hierarchical)      ║
   ╚══════════════════════════════════════════════════════════════════╝
 
   WHAT THIS MEANS:
 
-  The question was: "Does a₀ survive after cleaning kinematic
+  The question was: "Does a0 survive after cleaning kinematic
   contamination?"
 
-  The answer is: YES.
+  The answer is: YES, with important nuance.
 
-  a₀ does not change appreciably when we:
-    - Remove inner-region points (bar/spiral contamination)
-    - Apply asymmetric drift correction (pressure support)
-    - Combine both corrections simultaneously
+  a0 does not change appreciably when we:
+    - Remove inner-region points (bar/spiral contamination): 0.006 dex
+    - Apply asymmetric drift correction: +0.033 dex
+    - Combine both corrections: 0.045 dex shift
 
-  Meanwhile, the scatter tau drops dramatically (75%), meaning
-  most of the population heterogeneity was NOT intrinsic to a₀
-  but was driven by kinematic contamination in inner radii and
-  uncorrected pressure support in dwarfs.
+  The acceleration transition scale is robust to kinematic
+  systematics. However, the v5.0 report's optimistic claims
+  about red flag resolution were incorrect. The distance,
+  inclination, and velocity splits persist and represent genuine
+  systematic uncertainties in the measurement.
+
+  The best estimate of a0, combining all corrections, is:
+    a0 = 3274-3918 (km/s)^2/kpc  (range across corrections)
+    = (1.06 - 1.27) x 10^-10 m/s^2
+    = (0.98 - 1.22) x cH0/2pi
+
+  This is consistent with the v4.0 headline value of 3633
+  (= 1.18e-10 m/s^2 = 1.130 x cH0/2pi) and with the
+  McGaugh+2016 literature value of 1.20e-10 m/s^2.
 
   REMAINING OPEN QUESTIONS:
-    1. The velocity split (Vmax>150 vs 80-150) remains at 30%.
-       This may reflect genuine morphology-dependent a₀ variation
-       or remaining Rdisk/beam smearing effects in mid-Vmax galaxies.
-    2. The Q_kin residual correlation (r=0.19) suggests further
-       kinematic quality refinement could help.
-    3. The cosmological ratio a₀/(cH₀/2π) ≈ 1.0-1.1 is now
-       on firmer empirical footing, but interpretation requires
-       a separate theoretical investigation.
+    1. The distance method split (27%) is the largest remaining
+       systematic. Galaxies with precise (TRGB/Cepheid/SN)
+       distances give higher a0 than Hubble flow galaxies. This
+       could mean: (a) Hubble flow errors bias a0 low, or (b)
+       the precise-distance subsample is biased.
+    2. The distance residual correlation (r = -0.31) suggests
+       a distance-dependent systematic. Further investigation
+       with volume-limited samples would help.
+    3. The cosmological ratio a0/(cH0/2pi) ranges from 1.0 to
+       1.2 depending on corrections applied — consistent with
+       but not definitively equal to unity.
 
 ================================================================================
-END OF DIAGNOSTIC REPORT (v5.0 — Phase 5 update)
+END OF DIAGNOSTIC REPORT (v5.1 — Phase 5 corrected)
 ================================================================================
 
-  This report supersedes all previous versions (v1.0, v2.0, v3.0, v4.0).
+  This report supersedes all previous versions (v1.0-v5.0).
   The empirical findings of Sections 1-11 remain valid.
   Sections 12-14 are the v3.0 baseline (archived for comparison).
   Sections 15-19 represent the v4.0 definitive pipeline.
   Section 20 is the systematic suspects audit.
-  Section 21 is the Phase 5 kinematic contamination audit.
+  Section 21 is the Phase 5 kinematic contamination audit (v5.1 corrected).
 
   Phase 1 analysis: scripts/diagnostic-tests.cjs
   Phase 2 analysis: scripts/diagnostic-phase2.cjs
   v2.0 pipeline: scripts/gold-standard-pipeline.cjs (archived)
   v3.0 pipeline: scripts/final-measurement-v3.cjs (archived baseline)
   v4.0 pipeline: scripts/definitive-v4.cjs
-  Phase 5 audit: scripts/phase5-kinematic-audit.cjs
+  Phase 5 audit: scripts/phase5-kinematic-audit.cjs (v5.1.0)
   Phase 1 results: public/diagnostic-results.json
   Phase 2 results: public/diagnostic-phase2-results.json
   v3.0 results: public/gold-standard-results.json (v3.0.0)
   v4.0 results: public/definitive-v4-results.json
-  Phase 5 results: public/phase5-kinematic-results.json
+  Phase 5 results: public/phase5-kinematic-results.json (v5.1.0)
+  SPARC master table: public/sparc-table.json (175 galaxies)
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 ================================================================================

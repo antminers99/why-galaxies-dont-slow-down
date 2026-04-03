@@ -175,7 +175,28 @@ Results: `public/gold-standard-results.json` (v3.0.0)
 v3.0 GOLD+i45: UW=4837, W=3545, Hier=3374, tau=0.245, I²=89.4%
 (2062 subsampled points, fixed Y*=0.5, 47 galaxies)
 
-## Key Insight (v4.0)
+## Phase 5 v5.1 Results (Kinematic Contamination Audit)
+
+Script: `scripts/phase5-kinematic-audit.cjs` (v5.1.0)
+Results: `public/phase5-kinematic-results.json`
+SPARC master table: `public/sparc-table.json` (175 galaxies with Q, T, fD)
+
+Uses CORRECT v4 GOLD+i45 sample (59 galaxies). Reproduces v4 baseline exactly.
+
+| Test | Split (dex) | Verdict |
+|------|-------------|---------|
+| Inner vs outer | 0.006 | NEGLIGIBLE |
+| SPARC Q=1 vs Q=2 | 0.016 | NEGLIGIBLE |
+| Early vs late morph | 0.048 | SMALL |
+| Q_kin split | 0.002 | NEGLIGIBLE |
+| Distance method | 0.105 | MODERATE (27%) |
+| Pressure correction | +0.033 | SMALL (+7.8%) |
+| Combined outer+pressure | a₀=3274, ratio=1.018 | tau=0.312 |
+
+Residual correlations: r(a₀, distance) = -0.31 (significant), r(a₀, inc) = 0.16 (moderate).
+Red-flag splits: NOT resolved by pressure correction (they worsen).
+
+## Key Insight (v4.0 + Phase 5 v5.1)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
 HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
@@ -183,6 +204,7 @@ HEADLINE number = v4.0 marginalized hierarchical a₀ = 3633 (most defensible).
 Number hierarchy:
 - HEADLINE: v4.0 marg. hier. a₀ = 3633 (km/s)²/kpc = 1.18e-10 m/s²
 - BASELINE: v3.0 hier. a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²
+- COMBINED BEST: outer+pressure a₀ = 3274, ratio = 1.018 to cH₀/2π
 - DIAGNOSTIC/RAW: v3.0 UW a₀ = 4837 (biased high, not headline)
 
 Key findings:
@@ -193,6 +215,8 @@ Key findings:
 - Total uncertainty: ±0.304 dex (dominated by tau=0.291)
 - I² = 92.4% — substantial real heterogeneity
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
+- Phase 5 v5.1: all kinematic tests PASS, distance method split (27%) remains
+- Phase 5 v5.0 was WRONG (used 126-galaxy sample, NOT v4 GOLD+i45)
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.
