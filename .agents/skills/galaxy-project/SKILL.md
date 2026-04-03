@@ -10,24 +10,28 @@ description: Project context, goals, current status, and strategic direction for
 A data analysis tool studying the Radial Acceleration Relation (RAR) across
 197 galaxies (175 SPARC + 22 LITTLE THINGS). Built with React + Vite.
 
-## Single Defensible Claim
+## Single Defensible Claim (v3.0)
 
-> "There is an acceleration transition scale, robust across 197 galaxies
-> and 4 interpolation functions, whose physical interpretation has not
-> been settled."
+> "There is a real acceleration transition scale in galaxy rotation curves.
+> Our most defensible estimate is the hierarchical McGaugh-only value
+> a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s², with substantial between-galaxy
+> heterogeneity (tau = 0.245 dex) and total systematic uncertainty ±0.295 dex.
+> The literature value (1.20e-10 m/s²) falls within our 1σ band."
 
-This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
+NOT claimed: a₀ universal constant, dark matter solved, MOND proved,
+cosmological origin established. Do not overclaim.
 
 ## What We Know For Sure
 
 - A transition acceleration scale exists (McGaugh RAR finds it in all samples)
+- HEADLINE: a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s² (hierarchical, most defensible)
+- Supporting: weighted a₀ = 3545; diagnostic/raw: unweighted a₀ = 4837
 - The RAR is tight (~0.147 dex in GOLD+i45, ~0.200 dex full sample)
 - The BTFR holds at 4.4σ
 - Signal survives 5 independent stress tests
 - ALL 6 residual audit variables clean in GOLD+i45 sample
-- Three estimators converge: UW=4837, W=3545, Hier=3374 (km/s)²/kpc
-- Formal uncertainty: ±0.295 dex (including hierarchical tau)
-- Literature (3703) within 1σ band of all estimators
+- Formal uncertainty: ±0.295 dex (dominated by between-galaxy tau = 0.245)
+- Literature (3703) within 1σ band
 
 ## What Is Model-Dependent
 

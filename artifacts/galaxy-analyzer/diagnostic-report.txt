@@ -12,12 +12,19 @@ Prior report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 SINGLE DEFENSIBLE CLAIM
 ================================================================================
 
-  "There is an acceleration transition scale, robust across 197 galaxies
-  and 4 interpolation functions, whose physical interpretation has not
-  been settled."
+  "There is a real acceleration transition scale in galaxy rotation
+  curves. After sample cleaning and systematic tests, our most
+  defensible estimate is the hierarchical McGaugh-only value
+  a₀ = 3374 (km/s)²/kpc = 1.09×10⁻¹⁰ m/s², with substantial
+  between-galaxy heterogeneity (tau = 0.245 dex) and total
+  systematic uncertainty ±0.295 dex. The literature value
+  (1.20×10⁻¹⁰ m/s²) falls within our 1σ band."
 
   This claim is narrower than anything in the previous report.
-  It is also the only claim that survives all three diagnostic tests below.
+  It is also the only claim that survives all diagnostic tests below.
+
+  What we do NOT claim: a₀ confirmed as universal exact constant,
+  dark matter solved, MOND proved, or cosmological origin established.
 
 ================================================================================
 TABLE OF CONTENTS
@@ -50,8 +57,8 @@ SECTION 1: THREE-COLUMN CLASSIFICATION
   ├──────────────────────────────────────────────────────────────────────┤
   │  ✓ A transition scale exists                                       │
   │    McGaugh RAR finds it in all 5 samples consistently.            │
-  │    GOLD+i45: a₀ = 4837 (km/s)²/kpc (unweighted McGaugh-only).   │
-  │    Hierarchical estimate: a₀ = 3374 (km/s)²/kpc.                 │
+  │    HEADLINE: a₀ = 3374 (km/s)²/kpc (hierarchical McGaugh-only). │
+  │    Supporting: a₀ = 3545 (weighted), 4837 (raw unweighted).      │
   │    Literature (McGaugh 2016): 3703 (km/s)²/kpc — within range.   │
   │                                                                     │
   │  ✓ The RAR is tight                                                │
@@ -73,9 +80,9 @@ SECTION 1: THREE-COLUMN CLASSIFICATION
   │    ALL CLEAN (|r| < 0.30 threshold), confirmed with McGaugh-only. │
   │                                                                     │
   │  ✓ Three estimators converge (v3.0)                                │
-  │    Unweighted: 4837 | Weighted: 3545 | Hierarchical: 3374        │
+  │    Hierarchical: 3374 | Weighted: 3545 | Unweighted: 4837        │
   │    Literature (3703) falls between weighted and hierarchical.      │
-  │    Formal uncertainty: ±0.295 dex (incl. hierarchical tau).       │
+  │    Formal uncertainty: ±0.295 dex (dominated by population tau).  │
   └──────────────────────────────────────────────────────────────────────┘
 
   ┌──────────────────────────────────────────────────────────────────────┐
@@ -993,10 +1000,12 @@ SECTION 15: UPDATED UNCERTAINTY BUDGET (v3.0)
   └──────────────────────────────────┴──────────────┘
 
   FINAL RESULT (v3.0):
-    log(a₀) = 3.685 +/- 0.295 dex
-    a₀ = 4837 [2454, 9537] (km/s)²/kpc (1-sigma, unweighted)
-    a₀ = 1.57e-10 [7.96e-11, 3.09e-10] m/s²
-    Literature (3703) WITHIN 1-sigma band: YES
+    HEADLINE: a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s² (hierarchical)
+    log(a₀) = 3.528 +/- 0.041 dex (stat), +/- 0.295 dex (total)
+    tau = 0.245 dex between-galaxy scatter, I² = 89.4%
+    a₀/(cH₀/2π) = 1.049
+    Literature (3703 = 1.20e-10 m/s²) WITHIN 1-sigma band: YES
+    Raw unweighted benchmark: 4837 (km/s)²/kpc (diagnostic only)
 
   ────────────────────────────────────────────────────────────────────
 
@@ -1113,20 +1122,26 @@ SECTION 16: FINAL PAPER TABLE AND MEASUREMENT
   ║  Cuts: V>=50 km/s, inc>=45, n>=5, g_bar range>=1.0 dex          ║
   ║  Estimator: McGaugh RAR (single function)                        ║
   ║                                                                    ║
-  ║  PRIMARY (unweighted):                                             ║
-  ║    a₀ = 4837 (km/s)²/kpc = 1.57e-10 m/s²                        ║
-  ║    log(a₀) = 3.685 +/- 0.295 dex                                 ║
-  ║    1-sigma range: [2454, 9537] (km/s)²/kpc                       ║
-  ║    a₀/(cH₀/2π) = 1.504                                           ║
-  ║                                                                    ║
-  ║  HIERARCHICAL (weighted mean):                                     ║
+  ║  HEADLINE (hierarchical random-effects mean):                      ║
   ║    a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²                        ║
   ║    log(a₀) = 3.528 +/- 0.041 dex (stat)                          ║
   ║    tau = 0.245 dex (between-galaxy scatter)                       ║
   ║    a₀/(cH₀/2π) = 1.049                                           ║
+  ║    Total systematic uncertainty: +/- 0.295 dex                    ║
   ║                                                                    ║
-  ║  Literature (McGaugh+2016): WITHIN 1-sigma band                  ║
+  ║  SUPPORTING (error-weighted global fit):                           ║
+  ║    a₀ = 3545 (km/s)²/kpc = 1.15e-10 m/s²                        ║
+  ║    a₀/(cH₀/2π) = 1.102                                           ║
+  ║                                                                    ║
+  ║  DIAGNOSTIC/RAW (unweighted global fit):                           ║
+  ║    a₀ = 4837 (km/s)²/kpc = 1.57e-10 m/s²                        ║
+  ║    a₀/(cH₀/2π) = 1.504  (biased high by oversampled galaxies)   ║
+  ║                                                                    ║
+  ║  Literature (McGaugh+2016): 1.20e-10 — WITHIN 1-sigma band      ║
   ║  Residual audit: ALL 6 VARIABLES CLEAN                            ║
+  ║                                                                    ║
+  ║  NOT CLAIMED: a₀ universal exact constant, dark matter solved,   ║
+  ║  MOND proved, cosmological origin established.                    ║
   ╚════════════════════════════════════════════════════════════════════╝
 
 ================================================================================
@@ -1214,17 +1229,32 @@ SECTION 17: OPEN QUESTIONS AND NEXT STEPS
 
   ────────────────────────────────────────────────────────────────────
 
-  MOST IMPORTANT RESULT (v3.0):
+  MOST IMPORTANT RESULT (v3.0, plain language):
 
-  "When we use a single estimator (McGaugh RAR), error-weighted
-   fitting, and a hierarchical random-effects model, the galaxy
-   acceleration transition scale converges to a₀ = 3374 (km/s)²/kpc
-   = 1.09e-10 m/s², with between-galaxy scatter tau = 0.245 dex
-   and total systematic uncertainty +/-0.295 dex. The literature
-   value (1.20e-10 m/s²) falls within our 1-sigma band. The
-   transition scale is real, robust, and consistent with published
-   measurements. Its precise value depends on the treatment of
-   between-galaxy heterogeneity."
+  "There is a real acceleration transition scale in galaxy rotation
+   curves, and it persists after cleaning samples and running
+   systematic tests. Our most defensible estimate, from a
+   hierarchical McGaugh-only analysis of 47 well-constrained
+   galaxies, is a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s². However,
+   substantial between-galaxy heterogeneity (tau = 0.245 dex,
+   I² = 89.4%) limits how precisely a single universal value can
+   be determined from this data. The literature value (1.20e-10)
+   falls within our uncertainty band. The cosmological ratio
+   a₀/(cH₀/2π) = 1.049 is suggestive but not yet compelling
+   given the systematic uncertainty (+/-0.295 dex)."
+
+  WHAT IS CLAIMED:
+    - The transition scale is real and robust
+    - Hierarchical a₀ = 3374 is the most defensible single number
+    - Literature consistency confirmed
+    - Residuals clean after proper sample selection
+
+  WHAT IS NOT CLAIMED:
+    - a₀ is a universal exact constant
+    - Dark matter is solved
+    - MOND is proved
+    - Cosmological origin is established
+    - Between-galaxy heterogeneity is fully understood
 
 ================================================================================
 END OF DIAGNOSTIC REPORT (v3.0)

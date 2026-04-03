@@ -182,11 +182,21 @@ Results: `public/gold-standard-results.json` (v3.0.0)
 
 ## Key Insight (v3.0)
 
-The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample:
-- ALL 6 residual audit variables clean (inclination resolved with inc≥45°)
-- Unweighted: a₀ = 4837, weighted: 3545, hierarchical: 3374
+The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample.
+HEADLINE number = hierarchical a₀ = 3374 (most defensible estimate).
+
+Number hierarchy:
+- HEADLINE: hierarchical a₀ = 3374 (km/s)²/kpc = 1.09e-10 m/s²
+- SUPPORTING: weighted a₀ = 3545 (km/s)²/kpc = 1.15e-10 m/s²
+- DIAGNOSTIC/RAW: unweighted a₀ = 4837 (biased high, not headline)
+
+Key findings:
+- ALL 6 residual audit variables clean (inclination resolved with inc>=45)
 - Total uncertainty: ±0.295 dex (dominated by between-galaxy tau = 0.245)
-- Literature (3703 = 1.20e-10 m/s²) within 1σ band of all estimators
-- Hierarchical a₀/(cH₀/2π) = 1.049 — closest to unity
+- Literature (3703 = 1.20e-10 m/s²) within 1σ band
+- Hierarchical a₀/(cH₀/2π) = 1.049 — suggestive, not compelling
 - I² = 89.4% — substantial real heterogeneity between galaxies
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
+
+NOT CLAIMED: a₀ universal exact constant, dark matter solved,
+MOND proved, cosmological origin established.
