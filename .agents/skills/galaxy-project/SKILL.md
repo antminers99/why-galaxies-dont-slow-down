@@ -20,26 +20,28 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 
 ## What We Know For Sure
 
-- A transition acceleration scale exists (all interpolation functions find it)
-- The RAR is tight (~0.15 dex in GOLD+i45, ~0.24 dex full sample)
+- A transition acceleration scale exists (McGaugh RAR finds it in all samples)
+- The RAR is tight (~0.147 dex in GOLD+i45, ~0.200 dex full sample)
 - The BTFR holds at 4.4σ
 - Signal survives 5 independent stress tests
 - ALL 6 residual audit variables clean in GOLD+i45 sample
-- Formal uncertainty: a₀ = 5275 ± 0.185 dex [3443, 8082] (km/s)²/kpc
+- Three estimators converge: UW=4837, W=3545, Hier=3374 (km/s)²/kpc
+- Formal uncertainty: ±0.295 dex (including hierarchical tau)
+- Literature (3703) within 1σ band of all estimators
 
 ## What Is Model-Dependent
 
-- The precise value of a₀ (GOLD+i45: 5275, GOLD: 4285, HIGH-MASS: 4035, ALL: 1929)
-- The cosmological ratio a₀/(cH₀/2π) = 1.641 (GOLD+i45) or 1.333 (GOLD) or 0.600 (ALL)
-- a₀ varies across sub-populations (low-mass: fitting artifact — limited g_bar range)
-- Dominant uncertainties: global-vs-median (0.112 dex) and inclination cut (0.106 dex)
+- Precise a₀ depends on estimator: UW=4837, W=3545, Hier=3374
+- Cosmological ratio: 1.504 (UW), 1.102 (W), 1.049 (Hier)
+- Between-galaxy heterogeneity: I²=89.4%, tau=0.245 dex
+- Dominant uncertainties: hierarchical tau (0.245) and inclination cut (0.106)
 
 ## What We Do NOT Know
 
-- Is a₀ ≈ cH₀/2π physics or coincidence? Ratio range: 1.07–2.52 (1σ)
+- Is a₀ ≈ cH₀/2π physics or coincidence? Hier ratio=1.049 but systematic ±0.295
+- What drives the between-galaxy scatter (tau=0.245 dex)?
 - Does a₀ evolve with redshift?
-- What is the physical mechanism behind the transition?
-- Can error-weighted / hierarchical fitting reduce the ±0.185 dex uncertainty?
+- Can per-galaxy Υ★ marginalization reduce tau?
 
 ## Project History (Condensed)
 
@@ -60,10 +62,13 @@ This is the ONLY claim that survives all diagnostic tests. Do not overclaim.
 12. **Gold-standard pipeline v1.0.0**: Locked parameters, 4 sample layers,
     blind residual audit. GOLD sample a₀=4285, 5/6 audit variables clean.
     Only inclination marginal (r=-0.31). Pipeline fully reproducible.
-13. **Gold-standard pipeline v2.0.0**: Added GOLD+i45 sample (inc≥45°),
+13. **Gold-standard pipeline v2.0.0**: Added GOLD+i45 sample (inc>=45),
     6-component uncertainty budget, sensitivity tables.
-    GOLD+i45 a₀=5275 ± 0.185 dex. ALL 6 audit variables CLEAN.
-    Inclination signal RESOLVED. Literature value within 1σ band.
+14. **Pipeline v3.0.0**: Single McGaugh-only estimator (dropped mean-of-3),
+    error-weighted fit, DerSimonian-Laird hierarchical random-effects model.
+    Three estimators converge: UW=4837, W=3545, Hier=3374.
+    tau=0.245 dex, I²=89.4%, total budget ±0.295 dex.
+    Literature (3703) within 1σ band. Report updated to 17 sections.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -73,10 +78,10 @@ Do NOT pursue:
 - New theoretical frameworks
 
 DO pursue:
-- Error-weighted fitting and nuisance marginalization
-- Hierarchical/Bayesian a₀ estimation
-- Full-sample refit (all 4123 points)
-- Clean, reproducible analysis (gold-standard pipeline v2.0.0 built)
+- Per-galaxy Υ★ marginalization
+- Individual distance error incorporation
+- Full-sample refit (all 4123 points, pending raw SPARC data)
+- Systematics paper write-up
 
 ## Two Separate Questions (Never Mix Them)
 
@@ -105,9 +110,12 @@ Solve A first. B becomes much cleaner after.
 |------|---------|
 | `diagnostic-report.txt` | PRIMARY report (edit this one) |
 | `galaxy-rotation-curve-analysis-full-report.txt` | ARCHIVED (read-only) |
-| `scripts/diagnostic-tests.cjs` | Main diagnostic pipeline |
+| `scripts/final-measurement-v3.cjs` | v3.0 pipeline (current) |
+| `scripts/gold-standard-pipeline.cjs` | v2.0 pipeline (archived) |
+| `scripts/diagnostic-tests.cjs` | Phase 1 diagnostics |
 | `scripts/transition-scale-v3.cjs` | Core RAR analysis |
-| `public/diagnostic-results.json` | Latest computed results |
+| `public/gold-standard-results.json` | v3.0 results (current) |
+| `public/diagnostic-results.json` | Phase 1 results |
 | `public/rar-analysis-real.json` | Per-galaxy metadata |
 | `public/transition-scale.json` | Full RAR + fitting output |
 | `replit.md` | Project documentation |

@@ -9,23 +9,25 @@ description: Reference data, constants, and computed results for the Galaxy Rota
 
 | Constant | Value | Units |
 |----------|-------|-------|
-| a₀ (canonical) | 1.2×10⁻¹⁰ | m/s² |
-| a₀ in galaxy units | 3702 | (km/s)²/kpc |
-| a₀ (GOLD+i45 global fit) | 5275 | (km/s)²/kpc |
-| a₀ (GOLD global fit) | 4285 | (km/s)²/kpc |
-| a₀ (ALL global fit) | 1929 | (km/s)²/kpc |
-| a₀ uncertainty | ±0.185 | dex |
-| a₀ 1σ range | [3443, 8082] | (km/s)²/kpc |
+| a₀ (canonical, McGaugh 2016) | 1.2×10⁻¹⁰ | m/s² |
+| a₀ in galaxy units | 3703 | (km/s)²/kpc |
+| a₀ (GOLD+i45 unweighted) | 4837 | (km/s)²/kpc |
+| a₀ (GOLD+i45 weighted) | 3545 | (km/s)²/kpc |
+| a₀ (GOLD+i45 hierarchical) | 3374 | (km/s)²/kpc |
+| a₀ (GOLD+i45 hier. median) | 4074 | (km/s)²/kpc |
+| a₀ uncertainty (v3.0) | ±0.295 | dex |
+| a₀ 1σ range | [2454, 9537] | (km/s)²/kpc |
+| Hier. tau (between-galaxy) | 0.245 | dex |
+| Hier. I² | 89.4 | % |
 | c | 299,792,458 | m/s |
 | H₀ | 67.4 | km/s/Mpc |
 | cH₀ | 6.548×10⁻¹⁰ | m/s² |
 | cH₀/2π | 1.042×10⁻¹⁰ | m/s² |
-| a₀/(cH₀/2π) | 1.641 (GOLD+i45) or 1.333 (GOLD) or 0.600 (ALL) | — |
-| κ_dS = c²√(Λ/3) | 5.47×10⁻¹⁰ | m/s² |
-| κ_dS/2π | 8.7×10⁻¹¹ | m/s² |
+| a₀/(cH₀/2π) | 1.504 (UW), 1.102 (W), 1.049 (Hier) | — |
 | 1 (km/s)²/kpc → m/s² | 3.241×10⁻¹⁴ | conversion |
 | Υ_disk (fixed) | 0.5 | M☉/L☉ |
 | Υ_bulge (fixed) | 0.7 | M☉/L☉ |
+| Estimator | McGaugh RAR ONLY (v3.0) | — |
 
 ## Dataset Summary
 
@@ -129,77 +131,62 @@ High vs low quality gives SAME a₀ (3024 vs 3029) — reassuring.
 | Distance MC (±30%, 1000 iter) | 100% negative slopes |
 | CV = 0.3% under distance perturbation | a₀ stable |
 
-### Gold-Standard Pipeline v2.0.0 Results (April 2026)
+### Pipeline v3.0.0 Results (April 2026)
 
-Script: `scripts/gold-standard-pipeline.cjs`
-Results: `public/gold-standard-results.json`
+Script: `scripts/final-measurement-v3.cjs`
+Results: `public/gold-standard-results.json` (v3.0.0)
 
-**5-Layer Global Fits (mean of 3 interpolation functions):**
+**McGaugh-only unweighted fits:**
 
-| Sample | n_gal | n_pts | a₀ (km/s)²/kpc | a₀ (m/s²) | a₀/(cH₀/2π) |
-|--------|-------|-------|----------------|-----------|-------------|
-| ALL | 175 | 2062 | 1929 | 6.25×10⁻¹¹ | 0.600 |
-| CLEAN | 78 | 1141 | 4883 | 1.58×10⁻¹⁰ | 1.519 |
-| GOLD | 52 | 872 | 4285 | 1.39×10⁻¹⁰ | 1.333 |
-| GOLD+i45 | 47 | 767 | 5275 | 1.71×10⁻¹⁰ | 1.641 |
-| HIGH-MASS | 56 | 820 | 4035 | 1.31×10⁻¹⁰ | 1.255 |
+| Sample | n_gal | n_pts | a₀ (km/s)²/kpc | RMS | a₀/(cH₀/2π) |
+|--------|-------|-------|----------------|-----|-------------|
+| ALL | 175 | 1698 | 2670 | 0.200 | 0.830 |
+| CLEAN | 78 | 1141 | 4463 | 0.144 | 1.388 |
+| GOLD | 52 | 872 | 3934 | 0.143 | 1.223 |
+| GOLD+i45 | 47 | 767 | 4837 | 0.147 | 1.504 |
+| HIGH-MASS | 56 | 820 | 3720 | 0.128 | 1.157 |
 
-**Per-Galaxy Medians:**
+**Error-weighted fits:**
 
-| Sample | n | median a₀ | MAD (dex) |
-|--------|---|----------|-----------|
-| ALL | 73 | 2270 | 0.558 |
-| CLEAN | 58 | 3277 | 0.399 |
-| GOLD | 44 | 3479 | 0.347 |
-| GOLD+i45 | 39 | 4074 | 0.304 |
-| HIGH-MASS | 42 | 3277 | 0.383 |
+| Sample | a₀ (km/s)²/kpc | wRMS | a₀/(cH₀/2π) | Delta vs UW |
+|--------|----------------|------|-------------|-------------|
+| GOLD+i45 | 3545 | 0.118 | 1.102 | -26.7% |
+| HIGH-MASS | 3732 | 0.133 | 1.161 | +0.3% |
 
-**Blind Residual Audit — GOLD (52 galaxies):**
+**Hierarchical (DerSimonian-Laird) results:**
 
-| Variable | r | Verdict |
-|----------|---|---------|
-| V_max | +0.143 | CLEAN |
-| Surface brightness | -0.085 | CLEAN |
-| Gas fraction | -0.056 | CLEAN |
-| Luminosity | -0.072 | CLEAN |
-| Inclination | -0.307 | MARGINAL ⚠ |
-| Distance | -0.151 | CLEAN |
+| Sample | n_gal | Hier. mean | tau (dex) | I² | a₀/(cH₀/2π) |
+|--------|-------|-----------|-----------|-----|-------------|
+| GOLD+i45 | 39 | 3374 | 0.245 | 89.4% | 1.049 |
+| GOLD | 44 | 3370 | 0.242 | 89.5% | 1.048 |
 
-**Blind Residual Audit — GOLD+i45 (47 galaxies):**
+**Three-estimator convergence (GOLD+i45):**
 
-| Variable | r | Verdict |
-|----------|---|---------|
-| V_max | +0.095 | CLEAN |
-| Surface brightness | -0.091 | CLEAN |
-| Gas fraction | +0.003 | CLEAN |
-| Luminosity | -0.104 | CLEAN |
-| Inclination | -0.285 | CLEAN ✓ |
-| Distance | -0.191 | CLEAN |
+| Estimator | a₀ | log(a₀) | a₀/(cH₀/2π) |
+|-----------|-----|---------|-------------|
+| Unweighted | 4837 | 3.685 | 1.504 |
+| Weighted | 3545 | 3.550 | 1.102 |
+| Hierarchical | 3374 | 3.528 | 1.049 |
 
-ALL 6 CLEAN. Inclination resolved by tightening to inc≥45°.
-
-**Uncertainty Budget (6 components, quadrature):**
+**Uncertainty Budget (v3.0, 6 components):**
 
 | Source | ±σ (dex) |
 |--------|----------|
-| Interpolation function | ±0.028 |
+| Estimator method (UW/W/Hier) | ±0.078 |
 | Sample selection | ±0.058 |
-| Global vs per-galaxy | ±0.112 |
 | Υ★ (±15%) | ±0.066 |
 | Inclination cut | ±0.106 |
 | Dynamic range cut | ±0.044 |
-| **TOTAL** | **±0.185** |
+| Hier. tau (intrinsic scatter) | ±0.245 |
+| **TOTAL** | **±0.295** |
 
-**Low-mass stress test:** a₀ = 104,713 (at fit boundary). Cannot constrain a₀.
-
-## Key Insight
+## Key Insight (v3.0)
 
 The transition scale EXISTS and is robust. GOLD+i45 is the recommended sample:
 - ALL 6 residual audit variables clean (inclination resolved with inc≥45°)
-- a₀ = 5275 ± 0.185 dex [3443, 8082] (km/s)²/kpc
-- Per-galaxy MAD tightest of all samples (0.304 dex)
-- Gas fraction and SB do NOT correlate with residuals
+- Unweighted: a₀ = 4837, weighted: 3545, hierarchical: 3374
+- Total uncertainty: ±0.295 dex (dominated by between-galaxy tau = 0.245)
+- Literature (3703 = 1.20e-10 m/s²) within 1σ band of all estimators
+- Hierarchical a₀/(cH₀/2π) = 1.049 — closest to unity
+- I² = 89.4% — substantial real heterogeneity between galaxies
 - Low-mass a₀ divergence is a fitting artifact (limited dynamic range)
-- The cosmological ratio a₀/(cH₀/2π) = 1.641 for GOLD+i45 global fit
-- Literature value (1.20×10⁻¹⁰) falls within our 1σ band
-- Dominant uncertainties: global-vs-median and inclination-cut sensitivity
