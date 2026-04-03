@@ -47,14 +47,11 @@ export default function ConclusionsPage() {
   const epsilon = phi ? phi.model.epsilon : 0.1764;
   const oneOver2Pi = phi ? phi.model.oneOver2Pi : 0.1592;
   const predicted = cH0_ms2 / (2 * Math.PI);
-  const matchPct = ((1 - Math.abs(predicted - a0_ms2) / a0_ms2) * 100).toFixed(0);
-  const cosmologyRatio = transition ? transition.cosmology.ratio : 0.176;
+  const mismatchPct = (Math.abs(predicted - a0_ms2) / a0_ms2 * 100).toFixed(0);
 
+  const nPoints = simA0 ? simA0.observational.combined.nPoints : 4123;
+  const combinedRMS = simA0 ? simA0.observational.combined.globalRMS : 0.236;
   const sparcNGalaxies = simA0 ? simA0.observational.sparc.nGalaxies : 175;
-  const sparcNPoints = simA0 ? simA0.observational.sparc.nPoints : 3391;
-  const sparcRMS = simA0 ? simA0.observational.sparc.globalRMS : 0.198;
-  const sparcScatter = simA0 ? simA0.observational.sparc.scatterA0 : 0.605;
-  const rms = transition ? transition.collapse.rmsWithCorrectA0 : 0.24;
   const rVmax = phi ? phi.rVmaxA0 : 0.10;
   const rRmax = phi ? phi.otherVariables.rRmax : -0.04;
   const cvWorse = phi ? phi.calibration.cvImprovement : -13;
@@ -83,7 +80,7 @@ export default function ConclusionsPage() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">I</div>
             <div>
               <h2 className="text-xl font-bold text-white">What We Know for Certain</h2>
-              <p className="text-xs text-slate-400">Empirical facts from {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {sparcNPoints.toLocaleString()} data points</p>
+              <p className="text-xs text-slate-400">Empirical facts from {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {nPoints.toLocaleString()} data points</p>
             </div>
           </div>
 
@@ -97,7 +94,7 @@ export default function ConclusionsPage() {
                 There is a characteristic acceleration scale a{"\u2080"} {"\u2248"} {a0_ms2.toExponential(1)} m/s{"\u00B2"} ({"\u2248"} {a0_kpc} (km/s){"\u00B2"}/kpc)
                 below which the observed gravitational acceleration systematically exceeds
                 what baryonic matter alone predicts. This is detected across all {sparcNGalaxies} galaxies
-                with {sparcRMS} dex scatter.
+                with {combinedRMS} dex scatter.
               </p>
             </div>
 
@@ -133,7 +130,7 @@ export default function ConclusionsPage() {
                 <h3 className="text-sm font-bold text-emerald-300">a{"\u2080"} = cH{"\u2080"}/2{"\u03C0"}</h3>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                The observed value matches the cosmological prediction within {matchPct}%.
+                The observed value matches the cosmological prediction within {mismatchPct}%.
                 Predicted: {predicted.toExponential(2)} m/s{"\u00B2"}.
                 Observed: {a0_ms2.toExponential(1)} m/s{"\u00B2"}.
                 {"\u03B5"} = {epsilon} vs 1/(2{"\u03C0"}) = {oneOver2Pi}.
@@ -203,7 +200,7 @@ export default function ConclusionsPage() {
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-xs font-bold shrink-0 mt-0.5">3</div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  <span className="text-white font-bold">It is cosmological.</span> The floor value (a{"\u2080"}) equals cH{"\u2080"}/2{"\u03C0"} within 11%.
+                  <span className="text-white font-bold">It is cosmological.</span> The floor value (a{"\u2080"}) equals cH{"\u2080"}/2{"\u03C0"} within {mismatchPct}%.
                   This connects a purely local measurement (galaxy rotation curves) to the largest scale
                   in physics (the expansion of the universe).
                 </p>
@@ -404,7 +401,7 @@ export default function ConclusionsPage() {
                 We know it is <span className="text-cyan-400 font-bold">real</span>,{" "}
                 <span className="text-emerald-400 font-bold">universal</span>, and{" "}
                 <span className="text-amber-400 font-bold">cosmological</span>.
-                We know it equals cH{"\u2080"}/2{"\u03C0"} within 11%.
+                We know it equals cH{"\u2080"}/2{"\u03C0"} within {mismatchPct}%.
                 We know that no galaxy property can improve or modulate it.
               </p>
               <p className="text-sm text-slate-200 leading-relaxed">
@@ -424,7 +421,7 @@ export default function ConclusionsPage() {
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-4 leading-relaxed italic">
-                Based on analysis of {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {sparcNPoints.toLocaleString()} rotation curve measurements,
+                Based on analysis of {sparcNGalaxies} SPARC + LITTLE THINGS galaxies, {nPoints.toLocaleString()} rotation curve measurements,
                 with 0 free parameters.
               </p>
             </div>
