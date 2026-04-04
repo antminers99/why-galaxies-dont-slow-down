@@ -1,90 +1,134 @@
 {
-  "version": "60.0.0",
-  "timestamp": "2026-04-04T17:35:40.350Z",
-  "nGalaxies": 56,
-  "totalPoints": 1483,
-  "tau": 0.2637,
-  "models": {
-    "M0": {
-      "name": "Universal a0",
+  "phase": "60",
+  "title": "Final Death Match (N=45)",
+  "n": 45,
+  "sdY": 0.25785888635594334,
+  "models": [
+    {
+      "name": "M0",
       "k": 0,
-      "gc": 0,
-      "rms": 0.11662
+      "loo": -2.2727272727272485,
+      "tau": 0.2607726385741526,
+      "aic": -120.99213013553478,
+      "bic": -119.18546764576446
     },
-    "M1a": {
-      "name": "Conservative BL",
+    {
+      "name": "M1c",
       "k": 4,
-      "gc": 27.8,
-      "rms": 0.10167
+      "loo": 30.214918100908505,
+      "tau": 0.21540877896517074,
+      "aic": -139.40362098712959,
+      "bic": -130.37030853827798,
+      "kf5": 28.50187806099672,
+      "kf10": 29.15240402328766
     },
-    "M1b": {
-      "name": "Extended BL",
+    {
+      "name": "M2",
       "k": 5,
-      "gc": 38.1,
-      "rms": 0.09616
+      "loo": 45.56943626384389,
+      "tau": 0.19024073660735816,
+      "aic": -151.32556184555975,
+      "bic": -140.48558690693784,
+      "kf5": 44.00555461877323,
+      "kf10": 44.547099296684344
     },
-    "M1c": {
-      "name": "Maximal",
+    {
+      "name": "M3",
       "k": 6,
-      "gc": 42.9,
-      "rms": 0.09356
-    },
-    "M2": {
-      "name": "Per-galaxy a0",
-      "k": 56,
-      "gc": 100,
-      "rms": 0.06287
-    }
-  },
-  "informationCriteria": [
-    {
-      "label": "M0: Universal",
-      "k": 0,
-      "aic": -2199.7,
-      "bic": -2194.4
-    },
-    {
-      "label": "M1a: Conservative",
-      "k": 4,
-      "aic": -2723.5,
-      "bic": -2697
-    },
-    {
-      "label": "M1b: Extended",
-      "k": 5,
-      "aic": -2925.8,
-      "bic": -2894
-    },
-    {
-      "label": "M1c: Maximal",
-      "k": 6,
-      "aic": -3007.9,
-      "bic": -2970.8
-    },
-    {
-      "label": "M2: Per-galaxy",
-      "k": 56,
-      "aic": -3883.4,
-      "bic": -3581.2
+      "loo": 49.67979849340603,
+      "tau": 0.18291667085697633,
+      "aic": -154.24799933575932,
+      "bic": -141.60136190736708,
+      "kf5": 47.66352205080945,
+      "kf10": 48.79379989108621
     }
   ],
-  "tauDecomposition": {
-    "total": 0.2637,
-    "afterM1a": 0.2023,
-    "afterM1b": 0.1881,
-    "afterM1c": 0.1745
+  "winner": {
+    "name": "M3 (B″)",
+    "looGap": 49.67979849340603,
+    "tauResid": 0.18291667085697633,
+    "predictors": 6,
+    "formula": "log(a0) ~ logMHI + rcWiggliness + logMhost + logSigma0 + logMeanRun + UpsPerp"
   },
-  "replicatedTau": {
-    "meanHalfSample": 0.2656,
-    "sdHalfSample": 0.0198,
-    "robust": true
+  "gapClosure": {
+    "pctClosed": 29.063266563370732,
+    "remaining": 0.18291667085697633
   },
-  "verdict": {
-    "M0_rejected": true,
-    "M1_winner": "M1c (Maximal)",
-    "M1_gapClosed": 42.9,
-    "M2_overfitting": true,
-    "unexplainedGap": 57.1,
-    "conclusion": "a0 is structured and galaxy-dependent, ~43% predictable, ~57% requires external data or represents true physical variation"
-  }
+  "residualOutliers": {
+    "positive": [
+      {
+        "name": "NGC6674",
+        "resid": 0.2801628036992416
+      },
+      {
+        "name": "UGC06786",
+        "resid": 0.2732234903769504
+      },
+      {
+        "name": "UGC08490",
+        "resid": 0.2607269434171853
+      },
+      {
+        "name": "UGC06787",
+        "resid": 0.24186645765976422
+      },
+      {
+        "name": "NGC3893",
+        "resid": 0.215169682814063
+      }
+    ],
+    "negative": [
+      {
+        "name": "UGC03580",
+        "resid": -0.22026585075664418
+      },
+      {
+        "name": "NGC5055",
+        "resid": -0.23719489553647177
+      },
+      {
+        "name": "NGC7331",
+        "resid": -0.25021820111611204
+      },
+      {
+        "name": "UGC01281",
+        "resid": -0.2557244904374154
+      },
+      {
+        "name": "NGC5371",
+        "resid": -0.31758015260505124
+      }
+    ]
+  },
+  "icResults": [
+    {
+      "name": "M0",
+      "k": 0,
+      "aic": -120.99213013553478,
+      "aicc": -120.89910687972083,
+      "bic": -119.18546764576446
+    },
+    {
+      "name": "M1c",
+      "k": 4,
+      "aic": -139.40362098712959,
+      "aicc": -137.86515944866804,
+      "bic": -130.37030853827798
+    },
+    {
+      "name": "M2",
+      "k": 5,
+      "aic": -151.32556184555975,
+      "aicc": -149.11503552977027,
+      "bic": -140.48558690693784
+    },
+    {
+      "name": "M3",
+      "k": 6,
+      "aic": -154.24799933575932,
+      "aicc": -151.22097230873229,
+      "bic": -141.60136190736708
+    }
+  ],
+  "verdict": "B″ (M3) is the definitive winner across all criteria"
 }
