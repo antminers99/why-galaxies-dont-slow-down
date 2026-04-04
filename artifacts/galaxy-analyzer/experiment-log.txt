@@ -1678,3 +1678,45 @@ Files: scripts/phase32-cosmic-web.cjs
        public/phase32-cosmic-web.json
 
 ================================================================================
+
+Section 64: Phase 33 — Dark Halo Mass (M_halo)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 33.0.0
+DARK HALO DOOR — Variable 1
+
+M_HALO: 4/6 — PASS! SUPPRESSOR EFFECT!
+
+  Raw: r=-0.177, t=1.3 (near zero!)
+  After MHI: r=+0.307, t=2.3 (SIGN FLIP! suppressor!)
+  After MHI+wig: r=+0.428, t=3.4 (strongest partial in project!)
+  After MHI+wig+env: still strong
+  Perm p|MHI+wig: 0.0003**
+
+  LOO:
+    M_halo alone: -4.6% (hurts — raw near zero)
+    MHI+wig+Mh: +18.3% beyond MHI+wig!
+    MHI+wig+env+Mh: +18.0% beyond MHI+wig+env!
+
+  NEW BEST MODEL:
+    MHI + wig + env + logMhalo = 32.9% gap closure
+    (up from 14.9% — project record by far!)
+
+  The suppressor pattern means:
+    At fixed baryonic mass (MHI), galaxies with MORE halo → HIGHER a0
+    This is the "halo excess" signal.
+
+  CIRCULARITY NOTE: M_halo comes from V_flat/R_last (rotation curve)
+  which also determines a0. Shared measurement error possible.
+
+  f_DM BONUS: 5/6 PASS but doesn't add to MHI+wig+env in LOO
+
+  Dark halo door scorecard:
+    M_halo:        4/6 PASS (suppressor, +18% gap closure!)
+    f_DM (bonus):  5/6 PASS (but absorbed by env in LOO)
+    concentration: next
+
+Files: scripts/phase33-halo-mass.cjs
+       public/phase33-halo-mass.json
+
+================================================================================
