@@ -2345,3 +2345,13 @@ Replace vs add: REPLACEMENT better (+11.1pp vs +8.8pp)
 envCode t=-0.63 when logMhost present → REDUNDANT
 CONCLUSION: logMhost should REPLACE envCode in baselines.
 
+
+Section 99: Phase 58a4 — Frozen Updated Baselines
+--------------------------------------------------
+Date: 2026-04-04
+A': logMHI + wig + logMhost + logSigma0 → LOO=30.2% (old A: 22.4%)
+B': + logMeanRun → LOO=45.6% (old B: 34.4%), tau=0.175 dex
+logMhost replaces envCode. All coefficients: see Section 89.
+4 axes: gas mass, environmental depth, baryonic density, kinematic regularity
+Next: Phase 59 — true stellar mass-to-light
+

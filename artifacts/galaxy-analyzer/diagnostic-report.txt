@@ -6114,3 +6114,92 @@ RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
   The improvement is not a sample-selection artifact.
 
 ================================================================================
+
+================================================================================
+  SECTION 89: PHASE 58a4 — FROZEN UPDATED BASELINES (logMhost replaces envCode)
+================================================================================
+
+  Date: 2026-04-04
+  Sample: N=45 (published logMhost from UNGC + Kourkchi-Tully 2017)
+  sdY = 0.258 dex
+
+  ─────────────────────────────────────────────────────────────────────────
+  BASELINE A' (conservative, FROZEN)
+  ─────────────────────────────────────────────────────────────────────────
+
+  log(a0) = 5.52 - 0.19*logMHI + 1.46*wig - 0.20*logMhost + 0.17*logSigma0
+
+  Coefficients:
+    Intercept:    5.517  (t= 7.75)  CI=[4.286, 6.953]
+    logMHI:      -0.189  (t=-3.21)  CI=[-0.298,-0.080]
+    rcWiggliness: 1.464  (t= 1.17)  CI=[-0.951, 4.627]
+    logMhost:    -0.202  (t=-3.54)  CI=[-0.314,-0.100]
+    logSigma0:    0.171  (t= 2.17)  CI=[-0.039, 0.321]
+
+  R2adj = 0.388
+  SE = 0.202 dex
+  LOO gap% = 30.2%
+
+  vs OLD A (envCode): R2adj 0.344→0.388, LOO 22.4%→30.2% (+7.8pp)
+
+  ─────────────────────────────────────────────────────────────────────────
+  BASELINE B' (extended, FROZEN)
+  ─────────────────────────────────────────────────────────────────────────
+
+  log(a0) = 4.72 - 0.24*logMHI + 1.27*wig - 0.16*logMhost + 0.17*logSigma0
+            + 0.46*logMeanRun
+
+  Coefficients:
+    Intercept:    4.720  (t= 7.23)  CI=[3.627, 5.906]
+    logMHI:      -0.244  (t=-4.59)  CI=[-0.353,-0.154]
+    rcWiggliness: 1.274  (t= 1.17)  CI=[-0.919, 4.277]
+    logMhost:    -0.162  (t=-3.21)  CI=[-0.252,-0.079]
+    logSigma0:    0.173  (t= 2.53)  CI=[ 0.012, 0.302]
+    logMeanRun:   0.459  (t= 3.76)  CI=[ 0.206, 0.671]
+
+  R2adj = 0.540
+  SE = 0.175 dex
+  LOO gap% = 45.6%
+  Residual tau = 0.175 dex
+
+  vs OLD B (envCode): R2adj 0.463→0.540, LOO 34.4%→45.6% (+11.1pp)
+  tau: 0.189→0.175 dex (reduction of 0.014 dex)
+
+  ─────────────────────────────────────────────────────────────────────────
+  COMPARISON SUMMARY
+  ─────────────────────────────────────────────────────────────────────────
+
+                   OLD (envCode)    NEW (logMhost)    DELTA
+  A R2adj:           0.344            0.388          +0.045
+  A LOO:             22.4%            30.2%          +7.8pp
+  B R2adj:           0.463            0.540          +0.077
+  B LOO:             34.4%            45.6%          +11.1pp
+  B tau:             0.189            0.175          -0.014
+
+  Residual variance still unexplained:
+    B' leaves 54.4% of variance (1 - 45.6%)
+    tau_residual = 0.175 dex
+
+  ─────────────────────────────────────────────────────────────────────────
+  FOUR AXES OF a0 VARIATION (B' model)
+  ─────────────────────────────────────────────────────────────────────────
+
+  1. Gas mass axis:     logMHI (coeff=-0.24, t=-4.59)
+     More gas → lower a0. IQR effect = -0.171 dex. STRONGEST.
+
+  2. Environmental depth: logMhost (coeff=-0.16, t=-3.21)
+     Deeper tidal field → lower a0. IQR effect = -0.097 dex.
+
+  3. Baryonic density:  logSigma0 (coeff=+0.17, t=+2.53)
+     Higher central density → higher a0. IQR effect = +0.092 dex.
+
+  4. Kinematic regularity: logMeanRun (coeff=+0.46, t=+3.76)
+     Smoother RC → higher a0. IQR effect = +0.099 dex.
+
+  5. RC wiggliness:    rcWiggliness (coeff=+1.27, t=+1.17)
+     Noisy residual structure → higher a0. IQR effect = +0.038 dex.
+     Weakest variable; bootstraps include zero.
+
+  Residuals: only 2/45 have |resid| > 0.3 dex (UGC06786, NGC5371).
+
+================================================================================
