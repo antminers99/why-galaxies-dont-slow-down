@@ -1,0 +1,67 @@
+{
+  "version": "37.0.0",
+  "timestamp": "2026-04-04T15:44:52.358Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 14.9
+  },
+  "proxies": [
+    {
+      "name": "rho0_obs",
+      "circ": "HIGH",
+      "rawR": 0.304,
+      "rawT": 2.3,
+      "baseR": 0.243,
+      "baseT": 1.8,
+      "looGC": 19.2,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "Sigma0_bar",
+      "circ": "LOW",
+      "rawR": 0.013,
+      "rawT": 0.1,
+      "baseR": 0.351,
+      "baseT": 2.7,
+      "looGC": 27.8,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "gobs_central",
+      "circ": "HIGHEST",
+      "rawR": 0.154,
+      "rawT": 1.1,
+      "baseR": 0.338,
+      "baseT": 2.6,
+      "looGC": 25.1,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "rho0_pseudo",
+      "circ": "HIGH",
+      "rawR": 0.247,
+      "rawT": 1.9,
+      "baseR": 0.207,
+      "baseT": 1.5,
+      "looGC": 17.2,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "Mdyn_inner",
+      "circ": "HIGH",
+      "rawR": -0.276,
+      "rawT": 2.1,
+      "baseR": 0.277,
+      "baseT": 2.1,
+      "looGC": 17.6,
+      "adds": true,
+      "verdict": "PROMISING"
+    }
+  ],
+  "bestProxy": "Sigma0_bar",
+  "finalVerdict": "CONFIRMED"
+}

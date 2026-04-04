@@ -1803,3 +1803,27 @@ R_s: PARTIAL (Rs_Vrise 4/4 fast, deep tests mixed)
   Next: rho_0 (central density)
 
 ================================================================================
+
+Section 69: Phase 37 — Central Density (rho_0)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 37.0.0 — FAST PROTOCOL
+
+rho_0: Sigma0_bar CONFIRMED (3/4 fast, deep strong)
+
+  Sigma0_bar: |baseline r=0.351 t=2.7, perm p=0.0065***
+  Bootstrap [0.062, 0.579] excludes zero. LOO +12.9%.
+  LOW circularity (photometric). SUPPRESSOR pattern.
+  
+  BUT: |baseline+Vflat r=0.091 (absorbed by V_flat).
+  All 5 density proxies absorbed by V_flat.
+  
+  Physical interpretation: at fixed MHI, denser baryons → higher a0.
+  
+  Baseline UNCHANGED: MHI + wig + env = 14.9%
+  
+  Door: M_halo PARTIAL, c FAIL, Vf PASS+CIRC, Rs PARTIAL,
+        rho0 CONFIRMED (Sigma0_bar, but =Vflat)
+  Next: f_DM
+
+================================================================================

@@ -4893,3 +4893,37 @@ RESULT: Rs_Vrise 4/4 FAST PASS but DEEP TESTS MIXED → PARTIAL
   don't confirm at conventional levels. Not added to baseline.
 
 ================================================================================
+
+================================================================================
+  SECTION 58: PHASE 37 — rho_0 (Central Density)
+  Version 37.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: Sigma0_bar CONFIRMED (3/4 fast, deep tests strong)
+  BUT absorbed by V_flat.
+
+  5 proxies tested. ALL 5 pass fast screen (all PROMISING).
+  Best proxy: Sigma0_bar (baryonic surface density, LOW circularity)
+
+  Sigma0_bar RESULTS:
+    Raw: r=0.013, t=0.1 (SUPPRESSOR — near zero raw!)
+    |baseline: r=0.351, t=2.7 (SURVIVES — strong suppressor)
+    |baseline+Vflat: r=0.091, t=0.6 (ABSORBED by V_flat!)
+    Perm |baseline: p=0.0065*** (highly significant!)
+    Bootstrap: [0.062, 0.579] EXCLUDES ZERO
+    Jackknife: 0/56 sign flips
+    LOO: baseline+Sigma0 = 27.8% gap closure (+12.9% over baseline!)
+
+  CRITICAL: ALL 5 density proxies vanish after controlling V_flat.
+  This means central density carries the SAME information as V_flat
+  in predicting a0 variation. Not independent discoveries.
+
+  HOWEVER: Sigma0_bar is EXTERNAL (photometric, zero circularity).
+  This means the V_flat signal may have a physical interpretation:
+  galaxies with higher baryonic surface density → higher a0
+  (after controlling for total baryonic mass).
+
+  This is potentially the most physically interpretable finding yet:
+  At fixed MHI, denser baryon distribution → higher a0.
+
+================================================================================
