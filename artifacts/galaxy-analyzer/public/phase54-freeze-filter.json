@@ -1,0 +1,329 @@
+{
+  "version": "54.0.0",
+  "timestamp": "2026-04-04T17:03:55.968Z",
+  "nGalaxies": 56,
+  "baselines": {
+    "conservative": {
+      "vars": [
+        "MHI",
+        "rcWiggliness",
+        "envCode",
+        "Sigma0_bar"
+      ],
+      "gc": 27.8
+    },
+    "extended": {
+      "vars": [
+        "MHI",
+        "rcWiggliness",
+        "envCode",
+        "Sigma0_bar",
+        "meanRun"
+      ],
+      "gc": 38.1
+    }
+  },
+  "confirmedRegistry": [
+    {
+      "name": "log(MHI)",
+      "status": "CONFIRMED",
+      "circ": "ZERO",
+      "baseline": "A+B",
+      "door": "Galaxy History"
+    },
+    {
+      "name": "rcWiggliness",
+      "status": "CONFIRMED",
+      "circ": "MED",
+      "baseline": "A+B",
+      "door": "Gas/Kinematics"
+    },
+    {
+      "name": "envCode",
+      "status": "CONFIRMED",
+      "circ": "ZERO",
+      "baseline": "A+B",
+      "door": "Environment"
+    },
+    {
+      "name": "Sigma0_bar",
+      "status": "CONFIRMED",
+      "circ": "ZERO",
+      "baseline": "A+B",
+      "door": "DM Halo"
+    },
+    {
+      "name": "meanRun",
+      "status": "CONFIRMED",
+      "circ": "MED",
+      "baseline": "B only",
+      "door": "Internal Structure"
+    },
+    {
+      "name": "logVflat",
+      "status": "CONFIRMED*",
+      "circ": "ZERO",
+      "baseline": "neither",
+      "door": "History (collinear)"
+    },
+    {
+      "name": "tBst/Rd",
+      "status": "CONFIRMED*",
+      "circ": "MED",
+      "baseline": "neither",
+      "door": "Structure (no LOO)"
+    },
+    {
+      "name": "wigRatio",
+      "status": "CONFIRMED*",
+      "circ": "MED",
+      "baseline": "neither",
+      "door": "Kin (=wiggliness)"
+    }
+  ],
+  "partialResults": [
+    {
+      "name": "outerOsc",
+      "circ": "MED",
+      "note": "outer RAR zero-crossings",
+      "cons": {
+        "r": -0.022,
+        "t": 0.2,
+        "loo": 26.5,
+        "permP": 0.8733,
+        "boot": [
+          -0.295,
+          0.215
+        ],
+        "excludesZero": false
+      },
+      "work": {
+        "r": 0.22,
+        "t": 1.6,
+        "loo": 40.6,
+        "permP": 0.1077,
+        "boot": [
+          -0.053,
+          0.432
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": -0.56,
+        "MHI": -0.07,
+        "wig": -0.2
+      },
+      "verdict": "DISCARD"
+    },
+    {
+      "name": "tBst/Rd",
+      "circ": "MED",
+      "note": "boost transition radius",
+      "cons": {
+        "r": -0.026,
+        "t": 0.2,
+        "loo": 25.5,
+        "permP": 0.8332,
+        "boot": [
+          -0.307,
+          0.258
+        ],
+        "excludesZero": false
+      },
+      "work": {
+        "r": -0.005,
+        "t": 0,
+        "loo": 35.8,
+        "permP": 0.9679,
+        "boot": [
+          -0.276,
+          0.27
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": -0.2,
+        "MHI": -0.39,
+        "wig": -0.51
+      },
+      "verdict": "DISCARD"
+    },
+    {
+      "name": "RsVrise",
+      "circ": "LOW",
+      "note": "peak-V radius / Rdisk",
+      "cons": {
+        "r": -0.039,
+        "t": 0.3,
+        "loo": 25,
+        "permP": 0.7751,
+        "boot": [
+          -0.34,
+          0.26
+        ],
+        "excludesZero": false
+      },
+      "work": {
+        "r": -0.019,
+        "t": 0.1,
+        "loo": 34.9,
+        "permP": 0.8931,
+        "boot": [
+          -0.332,
+          0.268
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": -0.23,
+        "MHI": -0.41,
+        "wig": -0.49
+      },
+      "verdict": "DISCARD"
+    },
+    {
+      "name": "innerRise",
+      "circ": "LOW",
+      "note": "inner RC rise rate",
+      "cons": {
+        "r": 0.152,
+        "t": 1.1,
+        "loo": 25.6,
+        "permP": 0.2581,
+        "boot": [
+          -0.161,
+          0.437
+        ],
+        "excludesZero": false
+      },
+      "work": {
+        "r": 0.105,
+        "t": 0.7,
+        "loo": 34.4,
+        "permP": 0.441,
+        "boot": [
+          -0.246,
+          0.427
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": -0.02,
+        "MHI": -0.45,
+        "wig": -0.12
+      },
+      "verdict": "DISCARD"
+    },
+    {
+      "name": "nPts",
+      "circ": "LOW",
+      "note": "number of data points",
+      "cons": {
+        "r": 0.259,
+        "t": 1.9,
+        "loo": 28.8,
+        "permP": 0.0549,
+        "boot": [
+          0.041,
+          0.467
+        ],
+        "excludesZero": true
+      },
+      "work": {
+        "r": 0.033,
+        "t": 0.2,
+        "loo": 36.5,
+        "permP": 0.8012,
+        "boot": [
+          -0.17,
+          0.273
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": 0.68,
+        "MHI": 0.13,
+        "wig": 0.17
+      },
+      "verdict": "WEAK (partial pass only)"
+    },
+    {
+      "name": "outerFrac",
+      "circ": "LOW",
+      "note": "outer disk fraction",
+      "cons": {
+        "r": -0.236,
+        "t": 1.7,
+        "loo": 31.6,
+        "permP": 0.0803,
+        "boot": [
+          -0.464,
+          0.003
+        ],
+        "excludesZero": false
+      },
+      "work": {
+        "r": -0.123,
+        "t": 0.9,
+        "loo": 37.6,
+        "permP": 0.3617,
+        "boot": [
+          -0.349,
+          0.128
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": -0.41,
+        "MHI": -0.1,
+        "wig": -0.39
+      },
+      "verdict": "DISCARD"
+    },
+    {
+      "name": "maxJump",
+      "circ": "MED",
+      "note": "max RC gradient",
+      "cons": {
+        "r": 0.319,
+        "t": 2.4,
+        "loo": 33.7,
+        "permP": 0.0135,
+        "boot": [
+          0.007,
+          0.54
+        ],
+        "excludesZero": true
+      },
+      "work": {
+        "r": 0.205,
+        "t": 1.5,
+        "loo": 36.8,
+        "permP": 0.1255,
+        "boot": [
+          -0.117,
+          0.434
+        ],
+        "excludesZero": false
+      },
+      "collinearity": {
+        "meanRun": 0.35,
+        "MHI": -0.31,
+        "wig": 0.32
+      },
+      "verdict": "SECONDARY SURVIVOR (adds over conservative only)"
+    }
+  ],
+  "survivors": [
+    "maxJump"
+  ],
+  "marginals": [],
+  "discarded": [
+    "outerOsc",
+    "tBst/Rd",
+    "RsVrise",
+    "innerRise",
+    "nPts",
+    "outerFrac"
+  ]
+}
