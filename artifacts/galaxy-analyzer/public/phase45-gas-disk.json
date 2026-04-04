@@ -1,0 +1,96 @@
+{
+  "version": "45.0.0",
+  "timestamp": "2026-04-04T16:20:22.964Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "h_gas",
+      "circ": "LOW",
+      "note": "estimated gas scale height",
+      "rawR": -0.013,
+      "rawT": 0.1,
+      "newBLr": 0,
+      "newBLt": 0,
+      "looGC": 27.8,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "h/Rdisk",
+      "circ": "LOW",
+      "note": "relative gas thickness",
+      "rawR": 0.234,
+      "rawT": 1.8,
+      "newBLr": -0.026,
+      "newBLt": 0.2,
+      "looGC": 25.7,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "RHI/Rd",
+      "circ": "ZERO",
+      "note": "HI flaring proxy (external)",
+      "rawR": 0.171,
+      "rawT": 1.3,
+      "newBLr": 0.029,
+      "newBLt": 0.2,
+      "looGC": 25.1,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Sig_HI",
+      "circ": "ZERO",
+      "note": "HI surface density",
+      "rawR": -0.074,
+      "rawT": 0.5,
+      "newBLr": -0.127,
+      "newBLt": 0.9,
+      "looGC": 26.2,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "gas/star",
+      "circ": "ZERO",
+      "note": "gas fraction (external)",
+      "rawR": 0.104,
+      "rawT": 0.8,
+      "newBLr": -0.026,
+      "newBLt": 0.2,
+      "looGC": 25.7,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "diskComp",
+      "circ": "ZERO",
+      "note": "-SBdisk",
+      "rawR": 0.102,
+      "rawT": 0.8,
+      "newBLr": 0.057,
+      "newBLt": 0.4,
+      "looGC": 27.1,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "outerBst",
+      "circ": "HIGH",
+      "note": "outer gobs/gbar (circular!)",
+      "rawR": 0.607,
+      "rawT": 5.6,
+      "newBLr": 0.508,
+      "newBLt": 4.2,
+      "looGC": 44.3,
+      "adds": true,
+      "verdict": "PROMISING"
+    }
+  ],
+  "bestProxy": "outerBst",
+  "finalVerdict": "CONFIRMED"
+}

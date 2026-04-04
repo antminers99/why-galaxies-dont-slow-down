@@ -1996,3 +1996,26 @@ nPts: CONFIRMED by fast (3/3) but deep tests weak
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 78: Phase 45 — Gas Disk Thickness / Flaring
+------------------------------------------------------
+Date: 2026-04-04
+Version: 45.0.0 — FAST PROTOCOL
+
+Gas disk thickness: FAIL
+  6 genuine proxies: all FAIL or FAIL-FAST.
+  h_gas = 1/Sigma0_bar (already in baseline, r=-1.00).
+  outerBst: numerically strong but SEVERE circularity (discard).
+
+  Gas/Kinematics Door:
+    sigma_gas:       FAIL (=Vflat)
+    non-circular:    wigRatio CONFIRMED
+    bar strength:    PARTIAL (innerRise)
+    spiral/warp:     PARTIAL (outerOsc suppressor)
+    beam smearing:   nPts borderline
+    gas disk thick:  FAIL
+    Next: HI extent (last variable)
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================

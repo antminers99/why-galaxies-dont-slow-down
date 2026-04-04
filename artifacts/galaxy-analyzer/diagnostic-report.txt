@@ -5267,3 +5267,36 @@ RESULT: nPts CONFIRMED by fast criteria, but deep tests weak
     a0 variation is NOT a trivial resolution artifact.
 
 ================================================================================
+
+================================================================================
+  SECTION 66: PHASE 45 — Gas Disk Thickness / Flaring
+  Version 45.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: FAIL for genuine gas disk proxies. outerBst = mechanical artifact.
+
+  7 proxies tested:
+
+  GENUINE GAS DISK PROXIES (all FAIL):
+    h_gas:      |BL t=0.0 FAIL-FAST. Note: r=-1.00 with Sigma0_bar!
+                (h_gas = sigma^2/pi*G*Sigma = 1/Sigma0_bar, already in BL)
+    h/Rdisk:    |BL t=0.2 WEAK
+    RHI/Rd:     |BL t=0.2 WEAK (flaring proxy)
+    Sig_HI:     |BL t=0.9 FAIL-FAST
+    gas/star:   |BL t=0.2 FAIL-FAST
+    diskComp:   |BL t=0.4 FAIL-FAST
+
+  CIRCULAR PROXY (discard):
+    outerBst:   |BL t=4.2, LOO 44.3%, perm p=0.0001***
+                BUT: mean(gobs/gbar) in outer half.
+                CIRCULARITY = SEVERE.
+                If a0 is higher → gobs/gbar is higher everywhere.
+                This is MECHANICAL coupling, not physics.
+                Gets STRONGER after Vflat (r=0.637!) ← red flag.
+
+  CORRECTED VERDICT: FAIL
+    No genuine gas disk variable adds above baseline.
+    h_gas is literally 1/Sigma0_bar (already captured).
+    Gas thickness/flaring does NOT explain a0 variation.
+
+================================================================================
