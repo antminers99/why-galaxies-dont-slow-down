@@ -4574,3 +4574,55 @@ CONCLUSION:
   add information beyond the binary group membership classification.
 
 ================================================================================
+
+================================================================================
+  SECTION 50: PHASE 30 — DISTANCE FROM GROUP/CLUSTER CENTER
+  Version 30.0.0
+  LAST VARIABLE IN ENVIRONMENT DOOR
+  Tested ONLY on group/cluster members (n=19)
+================================================================================
+
+RESULT: 2/6 CRITERIA — FAIL
+
+Within-group subsample (n=19):
+  dCenter raw:       r=-0.195, t=0.8 (FAILS)
+  dCenter |MHI:      r=-0.247, t=1.0 (FAILS)
+  dCenter |MHI+wig:  r=-0.260, t=1.0 (FAILS)
+  Perm p |MHI: 0.31 (not significant)
+  LOO: dCenter adds -0.5% beyond envCode (nothing)
+
+UMa cluster internal test (n=10):
+  dCenter vs delta_a0: weak, not significant
+
+INTERPRETATION:
+  Where a galaxy sits WITHIN a group does not predict its a0.
+  This is consistent with the threshold effect interpretation:
+  entering the group environment affects a0, but depth within
+  the group potential does not proportionally increase the effect.
+
+ENVIRONMENT DOOR: OFFICIALLY CLOSED
+══════════════════════════════════════════════════════════════════
+  Variable                    Result   Adds beyond envCode?
+  ──────────────────────────────────────────────────────────
+  group membership (envCode)  6/6 PASS  — baseline —
+  satellite vs central        1/6 FAIL  NO
+  nearest neighbor distance   1/6 FAIL  NO
+  tidal index (Θ)             1/6 FAIL  NO
+  local density (rho)         4/6 PASS  NO (redundant, r=0.92)
+  distance from center        2/6 FAIL  NO
+══════════════════════════════════════════════════════════════════
+
+FINAL CONCLUSION FOR ENVIRONMENT DOOR:
+  The environmental signal in a0 is CATEGORICAL.
+  Group membership (field vs group vs cluster) is the only variable
+  that survived all tests. Every continuous environmental measure
+  either failed outright or was perfectly redundant with envCode.
+
+  Physical interpretation: THRESHOLD EFFECT.
+  Group processing (ram pressure, harassment, preprocessing)
+  modifies a0 upon entry, but the intensity/duration/depth of
+  environmental influence does not proportionally increase the effect.
+
+  Best model unchanged: MHI + rcWiggliness + envCode = 14.9% gap closure.
+
+================================================================================

@@ -1565,3 +1565,45 @@ Files: scripts/phase29-local-density.cjs
        public/phase29-local-density.json
 
 ================================================================================
+
+Section 61: Phase 30 — Distance from Group/Cluster Center
+------------------------------------------------------
+Date: 2026-04-04
+Version: 30.0.0
+LAST VARIABLE IN ENVIRONMENT DOOR
+
+DISTANCE FROM CENTER: 2/6 — FAIL
+
+  Tested ONLY on group/cluster members (n=19).
+  dCenter raw: r=-0.195, t=0.8 (FAILS)
+  dCenter |MHI: r=-0.247, t=1.0 (FAILS)
+  dCenter |MHI+wig: r=-0.260, t=1.0 (FAILS)
+  Permutation p=0.31 (not significant)
+  LOO adds -0.5% beyond envCode (nothing)
+
+  Position within group does NOT predict a0 variation.
+  Consistent with threshold effect interpretation.
+
+════════════════════════════════════════════════════════
+  ENVIRONMENT DOOR: OFFICIALLY CLOSED
+════════════════════════════════════════════════════════
+
+  Final scorecard:
+    group membership (envCode)    6/6 PASS ← ONLY SURVIVOR
+    satellite vs central          1/6 FAIL
+    nearest neighbor distance     1/6 FAIL
+    tidal index (Θ)               1/6 FAIL
+    local density (rho)           4/6 PASS (redundant r=0.92)
+    distance from center          2/6 FAIL
+
+  Conclusion: Environmental signal = THRESHOLD EFFECT.
+  Binary group membership captures it all.
+  No continuous environmental measure adds information.
+
+  Best model: MHI + rcWiggliness + envCode = 14.9% gap closure
+  (UNCHANGED since Phase 25)
+
+Files: scripts/phase30-group-distance.cjs
+       public/phase30-group-distance.json
+
+================================================================================

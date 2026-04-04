@@ -1,0 +1,39 @@
+{
+  "version": "30.0.0",
+  "timestamp": "2026-04-04T15:04:02.070Z",
+  "nGroupMembers": 19,
+  "nTotal": 56,
+  "dataQuality": {
+    "high": 5,
+    "medium": 10,
+    "low": 4
+  },
+  "withinGroupCorrelation": {
+    "raw": {
+      "r": -0.195,
+      "t": 0.8
+    },
+    "afterMHI": {
+      "r": -0.247,
+      "t": 1
+    },
+    "afterMHIWig": {
+      "r": -0.26,
+      "t": 1
+    },
+    "permP": 0.3123
+  },
+  "fullSampleLOO": {
+    "mhiWig": 11.5,
+    "mhiWigEnv": 14.9,
+    "mhiWigDC": 13.7,
+    "mhiWigEnvDC": 14.4
+  },
+  "successCriteria": {
+    "passed": 2,
+    "total": 6
+  },
+  "verdict": "PARTIAL",
+  "doorClosed": true,
+  "finalBestModel": "MHI + rcWiggliness + envCode = 14.9% gap closure"
+}
