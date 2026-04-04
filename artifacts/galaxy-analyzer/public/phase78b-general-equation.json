@@ -1,0 +1,53 @@
+{
+  "title": "General Equation Formalization",
+  "M3_general": {
+    "role": "First-order equation of state",
+    "formula_power": "a0 ~ A0 * MHI^(-1/5) * Mhost^(-1/6) * MeanRun^(1/2)",
+    "formula_log": "log(a0) = 5.182 - 0.198*logMHI - 0.155*logMhost + 0.459*logMeanRun",
+    "families": {
+      "gas_reservoir": {
+        "axis": "MHI",
+        "exponent": "-1/5",
+        "role": "suppression"
+      },
+      "environmental_depth": {
+        "axis": "Mhost",
+        "exponent": "-1/6",
+        "role": "suppression"
+      },
+      "dynamical_state": {
+        "axis": "MeanRun",
+        "exponent": "+1/2",
+        "role": "amplification"
+      }
+    },
+    "LOO": "44.1%",
+    "RMS": "0.193 dex",
+    "signal_retention": "86% of M5"
+  },
+  "M5_precision": {
+    "role": "M3 + second-order structural corrections",
+    "formula_power": "a0 = A0 * MHI^(-1/4) * Mhost^(-1/6) * Sigma0^(+1/7) * MeanRun^(+3/7) * 10^((2/3)*Ups_perp)",
+    "formula_log": "log(a0) = 4.978 - 0.236*logMHI - 0.172*logMhost + 0.145*logSigma0 + 0.452*logMeanRun + 0.658*Ups_perp",
+    "corrections_over_M3": [
+      {
+        "axis": "Sigma0",
+        "exponent": "+1/7",
+        "role": "baryon concentration correction"
+      },
+      {
+        "axis": "Ups_perp",
+        "exponent": "+2/3",
+        "role": "stellar structure correction"
+      }
+    ],
+    "LOO": "51.0%",
+    "RMS": "0.157 dex",
+    "improvement_over_M3": "+6.9 pp LOO"
+  },
+  "analogy": "M3 = ideal gas law; M5 = van der Waals equation",
+  "scope": {
+    "what_M3_is": "General equation of state on N=45 quality sample",
+    "what_M3_is_not": "Proven cosmic universal law for all galaxies"
+  }
+}

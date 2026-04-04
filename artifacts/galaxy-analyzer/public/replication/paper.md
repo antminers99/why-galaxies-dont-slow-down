@@ -171,13 +171,27 @@ M5 wins on every metric. M0 has *negative* LOO gap% — it predicts worse than t
 | $\log \overline{\text{Run}}$ | +0.452 | $+3/7$ | Dynamical coherence |
 | $\Upsilon_\star^\perp$ | +0.658 | $+2/3$ | Stellar structure |
 
-### 6.3 The M3 Compressed State Law
+### 6.3 The M3 Compressed State Law (General Equation)
+
+In power-law form:
+
+$$a_0 \approx A_0 \cdot M_\mathrm{HI}^{-1/5} \cdot M_\mathrm{host}^{-1/6} \cdot \overline{\text{Run}}^{1/2}$$
+
+Or equivalently in log-linear form:
 
 $$\log a_0 = 5.182 - 0.198 \log M_\mathrm{HI} - 0.155 \log M_\mathrm{host} + 0.459 \log \overline{\text{Run}}$$
 
-LOO = 44.1%, retaining 86% of M5's signal with only three predictors. This reads as an *equation of state*: given gas content, environmental depth, and dynamical coherence, $a_0$ is determined to $\sim$0.19 dex.
+LOO = 44.1%, retaining 86% of M5's signal with only three predictors. M3 serves as a *first-order equation of state*: given three macroscopic galaxy properties — gas reservoir, gravitational depth, and dynamical coherence — $a_0$ is determined to $\sim$0.19 dex.
 
-### 6.4 Structural Insight: Suppression vs Amplification
+### 6.4 Relationship Between M3 and M5
+
+M5 is formally M3 plus two second-order structural corrections:
+
+$$a_0 = \underbrace{A_0 \cdot M_\mathrm{HI}^{-1/4} \cdot M_\mathrm{host}^{-1/6} \cdot \overline{\text{Run}}^{3/7}}_{\text{first-order state law}} \times \underbrace{\Sigma_0^{1/7} \cdot 10^{(2/3)\Upsilon_\star^\perp}}_{\text{structural corrections}}$$
+
+The corrections add +6.9 percentage points of LOO performance and reduce RMS from 0.193 to 0.157 dex. By analogy: M3 is to M5 as the ideal gas law is to the van der Waals equation — M3 captures the dominant physics; M5 adds structural refinements for higher precision.
+
+### 6.5 Structural Insight: Suppression vs Amplification
 
 The five axes split into two physical families:
 
