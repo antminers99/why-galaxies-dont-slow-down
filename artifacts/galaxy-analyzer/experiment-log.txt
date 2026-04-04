@@ -1781,3 +1781,25 @@ V_FLAT: 3/4 FAST PASS — CONFIRMED but CIRCULAR
   Next: R_s (scale radius)
 
 ================================================================================
+
+Section 68: Phase 36 — Scale Radius (R_s)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 36.0.0 — FAST PROTOCOL
+
+R_s: PARTIAL (Rs_Vrise 4/4 fast, deep tests mixed)
+
+  Fast: raw t=2.7, |baseline t=1.8, LOO 17.2% (+2.3%), adds YES
+  Deep: perm p=0.083, bootstrap crosses zero, jackknife stable
+  Key: NOT absorbed by Vflat (r=-0.233 after Vflat control)
+  Direction: shorter V-rise → higher a0
+
+  5 other proxies (Rdisk, Rlast, Rs_NFW, Rs_iso, Rd/Rl) all fail.
+  Rdisk (EXTERNAL, zero circularity) absorbed by MHI.
+
+  Baseline UNCHANGED: MHI + wig + env = 14.9%
+
+  Door: M_halo PARTIAL, c FAIL, Vflat PASS+CIRC, Rs PARTIAL
+  Next: rho_0 (central density)
+
+================================================================================

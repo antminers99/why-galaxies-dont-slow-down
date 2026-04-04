@@ -4860,3 +4860,36 @@ RESULT: 3/4 FAST PASS — CONFIRMED but CIRCULARITY SEVERE
   V_flat = M_halo = same signal. Not two discoveries, ONE.
 
 ================================================================================
+
+================================================================================
+  SECTION 57: PHASE 36 — R_s (Scale Radius)
+  Version 36.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: Rs_Vrise 4/4 FAST PASS but DEEP TESTS MIXED → PARTIAL
+
+  6 proxies tested:
+    Rdisk (EXTERNAL): raw t=3.1 but |base t=0.8 → WEAK (absorbed by MHI)
+    Rlast: raw t=2.0 but |base t=0.9 → WEAK
+    Rs_NFW: same as Rlast (proportional) → WEAK
+    Rs_iso: t=0.1 raw → FAIL-FAST
+    Rs_Vrise: raw t=2.7, |base t=1.8 → PROMISING (only survivor)
+    Rdisk/Rlast: |base t=1.0 → WEAK
+
+  Rs_Vrise DEEP TESTS:
+    |baseline: r=-0.239, t=1.8 (MARGINAL)
+    |baseline+Vflat: r=-0.233, t=1.7 (MARGINAL — NOT absorbed by Vflat!)
+    Perm |baseline: p=0.0828 (NOT significant at 0.05)
+    Bootstrap CI: [-0.481, 0.055] CROSSES ZERO
+    Jackknife: 0/56 sign flips, stable
+
+  KEY: Rs_Vrise survives controlling for Vflat (r=-0.233 vs r=-0.239)
+  This means it's NOT just a Vflat proxy — it's measuring something different.
+  Direction: galaxies with SHORTER V-rise distance → HIGHER a0.
+  
+  CIRCULARITY: MODERATE (from RC shape, but not directly V_flat)
+
+  VERDICT: PARTIAL — promising signal but permutation and bootstrap
+  don't confirm at conventional levels. Not added to baseline.
+
+================================================================================

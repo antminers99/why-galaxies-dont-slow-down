@@ -1,0 +1,78 @@
+{
+  "version": "36.0.0",
+  "timestamp": "2026-04-04T15:38:31.785Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 14.9
+  },
+  "proxies": [
+    {
+      "name": "Rdisk",
+      "circ": "NONE",
+      "rawR": -0.385,
+      "rawT": 3.1,
+      "baseR": -0.105,
+      "baseT": 0.8,
+      "looGC": 12,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rlast",
+      "circ": "LOW",
+      "rawR": -0.262,
+      "rawT": 2,
+      "baseR": 0.12,
+      "baseT": 0.9,
+      "looGC": 14.4,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rs_NFW",
+      "circ": "LOW",
+      "rawR": -0.262,
+      "rawT": 2,
+      "baseR": 0.12,
+      "baseT": 0.9,
+      "looGC": 14.4,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rs_iso",
+      "circ": "MOD",
+      "rawR": -0.007,
+      "rawT": 0.1,
+      "baseR": 0.103,
+      "baseT": 0.7,
+      "looGC": 13.7,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "Rs_Vrise",
+      "circ": "MOD",
+      "rawR": -0.348,
+      "rawT": 2.7,
+      "baseR": -0.239,
+      "baseT": 1.8,
+      "looGC": 17.2,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "Rd/Rl",
+      "circ": "LOW",
+      "rawR": -0.178,
+      "rawT": 1.3,
+      "baseR": -0.143,
+      "baseT": 1,
+      "looGC": 15.7,
+      "adds": false,
+      "verdict": "WEAK"
+    }
+  ],
+  "bestProxy": "Rs_Vrise",
+  "finalVerdict": "CONFIRMED"
+}
