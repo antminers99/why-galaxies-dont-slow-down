@@ -1,0 +1,72 @@
+{
+  "version": "40.0.0",
+  "timestamp": "2026-04-04T15:58:43.397Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "sig/Vflat",
+      "circ": "LOW",
+      "note": "external (sigma=const, Vflat obs)",
+      "rawR": 0.078,
+      "rawT": 0.6,
+      "newBLr": -0.348,
+      "newBLt": 2.6,
+      "looGC": 35.9,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "P_shift",
+      "circ": "MOD",
+      "note": "uses RC data in re-fit",
+      "rawR": 0.089,
+      "rawT": 0.7,
+      "newBLr": -0.203,
+      "newBLt": 1.5,
+      "looGC": 24.7,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "P_import",
+      "circ": "LOW",
+      "note": "external (Rdisk + mean gobs)",
+      "rawR": 0.119,
+      "rawT": 0.9,
+      "newBLr": -0.229,
+      "newBLt": 1.7,
+      "looGC": 31.3,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "eV/V",
+      "circ": "LOW",
+      "note": "observational quality",
+      "rawR": 0.19,
+      "rawT": 1.4,
+      "newBLr": 0.038,
+      "newBLt": 0.3,
+      "looGC": 25.4,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "RC_scatter",
+      "circ": "MOD",
+      "note": "from RAR fit quality",
+      "rawR": 0.225,
+      "rawT": 1.7,
+      "newBLr": 0.063,
+      "newBLt": 0.4,
+      "looGC": 26.7,
+      "adds": false,
+      "verdict": "WEAK"
+    }
+  ],
+  "bestProxy": "sig/Vflat",
+  "finalVerdict": "CONFIRMED"
+}

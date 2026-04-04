@@ -1884,3 +1884,21 @@ f_DM(ref radius): PARTIAL (but circularity-dominated)
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 73: Phase 40 — Gas Velocity Dispersion
+------------------------------------------------------
+Date: 2026-04-04
+Version: 40.0.0 — FAST PROTOCOL
+
+sig/Vflat: CONFIRMED numerically but = 1/Vflat (r=-1.00 with Vflat).
+  After Vflat control: r=0.000, t=0.0. NOT a new signal.
+  P_import: same story (dies after Vflat).
+
+  CORRECTED VERDICT: FAIL as independent gas variable.
+  = V_flat in disguise (same circularity).
+
+  Gas/Kinematics Door — Variable 1: sigma_gas = FAIL (= V_flat)
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================

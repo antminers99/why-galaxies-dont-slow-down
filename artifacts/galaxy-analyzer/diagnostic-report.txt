@@ -5047,3 +5047,38 @@ RESULT: PARTIAL — but dominated by circularity concerns
   4. Mechanically coupled to a₀ fitting (f_DM ref radius)
 
 ================================================================================
+
+================================================================================
+  SECTION 61: PHASE 40 — Gas Velocity Dispersion
+  Version 40.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: CONFIRMED numerically BUT = V_flat in disguise
+
+  Tested against NEW baseline: MHI + wig + env + Sigma0_bar = 27.8%
+
+  5 proxies tested:
+    sig/Vflat:   |newBL r=-0.348 t=2.6, LOO 35.9%, perm p=0.0083***  PROMISING
+    P_import:    |newBL r=-0.229 t=1.7, LOO 31.3%, perm p=0.090      MARGINAL
+    P_shift:     |newBL r=-0.203 t=1.5                                 WEAK
+    eV/V:        |newBL r=0.038 t=0.3                                  WEAK
+    RC_scatter:  |newBL r=0.063 t=0.4                                  WEAK
+
+  CRITICAL ISSUE: sig/Vflat = 10/Vflat (sigma_HI is constant=10 km/s)
+    Collinearity with Vflat: r = -1.00 (PERFECT)
+    After controlling for Vflat: r = -0.000, t = 0.0 (ZERO)
+
+  This is NOT gas velocity dispersion. It IS V_flat.
+  Same suppressor as V_flat: raw r~0, strong after baseline control.
+  Same circularity concern (V_flat enters rotation curve).
+
+  P_import also dies after Vflat control (r=0.006, t=0.0).
+  Both proxies are just V_flat / Rdisk transformations.
+
+  CORRECTED VERDICT: FAIL as independent gas variable.
+  Signal is entirely V_flat, which was already classified
+  PASS+CIRCULAR in Phase 35.
+
+  No new information from gas dispersion proxies.
+
+================================================================================
