@@ -1,0 +1,45 @@
+{
+  "phase": "81b",
+  "title": "Diagnostic External Tests",
+  "m2prime": {
+    "description": "logMHI + logMeanRun only (no Mhost)",
+    "frozenBeta": [
+      3.2702737635367924,
+      -0.2395818162212242,
+      0.5659619396412126
+    ],
+    "looGapPct": 32.1,
+    "nExternal": 46,
+    "rmsM0": 0.4923,
+    "rmsM2p": 0.6053,
+    "biasM2p": 0.3791,
+    "gapPct": -120,
+    "spearman": -0.297,
+    "pearson": -0.243,
+    "winRate": 32.6
+  },
+  "m3fair": {
+    "description": "logMHI + logMhost_vflat + logMeanRun (Vflat Mhost everywhere)",
+    "frozenBeta": [
+      1.9100231451194674,
+      -0.35766010240293866,
+      0.12721881617627012,
+      0.5691206979502184
+    ],
+    "nExternal": 36,
+    "rmsM0": 0.4236,
+    "rmsM3f": 0.4522,
+    "biasM3f": 0.2238,
+    "gapPct": -47.6,
+    "spearman": -0.013,
+    "pearson": 0.009,
+    "winRate": 47.2
+  },
+  "axisSigns": {
+    "logMHI_partial": 0.261,
+    "logMeanRun_partial": -0.088,
+    "mhiSignMatch": false,
+    "mrSignMatch": false
+  },
+  "verdict": "FAIL"
+}

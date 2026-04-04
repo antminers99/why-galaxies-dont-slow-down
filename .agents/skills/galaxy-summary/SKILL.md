@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-a₀ is NOT universal. It shows structured, galaxy-dependent variation (τ=0.264 dex). About 43% of the M0→M2 gap can be predicted from 6 observable properties spanning 4 physical domains (gas content, kinematics, environment, baryon density). The variables act additively (no interactions) and are independent (max |r|=0.37). The remaining ~57% is irreducible with SPARC data alone — it represents either true physical variation in the acceleration scale or a deep state variable not accessible from 1D rotation curves and single-band photometry. Resolution requires external data: IFU spectroscopy, multi-band SED fitting, 2D velocity fields, or resolved stellar population maps.
+a₀ shows structured, galaxy-dependent variation within the N=45 training set (τ=0.264 dex). About 51% of the M0→M2 gap can be predicted from 5 observable properties (M5 law). However, **external validation on SPARC-out galaxies FAILS**: frozen M3 coefficients applied to 36-46 external galaxies perform worse than the trivial M0 baseline, and axis signs reverse. The multi-axis law is a **sample-specific finding** — statistically real within N=45 (not overfitting) but does NOT generalize to the broader SPARC population. This may reflect selection effects from the published-distance criterion rather than a population-level physical law.
 
 ## Decisive Negative Results (Phases 55-59)
 

@@ -16,6 +16,8 @@ I prefer detailed explanations and clear communication. Please ask before making
 
 **CRITICAL**: The PRIMARY report is now `artifacts/galaxy-analyzer/diagnostic-report.txt`. All future analysis work and edits go here. The old theoretical report (`galaxy-rotation-curve-analysis-full-report.txt`) is ARCHIVED — read-only reference.
 
+**CURRENT STATUS (Phase 81)**: The multi-axis a₀ law (M3/M5) passes all INTERNAL validation (LOO, nested CV, permutation p<0.001, bootstrap) but **FAILS external validation** on SPARC-out galaxies. Axis signs reverse on external data. The law is a sample-specific finding, not a population-level physical law. Paper updated to reflect this honestly.
+
 **Skills**: Four custom skills store all project data and context:
 - `galaxy-data` — Physical constants, dataset summaries, computed test results
 - `galaxy-analysis` — How to run scripts, edit reports, code patterns

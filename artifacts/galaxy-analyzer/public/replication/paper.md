@@ -6,13 +6,11 @@
 
 The radial acceleration relation (RAR) in disk galaxies is commonly parameterized by a single, supposedly universal acceleration scale $a_0 \approx 1.2 \times 10^{-10}$ m s$^{-2}$. We test whether galaxy-to-galaxy variation in the inferred $a_0$ is best described as (i) a strict universal constant, (ii) unstructured per-galaxy scatter, or (iii) a structured multi-axis law. Working with a quality-controlled subsample of $N = 45$ SPARC galaxies selected for published, high-quality distance estimates, we construct per-galaxy $a_0$ values and search for predictive structure.
 
-We find that a five-predictor power-law model (M5) — incorporating gas mass ($M_\mathrm{HI}^{-1/4}$), host-halo mass ($M_\mathrm{host}^{-1/6}$), central baryonic surface density ($\Sigma_0^{+1/7}$), kinematic coherence ($\overline{\mathrm{Run}}^{+3/7}$), and an orthogonalized stellar mass-to-light ratio ($\Upsilon_\star^{\perp\,+2/3}$) — explains 51.0% of the $\log a_0$ variance in leave-one-out cross-validation (LOO). A compressed three-axis state law (M3) retains 86% of this signal using only gas mass, host mass, and kinematic coherence (LOO = 44.1%).
+We find that within this sample, a five-predictor power-law model (M5) — incorporating gas mass ($M_\mathrm{HI}^{-1/4}$), host-halo mass ($M_\mathrm{host}^{-1/6}$), central baryonic surface density ($\Sigma_0^{+1/7}$), kinematic coherence ($\overline{\mathrm{Run}}^{+3/7}$), and an orthogonalized stellar mass-to-light ratio ($\Upsilon_\star^{\perp\,+2/3}$) — explains 51.0% of the $\log a_0$ variance in leave-one-out cross-validation (LOO). A compressed three-axis state law (M3) retains 86% of this signal using only gas mass, host mass, and kinematic coherence (LOO = 44.1%). A comprehensive overfitting audit — including nested cross-validation ($p < 0.001$ permutation), collinearity analysis (all VIF $< 1.3$), and bootstrap stability — confirms that the structured signal is not a fitting artifact within the training set.
 
-M5 produces 24/26 correct falsifiable predictions (92%), succeeds in 22/25 controlled matched-pair tests between individual galaxies (88%), and its kinematic-coherence axis is confirmed as a genuine 1D projection of 2D dynamical structure ($|r| = 0.83$ with THINGS velocity-field diagnostics). The 0.157 dex residual after M5 is a featureless Gaussian frontier with no subpopulation bias, no heteroscedasticity, and no bimodality.
+**However, external validation fails.** When frozen M3 coefficients are applied to 36–46 SPARC galaxies outside the training set (using rotation-curve data from CDS/VizieR with identically computed inputs), all model variants perform worse than the trivial universal-constant baseline. The partial correlations of logMHI and logMeanRun with $a_0$ reverse sign on external data.
 
-A comprehensive overfitting audit — including nested cross-validation with model selection inside the evaluation loop, 1,000-iteration full-pipeline permutation testing ($p < 0.001$), collinearity analysis (all VIF $< 1.3$), and bootstrap stability testing — confirms that the structured signal survives when the choice of model itself is part of the test.
-
-We conclude that $a_0$ variation across galaxies is structured, falsifiable, and pairwise-testable. The data favor interpreting $a_0$ as an emergent, state-dependent galaxy parameter — set by the tension between gravitational depth (which suppresses it) and baryonic organization (which amplifies it) — rather than a strictly universal acceleration scale.
+We conclude that $a_0$ variation within the $N = 45$ quality-controlled subsample is structured and statistically real (not a fitting artifact), but this structure is **sample-specific** and does not generalize to the broader SPARC population. The pattern may reflect selection effects arising from the published-distance criterion rather than a population-level physical law. These results caution against interpreting internal cross-validation alone as evidence for law discovery in small astrophysical samples.
 
 ---
 
@@ -331,43 +329,104 @@ The structured law survives nested cross-validation, fails to appear in null-per
 
 ---
 
-## 12. Limitations
+## 12. External Validation on SPARC-out Sample
 
-1. **Sample size**: $N = 45$. Cross-validation confirms internal generalizability, but extension to larger populations is essential.
-2. **Distance dependence**: The sample requires published distances, which may introduce selection effects.
-3. **$\Upsilon_\star^\perp$ construction**: Depends on the choice of confounders; different choices yield different values, though ours explains 68% of raw variance.
-4. **External transfer**: Phase 73 was inconclusive due to data quality, not confirmatory.
-5. **Intrinsic scatter**: $\sim$0.10 dex remains unexplained and may require resolved 2D kinematic data.
-6. **Interpretation**: We measure *inferred* $a_0$ variation. Disentangling genuine acceleration-scale variation from systematic modeling effects requires independent dynamical probes.
+### 12.1 Motivation and Protocol
+
+The robustness audit (Section 11) confirmed that the structured law survives internal cross-validation, permutation testing, and bootstrap resampling within the $N = 45$ training set. However, internal validation cannot rule out selection effects arising from the quality criteria that defined the training sample. To test genuine out-of-sample generalization, we apply frozen M3 coefficients — with no refitting — to SPARC galaxies excluded from the training set.
+
+We downloaded the complete SPARC rotation-curve dataset (Lelli et al. 2016, Table 2) from CDS/VizieR (J/AJ/152/157), providing Vobs, Vgas, Vdisk, Vbul for all 175 galaxies. Using the identical pipeline ($\Upsilon_\star^\mathrm{disk} = 0.5$, McGaugh RAR interpolation, golden-section $a_0$ fit, radial-run MeanRun computation), we computed per-galaxy $a_0$ and $\log\overline{\mathrm{Run}}$ for every galaxy. Pipeline validation on the 45 training galaxies confirmed excellent agreement: CDS-derived $a_0$ vs. original $a_0$ has RMS = 0.067 dex (mean bias $-$0.031), and CDS-derived $\log\overline{\mathrm{Run}}$ vs. original has RMS = 0.177 dex.
+
+After quality filtering (published-distance flag $f_D \geq 2$, $\log a_0 \geq 2.0$, $n \geq 5$ RC points, valid $V_\mathrm{flat}$ for Mhost estimation), 36–46 external galaxies remain. Since no external galaxy has a group-catalog $M_\mathrm{host}$ value (the group-catalog criterion was used to select the training set), $M_\mathrm{host}$ was estimated from $V_\mathrm{flat}$ using the baryonic Tully-Fisher proxy. We tested three model variants:
+
+1. **Frozen M3** (logMHI + logMhost$_\mathrm{Vflat}$ + logMeanRun): coefficients frozen from training.
+2. **M2$'$** (logMHI + logMeanRun only): drops Mhost entirely to avoid proxy contamination.
+3. **M3$_\mathrm{fair}$** (logMHI + logMhost$_\mathrm{Vflat}$ + logMeanRun): refitted on training using the same $V_\mathrm{flat}$ proxy for Mhost, ensuring identical input definitions across train and test.
+
+### 12.2 Results
+
+| Model | $N_\mathrm{ext}$ | RMS (dex) | RMS M0 | Gap% | Spearman | Win rate |
+|-------|------------------|-----------|--------|------|----------|----------|
+| M0 (baseline) | 46 | — | 0.492 | 0% | — | — |
+| M2$'$ frozen | 46 | 0.605 | 0.492 | $-$120% | $-$0.297 | 32.6% |
+| M3 frozen | 36 | 0.723 | 0.424 | $-$278% | $-$0.230 | 16.7% |
+| M3$_\mathrm{fair}$ | 36 | 0.452 | 0.424 | $-$48% | $-$0.013 | 47.2% |
+
+All three variants perform **worse** than the trivial M0 baseline (predicting the training mean for every galaxy). Negative gap% values indicate that the structured law adds noise rather than signal on external data.
+
+### 12.3 Axis Sign Reversal
+
+The most diagnostic finding is that partial correlations of the M3 axes with $a_0$ are **reversed** on external data relative to the training set:
+
+| Axis | Training partial $r$ | External partial $r$ | Signs match? |
+|------|---------------------|---------------------|--------------|
+| logMHI | negative ($-$0.198) | $+$0.261 | No |
+| logMeanRun | positive ($+$0.459) | $-$0.088 | No |
+
+Both axes have the wrong sign. This is not an issue of magnitude or noise — the *direction* of the relationships is reversed. The training-set pattern (higher gas mass $\to$ lower $a_0$; longer residual runs $\to$ higher $a_0$) does not hold in the broader SPARC population.
+
+### 12.4 Ruling Out Extrapolation
+
+Of 36 external galaxies with complete inputs, 35 fall within the training-set ranges for both logMHI ($-$0.86 to 1.52) and logMeanRun (0.34 to 1.40). The failure is not caused by extrapolation beyond the training domain.
+
+### 12.5 Interpretation
+
+The external failure has three possible explanations:
+
+1. **Selection-effect artifact**: The published-distance criterion ($f_D \geq 2$) that defines the $N = 45$ training set may introduce a selection bias that creates apparent structure in $a_0$ variation. Galaxies with published distances are biased toward nearby, well-studied objects with specific observational histories.
+
+2. **Mhost proxy contamination**: All external galaxies lack group-catalog $M_\mathrm{host}$ values, requiring a $V_\mathrm{flat}$-based proxy with $-$0.74 dex mean bias and 0.83 dex scatter relative to group-catalog values. However, the M2$'$ test (which drops Mhost entirely) also fails, suggesting this is not the sole explanation.
+
+3. **Sample-specific pattern**: The structured law may describe genuine but sample-specific correlations within the $N = 45$ subset that do not extend to the broader galaxy population.
+
+### 12.6 Verdict
+
+**The multi-axis law found in $N = 45$ does not generalize to the broader SPARC sample.** Internal cross-validation (LOO, nested CV, permutation) confirms that the pattern is real within the training set and not a fitting artifact. But external validation shows that this pattern does not transfer to galaxies selected under different criteria. The structured $a_0$ variation should be classified as a **sample-specific finding** pending confirmation on independently selected samples with group-catalog host masses and published distances.
 
 ---
 
-## 13. Conclusion
+## 13. Limitations
 
-On a quality-controlled sample of $N = 45$ SPARC galaxies with published distances, galaxy-to-galaxy variation in the inferred MOND acceleration scale $a_0$ is not best described by a strict universal constant, nor by unstructured per-galaxy scatter, but by a structured multi-axis law. The current best predictive formulation is the five-axis M5 law (LOO = 51.0%), while M3 provides a compressed physical reduction to three state axes: gas content, environmental depth, and dynamical coherence (LOO = 44.1%).
+1. **External generalization failure**: The structured law does not generalize to SPARC galaxies outside the $N = 45$ training set (Section 12). This is the most significant limitation and qualifies all claims made in this paper.
+2. **Sample size**: $N = 45$ with $p = 3$–5 parameters. Internal cross-validation passes, but the external failure suggests the internal signal may reflect selection effects rather than population-level structure.
+3. **Distance dependence**: The published-distance criterion ($f_D \geq 2$) may create a selection bias that generates apparent $a_0$ structure within the quality subsample.
+4. **$M_\mathrm{host}$ availability**: Group-catalog host masses are available only for the training set. External galaxies require $V_\mathrm{flat}$-based proxies with $-$0.74 dex mean bias. This entangles the sample selection with the predictor definition.
+5. **$\Upsilon_\star^\perp$ construction**: Depends on the choice of confounders; different choices yield different values.
+6. **Intrinsic scatter**: $\sim$0.10 dex remains unexplained.
+7. **Interpretation**: We measure *inferred* $a_0$ variation. The external failure makes it premature to claim this variation is physically real rather than methodologically induced.
 
-The law is falsifiable (24/26 quantitative predictions passed), succeeds in controlled pairwise comparisons between individual galaxies (22/25 matched pairs), and its kinematic-coherence axis has a confirmed 2D dynamical origin. The remaining 0.16 dex residual is a featureless Gaussian frontier with no additional scalar information extractable from the current data.
+---
 
-We identify a compressed first-order state law (M3) that captures the dominant macroscopic structure with three physical families, and a precision refinement (M5) that adds two second-order structural corrections. M3 is the general equation of state; M5 is its structurally corrected predictive extension.
+## 14. Conclusion
 
-The data favor interpreting $a_0$ as an emergent, state-dependent galaxy parameter — set by the tension between gravitational depth (which suppresses it) and baryonic organization (which amplifies it) — rather than a strictly universal acceleration scale. This result is framework-neutral: it constrains any theory, whether dark-matter-based or modified-dynamics-based, to reproduce a state-dependent effective acceleration scale.
+On a quality-controlled sample of $N = 45$ SPARC galaxies with published distances, galaxy-to-galaxy variation in the inferred MOND acceleration scale $a_0$ follows a structured multi-axis pattern within the training sample. The five-axis M5 law (LOO = 51.0%) and the compressed three-axis M3 (LOO = 44.1%) both outperform the universal-constant null model on internal cross-validation, permutation testing, bootstrap stability, and falsifiable prediction tests.
+
+**However, this structured pattern does not generalize to the broader SPARC population.** When frozen M3 coefficients are applied to 36–46 external SPARC galaxies (Section 12), all model variants perform worse than the trivial baseline. The partial correlations of logMHI and logMeanRun with $a_0$ reverse sign on external data, indicating that the relationships found in $N = 45$ do not hold for galaxies selected under different criteria.
+
+This creates a tension between strong internal evidence and failed external transfer. The internal tests — including nested cross-validation with model selection inside the evaluation loop ($p < 0.001$ permutation), zero collinearity (VIF $< 1.3$), and stable bootstrap coefficients — argue against simple overfitting. But the external failure argues against a population-level physical law.
+
+We conclude that the structured $a_0$ variation observed in $N = 45$ is a **sample-specific finding**: it is statistically real within the training set (not a fitting artifact) but does not extend to a general law of galaxy physics. The most likely explanations are:
+
+1. **Selection-induced structure**: The published-distance requirement may select a galaxy subpopulation where $a_0$ correlates with mass and kinematic properties in ways that do not hold for the broader population.
+2. **Mhost confound**: Group-catalog host masses (available only for the training set) may encode environmental information that $V_\mathrm{flat}$ proxies cannot replicate, making the external test structurally unfair for the Mhost axis — though the M2$'$ test (dropping Mhost entirely) also fails.
+
+These results caution against interpreting internal cross-validation alone as evidence for physical law discovery in small samples, even when permutation tests, bootstrap stability, and falsification metrics all pass. External validation on independently selected data remains the definitive test.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
-| Claim | Evidence |
-|-------|----------|
-| Not a universal constant | M0 loses to M5/M3 on LOO, AIC, BIC, bootstrap |
-| Not random scatter | Structured model repeatedly outperforms null |
-| Best predictive law = M5 | Death match: M5 defeats all competitors, LOO=51.0% |
-| Best state law = M3 | Compression: 3 axes retain 86% of M5, LOO=44.1% |
-| Law is falsifiable | 24/26 quantitative predictions passed (92%) |
-| Law works pairwise | 22/25 controlled pairs pass (88%), median |err|=0.165 dex |
-| MHI and Mhost independent | $f_\mathrm{gas}$ collapse loses $-$36.5 pp; exponents $-$1/4 vs $-$1/6 |
-| Kinematic axis is real | MeanRun correlates $|r|=0.83$ with 2D THINGS dynamics |
-| No 7th scalar axis | All candidates fail significance tests |
-| Residual is structureless | 0/7 strat. biases, BP=4.63, JB=1.22, Gaussian |
-| Physical interp. = state variable | Mass-suppression vs organization-amplification |
-| External transfer | Inconclusive (compromised test data) |
+| Claim | Evidence | Status |
+|-------|----------|--------|
+| Not a universal constant (within N=45) | M0 loses to M5/M3 on LOO, AIC, BIC, bootstrap | Confirmed internally |
+| Not random scatter (within N=45) | Structured model repeatedly outperforms null | Confirmed internally |
+| Best predictive law = M5 | Death match: M5 defeats all competitors, LOO=51.0% | Internal only |
+| Best state law = M3 | Compression: 3 axes retain 86% of M5, LOO=44.1% | Internal only |
+| Law is falsifiable | 24/26 quantitative predictions passed (92%) | Internal only |
+| Law works pairwise | 22/25 controlled pairs pass (88%), median |err|=0.165 dex | Internal only |
+| MHI and Mhost independent | $f_\mathrm{gas}$ collapse loses $-$36.5 pp; exponents $-$1/4 vs $-$1/6 | Internal only |
+| Kinematic axis is real | MeanRun correlates $|r|=0.83$ with 2D THINGS dynamics | Confirmed |
+| No 7th scalar axis | All candidates fail significance tests | Internal only |
+| Residual is structureless | 0/7 strat. biases, BP=4.63, JB=1.22, Gaussian | Internal only |
+| **External generalization** | **M3/M2$'$ fail on SPARC-out, axis signs reversed** | **Failed** |
 
 ---
 
