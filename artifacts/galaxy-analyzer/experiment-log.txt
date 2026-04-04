@@ -1720,3 +1720,18 @@ Files: scripts/phase33-halo-mass.cjs
        public/phase33-halo-mass.json
 
 ================================================================================
+
+Section 65: Phase 34 — Halo Concentration
+------------------------------------------------------
+Date: 2026-04-04
+Version: 34.0.0 — FAST PROTOCOL
+
+CONCENTRATION: FAIL (0/4 fast screen)
+
+  All 4 proxies fail fast screen. Best = Rdisk/Rlast (t=1.0 after baseline).
+  No proxy adds >1% LOO beyond baseline.
+  Deep tests skipped (fail-fast rule).
+
+  Dark halo door: M_halo 4/6 PASS; concentration FAIL; f_DM/spin next.
+
+================================================================================
