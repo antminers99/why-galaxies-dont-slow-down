@@ -1426,3 +1426,27 @@ Files: scripts/phase24-rcwig-validation.cjs
        public/phase24-rcwig-validation.json
 
 ================================================================================
+
+Section 56: Phase 25 — Environment: Group Membership
+------------------------------------------------------
+Date: 2026-04-04
+Version: 25.0.0
+
+ENVIRONMENT DOOR OPENED — FIRST VARIABLE: 6/6 PASS!
+
+  envCode vs delta_a0: r=-0.336, t=2.6
+  After MHI: r=-0.388, t=3.1 (suppressor effect!)
+  After MHI+wig: r=-0.292, t=2.2 (survives)
+  LOO alone: 7.4%, MHI+wig+env: 14.9% (best model ever!)
+  tau reduction: 18.5%
+
+  Direction: cluster/group → lower a0, field → higher a0
+  envCode vs rcWiggliness: r=-0.373 (field more wiggly)
+
+  This is the second independent predictor discovered.
+  Combined MHI + wig + env = 14.9% gap closure (project record).
+
+Files: scripts/phase25-group-membership.cjs
+       public/phase25-group-membership.json
+
+================================================================================

@@ -1,0 +1,331 @@
+{
+  "version": "25.0.0",
+  "timestamp": "2026-04-04T14:30:25.102Z",
+  "nGalaxies": 56,
+  "environmentCounts": {
+    "field": 36,
+    "group": 9,
+    "cluster": 10,
+    "unknown": 1
+  },
+  "fieldVsGroup": {
+    "fieldMeanA0": 4290,
+    "groupMeanA0": 2829,
+    "splitDex": 0.181,
+    "splitT": 2.68,
+    "fieldTau": 0.231,
+    "groupTau": 0.179
+  },
+  "correlations": {
+    "envCodeRaw": {
+      "r": -0.332,
+      "t": 2.6
+    },
+    "envCodeAfterMHI": {
+      "r": -0.388,
+      "t": 3.1
+    },
+    "envCodeAfterMHIWig": {
+      "r": -0.292,
+      "t": 2.2
+    }
+  },
+  "envVsWiggliness": {
+    "r": -0.373
+  },
+  "looGapClosed": {
+    "env": 7.4,
+    "group": 3.8,
+    "mhi": 7.4,
+    "mhiWig": 11.5,
+    "mhiWigEnv": 14.9,
+    "mhiWigGrp": 11.5
+  },
+  "successCriteria": {
+    "passed": 6,
+    "total": 6
+  },
+  "verdict": "SIGNIFICANT",
+  "galaxyAssignments": [
+    {
+      "name": "ESO563-G021",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "F571-8",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "IC4202",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC0024",
+      "env": "group",
+      "group": "Sculptor"
+    },
+    {
+      "name": "NGC0289",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC0801",
+      "env": "unknown",
+      "group": "unknown"
+    },
+    {
+      "name": "NGC0891",
+      "env": "group",
+      "group": "N1023"
+    },
+    {
+      "name": "NGC1003",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC1090",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC1705",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2403",
+      "env": "group",
+      "group": "M81"
+    },
+    {
+      "name": "NGC2683",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2841",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2903",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2915",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2955",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC2998",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC3198",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC3521",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC3726",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC3741",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC3769",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC3893",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4013",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4100",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4138",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4157",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4217",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "NGC4559",
+      "env": "cluster",
+      "group": "ComaI"
+    },
+    {
+      "name": "NGC5005",
+      "env": "group",
+      "group": "CVnI"
+    },
+    {
+      "name": "NGC5033",
+      "env": "group",
+      "group": "CVnI"
+    },
+    {
+      "name": "NGC5055",
+      "env": "group",
+      "group": "M51"
+    },
+    {
+      "name": "NGC5371",
+      "env": "group",
+      "group": "CVnI"
+    },
+    {
+      "name": "NGC5907",
+      "env": "group",
+      "group": "N5866"
+    },
+    {
+      "name": "NGC6015",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC6195",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC6503",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC6674",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "NGC7331",
+      "env": "group",
+      "group": "N7331"
+    },
+    {
+      "name": "NGC7814",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC00128",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC01281",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC02885",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC02916",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC02953",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC03205",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC03546",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC03580",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC05721",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC06786",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC06787",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC06973",
+      "env": "cluster",
+      "group": "UMa"
+    },
+    {
+      "name": "UGC08490",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC08699",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC09037",
+      "env": "field",
+      "group": "field"
+    },
+    {
+      "name": "UGC09133",
+      "env": "field",
+      "group": "field"
+    }
+  ]
+}

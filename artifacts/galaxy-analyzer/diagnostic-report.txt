@@ -4363,3 +4363,46 @@ EXTERNAL REPLICATION NEEDED:
   data reduction. Cannot be done with current dataset.
 
 ================================================================================
+
+================================================================================
+  SECTION 45: PHASE 25 — ENVIRONMENT: GROUP MEMBERSHIP
+  Version 25.0.0
+  FIRST VARIABLE IN "ENVIRONMENT & NEIGHBORS" DOOR
+================================================================================
+
+PURPOSE:
+  Test whether group/cluster membership predicts a0 variation.
+  First variable in the second investigation door.
+
+CLASSIFICATION:
+  56 galaxies: 36 field (64%), 9 group (16%), 10 cluster (18%), 1 unknown
+  Clusters: Ursa Major (8), Coma I (1), UGC06973 (1)
+  Groups: CVn I (3), M81 (1), M51 (1), NGC5866 (1), NGC7331 (1),
+          Sculptor (1), NGC1023 (1)
+
+SURPRISE RESULT: 6/6 CRITERIA MET — ALL PASS!
+
+  1. Clear correlation: r=-0.336, t=2.6 ← SIGNIFICANT
+  2. Independent of MHI: r=-0.388, t=3.1 ← STRONGER (suppressor!)
+  3. Independent of MHI+wig: r=-0.292, t=2.2 ← STILL SURVIVES
+  4. LOO-CV: 7.4% gap closure alone ← significant
+  5. Adds to MHI+wig: +3.4% (11.5% → 14.9%) ← YES
+  6. tau reduction: 18.5% ← substantial
+
+DIRECTION:
+  Cluster/group → LOWER a0
+  Field/isolated → HIGHER a0
+  Split: field a0 > group/cluster a0
+
+CRITICAL FINDING — ENVIRONMENT vs rcWiggliness:
+  envCode vs rcWiggliness: r=-0.373
+  Field galaxies are MORE wiggly than group/cluster galaxies!
+  Yet environment adds BEYOND wiggliness (+3.4%).
+  Environment and wiggliness carry partially independent information.
+
+INTERPRETATION:
+  Group/cluster environment is the SECOND independent predictor beyond MHI.
+  Combined model: MHI + rcWiggliness + envCode closes 14.9% of gap.
+  This is the best predictive model in the entire project.
+
+================================================================================
