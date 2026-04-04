@@ -1,0 +1,324 @@
+{
+  "version": "26.0.0",
+  "timestamp": "2026-04-04T14:35:40.670Z",
+  "nGalaxies": 56,
+  "roleCounts": {
+    "isolated": 37,
+    "central": 5,
+    "satellite": 14,
+    "unknown": 0
+  },
+  "isoVsSat": {
+    "splitDex": 0.132,
+    "splitT": 1.74
+  },
+  "satAfterMHI": {
+    "r": -0.212,
+    "t": 1.6
+  },
+  "satAfterMHIWig": {
+    "r": -0.142,
+    "t": 1
+  },
+  "satAbsorbedByEnv": true,
+  "envAbsorbedBySat": true,
+  "looGapClosed": {
+    "mhi": 7.4,
+    "mhiWig": 11.5,
+    "mhiSat": 7.2,
+    "mhiWigSat": 10.2,
+    "mhiWigEnv": 11.5,
+    "mhiWigRole": 10.6
+  },
+  "wigAfterSat": {
+    "r": 0.326,
+    "t": 2.5
+  },
+  "successCriteria": {
+    "passed": 1,
+    "total": 6
+  },
+  "verdict": "FAILED",
+  "galaxyRoles": [
+    {
+      "name": "ESO563-G021",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "F571-8",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "IC4202",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC0024",
+      "role": "satellite",
+      "host": "NGC253"
+    },
+    {
+      "name": "NGC0289",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC0801",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC0891",
+      "role": "central",
+      "host": "self"
+    },
+    {
+      "name": "NGC1003",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC1090",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC1705",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2403",
+      "role": "satellite",
+      "host": "M81/M82"
+    },
+    {
+      "name": "NGC2683",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2841",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2903",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2915",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2955",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC2998",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC3198",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC3521",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC3726",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC3741",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC3769",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC3893",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4013",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4100",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4138",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4157",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4217",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "NGC4559",
+      "role": "satellite",
+      "host": "ComaI"
+    },
+    {
+      "name": "NGC5005",
+      "role": "central",
+      "host": "self"
+    },
+    {
+      "name": "NGC5033",
+      "role": "satellite",
+      "host": "NGC5005"
+    },
+    {
+      "name": "NGC5055",
+      "role": "central",
+      "host": "self"
+    },
+    {
+      "name": "NGC5371",
+      "role": "central",
+      "host": "self"
+    },
+    {
+      "name": "NGC5907",
+      "role": "satellite",
+      "host": "NGC5866"
+    },
+    {
+      "name": "NGC6015",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC6195",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC6503",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC6674",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "NGC7331",
+      "role": "central",
+      "host": "self"
+    },
+    {
+      "name": "NGC7814",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC00128",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC01281",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC02885",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC02916",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC02953",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC03205",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC03546",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC03580",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC05721",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC06786",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC06787",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC06973",
+      "role": "satellite",
+      "host": "UMa-center"
+    },
+    {
+      "name": "UGC08490",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC08699",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC09037",
+      "role": "isolated",
+      "host": "none"
+    },
+    {
+      "name": "UGC09133",
+      "role": "isolated",
+      "host": "none"
+    }
+  ]
+}

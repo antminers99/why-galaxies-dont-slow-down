@@ -4406,3 +4406,43 @@ INTERPRETATION:
   This is the best predictive model in the entire project.
 
 ================================================================================
+
+================================================================================
+  SECTION 46: PHASE 26 — ENVIRONMENT: SATELLITE vs CENTRAL
+  Version 26.0.0
+  Is the environmental signal from satellite status specifically?
+================================================================================
+
+CLASSIFICATION:
+  37 isolated (66%), 5 central (9%), 14 satellite (25%)
+  Central: NGC0891, NGC5005, NGC5055, NGC5371, NGC7331
+  Satellites: UMa cluster (9), NGC5033, NGC2403, NGC0024, NGC5907, NGC4559
+
+RESULT: 1/6 CRITERIA — FAILS
+
+  1. Clear raw |t|>=2:              NO  (t=1.2)
+  2. Independent of MHI:            NO  (r=-0.212, t=1.6)
+  3. Independent of MHI+wig:        NO  (r=-0.142, t=1.0)
+  4. LOO-CV > M0:                   NO  (-0.8%)
+  5. Adds to MHI+wig:               NO  (-1.3%)
+  6. tau reduction > 5%:            YES (6.1%)
+
+KEY QUESTION ANSWERED:
+  isSatellite AFTER envCode(P25)+MHI+wig: ABSORBED (t<1.65)
+  envCode(P25) AFTER isSatellite+MHI+wig: ABSORBED (t=1.5)
+  → They measure roughly the same thing
+  → Phase 25 envCode is the BETTER variable (6/6 vs 1/6)
+
+WIGGLINESS PATTERN BY ROLE:
+  isolated: 0.0641 (most wiggly)
+  satellite: 0.0396
+  central: 0.0192 (smoothest)
+  rcWiggliness STILL independent after MHI+isSatellite: r=0.326, t=2.5
+
+CONCLUSION:
+  Satellite/central distinction does NOT improve on group membership.
+  Group membership (field vs group vs cluster) remains the best
+  environmental variable. The finer satellite/central split adds noise
+  without adding signal.
+
+================================================================================

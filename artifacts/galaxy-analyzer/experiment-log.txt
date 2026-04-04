@@ -1450,3 +1450,31 @@ Files: scripts/phase25-group-membership.cjs
        public/phase25-group-membership.json
 
 ================================================================================
+
+Section 57: Phase 26 — Satellite vs Central
+------------------------------------------------------
+Date: 2026-04-04
+Version: 26.0.0
+
+SATELLITE vs CENTRAL: 1/6 — FAILS
+
+  isSatellite raw: r=-0.159, t=1.2
+  After MHI: r=-0.212, t=1.6 (marginal at best)
+  After MHI+wig: r=-0.142, t=1.0 (fails)
+  LOO: -0.8% (HURTS prediction)
+  MHI+wig+sat: -1.3% below MHI+wig (overfitting)
+
+  Satellite and envCode absorbed when combined → same thing
+  Phase 25 envCode remains the better variable (6/6 vs 1/6)
+
+  Wiggliness by role: isolated 0.064 > satellite 0.040 > central 0.019
+  rcWiggliness STILL independent after sat: t=2.5
+
+  Environment door scorecard:
+    group membership (envCode): 6/6 PASS ← best environmental variable
+    satellite/central:          1/6 FAIL
+
+Files: scripts/phase26-satellite-central.cjs
+       public/phase26-satellite-central.json
+
+================================================================================
