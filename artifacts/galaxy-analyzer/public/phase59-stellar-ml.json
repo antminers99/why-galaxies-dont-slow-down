@@ -5,120 +5,36 @@
   "source": "Li, Lelli, McGaugh, Schombert 2020, ApJS 247, 31",
   "n": 45,
   "nPubUpsilon": 33,
-  "raw": {
-    "r": -0.06019595241975722,
-    "t": -0.3954483716241392,
-    "n": 45
-  },
-  "spearman": 0.08617792720353418,
-  "afterLogMHI": {
-    "r": 0.15126840048610388,
-    "t": 1.0034805617930345,
-    "n": 45
-  },
-  "afterLogMhost": {
-    "r": 0.06758124644308405,
-    "t": 0.4441753541226299,
-    "n": 45
-  },
-  "afterLogMHI_logMhost": {
-    "r": 0.2533601937840153,
-    "t": 1.7174301843784372,
-    "n": 45
-  },
-  "afterAp": {
-    "r": 0.13508614629188906,
-    "t": 0.894013757330427,
-    "coeff": 0.3419054644429332,
-    "tStat": 1.1819114543679892
-  },
-  "afterBp": {
-    "r": 0.16662789806015382,
-    "t": 1.108144220959041,
-    "coeff": 0.36144669298455284,
-    "tStat": 1.453020434402801
-  },
-  "loo": {
-    "Ap": 30.214918100908505,
-    "ApU": 26.410555043680915,
-    "Bp": 45.56943626384389,
-    "BpU": 43.92435131754515
-  },
-  "permutation": {
-    "Ap": 0.2552,
-    "Bp": 0.1608
-  },
-  "bootstrap": {
-    "Ap": {
-      "lo": -0.20331424443009696,
-      "hi": 0.9988071450390247
-    },
-    "Bp": {
-      "lo": -0.11974967783166074,
-      "hi": 0.8765515813155523
-    }
-  },
-  "jackknife": {
-    "Ap": 0,
-    "Bp": 0
-  },
-  "crossCorrelations": [
-    {
-      "name": "logMHI",
-      "r": 0.07305897574721085
-    },
-    {
-      "name": "logMhost",
-      "r": 0.222243585731186
-    },
-    {
-      "name": "rcWiggliness",
-      "r": 0.2434395216481897
-    },
-    {
-      "name": "logSigma0",
-      "r": -0.13220635747774312
-    },
-    {
-      "name": "logMeanRun",
-      "r": 0.05593205950527413
-    },
-    {
-      "name": "morphT",
-      "r": -0.14331780766123967
-    }
-  ],
-  "verdict": "FAIL",
   "galaxyData": [
     {
-      "name": "NGC3741",
+      "name": "NGC0024",
       "upsilon": 0.5,
       "logUpsilon": -0.3010299956639812,
       "quality": "published"
     },
     {
-      "name": "NGC2915",
+      "name": "NGC0289",
       "upsilon": 0.47,
       "logUpsilon": -0.3279021420642826,
       "quality": "published"
     },
     {
-      "name": "NGC4559",
+      "name": "NGC0891",
       "upsilon": 0.61,
       "logUpsilon": -0.21467016498923297,
       "quality": "published"
     },
     {
-      "name": "UGC01281",
+      "name": "NGC1003",
       "upsilon": 0.4,
       "logUpsilon": -0.3979400086720376,
-      "quality": "estimated"
+      "quality": "published"
     },
     {
-      "name": "UGC08490",
+      "name": "NGC1090",
       "upsilon": 0.45,
       "logUpsilon": -0.3467874862246563,
-      "quality": "estimated"
+      "quality": "published"
     },
     {
       "name": "NGC1705",
@@ -127,73 +43,73 @@
       "quality": "published"
     },
     {
-      "name": "UGC05721",
+      "name": "NGC2403",
       "upsilon": 0.45,
       "logUpsilon": -0.3467874862246563,
-      "quality": "estimated"
+      "quality": "published"
     },
     {
-      "name": "NGC3726",
+      "name": "NGC2683",
       "upsilon": 0.52,
       "logUpsilon": -0.2839966563652008,
       "quality": "published"
     },
     {
-      "name": "NGC3769",
+      "name": "NGC2841",
       "upsilon": 0.74,
       "logUpsilon": -0.13076828026902382,
       "quality": "published"
     },
     {
-      "name": "NGC1003",
+      "name": "NGC2903",
       "upsilon": 0.57,
       "logUpsilon": -0.24412514432750865,
       "quality": "published"
     },
     {
-      "name": "NGC3893",
+      "name": "NGC2915",
       "upsilon": 0.22,
       "logUpsilon": -0.6575773191777937,
       "quality": "published"
     },
     {
-      "name": "NGC1090",
+      "name": "NGC3198",
       "upsilon": 0.47,
       "logUpsilon": -0.3279021420642826,
       "quality": "published"
     },
     {
-      "name": "NGC2403",
+      "name": "NGC3521",
       "upsilon": 0.6,
       "logUpsilon": -0.22184874961635637,
       "quality": "published"
     },
     {
-      "name": "NGC0289",
+      "name": "NGC3726",
       "upsilon": 0.33,
       "logUpsilon": -0.4814860601221125,
       "quality": "published"
     },
     {
-      "name": "NGC3198",
+      "name": "NGC3741",
       "upsilon": 0.18,
       "logUpsilon": -0.744727494896694,
       "quality": "published"
     },
     {
-      "name": "NGC4157",
+      "name": "NGC3769",
       "upsilon": 0.37,
       "logUpsilon": -0.431798275933005,
       "quality": "published"
     },
     {
-      "name": "NGC6015",
+      "name": "NGC3893",
       "upsilon": 0.44,
       "logUpsilon": -0.3565473235138126,
       "quality": "published"
     },
     {
-      "name": "NGC5907",
+      "name": "NGC4013",
       "upsilon": 0.5,
       "logUpsilon": -0.3010299956639812,
       "quality": "published"
@@ -205,70 +121,94 @@
       "quality": "published"
     },
     {
-      "name": "NGC0024",
+      "name": "NGC4138",
       "upsilon": 0.79,
       "logUpsilon": -0.10237290870955855,
       "quality": "published"
     },
     {
-      "name": "NGC4013",
+      "name": "NGC4157",
       "upsilon": 0.47,
       "logUpsilon": -0.3279021420642826,
       "quality": "published"
     },
     {
-      "name": "NGC5371",
+      "name": "NGC4217",
       "upsilon": 0.55,
       "logUpsilon": -0.2596373105057561,
       "quality": "published"
     },
     {
-      "name": "UGC06973",
+      "name": "NGC4559",
       "upsilon": 0.22,
       "logUpsilon": -0.6575773191777937,
-      "quality": "estimated"
+      "quality": "published"
     },
     {
-      "name": "UGC09133",
-      "upsilon": 0.53,
-      "logUpsilon": -0.27572413039921095,
-      "quality": "estimated"
-    },
-    {
-      "name": "NGC2683",
+      "name": "NGC5005",
       "upsilon": 0.53,
       "logUpsilon": -0.27572413039921095,
       "quality": "published"
     },
     {
-      "name": "NGC6503",
+      "name": "NGC5033",
+      "upsilon": 0.53,
+      "logUpsilon": -0.27572413039921095,
+      "quality": "published"
+    },
+    {
+      "name": "NGC5055",
       "upsilon": 0.56,
       "logUpsilon": -0.25181197299379954,
       "quality": "published"
     },
     {
-      "name": "NGC5005",
+      "name": "NGC5371",
       "upsilon": 0.5,
       "logUpsilon": -0.3010299956639812,
       "quality": "published"
     },
     {
-      "name": "NGC5033",
+      "name": "NGC5907",
       "upsilon": 0.48,
       "logUpsilon": -0.3187587626244128,
       "quality": "published"
     },
     {
-      "name": "NGC4217",
+      "name": "NGC6015",
       "upsilon": 0.47,
       "logUpsilon": -0.3279021420642826,
       "quality": "published"
     },
     {
-      "name": "NGC6674",
+      "name": "NGC6503",
       "upsilon": 0.52,
       "logUpsilon": -0.2839966563652008,
       "quality": "published"
+    },
+    {
+      "name": "NGC6674",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "published"
+    },
+    {
+      "name": "NGC7331",
+      "upsilon": 0.58,
+      "logUpsilon": -0.23657200643706272,
+      "quality": "published"
+    },
+    {
+      "name": "NGC7814",
+      "upsilon": 0.71,
+      "logUpsilon": -0.14874165128092473,
+      "quality": "published"
+    },
+    {
+      "name": "UGC01281",
+      "upsilon": 0.25,
+      "logUpsilon": -0.6020599913279624,
+      "quality": "estimated"
     },
     {
       "name": "UGC02953",
@@ -278,20 +218,32 @@
     },
     {
       "name": "UGC03205",
-      "upsilon": 0.58,
-      "logUpsilon": -0.23657200643706272,
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC03546",
+      "upsilon": 0.6,
+      "logUpsilon": -0.22184874961635637,
       "quality": "estimated"
     },
     {
       "name": "UGC03580",
-      "upsilon": 0.71,
-      "logUpsilon": -0.14874165128092473,
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC05721",
+      "upsilon": 0.3,
+      "logUpsilon": -0.5228787452803376,
       "quality": "estimated"
     },
     {
       "name": "UGC06786",
-      "upsilon": 0.25,
-      "logUpsilon": -0.6020599913279624,
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
       "quality": "estimated"
     },
     {
@@ -301,64 +253,30 @@
       "quality": "estimated"
     },
     {
+      "name": "UGC06973",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC08490",
+      "upsilon": 0.25,
+      "logUpsilon": -0.6020599913279624,
+      "quality": "estimated"
+    },
+    {
       "name": "UGC08699",
       "upsilon": 0.55,
       "logUpsilon": -0.2596373105057561,
       "quality": "estimated"
     },
     {
-      "name": "NGC5055",
-      "upsilon": 0.6,
-      "logUpsilon": -0.22184874961635637,
-      "quality": "published"
-    },
-    {
-      "name": "NGC2903",
-      "upsilon": 0.55,
-      "logUpsilon": -0.2596373105057561,
-      "quality": "published"
-    },
-    {
-      "name": "NGC7331",
-      "upsilon": 0.3,
-      "logUpsilon": -0.5228787452803376,
-      "quality": "published"
-    },
-    {
-      "name": "NGC3521",
-      "upsilon": 0.55,
-      "logUpsilon": -0.2596373105057561,
-      "quality": "published"
-    },
-    {
-      "name": "UGC03546",
-      "upsilon": 0.55,
-      "logUpsilon": -0.2596373105057561,
+      "name": "UGC09133",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
       "quality": "estimated"
-    },
-    {
-      "name": "NGC0891",
-      "upsilon": 0.5,
-      "logUpsilon": -0.3010299956639812,
-      "quality": "published"
-    },
-    {
-      "name": "NGC7814",
-      "upsilon": 0.25,
-      "logUpsilon": -0.6020599913279624,
-      "quality": "published"
-    },
-    {
-      "name": "NGC2841",
-      "upsilon": 0.55,
-      "logUpsilon": -0.2596373105057561,
-      "quality": "published"
-    },
-    {
-      "name": "NGC4138",
-      "upsilon": 0.5,
-      "logUpsilon": -0.3010299956639812,
-      "quality": "published"
     }
-  ]
+  ],
+  "verdict": "FAIL",
+  "note": "Fixed sort() bug from original Phase 59 script. Main N=45 results were correct; only JSON galaxyData was misaligned."
 }

@@ -1,0 +1,133 @@
+الحكم الصريح:
+Phase 59 = PARTIAL-NEGATIVE
+وليس CONFIRMED، وليس FAIL تام.
+ليش؟
+لأن عندك نتيجتين مختلفتين:
+على N=45 الكامل
+يفشل:
+raw = صفر تقريبًا
+بعد B′ يبقى ضعيف
+perm p = 0.161
+LOO يهبط من 45.6% إلى 43.9%
+bootstrap يشمل الصفر
+يعني:
+لا يصلح كمتغيّر baseline-grade
+على N=33 المنشور فقط
+يعطي إشارة حقيقية:
+�
+LOO +6.3pp
+� يتحسن
+يعني:
+هناك بارقة حقيقية، لكن فقط في الجزء الأعلى جودة
+التفسير الفيزيائي الأفضل
+هذا يعني غالبًا:
+� الحقيقي ليس صفر الأهمية
+لكن أيضًا:
+ليس محورًا مستقلاً نظيفًا بعد
+لأنه مرتبط بقوة مع:
+logMHI  �
+logSigma0 �
+morphology �
+يعني هو ليس “متغيرًا خامسًا جديدًا” واضحًا، بل:
+خليط من معلومات سبق أن التقطتها B′
+النتيجة العلمية الأهم
+أنت الآن لا تستطيع أن تقول:
+“� يحل جزءًا جديدًا من الفجوة”
+لكن تستطيع أن تقول:
+“عندما تتوفر قياسات � المنشورة عالية الجودة، تظهر إشارة suggestive، لكن هذه الإشارة لا تصمد بعد إدخال القيم التقديرية منخفضة الجودة، كما أنها متداخلة بقوة مع الغاز وكثافة الباريونات والنوع المورفولوجي.”
+الحكم المنهجي
+لا يدخل � في baseline
+لا في A′ ولا في B′.
+لكن:
+لا نشطبه نهائيًا كفيزياء
+بل نسجله كالتالي:
+Published-only promising, full-sample non-robust
+القرار التالي الصحيح
+لا نفتح باب جديد فورًا
+نعمل أولًا:
+Phase 59a — Υ★ robustness / missingness audit
+ماذا تفعل في 59a؟
+أربع فحوصات فقط:
+1) Published vs estimated bias
+قارن بين:
+الـ 33 published
+والـ 12 morphology-estimated
+في:
+distance
+logMHI
+logSigma0
+morphT
+meanRun
+delta_a0
+السؤال
+هل التقديرات المورفولوجية ببساطة noisy enough لقتل الإشارة؟
+2) Same-sample fair comparison on N=33
+اعمل:
+B′ on same 33
+B′ + logUpsilon on same 33
+حتى تكون المقارنة عادلة 100%.
+3) Residualization test
+خذ:
+logMHI
+logSigma0
+morphT
+ثم اختبر:
+هل residual Υ يبقى له إشارة مع �؟
+إذا بقي:
+هذا مهم جدًا
+لأنه يعني أن هناك جزءًا حقيقيًا من � غير ممسوك بعد
+إذا اختفى:
+ينتهي الملف تقريبًا
+4) Replacement test
+اختبر:
+B′ بدون � + �
+B′ بدون logMHI + �
+حتى نعرف:
+هل � مجرد بديل أضعف لـ Sigma0_bar أو logMHI؟
+القالب الذي أريده منك
+Plain text
+Phase 59a: Upsilon robustness / missingness audit
+
+Groups compared:
+N_published =
+N_estimated =
+
+Bias tests:
+distance difference =
+logMHI difference =
+logSigma0 difference =
+morphT difference =
+meanRun difference =
+delta_a0 difference =
+
+Same-sample comparison (N=33):
+B' on 33 =
+B' + logUpsilon on 33 =
+delta =
+
+Residualized Upsilon:
+definition used =
+raw residual-Upsilon vs delta_a0: r/t =
+after B': r/t =
+LOO delta =
+
+Replacement tests:
+B' - Sigma0 + Upsilon =
+B' - logMHI + Upsilon =
+
+Final verdict:
+FAIL / PARTIAL / CONFIRMED-ROBUST
+
+Short interpretation:
+إذا أردت رأيي الآن قبل 59a
+الوضع الحالي:
+B′ يبقى النموذج الأفضل
+logUpsilon لا يكسر B′
+لكنه لم يمت تمامًا لأن subset الـ 33 ما زال واعدًا
+الخلاصة
+Phase 59 الحالي لا يغيّر baseline.
+لكن أيضًا لا يغلق باب � نهائيًا.
+الخطوة التالية:
+Phase 59a — robustness / missingness audit for �
+إذا فشل 59a، نعتبر باب � الخارجي مغلقًا مؤقتًا.
+إذا نجح، يصير عندنا مرشح قوي جدًا للـ 54.4% الباقية.
