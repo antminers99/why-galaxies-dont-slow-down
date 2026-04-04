@@ -1928,3 +1928,23 @@ maxJump: PARTIAL (bootstrap crosses zero)
   (wigRatio flagged for potential addition)
 
 ================================================================================
+
+Section 75: Phase 42 — Bar Strength
+------------------------------------------------------
+Date: 2026-04-04
+Version: 42.0.0 — FAST PROTOCOL
+
+Bar strength: PARTIAL
+  innerRise (inner RC gradient): |BL t=1.7, perm p=0.08, boot crosses 0.
+  External bar proxies (isBarred, barStr_T, T_type): all WEAK/FAIL.
+  SBcontrast: FAIL-FAST.
+
+  Gas/Kinematics Door:
+    sigma_gas:     FAIL (=Vflat)
+    non-circular:  wigRatio CONFIRMED
+    bar strength:  PARTIAL (innerRise)
+    Next: spiral/warp amplitude
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================
