@@ -1762,3 +1762,22 @@ M_HALO CIRCULARITY: 2/5 — NOT RESOLVED
   Next variable in halo door order: λ (halo spin)
 
 ================================================================================
+
+Section 67: Phase 35 — V_flat
+------------------------------------------------------
+Date: 2026-04-04
+Version: 35.0.0 — FAST PROTOCOL
+
+V_FLAT: 3/4 FAST PASS — CONFIRMED but CIRCULAR
+
+  |baseline: r=0.472, t=3.8. LOO +21.9%. Perm p=0.0001***.
+  Jackknife stable. Bootstrap excludes zero.
+  Same signal as M_halo (Phase 33). Not independent.
+  SEVERE circularity: V_flat enters both a0 and predictor.
+
+  Baseline UNCHANGED: MHI + wig + env = 14.9%
+
+  Door scorecard: M_halo PARTIAL, c FAIL, V_flat PASS+CIRCULAR
+  Next: R_s (scale radius)
+
+================================================================================

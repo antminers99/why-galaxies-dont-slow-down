@@ -1,0 +1,35 @@
+{
+  "version": "35.0.0",
+  "timestamp": "2026-04-04T15:33:25.597Z",
+  "nGalaxies": 56,
+  "collinearity": {
+    "VfMHI": 0.686,
+    "VfWig": -0.138,
+    "VfEnv": 0.034
+  },
+  "fastScreen": {
+    "rawR": -0.078,
+    "rawT": 0.6,
+    "afterMHI": {
+      "r": 0.28,
+      "t": 2.1
+    },
+    "afterMHIWig": {
+      "r": 0.455,
+      "t": 3.7
+    },
+    "afterBaseline": {
+      "r": 0.472,
+      "t": 3.8
+    }
+  },
+  "loo": {
+    "vflatAlone": -4.9,
+    "baseline": 14.9,
+    "baselineVflat": 36.8
+  },
+  "addsAboveBaseline": true,
+  "nFastPass": 3,
+  "verdict": "CONFIRMED_WITH_CIRCULARITY",
+  "circularitySeverity": "SEVERE"
+}

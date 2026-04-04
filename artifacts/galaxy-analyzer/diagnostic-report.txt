@@ -4827,3 +4827,36 @@ VERDICT: M_halo remains PARTIAL. Do NOT add to baseline.
   This is fundamental and may not be fully resolvable with this data.
 
 ================================================================================
+
+================================================================================
+  SECTION 56: PHASE 35 — V_flat (Flat Rotation Velocity)
+  Version 35.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: 3/4 FAST PASS — CONFIRMED but CIRCULARITY SEVERE
+
+  SUPPRESSOR (same as M_halo):
+    Raw: r=-0.078, t=0.6 (FAILS)
+    |MHI: r=0.280, t=2.1
+    |MHI+wig: r=0.455, t=3.7
+    |baseline: r=0.472, t=3.8 (project-high partial!)
+
+  LOO: baseline+Vflat = 36.8% (+21.9% over baseline)
+  Vflat alone: -4.9% (hurts, classic suppressor)
+
+  Deep tests all pass:
+    Perm |baseline: p=0.0001***
+    Jackknife: 0/56 sign flips, SD=0.014
+    Bootstrap: [0.248, 0.659] excludes zero
+    Stratification: same sign in all 4 subsamples
+
+  BUT: V_flat IS the rotation curve outer velocity.
+  a0 IS fitted from the rotation curve.
+  This correlation may be MECHANICALLY inevitable.
+
+  VERDICT: Statistically CONFIRMED but CANNOT be treated as
+  independent physical predictor. The circularity is fundamental.
+
+  V_flat = M_halo = same signal. Not two discoveries, ONE.
+
+================================================================================
