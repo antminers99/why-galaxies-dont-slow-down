@@ -5449,3 +5449,25 @@ RESULT: ALL FAIL — completely redundant with meanRun
   but once meanRun is in BL, the remaining signal vanishes.
 
 ================================================================================
+
+================================================================================
+  SECTION 71: PHASE 49 — Radial Slope
+  Version 49.0.0 — FAST PROTOCOL (dual baseline)
+================================================================================
+
+RESULT: ALL FAIL — redundant with meanRun
+
+  7 radial slope proxies tested against working BL (+meanRun=38.1%):
+    glbSlope:  |workBL t=1.1 WEAK
+    radGrad:   |workBL t=1.3 WEAK
+    normGrad:  |workBL t=1.2 WEAK
+    rcSlpOut:  |workBL t=0.1 WEAK
+    rcSlpIn:   |workBL t=0.2 FAIL-FAST
+    residSlp:  |workBL t=1.0 WEAK (HIGH circ)
+    curvatur:  |workBL t=0.3 FAIL-FAST
+
+  None adds above 38.1%. All redundant with meanRun.
+  This confirms meanRun captures the essential structural
+  information about HOW the RC deviates from RAR prediction.
+
+================================================================================

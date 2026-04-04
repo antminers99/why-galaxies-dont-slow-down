@@ -1,0 +1,105 @@
+{
+  "version": "49.0.0",
+  "timestamp": "2026-04-04T16:37:59.068Z",
+  "nGalaxies": 56,
+  "conservativeBL": {
+    "gc": 27.8
+  },
+  "workingBL": {
+    "gc": 38.1,
+    "includes": "meanRun"
+  },
+  "proxies": [
+    {
+      "name": "glbSlope",
+      "circ": "MED",
+      "note": "overall RAR slope",
+      "consBLr": -0.136,
+      "consBLt": 1,
+      "consLOO": 24.8,
+      "workBLr": -0.157,
+      "workBLt": 1.1,
+      "workLOO": 35,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "radGrad",
+      "circ": "MED",
+      "note": "radial gobs-gbar gradient",
+      "consBLr": 0.156,
+      "consBLt": 1.1,
+      "consLOO": 26.1,
+      "workBLr": 0.188,
+      "workBLt": 1.3,
+      "workLOO": 37.3,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "normGrad",
+      "circ": "MED",
+      "note": "normalized radial gradient",
+      "consBLr": 0.201,
+      "consBLt": 1.5,
+      "consLOO": 26.1,
+      "workBLr": 0.166,
+      "workBLt": 1.2,
+      "workLOO": 35.1,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "rcSlpOut",
+      "circ": "LOW",
+      "note": "outer RC slope",
+      "consBLr": 0.086,
+      "consBLt": 0.6,
+      "consLOO": 25.9,
+      "workBLr": 0.014,
+      "workBLt": 0.1,
+      "workLOO": 36.1,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "rcSlpIn",
+      "circ": "LOW",
+      "note": "inner RC slope",
+      "consBLr": 0.002,
+      "consBLt": 0,
+      "consLOO": 24.4,
+      "workBLr": 0.026,
+      "workBLt": 0.2,
+      "workLOO": 34.1,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "residSlp",
+      "circ": "HIGH",
+      "note": "RAR residual slope vs r",
+      "consBLr": -0.183,
+      "consBLt": 1.3,
+      "consLOO": 28.3,
+      "workBLr": -0.137,
+      "workBLt": 1,
+      "workLOO": 37.1,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "curvatur",
+      "circ": "LOW",
+      "note": "RC curvature (quadratic)",
+      "consBLr": -0.022,
+      "consBLt": 0.2,
+      "consLOO": 24.1,
+      "workBLr": -0.049,
+      "workBLt": 0.3,
+      "workLOO": 33.9,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    }
+  ]
+}

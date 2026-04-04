@@ -2088,3 +2088,22 @@ ALL FAIL against working BL (+meanRun = 38.1%).
   Working BL: MHI + wig + env + Sigma0_bar + meanRun = 38.1%
 
 ================================================================================
+
+Section 82: Phase 49 — Radial Slope
+------------------------------------------------------
+Date: 2026-04-04
+Version: 49.0.0
+
+ALL FAIL against working BL (+meanRun = 38.1%).
+  7 radial slope proxies: none adds information.
+  Completely redundant with meanRun.
+
+  Internal Structure Door:
+    local RAR flatness:   meanRun CONFIRMED ★
+    inner-outer diff:     FAIL (redundant)
+    radial slope:         FAIL (redundant)
+    Next:                 transition radius (Phase 50)
+
+  Working BL: MHI + wig + env + Sigma0_bar + meanRun = 38.1%
+
+================================================================================
