@@ -1,0 +1,112 @@
+{
+  "version": "50.0.0",
+  "timestamp": "2026-04-04T16:42:07.428Z",
+  "nGalaxies": 56,
+  "conservativeBL": {
+    "gc": 27.8
+  },
+  "workingBL": {
+    "gc": 38.1
+  },
+  "proxies": [
+    {
+      "name": "transR",
+      "circ": "HIGH",
+      "note": "g_bar=a0 radius (uses a0!)",
+      "consBLt": 3,
+      "consLOO": 28.2,
+      "workBLt": 2.1,
+      "workLOO": 33.5,
+      "addsWork": false,
+      "verdict": "PROMISING(circ!)"
+    },
+    {
+      "name": "transR/Rd",
+      "circ": "HIGH",
+      "note": "normalized (uses a0!)",
+      "consBLt": 3.9,
+      "consLOO": 27.2,
+      "workBLt": 3.2,
+      "workLOO": 31.2,
+      "addsWork": false,
+      "verdict": "PROMISING(circ!)"
+    },
+    {
+      "name": "transBst",
+      "circ": "MED",
+      "note": "boost>0.3 radius",
+      "consBLt": 3.4,
+      "consLOO": 29.1,
+      "workBLt": 2.5,
+      "workLOO": 33.2,
+      "addsWork": false,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "tBst/Rd",
+      "circ": "MED",
+      "note": "boost transition norm",
+      "consBLt": 4.1,
+      "consLOO": 32.3,
+      "workBLt": 3.5,
+      "workLOO": 35.2,
+      "addsWork": false,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "fracBlow",
+      "circ": "HIGH",
+      "note": "frac below a0 (uses a0!)",
+      "consBLt": 2.8,
+      "consLOO": 33.6,
+      "workBLt": 2.3,
+      "workLOO": 41,
+      "addsWork": true,
+      "verdict": "PROMISING(circ!)"
+    },
+    {
+      "name": "peakR",
+      "circ": "LOW",
+      "note": "peak g_obs radius",
+      "consBLt": 0.2,
+      "consLOO": 24.8,
+      "workBLt": 0.3,
+      "workLOO": 35.2,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "peakR/Rd",
+      "circ": "LOW",
+      "note": "peak radius normalized",
+      "consBLt": 0.3,
+      "consLOO": 25,
+      "workBLt": 0.1,
+      "workLOO": 34.9,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "Rflat",
+      "circ": "LOW",
+      "note": "RC flattening radius",
+      "consBLt": 1.9,
+      "consLOO": 30.5,
+      "workBLt": 0.9,
+      "workLOO": 35.9,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rflat/Rd",
+      "circ": "LOW",
+      "note": "flat radius normalized",
+      "consBLt": 1.9,
+      "consLOO": 31,
+      "workBLt": 1.4,
+      "workLOO": 37.2,
+      "addsWork": false,
+      "verdict": "WEAK"
+    }
+  ]
+}

@@ -2107,3 +2107,25 @@ ALL FAIL against working BL (+meanRun = 38.1%).
   Working BL: MHI + wig + env + Sigma0_bar + meanRun = 38.1%
 
 ================================================================================
+
+Section 83: Phase 50 — Transition Radius
+------------------------------------------------------
+Date: 2026-04-04
+Version: 50.0.0
+
+tBst/Rd: CONFIRMED (perm p=0.0004***, boot excludes zero)
+  BUT: workLOO=35.2% < 38.1% — no predictive improvement.
+  Not added to working BL.
+
+  LOW-circ proxies (peakR, Rflat): ALL FAIL.
+
+  Internal Structure Door:
+    local RAR:        meanRun CONFIRMED ★
+    inner-outer diff: FAIL (redundant)
+    radial slope:     FAIL (redundant)
+    transition radius: tBst/Rd CONFIRMED (no LOO gain)
+    Next:             bulge-to-disk ratio (Phase 51)
+
+  Working BL unchanged: 38.1%
+
+================================================================================

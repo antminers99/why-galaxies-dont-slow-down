@@ -5471,3 +5471,49 @@ RESULT: ALL FAIL — redundant with meanRun
   information about HOW the RC deviates from RAR prediction.
 
 ================================================================================
+
+================================================================================
+  SECTION 72: PHASE 50 — Transition Radius
+  Version 50.0.0 — FAST PROTOCOL (dual baseline)
+================================================================================
+
+RESULT: tBst/Rd CONFIRMED (deep tests strong) but doesn't improve LOO.
+        LOW-circularity proxies ALL FAIL.
+
+  9 proxies tested:
+
+  HIGH CIRCULARITY (use a0 directly — discard):
+    transR, transR/Rd: use a0 threshold directly. Discard.
+    fracBelow: uses a0 in definition. LOO=41% but circular. Discard.
+
+  MED CIRCULARITY — CONFIRMED:
+    transBst:    |workBL t=2.5, perm p=0.009***, boot [-0.564,-0.108]
+    tBst/Rd:     |workBL t=3.5, perm p=0.0004***, boot [-0.655,-0.217] ★★★
+      Survives ALL confounders:
+        raw: r=-0.461 t=3.8
+        |workBL: r=-0.444 t=3.5
+        |workBL+Vflat: r=-0.402 t=3.0
+      0 jackknife flips, SD=0.017
+      
+    PHYSICS: Earlier boost transition (smaller Rbst/Rdisk) → lower a0.
+    Galaxies where DM contribution kicks in sooner relative to
+    stellar disk have lower fitted a0.
+    
+    BUT: workLOO=35.2% < workBL=38.1%! Adding it HURTS prediction.
+    This means it's correlated but collinear with working BL vars.
+    Despite strong partial r, it doesn't carry new predictive info.
+
+  LOW CIRCULARITY (genuinely external — ALL FAIL):
+    peakR:       |workBL t=0.3 WEAK
+    peakR/Rd:    |workBL t=0.1 FAIL-FAST
+    Rflat:       |workBL t=0.9 WEAK
+    Rflat/Rd:    |workBL t=1.4 WEAK
+
+  ASSESSMENT: tBst/Rd CONFIRMED by correlation tests but
+    NOT added to working BL (no LOO improvement).
+    The genuinely external radii (peakR, Rflat) carry no signal.
+    This suggests the transition radius signal is partly
+    mechanical — related to where gobs departs from gbar,
+    which is connected to the a0 fitting itself.
+
+================================================================================
