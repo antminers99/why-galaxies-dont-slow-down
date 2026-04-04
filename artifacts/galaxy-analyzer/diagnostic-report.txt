@@ -3672,3 +3672,52 @@ CRITICAL INSIGHT:
   The remaining 85% is either noise, multi-parameter, or intrinsic.
 
 ================================================================================
+
+================================================================================
+  SECTION 33: PHASE 15 — MODEL LADDER: FROM M0 TO M3
+  Version 15.0.0
+================================================================================
+
+PURPOSE:
+  Build explicit parametric models a0,i = a0 + f(Xi) and test whether
+  they can replace M3 (free per-galaxy a0). This is the DECISION MAP:
+  "When do we say a0 is ~constant, and when does it genuinely vary?"
+
+MODELS TESTED:
+  M0: Universal a0              k=1   (one number for all)
+  M1: a0 + beta*logMHI          k=2   (HI gas mass correction)
+  M2: a0 + inc + logD           k=3   (systematics-only)
+  M3: a0 + MHI + inc + D        k=4   (physics + systematics)
+  M4: a0 + MHI+inc+D+T+Rdisk   k=6   (add morphology)
+  M5: Kitchen sink              k=9   (everything measured)
+  M6: Free per-galaxy a0        k=56  (M3 from Phase 13)
+
+LOO CROSS-VALIDATION (galaxy-level):
+  M0:  CV-RMS = 0.11662  (gap closed: 0%)
+  M1:  CV-RMS = 0.11265  (gap closed: 7.4%)
+  M5:  CV-RMS = 0.10818  (gap closed: 15.7%)
+  M6:  CV-RMS = 0.06287  (gap closed: 100%)
+
+INFORMATION CRITERIA:
+  M6 (per-galaxy) wins AIC by 1149+ and BIC by 900+
+  No parametric model comes close
+
+DECISION MAP:
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  Best parametric model closes only 15.7% of M0→M6 gap.          │
+  │  84.3% of the variation remains UNEXPLAINED by any measured      │
+  │  galaxy property.                                                │
+  │                                                                  │
+  │  VERDICT: a0 GENUINELY VARIES between galaxies.                  │
+  │  Strict universality is DISFAVORED by these data.                │
+  └────────────────────────────────────────────────────────────────────┘
+
+INTERPRETATION:
+  The variation in a0 is either:
+  (a) driven by an unmeasured variable (e.g., dark matter halo properties,
+      3D gas kinematics, baryonic feedback history), or
+  (b) physically real — the acceleration scale genuinely differs.
+  Either way, a simple a0,i = a0 + f(Xi) with known Xi cannot replace
+  per-galaxy freedom.
+
+================================================================================

@@ -1162,3 +1162,22 @@ Files: scripts/phase14-decompose-m3.cjs
        public/phase14-decompose-m3.json
 
 ================================================================================
+
+Section 44: Phase 15 — Model Ladder Decision Map
+-------------------------------------------------
+Date: 2026-04-04
+Version: 15.0.0
+
+TESTED: M0(k=1) → M1(k=2) → M2(k=3) → M3(k=4) → M4(k=6) → M5(k=9) → M6(k=56)
+
+LOO-CV RESULTS:
+  M0: 0.11662, M1: 0.11265, M5: 0.10818, M6: 0.06287
+  Best parametric closes 15.7% of gap; 84.3% remains unexplained
+
+VERDICT: a0 GENUINELY VARIES — no f(Xi) can replace M3
+AIC/BIC: M6 wins by >900 over all parametric models
+
+Files: scripts/phase15-model-ladder.cjs
+       public/phase15-model-ladder.json
+
+================================================================================

@@ -1,0 +1,116 @@
+{
+  "version": "15.0.0",
+  "timestamp": "2026-04-04T12:36:41.285Z",
+  "description": "Phase 15: Model Ladder — from M0 to M3",
+  "baseline": {
+    "a0": 3656,
+    "logA0": 3.563,
+    "tau": 0.2202
+  },
+  "nGalaxies": 56,
+  "cvResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M1: MHI only",
+      "k": 2,
+      "cvRMS": 0.11265,
+      "gapClosed": 7.4
+    },
+    {
+      "name": "M2: Systematics only",
+      "k": 3,
+      "cvRMS": 0.11637,
+      "gapClosed": 0.5
+    },
+    {
+      "name": "M3: MHI+sys",
+      "k": 4,
+      "cvRMS": 0.11436,
+      "gapClosed": 4.2
+    },
+    {
+      "name": "M4: MHI+sys+morph",
+      "k": 6,
+      "cvRMS": 0.11696,
+      "gapClosed": -0.6
+    },
+    {
+      "name": "M5: Kitchen sink",
+      "k": 9,
+      "cvRMS": 0.10818,
+      "gapClosed": 15.7
+    },
+    {
+      "name": "M6: Per-galaxy (M3-free)",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "icResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "AIC": -2199,
+      "BIC": -2193.7,
+      "dAIC": 1686.4,
+      "dBIC": 1394.8
+    },
+    {
+      "name": "M1: MHI only",
+      "k": 2,
+      "AIC": -2349,
+      "BIC": -2338.3,
+      "dAIC": 1536.5,
+      "dBIC": 1250.2
+    },
+    {
+      "name": "M2: Systematics only",
+      "k": 3,
+      "AIC": -2272.8,
+      "BIC": -2256.9,
+      "dAIC": 1612.6,
+      "dBIC": 1331.6
+    },
+    {
+      "name": "M3: MHI+sys",
+      "k": 4,
+      "AIC": -2359.3,
+      "BIC": -2338.1,
+      "dAIC": 1526.1,
+      "dBIC": 1250.4
+    },
+    {
+      "name": "M4: MHI+sys+morph",
+      "k": 6,
+      "AIC": -2353.4,
+      "BIC": -2321.6,
+      "dAIC": 1532,
+      "dBIC": 1266.9
+    },
+    {
+      "name": "M5: Kitchen sink",
+      "k": 9,
+      "AIC": -2736,
+      "BIC": -2688.3,
+      "dAIC": 1149.4,
+      "dBIC": 900.3
+    },
+    {
+      "name": "M6: Per-galaxy (M3-free)",
+      "k": 56,
+      "AIC": -3885.4,
+      "BIC": -3588.5,
+      "dAIC": 0,
+      "dBIC": 0
+    }
+  ],
+  "gapClosedByBestParametric": 15.7,
+  "gapClosedByKitchenSink": 15.7,
+  "verdict": "VARIES"
+}

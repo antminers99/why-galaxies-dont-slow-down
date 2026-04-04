@@ -106,7 +106,38 @@ NO TENSION with literature. Different analyses measure different scatter compone
 - S_out (outer slope): r=-0.418, p=0.045, but n=23 only
 - Surface brightness, inclination, distance method: NEGLIGIBLE
 - 94% of heterogeneity remains UNEXPLAINED
-- "a₀ universal + unmeasured second parameter" remains VIABLE but UNRESOLVED
+
+## Phase 13 v13.0 Results (Formal Model Decision)
+
+M3 (per-galaxy a0) wins ALL criteria decisively:
+- 46.5% CV RMS improvement over M0 (universal a0)
+- ΔAIC = 1686 (overwhelming evidence)
+- ΔBIC = 1395
+- M0 and M1 fail posterior predictive checks
+- eta_rot (M2) worsens out-of-sample prediction
+- VERDICT: Universal a0 is INSUFFICIENT — M3 decisively wins
+
+## Phase 14 v14.0 Results (Decompose M3)
+
+M3 decomposed into offset (a0 shift) vs shape (gamma variation):
+- OFFSET: 86% of M3's advantage — galaxies differ in SCALE
+- SHAPE: 14% of M3's advantage — transition curvature varies
+- gamma and a0 are INDEPENDENT (r = -0.14)
+- Mean gamma = 0.96 ± 0.30 (standard = 0.5)
+- Best predictor of a0 variation: log(MHI) (r = -0.388, LOO-CV R² = 0.108)
+- Equation: a0,i = a0 - 0.174 × (log MHI - mean)
+- Top-2 model (MHI + n_points): R² = 0.28, tau-reduction = 28%
+
+## Phase 15 v15.0 Results (Model Ladder Decision Map)
+
+Tested parametric models a0,i = a0 + f(Xi) against M3 (free per-galaxy):
+- M0 (universal): gap closed = 0%
+- M1 (MHI only): gap closed = 7.4%
+- M5 (kitchen sink, 8 predictors): gap closed = 15.7%
+- M6 (per-galaxy free): gap closed = 100%
+- VERDICT: a0 GENUINELY VARIES — no f(Xi) with measured properties can replace M3
+- 84.3% of variation remains UNEXPLAINED
+- Either an unmeasured variable drives variation, or a0 is physically galaxy-dependent
 
 ## Key Files
 
@@ -114,18 +145,17 @@ NO TENSION with literature. Different analyses measure different scatter compone
 - Phase 5 audit: `artifacts/galaxy-analyzer/scripts/phase5-kinematic-audit.cjs` (v5.1.0)
 - Phase 6 splits: `artifacts/galaxy-analyzer/scripts/phase6-matched-splits.cjs` (v6.0.0)
 - Phase 7 anchor: `artifacts/galaxy-analyzer/scripts/phase7-anchor-refit.cjs` (v7.0.0)
+- Phase 13 model decision: `artifacts/galaxy-analyzer/scripts/phase13-model-decision.cjs`
+- Phase 14 decompose: `artifacts/galaxy-analyzer/scripts/phase14-decompose-m3.cjs`
+- Phase 15 ladder: `artifacts/galaxy-analyzer/scripts/phase15-model-ladder.cjs`
 - v4.0 results: `artifacts/galaxy-analyzer/public/definitive-v4-results.json`
-- Phase 6 results: `artifacts/galaxy-analyzer/public/phase6-matched-results.json`
-- Phase 7 results: `artifacts/galaxy-analyzer/public/phase7-anchor-results.json`
-- Phase 8 metareg: `artifacts/galaxy-analyzer/scripts/phase8-distance-metareg.cjs` (v8.0.0)
-- Phase 8 results: `artifacts/galaxy-analyzer/public/phase8-metareg-results.json`
-- Phase 9 benchmark: `artifacts/galaxy-analyzer/scripts/phase9-benchmark-replication.cjs` (v9.0.0)
-- Phase 9 results: `artifacts/galaxy-analyzer/public/phase9-benchmark-results.json`
+- Phase 13 results: `artifacts/galaxy-analyzer/public/phase13-model-decision.json`
+- Phase 14 results: `artifacts/galaxy-analyzer/public/phase14-decompose-m3.json`
+- Phase 15 results: `artifacts/galaxy-analyzer/public/phase15-model-ladder.json`
 - SPARC master table: `artifacts/galaxy-analyzer/public/sparc-table.json` (175 galaxies)
-- Phase 10 search: `artifacts/galaxy-analyzer/scripts/phase10-second-parameter.cjs` (v10.0.0)
-- Phase 10 results: `artifacts/galaxy-analyzer/public/phase10-second-param-results.json`
-- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (26 sections)
+- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (33 sections)
+- Experiment log: `artifacts/galaxy-analyzer/experiment-log.txt` (44 sections)
 
 ## Status
 
-All systematic checkboxes passed. Phase 10 second-parameter search tested 10 candidates: eta_rot (RC shape) is strongest (r=0.334, p=0.010, dAIC=-4.6) but reduces tau by only 5.7%. 94% of galaxy-level heterogeneity remains unexplained by any measured property. The framing "a₀ universal + unmeasured second parameter" remains viable but unresolved. The RAR is tight at the point level but heterogeneous at the galaxy level.
+Through Phase 15: a0 genuinely varies between galaxies. M3 (per-galaxy a0) wins decisively over all alternatives. The variation is 86% offset (scale shift), 14% shape. Best predictor is log(MHI) but explains only 15% out-of-sample. Kitchen-sink model closes only 15.7% of the M0→M6 gap. 84.3% of variation remains unexplained by any measured galaxy property. Strict universality of a0 is DISFAVORED.
