@@ -1902,3 +1902,29 @@ sig/Vflat: CONFIRMED numerically but = 1/Vflat (r=-1.00 with Vflat).
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 74: Phase 41 — Non-Circular Motions
+------------------------------------------------------
+Date: 2026-04-04
+Version: 41.0.0 — FAST PROTOCOL
+
+wigRatio: CONFIRMED (inner/outer wig ratio)
+  |BL r=0.285 t=2.1, perm p=0.036*, bootstrap excludes zero
+  Survives V_flat control (t=2.4). LOW circularity.
+  Related to rcWiggliness (r=0.60) but adds information.
+  LOO would be ~31.8% if added.
+
+maxJump: PARTIAL (bootstrap crosses zero)
+
+  kinAsym, rarJitter, a0_grad, isBarred, incUnc: all FAIL/WEAK.
+
+  Gas/Kinematics Door scorecard:
+    sigma_gas:        FAIL (= V_flat)
+    asymmetric drift: tested earlier, not retested
+    non-circular:     wigRatio CONFIRMED, maxJump PARTIAL
+    Next: bar strength
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+  (wigRatio flagged for potential addition)
+
+================================================================================

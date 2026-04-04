@@ -5082,3 +5082,63 @@ RESULT: CONFIRMED numerically BUT = V_flat in disguise
   No new information from gas dispersion proxies.
 
 ================================================================================
+
+================================================================================
+  SECTION 62: PHASE 41 — Non-Circular Motions / Kinematic Asymmetry
+  Version 41.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: wigRatio CONFIRMED — but related to existing baseline variable
+
+  7 proxies tested against baseline (MHI + wig + env + Sigma0_bar = 27.8%):
+
+  FAST SCREEN:
+    kinAsym:     |BL t=0.9, LOO 27.7%                     WEAK
+    maxJump:     |BL t=2.0, LOO 30.5%, perm p=0.046*      PROMISING
+    rarJitter:   |BL t=1.4, LOO 28.2%                     WEAK
+    wigRatio:    |BL t=2.1, LOO 31.8%, perm p=0.036*      PROMISING ★
+    a0_grad:     |BL t=0.8, LOO 25.9%                     WEAK
+    isBarred:    |BL t=1.2, LOO 27.1%                     WEAK
+    incUnc:      |BL t=0.6, LOO 27.2%                     WEAK
+
+  DEEP TESTS:
+
+  wigRatio (inner/outer wiggliness ratio, circ=LOW):
+    Raw: r=0.349 t=2.7 (PASS)
+    |MHI: r=0.401 t=3.2 (SURVIVES)
+    |MHI+wig: r=0.241 t=1.8 (MARGINAL — partly absorbed by wig)
+    |newBL: r=0.285 t=2.1 (SURVIVES)
+    |newBL+Vflat: r=0.323 t=2.4 (SURVIVES — not V_flat!)
+    Perm p=0.036*
+    Bootstrap CI: [0.045, 0.473] excludes zero
+    Jackknife: mean=0.285, SD=0.014, 0 flips
+
+  maxJump (max RC gradient, circ=MOD):
+    |newBL: r=0.270 t=2.0 (MARGINAL)
+    |newBL+Vflat: r=0.261 t=1.9 (MARGINAL)
+    Perm p=0.046*
+    Bootstrap CI: [-0.021, 0.518] crosses zero ← weaker
+
+  INTERPRETATION:
+    wigRatio = inner_wig / outer_wig measures WHERE the RC deviates.
+    rcWiggliness = inner_wig + outer_wig measures HOW MUCH.
+    Correlation between them: r=0.60 (moderate).
+
+    wigRatio adds information above rcWiggliness: at fixed total
+    wiggliness, galaxies with MORE inner irregularity (relative to outer)
+    have HIGHER a0. This may reflect:
+    - Non-circular motions concentrated in inner disk (bar-driven?)
+    - Inner RC shape systematics
+    - Beam smearing effects (inner points more affected)
+
+    CIRCULARITY: LOW. Wiggliness is from RC shape but not mechanically
+    coupled to a0 fitting (it measures scatter around linear trend,
+    not the trend itself).
+
+  DECISION: wigRatio passes 3/3 fast criteria + deep tests.
+    But it's a refinement of existing baseline variable (rcWiggliness).
+    NOT adding to baseline yet — flag for final review.
+
+    If added: would bring LOO to ~31.8% (from 27.8%).
+
+================================================================================

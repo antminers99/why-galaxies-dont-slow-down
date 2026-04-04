@@ -1,0 +1,96 @@
+{
+  "version": "41.0.0",
+  "timestamp": "2026-04-04T16:03:10.622Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "kinAsym",
+      "circ": "MOD",
+      "note": "from RC residuals",
+      "rawR": -0.153,
+      "rawT": 1.1,
+      "newBLr": -0.121,
+      "newBLt": 0.9,
+      "looGC": 27.7,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "maxJump",
+      "circ": "MOD",
+      "note": "max RC gradient",
+      "rawR": 0.511,
+      "rawT": 4.4,
+      "newBLr": 0.27,
+      "newBLt": 2,
+      "looGC": 30.5,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "rarJitter",
+      "circ": "MOD",
+      "note": "consecutive resid diff",
+      "rawR": 0.015,
+      "rawT": 0.1,
+      "newBLr": -0.188,
+      "newBLt": 1.4,
+      "looGC": 28.2,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "wigRatio",
+      "circ": "LOW",
+      "note": "inner/outer wig ratio",
+      "rawR": 0.349,
+      "rawT": 2.7,
+      "newBLr": 0.285,
+      "newBLt": 2.1,
+      "looGC": 31.8,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "a0_grad",
+      "circ": "HIGH",
+      "note": "a0 inner vs outer (circular!)",
+      "rawR": -0.143,
+      "rawT": 1.1,
+      "newBLr": -0.106,
+      "newBLt": 0.8,
+      "looGC": 25.9,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "isBarred",
+      "circ": "ZERO",
+      "note": "morphological type",
+      "rawR": -0.206,
+      "rawT": 1.5,
+      "newBLr": -0.166,
+      "newBLt": 1.2,
+      "looGC": 27.1,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "incUnc",
+      "circ": "ZERO",
+      "note": "inclination correction risk",
+      "rawR": 0.228,
+      "rawT": 1.7,
+      "newBLr": 0.091,
+      "newBLt": 0.6,
+      "looGC": 27.2,
+      "adds": false,
+      "verdict": "WEAK"
+    }
+  ],
+  "bestProxy": "wigRatio",
+  "finalVerdict": "CONFIRMED"
+}
