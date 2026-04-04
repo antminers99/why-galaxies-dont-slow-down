@@ -4985,3 +4985,65 @@ RESULT: FAIL (0/3 proxies pass against NEW baseline)
   CIRCULARITY: HIGH (f_DM uses V_flat in denominator)
 
 ================================================================================
+
+================================================================================
+  SECTION 60: PHASE 39 — f_DM at Reference Radii
+  Version 39.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: PARTIAL — but dominated by circularity concerns
+
+  Tested against NEW baseline: MHI + wig + env + Sigma0_bar = 27.8%
+
+  REFERENCE RADIUS f_DM (all PROMISING but CIRCULAR):
+    f_DM(2Rd):    |newBL r=0.751 t=8.0  ← suspiciously high
+    f_DM(3Rd):    |newBL r=0.801 t=9.3  ← suspiciously high
+    f_DM(Rmax/2): |newBL r=0.482 t=3.9
+    f_DM(5kpc):   |newBL r=0.463 t=3.5
+    f_DM(10kpc):  |newBL r=0.497 t=4.0
+
+  CRITICAL CIRCULARITY WARNING:
+    f_DM(r) = 1 - g_bar(r)/g_obs(r). These are the SAME data points
+    used to fit a₀. When a₀ is high, g_obs deviates more from RAR →
+    g_bar/g_obs changes → f_DM changes. This is MECHANICAL coupling.
+    The very high correlations (r=0.75-0.80) confirm this.
+
+  DM DOMINANCE RADIUS (less circular):
+    R_DM_dom:     |newBL r=-0.225 t=1.6, fails V_flat strip (t=1.5)
+    R_DM_dom/Rd:  |newBL r=-0.262 t=1.9 MARGINAL, perm p=0.054
+                  But fails Vflat strip (t=1.5) and LOO doesn't add.
+
+  VERDICT: PARTIAL
+    R_DM_dom/Rd marginal (t=1.9, perm p=0.054)
+    But doesn't survive V_flat, doesn't add to LOO.
+    f_DM ref-radius proxies are mechanically coupled (circularity 5/5).
+    Effective interpretation: NOT a genuine halo signal.
+
+================================================================================
+
+  DARK HALO DOOR — FINAL SCORECARD
+  ──────────────────────────────────────────────────────────
+  Variable              Verdict          Circularity
+  ──────────────────────────────────────────────────────────
+  M_halo / M_dyn        PARTIAL          HIGH (=V_flat)
+  concentration c       FAIL             —
+  V_flat                PASS+CIRCULAR    SEVERE (5/5)
+  R_s                   PARTIAL          MODERATE
+  rho_0 (halo proper)   FAIL             HIGH
+  Sigma0_bar            CONFIRMED        ZERO (baryon!)
+  f_DM (global)         FAIL             HIGH (absorbed)
+  f_DM (ref radius)     PARTIAL          SEVERE (mech.)
+  ──────────────────────────────────────────────────────────
+
+  DOOR CONCLUSION:
+  No genuinely independent halo variable survives the new baseline.
+  The only CONFIRMED variable from this door (Sigma0_bar) is actually
+  baryonic surface density — baryon structure, not dark matter.
+
+  What appeared to be halo signals were either:
+  1. V_flat (mechanically circular)
+  2. Proxies for V_flat (M_halo, f_DM global)
+  3. Absorbed by Sigma0_bar (f_DM, rho_0)
+  4. Mechanically coupled to a₀ fitting (f_DM ref radius)
+
+================================================================================

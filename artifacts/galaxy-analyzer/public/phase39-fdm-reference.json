@@ -1,0 +1,78 @@
+{
+  "version": "39.0.0",
+  "timestamp": "2026-04-04T15:53:45.148Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "refRadiusResults": [
+    {
+      "name": "f_DM(2Rd)",
+      "n": 55,
+      "rawR": 0.533,
+      "rawT": 4.6,
+      "blR": 0.751,
+      "blT": 8,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "f_DM(3Rd)",
+      "n": 54,
+      "rawR": 0.568,
+      "rawT": 5,
+      "blR": 0.801,
+      "blT": 9.3,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "f_DM(Rmax/2)",
+      "n": 56,
+      "rawR": 0.594,
+      "rawT": 5.4,
+      "blR": 0.482,
+      "blT": 3.9,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "f_DM(5kpc)",
+      "n": 52,
+      "rawR": 0.55,
+      "rawT": 4.7,
+      "blR": 0.463,
+      "blT": 3.5,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "f_DM(10kpc)",
+      "n": 54,
+      "rawR": 0.615,
+      "rawT": 5.6,
+      "blR": 0.497,
+      "blT": 4,
+      "verdict": "PROMISING"
+    }
+  ],
+  "dmDominanceResults": [
+    {
+      "name": "R_DM_dom",
+      "rawR": -0.506,
+      "rawT": 4.3,
+      "blR": -0.225,
+      "blT": 1.6,
+      "looGC": 26.3,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "R_DM_dom/Rd",
+      "rawR": -0.376,
+      "rawT": 3,
+      "blR": -0.262,
+      "blT": 1.9,
+      "looGC": 26,
+      "adds": false,
+      "verdict": "PROMISING"
+    }
+  ],
+  "finalVerdict": "PARTIAL"
+}

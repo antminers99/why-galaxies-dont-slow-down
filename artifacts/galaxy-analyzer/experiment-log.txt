@@ -1866,3 +1866,21 @@ f_DM: FAIL against new baseline (MHI+wig+env+Sigma0_bar=27.8%)
   Next: f_DM at reference radius (last halo variable)
 
 ================================================================================
+
+Section 72: Phase 39 — f_DM at Reference Radii
+------------------------------------------------------
+Date: 2026-04-04
+Version: 39.0.0 — FAST PROTOCOL
+
+f_DM(ref radius): PARTIAL (but circularity-dominated)
+
+  f_DM(2Rd/3Rd) show r=0.75-0.80 after BL → MECHANICAL coupling.
+  R_DM_dom/Rd marginal: t=1.9, perm p=0.054, fails Vflat strip.
+
+  DARK HALO DOOR CLOSED:
+  No genuinely independent halo variable survives new baseline.
+  Only CONFIRMED result (Sigma0_bar) is baryon structure.
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================
