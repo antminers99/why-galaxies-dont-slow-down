@@ -1,0 +1,120 @@
+{
+  "version": "13.0.0",
+  "timestamp": "2026-04-04T12:16:34.471Z",
+  "description": "Phase 13: Model Decision Run — M0/M1/M2/M3 comparison",
+  "baseline": {
+    "a0": 3656,
+    "logA0": 3.563,
+    "tau": 0.2202,
+    "I2": 99.9,
+    "nGal": 56,
+    "nPts": 1483
+  },
+  "crossValidation": {
+    "nFolds": 10,
+    "results": {
+      "M0": {
+        "totalRMS": 0.11756,
+        "totalSS": 20.5
+      },
+      "M1": {
+        "totalRMS": 0.11756,
+        "totalSS": 20.5
+      },
+      "M2": {
+        "totalRMS": 0.11907,
+        "totalSS": 21.02
+      },
+      "M3": {
+        "totalRMS": 0.06287,
+        "totalSS": 5.86
+      }
+    },
+    "winner": "M3"
+  },
+  "informationCriteria": {
+    "M0": {
+      "k": 1,
+      "AIC": -2199,
+      "BIC": -2193.7,
+      "logL": 1100.5,
+      "rms": 0.11521
+    },
+    "M1": {
+      "k": 2,
+      "AIC": -2197,
+      "BIC": -2186.4,
+      "logL": 1100.5,
+      "rms": 0.11521
+    },
+    "M2": {
+      "k": 3,
+      "AIC": -2193.7,
+      "BIC": -2177.8,
+      "logL": 1099.9,
+      "rms": 0.11526
+    },
+    "M3": {
+      "k": 56,
+      "AIC": -3885.4,
+      "BIC": -3588.5,
+      "logL": 1998.7,
+      "rms": 0.06287
+    }
+  },
+  "aicBest": "M3",
+  "bicBest": "M3",
+  "posteriorPredictive": {
+    "M0": {
+      "simTauMean": 0.0212,
+      "simTau95": [
+        0.0159,
+        0.0257
+      ],
+      "realTau": 0.2202,
+      "tauPercentile": 100,
+      "consistent": false
+    },
+    "M1": {
+      "simTauMean": 0.0207,
+      "simTau95": [
+        0.0151,
+        0.0264
+      ],
+      "realTau": 0.2202,
+      "tauPercentile": 100,
+      "consistent": false
+    },
+    "M2": {
+      "simTauMean": 0.2567,
+      "simTau95": [
+        0.1821,
+        0.3397
+      ],
+      "realTau": 0.2202,
+      "tauPercentile": 16.7,
+      "consistent": true
+    },
+    "M3": {
+      "simTauMean": 0.214,
+      "simTau95": [
+        0.1614,
+        0.3065
+      ],
+      "realTau": 0.2202,
+      "tauPercentile": 70,
+      "consistent": true
+    }
+  },
+  "offsetVsShape": {
+    "offsetOnly": 25,
+    "shapeAlso": 30,
+    "majorityOffset": false
+  },
+  "etaRotStability": {
+    "jkBetaMean": 0.0133,
+    "jkBetaSD": 0.0007,
+    "signStable": true
+  },
+  "verdict": "M3_WINS"
+}

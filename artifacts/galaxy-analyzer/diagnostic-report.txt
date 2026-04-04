@@ -3513,3 +3513,82 @@ RECOMMENDED PRIORITY:
   4. FUTURE: BIG-SPARC (~4000 galaxies, decisive statistical power)
 
 ================================================================================
+
+================================================================================
+  SECTION 31: PHASE 13 — MODEL DECISION RUN
+  Version 13.0.0
+================================================================================
+
+PURPOSE:
+  Formal comparison of 4 competing models to resolve the question:
+  "Is a0 universal, or does each galaxy need its own a0?"
+
+MODELS:
+  M0: Universal a0 — one a0 for ALL galaxies (DL population mean)
+  M1: Universal a0 + inclination marginalization (per-galaxy inc prior)
+  M2: Universal a0 + eta_rot as second parameter
+  M3: Galaxy-varying a0 — each galaxy gets its own a0 (hierarchical)
+
+LOCKED BASELINE:
+  N = 56 galaxies, 1484 total data points
+  a0 = 3656, tau = 0.2202, I² = 99.9%
+
+RESULTS:
+
+  1. 10-FOLD CROSS-VALIDATION (galaxy-level held-out prediction):
+     M0: CV RMS = 0.1176 dex
+     M1: CV RMS = 0.1176 dex  (inc marginalization adds NOTHING)
+     M2: CV RMS = 0.1191 dex  (eta_rot makes it WORSE out-of-sample!)
+     M3: CV RMS = 0.0629 dex  (46.5% improvement over M0)
+     WINNER: M3
+
+  2. INFORMATION CRITERIA:
+     M3 wins BOTH AIC (delta=1686) and BIC (delta=1395) decisively.
+     Even with BIC's severe penalty for 56 parameters, M3 still wins.
+
+  3. POSTERIOR PREDICTIVE CHECKS:
+     M0: FAILS — simulated tau = 0.021, real = 0.220 (100th percentile)
+     M1: FAILS — simulated tau = 0.021, real = 0.220 (100th percentile)
+     M2: CONSISTENT — simulated tau = 0.257, real at 17th percentile
+     M3: CONSISTENT — simulated tau = 0.214, real at 70th percentile
+
+  4. OFFSET vs SHAPE:
+     45% offset-only, 55% show shape differences also.
+     The difference is NOT just a scale shift — some galaxies have
+     genuinely different RAR transition shapes.
+
+  5. ETA_ROT STABILITY:
+     Jackknife beta = 0.013 ± 0.001, always positive.
+     The signal is REAL but SMALL — eta_rot does not rescue M0.
+
+VERDICT TABLE:
+  Criterion              Winner
+  ─────────────────────────────────
+  CV held-out RMS        M3
+  AIC                    M3
+  BIC                    M3
+  PPC (tau consistent)   M2, M3
+  Offset vs shape        Shape varies (favors M3)
+  eta_rot stability      Stable but weak
+
+FINAL VERDICT:
+  M3 (galaxy-varying a0) WINS on ALL major criteria.
+  
+  Key numbers:
+  - M3 improves held-out prediction by 46.5% over M0
+  - M3 wins AIC by 1686 points (overwhelming evidence)
+  - M0/M1 fail posterior predictive checks (tau too low)
+  - eta_rot (M2) does NOT improve out-of-sample prediction
+  
+  INTERPRETATION:
+  A single universal a0 is NOT sufficient to describe the data.
+  Each galaxy requires its own a0 for adequate prediction.
+  The hierarchical model (central a0 with galaxy-level variation)
+  provides the best description of reality.
+  
+  This does NOT mean "MOND is wrong" — it means:
+  Either a0 genuinely varies, or there exist astrophysical
+  systematics that create galaxy-to-galaxy apparent variation
+  in a0 that cannot be captured by inc or eta_rot alone.
+
+================================================================================

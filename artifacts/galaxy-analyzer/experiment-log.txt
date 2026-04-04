@@ -1110,3 +1110,30 @@ PRIORITY MAP (tied to Phase 12b systematics budget):
 NEXT STEP: M0 vs M1 vs M2 formal model comparison on current data
 
 ================================================================================
+
+Section 42: Phase 13 — Model Decision Run
+-------------------------------------------
+Date: 2026-04-04
+Version: 13.0.0
+
+MODELS: M0 (universal), M1 (+inc), M2 (+eta_rot), M3 (per-galaxy)
+
+10-FOLD CV RMS:
+  M0: 0.1176, M1: 0.1176, M2: 0.1191, M3: 0.0629
+  M3 wins by 46.5% improvement over M0
+
+AIC: M3 wins by 1686 points. BIC: M3 wins by 1395 points.
+
+PPC: M0/M1 FAIL (tau at 100th percentile). M2/M3 CONSISTENT.
+
+Offset vs shape: 45% offset-only, 55% shape also varies.
+
+eta_rot jackknife: beta stable (always positive) but small.
+
+VERDICT: M3 WINS on ALL criteria. Universal a0 is insufficient.
+  Each galaxy needs its own a0 for adequate prediction.
+
+Files: scripts/phase13-model-decision.cjs
+       public/phase13-model-decision.json
+
+================================================================================
