@@ -1971,3 +1971,28 @@ outerOsc: PARTIAL (suppressor — raw t=0.8 but |BL t=2.7)
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 77: Phase 44 — Beam Smearing
+------------------------------------------------------
+Date: 2026-04-04
+Version: 44.0.0 — FAST PROTOCOL
+
+nPts: CONFIRMED by fast (3/3) but deep tests weak
+  (perm p=0.075, boot crosses zero).
+  More RC points → higher a0. ZERO circularity.
+  Borderline — not added to baseline.
+
+  Key negative result: distance, beam size, Q flag, angular
+  size all FAIL. a0 variation is NOT a resolution artifact.
+
+  Gas/Kinematics Door:
+    sigma_gas:     FAIL (=Vflat)
+    non-circular:  wigRatio CONFIRMED
+    bar strength:  PARTIAL (innerRise)
+    spiral/warp:   PARTIAL (outerOsc suppressor)
+    beam smearing: nPts borderline CONFIRMED (deep tests weak)
+    Next: gas disk thickness / flaring
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================

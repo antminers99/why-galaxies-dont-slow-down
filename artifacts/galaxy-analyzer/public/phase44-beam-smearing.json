@@ -1,0 +1,108 @@
+{
+  "version": "44.0.0",
+  "timestamp": "2026-04-04T16:16:09.729Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "logD",
+      "circ": "ZERO",
+      "note": "distance (external)",
+      "rawR": -0.272,
+      "rawT": 2.1,
+      "newBLr": -0.01,
+      "newBLt": 0.1,
+      "looGC": 26.2,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "beams/Rd",
+      "circ": "ZERO",
+      "note": "angular resolution/disk",
+      "rawR": -0.129,
+      "rawT": 1,
+      "newBLr": 0.031,
+      "newBLt": 0.2,
+      "looGC": 25.7,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "pts/kpc",
+      "circ": "ZERO",
+      "note": "sampling density",
+      "rawR": 0.458,
+      "rawT": 3.8,
+      "newBLr": 0.196,
+      "newBLt": 1.4,
+      "looGC": 28.6,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "spatSamp",
+      "circ": "ZERO",
+      "note": "min radial spacing",
+      "rawR": -0.357,
+      "rawT": 2.8,
+      "newBLr": -0.152,
+      "newBLt": 1.1,
+      "looGC": 25.5,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "angSize",
+      "circ": "ZERO",
+      "note": "apparent size",
+      "rawR": 0.101,
+      "rawT": 0.7,
+      "newBLr": 0.037,
+      "newBLt": 0.3,
+      "looGC": 26,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "nPts",
+      "circ": "ZERO",
+      "note": "number of RC points",
+      "rawR": 0.292,
+      "rawT": 2.2,
+      "newBLr": 0.241,
+      "newBLt": 1.8,
+      "looGC": 31,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "Q",
+      "circ": "ZERO",
+      "note": "SPARC quality flag",
+      "rawR": 0.026,
+      "rawT": 0.2,
+      "newBLr": -0.166,
+      "newBLt": 1.2,
+      "looGC": 25.4,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "beam/inn",
+      "circ": "LOW",
+      "note": "beam vs inner spacing",
+      "rawR": 0.154,
+      "rawT": 1.1,
+      "newBLr": 0.192,
+      "newBLt": 1.4,
+      "looGC": 29.5,
+      "adds": true,
+      "verdict": "PROMISING"
+    }
+  ],
+  "bestProxy": "nPts",
+  "finalVerdict": "CONFIRMED"
+}

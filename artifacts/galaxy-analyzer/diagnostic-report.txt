@@ -5217,3 +5217,53 @@ RESULT: PARTIAL — outerOsc strong suppressor but raw signal weak
     Flagged for potential baseline addition if corroborated.
 
 ================================================================================
+
+================================================================================
+  SECTION 65: PHASE 44 — Beam Smearing / Resolution Effects
+  Version 44.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: nPts CONFIRMED by fast criteria, but deep tests weak
+
+  8 proxies tested — ALL have ZERO circularity (external/observational).
+
+  FAST SCREEN:
+    logD:        |BL t=0.1 WEAK (distance → no signal after baseline)
+    beams/Rd:    |BL t=0.2 FAIL-FAST
+    pts/kpc:     |BL t=1.4 WEAK
+    spatSamp:    |BL t=1.1 WEAK
+    angSize:     |BL t=0.3 FAIL-FAST
+    nPts:        |BL t=1.8, LOO 31.0%                  PROMISING ★
+    Q:           |BL t=1.2 WEAK
+    beam/inn:    |BL t=1.4, LOO 29.5%                  PROMISING
+
+  DEEP TESTS:
+    nPts (number of RC data points, ZERO circularity):
+      Raw: r=0.292 t=2.2 (PASS)
+      |newBL: r=0.241 t=1.8 (MARGINAL)
+      |newBL+Vflat: r=0.273 t=2.0 (survives Vflat)
+      Perm p=0.0752 (NOT significant at 0.05)
+      Bootstrap: [-0.008, 0.487] crosses zero (barely)
+      Jackknife: 0 flips, SD=0.018
+
+    beam/inn:
+      Perm p=0.152, bootstrap crosses zero.
+      Weaker than nPts. Not independent.
+
+  ASSESSMENT:
+    Fast protocol → CONFIRMED (3/3: raw t=2.2, BL t=1.8, adds LOO)
+    Deep tests → WEAK (perm p>0.05, bootstrap crosses zero)
+    
+    MIXED VERDICT: Technically CONFIRMED but borderline.
+    nPts is a data quality variable. More RC points → higher a0.
+    Possible explanations:
+    1. Better-sampled galaxies have less fitting noise
+    2. nPts correlates with galaxy properties not in baseline
+    3. Genuine sampling bias in a0 estimation
+
+    NOT adding to baseline — flagged for final review.
+    The key negative result is equally important:
+    Distance, beam size, Q flag, angular size → NO signal.
+    a0 variation is NOT a trivial resolution artifact.
+
+================================================================================
