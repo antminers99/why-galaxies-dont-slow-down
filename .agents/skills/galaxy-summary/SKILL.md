@@ -98,6 +98,16 @@ NO TENSION with literature. Different analyses measure different scatter compone
 - F-test: 39/56 (70%) galaxies individually reject global a₀ (consistent with Rodrigues+2018)
 - Position: complements literature — RAR is tight at point level, heterogeneous at galaxy level
 
+## Phase 10 v10.0 Results (Second-Parameter Search)
+
+10 candidates tested. 3 significant but MODEST:
+- eta_rot (RC shape): r=0.334, p=0.010, dAIC=-4.6, tau drops 5.7% — STRONGEST
+- T (Hubble type): r=0.278, p=0.043, tau drops 4.4%
+- S_out (outer slope): r=-0.418, p=0.045, but n=23 only
+- Surface brightness, inclination, distance method: NEGLIGIBLE
+- 94% of heterogeneity remains UNEXPLAINED
+- "a₀ universal + unmeasured second parameter" remains VIABLE but UNRESOLVED
+
 ## Key Files
 
 - v4.0 pipeline: `artifacts/galaxy-analyzer/scripts/definitive-v4.cjs`
@@ -112,8 +122,10 @@ NO TENSION with literature. Different analyses measure different scatter compone
 - Phase 9 benchmark: `artifacts/galaxy-analyzer/scripts/phase9-benchmark-replication.cjs` (v9.0.0)
 - Phase 9 results: `artifacts/galaxy-analyzer/public/phase9-benchmark-results.json`
 - SPARC master table: `artifacts/galaxy-analyzer/public/sparc-table.json` (175 galaxies)
-- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (25 sections)
+- Phase 10 search: `artifacts/galaxy-analyzer/scripts/phase10-second-parameter.cjs` (v10.0.0)
+- Phase 10 results: `artifacts/galaxy-analyzer/public/phase10-second-param-results.json`
+- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (26 sections)
 
 ## Status
 
-All four systematic checkboxes passed. The EXISTENCE of a transition scale is observationally robust. Phase 9 benchmark replication resolved the apparent tension with literature: our tau (~0.29 dex) and the literature's scatter (~0.04-0.13 dex) are DIFFERENT QUANTITIES (galaxy-level vs point-level). Both are correct. Within-galaxy scatter matches McGaugh+2016 (0.12 vs 0.13 dex). Between-galaxy heterogeneity is intrinsic, not a pipeline artifact. 70% of galaxies individually reject the global a₀. Headline a₀=3633 is not demonstrably biased. The RAR is tight at the data-point level but heterogeneous at the galaxy level.
+All systematic checkboxes passed. Phase 10 second-parameter search tested 10 candidates: eta_rot (RC shape) is strongest (r=0.334, p=0.010, dAIC=-4.6) but reduces tau by only 5.7%. 94% of galaxy-level heterogeneity remains unexplained by any measured property. The framing "a₀ universal + unmeasured second parameter" remains viable but unresolved. The RAR is tight at the point level but heterogeneous at the galaxy level.

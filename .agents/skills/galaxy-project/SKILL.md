@@ -106,6 +106,10 @@ cosmological origin established. Do not overclaim.
     NO tension: tau (galaxy-level, 0.29) ≠ literature scatter (point-level, 0.04-0.13).
     Within-galaxy scatter 0.122 dex MATCHES McGaugh+2016 (0.13 dex).
     70% of galaxies reject global a0 (F-test). tau NOT a pipeline artifact.
+21. **Phase 10 v10.0**: Second-parameter search (10 candidates).
+    eta_rot STRONGEST: r=0.334, p=0.010, dAIC=-4.6, tau drops 5.7%.
+    T (Hubble type): r=0.278, p=0.043, tau drops 4.4%.
+    94% of heterogeneity remains UNEXPLAINED by any measured property.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -120,8 +124,9 @@ COMPLETED:
 - Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance correlation disappears
 - Phase 8 v8.0: Meta-regression — distance method NOT significant after covariate control
 - Phase 9 v9.0: Benchmark replication — NO tension with literature, different scatter quantities
+- Phase 10 v10.0: Second-parameter search — eta_rot is strongest (r=0.334, p=0.010) but only -5.7% tau
 
-CRITICAL FINDINGS (Phase 6-9):
+CRITICAL FINDINGS (Phase 6-10):
 - tau (~0.29 dex) is INTRINSIC — not reducible by better data quality
 - Distance-method effect NOT SIGNIFICANT after controlling for covariates (b=0.061, t=0.56, p=0.55)
 - Phase 7 anchor a₀ increase (4357) was CONFOUNDED by inclination, not distance method
@@ -134,6 +139,10 @@ CRITICAL FINDINGS (Phase 6-9):
 - Phase 9: Within-galaxy scatter = 0.122 dex ≈ McGaugh+2016 (0.13) — MATCHES
 - Phase 9: 70% of galaxies individually reject global a₀ (F-test)
 - Phase 9: RAR is tight at point level but heterogeneous at galaxy level
+- Phase 10: eta_rot (RC shape) is strongest second parameter (r=0.334, p=0.010, dAIC=-4.6)
+- Phase 10: T (Hubble type) and S_out (outer slope) also significant but modest
+- Phase 10: Best candidate reduces tau by only 5.7% — 94% unexplained
+- Phase 10: Surface brightness (EFE proxy), inclination, distance method: NEGLIGIBLE
 
 REMAINING:
 - Investigate what drives intrinsic tau (disk structure? gas content? SFH?)
@@ -183,6 +192,8 @@ Solve A first. B becomes much cleaner after.
 | `public/phase8-metareg-results.json` | Phase 8 v8.0 results (current) |
 | `scripts/phase9-benchmark-replication.cjs` | Phase 9 v9.0 benchmark (CURRENT) |
 | `public/phase9-benchmark-results.json` | Phase 9 v9.0 results (current) |
+| `scripts/phase10-second-parameter.cjs` | Phase 10 v10.0 search (CURRENT) |
+| `public/phase10-second-param-results.json` | Phase 10 v10.0 results (current) |
 | `public/sparc-table.json` | SPARC master table (175 gal, Q/T/fD) |
 | `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |

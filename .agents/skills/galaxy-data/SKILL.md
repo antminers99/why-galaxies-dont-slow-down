@@ -320,6 +320,10 @@ Key findings:
 - Phase 9: within-galaxy scatter = 0.122 dex ≈ McGaugh+2016 (0.13 dex) — MATCHES
 - Phase 9: 70% of galaxies individually reject global a₀ (F-test, p<0.05)
 - Phase 9: tau NOT a pipeline artifact (ablation: Y* +4%, quality cuts don't help)
+- Phase 10: eta_rot is STRONGEST second parameter (r=0.334, p=0.010, dAIC=-4.6)
+- Phase 10: T (Hubble type) also significant (r=0.278, p=0.043)
+- Phase 10: Best candidate reduces tau by only 5.7% — 94% unexplained
+- Phase 10: SBdisk/SBeff/inc/fD have NEGLIGIBLE effects on tau
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.

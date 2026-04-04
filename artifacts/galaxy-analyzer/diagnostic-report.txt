@@ -2944,10 +2944,184 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   (5) Strict universality of a0 is disfavored but prior-dependent."
 
 ================================================================================
-END OF DIAGNOSTIC REPORT (v9.0 — Phase 9 benchmark update)
+  SECTION 26: PHASE 10 — SECOND-PARAMETER SEARCH
 ================================================================================
 
-  This report supersedes all previous versions (v1.0-v8.0).
+  Phase 10 asks: Can adding a second variable X to the RAR model
+  significantly reduce galaxy-level tau?
+
+  Script: scripts/phase10-second-parameter.cjs (v10.0.0)
+  Results: public/phase10-second-param-results.json
+
+  ────────────────────────────────────────────────────────────────────
+  FRAMEWORK
+  ────────────────────────────────────────────────────────────────────
+
+  Model 0: logA0_eff = mu                  (universal a0)
+  Model 1: logA0_eff = mu + beta * X_norm  (a0 depends on X)
+
+  a0 may be truly universal, but the RAR may depend on a second
+  parameter not represented in the single-parameter model.
+
+  Tested 10 candidates on 56 GOLD+i45 benchmark galaxies.
+  Baseline tau (SD logA0): 0.2746 dex.
+
+  ────────────────────────────────────────────────────────────────────
+  FULL RANKING BY TAU REDUCTION
+  ────────────────────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Rank  Candidate      tau_new  delta%   r      p(perm) dAIC Sig │
+  ├──────────────────────────────────────────────────────────────────┤
+  │  1.   logMHI          0.239  -13.0%  -0.091   0.514   +1.6  no │
+  │  2.   logL36          0.251   -8.7%  -0.151   0.306   +0.8  no │
+  │  3.   eta_rot         0.259   -5.7%  +0.334   0.010  -4.6 YES │
+  │  4.   T (Hubble)      0.263   -4.4%  +0.278   0.043  -2.3 YES │
+  │  5.   Rdisk           0.265   -3.5%  -0.261   0.061  -2.0  no │
+  │  6.   logSigmaBar     0.267   -3.0%  -0.242   0.080  -1.4  no │
+  │  7.   S_out           0.271   -1.3%  -0.418   0.045  -2.4 YES │
+  │  8.   SBdisk          0.273   -0.5%  -0.104   0.427  +1.4  no │
+  │  9.   inc             0.274   -0.2%  -0.055   0.692  +1.8  no │
+  │ 10.   SBeff           0.274   -0.1%  -0.040   0.780  +1.9  no │
+  └──────────────────────────────────────────────────────────────────┘
+
+  Significance criteria: p(perm) < 0.05 AND |t| >= 2.0 AND dAIC < -2
+
+  ────────────────────────────────────────────────────────────────────
+  SIGNIFICANT CANDIDATES
+  ────────────────────────────────────────────────────────────────────
+
+  1. eta_rot (rotation curve shape parameter)
+     beta = +0.0918 +/- 0.0352, t = 2.61, p(perm) = 0.010
+     R^2 = 11.2%, deltaAIC = -4.63
+     tau: 0.2746 -> 0.2589 (-5.7%)
+     Point RMS: 0.1557 -> 0.1511 (-3.0%)
+     Jackknife: beta stable in [0.078, 0.111]
+
+     INTERPRETATION: Galaxies with more peaked/concentrated rotation
+     curves (higher eta_rot) tend to have HIGHER best-fit a0. This
+     is consistent with a kinematic correction: galaxies with
+     steeper inner RC shapes may have different effective a0 values
+     due to bar-induced non-circular motions or beam smearing.
+
+  2. T (Hubble type)
+     beta = +0.0760 +/- 0.0364, t = 2.09, p(perm) = 0.043
+     R^2 = 7.7%, deltaAIC = -2.34
+     tau: 0.2746 -> 0.2626 (-4.4%)
+     Point RMS: 0.1563 -> 0.1549 (-0.9%)
+     Jackknife: beta stable in [0.051, 0.090]
+
+     INTERPRETATION: Later Hubble types (more disk-dominated,
+     less concentrated) tend to have HIGHER best-fit a0. This
+     is correlated with eta_rot (morphology drives RC shape).
+
+  3. S_out (outer rotation curve slope)
+     beta = -0.1248 +/- 0.0591, t = -2.11, p(perm) = 0.045
+     R^2 = 17.5% (but n=23 only), deltaAIC = -2.42
+     tau: 0.2746 -> 0.2710 (-1.3%)
+     Jackknife: beta stable in [-0.167, -0.104]
+
+     INTERPRETATION: Galaxies with declining outer RCs (lower S_out)
+     tend to have HIGHER a0. However, n=23 is marginal. This needs
+     confirmation with larger samples.
+
+  ────────────────────────────────────────────────────────────────────
+  NON-SIGNIFICANT BUT NOTABLE
+  ────────────────────────────────────────────────────────────────────
+
+  logMHI (HI gas mass) gives the LARGEST raw tau reduction (-13.0%)
+  but is NOT significant (p=0.514, t=-0.63). The large apparent
+  reduction is a sample-size artifact: only 49 galaxies have MHI
+  data, and the 7 excluded galaxies happened to have extreme logA0.
+  The correlation itself is near zero (r=-0.091).
+
+  logSigmaBar (baryonic surface density) shows a suggestive trend
+  (r=-0.242, p=0.080) but does not reach significance. This is the
+  closest proxy to EFE (External Field Effect) available in the
+  SPARC data. If EFE is the true driver, a direct measurement of
+  the external gravitational field would be needed.
+
+  ────────────────────────────────────────────────────────────────────
+  MULTI-PARAMETER MODEL
+  ────────────────────────────────────────────────────────────────────
+
+  Top-3 combined: logMHI + logL36 + eta_rot
+  n = 49, R^2 = 9.9%
+  tau: 0.2746 -> 0.2278 (-17.1%)
+  deltaAIC = +0.90 (DOES NOT improve after complexity penalty)
+
+  The multi-parameter model explains ~10% of variance but does NOT
+  survive the AIC penalty. The individual effects are too small and
+  correlated to justify the additional complexity.
+
+  ────────────────────────────────────────────────────────────────────
+  PHASE 10 VERDICT
+  ────────────────────────────────────────────────────────────────────
+
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  eta_rot (rotation curve shape) is the STRONGEST measured      ║
+  ║  second parameter: r = 0.334, p = 0.010, dAIC = -4.6          ║
+  ║                                                                ║
+  ║  However, even the best candidate reduces tau by only 5.7%.    ║
+  ║  The VAST MAJORITY of galaxy-level heterogeneity (>94%)        ║
+  ║  remains unexplained by any measured observational property.    ║
+  ║                                                                ║
+  ║  This is consistent with:                                      ║
+  ║  (a) a0 being truly universal + an unmeasured second parameter ║
+  ║      (e.g., EFE, halo concentration, formation history)        ║
+  ║  (b) Multiple small effects combining nonlinearly              ║
+  ║  (c) Genuinely intrinsic astrophysical diversity in the RAR    ║
+  ║                                                                ║
+  ║  The framing "a0 is universal but RAR depends on a second      ║
+  ║  variable" remains VIABLE but UNRESOLVED with current data.    ║
+  ╚══════════════════════════════════════════════════════════════════╝
+
+  ────────────────────────────────────────────────────────────────────
+  UPDATED PAPER-READY STATEMENT (incorporating Phases 7-10)
+  ────────────────────────────────────────────────────────────────────
+
+  "A robust acceleration transition scale exists in the rotation
+  curves of late-type galaxies. Using 59 GOLD-quality SPARC galaxies
+  with per-galaxy nuisance marginalization under a DerSimonian-Laird
+  random-effects model, we measure a0 = 3633 (km/s)^2/kpc =
+  1.18 x 10^-10 m/s^2, with between-galaxy scatter tau = 0.291 dex
+  (I^2 = 92.4%), consistent within 2% of McGaugh et al. (2016).
+
+  Four distinct scatter measures must be distinguished:
+  (1) Total point RMS with global a0: 0.155 dex (GOLD+i45);
+  (2) Within-galaxy point RMS (per-galaxy a0): 0.122 dex,
+      matching McGaugh et al. (2016) at 0.13 dex;
+  (3) Between-galaxy component of point variance: 0.096 dex
+      (ANOVA residual);
+  (4) SD of per-galaxy best-fit logA0: 0.275 dex
+      (galaxy-level estimator spread; tau = 0.291 via DL).
+
+  A systematic search over 10 candidate second parameters finds
+  that rotation curve shape (eta_rot) is the strongest predictor
+  of per-galaxy a0 (r = 0.334, p = 0.010, dAIC = -4.6), followed
+  by Hubble type (r = 0.278, p = 0.043) and outer slope
+  (r = -0.418, p = 0.045, n = 23). However, even the best candidate
+  reduces tau by only 5.7%. Surface brightness (EFE proxy),
+  inclination, and distance method have NEGLIGIBLE effects.
+
+  We conclude:
+  (1) The existence of a transition scale is robust;
+  (2) The headline a0 = 3633 is not demonstrably biased;
+  (3) Between-galaxy heterogeneity (tau ~ 0.29 dex) is intrinsic
+      and largely unexplained by measured properties;
+  (4) There is no tension with the literature — different analyses
+      measure different scatter components;
+  (5) Rotation curve shape (eta_rot) is a suggestive but modest
+      second parameter; the bulk of heterogeneity requires
+      unmeasured variables or is genuinely intrinsic;
+  (6) Strict universality of a0 is disfavored but the alternative
+      'a0 universal + unmeasured second parameter' remains viable."
+
+================================================================================
+END OF DIAGNOSTIC REPORT (v10.0 — Phase 10 second-parameter update)
+================================================================================
+
+  This report supersedes all previous versions (v1.0-v9.0).
   The empirical findings of Sections 1-11 remain valid.
   Sections 12-14 are the v3.0 baseline (archived for comparison).
   Sections 15-19 represent the v4.0 definitive pipeline.
@@ -2957,6 +3131,7 @@ END OF DIAGNOSTIC REPORT (v9.0 — Phase 9 benchmark update)
   Section 23 is the Phase 7 anchor-sample refit.
   Section 24 is the Phase 8 distance-method meta-regression.
   Section 25 is the Phase 9 benchmark-to-literature replication.
+  Section 26 is the Phase 10 second-parameter search.
 
   Phase 1 analysis: scripts/diagnostic-tests.cjs
   Phase 2 analysis: scripts/diagnostic-phase2.cjs
@@ -2968,6 +3143,7 @@ END OF DIAGNOSTIC REPORT (v9.0 — Phase 9 benchmark update)
   Phase 7 anchor: scripts/phase7-anchor-refit.cjs (v7.0.0)
   Phase 8 metareg: scripts/phase8-distance-metareg.cjs (v8.0.0)
   Phase 9 benchmark: scripts/phase9-benchmark-replication.cjs (v9.0.0)
+  Phase 10 search: scripts/phase10-second-parameter.cjs (v10.0.0)
   Phase 1 results: public/diagnostic-results.json
   Phase 2 results: public/diagnostic-phase2-results.json
   v3.0 results: public/gold-standard-results.json (v3.0.0)
@@ -2977,6 +3153,8 @@ END OF DIAGNOSTIC REPORT (v9.0 — Phase 9 benchmark update)
   Phase 7 results: public/phase7-anchor-results.json (v7.0.0)
   Phase 8 results: public/phase8-metareg-results.json (v8.0.0)
   Phase 9 results: public/phase9-benchmark-results.json (v9.0.0)
+  Phase 10 results: public/phase10-second-param-results.json (v10.0.0)
+  Figure 1 data: public/figure1-data.json (v1.1.0)
   SPARC master table: public/sparc-table.json (175 galaxies)
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 ================================================================================
