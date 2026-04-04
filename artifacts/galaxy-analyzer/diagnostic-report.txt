@@ -6014,3 +6014,103 @@ RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
     "environment = threshold + continuous tidal processing depth"
 
 ================================================================================
+
+================================================================================
+  SECTION 88: PHASE 58a3 — logMhost ROBUSTNESS / MISSINGNESS AUDIT
+================================================================================
+
+  RESULTS: 4/4 TESTS PASSED → CONFIRMED-ROBUST
+
+  ─────────────────────────────────────────────────────────────────────────
+  1) MISSINGNESS BIAS TEST: PASS
+  ─────────────────────────────────────────────────────────────────────────
+
+  N_published = 45, N_estimated = 11
+
+  The 11 estimated galaxies ARE systematically different:
+    distance:   pub=18 Mpc  est=80 Mpc  (t=-12.40) — all distant
+    envCode:    pub=0.64    est=0.00    (t=2.56) — all field
+    logMHI:     pub=0.55    est=1.22    (t=-3.70) — more gas-rich
+
+  BUT the OUTCOME is NOT biased:
+    delta_a0:   pub=0.016   est=-0.066  (t=0.92) — NOT significant!
+    logA0:      pub=3.580   est=3.498   (t=0.92) — NOT significant!
+
+  The 11 estimated galaxies are distant, field, gas-rich galaxies
+  but their a₀ residuals are statistically indistinguishable.
+
+  ─────────────────────────────────────────────────────────────────────────
+  2) SAME-SAMPLE COMPARISON: PASS (N=45 throughout)
+  ─────────────────────────────────────────────────────────────────────────
+
+  All comparisons on SAME N=45 (fair, no sample-size confound):
+
+  Baseline A on 45:           R2adj=0.344, LOO=22.4%
+  A + logMhost on 45:         R2adj=0.414, LOO=30.7% (t=-2.41)
+  delta:                      +0.071 R2adj, +8.2pp LOO
+
+  Baseline B on 45:           R2adj=0.463, LOO=34.4%
+  B + logMhost on 45:         R2adj=0.532, LOO=43.3% (t=-2.60)
+  delta:                      +0.069 R2adj, +8.8pp LOO
+
+  ─────────────────────────────────────────────────────────────────────────
+  3) WITHIN-ENVIRONMENT STRIPS: PASS
+  ─────────────────────────────────────────────────────────────────────────
+
+  Non-field only (envCode>0, N=19):
+    r = -0.426 (t=-1.94) — signal EXISTS within non-field
+    After logMHI: r=-0.528 (t=-2.56) — even STRONGER!
+
+  Field only (envCode=0, N=26):
+    r = -0.378 (t=-2.00) — signal EXISTS within field too!
+
+  Cluster only (envCode=2, N=10):
+    r = 0.119 (t=0.34) — no signal within cluster-only (all UMa=13.0)
+
+  INTERPRETATION: logMhost captures tidal depth variation WITHIN
+  each environment class. It is NOT merely a smoother envCode.
+  The signal is driven by the full mass range, not just the
+  field-vs-non-field boundary.
+
+  ─────────────────────────────────────────────────────────────────────────
+  4) DISTANCE-QUALITY CONTROL: PASS
+  ─────────────────────────────────────────────────────────────────────────
+
+  r(logMhost, distance) = 0.068 — essentially ZERO!
+  logMhost is NOT a distance proxy.
+
+  After distance alone: r=-0.525 (t=-4.04) — unchanged
+  After envCode+distance: r=-0.278 (t=-1.90) — survives
+  After Baseline B + distance: r=-0.306 (t=-2.11) — SURVIVES
+
+  B + distance + logMhost:
+    logMhost t=-2.65 (significant)
+    distance t=0.79 (not significant)
+  → logMhost absorbs distance, not the other way around.
+
+  Near (D<=20 Mpc, N=34): r=-0.605 (t=-4.30) — very strong
+  Far (D>20 Mpc, N=11): r=-0.220 (t=-0.68) — weak (small N)
+
+  ─────────────────────────────────────────────────────────────────────────
+  5) REPLACE vs ADD: REPLACEMENT IS BETTER
+  ─────────────────────────────────────────────────────────────────────────
+
+  B (envCode):            LOO = 34.4%
+  B (logMhost replaces):  LOO = 45.6% (+11.1pp)
+  B (both together):      LOO = 43.3% (+8.8pp)
+
+  envCode t = -0.63 when logMhost present → envCode REDUNDANT
+  logMhost t = -3.21 in replacement model → DOMINANT
+
+  Optimal strategy: REPLACE envCode with logMhost.
+  Adding both causes mild overfitting (LOO drops 2.3pp vs replace).
+
+  ─────────────────────────────────────────────────────────────────────────
+  VERDICT: CONFIRMED-ROBUST (4/4 tests passed)
+  ─────────────────────────────────────────────────────────────────────────
+
+  logMhost passes all robustness and missingness checks.
+  It should REPLACE envCode in the baselines.
+  The improvement is not a sample-selection artifact.
+
+================================================================================

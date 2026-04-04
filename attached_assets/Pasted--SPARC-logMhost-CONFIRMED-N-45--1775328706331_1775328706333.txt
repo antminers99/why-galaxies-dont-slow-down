@@ -1,0 +1,152 @@
+هاي أقوى نتيجة جديدة بعد SPARC نفسه.
+الحكم المباشر
+logMhost = CONFIRMED على عينة N=45 المنشورة
+وهذا ليس مجرد متغير إضافي صغير، بل:
+أول متغير خارجي جديد
+ينجو بعد envCode
+ينجو بعد logMHI
+ينجو بعد Baseline A
+ينجو بعد Baseline B
+ويحسن LOO بوضوح كبير
+هذا مهم جدًا.
+شو تغيّر الآن في الصورة العلمية؟
+قبل هالنتيجة، كنا نقول:
+البيئة = threshold effect
+وenvCode هو أفضل تمثيل لها
+هلق صار الأصح:
+البيئة ليست فقط threshold
+بل يوجد عمق بيئي مستمر continuous environmental depth وlogMhost يلتقطه أفضل من envCode
+الدليل الأقوى
+أهم سطرين عندك:
+بعد envCode:
+replacement test:
+هذا يعني عمليًا:
+logMhost أفضل من envCode
+لكن لازم نكون صارمين
+ما الذي ثبت؟
+على N=45 published-only
+نعم، ثبت بقوة
+ما الذي لم يثبت بعد؟
+على العينة الكاملة N=56
+لا، ليس بعد
+لأن الـ 11 estimated values خربوا الإشارة
+وهذا ليس تفصيلًا صغيرًا، بل:
+missingness / measurement-quality issue
+يعني لازم نجاوب أولًا:
+هل logMhost متغير حقيقي ممتاز
+أم أن نجاحه محصور لأن عينة الـ 45 هي عينة أفضل/أقرب/أغنى معلوماتيًا؟
+أنا لا أظن هذا يقتل النتيجة، لكن لازم نختبره.
+إذًا ماذا أفعل الآن؟
+لا ننتقل إلى Phase 59 بعد
+ولا نضيف logMhost للـ baseline النهائي فورًا
+ولا نكتب claim نهائي بعد
+الخطوة الإلزامية الآن:
+Phase 58a3 — Robustness / Missingness Audit for logMhost
+لماذا هذا ضروري؟
+لأنك الآن عندك حالتان مختلفتان جدًا:
+Published-only N=45
+إشارة قوية جدًا
+Full N=56
+إشارة أضعف بكثير
+إذا لم تفهم هذا الفرق، أي claim لاحق سيكون فيه ثغرة واضحة.
+Phase 58a3 — ماذا تعمل؟
+لازم تختبر 4 أشياء فقط:
+1) Missingness bias test
+قسّم العينة إلى:
+published host mass available
+host mass missing / estimated
+واختبر هل هاتان المجموعتان تختلفان أصلًا في:
+distance
+envCode
+logMHI
+rcWiggliness
+meanRun
+logA0 / delta_a0
+السؤال
+هل الـ 11 missing galaxies مجرد:
+field galaxies
+distant galaxies
+lower-information galaxies
+إذا نعم، فضعف N=56 مفهوم وغير قاتل.
+2) Published-only vs matched-subset control
+اعمل داخل الـ 45 المنشورة فقط:
+refit Baseline A
+refit Baseline B
+ثم أضف logMhost
+حتى تكون المقارنة عادلة 100%.
+يعني لا تقارن:
+B على 56 ضد
+B+logMhost على 45
+لازم المقارنة تكون:
+B on same 45 ضد
+B + logMhost on same 45
+هذا مهم جدًا.
+3) Field-only / group-only / cluster-only strip
+اختبر:
+هل الإشارة تبقى داخل non-field فقط؟
+هل هي فقط “field vs non-field”؟
+أم تبقى حتى داخل أعضاء البيئات غير المعزولة؟
+إذا بقيت داخل non-field:
+هذا قوي جدًا جدًا
+لأنه يعني أن logMhost ليس فقط نسخة أنعم من envCode.
+4) Distance-quality control
+بما أن الـ 11 المفقودين “بعيدون field galaxies >50 Mpc” حسب كلامك، لازم تختبر:
+logMhost | distance
+logMhost | envCode + distance
+logMhost | Baseline B + distance
+إذا بقي، هذا يقوّي النتيجة جدًا.
+القالب الذي أريده منك في 58a3
+Plain text
+Phase 58a3: logMhost robustness / missingness audit
+
+Groups compared:
+N_published =
+N_missing_or_estimated =
+
+Missingness tests:
+distance difference =
+envCode difference =
+logMHI difference =
+rcWiggliness difference =
+meanRun difference =
+delta_a0 difference =
+
+Same-sample comparison (published-only N=45):
+Baseline A on 45 =
+A + logMhost on 45 =
+delta =
+
+Baseline B on 45 =
+B + logMhost on 45 =
+delta =
+
+Within non-field only:
+Raw r/t =
+|envCode r/t =
+|Baseline B r/t =
+LOO delta =
+
+Distance control:
+|distance r/t =
+|distance+envCode r/t =
+|distance+Baseline B r/t =
+
+Final robustness verdict:
+FAIL / PARTIAL / CONFIRMED-ROBUST
+
+Short interpretation:
+متى أسمح بإدخاله للـ baseline؟
+إذا نجح 58a3، أنا شخصيًا سأقول:
+نعم، نعمل:
+Baseline A′
+بدل:
+وBaseline B′
+لكن بعد 58a3 فقط.
+الحكم العلمي الحالي
+أقوى صياغة ممكنة الآن:
+Published host/group mass is the first post-SPARC external variable that clearly improves on both frozen baselines and outperforms binary environmental coding, but its robustness to sample missingness must be established before baseline replacement is finalized.
+الخلاصة
+هاي نتيجة كبيرة جدًا، لكنها لم تنتهِ بعد.
+الخطوة التالية ليست باب جديد، بل:
+Phase 58a3 — robustness / missingness audit for logMhost
+إذا نجح، تكون فعليًا قد عدّلت أحد أعمدة baseline الأساسية لأول مرة بعد تجميد SPARC.

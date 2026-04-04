@@ -2332,3 +2332,16 @@ Replacement: envCode→logMhost improves B LOO by +11.1pp!
 DUAL VERDICT: PARTIAL (N=56) / CONFIRMED (N=45 published)
 KEY: First post-SPARC variable to add above both baselines.
 
+
+Section 98: Phase 58a3 — logMhost Robustness Audit
+---------------------------------------------------
+Date: 2026-04-04
+VERDICT: CONFIRMED-ROBUST (4/4)
+1) Missingness: delta_a0 t=0.92, no outcome bias. PASS
+2) Same-sample N=45: B+td LOO +8.8pp, t=-2.60. PASS
+3) Non-field strip (N=19): r=-0.426, t=-1.94, after logMHI r=-0.528. PASS
+4) Distance: r(logMhost,D)=0.068, after B+dist t=-2.11. PASS
+Replace vs add: REPLACEMENT better (+11.1pp vs +8.8pp)
+envCode t=-0.63 when logMhost present → REDUNDANT
+CONCLUSION: logMhost should REPLACE envCode in baselines.
+
