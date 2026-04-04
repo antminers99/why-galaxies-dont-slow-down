@@ -1,0 +1,71 @@
+{
+  "phase": "68",
+  "title": "State-Axis Compression",
+  "baseline": {
+    "model": "B″",
+    "k": 6,
+    "looGap": 49.67979849340603,
+    "tau": 0.15595531003391264
+  },
+  "physicalAxes": {
+    "baryonic": {
+      "vars": [
+        "logMHI",
+        "logΣ₀",
+        "Υ★⊥"
+      ],
+      "pcaVarExplained": 0.45379349834030264,
+      "pcaLoadings": [
+        0.707106781186548,
+        0.707106781186547,
+        2.5464674825717715e-14
+      ]
+    },
+    "dynamical": {
+      "vars": [
+        "rcWig",
+        "logMeanRun"
+      ],
+      "pcaVarExplained": 0.570444933837179,
+      "pcaLoadings": [
+        0.7071067811865474,
+        0.7071067811865477
+      ]
+    },
+    "environmental": {
+      "vars": [
+        "logMhost"
+      ]
+    }
+  },
+  "compressed": {
+    "c3a": {
+      "vars": [
+        "logMHI",
+        "logMR",
+        "logMhost"
+      ],
+      "looGap": 44.0609907161801,
+      "tau": 0.17818473348106065
+    },
+    "c3b_pca": {
+      "vars": [
+        "baryPC1",
+        "dynPC1",
+        "logMhost"
+      ],
+      "looGap": 21.604342180252612,
+      "tau": 0.20684011673693545
+    },
+    "best3": {
+      "vars": [
+        "logMHI",
+        "logMhost",
+        "logMR"
+      ],
+      "looGap": 44.06099071618016
+    }
+  },
+  "retention": 88.68995457384624,
+  "compressionWorks": true
+}
