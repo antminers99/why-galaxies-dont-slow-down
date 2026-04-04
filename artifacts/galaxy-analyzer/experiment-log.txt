@@ -2047,3 +2047,26 @@ HI extent: outerFrac PARTIAL (perm p=0.079, boot barely excl zero).
   Candidate addition: wigRatio → ~31.8% (Phase 41 flagged)
 
 ================================================================================
+
+Section 80: Phase 47 — Internal Structure: Local RAR Flatness
+------------------------------------------------------
+Date: 2026-04-04
+Version: 47.0.0
+
+meanRun: CONFIRMED ★★★
+  Mean run length of same-sign RAR residuals.
+  |BL t=2.8, perm p=0.005***, boot [0.078,0.590], LOO 38.1%.
+  Survives all confounders including Vflat (t=3.2).
+  Low collinearity with rcWiggliness (r=0.16).
+  Circularity = MED (residuals a0-dependent but pattern less so).
+
+  Other proxies: concentration FAIL-FAST, gbarRange WEAK,
+  localRMS/meanResAb/rmsRatio WEAK+HIGH circ.
+
+  Internal Structure Door:
+    local RAR:    meanRun CONFIRMED
+    Next:         inner-outer difference (Phase 48)
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================

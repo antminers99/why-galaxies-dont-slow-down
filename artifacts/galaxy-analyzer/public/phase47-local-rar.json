@@ -1,0 +1,106 @@
+{
+  "version": "47.0.0",
+  "timestamp": "2026-04-04T16:28:51.327Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "localRMS",
+      "circ": "HIGH",
+      "note": "RAR fit quality (a0-dependent!)",
+      "rawR": 0.232,
+      "rawT": 1.8,
+      "newBLr": 0.076,
+      "newBLt": 0.5,
+      "looGC": 26,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "meanResAb",
+      "circ": "HIGH",
+      "note": "mean |RAR residual| (a0-dep!)",
+      "rawR": 0.206,
+      "rawT": 1.5,
+      "newBLr": 0.07,
+      "newBLt": 0.5,
+      "looGC": 25.8,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "slopeVar",
+      "circ": "MED",
+      "note": "RAR slope variance",
+      "rawR": 0.162,
+      "rawT": 1.2,
+      "newBLr": 0.004,
+      "newBLt": 0,
+      "looGC": 24.1,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gbarRange",
+      "circ": "LOW",
+      "note": "g_bar dynamic range",
+      "rawR": 0.176,
+      "rawT": 1.3,
+      "newBLr": 0.137,
+      "newBLt": 1,
+      "looGC": 27.2,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "in-outDf",
+      "circ": "HIGH",
+      "note": "inner-outer residual diff",
+      "rawR": 0.174,
+      "rawT": 1.3,
+      "newBLr": 0.162,
+      "newBLt": 1.2,
+      "looGC": 27.8,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "rmsRatio",
+      "circ": "HIGH",
+      "note": "inner/outer RMS ratio",
+      "rawR": 0.139,
+      "rawT": 1,
+      "newBLr": -0.042,
+      "newBLt": 0.3,
+      "looGC": 25.4,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "meanRun",
+      "circ": "MED",
+      "note": "residual run length",
+      "rawR": 0.36,
+      "rawT": 2.8,
+      "newBLr": 0.368,
+      "newBLt": 2.8,
+      "looGC": 38.1,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "concentr",
+      "circ": "ZERO",
+      "note": "SBdisk-SBeff (external)",
+      "rawR": -0.093,
+      "rawT": 0.7,
+      "newBLr": -0.054,
+      "newBLt": 0.4,
+      "looGC": 27,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    }
+  ]
+}

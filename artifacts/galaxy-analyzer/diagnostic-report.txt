@@ -5376,3 +5376,47 @@ RESULT: outerFrac PARTIAL. All genuine HI extent proxies FAIL.
   ════════════════════════════════════════════
 
 ================================================================================
+
+================================================================================
+  SECTION 69: PHASE 47 — Internal Structure: Local RAR Flatness
+  Version 47.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: meanRun CONFIRMED — strongest new signal from internal structure
+
+  8 proxies tested:
+
+  HIGH CIRCULARITY (discard/ignore):
+    localRMS, meanResAb, in-outDf, rmsRatio: all WEAK anyway.
+    These depend directly on a0 fit. No useful signal.
+
+  LOW/ZERO CIRCULARITY:
+    gbarRange:   |BL t=1.0 WEAK (dynamic range in g_bar)
+    concentr:    |BL t=0.4 FAIL-FAST (SBdisk-SBeff, external)
+
+  MED CIRCULARITY — CONFIRMED:
+    slopeVar:    |BL t=0.0 WEAK (RAR slope variance)
+    meanRun:     |BL t=2.8, LOO 38.1%    ★★★ CONFIRMED
+      Raw: r=0.360 t=2.8 SURVIVES
+      |MHI: r=0.453 t=3.7 SURVIVES (gets STRONGER!)
+      |MHI+wig: r=0.434 t=3.5 SURVIVES
+      |newBL: r=0.368 t=2.8 SURVIVES
+      |newBL+Vflat: r=0.411 t=3.2 SURVIVES
+      Perm p=0.0049*** (very strong)
+      Jackknife: 0 flips, SD=0.019
+      Bootstrap: [0.078, 0.590] excludes zero
+
+  PHYSICS: Longer mean run length = same-sign residuals cluster.
+    The RAR deviation is SYSTEMATIC, not random.
+    More coherent deviation → higher fitted a0.
+    Collinearity with wig: r=0.16 (modest — independent signal!)
+    Circularity MED: residuals depend on a0, but RUN PATTERN
+    (whether clustered or alternating) is more about RC shape.
+
+  ASSESSMENT: meanRun CONFIRMED
+    Passes ALL deep tests. Strongest perm p in this door.
+    LOO 38.1% is best single-variable addition so far.
+    BUT: MED circularity requires caution.
+    Flagged for potential baseline addition.
+
+================================================================================
