@@ -4485,3 +4485,47 @@ CONCLUSION:
   not continuous (how close the nearest massive neighbor is).
 
 ================================================================================
+
+================================================================================
+  SECTION 48: PHASE 28 — TIDAL INDEX (Θ = log10(M/d³))
+  Version 28.0.0
+  Does tidal strength predict a0 variation?
+================================================================================
+
+DEFINITION:
+  Θ = log10(M_neighbor / d_NN³)
+  Combines mass of nearest massive neighbor with 3D separation.
+  Higher Θ = stronger tidal influence.
+
+DATA QUALITY: 9 high, 11 medium, 36 low (same caveat as Phase 27)
+
+RESULT: 1/6 CRITERIA — FAILS
+
+  1. Clear raw |t|>=2:              NO  (r=-0.230, t=1.7)
+  2. Independent of MHI:            YES (r=-0.304, t=2.3)
+  3. Independent of MHI+wig:        NO  (r=-0.201, t=1.5)
+  4. LOO-CV > M0:                   NO  (0.1%)
+  5. Adds to MHI+wig:               NO  (-1.4% — HURTS)
+  6. Adds beyond envCode:           NO  (-0.9%)
+
+HIGH-CONFIDENCE SUBSAMPLE (n=20):
+  Θ vs delta_a0 raw:     r=0.184, t=0.8 → NO SIGNAL
+  Θ vs delta_a0 |MHI:    r=0.041, t=0.2 → NO SIGNAL
+  Θ vs delta_a0 |MHI+wig: r=-0.080, t=0.3 → NO SIGNAL
+
+KEY: Tidal index FAILS even worse than dNN.
+  When we add mass information to the distance, it doesn't help — if anything
+  it makes things worse (LOO: -1.4% with MHI+wig, i.e. overfitting).
+
+ABSORPTION TEST:
+  Θ after envCode+MHI+wig: ABSORBED
+  envCode after Θ+MHI+wig: t=1.5 (also weakened)
+  → They measure approximately the same thing, but envCode works better.
+
+CONCLUSION:
+  The environmental signal is best captured by the categorical variable
+  (envCode: field/group/cluster). Continuous measures (dNN, tidal Θ) do
+  not improve on it. This is a fundamental result about the environmental
+  channel affecting a0.
+
+================================================================================

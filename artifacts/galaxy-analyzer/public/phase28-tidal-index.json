@@ -1,0 +1,51 @@
+{
+  "version": "28.0.0",
+  "timestamp": "2026-04-04T14:53:33.841Z",
+  "nGalaxies": 56,
+  "dataQuality": {
+    "high": 9,
+    "medium": 11,
+    "low": 36
+  },
+  "rawCorrelation": {
+    "r": -0.23,
+    "t": 1.7
+  },
+  "afterMHI": {
+    "r": -0.304,
+    "t": 2.3
+  },
+  "afterMHIWig": {
+    "r": -0.201,
+    "t": 1.5
+  },
+  "tidalVsEnvCode": {
+    "r": 0.9
+  },
+  "tidalAfterEnv": {
+    "r": 0.129,
+    "t": 0.9
+  },
+  "envAfterTidal": {
+    "r": -0.25,
+    "t": 1.8
+  },
+  "highConfSubsample": {
+    "n": 20,
+    "rawR": 0.184,
+    "rawT": 0.8
+  },
+  "looGapClosed": {
+    "tidal": 0.1,
+    "env": 7.4,
+    "mhiWig": 11.5,
+    "mhiWigTid": 10.1,
+    "mhiWigEnv": 14.9,
+    "mhiWigEnvTid": 14
+  },
+  "successCriteria": {
+    "passed": 1,
+    "total": 6
+  },
+  "verdict": "FAILED"
+}

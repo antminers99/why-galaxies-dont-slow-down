@@ -1505,3 +1505,30 @@ Files: scripts/phase27-nearest-neighbor.cjs
        public/phase27-nearest-neighbor.json
 
 ================================================================================
+
+Section 59: Phase 28 — Tidal Index (Θ)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 28.0.0
+
+TIDAL INDEX: 1/6 — FAILS
+
+  Θ vs delta_a0 raw: r=-0.230, t=1.7
+  After MHI: r=-0.304, t=2.3 (suppressor)
+  After MHI+wig: r=-0.201, t=1.5 (fails)
+  LOO: 0.1% alone, -1.4% with MHI+wig (HURTS)
+  High-confidence (n=20): r=0.184 raw → NO SIGNAL
+
+  Θ does not improve on envCode. Adding mass to distance doesn't help.
+  Environmental signal is categorical, not a continuous tidal function.
+
+  Environment door scorecard:
+    group membership (envCode):    6/6 PASS ← best
+    satellite vs central:          1/6 FAIL
+    nearest neighbor distance:     1/6 FAIL
+    tidal index (Θ):               1/6 FAIL
+
+Files: scripts/phase28-tidal-index.cjs
+       public/phase28-tidal-index.json
+
+================================================================================
