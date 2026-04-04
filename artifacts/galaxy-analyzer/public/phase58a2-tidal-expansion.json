@@ -1,0 +1,489 @@
+{
+  "phase": "58a2",
+  "variable": "logM_host",
+  "definition": "log10 of host group/cluster halo mass in Msun",
+  "sources": [
+    "Karachentsev+2013 UNGC (Theta_1)",
+    "Kourkchi+Tully 2017 (group catalog)"
+  ],
+  "coverage": {
+    "published": 45,
+    "estimated": 11,
+    "total": 56
+  },
+  "raw": {
+    "r": -0.4166149033137118,
+    "t": -3.367659027969231,
+    "n": 56
+  },
+  "spearman": -0.31005720643827567,
+  "afterEnvCode": {
+    "r": -0.25522250491445214,
+    "t": -1.9397341667476287,
+    "n": 56
+  },
+  "afterLogMHI": {
+    "r": -0.36933990282294116,
+    "t": -2.920584674233531,
+    "n": 56
+  },
+  "afterLogMHI_envCode": {
+    "r": -0.17189205068894634,
+    "t": -1.2822283997715127,
+    "n": 56
+  },
+  "afterBaselineA": {
+    "r": -0.17524295297248252,
+    "coeff": -0.09660593868866428,
+    "t": -1.5914341929227
+  },
+  "afterBaselineB": {
+    "r": -0.15488954229886454,
+    "coeff": -0.08030496166837188,
+    "t": -1.3930136043909433
+  },
+  "loo": {
+    "A": 30.390415645863612,
+    "A_td": 32.049952330047326,
+    "B": 36.9379876046699,
+    "B_td": 37.79480833973042
+  },
+  "permutation": {
+    "A": 0.1196,
+    "B": 0.1802
+  },
+  "bootstrap": {
+    "A": {
+      "lo": -0.20693459003652603,
+      "hi": 0.027979391575816477,
+      "n": 2000
+    },
+    "B": {
+      "lo": -0.181137233197623,
+      "hi": 0.04565725271031267,
+      "n": 2000
+    }
+  },
+  "jackknife": {
+    "A": 0,
+    "B": 0
+  },
+  "publishedSubset": {
+    "n": 45,
+    "raw": {
+      "r": -0.5289244088461849,
+      "t": -4.086857821139549,
+      "n": 45
+    },
+    "afterEnvCode": {
+      "r": -0.29757804858359194,
+      "t": -2.0439456184649716,
+      "n": 45
+    },
+    "afterLogMHI": {
+      "r": -0.4971604636601925,
+      "t": -3.757352394397344,
+      "n": 45
+    },
+    "afterMHI_env": {
+      "r": -0.2710328408059773,
+      "t": -1.8463914367740508,
+      "n": 45
+    }
+  },
+  "tidalData": [
+    {
+      "name": "NGC4013",
+      "logMhost": 13,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC4100",
+      "logMhost": 13,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC4138",
+      "logMhost": 13,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC4157",
+      "logMhost": 13,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC4217",
+      "logMhost": 13,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC0891",
+      "logMhost": 12.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 2.9
+    },
+    {
+      "name": "UGC08490",
+      "logMhost": 12.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 1.7
+    },
+    {
+      "name": "NGC2955",
+      "logMhost": 12.504364824606363,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC2403",
+      "logMhost": 12.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 1.5
+    },
+    {
+      "name": "NGC3741",
+      "logMhost": 12.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 1.2
+    },
+    {
+      "name": "ESO563-G021",
+      "logMhost": 12.393276154861804,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC5055",
+      "logMhost": 12.3,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 1.8
+    },
+    {
+      "name": "NGC5371",
+      "logMhost": 12.3,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC02885",
+      "logMhost": 12.284945704190365,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC4559",
+      "logMhost": 12.2,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 1.5
+    },
+    {
+      "name": "NGC6195",
+      "logMhost": 12.102649646645087,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC3726",
+      "logMhost": 12.1,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC3769",
+      "logMhost": 12.1,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "IC4202",
+      "logMhost": 12.054672389591662,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC5005",
+      "logMhost": 12,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC5033",
+      "logMhost": 12,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC02953",
+      "logMhost": 12,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC03546",
+      "logMhost": 12,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC06973",
+      "logMhost": 12,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC2683",
+      "logMhost": 11.96256216250939,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC0801",
+      "logMhost": 11.927860127660043,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC3893",
+      "logMhost": 11.9,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC03205",
+      "logMhost": 11.9,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC08699",
+      "logMhost": 11.9,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC2998",
+      "logMhost": 11.866037315747201,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC6674",
+      "logMhost": 11.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC7331",
+      "logMhost": 11.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC7814",
+      "logMhost": 11.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC03580",
+      "logMhost": 11.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC06787",
+      "logMhost": 11.8,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC1003",
+      "logMhost": 11.7,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC2841",
+      "logMhost": 11.7,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC06786",
+      "logMhost": 11.7,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "UGC09133",
+      "logMhost": 11.7,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC2903",
+      "logMhost": 11.698695090069679,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": -0.3
+    },
+    {
+      "name": "UGC02916",
+      "logMhost": 11.685215642057614,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC0289",
+      "logMhost": 11.6,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC3521",
+      "logMhost": 11.6,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 0.4
+    },
+    {
+      "name": "NGC5907",
+      "logMhost": 11.6,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC1090",
+      "logMhost": 11.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC3198",
+      "logMhost": 11.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "NGC6503",
+      "logMhost": 11.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": -0.5
+    },
+    {
+      "name": "UGC01281",
+      "logMhost": 11.5,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": 0.4
+    },
+    {
+      "name": "UGC09037",
+      "logMhost": 11.448099710008128,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC6015",
+      "logMhost": 11.4,
+      "source": "KT2017",
+      "quality": "published",
+      "theta1": null
+    },
+    {
+      "name": "F571-8",
+      "logMhost": 11.335589218342545,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "UGC00128",
+      "logMhost": 11.234795574641183,
+      "source": "estimated",
+      "quality": "crude",
+      "theta1": null
+    },
+    {
+      "name": "NGC0024",
+      "logMhost": 10.97959979356989,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": -0.8
+    },
+    {
+      "name": "NGC2915",
+      "logMhost": 10.665059426450807,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": -0.7
+    },
+    {
+      "name": "UGC05721",
+      "logMhost": 10.604374964188336,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": -0.9
+    },
+    {
+      "name": "NGC1705",
+      "logMhost": 10.470186671148648,
+      "source": "UNGC",
+      "quality": "published",
+      "theta1": -1.1
+    }
+  ],
+  "verdict": "PARTIAL (adds above envCode only)"
+}

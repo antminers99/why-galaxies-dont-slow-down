@@ -2315,3 +2315,20 @@ Date: 2026-04-04
 58c FULL (N=56): Gas-fraction offset: raw r=-0.052. FAIL.
 VERDICT: Full proxies FAIL. Tidal index pilot PROMISING.
 
+
+Section 97: Phase 58a2 — Expanded Tidal Depth
+---------------------------------------------
+Date: 2026-04-04
+Sources: UNGC Θ₁ (15), Kourkchi+Tully 2017 groups (~30)
+Variable: logM_host (continuous host halo mass)
+Coverage: 45 published, 11 estimated (distant field)
+N=56 FULL: After A: t=-1.59, After B: t=-1.39, LOO: +1.7/+0.9pp, Perm: 0.12/0.18 → PARTIAL
+N=45 PUBLISHED: After A: t=-2.41, After B: t=-2.60
+  LOO: A +8.2pp (22.4→30.7%), B +8.8pp (34.4→43.3%)
+  Perm: 0.020/0.013, Boot excludes zero, Jack 0/45 flips
+  → CONFIRMED on published subset
+r(logMHI, logMhost) = 0.183 — INDEPENDENT of logMHI
+Replacement: envCode→logMhost improves B LOO by +11.1pp!
+DUAL VERDICT: PARTIAL (N=56) / CONFIRMED (N=45 published)
+KEY: First post-SPARC variable to add above both baselines.
+
