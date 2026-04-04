@@ -1532,3 +1532,36 @@ Files: scripts/phase28-tidal-index.cjs
        public/phase28-tidal-index.json
 
 ================================================================================
+
+Section 60: Phase 29 — Local Density
+------------------------------------------------------
+Date: 2026-04-04
+Version: 29.0.0
+
+LOCAL DENSITY: 4/6 — PASSES technically, but REDUNDANT with envCode
+
+  log(rho) raw: r=-0.348, t=2.7 (looks good!)
+  After MHI: r=-0.346, t=2.7
+  After MHI+wig: r=-0.235, t=1.7 (marginal)
+  LOO alone: 6.6% (comparable to envCode 7.4%)
+  BUT: adds -0.2% to MHI+wig (no improvement!)
+  AND: adds +0.1% beyond envCode (zero!)
+
+  log(rho) vs envCode: r=0.917 — near-perfect collinearity!
+  High-confidence (n=21): r=-0.232 t=1.0 (weak)
+
+  Local density measures the SAME thing as envCode.
+  The continuous measurement adds zero beyond the categorical.
+  Environmental signal = threshold effect, not gradient.
+
+  Environment door FINAL scorecard:
+    group membership (envCode):    6/6 PASS ← BEST
+    satellite vs central:          1/6 FAIL
+    nearest neighbor distance:     1/6 FAIL
+    tidal index (Θ):               1/6 FAIL
+    local density (rho):           4/6 PASS (redundant with envCode)
+
+Files: scripts/phase29-local-density.cjs
+       public/phase29-local-density.json
+
+================================================================================

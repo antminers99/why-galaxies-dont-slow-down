@@ -4529,3 +4529,48 @@ CONCLUSION:
   channel affecting a0.
 
 ================================================================================
+
+================================================================================
+  SECTION 49: PHASE 29 — LOCAL GALAXY DENSITY
+  Version 29.0.0
+  Does local density predict a0 variation?
+================================================================================
+
+DEFINITION:
+  rho = estimated galaxy number density within ~1 Mpc (gal/Mpc³)
+  Unlike dNN or tidal (single neighbor), captures collective environment.
+
+DATA QUALITY: 8 high, 13 medium, 35 low (63% low)
+
+RESULT: 4/6 CRITERIA MET — BUT KEY CAVEATS
+
+  1. Clear raw |t|>=2:              YES (r=-0.348, t=2.7)
+  2. Independent of MHI:            YES (r=-0.346, t=2.7)
+  3. Independent of MHI+wig:        YES (r=-0.235, t=1.7 marginal)
+  4. LOO-CV > M0:                   YES (6.6%)
+  5. Adds to MHI+wig:               NO  (-0.2%)
+  6. Adds beyond envCode:           NO  (+0.1%)
+
+CRITICAL: rho PASSES independence tests but FAILS addition tests!
+  This means rho correlates with a0, but carries the SAME information
+  as envCode — not additional information.
+
+COLLINEARITY: log(rho) vs envCode: r=0.917 (NEAR PERFECT!)
+  Local density is essentially envCode measured continuously.
+  The continuous scale adds no information over the categorical.
+
+HIGH-CONFIDENCE SUBSAMPLE (n=21):
+  r=-0.232, t=1.0 → WEAK (not significant)
+
+ABSORPTION TEST:
+  rho after envCode+MHI+wig: ABSORBED
+  envCode after rho+MHI+wig: t=1.5 (weakened but similar)
+  → They measure the SAME THING. envCode captures it more cleanly.
+
+CONCLUSION:
+  Local density "passes" 4/6 but is redundant with envCode.
+  Confirms: environmental signal is CATEGORICAL (threshold effect).
+  Being in a group/cluster matters; how dense the environment is does not
+  add information beyond the binary group membership classification.
+
+================================================================================

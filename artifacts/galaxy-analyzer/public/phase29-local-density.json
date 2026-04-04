@@ -1,0 +1,51 @@
+{
+  "version": "29.0.0",
+  "timestamp": "2026-04-04T14:59:05.467Z",
+  "nGalaxies": 56,
+  "dataQuality": {
+    "high": 8,
+    "medium": 13,
+    "low": 35
+  },
+  "rawCorrelation": {
+    "r": -0.348,
+    "t": 2.7
+  },
+  "afterMHI": {
+    "r": -0.346,
+    "t": 2.7
+  },
+  "afterMHIWig": {
+    "r": -0.235,
+    "t": 1.7
+  },
+  "rhoVsEnvCode": {
+    "r": 0.941
+  },
+  "rhoAfterEnv": {
+    "r": 0.124,
+    "t": 0.9
+  },
+  "envAfterRho": {
+    "r": -0.215,
+    "t": 1.6
+  },
+  "highConfSubsample": {
+    "n": 21,
+    "rawR": -0.232,
+    "rawT": 1
+  },
+  "looGapClosed": {
+    "rho": 6.6,
+    "env": 7.4,
+    "mhiWig": 11.5,
+    "mhiWigRho": 11.3,
+    "mhiWigEnv": 14.9,
+    "mhiWigEnvRho": 15
+  },
+  "successCriteria": {
+    "passed": 4,
+    "total": 6
+  },
+  "verdict": "SIGNIFICANT"
+}
