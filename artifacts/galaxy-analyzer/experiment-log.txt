@@ -1330,3 +1330,24 @@ Files: scripts/phase22-sfh.cjs
        public/phase22-sfh.json
 
 ================================================================================
+
+Section 52: Phase 23 — Merger/Disturbance Proxies
+---------------------------------------------------
+Date: 2026-04-04
+Version: 23.0.0
+
+SURPRISE RESULT: kinematicDist passes 3/4 criteria!
+  r=0.370 (t=2.9), after MHI: r=0.411 (t=3.3) — INDEPENDENT & STRONGER
+  LOO gap: 16.2% — best in project history
+  BUT: tau reduction only 6.4%
+
+CAVEAT: kinematicDist = rcScatter * sqrt(n), partially circular
+  rcScatter IS the RAR fit quality → some circularity possible
+
+Galaxy History door: 4 FAIL + 1 PARTIAL (disturbance)
+  Door not fully closed due to kinematic disturbance signal
+
+Files: scripts/phase23-merger-disturbance.cjs
+       public/phase23-merger-disturbance.json
+
+================================================================================

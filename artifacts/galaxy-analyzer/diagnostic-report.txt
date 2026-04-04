@@ -4140,3 +4140,61 @@ RESULTS:
   This is NOT answered by galaxy history. Next door: environment/neighbors.
 
 ================================================================================
+
+================================================================================
+  SECTION 41: PHASE 23 — MERGER / DISTURBANCE PROXIES
+  Version 23.0.0
+================================================================================
+
+PURPOSE:
+  Final test in "galaxy history" door. Do morphological or kinematic
+  disturbance indicators explain a0 variation?
+
+PROXIES (12 constructed, 3 categories):
+  Morphological: sbAsymmetry, profileIrregularity, sizeAnomaly,
+                 lopsidedness, morphDisturbance, warpProxy
+  Kinematic:     rcScatter, rcAsymmetry, kinematicDist
+  Gas-structure: gasStarMismatch
+  Combined:      totalDisturbance
+
+RESULTS:
+
+  1. BEST PROXY: kinematicDist (rcScatter * sqrt(n_pts))
+     r = 0.370 (t=2.9, highly significant)
+
+  2. CRITICAL: INDEPENDENT OF MHI — YES!
+     After MHI: r = 0.411 (t=3.3) — STRONGER than raw!
+     This is a suppressor effect: MHI was masking disturbance signal.
+     Also independent: rcAsymmetry (r=0.251), rcScatter (r=0.245)
+
+  3. LOO-CV: 16.2% gap closure — BEST IN PROJECT HISTORY
+     Beats: Phase 15 baryon (14-16%), all history variables
+     MHI alone: 7.4% → disturbance adds INDEPENDENT value
+
+  4. SUCCESS CRITERIA: 3/4 PASS
+     ✓ |t|>=2 (t=2.9)
+     ✓ Independent of MHI (r=0.411, t=3.3)
+     ✓ LOO>M0 (16.2%)
+     ✗ tau reduction (6.4%, below 10% threshold)
+
+  CRITICAL CAVEAT:
+  kinematicDist = rcScatter * sqrt(n_pts), where rcScatter is the
+  RMS residual of the RAR fit itself. This creates PARTIAL CIRCULARITY:
+  galaxies with bad RAR fits → high rcScatter → noisier a0 estimates
+  → larger |delta_a0|. Part of this correlation may be tautological.
+
+  However, rcAsymmetry (inner vs outer slope difference) is less
+  circular and still shows r=0.251 after MHI — suggesting some
+  genuine kinematic disturbance signal exists.
+
+  MORPHOLOGICAL vs KINEMATIC:
+  Morphological proxies: weak (r~0.15-0.18), mostly absorbed by MHI
+  Kinematic proxies: strong (r~0.23-0.37), INDEPENDENT of MHI
+  → The disturbance signal is primarily KINEMATIC, not morphological
+
+GALAXY HISTORY DOOR STATUS:
+  5/5 variables tested. 4 failed, 1 partial (merger/disturbance).
+  Door is NOT fully closed — kinematic disturbance shows genuine signal.
+  But the circularity caveat means this needs careful interpretation.
+
+================================================================================
