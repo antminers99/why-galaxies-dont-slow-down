@@ -189,7 +189,7 @@ M5 is formally M3 plus two second-order structural corrections:
 
 $$a_0 = \underbrace{A_0 \cdot M_\mathrm{HI}^{-1/4} \cdot M_\mathrm{host}^{-1/6} \cdot \overline{\text{Run}}^{3/7}}_{\text{first-order state law}} \times \underbrace{\Sigma_0^{1/7} \cdot 10^{(2/3)\Upsilon_\star^\perp}}_{\text{structural corrections}}$$
 
-The corrections add +6.9 percentage points of LOO performance and reduce RMS from 0.193 to 0.157 dex. By analogy: M3 is to M5 as the ideal gas law is to the van der Waals equation — M3 captures the dominant physics; M5 adds structural refinements for higher precision.
+The corrections add +6.9 percentage points of LOO performance and reduce RMS from 0.193 to 0.157 dex. Heuristically, M3 resembles a first-order equation of state that captures the dominant macroscopic structure, while M5 adds second-order structural corrections that improve predictive precision — analogous (though not physically identical) to the relationship between an ideal gas law and its van der Waals refinement.
 
 ### 6.5 Structural Insight: Suppression vs Amplification
 
@@ -327,6 +327,8 @@ We do *not* claim that MOND is refuted or that dark matter is confirmed. The dat
 On a quality-controlled sample of $N = 45$ SPARC galaxies with published distances, galaxy-to-galaxy variation in the inferred MOND acceleration scale $a_0$ is not best described by a strict universal constant, nor by unstructured per-galaxy scatter, but by a structured multi-axis law. The current best predictive formulation is the five-axis M5 law (LOO = 51.0%), while M3 provides a compressed physical reduction to three state axes: gas content, environmental depth, and dynamical coherence (LOO = 44.1%).
 
 The law is falsifiable (24/26 quantitative predictions passed), succeeds in controlled pairwise comparisons between individual galaxies (22/25 matched pairs), and its kinematic-coherence axis has a confirmed 2D dynamical origin. The remaining 0.16 dex residual is a featureless Gaussian frontier with no additional scalar information extractable from the current data.
+
+We identify a compressed first-order state law (M3) that captures the dominant macroscopic structure with three physical families, and a precision refinement (M5) that adds two second-order structural corrections. M3 is the general equation of state; M5 is its structurally corrected predictive extension.
 
 The data favor interpreting $a_0$ as an emergent, state-dependent galaxy parameter — set by the tension between gravitational depth (which suppresses it) and baryonic organization (which amplifies it) — rather than a strictly universal acceleration scale. This result is framework-neutral: it constrains any theory, whether dark-matter-based or modified-dynamics-based, to reproduce a state-dependent effective acceleration scale.
 
