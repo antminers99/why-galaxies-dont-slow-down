@@ -1,0 +1,207 @@
+{
+  "phase": "71",
+  "title": "Falsifiable Predictions",
+  "quantitativeShifts": [
+    {
+      "variable": "logMHI",
+      "delta": 0.3,
+      "coeff": -0.23598354408671632,
+      "dlogA0": -0.07079506322601489,
+      "pctChange": -15.041871541759233
+    },
+    {
+      "variable": "logMhost",
+      "delta": 0.3,
+      "coeff": -0.17184566288063852,
+      "dlogA0": -0.051553698864191554,
+      "pctChange": -11.193183672705342
+    },
+    {
+      "variable": "logΣ₀",
+      "delta": 0.3,
+      "coeff": 0.14530702889811173,
+      "dlogA0": 0.04359210866943352,
+      "pctChange": 10.558492586937774
+    },
+    {
+      "variable": "logMeanRun",
+      "delta": 0.2,
+      "coeff": 0.45226606415952036,
+      "dlogA0": 0.09045321283190408,
+      "pctChange": 23.15533015839111
+    },
+    {
+      "variable": "Υ★⊥",
+      "delta": 0.15,
+      "coeff": 0.6581461040059463,
+      "dlogA0": 0.09872191560089194,
+      "pctChange": 25.52259688224554
+    }
+  ],
+  "matchedPairs": [
+    {
+      "axis": "logMHI",
+      "gal1": "NGC6674 (higher logMHI)",
+      "gal2": "NGC1705 (lower logMHI)",
+      "targetDelta": 2.364,
+      "confoundSim": 2.877271055752528,
+      "predictedSign": "-",
+      "observedSign": "-",
+      "signMatch": true,
+      "observedDelta": -0.41100000000000003
+    },
+    {
+      "axis": "logMhost",
+      "gal1": "UGC08490 (higher logMhost)",
+      "gal2": "UGC05721 (lower logMhost)",
+      "targetDelta": 2.1956250358116645,
+      "confoundSim": 0.876400659351561,
+      "predictedSign": "-",
+      "observedSign": "-",
+      "signMatch": true,
+      "observedDelta": -0.23330000000000028
+    },
+    {
+      "axis": "logΣ₀",
+      "gal1": "NGC2903 (higher logΣ₀)",
+      "gal2": "UGC01281 (lower logΣ₀)",
+      "targetDelta": 2.0549999999999997,
+      "confoundSim": 2.3913439158127354,
+      "predictedSign": "+",
+      "observedSign": "+",
+      "signMatch": true,
+      "observedDelta": 0.19389999999999974
+    },
+    {
+      "axis": "logMR",
+      "gal1": "NGC2841 (higher logMR)",
+      "gal2": "NGC3893 (lower logMR)",
+      "targetDelta": 0.9209999999999999,
+      "confoundSim": 2.7273195514564987,
+      "predictedSign": "+",
+      "observedSign": "+",
+      "signMatch": true,
+      "observedDelta": 0.41930000000000023
+    },
+    {
+      "axis": "Υ★⊥",
+      "gal1": "NGC5033 (higher Υ★⊥)",
+      "gal2": "NGC4559 (lower Υ★⊥)",
+      "targetDelta": 0.34536289980622326,
+      "confoundSim": 0.9176196668262394,
+      "predictedSign": "+",
+      "observedSign": "+",
+      "signMatch": true,
+      "observedDelta": 0.36830000000000007
+    }
+  ],
+  "rankOrder": [
+    {
+      "axis": "logMHI",
+      "rho": -0.6312252964426877,
+      "expectedSign": "-",
+      "observedSign": "-",
+      "signMatch": true
+    },
+    {
+      "axis": "logMhost",
+      "rho": -0.44295125164690385,
+      "expectedSign": "-",
+      "observedSign": "-",
+      "signMatch": true
+    },
+    {
+      "axis": "logΣ₀",
+      "rho": 0.2299077733860343,
+      "expectedSign": "+",
+      "observedSign": "+",
+      "signMatch": true
+    },
+    {
+      "axis": "logMR",
+      "rho": 0.5292490118577076,
+      "expectedSign": "+",
+      "observedSign": "+",
+      "signMatch": true
+    },
+    {
+      "axis": "Υ★⊥",
+      "rho": 0.2446640316205534,
+      "expectedSign": "+",
+      "observedSign": "+",
+      "signMatch": true
+    }
+  ],
+  "tertile": [
+    {
+      "axis": "logMHI",
+      "lo": 3.683113333333333,
+      "mid": 3.564306666666666,
+      "hi": 3.49112,
+      "monotone": true
+    },
+    {
+      "axis": "logMhost",
+      "lo": 3.6899933333333332,
+      "mid": 3.6390200000000004,
+      "hi": 3.409526666666666,
+      "monotone": true
+    },
+    {
+      "axis": "logΣ₀",
+      "lo": 3.6719466666666674,
+      "mid": 3.4915266666666667,
+      "hi": 3.5750666666666664,
+      "monotone": false
+    },
+    {
+      "axis": "logMR",
+      "lo": 3.4704666666666673,
+      "mid": 3.5485733333333327,
+      "hi": 3.7195000000000005,
+      "monotone": true
+    },
+    {
+      "axis": "Υ★⊥",
+      "lo": 3.56572,
+      "mid": 3.503813333333333,
+      "hi": 3.6690066666666667,
+      "monotone": false
+    }
+  ],
+  "negativePredictions": {
+    "fgasCollapse": {
+      "predicted": "fail",
+      "observed": "fail",
+      "confirmed": true
+    },
+    "singleAxisCap": {
+      "best": {
+        "name": "logMhost",
+        "gap": 22.782495217814613
+      },
+      "belowM3": true
+    },
+    "universalWorse": {
+      "m0gap": -2.2727272727272485,
+      "confirmed": true
+    },
+    "rcWigNoHelp": {
+      "confirmed": true
+    },
+    "perGalaxyOverfit": {
+      "confirmed": true
+    }
+  },
+  "hierarchy": {
+    "Fstat": 4.988452090262414,
+    "significant": true,
+    "looImprovement": 6.9769177309407056
+  },
+  "summary": {
+    "totalPass": 24,
+    "totalTests": 26,
+    "passRate": 92.3076923076923,
+    "sharpPredictions": true
+  }
+}
