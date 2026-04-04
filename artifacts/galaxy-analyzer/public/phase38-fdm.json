@@ -1,0 +1,48 @@
+{
+  "version": "38.0.0",
+  "timestamp": "2026-04-04T15:49:31.331Z",
+  "nGalaxies": 56,
+  "oldBaseline": {
+    "gc": 14.9
+  },
+  "newBaseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "fDM",
+      "circ": "HIGH",
+      "rawR": 0.39,
+      "rawT": 3.1,
+      "newBLr": 0.206,
+      "newBLt": 1.5,
+      "looGC": 28.5,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "log(fDM)",
+      "circ": "HIGH",
+      "rawR": 0.192,
+      "rawT": 1.4,
+      "newBLr": 0.033,
+      "newBLt": 0.2,
+      "looGC": 25.2,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Mh/Mb",
+      "circ": "HIGH",
+      "rawR": 0.432,
+      "rawT": 3.5,
+      "newBLr": 0.222,
+      "newBLt": 1.6,
+      "looGC": 26.5,
+      "adds": false,
+      "verdict": "WEAK"
+    }
+  ],
+  "bestProxy": "Mh/Mb",
+  "finalVerdict": "FAIL"
+}

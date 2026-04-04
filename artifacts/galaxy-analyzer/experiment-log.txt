@@ -1827,3 +1827,42 @@ rho_0: Sigma0_bar CONFIRMED (3/4 fast, deep strong)
   Next: f_DM
 
 ================================================================================
+
+Section 70: Phase 37 Corrections
+------------------------------------------------------
+Date: 2026-04-04
+
+1) Sigma0_bar reclassified: NOT halo density.
+   It is baryonic surface density = internal baryon structure.
+   halo rho_0 proper = FAIL (no clean halo density proxy survived).
+
+2) Baseline UPDATED:
+   OLD: MHI + wig + env = 14.9%
+   NEW: MHI + wig + env + Sigma0_bar = 27.8%
+
+   Sigma0_bar earns baseline entry because:
+   - perm p=0.0065***
+   - bootstrap excludes zero
+   - zero circularity
+   - +12.9% LOO improvement
+
+   All future tests use new baseline.
+
+================================================================================
+
+Section 71: Phase 38 — f_DM (Dark Matter Fraction)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 38.0.0 — FAST PROTOCOL
+
+f_DM: FAIL against new baseline (MHI+wig+env+Sigma0_bar=27.8%)
+
+  Best proxy (Mh/Mb): |newBL r=0.222 t=1.6, LOO 26.5% (doesn't add).
+  Also fails against old baseline (|oldBL r=0.190 t=1.4).
+  Absorbed by Sigma0_bar.
+
+  Door: M_halo PARTIAL, c FAIL, Vf PASS+CIRC, Rs PARTIAL,
+        Sigma0_bar CONFIRMED (baryon), f_DM FAIL
+  Next: f_DM at reference radius (last halo variable)
+
+================================================================================

@@ -4927,3 +4927,61 @@ RESULT: Sigma0_bar CONFIRMED (3/4 fast, deep tests strong)
   At fixed MHI, denser baryon distribution → higher a0.
 
 ================================================================================
+
+================================================================================
+  SECTION 58b: CORRECTION — Phase 37 Reclassification + Baseline Update
+================================================================================
+
+CORRECTION 1: Sigma0_bar is NOT a halo variable.
+  Sigma0_bar = Mbar / (pi * Rdisk^2) = baryonic surface density.
+  This is INTERNAL BARYON STRUCTURE, not dark matter halo.
+  Reclassified: Phase 37 result belongs to "baryon concentration"
+  or "internal structure", NOT "halo central density".
+
+  rho_0 (halo central density) proper: NO proxy survived that is
+  genuinely measuring dark halo density independent of baryons.
+  The 4 RC-derived proxies (rho0_obs, gobs_central, rho0_pseudo,
+  Mdyn_inner) all have HIGH circularity AND are absorbed by V_flat.
+
+  CORRECTED rho_0 VERDICT: FAIL for halo density specifically.
+  Sigma0_bar: CONFIRMED but reclassified as baryon structure variable.
+
+CORRECTION 2: Baseline updated.
+  Sigma0_bar passes all criteria:
+    - Perm p=0.0065*** (strong)
+    - Bootstrap CI excludes zero
+    - LOO adds +12.9% over previous baseline
+    - ZERO circularity (external photometric)
+    - Suppressor pattern (not redundant with MHI)
+
+  OLD BASELINE: MHI + rcWiggliness + envCode = 14.9%
+  NEW BASELINE: MHI + rcWiggliness + envCode + Sigma0_bar = 27.8%
+
+  All subsequent tests use the NEW baseline.
+
+================================================================================
+
+================================================================================
+  SECTION 59: PHASE 38 — f_DM (Dark Matter Fraction)
+  Version 38.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: FAIL (0/3 proxies pass against NEW baseline)
+
+  Tested against NEW baseline: MHI + wig + env + Sigma0_bar = 27.8%
+
+  All 3 proxies WEAK:
+    fDM:      |newBL r=0.206, t=1.5, LOO 28.5% (adds only +0.7%)
+    log(fDM): |newBL r=0.033, t=0.2, LOO 25.2% (WORSE)
+    Mh/Mb:    |newBL r=0.222, t=1.6, LOO 26.5% (WORSE)
+
+  Against OLD baseline: also weak (fDM |oldBL r=0.190 t=1.4).
+  f_DM never truly added beyond MHI on its own.
+
+  Sigma0_bar absorbed f_DM's signal. Baryonic surface density
+  captures the same information that dark matter fraction was
+  providing, but without the circularity problem.
+
+  CIRCULARITY: HIGH (f_DM uses V_flat in denominator)
+
+================================================================================
