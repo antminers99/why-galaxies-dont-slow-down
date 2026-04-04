@@ -3154,7 +3154,136 @@ END OF DIAGNOSTIC REPORT (v10.0 — Phase 10 second-parameter update)
   Phase 8 results: public/phase8-metareg-results.json (v8.0.0)
   Phase 9 results: public/phase9-benchmark-results.json (v9.0.0)
   Phase 10 results: public/phase10-second-param-results.json (v10.0.0)
+  Phase 11 script: scripts/phase11-single-galaxy-lab.cjs (v11.0.0)
+  Phase 11 results: public/phase11-sensitivity-lab.json (v11.0.0)
+  Per-galaxy a0 table: public/per-galaxy-a0.json (190 galaxies)
   Figure 1 data: public/figure1-data.json (v1.1.0)
   SPARC master table: public/sparc-table.json (175 galaxies)
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
+================================================================================
+
+
+================================================================================
+SECTION 27: PHASE 11 — SINGLE-GALAXY SENSITIVITY LAB (v11.0.0)
+================================================================================
+
+Question: Can we treat each galaxy as its own laboratory?
+  A) Is a0 internally constant (point-by-point)?
+  B) What is the single best-fit a0 per galaxy?
+  C) Which nuisance parameter moves a0 most?
+
+Method: For each of 56 GOLD+i45 galaxies, compute:
+  A. LOCAL a0 PROFILE: analytically invert the McGaugh RAR at each
+     radial point where gobs > 1.05*gbar (transition/MOND regime only)
+  B. GLOBAL FIT: standard chi2 minimization for single a0
+  C. PERTURBATION TABLE: 9 controlled variations, one factor at a time
+
+─── PART A: LOCAL a0 PROFILES ───
+
+  For each point, a0 = gbar / [ln(1 - gbar/gobs)]^2
+  (exact analytical inversion of McGaugh RAR)
+
+  Result: 46% of galaxies show internally FLAT a0 profiles
+    (inner-outer diff < 0.15 dex AND SD < 0.3 dex)
+
+  Mean within-galaxy SD(logA0):   0.199 dex
+  Mean |inner-outer| difference:  0.197 dex
+
+  Mean radial slope: +0.006 dex/kpc (median: -0.004)
+  → NO significant systematic drift from inner to outer radii
+
+  This is a DIFFERENT quantity from the McGaugh 0.13 dex:
+    Our 0.199 dex = local point-by-point a0 scatter
+    McGaugh 0.13 = residual scatter around global RAR
+    They measure different things and are not in tension.
+
+  Top galaxies with LARGEST internal variation:
+    NGC 2998: inner-outer = 0.90 dex, SD = 0.59 dex
+    F571-8:   inner-outer = 0.77 dex, SD = 0.50 dex
+    NGC 5371: inner-outer = 0.62 dex, SD = 0.43 dex
+    NGC 0801: inner-outer = 0.60 dex, SD = 0.39 dex
+
+─── PART B: PERTURBATION TABLE ───
+
+  9 perturbations tested per galaxy:
+    1. Y*=0.3   (disk M/L reduced by 40%)
+    2. Y*=0.7   (disk M/L raised by 40%)
+    3. inc+5    (inclination raised by 5 degrees)
+    4. inc-5    (inclination lowered by 5 degrees)
+    5. D+15%    (distance raised by 15%)
+    6. D-15%    (distance lowered by 15%)
+    7. Inner removed  (remove inner half of points by radius)
+    8. Outer only     (keep outer 75% of points)
+    9. Pressure corr  (add asymmetric drift correction)
+
+  SENSITIVITY RANKING (mean |delta a0| across 56 galaxies):
+
+    Perturbation         Mean |shift|   Interpretation
+    ──────────────────────────────────────────────────
+    Y*=0.3 (Y down)     0.364 dex      Y* is BY FAR the dominant lever
+    Y*=0.7 (Y up)       0.301 dex      Asymmetric: lowering Y* shifts more
+    inc-5               0.109 dex      Inclination is #2
+    Inner removed       0.088 dex      Inner radii matter moderately
+    inc+5               0.083 dex      Inclination asymmetric (sin^2 effect)
+    D-15%               0.071 dex      Distance matters at ±7% level
+    D+15%               0.061 dex
+    Outer only          0.059 dex      Removing innermost points: modest
+    Pressure corr       0.012 dex      Pressure support: NEGLIGIBLE
+
+  DOMINANT FACTOR per galaxy:
+    Y*=0.3:          49/56 galaxies (88%)
+    Y*=0.7:           4/56 galaxies (7%)
+    Inner removed:    3/56 galaxies (5%)
+
+─── PART C: KEY EXAMPLES ───
+
+  NGC 2403 (n=73, Vmax=136, Q=1, inc=63, D=3.16 Mpc):
+    Baseline:   a0 = 4610
+    Y*=0.3:     a0 = 9452   (+0.312 dex, +105%)
+    Y*=0.7:     a0 = 2623   (-0.245 dex, -43%)
+    inc+5:      a0 = 5633   (+0.087 dex, +22%)
+    inc-5:      a0 = 3572   (-0.111 dex, -23%)
+    Dominant: Y* (0.312 dex)
+
+  NGC 2841 (n=50, Vmax=323, Q=1, inc=76, D=14.1 Mpc):
+    Baseline:   a0 = 10677
+    Y*=0.3:     a0 = 22304  (+0.320 dex, +109%)
+    Y*=0.7:     a0 = 5990   (-0.251 dex, -44%)
+    inc+5:      a0 = 11700  (+0.040 dex, +10%)
+    inc-5:      a0 = 9330   (-0.059 dex, -13%)
+    Dominant: Y* (0.320 dex)
+
+  NGC 5005 (n=18, Vmax=265, Q=2, inc=68, D=16.9 Mpc):
+    Baseline:   a0 = 3602
+    Y*=0.3:     a0 = 13658  (+0.579 dex, +279%)
+    Y*=0.7:     a0 = 639    (-0.751 dex, -82%)
+    Dominant: Y* (0.751 dex) — EXTREME sensitivity
+
+─── PART D: CONCLUSIONS ───
+
+  1. Y* (stellar mass-to-light ratio) is the DOMINANT nuisance parameter.
+     It moves a0 by 0.30-0.36 dex on average — comparable to tau (0.291).
+     This does NOT mean Y* explains tau (Phase 9 showed tau barely changes
+     under marginalization), but it IS the largest systematic lever.
+
+  2. Inclination is #2 at ~0.10 dex. This confirms Phase 5 and Phase 6
+     findings: inclination matters but is subdominant.
+
+  3. Distance is #3 at ~0.07 dex. Consistent with Phase 8 meta-regression
+     showing isPrecise coefficient = 0.061 dex (not significant).
+
+  4. Pressure support is NEGLIGIBLE (0.012 dex). Confirms Phase 5.
+
+  5. Inner/outer point removal has MODERATE effect (0.06-0.09 dex).
+     For 3 galaxies (F571-8, NGC2998, UGC01281) it DOMINATES,
+     suggesting non-circular motions in their inner regions.
+
+  6. The key paradox: Y* is the biggest lever per galaxy (0.36 dex),
+     yet marginalizing over Y* across the population barely changes tau.
+     This means galaxies don't systematically have wrong Y* — the
+     heterogeneity is NOT driven by Y* calibration errors.
+
+  HIERARCHY OF NUISANCE INFLUENCE:
+    Y*  >>>  inc  >  inner/outer  >  D  >  outer  >>  pressure
+
 ================================================================================

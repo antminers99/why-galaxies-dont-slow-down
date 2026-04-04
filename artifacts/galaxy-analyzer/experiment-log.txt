@@ -906,7 +906,59 @@ PART XV: FINAL STATEMENT
       'a0 universal + unmeasured second parameter' remains viable."
 
 ================================================================================
-END OF EXPERIMENT LOG (v10.0)
+PART XVI: PHASE 11 — SINGLE-GALAXY SENSITIVITY LAB
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+37. LOCAL a0 PROFILE (per-point inversion)
+────────────────────────────────────────────────────────────────────
+
+  From the McGaugh RAR: gobs = gbar / (1 - exp(-sqrt(gbar/a0)))
+  Exact analytical inversion:
+
+    a0_local = gbar / [ln(1 - gbar/gobs)]^2
+
+  Valid only where gobs > 1.05 * gbar (transition/MOND regime).
+  In the Newtonian regime (gobs ≈ gbar), a0 is unconstrained.
+
+  Results (56 GOLD+i45 galaxies):
+    46% show internally FLAT a0 profiles
+      (inner-outer diff < 0.15 dex AND SD < 0.3 dex)
+    Mean within-galaxy SD(logA0): 0.199 dex
+    Mean |inner-outer| diff:      0.197 dex
+    Mean radial slope: +0.006 dex/kpc → NO systematic drift
+
+────────────────────────────────────────────────────────────────────
+38. PERTURBATION SENSITIVITY RANKING
+────────────────────────────────────────────────────────────────────
+
+  9 perturbations applied to each galaxy, one factor at a time:
+
+  ┌────────────────────────────────────────────────────────────────┐
+  │ Rank  Perturbation     Mean |shift|  Dominates n/56  Comment  │
+  ├────────────────────────────────────────────────────────────────┤
+  │  1.   Y*=0.3 (↓40%)    0.364 dex     49 (88%)  BY FAR #1    │
+  │  2.   Y*=0.7 (↑40%)    0.301 dex      4 (7%)   asymmetric   │
+  │  3.   inc-5 deg         0.109 dex      0        sin^2 effect │
+  │  4.   Inner removed     0.088 dex      3 (5%)   non-circ     │
+  │  5.   inc+5 deg         0.083 dex      0        asymmetric   │
+  │  6.   D-15%             0.071 dex      0        distance     │
+  │  7.   D+15%             0.061 dex      0        distance     │
+  │  8.   Outer only        0.059 dex      0        outer radii  │
+  │  9.   Pressure corr     0.012 dex      0        NEGLIGIBLE   │
+  └────────────────────────────────────────────────────────────────┘
+
+  KEY PARADOX:
+    Y* moves a0 by 0.36 dex per galaxy (larger than tau = 0.291),
+    yet marginalizing over Y* across the population barely changes tau.
+    Conclusion: heterogeneity is NOT driven by Y* calibration errors.
+    Each galaxy's Y* is roughly correct — the spread is intrinsic.
+
+  NUISANCE HIERARCHY:
+    Y*  >>>  inc  >  inner/outer  >  D  >  outer  >>  pressure
+
+================================================================================
+END OF EXPERIMENT LOG (v11.0)
 ================================================================================
 
   Scripts:
@@ -920,6 +972,7 @@ END OF EXPERIMENT LOG (v10.0)
     Phase 8:  scripts/phase8-distance-metareg.cjs (v8.0.0)
     Phase 9:  scripts/phase9-benchmark-replication.cjs (v9.0.0)
     Phase 10: scripts/phase10-second-parameter.cjs (v10.0.0)
+    Phase 11: scripts/phase11-single-galaxy-lab.cjs (v11.0.0)
 
   Results:
     public/diagnostic-results.json
@@ -932,6 +985,8 @@ END OF EXPERIMENT LOG (v10.0)
     public/phase8-metareg-results.json (v8.0.0)
     public/phase9-benchmark-results.json (v9.0.0)
     public/phase10-second-param-results.json (v10.0.0)
+    public/phase11-sensitivity-lab.json (v11.0.0)
+    public/per-galaxy-a0.json (190 galaxies)
     public/figure1-data.json (v1.1.0)
     public/sparc-table.json (175 galaxies)
 ================================================================================
