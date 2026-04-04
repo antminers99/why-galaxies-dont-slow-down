@@ -1,0 +1,192 @@
+{
+  "version": "17.0.0",
+  "timestamp": "2026-04-04T13:01:38.109Z",
+  "nGalaxies": 56,
+  "independentCorrelations": [
+    {
+      "name": "log(MHI)",
+      "r": -0.388,
+      "t": 3.1,
+      "source": "HI flux"
+    },
+    {
+      "name": "log(L36)",
+      "r": -0.323,
+      "t": 2.5,
+      "source": "3.6um photometry"
+    },
+    {
+      "name": "n_points",
+      "r": 0.306,
+      "t": 2.4,
+      "source": "data quality"
+    },
+    {
+      "name": "Rdisk",
+      "r": -0.303,
+      "t": 2.3,
+      "source": "photometry"
+    },
+    {
+      "name": "Reff",
+      "r": -0.281,
+      "t": 2.1,
+      "source": "photometry"
+    },
+    {
+      "name": "log(D)",
+      "r": -0.272,
+      "t": 2.1,
+      "source": "independent"
+    },
+    {
+      "name": "eInc",
+      "r": 0.241,
+      "t": 1.8,
+      "source": "catalog"
+    },
+    {
+      "name": "RHI",
+      "r": -0.219,
+      "t": 1.6,
+      "source": "HI observation"
+    },
+    {
+      "name": "T",
+      "r": 0.214,
+      "t": 1.6,
+      "source": "morphology"
+    },
+    {
+      "name": "RHI/Rdisk",
+      "r": 0.165,
+      "t": 1.2,
+      "source": "derived (indep)"
+    },
+    {
+      "name": "fD",
+      "r": -0.121,
+      "t": 0.9,
+      "source": "catalog"
+    },
+    {
+      "name": "log(MHI/L)",
+      "r": 0.104,
+      "t": 0.8,
+      "source": "derived (indep)"
+    },
+    {
+      "name": "SBdisk",
+      "r": -0.102,
+      "t": 0.8,
+      "source": "photometry"
+    },
+    {
+      "name": "SBeff",
+      "r": -0.047,
+      "t": 0.3,
+      "source": "photometry"
+    },
+    {
+      "name": "inc",
+      "r": 0.036,
+      "t": 0.3,
+      "source": "photometry"
+    },
+    {
+      "name": "Q",
+      "r": 0.026,
+      "t": 0.2,
+      "source": "catalog"
+    },
+    {
+      "name": "eD/D",
+      "r": 0.019,
+      "t": 0.1,
+      "source": "catalog"
+    }
+  ],
+  "cvResults": [
+    {
+      "name": "M0: Universal",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M_indep1: Top-1",
+      "k": 2,
+      "cvRMS": 0.11265,
+      "gapClosed": 7.4
+    },
+    {
+      "name": "M_indep3: Top-3",
+      "k": 4,
+      "cvRMS": 0.10951,
+      "gapClosed": 13.2
+    },
+    {
+      "name": "M_indep_all: All sig",
+      "k": 8,
+      "cvRMS": 0.10903,
+      "gapClosed": 14.1
+    },
+    {
+      "name": "M_indep_ridge: Ridge",
+      "k": 18,
+      "cvRMS": 0.10982,
+      "gapClosed": 12.6
+    },
+    {
+      "name": "M6: Per-galaxy",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "bestIndepGapClosed": 14.1,
+  "circularityAssessment": {
+    "phase16_gap": 80,
+    "phase17_indep_gap": 14.1,
+    "genuine_fraction": 14.1,
+    "circular_fraction": 65.9
+  },
+  "platinumSample": {
+    "n": 7,
+    "galaxies": [
+      "NGC2403",
+      "NGC2841",
+      "NGC2903",
+      "NGC3198",
+      "NGC3521",
+      "NGC5055",
+      "NGC7331"
+    ],
+    "meanLogA0": 3.5737,
+    "sd": 0.2507,
+    "fullSD": 0.2637,
+    "ratio": 0.951
+  },
+  "qualityCuts": {
+    "full": {
+      "n": 56,
+      "sd": 0.2637
+    },
+    "Q1": {
+      "n": 40,
+      "sd": 0.2487
+    },
+    "preciseD": {
+      "n": 30,
+      "sd": 0.2648
+    },
+    "cleanest": {
+      "n": 22,
+      "sd": 0.2595
+    },
+    "platinum": {
+      "n": 7,
+      "sd": 0.2507
+    }
+  }
+}

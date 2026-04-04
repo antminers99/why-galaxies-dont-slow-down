@@ -1202,3 +1202,28 @@ Files: scripts/phase16-dark-halo-test.cjs
        public/phase16-dark-halo.json
 
 ================================================================================
+
+Section 46: Phase 17 — Circularity Test & External Validation
+--------------------------------------------------------------
+Date: 2026-04-04
+Version: 17.0.0
+
+CIRCULARITY TEST:
+  Phase 16 (DM from rotation curves): 80% gap closed
+  Phase 17 (independent features only): 14% gap closed
+  → 66% of Phase 16's result is likely CIRCULAR
+
+QUALITY STRATIFICATION (scatter persistence):
+  Full: SD=0.264, Q1: 0.249, Precise-D: 0.265, Platinum: 0.251
+  Quality cuts reduce scatter by only 6%
+
+PLATINUM SAMPLE: 7 THINGS galaxies, SD=0.251 (vs 0.264 full)
+  2D kinematics does NOT substantially reduce heterogeneity
+
+VERDICT: ~14% of a0 variation is explained by independent features.
+  86% remains unexplained. Heterogeneity is robust.
+
+Files: scripts/phase17-circularity-test.cjs
+       public/phase17-circularity.json
+
+================================================================================

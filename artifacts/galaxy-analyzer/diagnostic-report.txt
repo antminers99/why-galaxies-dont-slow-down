@@ -3799,3 +3799,65 @@ CAUTION:
   break this degeneracy.
 
 ================================================================================
+
+================================================================================
+  SECTION 35: PHASE 17 — CIRCULARITY TEST & EXTERNAL VALIDATION
+  Version 17.0.0
+================================================================================
+
+PURPOSE:
+  Test whether Phase 16's 80% gap closure by DM halo properties is
+  genuine or circular. NFW fits and a0 fits both come from the same
+  rotation curve data. A good "prediction" might just be self-correlation.
+
+METHOD:
+  Use ONLY rotation-curve-independent features (photometry, distances,
+  morphology, HI flux) to predict a0 variation. If these close the gap
+  similarly, Phase 16 was not circular. If not, Phase 16 was circular.
+
+RESULTS:
+
+  1. INDEPENDENT FEATURES vs delta_a0:
+     Best: log(MHI) r=-0.388, log(L36) r=-0.323, n_points r=0.306
+     7 significant at |t| > 1.65
+
+  2. INDEPENDENT MODEL LADDER (LOO-CV):
+     M0 (universal):      0% gap closed
+     Top-1 (logMHI):      7.4%
+     Top-3 (MHI+L+n):     13.2%
+     All significant:     14.1%
+     Ridge (all 17):      12.6%
+     M6 (per-galaxy):     100%
+
+  3. CIRCULARITY VERDICT:
+     ┌────────────────────────────────────────────────────────┐
+     │  Phase 16 (DM from RC):    80% gap closed            │
+     │  Phase 17 (independent):   14% gap closed            │
+     │                                                      │
+     │  → 14% is genuine (independent features replicate)   │
+     │  → 66% is likely CIRCULAR (RC self-correlation)      │
+     └────────────────────────────────────────────────────────┘
+
+  4. QUALITY STRATIFICATION:
+     Full sample (n=56):    SD = 0.264 dex
+     Q=1 (n=40):            SD = 0.249 dex
+     Precise-D (n=30):      SD = 0.265 dex
+     Cleanest (Q1+i45+fD1): SD = 0.260 dex (n=22)
+     Platinum (THINGS):     SD = 0.251 dex (n=7)
+
+     Quality cuts reduce scatter by only 6%.
+     Heterogeneity persists in all subsamples.
+
+  5. PLATINUM SAMPLE (7 galaxies):
+     NGC2841 is the outlier: a0=10677 (2.9x mean)
+     Even excluding NGC2841, SD=0.164 dex (still substantial)
+     2D kinematics availability does NOT remove heterogeneity
+
+CRITICAL CONCLUSION:
+  Phase 16's "DM explains 80%" is MOSTLY CIRCULAR.
+  The genuine explanatory power of galaxy properties is ~14%.
+  The remaining 86% of a0 variation is NOT explained by any
+  measured property — baryonic, structural, or kinematic.
+  Heterogeneity is robust to quality cuts.
+
+================================================================================
