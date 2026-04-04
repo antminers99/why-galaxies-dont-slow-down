@@ -1,0 +1,101 @@
+{
+  "phase": "70",
+  "title": "Dimensionless / Physical Reformulation",
+  "M5_powerlaw": {
+    "intercept": 4.977765239194199,
+    "A0": 95009.1076694826,
+    "exponents": {
+      "logMHI": -0.23598354408671632,
+      "logMhost": -0.17184566288063852,
+      "logSig0": 0.14530702889811173,
+      "logMR": 0.45226606415952036,
+      "upsPerp": 0.6581461040059463
+    },
+    "rationalApprox": [
+      {
+        "name": "MHI",
+        "exact": -0.23598354408671632,
+        "frac": "-1/4",
+        "fracVal": -0.25
+      },
+      {
+        "name": "Mhost",
+        "exact": -0.17184566288063852,
+        "frac": "-1/6",
+        "fracVal": -0.16666666666666666
+      },
+      {
+        "name": "Σ₀",
+        "exact": 0.14530702889811173,
+        "frac": "1/7",
+        "fracVal": 0.14285714285714285
+      },
+      {
+        "name": "MeanRun",
+        "exact": 0.45226606415952036,
+        "frac": "3/7",
+        "fracVal": 0.42857142857142855
+      },
+      {
+        "name": "Υ★⊥ (mult)",
+        "exact": 0.6581461040059463,
+        "frac": "2/3",
+        "fracVal": 0.6666666666666666
+      }
+    ],
+    "looGap": 51.03790844712086
+  },
+  "M3_powerlaw": {
+    "intercept": 5.181628238604045,
+    "A0": 151924.64793596268,
+    "exponents": {
+      "logMHI": -0.1980011110647409,
+      "logMhost": -0.15519952663456305,
+      "logMR": 0.4591073109170461
+    },
+    "looGap": 44.06099071618016
+  },
+  "fgasCollapse": {
+    "formula": "a0 ~ (MHI/Mhost)^alpha * MeanRun^beta",
+    "alpha": 0.0006112744420722745,
+    "beta": 0.42438049551010265,
+    "looGap": 7.547463026429502,
+    "lossVsM3": 36.51352768975065
+  },
+  "dimensionless": {
+    "D1": {
+      "vars": [
+        "fgas",
+        "MR"
+      ],
+      "looGap": 7.547463026429502
+    },
+    "D2": {
+      "vars": [
+        "fgas",
+        "Sig0",
+        "MR"
+      ],
+      "looGap": 3.548904135750386
+    },
+    "D3": {
+      "vars": [
+        "fgas",
+        "Sig0",
+        "MR",
+        "UpsPerp"
+      ],
+      "looGap": 8.251753947965113
+    }
+  },
+  "nonlinear": {
+    "M3quad": 46.10399835312443,
+    "M3interact": 38.11360912225504,
+    "M5quad": 50.485104440976926,
+    "linearOptimal": false
+  },
+  "centered": {
+    "M5_a0_at_median": 3748.323912924772,
+    "M3_a0_at_median": 3751.951474312412
+  }
+}
