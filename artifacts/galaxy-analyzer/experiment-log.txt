@@ -2152,3 +2152,35 @@ ALL FAIL against working BL (38.1%).
   Working BL unchanged: 38.1%
 
 ================================================================================
+
+Section 85: Phase 52 — Baryon Concentration (FINAL)
+------------------------------------------------------
+Date: 2026-04-04
+Version: 52.0.0
+
+ALL FAIL against working BL (38.1%).
+  9 proxies: none passes fast screen.
+  Mbar/Rd2 = Sigma0_bar (r=1.00, already in BL).
+  baryHlfR strong raw (t=3.7) but fully absorbed.
+  gbar slope/curvature: no independent info.
+
+  ════════════════════════════════════════════════════════
+  ALL SIX DOORS NOW OFFICIALLY CLOSED
+  ════════════════════════════════════════════════════════
+
+  FINAL CONFIRMED VARIABLES (5):
+    1. MHI (galaxy history) — gas mass
+    2. rcWiggliness (gas/kin) — rotation curve bumpiness
+    3. envCode (environment) — cluster/group/field
+    4. Sigma0_bar (halo) — baryon surface density
+    5. meanRun (internal structure) — RAR residual coherence
+
+  FINAL WORKING BASELINE: 38.1% gap closed (LOO)
+  CONSERVATIVE BASELINE: 27.8% gap closed (LOO)
+  tau = 0.22 dex (ROBUST, never broken)
+
+  61.9% of the variation REMAINS UNEXPLAINED.
+
+  Project is now ready for final comprehensive review.
+
+================================================================================

@@ -5551,3 +5551,63 @@ RESULT: ALL FAIL
   CONCLUSION: Bulge-to-disk structure is irrelevant to a0 variation.
 
 ================================================================================
+
+================================================================================
+  SECTION 74: PHASE 52 — Baryon Concentration (FINAL VARIABLE)
+  Version 52.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
+
+  9 proxies tested against working BL (38.1%):
+
+  ZERO circularity:
+    compact:     |workBL t=0.5 FAIL-FAST (-SBdisk)
+    Mbar/Rd2:    |workBL t=0.0 FAIL-FAST (r=1.00 with Sigma0_bar!)
+    Rd/RHI:      |workBL t=0.4 WEAK
+
+  LOW circularity:
+    baryHlfR:    |workBL t=0.6 WEAK (raw t=3.7, absorbed by BL)
+    baryH/Rd:    |workBL t=1.1 WEAK
+    gbarDynR:    |workBL t=0.6 WEAK
+    Mbar/Rm2:    |workBL t=0.9 WEAK
+    gbarSlp:     |workBL t=0.9 WEAK
+    gbarCurv:    |workBL t=0.5 FAIL-FAST
+
+  KEY INSIGHTS:
+    - Mbar/Rd2 = Sigma0_bar (r=1.00). Identical variable.
+    - baryHlfR: strong raw signal (t=3.7) but COMPLETELY absorbed by BL.
+    - gbarSlope, gbarCurvature: no independent info about a0.
+    - Baryon spatial distribution adds nothing beyond what we already have.
+
+  ════════════════════════════════════════════════════════════
+  INTERNAL STRUCTURE DOOR: OFFICIALLY CLOSED
+  ════════════════════════════════════════════════════════════
+
+  FROM THIS DOOR:
+    CONFIRMED: meanRun (LOO 38.1%)
+    CONFIRMED (no LOO gain): tBst/Rd
+    FAIL: inner-outer diff, radial slope, transition (LOW), 
+          bulge-to-disk (10 proxies), baryon concentration (9 proxies)
+
+  ════════════════════════════════════════════════════════════
+  ALL SIX DOORS: OFFICIALLY CLOSED
+  ════════════════════════════════════════════════════════════
+
+  DOOR 1 — Galaxy History:       MHI CONFIRMED
+  DOOR 2 — Environment:          envCode CONFIRMED
+  DOOR 3 — Cosmic Context:       FAIL (all proxies)
+  DOOR 4 — Dark Matter Halo:     Sigma0_bar CONFIRMED
+  DOOR 5 — Gas/Kinematics:       wigRatio (rcWiggliness) CONFIRMED
+  DOOR 6 — Internal Structure:   meanRun CONFIRMED
+
+  FINAL WORKING BASELINE (5 variables):
+    MHI + rcWiggliness + envCode + Sigma0_bar + meanRun = 38.1%
+
+  CONSERVATIVE BASELINE (4 variables):
+    MHI + rcWiggliness + envCode + Sigma0_bar = 27.8%
+
+  tau = 0.22 dex ROBUST
+  61.9% of the gap remains UNEXPLAINED
+
+================================================================================

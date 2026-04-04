@@ -1,0 +1,111 @@
+{
+  "version": "52.0.0",
+  "timestamp": "2026-04-04T16:52:17.654Z",
+  "nGalaxies": 56,
+  "workingBL": {
+    "gc": 38.1
+  },
+  "proxies": [
+    {
+      "name": "baryHlfR",
+      "circ": "LOW",
+      "note": "baryon half-light radius",
+      "rawT": 3.7,
+      "workBLr": -0.087,
+      "workBLt": 0.6,
+      "workLOO": 35.8,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "baryH/Rd",
+      "circ": "LOW",
+      "note": "baryon half-R / Rdisk",
+      "rawT": 0.2,
+      "workBLr": -0.148,
+      "workBLt": 1.1,
+      "workLOO": 36.7,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gbarDynR",
+      "circ": "LOW",
+      "note": "g_bar dynamic range",
+      "rawT": 1,
+      "workBLr": 0.09,
+      "workBLt": 0.6,
+      "workLOO": 35,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "compact",
+      "circ": "ZERO",
+      "note": "-SBdisk (external)",
+      "rawT": 0.8,
+      "workBLr": 0.066,
+      "workBLt": 0.5,
+      "workLOO": 37,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "Mbar/Rd2",
+      "circ": "ZERO",
+      "note": "baryon density proxy",
+      "rawT": 0.1,
+      "workBLr": 0,
+      "workBLt": 0,
+      "workLOO": 38.1,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "Mbar/Rm2",
+      "circ": "LOW",
+      "note": "baryon density at Rmax",
+      "rawT": 1.7,
+      "workBLr": 0.122,
+      "workBLt": 0.9,
+      "workLOO": 36.8,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rd/RHI",
+      "circ": "ZERO",
+      "note": "stellar/HI radius ratio",
+      "rawT": 1.3,
+      "workBLr": 0.057,
+      "workBLt": 0.4,
+      "workLOO": 36.3,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gbarSlp",
+      "circ": "LOW",
+      "note": "g_bar radial slope",
+      "rawT": 1.1,
+      "workBLr": -0.132,
+      "workBLt": 0.9,
+      "workLOO": 35.3,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gbarCurv",
+      "circ": "LOW",
+      "note": "g_bar radial curvature",
+      "rawT": 0.7,
+      "workBLr": 0.069,
+      "workBLt": 0.5,
+      "workLOO": 33.9,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    }
+  ],
+  "doorStatus": "CLOSED",
+  "allDoorsClosed": true
+}
