@@ -1,0 +1,74 @@
+هاي النتيجة صارت أوضح بكثير.
+الحكم الحالي على Phase 23
+الاضطراب/الاندماج لم يُحسم بعد كـ “تاريخ مجرة” نظيف، لكن ظهر منه شيء حقيقي أضيق:
+عدم انتظام شكل منحنى الدوران يبدو أنه يحمل إشارة مستقلة عن MHI.
+كيف نقرأ الطبقات الثلاث؟
+1) Circular
+kinematicDist قوي جدًا
+لكن لأنه مبني من جودة الـ fit نفسها، ما فينا نعتمد عليه كبرهان نهائي
+2) Semi-circular
+rcWiggliness مهم جدًا الآن
+بعد ضبط MHI بقي:
+r = 0.365
+t = 2.9
+perm p = 0.0047
+هذا يعني:
+في إشارة حقيقية ما عادت تختفي بعد ضبط MHI
+لكن:
+LOO = 2.8% فقط
+يعني هو يفسر شيئًا حقيقيًا لكنه ليس المفتاح الكبير لوحده
+3) Clean photometric
+sbAsymmetry فشل إحصائيًا
+هذا مهم جدًا لأنه يقول:
+الاضطراب الشكلي البحت لا يبدو كافيًا
+لكن نزول tau في الأرباع مع فشل LOO يعني:
+هو يفرز مجموعات مختلفة
+لكنه ليس predictor جيدًا لمجرة جديدة
+الخلاصة العلمية الدقيقة
+النتيجة لم تعد تقول:
+“merger history هو الحل”
+بل صارت تقول:
+الشيء الباقي من هذا الباب ليس الاندماج بحد ذاته، بل irregularity كيناماتيكية/شكلية داخل منحنى الدوران.
+يعني:
+history التقليدي: ضعيف
+morphology النظيفة: فشلت
+RC shape irregularity: بقيت
+القرار المنهجي الآن
+لا ننتقل بعد إلى البيئة والجيران.
+ليش؟ لأننا ما زلنا داخل نفس المتغير، لكن صار اسمه أدق:
+ليس:
+merger/disturbance history
+بل:
+RC irregularity / kinematic disturbance
+وهذا لازم نحسمه أولًا.
+الحكم الرسمي المؤقت
+اكتبه هكذا:
+The galaxy-history block still does not deliver a clean explanatory variable in the standard sense. However, a semi-circular family of rotation-curve irregularity proxies survives MHI control with significant permutation support. This points to kinematic/structural irregularity rather than classical stellar-population history as the first genuinely independent signal.
+ماذا يعني عمليًا؟
+عندك الآن 3 مستويات:
+تاريخ النجوم: فشل
+مورفولوجيا نظيفة: فشل
+لاانتظام منحنى الدوران: نجح جزئيًا
+إذًا:
+أول اختراق حقيقي عندك ليس “عمر” أو “معدنية” أو “SFR”،
+بل مدى اضطراب شكل الدوران نفسه.
+الخطوة التالية الوحيدة
+Phase 23c — حسم RC irregularity
+اختبر فقط البروكسيات شبه الدائرية الأنظف:
+rcWiggliness
+vPeakDip
+أي shape-irregularity proxy مشابه
+ومعيار الحسم يكون:
+يبقى بعد ضبط MHI
+يبقى بعد ضبط Vmax
+يبقى بعد ضبط n_pts
+يبقى بعد ضبط inclination
+لا ينهار في LOO
+لا يكون مجرد أثر beam smearing / resolution
+إذا بقي بعد هذا كله:
+نقول رسميًا إن kinematic irregularity هو أول second parameter مستقل حقيقي
+إذا انهار:
+نغلق الباب كله وننتقل للبيئة والجيران
+الجملة القصيرة
+الاندماج كمورفولوجيا لا.
+لكن اضطراب منحنى الدوران نفسه: نعم، ظهر كأول إشارة مستقلة فعلية — ولسا بدها اختبار حسم واحد أخير.

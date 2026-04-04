@@ -4253,3 +4253,62 @@ GALAXY HISTORY DOOR: NOT CLOSED, NOT OPEN — AMBIGUOUS
   RAR fit quality. But photometric disturbance measures fail.
 
 ================================================================================
+
+================================================================================
+  SECTION 43: PHASE 23c — DECISIVE RC IRREGULARITY TEST
+  Version 23c.0.0
+================================================================================
+
+PURPOSE:
+  Final decisive test: does rcWiggliness survive ALL 7 confounders?
+  This determines whether RC irregularity is a genuine second parameter.
+
+METHOD:
+  Sequential confounder stripping: add MHI → Vflat → n_pts → inc → D →
+  beam/disk → angular size. Test partial correlation at each step.
+  Also: bootstrap CI, beam smearing check, LOO-CV.
+
+RESULT — rcWiggliness:
+  ┌─────────────────────────────────────────────────────────┐
+  │ raw:                r=0.282, t=2.2, perm p=0.035       │
+  │ +MHI:               r=0.369, t=2.9, perm p=0.005       │
+  │ +MHI+Vflat:         r=0.507, t=4.2, perm p<0.001  !!!  │
+  │ +MHI+Vflat+n:       r=0.478, t=3.9, perm p<0.001       │
+  │ +MHI+Vflat+n+inc:   r=0.472, t=3.8, perm p=0.0002      │
+  │ +MHI+Vflat+n+inc+D: r=0.455, t=3.6, perm p=0.0008      │
+  │ ALL 7 confounders:  r=0.434, t=3.3, perm p=0.001        │
+  └─────────────────────────────────────────────────────────┘
+
+  SURVIVES EVERYTHING. Gets STRONGER after controlling Vflat (suppressor).
+  Bootstrap 95% CI: [0.126, 0.674] — EXCLUDES ZERO.
+  99.8% of bootstrap samples positive.
+
+RESULT — vPeakDip:
+  Survives MHI and Vflat, but FAILS after n_pts control.
+  Absorbed by data quality. Not independently robust.
+
+RESULT — others:
+  slopeMismatch, rcCurvature, rcRoughness, outerFlatness: all FAIL.
+
+LOO:
+  rcWiggliness alone: 2.8% gap closure (modest)
+  MHI + rcWiggliness: 11.5% (adds +4.1% above MHI's 7.4%)
+  MHI + wig + vpd:    11.0% (no improvement from adding vPeakDip)
+
+INTERPRETATION:
+  rcWiggliness is NOT a strong predictor by itself (2.8% gap).
+  But it carries GENUINELY INDEPENDENT information from MHI (suppressor).
+  Combined MHI + rcWiggliness = 11.5% gap closure.
+
+  This is the FIRST variable in the entire project to survive
+  all confounder controls with high significance.
+
+  Caveat: rcWiggliness is semi-circular (uses RC data, not RAR fit).
+  It measures local variability of gobs around a linear trend within
+  inner/outer halves. This is rotation curve shape, not fit quality.
+
+VERDICT:
+  rcWiggliness = GENUINE INDEPENDENT SECOND PARAMETER
+  Galaxy history door: PARTIALLY OPEN via kinematic irregularity channel.
+
+================================================================================

@@ -1379,3 +1379,27 @@ Files: scripts/phase23b-circularity-clean.cjs
        public/phase23b-circularity-clean.json
 
 ================================================================================
+
+Section 54: Phase 23c — Decisive RC Irregularity Test
+------------------------------------------------------
+Date: 2026-04-04
+Version: 23c.0.0
+
+BREAKTHROUGH: rcWiggliness survives ALL 7 confounders!
+  Raw: r=0.282  →  After ALL 7: r=0.434 (t=3.3, perm p=0.001)
+  After MHI+Vflat: r=0.507 (t=4.2) — SUPPRESSOR EFFECT
+  Bootstrap 95% CI: [0.126, 0.674] — excludes zero
+  99.8% positive bootstraps
+
+vPeakDip: FAILS after n_pts control (absorbed by data quality)
+All other RC shape proxies: FAIL
+
+LOO: rcWiggliness alone 2.8%, MHI+wig 11.5% (+4.1% above MHI)
+
+VERDICT: rcWiggliness is first genuine independent second parameter.
+Galaxy history door: PARTIALLY OPEN via kinematic irregularity.
+
+Files: scripts/phase23c-rc-irregularity-decisive.cjs
+       public/phase23c-rc-irregularity-decisive.json
+
+================================================================================

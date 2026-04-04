@@ -1,0 +1,347 @@
+{
+  "version": "23c.0.0",
+  "timestamp": "2026-04-04T14:09:44.506Z",
+  "nGalaxies": 56,
+  "targets": [
+    {
+      "name": "rcWiggliness",
+      "survivesAllConfounders": true,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": 0.282,
+          "t": 2.2,
+          "perm_p": 0.035,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI",
+          "r": 0.369,
+          "t": 2.9,
+          "perm_p": 0.005,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": 0.507,
+          "t": 4.2,
+          "perm_p": 0,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": 0.478,
+          "t": 3.9,
+          "perm_p": 0,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": 0.472,
+          "t": 3.8,
+          "perm_p": 0.0002,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": 0.455,
+          "t": 3.6,
+          "perm_p": 0.0008,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.434,
+          "t": 3.3,
+          "perm_p": 0.001,
+          "status": "SURVIVES"
+        }
+      ]
+    },
+    {
+      "name": "vPeakDip",
+      "survivesAllConfounders": false,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": 0.092,
+          "t": 0.7,
+          "perm_p": 0.5016,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI",
+          "r": 0.333,
+          "t": 2.6,
+          "perm_p": 0.012,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": 0.334,
+          "t": 2.6,
+          "perm_p": 0.0116,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": 0.221,
+          "t": 1.6,
+          "perm_p": 0.1054,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": 0.205,
+          "t": 1.5,
+          "perm_p": 0.1252,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": 0.203,
+          "t": 1.5,
+          "perm_p": 0.1428,
+          "status": "FAILS"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.229,
+          "t": 1.6,
+          "perm_p": 0.0868,
+          "status": "FAILS"
+        }
+      ]
+    },
+    {
+      "name": "slopeMismatch",
+      "survivesAllConfounders": false,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": 0.113,
+          "t": 0.8,
+          "perm_p": 0.4224,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI",
+          "r": -0.091,
+          "t": 0.7,
+          "perm_p": 0.524,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": -0.061,
+          "t": 0.4,
+          "perm_p": 0.675,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": -0.088,
+          "t": 0.6,
+          "perm_p": 0.5354,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": -0.068,
+          "t": 0.5,
+          "perm_p": 0.632,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": -0.092,
+          "t": 0.6,
+          "perm_p": 0.501,
+          "status": "FAILS"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.007,
+          "t": 0,
+          "perm_p": 0.9606,
+          "status": "FAILS"
+        }
+      ]
+    },
+    {
+      "name": "rcCurvature",
+      "survivesAllConfounders": true,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": 0.365,
+          "t": 2.9,
+          "perm_p": 0.0034,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI",
+          "r": 0.253,
+          "t": 1.9,
+          "perm_p": 0.0544,
+          "status": "MARGINAL"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": 0.328,
+          "t": 2.5,
+          "perm_p": 0.0048,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": 0.296,
+          "t": 2.2,
+          "perm_p": 0.0212,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": 0.288,
+          "t": 2.1,
+          "perm_p": 0.0262,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": 0.274,
+          "t": 2,
+          "perm_p": 0.038,
+          "status": "MARGINAL"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.282,
+          "t": 2,
+          "perm_p": 0.0304,
+          "status": "SURVIVES"
+        }
+      ]
+    },
+    {
+      "name": "rcRoughness",
+      "survivesAllConfounders": true,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": 0.354,
+          "t": 2.8,
+          "perm_p": 0.0004,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI",
+          "r": 0.288,
+          "t": 2.2,
+          "perm_p": 0.0174,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": 0.326,
+          "t": 2.5,
+          "perm_p": 0.0028,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": 0.313,
+          "t": 2.4,
+          "perm_p": 0.0084,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": 0.311,
+          "t": 2.3,
+          "perm_p": 0.0084,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": 0.307,
+          "t": 2.3,
+          "perm_p": 0.01,
+          "status": "SURVIVES"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.312,
+          "t": 2.3,
+          "perm_p": 0.0074,
+          "status": "SURVIVES"
+        }
+      ]
+    },
+    {
+      "name": "outerFlatness",
+      "survivesAllConfounders": false,
+      "sequentialResults": [
+        {
+          "controls": "raw",
+          "r": -0.189,
+          "t": 1.4,
+          "perm_p": 0.162,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI",
+          "r": -0.034,
+          "t": 0.2,
+          "perm_p": 0.7916,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat",
+          "r": -0.043,
+          "t": 0.3,
+          "perm_p": 0.7504,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n",
+          "r": 0.005,
+          "t": 0,
+          "perm_p": 0.9682,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc",
+          "r": -0.015,
+          "t": 0.1,
+          "perm_p": 0.9094,
+          "status": "FAILS"
+        },
+        {
+          "controls": "+MHI+Vflat+n+inc+D",
+          "r": -0.02,
+          "t": 0.1,
+          "perm_p": 0.8846,
+          "status": "FAILS"
+        },
+        {
+          "controls": "ALL 7",
+          "r": 0.015,
+          "t": 0.1,
+          "perm_p": 0.9142,
+          "status": "FAILS"
+        }
+      ]
+    }
+  ],
+  "looGapClosed": {
+    "rcWiggliness": 2.8,
+    "vPeakDip": -0.8,
+    "mhi": 7.4,
+    "mhiPlusWig": 11.5,
+    "mhiPlusVpd": 17.1,
+    "mhiPlusWigVpd": 16
+  },
+  "rcIrregularityIsGenuine": true,
+  "doorStatus": "PARTIALLY OPEN"
+}
