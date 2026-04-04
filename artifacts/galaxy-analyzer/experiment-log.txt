@@ -2304,3 +2304,14 @@ Case-by-case: 7/7 agree.
 SPARC 1D disturbance proxies are physically real.
 logMeanRun > rcWiggliness as 2D proxy.
 
+
+Section 96: Phase 58 — Environmental Processing History
+------------------------------------------------------
+Date: 2026-04-04
+58a PILOT (N=15): Θ₁ vs delta_a0: r=-0.673 (t=-3.28). After envCode: r=-0.510.
+  STRONG signal — tidal index adds beyond envCode. But N=15 only.
+58b FULL (N=56): DEF_T vs logA0: absorbed by logMHI (r=-0.022 after).
+  FAIL. r(DEF_T, logMHI)=-0.894, even worse than HI_def.
+58c FULL (N=56): Gas-fraction offset: raw r=-0.052. FAIL.
+VERDICT: Full proxies FAIL. Tidal index pilot PROMISING.
+

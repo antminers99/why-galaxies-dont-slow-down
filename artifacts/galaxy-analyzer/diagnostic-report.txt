@@ -5882,3 +5882,41 @@ RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
   than rcWiggliness.
 
 ================================================================================
+
+================================================================================
+  SECTION 86: PHASE 58 — ENVIRONMENTAL PROCESSING HISTORY
+================================================================================
+
+  THREE SUBPHASES:
+
+  58a: Karachentsev Tidal Index Θ₁ (UNGC 2013) — N=15 PILOT
+  ─────────────────────────────────────────────────────────
+  r(Θ₁, delta_a0) = -0.673 (t=-3.28) ← STRONG SIGNAL
+  Spearman ρ = -0.678
+  After envCode: r = -0.510 (t=-2.14) ← SURVIVES ENVCODE
+  Direction: stronger tidal influence → LOWER a₀
+
+  MAJOR FINDING: Θ₁ adds BEYOND binary envCode.
+  The continuous tidal strength predicts a₀ variation better
+  than the discrete field/group/cluster flag.
+  
+  BUT: Only 15 galaxies (within 11 Mpc). Cannot do formal 
+  regression against 5-6 variable baselines.
+
+  58b: Morphology-Gas Deficit DEF_T — N=56 FULL → FAIL
+  ─────────────────────────────────────────────────────
+  r(DEF_T, logMHI) = -0.894 ← MORE correlated with logMHI than HI_def!
+  After logMHI: r=-0.022 (absorbed)
+  After envCode: r=0.402 (survives envCode alone)
+  After logMHI+envCode: r=0.019 (absorbed)
+  LOO: gets worse for both A (-3.2pp) and B (-3.8pp)
+  Perm: 0.61/0.92
+  VERDICT: FAIL. Same as HI deficiency — absorbed by logMHI.
+
+  58c: Gas-Fraction Offset — N=56 → FAIL
+  Raw r=-0.052. No signal at all.
+
+  OVERALL VERDICT: FAIL for full-sample proxies.
+  BUT 58a pilot shows strong signal worth pursuing.
+
+================================================================================
