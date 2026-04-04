@@ -5743,3 +5743,72 @@ RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
   between known variables.
 
 ================================================================================
+
+================================================================================
+  SECTION 78: PHASE 56 — FROZEN BASELINES (DEFINITIVE REFERENCE)
+  Version 56.0.0
+================================================================================
+
+  BASELINES FROZEN:
+  A (conservative): log(a0) = 3.13 - 0.23*logMHI + 2.29*wig - 0.12*env + 0.18*logSig0
+    R2=0.412, R2adj=0.365, residSD=0.210, LOO=27.8%
+  B (extended): adds +0.37*logMeanRun
+    R2=0.491, R2adj=0.440, residSD=0.197, LOO=38.1%
+
+  k-fold CV stability: A: 5f=27.2+/-3.6, 10f=27.2+/-2.4. B: 5f=35.6+/-4.5, 10f=37.2+/-3.2.
+
+================================================================================
+  SECTION 79: PHASE 57 — 2D KINEMATICS DECISIVE TEST
+  Version 57.0.0
+================================================================================
+
+  ALL 14 kinematic proxies FAIL.
+  Key collinearities: rmsJump r=0.77 w/wig, autocorr2 r=0.75 w/mRun.
+  rcWiggliness + meanRun already capture all 1D-accessible kinematic information.
+  True 2D velocity fields not available; remains open question.
+
+================================================================================
+  SECTION 80: PHASE 58 — ENVIRONMENTAL PROCESSING HISTORY
+  Version 58.0.0
+================================================================================
+
+  ALL 12 processing proxies FAIL.
+  envCode is irreducible from available SPARC data.
+  Closest: harassedF (env>=1 & wig>0.06) p=0.066/0.101 — still fails.
+  envCode = simple threshold marker, not gradient.
+  True processing history (infall time, stripping) unavailable.
+
+================================================================================
+  SECTION 81: PHASE 59 — TRUE STELLAR Y* TEST
+  Version 59.0.0
+================================================================================
+
+  2 SURVIVORS: barGravD (p=0.006/0.021) and innBarF (p=0.003/0.006).
+  Both MED circularity (depend on gbar/gobs).
+  innBarF LOO: 42.9% vs 38.1% extended BL.
+  BUT: DO NOT absorb Sigma0 — Sigma0 gets stronger after controlling.
+  INTERPRETATION: baryon dominance fraction = independent information
+  about how much the dynamics is explained by visible matter.
+
+================================================================================
+  SECTION 82: PHASE 60 — FINAL DEATH MATCH
+  Version 60.0.0
+================================================================================
+
+  M0 (Universal a0): REJECTED. tau=0.264 dex real.
+  M1a (Conservative, k=4): LOO=27.8%
+  M1b (Extended, k=5): LOO=38.1%
+  M1c (Maximal, k=6): LOO=42.9% — WINNER
+  M2 (Per-galaxy, k=56): 100% by definition, overfitting.
+
+  AIC/BIC: M2 wins on AIC, M2 wins on BIC (strong enough signal).
+  tau after M1c: 0.174 dex (down from 0.264). 56.2% variance explained.
+  Replicated tau: 0.266 +/- 0.020 (robust across subsamples).
+
+  FINAL CONCLUSION:
+  a0 is NOT universal — structured, galaxy-dependent variation.
+  ~43% gap explained by 6 variables from 4 physical domains.
+  ~57% gap irreducible with SPARC data alone.
+  Resolution requires external data (IFU, multi-band, HI cubes).
+
+================================================================================

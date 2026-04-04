@@ -1,0 +1,202 @@
+{
+  "version": "59.0.0",
+  "timestamp": "2026-04-04T17:32:50.126Z",
+  "nGalaxies": 56,
+  "conservativeBL": 27.8,
+  "extendedBL": 38.1,
+  "stellarMLvars": [
+    {
+      "name": "logMLsb",
+      "circ": "LOW",
+      "note": "SB-based M/L proxy",
+      "cons": {
+        "r": 0,
+        "loo": 27.816623067887207,
+        "permP": 1
+      },
+      "work": {
+        "r": 0,
+        "loo": 38.064077824334554,
+        "permP": 1
+      },
+      "rSigma0": 0,
+      "verdict": "FAIL (no var)"
+    },
+    {
+      "name": "logM*/L",
+      "circ": "LOW",
+      "note": "stellar mass to 3.6um luminosity ratio",
+      "cons": {
+        "r": 0,
+        "loo": 27.816623067887207,
+        "permP": 1
+      },
+      "work": {
+        "r": 0,
+        "loo": 38.064077824334554,
+        "permP": 1
+      },
+      "rSigma0": 0,
+      "verdict": "FAIL (no var)"
+    },
+    {
+      "name": "sbGrad",
+      "circ": "ZERO",
+      "note": "SB gradient (SBeff - SBdisk)",
+      "cons": {
+        "r": 0.054,
+        "loo": 27,
+        "permP": 0.6896
+      },
+      "work": {
+        "r": 0.076,
+        "loo": 37,
+        "permP": 0.5836
+      },
+      "rSigma0": -0.482,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "logStelD",
+      "circ": "ZERO",
+      "note": "stellar surface density M*/Rd^2",
+      "cons": {
+        "r": 0.181,
+        "loo": 27.8,
+        "permP": 0.186
+      },
+      "work": {
+        "r": 0.21,
+        "loo": 38.1,
+        "permP": 0.12
+      },
+      "rSigma0": 1,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "dynML",
+      "circ": "LOW",
+      "note": "dynamic M/L from Vflat^2*R/Mstar",
+      "cons": {
+        "r": 0.155,
+        "loo": 18.3,
+        "permP": 0.253
+      },
+      "work": {
+        "r": 0.125,
+        "loo": 35.8,
+        "permP": 0.3758
+      },
+      "rSigma0": -0.498,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "barGravD",
+      "circ": "MED",
+      "note": "baryon-dominated fraction of RC",
+      "cons": {
+        "r": -0.366,
+        "loo": 32.2,
+        "permP": 0.0062
+      },
+      "work": {
+        "r": -0.314,
+        "loo": 39.9,
+        "permP": 0.0206
+      },
+      "rSigma0": 0.337,
+      "verdict": "SURVIVOR"
+    },
+    {
+      "name": "innBarF",
+      "circ": "MED",
+      "note": "inner baryon-dominated fraction",
+      "cons": {
+        "r": -0.4,
+        "loo": 34.9,
+        "permP": 0.0027
+      },
+      "work": {
+        "r": -0.374,
+        "loo": 42.9,
+        "permP": 0.0056
+      },
+      "rSigma0": 0.349,
+      "verdict": "SURVIVOR"
+    },
+    {
+      "name": "gbarSprd",
+      "circ": "LOW",
+      "note": "dynamic range of gbar",
+      "cons": {
+        "r": 0.112,
+        "loo": 26.5,
+        "permP": 0.408
+      },
+      "work": {
+        "r": 0.042,
+        "loo": 35.5,
+        "permP": 0.75
+      },
+      "rSigma0": 0.082,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "mlColor",
+      "circ": "ZERO",
+      "note": "T-type based color/M-L proxy",
+      "cons": {
+        "r": -0.141,
+        "loo": 25.2,
+        "permP": 0.3044
+      },
+      "work": {
+        "r": -0.129,
+        "loo": 35.7,
+        "permP": 0.3539
+      },
+      "rSigma0": 0.464,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "SBdisk",
+      "circ": "ZERO",
+      "note": "disk central surface brightness",
+      "cons": {
+        "r": -0.057,
+        "loo": 27.1,
+        "permP": 0.6814
+      },
+      "work": {
+        "r": -0.066,
+        "loo": 37,
+        "permP": 0.6378
+      },
+      "rSigma0": 0.567,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "logMstar",
+      "circ": "ZERO",
+      "note": "total stellar mass (from L*0.5)",
+      "cons": {
+        "r": 0.026,
+        "loo": 25.7,
+        "permP": 0.8482
+      },
+      "work": {
+        "r": 0.123,
+        "loo": 37.5,
+        "permP": 0.3633
+      },
+      "rSigma0": 0.516,
+      "verdict": "FAIL"
+    }
+  ],
+  "survivors": [
+    "barGravD",
+    "innBarF"
+  ],
+  "partials": [],
+  "verdict": "ML_ADDS"
+}

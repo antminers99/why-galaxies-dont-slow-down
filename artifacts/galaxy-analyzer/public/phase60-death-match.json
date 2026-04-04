@@ -1,0 +1,90 @@
+{
+  "version": "60.0.0",
+  "timestamp": "2026-04-04T17:35:40.350Z",
+  "nGalaxies": 56,
+  "totalPoints": 1483,
+  "tau": 0.2637,
+  "models": {
+    "M0": {
+      "name": "Universal a0",
+      "k": 0,
+      "gc": 0,
+      "rms": 0.11662
+    },
+    "M1a": {
+      "name": "Conservative BL",
+      "k": 4,
+      "gc": 27.8,
+      "rms": 0.10167
+    },
+    "M1b": {
+      "name": "Extended BL",
+      "k": 5,
+      "gc": 38.1,
+      "rms": 0.09616
+    },
+    "M1c": {
+      "name": "Maximal",
+      "k": 6,
+      "gc": 42.9,
+      "rms": 0.09356
+    },
+    "M2": {
+      "name": "Per-galaxy a0",
+      "k": 56,
+      "gc": 100,
+      "rms": 0.06287
+    }
+  },
+  "informationCriteria": [
+    {
+      "label": "M0: Universal",
+      "k": 0,
+      "aic": -2199.7,
+      "bic": -2194.4
+    },
+    {
+      "label": "M1a: Conservative",
+      "k": 4,
+      "aic": -2723.5,
+      "bic": -2697
+    },
+    {
+      "label": "M1b: Extended",
+      "k": 5,
+      "aic": -2925.8,
+      "bic": -2894
+    },
+    {
+      "label": "M1c: Maximal",
+      "k": 6,
+      "aic": -3007.9,
+      "bic": -2970.8
+    },
+    {
+      "label": "M2: Per-galaxy",
+      "k": 56,
+      "aic": -3883.4,
+      "bic": -3581.2
+    }
+  ],
+  "tauDecomposition": {
+    "total": 0.2637,
+    "afterM1a": 0.2023,
+    "afterM1b": 0.1881,
+    "afterM1c": 0.1745
+  },
+  "replicatedTau": {
+    "meanHalfSample": 0.2656,
+    "sdHalfSample": 0.0198,
+    "robust": true
+  },
+  "verdict": {
+    "M0_rejected": true,
+    "M1_winner": "M1c (Maximal)",
+    "M1_gapClosed": 42.9,
+    "M2_overfitting": true,
+    "unexplainedGap": 57.1,
+    "conclusion": "a0 is structured and galaxy-dependent, ~43% predictable, ~57% requires external data or represents true physical variation"
+  }
+}

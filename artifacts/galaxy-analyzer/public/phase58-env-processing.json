@@ -1,0 +1,216 @@
+{
+  "version": "58.0.0",
+  "timestamp": "2026-04-04T17:30:38.416Z",
+  "nGalaxies": 56,
+  "conservativeBL": 27.8,
+  "extendedBL": 38.1,
+  "processingVars": [
+    {
+      "name": "logFgas",
+      "circ": "ZERO",
+      "note": "gas fraction (stripping proxy)",
+      "cons": {
+        "r": -0.026,
+        "loo": 25.7,
+        "permP": 0.8505
+      },
+      "work": {
+        "r": -0.123,
+        "loo": 37.5,
+        "permP": 0.3677
+      },
+      "rEnv": -0.257,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "logRHI/Rd",
+      "circ": "ZERO",
+      "note": "HI extent relative to disk (truncation proxy)",
+      "cons": {
+        "r": -0.007,
+        "loo": 25.6,
+        "permP": 0.959
+      },
+      "work": {
+        "r": -0.1,
+        "loo": 37.1,
+        "permP": 0.4631
+      },
+      "rEnv": 0.024,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "logHIrich",
+      "circ": "ZERO",
+      "note": "HI richness = MHI/Mstar (depletion proxy)",
+      "cons": {
+        "r": -0.026,
+        "loo": 25.7,
+        "permP": 0.8444
+      },
+      "work": {
+        "r": -0.123,
+        "loo": 37.5,
+        "permP": 0.3622
+      },
+      "rEnv": -0.257,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "hiDef",
+      "circ": "ZERO",
+      "note": "HI deficiency flag",
+      "cons": {
+        "r": 0,
+        "loo": 27.816623067887207,
+        "permP": 1
+      },
+      "work": {
+        "r": 0,
+        "loo": 38.064077824334554,
+        "permP": 1
+      },
+      "rEnv": 0,
+      "verdict": "FAIL (no variance)"
+    },
+    {
+      "name": "colorPrx",
+      "circ": "ZERO",
+      "note": "T-type color proxy (quenching proxy)",
+      "cons": {
+        "r": 0.04,
+        "loo": 23.9,
+        "permP": 0.7605
+      },
+      "work": {
+        "r": 0.068,
+        "loo": 34.9,
+        "permP": 0.6122
+      },
+      "rEnv": 0.02,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "rpSusc",
+      "circ": "LOW",
+      "note": "ram-pressure susceptibility (fgas/Vflat)",
+      "cons": {
+        "r": 0,
+        "loo": 27.816623067887207,
+        "permP": 1
+      },
+      "work": {
+        "r": 0,
+        "loo": 38.064077824334554,
+        "permP": 1
+      },
+      "rEnv": 0,
+      "verdict": "FAIL (no variance)"
+    },
+    {
+      "name": "outerSlp",
+      "circ": "MED",
+      "note": "outer RC decline (gas removal signature)",
+      "cons": {
+        "r": 0.128,
+        "loo": 27.6,
+        "permP": 0.3562
+      },
+      "work": {
+        "r": 0.1,
+        "loo": 37.1,
+        "permP": 0.4693
+      },
+      "rEnv": -0.116,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "env*gas",
+      "circ": "ZERO",
+      "note": "environment x gas fraction",
+      "cons": {
+        "r": 0.153,
+        "loo": 28.1,
+        "permP": 0.2607
+      },
+      "work": {
+        "r": 0.119,
+        "loo": 36.6,
+        "permP": 0.3894
+      },
+      "rEnv": -0.999,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "env*mass",
+      "circ": "ZERO",
+      "note": "environment x stellar mass",
+      "cons": {
+        "r": -0.225,
+        "loo": 30.5,
+        "permP": 0.0964
+      },
+      "work": {
+        "r": -0.231,
+        "loo": 38.5,
+        "permP": 0.0882
+      },
+      "rEnv": 0.999,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "preProcF",
+      "circ": "ZERO",
+      "note": "preprocessing flag (env>=1 & fgas<0.3)",
+      "cons": {
+        "r": 0.098,
+        "loo": 27,
+        "permP": 0.4672
+      },
+      "work": {
+        "r": 0.036,
+        "loo": 36.3,
+        "permP": 0.7937
+      },
+      "rEnv": 0.928,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "strippedF",
+      "circ": "ZERO",
+      "note": "stripped flag (env>=1 & RHI/Rd<1.5)",
+      "cons": {
+        "r": 0.087,
+        "loo": 27.8,
+        "permP": 0.5457
+      },
+      "work": {
+        "r": 0.146,
+        "loo": 38.7,
+        "permP": 0.3267
+      },
+      "rEnv": 0.083,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "harassedF",
+      "circ": "MED",
+      "note": "harassed flag (env>=1 & wig>0.06)",
+      "cons": {
+        "r": 0.246,
+        "loo": 29.6,
+        "permP": 0.066
+      },
+      "work": {
+        "r": 0.224,
+        "loo": 40.9,
+        "permP": 0.1012
+      },
+      "rEnv": 0.119,
+      "verdict": "FAIL"
+    }
+  ],
+  "survivors": [],
+  "partials": [],
+  "verdict": "ENVCODE_IRREDUCIBLE"
+}
