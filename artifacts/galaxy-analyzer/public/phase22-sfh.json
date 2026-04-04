@@ -1,0 +1,251 @@
+{
+  "version": "22.0.0",
+  "timestamp": "2026-04-04T13:52:14.384Z",
+  "nGalaxies": 56,
+  "bestSFHProxy": {
+    "name": "gasConsumption",
+    "r": -0.274,
+    "t": 2.1
+  },
+  "correlations": [
+    {
+      "name": "log(MHI)",
+      "type": "reference",
+      "r": -0.388,
+      "t": 3.1
+    },
+    {
+      "name": "log(Mstar)",
+      "type": "reference",
+      "r": -0.323,
+      "t": 2.5
+    },
+    {
+      "name": "n_points",
+      "type": "quality",
+      "r": 0.306,
+      "t": 2.4
+    },
+    {
+      "name": "gasConsumption",
+      "type": "SFH",
+      "r": -0.274,
+      "t": 2.1
+    },
+    {
+      "name": "log(D)",
+      "type": "quality",
+      "r": -0.272,
+      "t": 2.1
+    },
+    {
+      "name": "T (Hubble)",
+      "type": "reference",
+      "r": 0.214,
+      "t": 1.6
+    },
+    {
+      "name": "burstiness",
+      "type": "SFH",
+      "r": -0.178,
+      "t": 1.3
+    },
+    {
+      "name": "youngFracProxy",
+      "type": "SFH",
+      "r": 0.153,
+      "t": 1.1
+    },
+    {
+      "name": "diskAge",
+      "type": "SFH",
+      "r": -0.144,
+      "t": 1.1
+    },
+    {
+      "name": "birthParameter",
+      "type": "SFH",
+      "r": 0.132,
+      "t": 1
+    },
+    {
+      "name": "recentToPast",
+      "type": "SFH",
+      "r": 0.131,
+      "t": 1
+    },
+    {
+      "name": "eta_rot",
+      "type": "reference",
+      "r": 0.127,
+      "t": 0.9
+    },
+    {
+      "name": "SFE",
+      "type": "SFH",
+      "r": -0.104,
+      "t": 0.8
+    },
+    {
+      "name": "baryonConversion",
+      "type": "SFH",
+      "r": -0.1,
+      "t": 0.7
+    },
+    {
+      "name": "logDepletion",
+      "type": "SFH",
+      "r": 0.092,
+      "t": 0.7
+    },
+    {
+      "name": "massBuildup",
+      "type": "SFH",
+      "r": -0.043,
+      "t": 0.3
+    },
+    {
+      "name": "inc",
+      "type": "quality",
+      "r": 0.036,
+      "t": 0.3
+    },
+    {
+      "name": "diskSettling",
+      "type": "SFH",
+      "r": -0.009,
+      "t": 0.1
+    }
+  ],
+  "independenceAfterMHI": [
+    {
+      "name": "gasConsumption",
+      "r": -0.029
+    },
+    {
+      "name": "burstiness",
+      "r": -0.158
+    },
+    {
+      "name": "youngFracProxy",
+      "r": -0.03
+    },
+    {
+      "name": "diskAge",
+      "r": -0.003
+    },
+    {
+      "name": "birthParameter",
+      "r": 0.023
+    },
+    {
+      "name": "recentToPast",
+      "r": 0.024
+    },
+    {
+      "name": "SFE",
+      "r": -0.018
+    },
+    {
+      "name": "baryonConversion",
+      "r": 0.078
+    },
+    {
+      "name": "logDepletion",
+      "r": 0.032
+    },
+    {
+      "name": "massBuildup",
+      "r": -0.022
+    },
+    {
+      "name": "diskSettling",
+      "r": 0.066
+    }
+  ],
+  "cvResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M_SFH1: best SFH",
+      "k": 2,
+      "cvRMS": 0.1179,
+      "gapClosed": -2.4
+    },
+    {
+      "name": "M_SFH2: top-2 SFH",
+      "k": 3,
+      "cvRMS": 0.11687,
+      "gapClosed": -0.5
+    },
+    {
+      "name": "M_SFH3: top-3 SFH",
+      "k": 4,
+      "cvRMS": 0.11612,
+      "gapClosed": 0.9
+    },
+    {
+      "name": "M_SFH_all: all SFH",
+      "k": 12,
+      "cvRMS": 0.11999,
+      "gapClosed": -6.3
+    },
+    {
+      "name": "M_MHI: gas only",
+      "k": 2,
+      "cvRMS": 0.11265,
+      "gapClosed": 7.4
+    },
+    {
+      "name": "M_SFH+MHI: best+gas",
+      "k": 3,
+      "cvRMS": 0.11445,
+      "gapClosed": 4
+    },
+    {
+      "name": "M_kitchen: everything",
+      "k": 19,
+      "cvRMS": 0.12656,
+      "gapClosed": -18.5
+    },
+    {
+      "name": "M6: Per-galaxy",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "bestSFHGapClosed": 4,
+  "mhiGapClosed": 7.4,
+  "permutationP": 0.0364,
+  "successCriteria": {
+    "passed": 2,
+    "total": 4
+  },
+  "quartileSplit": {
+    "q1": {
+      "n": 14,
+      "meanA0": 4727,
+      "tau": 0.295
+    },
+    "q4": {
+      "n": 14,
+      "meanA0": 3357,
+      "tau": 0.251
+    },
+    "splitDex": 0.149,
+    "splitT": 1.31
+  },
+  "doorStatus": "CLOSED",
+  "galaxyHistoryScorecard": {
+    "sSFR": "FAILED",
+    "stellarAge": "FAILED",
+    "metallicity": "FAILED",
+    "SFH": "FAILED",
+    "mergerProxy": "SKIPPED"
+  }
+}

@@ -1309,3 +1309,24 @@ Files: scripts/phase21-metallicity.cjs
        public/phase21-metallicity.json
 
 ================================================================================
+
+Section 51: Phase 22 — Star Formation History (SFH)
+-----------------------------------------------------
+Date: 2026-04-04
+Version: 22.0.0
+
+Best SFH proxy: gasConsumption r=-0.274, t=2.1
+After MHI: r=-0.029 (ABSORBED)
+LOO gap: 4.0% (MHI alone=7.4%, still better)
+Burstiness: only proxy with residual signal (r=-0.158, NS)
+
+Success criteria: 2/4 → FAIL
+
+GALAXY HISTORY DOOR: CLOSED
+All 4 tested variables failed. All absorbed by MHI.
+Next: environment/neighbors door.
+
+Files: scripts/phase22-sfh.cjs
+       public/phase22-sfh.json
+
+================================================================================

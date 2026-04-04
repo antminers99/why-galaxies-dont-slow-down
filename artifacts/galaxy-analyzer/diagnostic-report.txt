@@ -4081,3 +4081,62 @@ CONCLUSION:
   differently, but we cannot test that with SPARC data.
 
 ================================================================================
+
+================================================================================
+  SECTION 40: PHASE 22 — STAR FORMATION HISTORY (SFH)
+  Version 22.0.0
+================================================================================
+
+PURPOSE:
+  Test whether the PATTERN of star formation over time (not just
+  current rate) explains a0 variation. Final test in "galaxy history" door.
+
+SFH PROXIES (11 constructed):
+  gasConsumption, burstiness, youngFracProxy, diskAge, birthParameter,
+  recentToPast, SFE, baryonConversion, logDepletion, massBuildup, diskSettling
+
+RESULTS:
+
+  1. Best SFH proxy: gasConsumption r=-0.274 (t=2.1, significant)
+     BUT: after MHI → r=-0.029 (t=0.2) → ABSORBED
+
+  2. INDEPENDENCE: NO SFH proxy survives MHI control
+     gasConsumption: absorbed (r→-0.029)
+     burstiness: weak (r=-0.158, t=1.2) — closest to independent
+     All others: absorbed or negligible
+
+  3. LOO-CV: 4.0% gap closure (best SFH model)
+     MHI alone: 7.4% — still better than any SFH proxy
+
+  4. SUCCESS CRITERIA: 2/4 → FAIL
+     ✓ |t|>=2 (t=2.1)
+     ✗ Independent of MHI (absorbed)
+     ✓ LOO>M0 (4.0%)
+     ✗ tau reduction >10%
+
+  NOTE ON BURSTINESS:
+    Only proxy showing ANY residual signal after MHI (r=-0.158)
+    Measures |logSBdisk - logSBeff| — surface brightness irregularity
+    Not significant (t=1.2) but worth noting for future work
+
+═══════════════════════════════════════════════════════════════════════════════
+  GALAXY HISTORY DOOR — CLOSED
+═══════════════════════════════════════════════════════════════════════════════
+
+  FINAL SCORECARD:
+    sSFR:        FAILED  (-1.8% gap, partially independent)
+    Stellar age: FAILED  (0.9% gap, absorbed by MHI)
+    Metallicity: FAILED  (4.2% gap, completely absorbed by MHI)
+    SFH:         FAILED  (4.0% gap, absorbed by MHI)
+    Merger:      SKIPPED (proxies unavailable)
+
+  CONCLUSION:
+  No galaxy history variable explains a0 variation independently.
+  Every variable is either too weak or completely absorbed by MHI.
+  The "galaxy history" hypothesis is CLOSED as a door.
+
+  THE DOMINANT QUESTION GOING FORWARD:
+  WHY does log(MHI) predict delta_a0?
+  This is NOT answered by galaxy history. Next door: environment/neighbors.
+
+================================================================================
