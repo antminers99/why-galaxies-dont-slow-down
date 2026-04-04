@@ -3592,3 +3592,83 @@ FINAL VERDICT:
   in a0 that cannot be captured by inc or eta_rot alone.
 
 ================================================================================
+
+================================================================================
+  SECTION 32: PHASE 14 — DECOMPOSE M3: WHY DOES EACH GALAXY DIFFER?
+  Version 14.0.0
+================================================================================
+
+PURPOSE:
+  M3 (per-galaxy a0) won Phase 13 decisively. Now decompose:
+  - How much of M3's advantage comes from OFFSET (a0 shift) vs SHAPE (gamma)?
+  - What galaxy property Xi predicts the a0 variation?
+  - Can we write a0,i = a0 + f(Xi)?
+
+GENERALIZED RAR:
+  Standard: gobs = gbar / (1 - exp(-sqrt(gbar/a0)))
+  General:  gobs = gbar / (1 - exp(-(gbar/a0)^(gamma/2)))
+  Standard has gamma = 0.5
+
+RESULTS:
+
+  1. VARIANCE DECOMPOSITION:
+     M0 (universal):      variance = 0.01327
+     M3-offset only:      variance = 0.00395
+     M3-full (a0+gamma):  variance = 0.00243
+
+     ┌────────────────────────────────────────────────┐
+     │  OFFSET (a0 shift):   86% of M3's advantage   │
+     │  SHAPE (gamma):       14% of M3's advantage   │
+     └────────────────────────────────────────────────┘
+
+     → M3 mostly wins through SCALE SHIFT, not shape change.
+     → The RAR transition shape is approximately universal.
+     → Only the acceleration scale shifts between galaxies.
+
+  2. OFFSET DISTRIBUTION:
+     delta log(a0): mean = 0.000, SD = 0.264 dex
+     Range: [-0.506, +0.557] (factor ~3 from lowest to highest)
+
+  3. SHAPE DISTRIBUTION:
+     gamma: mean = 0.96 ± 0.30 (standard = 0.5)
+     Galaxies prefer sharper transition than standard RAR.
+     Adding gamma improves per-galaxy fit by 24.7% on average.
+     But gamma and a0 are INDEPENDENT (r = -0.14).
+
+  4. BEST PREDICTORS OF a0 VARIATION (what drives the offset):
+
+     Predictor       r       tau-red   Significant?
+     ────────────────────────────────────────────────
+     log(MHI)      -0.388    15.1%     YES **
+     n_points       0.306     9.4%     YES **
+     Rdisk         -0.303     9.2%     YES **
+     log(D)        -0.272     7.4%     YES **
+     T (Hubble)     0.214     4.6%     marginal
+     eta_rot        0.127     1.6%     NO
+     inc            0.036     0.1%     NO
+
+  5. THE EQUATION a0,i = a0 + f(Xi):
+     Best single: f = -0.174 × (log MHI - mean)
+     LOO-CV R² = 0.108 — DETECTABLE but modest.
+     Top-2 multivariate (MHI + n): R² = 0.28, tau-red = 28%
+
+  6. KEY FINDING — log(MHI) AS MISSING VARIABLE:
+     HI gas mass is the strongest predictor of a0 variation.
+     Gas-rich galaxies tend to have LOWER a0.
+     Possible interpretations:
+     - Gas fraction affects baryonic mass model accuracy
+     - HI-rich galaxies have different disk structure
+     - Or: a0 genuinely depends on gas content
+
+  7. gamma AND a0 ARE INDEPENDENT (r = -0.14):
+     This means the two effects (scale shift + shape change)
+     have DIFFERENT causes. Scale shift correlates with MHI/D/Rdisk.
+     Shape change correlates weakly with MHI/Rdisk but independently.
+
+CRITICAL INSIGHT:
+  a0,i = a0 + f(Xi) is the right framework.
+  f(Xi) is detectable and the leading candidate is log(MHI).
+  But f(Xi) explains only ~15% of the variation.
+  The remaining 85% is either noise, multi-parameter, or intrinsic.
+
+================================================================================

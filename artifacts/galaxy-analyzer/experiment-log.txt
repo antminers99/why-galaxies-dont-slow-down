@@ -1137,3 +1137,28 @@ Files: scripts/phase13-model-decision.cjs
        public/phase13-model-decision.json
 
 ================================================================================
+
+Section 43: Phase 14 — Decompose M3
+--------------------------------------
+Date: 2026-04-04
+Version: 14.0.0
+
+DECOMPOSITION:
+  Offset (a0 shift): 86% of M3's advantage
+  Shape (gamma):     14% of M3's advantage
+  → RAR shape ~universal; only scale shifts between galaxies
+
+BEST PREDICTOR: log(MHI), r = -0.388, LOO-CV R² = 0.108
+  Gas-rich galaxies → lower a0
+  Top-2 (MHI + n_points): R² = 0.28, tau-reduction = 28%
+
+GAMMA: mean = 0.96 ± 0.30 (vs standard 0.5)
+  Independent of a0 shift (r = -0.14)
+  Adding gamma improves fit by 24.7%
+
+EQUATION: a0,i = a0 - 0.174 × (log MHI - mean)
+
+Files: scripts/phase14-decompose-m3.cjs
+       public/phase14-decompose-m3.json
+
+================================================================================
