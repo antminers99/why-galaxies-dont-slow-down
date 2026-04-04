@@ -1639,3 +1639,42 @@ Files: scripts/phase31-redshift.cjs
        public/phase31-redshift.json
 
 ================================================================================
+
+Section 63: Phase 32 — Cosmic Web Environment
+------------------------------------------------------
+Date: 2026-04-04
+Version: 32.0.0
+COSMIC CONTEXT DOOR — Variable 2 of 2 (FINAL)
+
+COSMIC WEB: 0/6 — COMPLETE FAIL
+
+  Raw: r=-0.278, t=1.4 (doesn't even pass raw threshold!)
+  After MHI: r=-0.058, t=0.4 (absorbed)
+  After MHI+wig: r=-0.025, t=0.2 (zero)
+  LOO: 0.4% alone, -0.3% added to MHI+wig (hurts)
+
+  cwCode vs envCode: r=0.525 (moderate collinearity)
+  cwCode after envCode+MHI+wig: fully absorbed
+  envCode after cwCode+MHI+wig: t=2.0 (envCode survives!)
+
+  → Local group membership is the real signal, not cosmic web.
+  → Large-scale structure (10-100 Mpc) irrelevant for a0.
+
+  COSMIC CONTEXT DOOR: OFFICIALLY CLOSED — NO SURVIVORS
+
+════════════════════════════════════════════════════════════════
+  THREE DOORS NOW CLOSED:
+════════════════════════════════════════════════════════════════
+  1. Galaxy History:    survivor = rcWiggliness
+  2. Environment:       survivor = envCode (threshold effect)
+  3. Cosmic Context:    NO survivors
+
+  Best model: MHI + rcWiggliness + envCode = 14.9% gap closure
+  tau = 0.22 dex (robust, unchanged since Phase 25)
+
+  Next door: TBD (dark matter halo?)
+
+Files: scripts/phase32-cosmic-web.cjs
+       public/phase32-cosmic-web.json
+
+================================================================================

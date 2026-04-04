@@ -4665,3 +4665,44 @@ CONCLUSION: No cosmic-time or distance effect on a0 in this sample.
   Best model unchanged: MHI + rcWiggliness + envCode = 14.9%
 
 ================================================================================
+
+================================================================================
+  SECTION 52: PHASE 32 — COSMIC WEB ENVIRONMENT
+  Version 32.0.0
+  COSMIC CONTEXT DOOR — Variable 2 of 2 (FINAL)
+================================================================================
+
+RESULT: 0/6 CRITERIA — COMPLETE FAIL
+
+  Cosmic web classification: void(0), sheet(1), filament(2), wall/node(3)
+  Scale: ~10-100 Mpc (much larger than local group ~1 Mpc)
+
+  cwCode vs envCode: r=0.525 (MODERATE collinearity)
+  
+  Raw: r=-0.278, t=1.4 (FAILS even raw test with |t|>=2)
+  After MHI: r=-0.058, t=0.4 (absorbed)
+  After MHI+wig: r=-0.025, t=0.2 (zero)
+  After MHI+wig+env: absorbed
+  cwCode after envCode: absorbed
+  envCode after cwCode: STILL significant (t=2.0)
+
+  LOO: cwCode alone 0.4% (near zero), adds -0.3% to MHI+wig (hurts)
+  Permutation: all p > 0.10
+
+  The raw signal (filament galaxies have lower a0) is weak to begin with
+  and entirely driven by: filament → more in groups → envCode absorbs it.
+  Large-scale cosmic web position adds ZERO information.
+
+COSMIC CONTEXT DOOR: OFFICIALLY CLOSED
+  redshift/distance:    2/6 FAIL (Malmquist artifact)
+  cosmic web:           0/6 FAIL (complete failure)
+  NO survivors from this door.
+
+THREE DOORS NOW CLOSED:
+  1. Galaxy History → survivor: rcWiggliness
+  2. Environment → survivor: envCode (group membership, threshold)
+  3. Cosmic Context → NO survivors
+
+BEST MODEL (unchanged): MHI + rcWiggliness + envCode = 14.9% gap closure
+
+================================================================================

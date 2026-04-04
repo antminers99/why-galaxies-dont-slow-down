@@ -1,0 +1,51 @@
+{
+  "version": "32.0.0",
+  "timestamp": "2026-04-04T15:15:05.855Z",
+  "nGalaxies": 56,
+  "cosmicWebDistribution": {
+    "void": 2,
+    "sheet": 26,
+    "filament": 25,
+    "wall": 3
+  },
+  "dataQuality": {
+    "high": 9,
+    "medium": 11,
+    "low": 36
+  },
+  "cwVsEnvCollinearity": 0.525,
+  "rawCorrelation": {
+    "r": -0.231,
+    "t": 1.7
+  },
+  "afterMHI": {
+    "r": -0.209,
+    "t": 1.6
+  },
+  "afterMHIWig": {
+    "r": -0.136,
+    "t": 1
+  },
+  "cwAfterEnv": {
+    "r": 0.011,
+    "t": 0.1
+  },
+  "envAfterCw": {
+    "r": -0.26,
+    "t": 1.9
+  },
+  "looGapClosed": {
+    "cw": 0.1,
+    "env": 7.4,
+    "mhiWig": 11.5,
+    "mhiWigCw": 8.8,
+    "mhiWigEnv": 14.9,
+    "mhiWigEnvCw": 12.1
+  },
+  "successCriteria": {
+    "passed": 0,
+    "total": 6
+  },
+  "verdict": "FAILED",
+  "doorClosed": true
+}
