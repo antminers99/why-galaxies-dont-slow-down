@@ -1948,3 +1948,26 @@ Bar strength: PARTIAL
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 76: Phase 43 — Spiral / Warp Amplitude
+------------------------------------------------------
+Date: 2026-04-04
+Version: 43.0.0 — FAST PROTOCOL
+
+outerOsc: PARTIAL (suppressor — raw t=0.8 but |BL t=2.7)
+  Perm p=0.0062***, bootstrap excludes zero, survives Vflat.
+  More outer RC oscillation → lower a0.
+  Strong deep tests but raw signal too weak for CONFIRMED.
+
+  Other 6 proxies: all WEAK or FAIL.
+
+  Gas/Kinematics Door:
+    sigma_gas:     FAIL (=Vflat)
+    non-circular:  wigRatio CONFIRMED
+    bar strength:  PARTIAL (innerRise)
+    spiral/warp:   PARTIAL (outerOsc — strong suppressor)
+    Next: beam smearing / gas disk / HI extent
+
+  Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
+
+================================================================================

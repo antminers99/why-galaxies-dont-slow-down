@@ -1,0 +1,96 @@
+{
+  "version": "43.0.0",
+  "timestamp": "2026-04-04T16:11:38.045Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "outerWig",
+      "circ": "MOD",
+      "note": "outer RC scatter",
+      "rawR": -0.115,
+      "rawT": 0.9,
+      "newBLr": -0.216,
+      "newBLt": 1.6,
+      "looGC": 27.6,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "outerOsc",
+      "circ": "MOD",
+      "note": "outer resid zero-crossings",
+      "rawR": -0.111,
+      "rawT": 0.8,
+      "newBLr": -0.362,
+      "newBLt": 2.7,
+      "looGC": 33.2,
+      "adds": true,
+      "verdict": "PROMISING"
+    },
+    {
+      "name": "outerSlope",
+      "circ": "MOD",
+      "note": "RAR resid trend outer",
+      "rawR": -0.209,
+      "rawT": 1.6,
+      "newBLr": -0.104,
+      "newBLt": 0.7,
+      "looGC": 25.5,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "outerAmp",
+      "circ": "MOD",
+      "note": "peak-to-peak outer resid",
+      "rawR": -0.08,
+      "rawT": 0.6,
+      "newBLr": -0.017,
+      "newBLt": 0.1,
+      "looGC": 25.1,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "gbarSlope",
+      "circ": "LOW",
+      "note": "baryonic falloff rate",
+      "rawR": -0.313,
+      "rawT": 2.4,
+      "newBLr": -0.099,
+      "newBLt": 0.7,
+      "looGC": 25.6,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "rcExtent",
+      "circ": "LOW",
+      "note": "Rmax/Rdisk (external)",
+      "rawR": 0.27,
+      "rawT": 2.1,
+      "newBLr": 0.019,
+      "newBLt": 0.1,
+      "looGC": 25.6,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "lastResid",
+      "circ": "HIGH",
+      "note": "edge RAR residual (circular!)",
+      "rawR": -0.256,
+      "rawT": 1.9,
+      "newBLr": -0.201,
+      "newBLt": 1.5,
+      "looGC": 28.2,
+      "adds": false,
+      "verdict": "WEAK"
+    }
+  ],
+  "bestProxy": "outerOsc",
+  "finalVerdict": "PARTIAL"
+}

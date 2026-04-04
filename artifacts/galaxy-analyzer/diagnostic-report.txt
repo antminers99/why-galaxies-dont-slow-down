@@ -5174,3 +5174,46 @@ RESULT: PARTIAL — innerRise marginal, external proxies fail
   VERDICT: PARTIAL — innerRise marginal, not strong enough for baseline.
 
 ================================================================================
+
+================================================================================
+  SECTION 64: PHASE 43 — Spiral / Warp Amplitude
+  Version 43.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: PARTIAL — outerOsc strong suppressor but raw signal weak
+
+  7 proxies tested against baseline (MHI + wig + env + Sigma0_bar = 27.8%):
+
+  FAST SCREEN:
+    outerWig:    |BL t=1.6 WEAK
+    outerOsc:    |BL t=2.7, LOO 33.2%                     PROMISING ★
+    outerSlope:  |BL t=0.7 WEAK
+    outerAmp:    |BL t=0.1 FAIL-FAST
+    gbarSlope:   |BL t=0.7 WEAK
+    rcExtent:    |BL t=0.1 WEAK
+    lastResid:   |BL t=1.5 WEAK
+
+  DEEP TEST — outerOsc:
+    Classic suppressor: raw r=-0.111 t=0.8 → |newBL r=-0.362 t=2.7
+    |newBL+Vflat: r=-0.378 t=2.9 (SURVIVES — NOT V_flat)
+    Perm p=0.0062*** (very strong)
+    Bootstrap: [-0.600, -0.105] excludes zero
+    Jackknife: 0 flips, SD=0.020
+
+    INTERPRETATION: outerOsc = fraction of zero-crossings in outer
+    RAR residuals. MORE oscillation → LOWER a0 (negative r).
+    At fixed baseline, galaxies with smoother outer RC have higher a0.
+    This may reflect: warps, spiral arm streaming, outer disk turbulence.
+
+    Raw signal is weak (t=0.8) so it's visible ONLY after removing
+    baseline variance. This is the 3rd suppressor variable discovered:
+    1. Sigma0_bar (raw r≈0, |BL r=0.35)
+    2. sig/Vflat (= V_flat, discarded)
+    3. outerOsc (raw r=-0.11, |BL r=-0.36)
+
+    VERDICT: PARTIAL by fast protocol (raw t < 2).
+    But deep tests are very strong (perm p=0.006, boot excludes 0).
+    Circularity: MOD (from RC residual pattern, not direct a0 coupling).
+    Flagged for potential baseline addition if corroborated.
+
+================================================================================
