@@ -1,202 +1,364 @@
 {
-  "version": "59.0.0",
-  "timestamp": "2026-04-04T17:32:50.126Z",
-  "nGalaxies": 56,
-  "conservativeBL": 27.8,
-  "extendedBL": 38.1,
-  "stellarMLvars": [
+  "phase": "59",
+  "variable": "logUpsilon_disk",
+  "definition": "log10 of best-fit stellar mass-to-light ratio at 3.6um from Li+2020 MCMC",
+  "source": "Li, Lelli, McGaugh, Schombert 2020, ApJS 247, 31",
+  "n": 45,
+  "nPubUpsilon": 33,
+  "raw": {
+    "r": -0.06019595241975722,
+    "t": -0.3954483716241392,
+    "n": 45
+  },
+  "spearman": 0.08617792720353418,
+  "afterLogMHI": {
+    "r": 0.15126840048610388,
+    "t": 1.0034805617930345,
+    "n": 45
+  },
+  "afterLogMhost": {
+    "r": 0.06758124644308405,
+    "t": 0.4441753541226299,
+    "n": 45
+  },
+  "afterLogMHI_logMhost": {
+    "r": 0.2533601937840153,
+    "t": 1.7174301843784372,
+    "n": 45
+  },
+  "afterAp": {
+    "r": 0.13508614629188906,
+    "t": 0.894013757330427,
+    "coeff": 0.3419054644429332,
+    "tStat": 1.1819114543679892
+  },
+  "afterBp": {
+    "r": 0.16662789806015382,
+    "t": 1.108144220959041,
+    "coeff": 0.36144669298455284,
+    "tStat": 1.453020434402801
+  },
+  "loo": {
+    "Ap": 30.214918100908505,
+    "ApU": 26.410555043680915,
+    "Bp": 45.56943626384389,
+    "BpU": 43.92435131754515
+  },
+  "permutation": {
+    "Ap": 0.2552,
+    "Bp": 0.1608
+  },
+  "bootstrap": {
+    "Ap": {
+      "lo": -0.20331424443009696,
+      "hi": 0.9988071450390247
+    },
+    "Bp": {
+      "lo": -0.11974967783166074,
+      "hi": 0.8765515813155523
+    }
+  },
+  "jackknife": {
+    "Ap": 0,
+    "Bp": 0
+  },
+  "crossCorrelations": [
     {
-      "name": "logMLsb",
-      "circ": "LOW",
-      "note": "SB-based M/L proxy",
-      "cons": {
-        "r": 0,
-        "loo": 27.816623067887207,
-        "permP": 1
-      },
-      "work": {
-        "r": 0,
-        "loo": 38.064077824334554,
-        "permP": 1
-      },
-      "rSigma0": 0,
-      "verdict": "FAIL (no var)"
+      "name": "logMHI",
+      "r": 0.07305897574721085
     },
     {
-      "name": "logM*/L",
-      "circ": "LOW",
-      "note": "stellar mass to 3.6um luminosity ratio",
-      "cons": {
-        "r": 0,
-        "loo": 27.816623067887207,
-        "permP": 1
-      },
-      "work": {
-        "r": 0,
-        "loo": 38.064077824334554,
-        "permP": 1
-      },
-      "rSigma0": 0,
-      "verdict": "FAIL (no var)"
+      "name": "logMhost",
+      "r": 0.222243585731186
     },
     {
-      "name": "sbGrad",
-      "circ": "ZERO",
-      "note": "SB gradient (SBeff - SBdisk)",
-      "cons": {
-        "r": 0.054,
-        "loo": 27,
-        "permP": 0.6896
-      },
-      "work": {
-        "r": 0.076,
-        "loo": 37,
-        "permP": 0.5836
-      },
-      "rSigma0": -0.482,
-      "verdict": "FAIL"
+      "name": "rcWiggliness",
+      "r": 0.2434395216481897
     },
     {
-      "name": "logStelD",
-      "circ": "ZERO",
-      "note": "stellar surface density M*/Rd^2",
-      "cons": {
-        "r": 0.181,
-        "loo": 27.8,
-        "permP": 0.186
-      },
-      "work": {
-        "r": 0.21,
-        "loo": 38.1,
-        "permP": 0.12
-      },
-      "rSigma0": 1,
-      "verdict": "FAIL"
+      "name": "logSigma0",
+      "r": -0.13220635747774312
     },
     {
-      "name": "dynML",
-      "circ": "LOW",
-      "note": "dynamic M/L from Vflat^2*R/Mstar",
-      "cons": {
-        "r": 0.155,
-        "loo": 18.3,
-        "permP": 0.253
-      },
-      "work": {
-        "r": 0.125,
-        "loo": 35.8,
-        "permP": 0.3758
-      },
-      "rSigma0": -0.498,
-      "verdict": "FAIL"
+      "name": "logMeanRun",
+      "r": 0.05593205950527413
     },
     {
-      "name": "barGravD",
-      "circ": "MED",
-      "note": "baryon-dominated fraction of RC",
-      "cons": {
-        "r": -0.366,
-        "loo": 32.2,
-        "permP": 0.0062
-      },
-      "work": {
-        "r": -0.314,
-        "loo": 39.9,
-        "permP": 0.0206
-      },
-      "rSigma0": 0.337,
-      "verdict": "SURVIVOR"
-    },
-    {
-      "name": "innBarF",
-      "circ": "MED",
-      "note": "inner baryon-dominated fraction",
-      "cons": {
-        "r": -0.4,
-        "loo": 34.9,
-        "permP": 0.0027
-      },
-      "work": {
-        "r": -0.374,
-        "loo": 42.9,
-        "permP": 0.0056
-      },
-      "rSigma0": 0.349,
-      "verdict": "SURVIVOR"
-    },
-    {
-      "name": "gbarSprd",
-      "circ": "LOW",
-      "note": "dynamic range of gbar",
-      "cons": {
-        "r": 0.112,
-        "loo": 26.5,
-        "permP": 0.408
-      },
-      "work": {
-        "r": 0.042,
-        "loo": 35.5,
-        "permP": 0.75
-      },
-      "rSigma0": 0.082,
-      "verdict": "FAIL"
-    },
-    {
-      "name": "mlColor",
-      "circ": "ZERO",
-      "note": "T-type based color/M-L proxy",
-      "cons": {
-        "r": -0.141,
-        "loo": 25.2,
-        "permP": 0.3044
-      },
-      "work": {
-        "r": -0.129,
-        "loo": 35.7,
-        "permP": 0.3539
-      },
-      "rSigma0": 0.464,
-      "verdict": "FAIL"
-    },
-    {
-      "name": "SBdisk",
-      "circ": "ZERO",
-      "note": "disk central surface brightness",
-      "cons": {
-        "r": -0.057,
-        "loo": 27.1,
-        "permP": 0.6814
-      },
-      "work": {
-        "r": -0.066,
-        "loo": 37,
-        "permP": 0.6378
-      },
-      "rSigma0": 0.567,
-      "verdict": "FAIL"
-    },
-    {
-      "name": "logMstar",
-      "circ": "ZERO",
-      "note": "total stellar mass (from L*0.5)",
-      "cons": {
-        "r": 0.026,
-        "loo": 25.7,
-        "permP": 0.8482
-      },
-      "work": {
-        "r": 0.123,
-        "loo": 37.5,
-        "permP": 0.3633
-      },
-      "rSigma0": 0.516,
-      "verdict": "FAIL"
+      "name": "morphT",
+      "r": -0.14331780766123967
     }
   ],
-  "survivors": [
-    "barGravD",
-    "innBarF"
-  ],
-  "partials": [],
-  "verdict": "ML_ADDS"
+  "verdict": "FAIL",
+  "galaxyData": [
+    {
+      "name": "NGC3741",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "published"
+    },
+    {
+      "name": "NGC2915",
+      "upsilon": 0.47,
+      "logUpsilon": -0.3279021420642826,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4559",
+      "upsilon": 0.61,
+      "logUpsilon": -0.21467016498923297,
+      "quality": "published"
+    },
+    {
+      "name": "UGC01281",
+      "upsilon": 0.4,
+      "logUpsilon": -0.3979400086720376,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC08490",
+      "upsilon": 0.45,
+      "logUpsilon": -0.3467874862246563,
+      "quality": "estimated"
+    },
+    {
+      "name": "NGC1705",
+      "upsilon": 0.26,
+      "logUpsilon": -0.585026652029182,
+      "quality": "published"
+    },
+    {
+      "name": "UGC05721",
+      "upsilon": 0.45,
+      "logUpsilon": -0.3467874862246563,
+      "quality": "estimated"
+    },
+    {
+      "name": "NGC3726",
+      "upsilon": 0.52,
+      "logUpsilon": -0.2839966563652008,
+      "quality": "published"
+    },
+    {
+      "name": "NGC3769",
+      "upsilon": 0.74,
+      "logUpsilon": -0.13076828026902382,
+      "quality": "published"
+    },
+    {
+      "name": "NGC1003",
+      "upsilon": 0.57,
+      "logUpsilon": -0.24412514432750865,
+      "quality": "published"
+    },
+    {
+      "name": "NGC3893",
+      "upsilon": 0.22,
+      "logUpsilon": -0.6575773191777937,
+      "quality": "published"
+    },
+    {
+      "name": "NGC1090",
+      "upsilon": 0.47,
+      "logUpsilon": -0.3279021420642826,
+      "quality": "published"
+    },
+    {
+      "name": "NGC2403",
+      "upsilon": 0.6,
+      "logUpsilon": -0.22184874961635637,
+      "quality": "published"
+    },
+    {
+      "name": "NGC0289",
+      "upsilon": 0.33,
+      "logUpsilon": -0.4814860601221125,
+      "quality": "published"
+    },
+    {
+      "name": "NGC3198",
+      "upsilon": 0.18,
+      "logUpsilon": -0.744727494896694,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4157",
+      "upsilon": 0.37,
+      "logUpsilon": -0.431798275933005,
+      "quality": "published"
+    },
+    {
+      "name": "NGC6015",
+      "upsilon": 0.44,
+      "logUpsilon": -0.3565473235138126,
+      "quality": "published"
+    },
+    {
+      "name": "NGC5907",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4100",
+      "upsilon": 0.49,
+      "logUpsilon": -0.3098039199714863,
+      "quality": "published"
+    },
+    {
+      "name": "NGC0024",
+      "upsilon": 0.79,
+      "logUpsilon": -0.10237290870955855,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4013",
+      "upsilon": 0.47,
+      "logUpsilon": -0.3279021420642826,
+      "quality": "published"
+    },
+    {
+      "name": "NGC5371",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "published"
+    },
+    {
+      "name": "UGC06973",
+      "upsilon": 0.22,
+      "logUpsilon": -0.6575773191777937,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC09133",
+      "upsilon": 0.53,
+      "logUpsilon": -0.27572413039921095,
+      "quality": "estimated"
+    },
+    {
+      "name": "NGC2683",
+      "upsilon": 0.53,
+      "logUpsilon": -0.27572413039921095,
+      "quality": "published"
+    },
+    {
+      "name": "NGC6503",
+      "upsilon": 0.56,
+      "logUpsilon": -0.25181197299379954,
+      "quality": "published"
+    },
+    {
+      "name": "NGC5005",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "published"
+    },
+    {
+      "name": "NGC5033",
+      "upsilon": 0.48,
+      "logUpsilon": -0.3187587626244128,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4217",
+      "upsilon": 0.47,
+      "logUpsilon": -0.3279021420642826,
+      "quality": "published"
+    },
+    {
+      "name": "NGC6674",
+      "upsilon": 0.52,
+      "logUpsilon": -0.2839966563652008,
+      "quality": "published"
+    },
+    {
+      "name": "UGC02953",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC03205",
+      "upsilon": 0.58,
+      "logUpsilon": -0.23657200643706272,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC03580",
+      "upsilon": 0.71,
+      "logUpsilon": -0.14874165128092473,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC06786",
+      "upsilon": 0.25,
+      "logUpsilon": -0.6020599913279624,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC06787",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "UGC08699",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "NGC5055",
+      "upsilon": 0.6,
+      "logUpsilon": -0.22184874961635637,
+      "quality": "published"
+    },
+    {
+      "name": "NGC2903",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "published"
+    },
+    {
+      "name": "NGC7331",
+      "upsilon": 0.3,
+      "logUpsilon": -0.5228787452803376,
+      "quality": "published"
+    },
+    {
+      "name": "NGC3521",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "published"
+    },
+    {
+      "name": "UGC03546",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "estimated"
+    },
+    {
+      "name": "NGC0891",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "published"
+    },
+    {
+      "name": "NGC7814",
+      "upsilon": 0.25,
+      "logUpsilon": -0.6020599913279624,
+      "quality": "published"
+    },
+    {
+      "name": "NGC2841",
+      "upsilon": 0.55,
+      "logUpsilon": -0.2596373105057561,
+      "quality": "published"
+    },
+    {
+      "name": "NGC4138",
+      "upsilon": 0.5,
+      "logUpsilon": -0.3010299956639812,
+      "quality": "published"
+    }
+  ]
 }
