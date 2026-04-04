@@ -1,0 +1,39 @@
+{
+  "phase": "80",
+  "title": "External Clean-Sample Validation",
+  "fundamentalLimitation": "MeanRun cannot be computed without raw RC point data; Mhost uses Vflat proxy instead of group catalog",
+  "m2test": {
+    "description": "logMHI + logMhost only (no MeanRun)",
+    "nExternal": 27,
+    "frozenBetaM2": [
+      6.034945640016531,
+      -0.14346566972358588,
+      -0.19922015446067576
+    ],
+    "frozenBetaM2_fair": [
+      2.3539078151834474,
+      -0.29825467295032126,
+      0.12432685026652734
+    ],
+    "rmsM0": 0.3916,
+    "rmsM2": 0.6957,
+    "rmsM2_fair": 0.417,
+    "gapM2": -269.7,
+    "gapM2_fair": -32.8,
+    "spearmanM2": -0.073,
+    "pearsonM2_fair": -0.015,
+    "m2BeatsM0": false,
+    "m2WinRate": 55.6
+  },
+  "mhostEstimationBias": {
+    "meanDiff": -0.739,
+    "sdDiff": 0.827
+  },
+  "verdict": "INCONCLUSIVE",
+  "cleanTestRequirements": [
+    "Raw RC points for MeanRun computation",
+    "Group-catalog Mhost values",
+    "SPS-based Upsilon for M5",
+    "Galaxies not in training set"
+  ]
+}
