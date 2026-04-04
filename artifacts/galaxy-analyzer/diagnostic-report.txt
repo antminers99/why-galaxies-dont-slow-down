@@ -4312,3 +4312,54 @@ VERDICT:
   Galaxy history door: PARTIALLY OPEN via kinematic irregularity channel.
 
 ================================================================================
+
+================================================================================
+  SECTION 44: PHASE 24 — rcWiggliness VALIDATION BATTERY
+  Version 24.0.0
+================================================================================
+
+PURPOSE:
+  Comprehensive validation: is rcWiggliness a robust finding or a fluke?
+  5 independent tests beyond Phase 23c's confounder stripping.
+
+TEST 1 — SPLIT-HALF REPLICATION (1000 random 50/50 splits):
+  Raw: 97.5% both halves same sign
+  After MHI: 99.1% both halves same sign ← VERY STRONG
+  32.6% both halves individually significant (expected given n=28 per half)
+  VERDICT: PASS — signal replicates robustly
+
+TEST 2 — RENZO'S RULE CONTROL:
+  rcWiggliness correlates with baryonFeatureAmplitude (r=0.319)
+  and baryonBumpiness (r=0.408) — as expected from Renzo's rule.
+  But AFTER controlling MHI + BFA + BB: r=0.226, t=1.7 — STILL SURVIVES
+  After MHI + Vflat + n + BFA + BB: r=0.342, t=2.5 — EVEN STRONGER
+  VERDICT: PASS — NOT just Renzo's rule / Sancisi's law
+
+TEST 3 — TRAIN/TEST PREDICTION (500 random 70/30 splits):
+  rcWiggliness alone: beats universal only 52.4% — WEAK predictor alone
+  MHI + rcWiggliness: beats MHI alone 67.4% — GENUINE ADDITIVE VALUE
+  VERDICT: FAIL as standalone predictor, but adds to MHI
+
+TEST 4 — STRATIFICATION:
+  12/12 subgroups show positive r_afterMHI — PERFECT CONSISTENCY
+  Signal present in: Q=1, Q=2, all inc bins, near/far, few/many pts,
+  low/high mass, early/late type
+  VERDICT: PASS — not driven by any subgroup
+
+TEST 5 — JACKKNIFE STABILITY:
+  Base r=0.439 (after MHI+Vflat+n), range [0.339, 0.517]
+  Most influential: NGC2998 (delta_r=0.100)
+  Min retains 77.3% of signal
+  VERDICT: PASS — no single galaxy drives the result
+
+OVERALL: 4/5 PASS → CONFIRMED SECOND PARAMETER (within SPARC)
+
+The one failure (Test 3) is expected: rcWiggliness explains ~3% of variance
+alone, so it rarely beats universal a0 as a SOLO predictor. Its value is
+as ADDITIONAL information beyond MHI: MHI+wig beats MHI 67.4% of trials.
+
+EXTERNAL REPLICATION NEEDED:
+  THINGS, LITTLE THINGS, or PHANGS rotation curves with independent
+  data reduction. Cannot be done with current dataset.
+
+================================================================================

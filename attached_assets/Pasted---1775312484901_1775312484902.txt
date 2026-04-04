@@ -1,0 +1,86 @@
+إي. حتى نتأكد فعلاً، لازم نحوّل النتيجة من:
+“إشارة قوية داخل عينتنا”
+إلى:
+“إشارة تتكرر خارج العينة، وبمقاييس أنظف، وتبقى بعد كل اختبارات الكسر”
+المطلوب بالضبط
+1) نثبتها على عينة مستقلة بالكامل
+ليس على نفس SPARC فقط.
+الأفضل:
+THINGS: عنده خرائط HI عالية الدقة ومنحنيات دوران عالية الجودة، وتسمح باشتقاق المعلمات الهندسية والديناميكية من بيانات HI نفسها. �
+arXiv
+LITTLE THINGS: عنده خرائط HI عميقة وعالية الدقة لأقزام قريبة جدًا مع moment maps وvelocity fields. �
+NRAO Science Site +1
+PHANGS: عنده بيانات عامة غنية جدًا من ALMA وMUSE وخرائط كينماتيكية وغازية عالية الدقة. �
+phangs.org +2
+إذا rcWiggliness ظهر بنفس الاتجاه على عينة مستقلة، هاي أقوى خطوة.
+2) نعيد تعريف المتغيّر من 2D velocity fields لا من RC فقط
+لأن المجتمع رح يسأل فورًا:
+هل “التموّج” هو مجرد artifact من طريقة استخراج منحنى الدوران؟
+فلازم نبني نسخة أنظف من المتغيّر من:
+velocity field 2D
+harmonic decomposition
+bulk vs non-circular component
+residual velocity maps
+إذا بقيت الإشارة بعد هذا، تصير أقوى كثير.
+3) نثبت أنه ليس مجرد Renzo’s rule
+الأدبيات أصلًا تعرف أن features في منحنى الضوء/الكتلة قد تقابلها features في منحنى الدوران — هذه الفكرة معروفة باسم Renzo’s rule / Sancisi’s law. �
+OUP Academic +1
+لذلك لازم نفرّق بين شيئين:
+وجود wiggles بحد ذاته: معروف
+أن مقدار wiggliness نفسه يتنبأ بـ � بعد ضبط MHI و� وباقي المربكات: هذا هو الشيء الذي تريد تثبيته
+يعني لازم تختبر:
+هل rcWiggliness يبقى مهمًا بعد ضبط baryon-feature strength
+أو بعد ضبط feature amplitude في profile الضوئي/الغازي
+إذا بقي، فهذا جديد فعلًا.
+4) نعمل اختبار تنبؤ حقيقي على مجرات جديدة
+ليس فقط correlation.
+الاختبار الصحيح:
+درّب النموذج على مجموعة مجرات
+خذ مجرات جديدة بالكامل
+اسأل: هل
+إذا نعم خارج العينة وعلى sample مستقل، فهذه علامة قوية جدًا.
+5) نكسر آخر الاعتراضات النظامية
+لازم يبقى بعد ضبط أو stratification حسب:
+beam smearing
+angular resolution
+inclination
+distance
+n_pts
+tracer type: HI vs Hα vs CO
+quality class
+إذا الإشارة بقيت عبر هذه الطبقات، يصبح قول “artifact” أضعف بكثير.
+6) نختبر إن كان هو بديلًا عن متغير آخر أعمق
+حتى لو ثبت، قد يكون rcWiggliness مجرد proxy لشيء أعمق، مثل:
+environment
+halo structure
+bar strength
+non-circular motions
+recent interaction history
+فبعد تثبيته، نعمل فقط هذا السؤال:
+هل rcWiggliness يبقى بعد إدخال الباب التالي؟
+إذا اختفى بعد البيئة أو الهالة، فهو ليس “الأصل”، بل “الواجهة”.
+متى نقول: “تأكدنا”؟
+أنا أعتبر أنك تتأكد فعلًا إذا تحققت 4 شروط:
+يتكرر في عينة مستقلة
+يبقى عند استخدام 2D kinematics الأنظف
+يحسن التنبؤ خارج العينة
+لا ينهار بعد ضبط resolution / tracer / environment / halo basics
+إذا تحقق 2 فقط:
+نقول إشارة قوية
+إذا تحقق 3:
+نقول مرشح robust جدًا
+إذا تحقق 4:
+نقول:
+ثبت كـ second parameter observationally
+أقصر خطة عملية من هون
+بالترتيب:
+THINGS-only replication
+2D-defined wiggliness metric
+train/test across galaxies
+stratify by beam, tracer, inclination
+then move to environment block
+الخلاصة
+نتأكد مو بأن نعيد نفس الفحص عشر مرات على نفس SPARC،
+بل بأن نثبت أن:
+إشارة rcWiggliness تتكرر خارج SPARC، وبمقياس أنظف، وتفيد في التنبؤ، ولا تسقط أمام التفسيرات البديلة.
+إذا تريد، أرتبها لك الآن كـ Phase 24–27 roadmap خطوة بخطوة، بدون أي خلط.

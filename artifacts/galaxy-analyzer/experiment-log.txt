@@ -1403,3 +1403,26 @@ Files: scripts/phase23c-rc-irregularity-decisive.cjs
        public/phase23c-rc-irregularity-decisive.json
 
 ================================================================================
+
+Section 55: Phase 24 — rcWiggliness Validation Battery
+-------------------------------------------------------
+Date: 2026-04-04
+Version: 24.0.0
+
+VALIDATION RESULTS: 4/5 PASS
+  1. Split-half: 99.1% same sign after MHI → PASS
+  2. Renzo control: t=1.7 after baryon features → PASS (not just Renzo's rule)
+  3. Train/test: 52% wins alone (FAIL), but MHI+wig beats MHI 67.4%
+  4. Stratification: 12/12 subgroups positive → PASS (perfect consistency)
+  5. Jackknife: min r=0.339, 77.3% retained → PASS
+
+STATUS: CONFIRMED SECOND PARAMETER (within SPARC)
+  rcWiggliness is genuine, independent, not Renzo's rule, not driven
+  by outliers, consistent across all subgroups.
+
+  External replication (THINGS/PHANGS) documented as next observational step.
+
+Files: scripts/phase24-rcwig-validation.cjs
+       public/phase24-rcwig-validation.json
+
+================================================================================

@@ -1,0 +1,125 @@
+{
+  "version": "24.0.0",
+  "timestamp": "2026-04-04T14:24:34.302Z",
+  "nGalaxies": 56,
+  "splitHalf": {
+    "nSplits": 1000,
+    "bothPositiveRaw": 97.5,
+    "bothPositiveAfterMHI": 99.1,
+    "bothSignificantAfterMHI": 32.6
+  },
+  "renzoRule": {
+    "rAfterMHI": 0.365,
+    "rAfterMHI_BFA_BB": 0.226,
+    "tAfterMHI_BFA_BB": 1.7,
+    "survives": true
+  },
+  "trainTest": {
+    "nTrials": 500,
+    "wigWinsVsUniversal": 52.4,
+    "mhiWigWinsVsMHI": 67.4
+  },
+  "stratification": {
+    "nSubgroups": 12,
+    "nPositive": 12,
+    "nSignificant": 8,
+    "subgroups": [
+      {
+        "name": "Q=1",
+        "n": 40,
+        "rRaw": 0.4018219134501997,
+        "rMHI": 0.4628219713185057,
+        "tMHI": 3.175849926957251
+      },
+      {
+        "name": "Q=2",
+        "n": 14,
+        "rRaw": 0.041632792482008844,
+        "rMHI": 0.10378077649549552,
+        "tMHI": 0.346070609435889
+      },
+      {
+        "name": "mid inc (50-70)",
+        "n": 31,
+        "rRaw": 0.3100784064515619,
+        "rMHI": 0.4272086204922584,
+        "tMHI": 2.500213273543399
+      },
+      {
+        "name": "high inc (70-90)",
+        "n": 19,
+        "rRaw": 0.48015895280744697,
+        "rMHI": 0.4915772202701225,
+        "tMHI": 2.257960651100919
+      },
+      {
+        "name": "near (D<=18.0 Mpc)",
+        "n": 34,
+        "rRaw": 0.4991173016352056,
+        "rMHI": 0.4125217305487716,
+        "tMHI": 2.5213562077189073
+      },
+      {
+        "name": "far  (D>18.0 Mpc)",
+        "n": 22,
+        "rRaw": 0.23052181668380695,
+        "rMHI": 0.30053594046500987,
+        "tMHI": 1.3735021227939614
+      },
+      {
+        "name": "few pts (n<=23)",
+        "n": 30,
+        "rRaw": 0.32487551578409535,
+        "rMHI": 0.4391432582688974,
+        "tMHI": 2.539861972796157
+      },
+      {
+        "name": "many pts (n>23)",
+        "n": 26,
+        "rRaw": 0.07330649479702545,
+        "rMHI": 0.11507687805765572,
+        "tMHI": 0.5555802676430239
+      },
+      {
+        "name": "low mass (Vf<=179)",
+        "n": 29,
+        "rRaw": 0.2469096020217197,
+        "rMHI": 0.29055890497309683,
+        "tMHI": 1.5483665385053633
+      },
+      {
+        "name": "high mass (Vf>179)",
+        "n": 27,
+        "rRaw": 0.34044305729746727,
+        "rMHI": 0.40451435844642897,
+        "tMHI": 2.166909750471513
+      },
+      {
+        "name": "early type (T<=5)",
+        "n": 43,
+        "rRaw": 0.25133584813789805,
+        "rMHI": 0.32931296926938664,
+        "tMHI": 2.2057955452359015
+      },
+      {
+        "name": "late type (T>5)",
+        "n": 13,
+        "rRaw": 0.3928327391164811,
+        "rMHI": 0.5649789243776534,
+        "tMHI": 2.1653238121013616
+      }
+    ]
+  },
+  "jackknife": {
+    "baseR": 0.439,
+    "minR": 0.339,
+    "maxR": 0.497,
+    "mostInfluential": "NGC2998",
+    "stable": true
+  },
+  "overallVerdict": {
+    "testsPassed": 4,
+    "testsTotal": 5,
+    "status": "CONFIRMED"
+  }
+}
