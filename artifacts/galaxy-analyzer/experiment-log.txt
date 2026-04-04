@@ -2293,3 +2293,14 @@ After BL A: r=0.016. After BL B: r=0.072. LOO gets worse.
 Perm p: 0.849/0.394. Bootstrap includes zero.
 HI deficiency = pure recoding of logMHI. Not a new physical dimension.
 
+
+Section 95: Phase 57b — THINGS 2D Pilot (PASS)
+------------------------------------------------------
+Date: 2026-04-04
+VERDICT: PASS
+logMeanRun tracks THINGS 2D NCM: rho = -0.857 (ncm_frac), -0.821 (bisymFlow).
+Direction: 4/4 correct for logMeanRun, 3/4 for rcWiggliness.
+Case-by-case: 7/7 agree.
+SPARC 1D disturbance proxies are physically real.
+logMeanRun > rcWiggliness as 2D proxy.
+

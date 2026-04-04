@@ -1,0 +1,194 @@
+{
+  "phase": "57b",
+  "program": "New Program",
+  "type": "pilot",
+  "nGalaxies": 7,
+  "galaxies": [
+    {
+      "name": "NGC2403",
+      "delta_a0": 0.10029999999999983,
+      "rcWiggliness": 0.0472,
+      "logMeanRun": 1.018,
+      "things_ncm_amp": 4.4,
+      "things_ncm_frac": 0.0335,
+      "things_lopsidedness": 0.0404,
+      "things_bisymFlow": 0.04043,
+      "composite2D": 0.15476315008028152
+    },
+    {
+      "name": "NGC2841",
+      "delta_a0": 0.4650000000000003,
+      "rcWiggliness": 0.0359,
+      "logMeanRun": 1.398,
+      "things_ncm_amp": 8.3,
+      "things_ncm_frac": 0.0291,
+      "things_lopsidedness": 0.0323,
+      "things_bisymFlow": 0.03264,
+      "composite2D": -0.8043966160327768
+    },
+    {
+      "name": "NGC2903",
+      "delta_a0": 0.0259999999999998,
+      "rcWiggliness": 0.0402,
+      "logMeanRun": 0.716,
+      "things_ncm_amp": 8.5,
+      "things_ncm_frac": 0.046,
+      "things_lopsidedness": 0.0558,
+      "things_bisymFlow": 0.0476,
+      "composite2D": 1.7622868996259828
+    },
+    {
+      "name": "NGC3198",
+      "delta_a0": -0.08850000000000025,
+      "rcWiggliness": 0.0382,
+      "logMeanRun": 1.114,
+      "things_ncm_amp": 4,
+      "things_ncm_frac": 0.0266,
+      "things_lopsidedness": 0.02931,
+      "things_bisymFlow": 0.03111,
+      "composite2D": -1.1280720181580675
+    },
+    {
+      "name": "NGC3521",
+      "delta_a0": 0.07099999999999973,
+      "rcWiggliness": 0.0343,
+      "logMeanRun": 0.914,
+      "things_ncm_amp": 7.9,
+      "things_ncm_frac": 0.037,
+      "things_lopsidedness": 0.0482,
+      "things_bisymFlow": 0.03707,
+      "composite2D": 0.42790368484532254
+    },
+    {
+      "name": "NGC5055",
+      "delta_a0": -0.32889999999999997,
+      "rcWiggliness": 0.0148,
+      "logMeanRun": 0.845,
+      "things_ncm_amp": 6.2,
+      "things_ncm_frac": 0.0346,
+      "things_lopsidedness": 0.04078,
+      "things_bisymFlow": 0.04071,
+      "composite2D": 0.24132828681950705
+    },
+    {
+      "name": "NGC7331",
+      "delta_a0": -0.17290000000000028,
+      "rcWiggliness": 0.0104,
+      "logMeanRun": 1.13,
+      "things_ncm_amp": 7.2,
+      "things_ncm_frac": 0.0301,
+      "things_lopsidedness": 0.03515,
+      "things_bisymFlow": 0.03257,
+      "composite2D": -0.6538133871802471
+    }
+  ],
+  "spearman": [
+    {
+      "sparc": "delta_a0",
+      "things": "things_ncm_amp",
+      "rs": 0.32142857142857145,
+      "t": 0.7590141093600835,
+      "n": 7
+    },
+    {
+      "sparc": "delta_a0",
+      "things": "things_ncm_frac",
+      "rs": -0.07142857142857142,
+      "t": -0.16012815380508702,
+      "n": 7
+    },
+    {
+      "sparc": "delta_a0",
+      "things": "things_lopsidedness",
+      "rs": -0.07142857142857142,
+      "t": -0.16012815380508702,
+      "n": 7
+    },
+    {
+      "sparc": "delta_a0",
+      "things": "things_bisymFlow",
+      "rs": 0,
+      "t": 0,
+      "n": 7
+    },
+    {
+      "sparc": "rcWiggliness",
+      "things": "things_ncm_amp",
+      "rs": -0.07142857142857142,
+      "t": -0.16012815380508702,
+      "n": 7
+    },
+    {
+      "sparc": "rcWiggliness",
+      "things": "things_ncm_frac",
+      "rs": 0.07142857142857142,
+      "t": 0.16012815380508702,
+      "n": 7
+    },
+    {
+      "sparc": "rcWiggliness",
+      "things": "things_lopsidedness",
+      "rs": 0.07142857142857142,
+      "t": 0.16012815380508702,
+      "n": 7
+    },
+    {
+      "sparc": "rcWiggliness",
+      "things": "things_bisymFlow",
+      "rs": 0.2857142857142857,
+      "t": 0.6666666666666663,
+      "n": 7
+    },
+    {
+      "sparc": "logMeanRun",
+      "things": "things_ncm_amp",
+      "rs": -0.17857142857142858,
+      "t": -0.4058206279647282,
+      "n": 7
+    },
+    {
+      "sparc": "logMeanRun",
+      "things": "things_ncm_frac",
+      "rs": -0.8571428571428571,
+      "t": -3.721042037676246,
+      "n": 7
+    },
+    {
+      "sparc": "logMeanRun",
+      "things": "things_lopsidedness",
+      "rs": -0.8571428571428571,
+      "t": -3.721042037676246,
+      "n": 7
+    },
+    {
+      "sparc": "logMeanRun",
+      "things": "things_bisymFlow",
+      "rs": -0.8214285714285714,
+      "t": -3.220644193264417,
+      "n": 7
+    }
+  ],
+  "composite": {
+    "definition": "mean(z(ncm_frac), z(lopsidedness), z(bisymFlow))",
+    "vsRcWig": {
+      "rs": 0.07142857142857142,
+      "t": 0.16012815380508702,
+      "n": 7
+    },
+    "vsMeanRun": {
+      "rs": -0.8571428571428571,
+      "t": -3.721042037676246,
+      "n": 7
+    }
+  },
+  "caseByCase": {
+    "agree": 7,
+    "total": 7
+  },
+  "verdict": "PASS",
+  "gapMetric": {
+    "note": "Phase 56 used variance-based gap-closed (R2-like); Phase 57 used RMS-based. Now unified to variance-based.",
+    "method2_A": 30.390415645863612,
+    "method2_B": 36.9379876046699
+  }
+}

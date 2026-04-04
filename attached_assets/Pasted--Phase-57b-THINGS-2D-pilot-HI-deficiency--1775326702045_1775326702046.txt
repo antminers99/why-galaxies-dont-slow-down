@@ -1,0 +1,160 @@
+نعم، نتقدّم إلى Phase 57b — THINGS 2D pilot.
+ليش هذا القرار الصح؟
+لأن HI deficiency فشل فشلًا نظيفًا:
+لا يضيف فوق logMHI
+لا يضيف فوق baseline
+ويضر LOO
+فمعناه أنه ليس بُعدًا جديدًا، بل إعادة ترميز للغاز الخام
+إذًا أفضل شيء الآن هو الذهاب إلى:
+أكثر معلومة جديدة فعلًا
+يعني 2D kinematics المنشورة.
+لماذا ليس EDD/TRGB الآن؟
+لأن:
+المسافة فشلت أصلًا عندك
+وN=7 فقط
+وحتى لو أعطت فرقًا، سيكون غالبًا quality check وليس اختراقًا
+أما THINGS 2D فهي على الأقل تختبر الفرضية الأهم:
+هل الإشارات الحركية التي وجدناها في SPARC 1D لها مقابل حقيقي في 2D؟
+ملاحظة مهمة قبل البدء
+عندك أرقام baseline في Phase 57:
+A = 16.6%
+B = 20.6%
+وهذا يختلف عن baselineاتك المجمّدة السابقة:
+27.8%
+38.1%
+إذا هذا بسبب تعريف gap مختلف في البرنامج الخارجي، تمام.
+إذا لا، لازم توحّد metric قبل ما نكمل حتى ما نخربط المقارنات.
+القرار العملي
+قبل Phase 57b:
+ثبّت سطر واحد فقط:
+ما هو تعريف gap closure المستخدم الآن؟
+هل هو نفس تعريف Phase 53–55 أم تعريف جديد؟
+بعدها كمل فورًا.
+Phase 57b — THINGS 2D Pilot
+الهدف
+ليس regression رسمي.
+الهدف هو:
+pilot falsification / validation هل المجرات الأعلى في اضطراب SPARC تبدو فعلًا الأعلى اضطرابًا في THINGS 2D؟
+العينة
+المجرات السبعة:
+NGC2403
+NGC2841
+NGC2903
+NGC3198
+NGC3521
+NGC5055
+NGC7331
+ماذا تعمل؟
+ابنِ جدولًا واحدًا فقط.
+الأعمدة من SPARC
+logA0
+delta_a0
+rcWiggliness
+wigRatio
+meanRun
+envCode
+logMHI
+logSigma0_bar
+الأعمدة من THINGS
+أفضل ما عندك من:
+things_ncm_amp
+things_ncm_frac
+things_lopsidedness
+things_bisymFlow
+وربما:
+things_c1
+things_s1
+things_c3
+things_s3
+ما هي الاختبارات المطلوبة؟
+1) Rank consistency
+احسب Spearman rank بين كل واحد من:
+delta_a0 و things_ncm_amp
+rcWiggliness و things_ncm_amp
+wigRatio و things_ncm_amp
+meanRun و things_ncm_amp
+ثم كرر مع:
+things_lopsidedness
+things_bisymFlow
+2) Top-vs-bottom check
+رتّب المجرات السبعة حسب:
+rcWiggliness
+ثم حسب meanRun
+وشوف:
+هل أعلى 2–3 مجرات عندك في SPARC هم أنفسهم الأعلى في THINGS asymmetry؟
+3) Case-by-case table
+لكل مجرة، اكتب:
+هل SPARC يقول “هادئة / متوسطة / مضطربة”؟
+هل THINGS يقول “هادئة / متوسطة / مضطربة”؟
+4) Composite 2D score
+إذا عندك أكثر من متغير THINGS، ابنِ:
+ثم اختبره ضد:
+delta_a0
+rcWiggliness
+meanRun
+كيف نحكم؟
+PASS pilot إذا تحقق واحد من هالثلاثة:
+Spearman موجب وواضح في أكثر من علاقة رئيسية
+5 من 7 ماشية بالاتجاه المتوقع case-by-case
+composite 2D score يطابق ترتيب SPARC بشكل مقنع
+FAIL pilot إذا:
+ما في اتساق ترتيب
+أو العلاقات متناقضة
+أو المجرات “المضطربة” في SPARC تبدو هادئة في THINGS
+PARTIAL pilot إذا:
+في اتساق جزئي
+لكن مو كافي نحكي إنه validation قوي
+ماذا ترسل لي؟
+ابعتلي هذا القالب:
+Plain text
+Phase 57b: THINGS 2D pilot
+
+Gap metric definition used:
+N galaxies = 7
+
+Table columns available:
+- things_ncm_amp
+- things_ncm_frac
+- things_lopsidedness
+- things_bisymFlow
+- ...
+
+Spearman results:
+delta_a0 vs things_ncm_amp =
+rcWiggliness vs things_ncm_amp =
+wigRatio vs things_ncm_amp =
+meanRun vs things_ncm_amp =
+
+delta_a0 vs things_lopsidedness =
+rcWiggliness vs things_lopsidedness =
+meanRun vs things_lopsidedness =
+
+Composite 2D score:
+definition =
+delta_a0 vs score =
+rcWiggliness vs score =
+meanRun vs score =
+
+Top-vs-bottom agreement:
+[brief]
+
+Case-by-case agreement:
+X/7
+
+Final pilot verdict:
+FAIL / PARTIAL / PASS
+
+Short interpretation:
+القرار بعد 57b
+إذا PASS
+نروح إلى:
+Phase 58 — published environmental processing proxies
+أو نوسّع family الحركية المنشورة
+إذا FAIL
+نخفض أولوية الباب الحركي الخارجي، ونروح مباشرة إلى:
+stellar � أو processing history
+الخلاصة
+نعم، نبدأ الآن بـ Phase 57b — THINGS 2D pilot.
+لكن أولًا فقط:
+ثبّت تعريف الـ gap metric
+ثم نفّذ الجدول والـ rank tests.
