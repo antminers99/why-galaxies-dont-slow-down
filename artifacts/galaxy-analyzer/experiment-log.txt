@@ -1735,3 +1735,30 @@ CONCENTRATION: FAIL (0/4 fast screen)
   Dark halo door: M_halo 4/6 PASS; concentration FAIL; f_DM/spin next.
 
 ================================================================================
+
+Section 66: Phase 33b — M_halo Circularity Check
+------------------------------------------------------
+Date: 2026-04-04
+Version: 33b.0.0
+
+M_HALO CIRCULARITY: 2/5 — NOT RESOLVED
+
+  Signal is ENTIRELY V_flat (t=3.8 after baseline)
+  R_last carries nothing (t=0.9)
+  M_halo|baseline+Vflat: r=0.002 (GONE!)
+  
+  LOO: baseline+Vflat=36.8% > baseline+Mhalo=32.9%
+  R_last adds nothing (14.4% < baseline 14.9%)
+
+  Jackknife stable (0 sign flips), bootstrap CI excludes zero
+  But circularity not resolved: signal = V_flat = shared measurement
+
+  DECISION: M_halo stays PARTIAL. NOT added to baseline.
+  Baseline UNCHANGED: MHI + rcWiggliness + envCode = 14.9%
+
+  The real question is now about V_flat itself:
+    Is the V_flat → a0 link physical or mechanical?
+
+  Next variable in halo door order: λ (halo spin)
+
+================================================================================

@@ -1,0 +1,39 @@
+{
+  "version": "33b.0.0",
+  "timestamp": "2026-04-04T15:28:55.433Z",
+  "nGalaxies": 56,
+  "decomposition": {
+    "VflatAfterBaseline": {
+      "r": 0.472
+    },
+    "RlastAfterBaseline": {
+      "r": 0.12
+    },
+    "MhAfterBaselineVflat": {
+      "r": 0.002
+    }
+  },
+  "jackknife": {
+    "mean": 0.426,
+    "sd": 0.018,
+    "signFlips": 0,
+    "nInfluential": 4
+  },
+  "bootstrap": {
+    "baseline": {
+      "lo": 0.136,
+      "hi": 0.639,
+      "excludesZero": true
+    },
+    "baselineVflat": {
+      "lo": -0.3,
+      "hi": 0.283,
+      "excludesZero": false
+    }
+  },
+  "circularityScore": {
+    "passed": 2,
+    "total": 5
+  },
+  "verdict": "PARTIAL"
+}

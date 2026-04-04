@@ -4779,3 +4779,51 @@ RESULT: FAIL (0/4 fast screen criteria)
   predict a0 variation in this sample.
 
 ================================================================================
+
+================================================================================
+  SECTION 55: PHASE 33b — M_halo CIRCULARITY CHECK
+  Version 33b.0.0
+================================================================================
+
+RESULT: CIRCULARITY SCORE 2/5 — PARTIAL (NOT RESOLVED)
+
+THE CRITICAL FINDING:
+  M_halo = V_flat^2 * R_last / G
+  The signal is ENTIRELY driven by V_flat, NOT R_last:
+    V_flat|baseline: r=0.472, t=3.8 (strongest signal!)
+    R_last|baseline: r=0.120, t=0.9 (fails completely)
+    M_halo|baseline+Vflat: r=0.002, t=0.0 (VANISHES!)
+
+  LOO confirms:
+    baseline+Vflat: 36.8% (even BETTER than M_halo!)
+    baseline+Rlast: 14.4% (WORSE than baseline alone)
+    baseline+Mhalo: 32.9% (entirely absorbed by Vflat)
+
+STABILITY (2 tests pass):
+  Jackknife: 0/56 sign flips, SD=0.018, perfectly stable
+  Bootstrap CI|baseline: [0.136, 0.639] excludes zero
+
+CIRCULARITY (3 tests fail):
+  M_halo|baseline+Vflat: r=0.002 (signal IS Vflat)
+  R_last has NO independent signal
+  Bootstrap CI|baseline+Vflat: [-0.300, 0.283] crosses zero
+
+STRATIFICATION:
+  Low MHI: r=0.196 (same sign but weak)
+  High MHI: r=0.610 (very strong — drives the signal)
+  Field: r=0.505 (strong)
+  Group/cluster: r=0.019 (essentially zero)
+
+INTERPRETATION:
+  The "suppressor" is real statistically: at fixed MHI, galaxies with
+  higher Vflat have higher a0. But Vflat directly enters the rotation
+  curve that determines a0. This shared measurement creates a mechanical
+  correlation that may not reflect physical halo properties.
+
+  R_last (geometric, less circular) carries NO signal.
+  
+VERDICT: M_halo remains PARTIAL. Do NOT add to baseline.
+  The question becomes: is the V_flat signal physical or artifactual?
+  This is fundamental and may not be fully resolvable with this data.
+
+================================================================================
