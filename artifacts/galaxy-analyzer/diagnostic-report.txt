@@ -3378,3 +3378,89 @@ INTERPRETATION:
   - This requires either theoretical prediction or independent measurements
 
 ================================================================================
+
+================================================================================
+  SECTION 29: PHASE 12b — MOCK CHALLENGE v2 (Realistic Systematics)
+  Version 12.2.0
+================================================================================
+
+PURPOSE:
+  Test whether REALISTIC astrophysical systematics, applied to galaxies with
+  truly CONSTANT a0, can reproduce the observed tau ≈ 0.29 dex.
+  If they cannot, the case for non-strict universality strengthens.
+
+SYSTEMATICS MODELED:
+  S1: Non-linear inclination errors (amplified at inc > 75°, ~3-15° scatter)
+  S2: Correlated distance errors (group-level bias ~5%, individual ~2%)
+  S3: Y* varying with Hubble type (dY/dT = 0.03, scatter 0.08 M/L)
+  S4: Non-circular motions (mass-dependent: 8% low-V, 2% high-V, inc amplified)
+  S5: Beam smearing (resolution-dependent, inner-point amplification)
+  S6: eta_rot correlation (rotation curve shape → apparent a0 shift)
+
+CONFIGURATION:
+  200 mock galaxies × 50 Monte Carlo trials × 9 scenarios
+  All galaxies have CONSTANT a0 = 3633 (except C29 reference)
+  Realistic property distributions drawn from actual SPARC sample
+
+RESULTS (50-trial averages):
+
+  ┌───────────────────────────────────────────────────────────────────────┐
+  │  Scenario                          a0     tau     I²    SD(logA0)   │
+  ├───────────────────────────────────────────────────────────────────────┤
+  │  V1: Baseline (noise only)       3630   0.023   83.6%    0.070     │
+  │  S1: Inclination errors          3711   0.068   97.6%    0.096     │
+  │  S2: Distance errors             3954   0.094   98.7%    0.118     │
+  │  S3: Y* morphology               3631   0.109   99.1%    0.127     │
+  │  S4: Non-circular motions        3613   0.131   99.3%    0.151     │
+  │  S5: Beam smearing               3491   0.031   89.2%    0.079     │
+  │  S6: eta_rot correlation         2978   0.046   95.1%    0.081     │
+  │  ALL: Combined worst case        3459   0.211   99.7%    0.231     │
+  │  C29: Varying a0 (reference)     3610   0.288   99.9%    0.299     │
+  ├───────────────────────────────────────────────────────────────────────┤
+  │  REAL DATA (GOLD+i45)            3633   0.291   92.4%    0.275     │
+  └───────────────────────────────────────────────────────────────────────┘
+
+HIERARCHY OF SYSTEMATIC CONTRIBUTIONS:
+  Non-circular motions:   +0.107 dex (40.1% of gap)
+  Y* morphology:          +0.085 dex (31.8%)
+  Distance errors:        +0.071 dex (26.5%)
+  Inclination errors:     +0.045 dex (16.8%)
+  eta_rot correlation:    +0.023 dex (8.5%)
+  Beam smearing:          +0.008 dex (3.0%)
+  ALL COMBINED:           +0.187 dex (70.0% of gap)
+
+CRITICAL FINDINGS:
+
+  1. ALL SYSTEMATICS COMBINED produce tau = 0.211.
+     Real data tau = 0.291.
+     Systematics explain 70% of the gap from noise floor to real tau.
+     Remaining unexplained gap: 0.080 dex (30% of total gap).
+
+  2. NO SINGLE SYSTEMATIC dominates.
+     Largest individual contribution: non-circular motions (+0.107 dex).
+     This is consistent with Phase 11 finding that no single nuisance
+     explains tau — the scatter has multiple independent sources.
+
+  3. Even in the WORST CASE with ALL systematics combined,
+     the real tau is STILL 1.38× higher than achievable with constant a0.
+     The gap (0.080 dex) is statistically significant.
+
+  4. However, the systematics model is CONSERVATIVE:
+     Real systematics could be more complex (correlations between
+     systematics, non-Gaussian errors, selection effects, etc.).
+     The 70% figure is a lower bound on systematic contribution.
+
+INTERPRETATION:
+
+  Phase 12b gives a nuanced answer:
+  - Known systematics CAN explain ~70% of the observed tau
+  - But ~30% remains unexplained even in worst-case mock
+  - The remaining 0.080 dex gap could be:
+    (a) More complex systematics not captured in our model
+    (b) Genuine physical variation in a0
+    (c) Selection effects or observational biases we haven't modeled
+  
+  This is INTERMEDIATE between "definitely universal" and "definitely variable."
+  The strict universality hypothesis is under pressure but not decisively refuted.
+
+================================================================================

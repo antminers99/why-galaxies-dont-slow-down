@@ -1040,3 +1040,46 @@ Files: scripts/phase12-mock-challenge.cjs
        public/phase12-mock-challenge.json
 
 ================================================================================
+
+Section 40: Phase 12b — Mock Challenge v2 (Realistic Systematics)
+------------------------------------------------------------------
+Date: 2026-04-04
+Version: 12.2.0
+
+QUESTION: Can realistic astrophysical systematics, applied to galaxies with
+  truly CONSTANT a0, produce the observed tau ≈ 0.29 dex?
+
+SYSTEMATICS MODELED (6 individual + 1 combined):
+  S1: Non-linear inclination errors (amplified at high inc)
+  S2: Correlated distance errors (group-level + individual)
+  S3: Y* varying with Hubble type
+  S4: Non-circular motions (mass-dependent, inc-amplified)
+  S5: Beam smearing (resolution-dependent)
+  S6: eta_rot ↔ a0 correlation
+
+RESULTS:
+  V1 (noise only):          tau = 0.023
+  S1 (inclination):         tau = 0.068  (+0.045, 16.8%)
+  S2 (distance):            tau = 0.094  (+0.071, 26.5%)
+  S3 (Y* morphology):       tau = 0.109  (+0.085, 31.8%)
+  S4 (non-circular):        tau = 0.131  (+0.107, 40.1%)
+  S5 (beam smearing):       tau = 0.031  (+0.008,  3.0%)
+  S6 (eta_rot):             tau = 0.046  (+0.023,  8.5%)
+  ALL COMBINED:             tau = 0.211  (+0.187, 70.0%)
+  C29 (varying a0):         tau = 0.288
+  REAL DATA:                tau = 0.291
+
+HIERARCHY: NCM > Y* > D > inc >> eta_rot > beam
+
+CONCLUSIONS:
+  1. Known systematics explain ~70% of gap from noise floor to real tau
+  2. Remaining unexplained gap: 0.080 dex (30%)
+  3. No single systematic dominates — scatter has multiple sources
+  4. Strict universality under pressure but not decisively refuted
+  5. Need: more complex systematics modeling, independent samples,
+     or model comparison (M0 vs M1 vs M2) to resolve
+
+Files: scripts/phase12b-mock-v2.cjs
+       public/phase12b-mock-v2.json
+
+================================================================================
