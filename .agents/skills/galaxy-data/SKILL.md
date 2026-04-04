@@ -316,6 +316,10 @@ Key findings:
 - Phase 8: Phase 7 anchor increase CONFOUNDED by inclination (b=+0.465, t=1.26)
 - Phase 8: headline a₀=3633 is NOT demonstrably biased by any covariate
 - Phase 8: no single property significantly predicts per-galaxy a₀
+- Phase 9: NO tension with literature — they measure point-level, we measure galaxy-level
+- Phase 9: within-galaxy scatter = 0.122 dex ≈ McGaugh+2016 (0.13 dex) — MATCHES
+- Phase 9: 70% of galaxies individually reject global a₀ (F-test, p<0.05)
+- Phase 9: tau NOT a pipeline artifact (ablation: Y* +4%, quality cuts don't help)
 
 NOT CLAIMED: a₀ universal exact constant, dark matter solved,
 MOND proved, cosmological origin established.

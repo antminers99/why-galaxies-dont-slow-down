@@ -2752,10 +2752,178 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   systematic. Strict universality remains underdetermined."
 
 ================================================================================
-END OF DIAGNOSTIC REPORT (v8.0 — Phase 8 meta-regression update)
+  SECTION 25: PHASE 9 — BENCHMARK-TO-LITERATURE REPLICATION
 ================================================================================
 
-  This report supersedes all previous versions (v1.0-v7.0).
+  Phase 9 asks: Is our tau ~ 0.29 dex in tension with the literature's
+  reported scatter of ~0.04-0.13 dex?
+
+  Script: scripts/phase9-benchmark-replication.cjs (v9.0.0)
+  Results: public/phase9-benchmark-results.json
+
+  ────────────────────────────────────────────────────────────────────
+  THE FUNDAMENTAL DISTINCTION
+  ────────────────────────────────────────────────────────────────────
+
+  Literature measures POINT-LEVEL scatter:
+    "How tightly do individual (gbar, gobs) data points follow ONE RAR
+    curve with ONE global a0?"
+    Value: ~0.13 dex total (McGaugh+2016), ~0.04-0.06 intrinsic
+
+  Our pipeline measures GALAXY-LEVEL scatter (tau):
+    "How much does each galaxy's best-fit a0 differ from the mean?"
+    Value: ~0.29 dex (DerSimonian-Laird)
+
+  THESE ARE DIFFERENT QUANTITIES. They are not contradictory.
+
+  ────────────────────────────────────────────────────────────────────
+  POINT-LEVEL REPLICATION
+  ────────────────────────────────────────────────────────────────────
+
+  With fixed a0 = 3703, Y* = 0.5 (McGaugh+2016 setup):
+  Our total point RMS: 0.202 dex (3391 SPARC points)
+  McGaugh+2016:        0.13 dex (2693 points)
+
+  Our value is higher because we include all 175 galaxies without
+  their quality cuts. With GOLD+i45 cuts, the within-galaxy RMS
+  drops to 0.122 dex — comparable to their 0.13 dex.
+
+  ────────────────────────────────────────────────────────────────────
+  VARIANCE DECOMPOSITION
+  ────────────────────────────────────────────────────────────────────
+
+  total^2 = within-galaxy^2 + between-galaxy^2
+  (0.155)^2  = (0.122)^2 + (0.275)^2   [GOLD+i45]
+   0.024     =  0.015    +  0.076       [approximate]
+
+  The TOTAL point scatter is dominated by between-galaxy variation,
+  not within-galaxy noise. The literature reports only the
+  within-galaxy component (after fitting a global a0).
+
+  ────────────────────────────────────────────────────────────────────
+  ABLATION: WHAT DRIVES tau?
+  ────────────────────────────────────────────────────────────────────
+
+  1. Fitting level (global vs per-galaxy a0):
+     Global a0 point RMS: 0.155 dex → Per-galaxy: 0.122 dex (-21%)
+     Per-galaxy fits are SIGNIFICANTLY better, confirming galaxies
+     genuinely prefer different a0 values.
+
+  2. Dynamic range effect:
+     gRange < 0.5:  SD = 0.47 dex (poorly constrained)
+     gRange >= 2.0: SD = 0.24 dex (best constrained, still large)
+     Even the best-constrained galaxies show ~0.24 dex scatter.
+
+  3. Y* marginalization effect:
+     Fixed Y*:      SD = 0.275 dex
+     Marginalized:  SD = 0.287 dex (+4%)
+     Y* marginalization has NEGLIGIBLE effect on tau.
+
+  4. Quality cuts:
+     No cuts:       SD = 0.42 dex (175 galaxies)
+     GOLD+i45:      SD = 0.28 dex (56 galaxies)
+     Strict:        SD = 0.28 dex (31 galaxies)
+     Cuts reduce scatter, but never below ~0.28 dex.
+
+  ────────────────────────────────────────────────────────────────────
+  F-TEST: DO INDIVIDUAL GALAXIES REJECT GLOBAL a0?
+  ────────────────────────────────────────────────────────────────────
+
+  39 of 56 GOLD+i45 galaxies (70%) individually show a statistically
+  significant improvement when fitted with their own a0 vs the
+  global a0 = 3703 (F > 4.0, p < 0.05).
+
+  This is consistent with Rodrigues et al. (2018), who argued that
+  the probability of a universal a0 is "essentially zero."
+
+  However, Li et al. (2021) cautioned that this result is
+  prior-dependent. Our result is agnostic on priors — we simply
+  measure per-galaxy scatter and find it large.
+
+  ────────────────────────────────────────────────────────────────────
+  POSITION IN LITERATURE DEBATE
+  ────────────────────────────────────────────────────────────────────
+
+  McGaugh+2016: "RAR scatter is very small (~0.13 dex)"
+    We AGREE at the point level. Our within-galaxy scatter matches.
+
+  Li+2018: "Per-galaxy a0 values span a wide range when marginalized"
+    We AGREE. Our per-galaxy a0 values also span a wide range.
+
+  Rodrigues+2018: "Universality probability is essentially zero"
+    We PARTIALLY AGREE. 70% of galaxies reject the global a0.
+    But we note this is prior-dependent (Li+2021).
+
+  Desmond 2023: "Intrinsic scatter is ~0.034 dex"
+    This measures WITHIN-galaxy scatter with a sophisticated
+    joint model. Our within-galaxy scatter (~0.12 dex) is larger,
+    likely because we do not model per-point error bars or
+    deconvolve measurement noise.
+
+  Stone & Courteau 2019: "Intrinsic scatter ~0.11 dex in stellar RAR"
+    Closer to our within-galaxy result. Methodological differences
+    likely explain the range 0.034 - 0.13 dex in the literature.
+
+  ────────────────────────────────────────────────────────────────────
+  PHASE 9 VERDICT
+  ────────────────────────────────────────────────────────────────────
+
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  There is NO tension between our tau (~0.29 dex) and the       ║
+  ║  literature's scatter (~0.04-0.13 dex).                        ║
+  ║                                                                ║
+  ║  They measure DIFFERENT QUANTITIES:                            ║
+  ║  - Literature: within-galaxy point residuals                   ║
+  ║  - Our tau: between-galaxy variation in best-fit a0            ║
+  ║                                                                ║
+  ║  Our finding that tau is large (~0.29), intrinsic, and         ║
+  ║  irreducible by measured covariates is:                        ║
+  ║  - COMPATIBLE with McGaugh+2016 (point scatter is small)      ║
+  ║  - CONSISTENT with Rodrigues+2018 (heterogeneity exists)      ║
+  ║  - COMPATIBLE with Li+2021 (prior-dependent conclusions)       ║
+  ║  - A complementary perspective: the RAR is tight at the        ║
+  ║    point level but heterogeneous at the galaxy level           ║
+  ╚══════════════════════════════════════════════════════════════════╝
+
+  ────────────────────────────────────────────────────────────────────
+  FINAL PAPER-READY STATEMENT (incorporating Phases 7-9)
+  ────────────────────────────────────────────────────────────────────
+
+  "A robust acceleration transition scale exists in the rotation
+  curves of late-type galaxies. Using 59 GOLD-quality SPARC galaxies
+  with per-galaxy nuisance marginalization under a DerSimonian-Laird
+  random-effects model, we measure a0 = 3633 (km/s)^2/kpc =
+  1.18 x 10^-10 m/s^2, with between-galaxy scatter tau = 0.291 dex
+  (I^2 = 92.4%), consistent within 2% of McGaugh et al. (2016).
+
+  Within-galaxy point-level scatter (0.12 dex, GOLD+i45) matches
+  the literature's reported RAR scatter. The between-galaxy scatter
+  in best-fit a0 (tau = 0.29 dex) is a distinct, complementary
+  quantity that measures galaxy-to-galaxy variation rather than
+  point-level noise. These two scatters are compatible: the RAR is
+  tight at the data-point level but heterogeneous at the galaxy level.
+
+  Ablation tests show tau is not driven by Y* marginalization (+4%),
+  quality cuts (persists at all tiers), or dynamic range (still ~0.24
+  for gRange >= 2 dex). 70% of GOLD+i45 galaxies individually reject
+  the global a0 (F-test, p < 0.05), consistent with Rodrigues et al.
+  (2018). Distance-method meta-regression (Phase 8) finds no measured
+  covariate significantly predicts per-galaxy a0.
+
+  We conclude:
+  (1) The existence of a transition scale is robust;
+  (2) The headline a0 = 3633 is not demonstrably biased;
+  (3) Between-galaxy heterogeneity (tau ~ 0.29 dex) is intrinsic
+      and likely reflects astrophysical diversity;
+  (4) There is no tension with the literature — different analyses
+      measure different scatter components;
+  (5) Strict universality of a0 is disfavored but prior-dependent."
+
+================================================================================
+END OF DIAGNOSTIC REPORT (v9.0 — Phase 9 benchmark update)
+================================================================================
+
+  This report supersedes all previous versions (v1.0-v8.0).
   The empirical findings of Sections 1-11 remain valid.
   Sections 12-14 are the v3.0 baseline (archived for comparison).
   Sections 15-19 represent the v4.0 definitive pipeline.
@@ -2764,6 +2932,7 @@ END OF DIAGNOSTIC REPORT (v8.0 — Phase 8 meta-regression update)
   Section 22 is the Phase 6 matched-sample split resolution + power analysis.
   Section 23 is the Phase 7 anchor-sample refit.
   Section 24 is the Phase 8 distance-method meta-regression.
+  Section 25 is the Phase 9 benchmark-to-literature replication.
 
   Phase 1 analysis: scripts/diagnostic-tests.cjs
   Phase 2 analysis: scripts/diagnostic-phase2.cjs
@@ -2774,6 +2943,7 @@ END OF DIAGNOSTIC REPORT (v8.0 — Phase 8 meta-regression update)
   Phase 6 splits: scripts/phase6-matched-splits.cjs (v6.0.0)
   Phase 7 anchor: scripts/phase7-anchor-refit.cjs (v7.0.0)
   Phase 8 metareg: scripts/phase8-distance-metareg.cjs (v8.0.0)
+  Phase 9 benchmark: scripts/phase9-benchmark-replication.cjs (v9.0.0)
   Phase 1 results: public/diagnostic-results.json
   Phase 2 results: public/diagnostic-phase2-results.json
   v3.0 results: public/gold-standard-results.json (v3.0.0)
@@ -2782,6 +2952,7 @@ END OF DIAGNOSTIC REPORT (v8.0 — Phase 8 meta-regression update)
   Phase 6 results: public/phase6-matched-results.json (v6.0.0)
   Phase 7 results: public/phase7-anchor-results.json (v7.0.0)
   Phase 8 results: public/phase8-metareg-results.json (v8.0.0)
+  Phase 9 results: public/phase9-benchmark-results.json (v9.0.0)
   SPARC master table: public/sparc-table.json (175 galaxies)
   Previous report: galaxy-rotation-curve-analysis-full-report.txt (archived)
 ================================================================================

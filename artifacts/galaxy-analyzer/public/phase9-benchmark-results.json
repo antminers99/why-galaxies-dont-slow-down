@@ -1,0 +1,81 @@
+{
+  "version": "9.0.0",
+  "timestamp": "2026-04-04T00:00:59.035Z",
+  "description": "Phase 9: Benchmark-to-literature replication and ablation",
+  "pointLevelScatter": {
+    "totalRMS_globalA0": 0.2017,
+    "withinGalaxy_RMS": 0.1217,
+    "betweenGalaxy_component": 0.1609,
+    "literature_McGaugh2016": 0.13,
+    "literature_Li2018_intrinsic": 0.057,
+    "literature_Desmond2023_intrinsic": 0.034
+  },
+  "galaxyLevelScatter": {
+    "SD_allGalaxies": 0.4162,
+    "SD_GOLD_i45_simple": 0.2746,
+    "SD_GOLD_i45_margY": 0.2861,
+    "tau_v4_hierarchical": 0.291
+  },
+  "qualityTiers": [
+    {
+      "label": "All galaxies (no cuts)",
+      "n": 175,
+      "sd": 0.4162,
+      "mad": 0.2256,
+      "medA0": 2832
+    },
+    {
+      "label": "n >= 5",
+      "n": 171,
+      "sd": 0.4158,
+      "mad": 0.2275,
+      "medA0": 2825
+    },
+    {
+      "label": "n >= 5 + gRange >= 0.5",
+      "n": 113,
+      "sd": 0.3615,
+      "mad": 0.1963,
+      "medA0": 2955
+    },
+    {
+      "label": "n >= 5 + gRange >= 1.0",
+      "n": 64,
+      "sd": 0.2824,
+      "mad": 0.2066,
+      "medA0": 3383
+    },
+    {
+      "label": "Vmax >= 50 + n >= 5",
+      "n": 151,
+      "sd": 0.357,
+      "mad": 0.2101,
+      "medA0": 3152
+    },
+    {
+      "label": "GOLD+i45 (our standard)",
+      "n": 56,
+      "sd": 0.2746,
+      "mad": 0.2046,
+      "medA0": 3367
+    },
+    {
+      "label": "Strict (Vmax>=50,i>=45,n>=10,gR>=1.5)",
+      "n": 31,
+      "sd": 0.2756,
+      "mad": 0.1697,
+      "medA0": 2917
+    }
+  ],
+  "fTestResults": {
+    "nGalaxies": 56,
+    "nRejectGlobalA0": 39,
+    "fractionRejecting": 0.696
+  },
+  "ablation": {
+    "Y_marginalization_effect_pct": 4.2,
+    "perGalFit_improvement_pct": 21.3
+  },
+  "verdict": "NO_TENSION",
+  "verdictExplanation": "Point-level scatter (literature) and galaxy-level tau (ours) measure different quantities. Both are correct."
+}

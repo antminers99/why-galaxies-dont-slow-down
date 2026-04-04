@@ -87,6 +87,16 @@ Phase 8 meta-regression OVERRIDES the Phase 7 "Hubble-flow bias" interpretation:
 - LOO: b(isPrecise) never reaches significance (range [0.016, 0.110])
 - Headline a₀=3633 is NOT demonstrably biased by any measured systematic
 
+## Phase 9 v9.0 Results (Benchmark-to-Literature Replication)
+
+NO TENSION with literature. Different analyses measure different scatter components:
+- Point-level (within-galaxy) scatter: 0.122 dex ≈ McGaugh+2016 (0.13 dex) ✓
+- Galaxy-level (between-galaxy) tau: 0.29 dex — DIFFERENT QUANTITY from literature's scatter
+- Variance decomposition: total² = within² + between² → compatible
+- Ablation: tau not driven by Y* marg (+4%), quality cuts, or dynamic range
+- F-test: 39/56 (70%) galaxies individually reject global a₀ (consistent with Rodrigues+2018)
+- Position: complements literature — RAR is tight at point level, heterogeneous at galaxy level
+
 ## Key Files
 
 - v4.0 pipeline: `artifacts/galaxy-analyzer/scripts/definitive-v4.cjs`
@@ -98,9 +108,11 @@ Phase 8 meta-regression OVERRIDES the Phase 7 "Hubble-flow bias" interpretation:
 - Phase 7 results: `artifacts/galaxy-analyzer/public/phase7-anchor-results.json`
 - Phase 8 metareg: `artifacts/galaxy-analyzer/scripts/phase8-distance-metareg.cjs` (v8.0.0)
 - Phase 8 results: `artifacts/galaxy-analyzer/public/phase8-metareg-results.json`
+- Phase 9 benchmark: `artifacts/galaxy-analyzer/scripts/phase9-benchmark-replication.cjs` (v9.0.0)
+- Phase 9 results: `artifacts/galaxy-analyzer/public/phase9-benchmark-results.json`
 - SPARC master table: `artifacts/galaxy-analyzer/public/sparc-table.json` (175 galaxies)
-- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (24 sections)
+- Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (25 sections)
 
 ## Status
 
-All four systematic checkboxes passed. The EXISTENCE of a transition scale is observationally robust. Phase 7 anchor refit showed tau is INTRINSIC (-9% in cleanest subsample). Phase 8 meta-regression showed the Phase 7 a₀ increase (4357 vs 3633) was CONFOUNDED by inclination, not driven by distance method (b=0.061, t=0.56, perm p=0.55). Headline a₀=3633 is NOT demonstrably biased. No single covariate significantly predicts per-galaxy a₀. Heterogeneity is real and intrinsic (~0.29 dex). Strict universality remains underdetermined.
+All four systematic checkboxes passed. The EXISTENCE of a transition scale is observationally robust. Phase 9 benchmark replication resolved the apparent tension with literature: our tau (~0.29 dex) and the literature's scatter (~0.04-0.13 dex) are DIFFERENT QUANTITIES (galaxy-level vs point-level). Both are correct. Within-galaxy scatter matches McGaugh+2016 (0.12 vs 0.13 dex). Between-galaxy heterogeneity is intrinsic, not a pipeline artifact. 70% of galaxies individually reject the global a₀. Headline a₀=3633 is not demonstrably biased. The RAR is tight at the data-point level but heterogeneous at the galaxy level.

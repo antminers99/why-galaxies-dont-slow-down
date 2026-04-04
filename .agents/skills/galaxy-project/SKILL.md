@@ -102,6 +102,10 @@ cosmological origin established. Do not overclaim.
     b(isPrecise)=0.061, t=0.56, perm p=0.55 → NOT SIGNIFICANT.
     Phase 7 a0 increase was CONFOUNDED by inclination (b=+0.465, t=1.26).
     Headline a0=3633 is NOT demonstrably biased by distance method.
+20. **Phase 9 v9.0**: Benchmark-to-literature replication.
+    NO tension: tau (galaxy-level, 0.29) ≠ literature scatter (point-level, 0.04-0.13).
+    Within-galaxy scatter 0.122 dex MATCHES McGaugh+2016 (0.13 dex).
+    70% of galaxies reject global a0 (F-test). tau NOT a pipeline artifact.
 
 ## Current Phase: DIAGNOSTIC (not theoretical)
 
@@ -115,8 +119,9 @@ COMPLETED:
 - Phase 6 v6.0: Matched-sample split resolution — splits UNDERPOWERED, not resolved or refuted
 - Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance correlation disappears
 - Phase 8 v8.0: Meta-regression — distance method NOT significant after covariate control
+- Phase 9 v9.0: Benchmark replication — NO tension with literature, different scatter quantities
 
-CRITICAL FINDINGS (Phase 6-8):
+CRITICAL FINDINGS (Phase 6-9):
 - tau (~0.29 dex) is INTRINSIC — not reducible by better data quality
 - Distance-method effect NOT SIGNIFICANT after controlling for covariates (b=0.061, t=0.56, p=0.55)
 - Phase 7 anchor a₀ increase (4357) was CONFOUNDED by inclination, not distance method
@@ -124,6 +129,11 @@ CRITICAL FINDINGS (Phase 6-8):
 - Q flag does NOT drive a₀ (Q=1 alone: 3632, unchanged)
 - Headline a₀=3633 is NOT demonstrably biased by any measured systematic
 - No single covariate significantly predicts per-galaxy a₀
+
+- Phase 9: NO tension with literature — tau (galaxy-level) ≠ scatter (point-level)
+- Phase 9: Within-galaxy scatter = 0.122 dex ≈ McGaugh+2016 (0.13) — MATCHES
+- Phase 9: 70% of galaxies individually reject global a₀ (F-test)
+- Phase 9: RAR is tight at point level but heterogeneous at galaxy level
 
 REMAINING:
 - Investigate what drives intrinsic tau (disk structure? gas content? SFH?)
@@ -171,6 +181,8 @@ Solve A first. B becomes much cleaner after.
 | `public/phase7-anchor-results.json` | Phase 7 v7.0 results (current) |
 | `scripts/phase8-distance-metareg.cjs` | Phase 8 v8.0 meta-regression (CURRENT) |
 | `public/phase8-metareg-results.json` | Phase 8 v8.0 results (current) |
+| `scripts/phase9-benchmark-replication.cjs` | Phase 9 v9.0 benchmark (CURRENT) |
+| `public/phase9-benchmark-results.json` | Phase 9 v9.0 results (current) |
 | `public/sparc-table.json` | SPARC master table (175 gal, Q/T/fD) |
 | `public/gold-standard-results.json` | v3.0 results (archived) |
 | `public/diagnostic-results.json` | Phase 1 results |
