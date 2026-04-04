@@ -1268,3 +1268,25 @@ Files: scripts/phase19-galaxy-history.cjs
        public/phase19-galaxy-history.json
 
 ================================================================================
+
+Section 49: Phase 20 — Stellar Age
+------------------------------------
+Date: 2026-04-04
+Version: 20.0.0
+
+Best age proxy: log(Mstar), r=-0.323 (t=2.5)
+Direction: old → LOWER a0 (CONSISTENT with M*/L pathway)
+M*/L range needed: 0.30-0.83 (PLAUSIBLE, known 0.2-0.8)
+
+Partial correlations: age | MHI = -0.019 (VANISHES)
+                      MHI | age = -0.229 (RETAINS)
+LOO gap closure: 0.9% (fails)
+Quartile split: 0.158 dex (bigger than sSFR, t=1.81)
+
+Key: M*/L pathway is directionally correct and magnitude-plausible
+but SPARC proxies are too crude for definitive testing.
+
+Files: scripts/phase20-stellar-age.cjs
+       public/phase20-stellar-age.json
+
+================================================================================

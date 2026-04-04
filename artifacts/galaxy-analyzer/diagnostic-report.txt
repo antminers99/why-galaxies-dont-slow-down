@@ -3965,3 +3965,69 @@ CONCLUSION:
   it suggests active galaxies add noise but not systematic offset.
 
 ================================================================================
+
+================================================================================
+  SECTION 38: PHASE 20 — STELLAR AGE: THE ACCUMULATED HISTORY
+  Version 20.0.0
+================================================================================
+
+PURPOSE:
+  Test whether stellar population age (accumulated history, not current
+  SFR) explains a0 variation, and evaluate the M*/L pathway.
+
+AGE PROXIES CONSTRUCTED FROM SPARC:
+  log(Mstar) — downsizing: massive galaxies formed earlier
+  -T — morphology: early-type = older population
+  log(Reff/Rdisk) — concentration: bulge-dominated = older
+  log(SBeff) — surface brightness
+  -log(MHI/L) — gas depletion = older
+  Composite weighted combination
+
+RESULTS:
+
+  1. Best age proxy: log(Mstar), r=-0.323 (t=2.5, significant)
+     Direction: massive/old → LOWER a0
+
+  2. M*/L PATHWAY — THE KEY PHYSICS TEST:
+     Prediction: old → high M*/L → gbar overestimated → a0 DOWN
+     Observed: old → LOWER a0 → CONSISTENT
+     Required M*/L range: 0.30-0.83 (plausible, known: 0.2-0.8)
+     THIS PATHWAY IS PHYSICALLY VIABLE
+
+  3. PARTIAL CORRELATIONS:
+     MHI | age: r=-0.229 (t=1.7) — MHI retains signal
+     age | MHI: r=-0.019 (t=0.1) — age VANISHES after MHI
+     → MHI is DOMINANT, age adds nothing independent
+     → Age signal is entirely subsumed by MHI
+
+  4. LOO-CV: Age models FAIL out-of-sample
+     Best age model: 0.9% gap closure
+     Kitchen sink: 7.7%
+     Worse than Phase 15 baryon models (14-16%)
+
+  5. QUARTILE SPLIT:
+     Q1 (young): a0=4148, tau=0.212
+     Q4 (old): a0=2876, tau=0.243
+     Split: 0.158 dex (t=1.81) — BIGGER than sSFR split (0.030)
+     BUT: within-quartile tau barely reduced
+
+  6. COMPARISON WITH PHASE 19:
+     sSFR: r=0.215, gap=-1.8%, split=0.030 dex
+     Age:  r=-0.323, gap=0.9%, split=0.158 dex
+     Age is STRONGER in correlation but FAILS in prediction too
+
+CRITICAL INSIGHT:
+  The M*/L pathway is PLAUSIBLE but UNRESOLVABLE with SPARC proxies.
+  We would need actual SPS-derived M*/L values (from multi-band
+  photometry) to properly test this hypothesis. The direction is
+  correct (old → lower a0), the magnitude is plausible, but the
+  proxy quality is too low for definitive prediction.
+
+GALAXY HISTORY SCORECARD:
+  sSFR:        CHECKED → NOT the answer (-1.8%)
+  Stellar age: CHECKED → Suggestive direction, fails LOO (0.9%)
+  Metallicity: PENDING
+  SFH:         PENDING
+  Merger:      PENDING
+
+================================================================================

@@ -1,0 +1,179 @@
+{
+  "version": "20.0.0",
+  "timestamp": "2026-04-04T13:35:23.286Z",
+  "nGalaxies": 56,
+  "bestAgeProxy": {
+    "name": "log(Mstar)",
+    "r": -0.323,
+    "t": 2.5
+  },
+  "correlations": [
+    {
+      "name": "log(MHI)",
+      "type": "gas mass",
+      "r": -0.388,
+      "t": 3.1
+    },
+    {
+      "name": "log(Mstar)",
+      "type": "downsizing",
+      "r": -0.323,
+      "t": 2.5
+    },
+    {
+      "name": "n_points",
+      "type": "data quality",
+      "r": 0.306,
+      "t": 2.4
+    },
+    {
+      "name": "compositeAge",
+      "type": "composite",
+      "r": -0.298,
+      "t": 2.3
+    },
+    {
+      "name": "log(D)",
+      "type": "distance",
+      "r": -0.272,
+      "t": 2.1
+    },
+    {
+      "name": "-T (morph)",
+      "type": "morphology",
+      "r": -0.214,
+      "t": 1.6
+    },
+    {
+      "name": "eta_rot",
+      "type": "RC shape",
+      "r": 0.127,
+      "t": 0.9
+    },
+    {
+      "name": "-log(MHI/L)",
+      "type": "gas depletion",
+      "r": -0.104,
+      "t": 0.8
+    },
+    {
+      "name": "log(Reff/Rdisk)",
+      "type": "concentration",
+      "r": 0.045,
+      "t": 0.3
+    },
+    {
+      "name": "inc",
+      "type": "geometry",
+      "r": 0.036,
+      "t": 0.3
+    },
+    {
+      "name": "log(SBeff)",
+      "type": "surface brightness",
+      "r": -0.03,
+      "t": 0.2
+    },
+    {
+      "name": "log(bulge)",
+      "type": "bulge fraction",
+      "r": -0.028,
+      "t": 0.2
+    },
+    {
+      "name": "log(SBdisk)",
+      "type": "disk SB",
+      "r": 0.007,
+      "t": 0.1
+    }
+  ],
+  "cvResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M_age1: best age proxy",
+      "k": 2,
+      "cvRMS": 0.11747,
+      "gapClosed": -1.6
+    },
+    {
+      "name": "M_age2: Mstar+morph",
+      "k": 3,
+      "cvRMS": 0.11935,
+      "gapClosed": -5.1
+    },
+    {
+      "name": "M_age3: Mstar+morph+conc",
+      "k": 4,
+      "cvRMS": 0.12049,
+      "gapClosed": -7.2
+    },
+    {
+      "name": "M_age4: all age proxies",
+      "k": 6,
+      "cvRMS": 0.11616,
+      "gapClosed": 0.9
+    },
+    {
+      "name": "M_age+eta: age+RC shape",
+      "k": 7,
+      "cvRMS": 0.11932,
+      "gapClosed": -5
+    },
+    {
+      "name": "M_kitchen: everything",
+      "k": 14,
+      "cvRMS": 0.11251,
+      "gapClosed": 7.7
+    },
+    {
+      "name": "M6: Per-galaxy",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "bestAgeGapClosed": 0.9,
+  "partialCorrelations": {
+    "mhi_given_age": {
+      "r": -0.229,
+      "t": 1.7
+    },
+    "age_given_mhi": {
+      "r": -0.019,
+      "t": 0.1
+    }
+  },
+  "mlPathway": {
+    "plausible": true,
+    "requiredRange": [
+      0.3,
+      0.83
+    ]
+  },
+  "quartileSplit": {
+    "q1": {
+      "n": 14,
+      "meanA0": 4996,
+      "tau": 0.212,
+      "sd": 0.289
+    },
+    "q4": {
+      "n": 14,
+      "meanA0": 3470,
+      "tau": 0.243,
+      "sd": 0.279
+    },
+    "splitDex": 0.158,
+    "splitT": 1.48
+  },
+  "comparison": {
+    "phase19_sSFR_gapClosed": -1.8,
+    "phase20_age_gapClosed": 0.9,
+    "phase15_baryon_gapClosed": 15.7
+  }
+}
