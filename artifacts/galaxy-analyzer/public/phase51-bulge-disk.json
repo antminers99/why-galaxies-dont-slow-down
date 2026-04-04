@@ -1,0 +1,120 @@
+{
+  "version": "51.0.0",
+  "timestamp": "2026-04-04T16:46:03.112Z",
+  "nGalaxies": 56,
+  "workingBL": {
+    "gc": 38.1
+  },
+  "proxies": [
+    {
+      "name": "T-type",
+      "circ": "ZERO",
+      "note": "Hubble type (external)",
+      "rawT": 1.6,
+      "workBLr": 0.015,
+      "workBLt": 0.1,
+      "workLOO": 34.3,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "isBulgy",
+      "circ": "ZERO",
+      "note": "T<=2 binary (external)",
+      "rawT": 1,
+      "workBLr": -0.01,
+      "workBLt": 0.1,
+      "workLOO": 35.5,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "concentr",
+      "circ": "ZERO",
+      "note": "SBdisk-SBeff (external)",
+      "rawT": 0.7,
+      "workBLr": -0.076,
+      "workBLt": 0.5,
+      "workLOO": 37,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "gbarConc",
+      "circ": "LOW",
+      "note": "inner/outer g_bar ratio",
+      "rawT": 0.7,
+      "workBLr": 0.04,
+      "workBLt": 0.3,
+      "workLOO": 37,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "innFrLt",
+      "circ": "ZERO",
+      "note": "inner light fraction",
+      "rawT": 2.2,
+      "workBLr": -0.078,
+      "workBLt": 0.5,
+      "workLOO": 36.2,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "rcRise",
+      "circ": "LOW",
+      "note": "inner RC rise",
+      "rawT": 1.2,
+      "workBLr": 0.105,
+      "workBLt": 0.7,
+      "workLOO": 34.4,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "centExc",
+      "circ": "MED",
+      "note": "central boost excess",
+      "rawT": 3.2,
+      "workBLr": 0.139,
+      "workBLt": 1,
+      "workLOO": 36,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "logMstar",
+      "circ": "ZERO",
+      "note": "stellar mass (external)",
+      "rawT": 2.5,
+      "workBLr": 0.123,
+      "workBLt": 0.9,
+      "workLOO": 37.5,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "logStelD",
+      "circ": "ZERO",
+      "note": "stellar density (external)",
+      "rawT": 0.1,
+      "workBLr": 0.21,
+      "workBLt": 1.5,
+      "workLOO": 38.1,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gasFrac",
+      "circ": "ZERO",
+      "note": "gas fraction (external)",
+      "rawT": 0.3,
+      "workBLr": -0.21,
+      "workBLt": 1.5,
+      "workLOO": 34,
+      "addsWork": false,
+      "verdict": "WEAK"
+    }
+  ]
+}

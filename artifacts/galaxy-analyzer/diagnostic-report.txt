@@ -5517,3 +5517,37 @@ RESULT: tBst/Rd CONFIRMED (deep tests strong) but doesn't improve LOO.
     which is connected to the a0 fitting itself.
 
 ================================================================================
+
+================================================================================
+  SECTION 73: PHASE 51 — Bulge-to-Disk Ratio
+  Version 51.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: ALL FAIL
+
+  10 proxies tested against working BL (38.1%):
+
+  EXTERNAL (ZERO circ) — all FAIL:
+    T-type:      |workBL t=0.1 WEAK. Hubble type has no signal.
+    isBulgy:     |workBL t=0.1 FAIL-FAST
+    concentr:    |workBL t=0.5 FAIL-FAST (SBdisk-SBeff)
+    innFrLt:     |workBL t=0.5 WEAK
+    logMstar:    |workBL t=0.9 WEAK (r=0.81 w/ MHI, absorbed)
+    logStelD:    |workBL t=1.5 WEAK (r=1.00 w/ Sigma0_bar!)
+    gasFrac:     |workBL t=1.5 WEAK
+
+  LOW/MED CIRCULARITY — all FAIL:
+    gbarConc:    |workBL t=0.3 FAIL-FAST
+    rcRise:      |workBL t=0.7 WEAK
+    centExc:     |workBL t=1.0 WEAK
+
+  KEY INSIGHTS:
+    - logStelD = Sigma0_bar (r=1.00). Already in baseline.
+    - logMstar = MHI proxy (r=0.81). Already captured.
+    - T-type (Hubble morphology): ZERO signal after controls.
+    - Being bulgier or diskier does NOT affect a0.
+    - Concentration, gas fraction: no independent signal.
+
+  CONCLUSION: Bulge-to-disk structure is irrelevant to a0 variation.
+
+================================================================================

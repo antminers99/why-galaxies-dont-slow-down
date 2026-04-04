@@ -2129,3 +2129,26 @@ tBst/Rd: CONFIRMED (perm p=0.0004***, boot excludes zero)
   Working BL unchanged: 38.1%
 
 ================================================================================
+
+Section 84: Phase 51 — Bulge-to-Disk Ratio
+------------------------------------------------------
+Date: 2026-04-04
+Version: 51.0.0
+
+ALL FAIL against working BL (38.1%).
+  10 proxies: none passes fast screen.
+  T-type, concentration, gas fraction: no signal.
+  logStelD = Sigma0_bar (r=1.00, already in BL).
+  logMstar = MHI proxy (r=0.81, already captured).
+
+  Internal Structure Door:
+    local RAR flatness:   meanRun CONFIRMED ★
+    inner-outer diff:     FAIL
+    radial slope:         FAIL
+    transition radius:    tBst/Rd CONFIRMED (no LOO gain)
+    bulge-to-disk:        FAIL
+    Next:                 baryon concentration (Phase 52, LAST)
+
+  Working BL unchanged: 38.1%
+
+================================================================================
