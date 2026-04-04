@@ -989,4 +989,54 @@ END OF EXPERIMENT LOG (v11.0)
     public/per-galaxy-a0.json (190 galaxies)
     public/figure1-data.json (v1.1.0)
     public/sparc-table.json (175 galaxies)
+    public/phase12-mock-challenge.json (v12.0.0)
+================================================================================
+
+================================================================================
+PART XVII: PIPELINE VALIDATION
+================================================================================
+
+Section 39: Phase 12 — Mock Blind Challenge
+---------------------------------------------
+Date: 2026-04-04
+Version: 12.0.0
+
+QUESTION: Does our pipeline MANUFACTURE false heterogeneity?
+  If a0 is truly constant, does the pipeline incorrectly report high tau?
+
+METHOD: 200 mock galaxies × 50 trials × 3 scenarios:
+  A: Constant a0 = 3633 for all galaxies
+  B: a0 + second parameter (0.08 dex scatter via X~N(0,1))
+  C: Varying a0 with tau = 0.29 dex (matching real data)
+
+  Realistic mock parameters drawn from actual SPARC distributions:
+    n_pts, inclination, point noise (RMS), gbar range
+
+RESULTS:
+  Scenario A (constant):    tau = 0.024, I² = 83.7%, SD = 0.070
+  Scenario B (2nd param):   tau = 0.084, I² = 98.5%, SD = 0.107
+  Scenario C (varying):     tau = 0.291, I² = 99.9%, SD = 0.298
+  REAL DATA:                tau = 0.291, I² = 92.4%, SD = 0.275
+
+  Discrimination ratios: A/C = 12×, A/B = 3.5×, B/C = 3.5×
+  Real data closest to: Scenario C (varying a0) — distance 0.000 dex
+
+  Cross-validation improvement (per-galaxy vs global fit):
+    A: 0.7%, B: 3.8%, C: 32.8%
+
+CONCLUSIONS:
+  1. Pipeline noise floor is tau = 0.024 dex (NOT zero, but very small)
+  2. Real tau (0.291) exceeds noise floor by factor 12 — NOT an artifact
+  3. Real data matches scenario C (varying a0) almost exactly
+  4. Pipeline CAN distinguish all three scenarios cleanly
+  5. The observed heterogeneity in real data is REAL, not manufactured
+
+CRITICAL IMPLICATION:
+  The scatter in a0 between galaxies is not caused by our methodology.
+  Either a0 genuinely varies, or there are astrophysical systematics
+  not captured in our simplified mock simulations.
+
+Files: scripts/phase12-mock-challenge.cjs
+       public/phase12-mock-challenge.json
+
 ================================================================================

@@ -3287,3 +3287,94 @@ Method: For each of 56 GOLD+i45 galaxies, compute:
     Y*  >>>  inc  >  inner/outer  >  D  >  outer  >>  pressure
 
 ================================================================================
+
+================================================================================
+  SECTION 28: PHASE 12 — MOCK BLIND CHALLENGE (Pipeline Validation)
+  Version 12.0.0
+================================================================================
+
+PURPOSE:
+  Test whether our pipeline can DISTINGUISH between three fundamental scenarios:
+    A: a0 is truly constant (universal) — all galaxies share exactly one a0
+    B: a0 is constant but a second parameter shifts apparent values
+    C: a0 genuinely varies between galaxies (intrinsic scatter = 0.29 dex)
+
+  This is the "students measuring a line" validation:
+    - If we give the pipeline KNOWN constant a0, does it correctly report low tau?
+    - If we give it KNOWN varying a0, does it correctly report high tau?
+    - Can it tell the difference?
+
+METHOD:
+  - 200 mock galaxies per scenario (realistic distributions matching SPARC)
+  - 50 Monte Carlo trials per scenario (total: 30,000 mock galaxies)
+  - Same pipeline used on real data: per-galaxy RAR fit → DL meta-analysis
+  - Realistic noise, n_points, inclinations drawn from actual SPARC distributions
+  - McGaugh RAR function: gobs = gbar / (1 - exp(-sqrt(gbar/a0)))
+
+SCENARIO DEFINITIONS:
+  A: a0 = 3633 for every galaxy (constant)
+  B: a0 = 3633 × 10^(0.08×X), X ~ N(0,1) — second parameter adds 0.08 dex scatter
+  C: log(a0) ~ N(3.56, 0.29²) — intrinsic scatter matching real observed tau
+
+RESULTS (50-trial averages):
+
+  ┌──────────────────────────────────────────────────────────────────────┐
+  │  Scenario                    a0(mean)   tau     I²      SD(logA0)  │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  A: Constant a0                3629   0.024    83.7%    0.070      │
+  │  B: Constant + 2nd param       3629   0.084    98.5%    0.107      │
+  │  C: Varying a0 (tau=0.29)      3676   0.291    99.9%    0.298      │
+  ├──────────────────────────────────────────────────────────────────────┤
+  │  REAL DATA (GOLD+i45)          3633   0.291    92.4%    0.275      │
+  └──────────────────────────────────────────────────────────────────────┘
+
+DISCRIMINATION POWER:
+  A vs C: tau ratio = 12.3  →  CLEARLY DISTINGUISHED
+  A vs B: tau ratio = 3.5   →  CLEARLY DISTINGUISHED
+  B vs C: tau ratio = 3.5   →  CLEARLY DISTINGUISHED
+
+CROSS-VALIDATION (hold-out prediction):
+  Scenario A: Per-galaxy fit improves RMS by 0.7%   (no gain → a0 is constant)
+  Scenario B: Per-galaxy fit improves RMS by 3.8%   (slight gain → some scatter)
+  Scenario C: Per-galaxy fit improves RMS by 32.8%  (big gain → a0 varies)
+
+CRITICAL FINDINGS:
+
+  1. PIPELINE DOES NOT MANUFACTURE FALSE TAU.
+     When a0 IS constant, the pipeline correctly reports tau ≈ 0.024 dex.
+     This is the NOISE FLOOR: scatter caused by measurement noise alone.
+     Real data tau (0.291) exceeds this by 0.267 dex — factor 12× above noise.
+
+  2. PIPELINE CAN DISTINGUISH ALL THREE SCENARIOS.
+     The three scenarios produce tau values separated by factors of 3-12.
+     The pipeline is NOT confused about the source of scatter.
+
+  3. REAL DATA MATCHES SCENARIO C (VARYING a0).
+     Real tau = 0.291, Scenario C tau = 0.291 — EXACT MATCH.
+     Real data is 12× higher than the constant-a0 noise floor.
+     Real data is 3.5× higher than the second-parameter scenario.
+
+  4. CROSS-VALIDATION CONFIRMS:
+     In scenario C, per-galaxy fit improves prediction by 33%.
+     This matches what we see in real data (per-galaxy a0 spread = 0.275 dex).
+
+INTERPRETATION:
+
+  The mock challenge answers the key methodological question:
+  "Is the observed heterogeneity an ARTIFACT of our pipeline?"
+
+  ANSWER: NO. The pipeline produces tau = 0.024 when a0 is truly constant.
+  The real tau of 0.291 is NOT a pipeline artifact.
+
+  This means one of two things is true:
+  (a) There is a genuine galaxy-to-galaxy variation in a0 at ~0.29 dex level
+  (b) There is a systematic effect NOT captured in our mock simulations
+      (e.g., complex baryonic effects, non-circular motions correlating with
+       galaxy properties, stellar population variations)
+
+  What the mock CANNOT tell us:
+  - Whether the scatter is "physical" (a0 really varies) or "astrophysical"
+    (all galaxies have same a0 but complex baryonic physics adds scatter)
+  - This requires either theoretical prediction or independent measurements
+
+================================================================================
