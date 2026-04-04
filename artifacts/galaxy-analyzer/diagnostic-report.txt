@@ -3861,3 +3861,51 @@ CRITICAL CONCLUSION:
   Heterogeneity is robust to quality cuts.
 
 ================================================================================
+
+================================================================================
+  SECTION 36: PHASE 18 — CLEAN EXTERNAL CROSS-MATCH & DECISIVE TEST
+  Version 18.0.0
+================================================================================
+
+PURPOSE:
+  Build the cleanest possible sample using external data quality flags
+  (EDD distances, THINGS 2D kinematics, PHANGS coverage) and ask
+  ONE question: does tau drop?
+
+TIER CLASSIFICATION:
+  PLATINUM: precise D + Q=1 + i>=45 + 2D kinematics  n=2
+    (NGC2903, NGC3521 — both with THINGS + PHANGS)
+  GOLD:     precise D + Q=1 + i>=45                  n=20
+  SILVER:   Q=1 + i>=45                               n=18
+  BRONZE:   i>=45                                      n=16
+  C:        below criteria                             n=0
+
+TAU PROGRESSION (the decisive measurement):
+  ALL (n=56):       tau = 0.220 dex
+  >=BRONZE (n=56):  tau = 0.220 dex
+  >=SILVER (n=40):  tau = 0.206 dex
+  >=GOLD (n=22):    tau = 0.222 dex
+  
+  → Tau does NOT systematically decrease with quality.
+  → Reduction: only 6.7%
+
+LOO CROSS-VALIDATION (GOLD+ tier):
+  M0 (universal a0): CV-RMS = 0.12086
+  M6 (per-galaxy):   CV-RMS = 0.07358
+  Improvement: 39.1% — per-galaxy freedom STILL helps substantially
+
+OUTLIER ANALYSIS:
+  4 galaxies with |delta| > 0.4 dex in GOLD+ tier:
+  NGC5371 (-0.469), NGC6195 (-0.435), UGC05721 (+0.494), UGC06786 (+0.408)
+  Removing these: tau drops to 0.162 dex (27% reduction)
+  → Outliers contribute significantly but don't explain all heterogeneity
+
+VERDICT:
+  ╔═══════════════════════════════════════════════════════════════════╗
+  ║  Tau does NOT drop with quality cuts.                           ║
+  ║  Heterogeneity PERSISTS in cleanest subsamples.                ║
+  ║  This is either genuine physics or deep unmeasured systematics. ║
+  ║  The project has reached its empirical limit with SPARC data.  ║
+  ╚═══════════════════════════════════════════════════════════════════╝
+
+================================================================================

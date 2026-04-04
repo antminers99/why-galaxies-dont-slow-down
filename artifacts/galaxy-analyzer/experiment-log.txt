@@ -1227,3 +1227,24 @@ Files: scripts/phase17-circularity-test.cjs
        public/phase17-circularity.json
 
 ================================================================================
+
+Section 47: Phase 18 — Clean External Cross-Match & Decisive Test
+------------------------------------------------------------------
+Date: 2026-04-04
+Version: 18.0.0
+
+MASTER TABLE: 56 galaxies classified into PLATINUM(2), GOLD(20),
+  SILVER(18), BRONZE(16) tiers based on distance quality, Q flag,
+  inclination, and 2D kinematics availability.
+
+THE DECISIVE QUESTION: Does tau drop?
+  Full: 0.220 dex → GOLD+: 0.222 dex → NO REDUCTION (6.7%)
+  GOLD+ LOO improvement from M3-free: 39.1%
+  Without 4 outliers: tau=0.162 dex (27% drop, n=18)
+
+VERDICT: Heterogeneity PERSISTS. Project at empirical limit with SPARC.
+
+Files: scripts/phase18-clean-crossmatch.cjs
+       public/phase18-clean-crossmatch.json
+
+================================================================================
