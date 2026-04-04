@@ -3909,3 +3909,59 @@ VERDICT:
   ╚═══════════════════════════════════════════════════════════════════╝
 
 ================================================================================
+
+================================================================================
+  SECTION 37: PHASE 19 — GALAXY HISTORY: sSFR AS MISSING VARIABLE
+  Version 19.0.0
+================================================================================
+
+PURPOSE:
+  Test whether star formation history (proxied by sSFR) is the
+  "common thread" connecting the MHI, T, and eta_rot clues.
+
+sSFR PROXIES USED (from SPARC data, no external needed):
+  log(MHI/L)   = gas-to-stellar ratio (gas fraction proxy)
+  log(gasFrac) = MHI/(MHI + 0.5*L)
+  log(sSFR)    = composite from MHI + SBdisk + Mstar
+
+RESULTS:
+
+  1. sSFR proxies correlate WEAKLY with delta_a0:
+     log(sSFR): r=0.215 (t=1.6, marginal)
+     log(MHI/L): r=0.104 (t=0.8, NS)
+     log(gasFrac): r=0.098 (t=0.7, NS)
+     [Compare: raw log(MHI) still strongest at r=-0.388]
+
+  2. sSFR does NOT absorb MHI:
+     After removing sSFR effect, log(MHI) retains r=-0.298
+     T (Hubble) IS absorbed (r drops 0.214→0.070)
+     eta_rot is INDEPENDENT (r unchanged at 0.127)
+
+  3. LOO-CV: sSFR models HURT prediction (negative gap closure)
+     sSFR alone: -1.8% (worse than M0)
+     Best history model: 10.4% (kitchen sink with everything)
+
+  4. QUARTILE ANALYSIS:
+     Q1 (quiescent): a0=3104, tau=0.161
+     Q4 (active):    a0=3322, tau=0.257
+     Split: only 0.030 dex (t=0.31, NS)
+     BUT: Q1 tau is 27% LOWER than full tau
+     → Quiescent galaxies have MORE uniform a0
+
+  5. CRITICAL FINDING: Q1 tau = 0.161 (vs full 0.220):
+     Quiescent/old galaxies show LESS a0 heterogeneity.
+     Active/young galaxies show MORE scatter.
+     This suggests: star formation activity ADDS noise to a0,
+     but is NOT the primary driver of the offset.
+
+CONCLUSION:
+  sSFR (as proxied from SPARC) is NOT the missing variable.
+  The MHI-a0 correlation is NOT mediated through star formation rate.
+  log(MHI) remains the best predictor but through a different mechanism
+  than star formation activity — possibly gas dynamics, mass modeling,
+  or an unmeasured structural variable.
+
+  The quiescent-galaxy tau reduction (27%) is noteworthy:
+  it suggests active galaxies add noise but not systematic offset.
+
+================================================================================

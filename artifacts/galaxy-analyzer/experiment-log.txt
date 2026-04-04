@@ -1248,3 +1248,23 @@ Files: scripts/phase18-clean-crossmatch.cjs
        public/phase18-clean-crossmatch.json
 
 ================================================================================
+
+Section 48: Phase 19 — Galaxy History: sSFR Test
+-------------------------------------------------
+Date: 2026-04-04
+Version: 19.0.0
+
+sSFR proxies: log(MHI/L), log(gasFrac), log(sSFR) composite
+Best sSFR proxy: log(sSFR), r=0.215, t=1.6 (marginal)
+
+LOO-CV: sSFR models WORSE than M0 (negative gap closure)
+Kitchen sink: 10.4% gap closed (less than Phase 15's 15.7%)
+
+KEY FINDING: Q1 (quiescent) tau=0.161 vs Q4 (active) tau=0.257
+  Active galaxies have MORE scatter; quiescent have LESS
+  sSFR is NOT the missing variable; MHI works independently
+
+Files: scripts/phase19-galaxy-history.cjs
+       public/phase19-galaxy-history.json
+
+================================================================================
