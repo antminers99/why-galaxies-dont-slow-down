@@ -19,6 +19,7 @@ import EvidencePage from "@/pages/evidence";
 import DefensePage from "@/pages/defense";
 import ModelProposalPage from "@/pages/model-proposal";
 import ConclusionsPage from "@/pages/conclusions";
+import CanonicalSummaryPage from "@/pages/canonical-summary";
 import EquationPage from "@/pages/equation";
 import RedshiftLabPage from "@/pages/redshift-lab";
 import ClusterTestPage from "@/pages/cluster-test";
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/defense" component={DefensePage} />
       <Route path="/model" component={ModelProposalPage} />
       <Route path="/conclusions" component={ConclusionsPage} />
+      <Route path="/canonical" component={CanonicalSummaryPage} />
       <Route path="/equation" component={EquationPage} />
       <Route path="/redshift-lab" component={RedshiftLabPage} />
       <Route path="/cluster-test" component={ClusterTestPage} />

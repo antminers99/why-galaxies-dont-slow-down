@@ -52,7 +52,7 @@ function SidebarContent({ onNavClick }: { onNavClick?: () => void }) {
           <NavItem href="/baryon-halo-coupling" icon={Link2} label="B-H Coupling" onClick={onNavClick} />
           <NavItem href="/defense" icon={ShieldCheck} label="Defense" onClick={onNavClick} />
           <NavItem href="/model" icon={Atom} label="Model" onClick={onNavClick} />
-          <NavItem href="/conclusions" icon={ScrollText} label="Conclusions" onClick={onNavClick} />
+          <NavItem href="/canonical" icon={ScrollText} label="Canonical" onClick={onNavClick} />
           <NavItem href="/equation" icon={Sigma} label="The Equation" onClick={onNavClick} />
           <NavItem href="/redshift-lab" icon={Telescope} label="Redshift Lab" onClick={onNavClick} />
           <NavItem href="/cluster-test" icon={Orbit} label="Cluster Test" onClick={onNavClick} />
