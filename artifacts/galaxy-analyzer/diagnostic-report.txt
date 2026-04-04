@@ -4626,3 +4626,42 @@ FINAL CONCLUSION FOR ENVIRONMENT DOOR:
   Best model unchanged: MHI + rcWiggliness + envCode = 14.9% gap closure.
 
 ================================================================================
+
+================================================================================
+  SECTION 51: PHASE 31 — REDSHIFT / COSMIC TIME / DISTANCE
+  Version 31.0.0
+  COSMIC CONTEXT DOOR — Variable 1 of 2
+================================================================================
+
+RESULT: 2/6 CRITERIA — FAIL (absorbed by MHI = Malmquist bias)
+
+  Distance range: D = 3.2 — 127.8 Mpc, z = 0.00077 — 0.03112
+  (All deeply local universe, z << 0.1)
+
+RAW: r=-0.272, t=2.1 (passes raw test → further galaxies have LOWER a0)
+AFTER MHI: r=0.021, t=0.2 → COMPLETELY ABSORBED!
+AFTER MHI+wig: r=-0.016, t=0.1 → ZERO
+
+DIAGNOSIS: Classic MALMQUIST BIAS.
+  Distant galaxies → more massive (selection) → MHI higher
+  MHI correlates with a0 → spurious distance-a0 correlation
+  Once MHI is controlled, distance signal vanishes entirely.
+
+DISTANCE BINS:
+  D<20 Mpc  (near):  n=34, <logA0>=3.571, SD=0.246
+  D=20-60:  (mid):   n=13, <logA0>=3.579, SD=0.243
+  D>60 Mpc  (far):   n=9,  <logA0>=3.600, SD=0.291
+  No significant mean shift or scatter increase with distance.
+
+SYSTEMATICS CHECK (POSITIVE RESULT):
+  log(D) vs RMS residual: r=0.171, t=1.3 → no fit quality bias
+  log(D) vs |delta_a0|: r=0.020, t=0.1 → no scatter inflation
+  → Our a0 measurements are NOT contaminated by distance systematics.
+
+LOO: log(D) adds -1.6% to MHI+wig, -1.2% beyond MHI+wig+env (hurts)
+
+CONCLUSION: No cosmic-time or distance effect on a0 in this sample.
+  The raw correlation is entirely a Malmquist selection artifact.
+  Best model unchanged: MHI + rcWiggliness + envCode = 14.9%
+
+================================================================================

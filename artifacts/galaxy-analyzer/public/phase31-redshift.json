@@ -1,0 +1,56 @@
+{
+  "version": "31.0.0",
+  "timestamp": "2026-04-04T15:09:31.124Z",
+  "nGalaxies": 56,
+  "distanceRange": {
+    "Dmin": 3.2,
+    "Dmax": 127.8,
+    "zMin": 0.00077,
+    "zMax": 0.03112
+  },
+  "rawCorrelation": {
+    "r": -0.272,
+    "t": 2.1
+  },
+  "afterMHI": {
+    "r": 0.021,
+    "t": 0.2
+  },
+  "afterMHIWig": {
+    "r": -0.016,
+    "t": 0.1
+  },
+  "distanceBins": {
+    "near": {
+      "n": 34,
+      "meanLogA0": 3.586,
+      "sd": 0.259
+    },
+    "mid": {
+      "n": 12,
+      "meanLogA0": 3.578,
+      "sd": 0.263
+    },
+    "far": {
+      "n": 10,
+      "meanLogA0": 3.469,
+      "sd": 0.288
+    }
+  },
+  "distanceSystematics": {
+    "rDvsRMS": 0.171,
+    "rDvsAbsDeltaA0": 0.02
+  },
+  "looGapClosed": {
+    "D": 3,
+    "mhiWig": 11.5,
+    "mhiWigD": 9.9,
+    "mhiWigEnv": 14.9,
+    "mhiWigEnvD": 13.7
+  },
+  "successCriteria": {
+    "passed": 2,
+    "total": 6
+  },
+  "verdict": "PARTIAL"
+}

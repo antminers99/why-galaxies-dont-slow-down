@@ -1607,3 +1607,35 @@ Files: scripts/phase30-group-distance.cjs
        public/phase30-group-distance.json
 
 ================================================================================
+
+Section 62: Phase 31 — Redshift / Cosmic Time / Distance
+------------------------------------------------------
+Date: 2026-04-04
+Version: 31.0.0
+COSMIC CONTEXT DOOR — Variable 1 of 2
+
+REDSHIFT/DISTANCE: 2/6 — FAIL (Malmquist bias artifact)
+
+  Raw: r=-0.272, t=2.1 (looks real!)
+  After MHI: r=0.021, t=0.2 (COMPLETELY GONE!)
+  After MHI+wig: r=-0.016, t=0.1 (zero)
+  LOO: adds -1.6% (hurts model)
+
+  The raw signal is pure Malmquist bias:
+    distant → selected for high mass → MHI higher → a0 different
+
+  GOOD NEWS: No distance-dependent systematics in our a0 fits.
+  log(D) vs RMS: r=0.171 (not significant)
+  log(D) vs |delta_a0|: r=0.020 (zero)
+
+  Cosmic context door scorecard so far:
+    redshift/distance:    2/6 FAIL (Malmquist artifact)
+    cosmic web:           ← next
+
+  Best model: MHI + rcWiggliness + envCode = 14.9% gap closure
+  (unchanged since Phase 25)
+
+Files: scripts/phase31-redshift.cjs
+       public/phase31-redshift.json
+
+================================================================================
