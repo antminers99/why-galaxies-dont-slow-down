@@ -1,0 +1,126 @@
+{
+  "version": "48.0.0",
+  "timestamp": "2026-04-04T16:33:28.525Z",
+  "nGalaxies": 56,
+  "conservativeBL": {
+    "gc": 27.8
+  },
+  "workingBL": {
+    "gc": 38.1,
+    "includes": "meanRun"
+  },
+  "proxies": [
+    {
+      "name": "inOutDiff",
+      "circ": "HIGH",
+      "note": "inner-outer mean resid",
+      "consBLr": 0.162,
+      "consBLt": 1.2,
+      "consLOO": 27.8,
+      "workBLr": 0.148,
+      "workBLt": 1,
+      "workLOO": 37.9,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "innerRMS",
+      "circ": "HIGH",
+      "note": "inner half residual RMS",
+      "consBLr": 0.018,
+      "consBLt": 0.1,
+      "consLOO": 26.2,
+      "workBLr": -0.027,
+      "workBLt": 0.2,
+      "workLOO": 36,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "outerRMS",
+      "circ": "HIGH",
+      "note": "outer half residual RMS",
+      "consBLr": 0.055,
+      "consBLt": 0.4,
+      "consLOO": 25.6,
+      "workBLr": -0.047,
+      "workBLt": 0.3,
+      "workLOO": 35.9,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "rmsRatio",
+      "circ": "HIGH",
+      "note": "inner/outer RMS ratio",
+      "consBLr": -0.042,
+      "consBLt": 0.3,
+      "consLOO": 25.4,
+      "workBLr": 0.024,
+      "workBLt": 0.2,
+      "workLOO": 36.2,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "slopeDif",
+      "circ": "MED",
+      "note": "inner-outer RAR slope diff",
+      "consBLr": 0.105,
+      "consBLt": 0.7,
+      "consLOO": 22.1,
+      "workBLr": 0.019,
+      "workBLt": 0.1,
+      "workLOO": 32.3,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "gbarCntr",
+      "circ": "LOW",
+      "note": "inner-outer g_bar contrast",
+      "consBLr": 0.12,
+      "consBLt": 0.9,
+      "consLOO": 28.2,
+      "workBLr": 0.042,
+      "workBLt": 0.3,
+      "workLOO": 37,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "gobsCntr",
+      "circ": "MED",
+      "note": "inner-outer g_obs contrast",
+      "consBLr": 0.106,
+      "consBLt": 0.8,
+      "consLOO": 27.9,
+      "workBLr": 0.031,
+      "workBLt": 0.2,
+      "workLOO": 37,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "boostGrd",
+      "circ": "HIGH",
+      "note": "outer-inner boost gradient",
+      "consBLr": 0.245,
+      "consBLt": 1.8,
+      "consLOO": 28.6,
+      "workBLr": 0.176,
+      "workBLt": 1.2,
+      "workLOO": 36,
+      "addsCons": false,
+      "addsWork": false,
+      "verdict": "WEAK"
+    }
+  ]
+}

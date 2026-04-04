@@ -2070,3 +2070,21 @@ meanRun: CONFIRMED ★★★
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 81: Phase 48 — Inner-Outer Difference
+------------------------------------------------------
+Date: 2026-04-04
+Version: 48.0.0
+
+ALL FAIL against working BL (+meanRun = 38.1%).
+  Completely redundant with meanRun.
+  No inner-outer proxy adds any information.
+
+  Internal Structure Door:
+    local RAR flatness:   meanRun CONFIRMED ★
+    inner-outer diff:     FAIL (redundant w/ meanRun)
+    Next:                 radial slope (Phase 49)
+
+  Working BL: MHI + wig + env + Sigma0_bar + meanRun = 38.1%
+
+================================================================================

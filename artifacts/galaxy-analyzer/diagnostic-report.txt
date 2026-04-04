@@ -5420,3 +5420,32 @@ RESULT: meanRun CONFIRMED — strongest new signal from internal structure
     Flagged for potential baseline addition.
 
 ================================================================================
+
+================================================================================
+  SECTION 70: PHASE 48 — Inner-Outer Difference
+  Version 48.0.0 — FAST PROTOCOL (dual baseline)
+================================================================================
+
+RESULT: ALL FAIL — completely redundant with meanRun
+
+  Working BL (+meanRun): 38.1% gap closure (up from 27.8%)
+
+  All 8 inner-outer proxies tested against working BL:
+    inOutDiff:   |workBL t=1.0 WEAK (HIGH circ)
+    innerRMS:    |workBL t=0.2 WEAK (HIGH circ)
+    outerRMS:    |workBL t=0.3 FAIL-FAST (HIGH circ)
+    rmsRatio:    |workBL t=0.2 WEAK (HIGH circ)
+    slopeDif:    |workBL t=0.1 FAIL-FAST (MED circ)
+    gbarCntr:    |workBL t=0.3 FAIL-FAST (LOW circ)
+    gobsCntr:    |workBL t=0.2 FAIL-FAST (MED circ)
+    boostGrd:    |workBL t=1.2 WEAK (HIGH circ)
+
+  KEY INSIGHT: None adds above 38.1%.
+    meanRun already captures all inner-outer structural info.
+    The working baseline methodology works — it properly
+    prevents double-counting the same structural signal.
+
+  Collinearity with meanRun is modest (r=0.19-0.28),
+  but once meanRun is in BL, the remaining signal vanishes.
+
+================================================================================
