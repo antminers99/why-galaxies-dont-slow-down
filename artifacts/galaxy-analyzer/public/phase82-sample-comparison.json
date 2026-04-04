@@ -1,0 +1,543 @@
+{
+  "phase": "82",
+  "title": "Sample Comparison — Training vs External",
+  "nTraining": 45,
+  "nExternal": 46,
+  "variableComparisons": [
+    {
+      "variable": "logMHI (gas mass)",
+      "key": "logMHI",
+      "training": {
+        "n": 45,
+        "mean": 0.554,
+        "median": 0.65,
+        "sd": 0.561,
+        "min": -0.857,
+        "max": 1.524
+      },
+      "external": {
+        "n": 46,
+        "mean": -0.128,
+        "median": -0.079,
+        "sd": 0.611,
+        "min": -1.538,
+        "max": 1.22
+      },
+      "welch": {
+        "t": 5.55,
+        "p": 0,
+        "d": 1.16
+      },
+      "mannWhitney": {
+        "z": 4.97,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.513,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "logMeanRun (kinematic coherence)",
+      "key": "logMeanRun",
+      "training": {
+        "n": 45,
+        "mean": 0.845,
+        "median": 0.865,
+        "sd": 0.229,
+        "min": 0.368,
+        "max": 1.398
+      },
+      "external": {
+        "n": 46,
+        "mean": 0.664,
+        "median": 0.624,
+        "sd": 0.199,
+        "min": 0.243,
+        "max": 1.114
+      },
+      "welch": {
+        "t": 4.02,
+        "p": 0.0001,
+        "d": 0.84
+      },
+      "mannWhitney": {
+        "z": 3.81,
+        "p": 0.0001
+      },
+      "ks": {
+        "D": 0.409,
+        "p": 0.9994
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "logA0 (acceleration scale)",
+      "key": "logA0",
+      "training": {
+        "n": 45,
+        "mean": 3.548,
+        "median": 3.542,
+        "sd": 0.278,
+        "min": 3.049,
+        "max": 4.12
+      },
+      "external": {
+        "n": 46,
+        "mean": 3.298,
+        "median": 3.332,
+        "sd": 0.408,
+        "min": 2.001,
+        "max": 4.151
+      },
+      "welch": {
+        "t": 3.43,
+        "p": 0.001,
+        "d": 0.72
+      },
+      "mannWhitney": {
+        "z": 3.06,
+        "p": 0.0022
+      },
+      "ks": {
+        "D": 0.304,
+        "p": 0.9768
+      },
+      "effectSize": "MEDIUM",
+      "significant": true
+    },
+    {
+      "variable": "nPts (RC point count)",
+      "key": "nPts",
+      "training": {
+        "n": 45,
+        "mean": 31.622,
+        "median": 28,
+        "sd": 20.326,
+        "min": 7,
+        "max": 115
+      },
+      "external": {
+        "n": 46,
+        "mean": 15.826,
+        "median": 11.5,
+        "sd": 11.33,
+        "min": 6,
+        "max": 58
+      },
+      "welch": {
+        "t": 4.57,
+        "p": 0,
+        "d": 0.96
+      },
+      "mannWhitney": {
+        "z": 4.93,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.517,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "Quality flag (Q)",
+      "key": "Q",
+      "training": {
+        "n": 45,
+        "mean": 1.356,
+        "median": 1,
+        "sd": 0.57,
+        "min": 1,
+        "max": 3
+      },
+      "external": {
+        "n": 46,
+        "mean": 1.652,
+        "median": 2,
+        "sd": 0.604,
+        "min": 1,
+        "max": 3
+      },
+      "welch": {
+        "t": -2.41,
+        "p": 0.0181,
+        "d": -0.5
+      },
+      "mannWhitney": {
+        "z": -2.22,
+        "p": 0.0265
+      },
+      "ks": {
+        "D": 0.689,
+        "p": 1
+      },
+      "effectSize": "MEDIUM",
+      "significant": true
+    },
+    {
+      "variable": "Distance (D)",
+      "key": "D",
+      "training": {
+        "n": 45,
+        "mean": 17.948,
+        "median": 16.9,
+        "sd": 12.925,
+        "min": 3.16,
+        "max": 57.1
+      },
+      "external": {
+        "n": 46,
+        "mean": 10.138,
+        "median": 6.685,
+        "sd": 7.117,
+        "min": 0.98,
+        "max": 23.7
+      },
+      "welch": {
+        "t": 3.56,
+        "p": 0.0007,
+        "d": 0.75
+      },
+      "mannWhitney": {
+        "z": 2.93,
+        "p": 0.0034
+      },
+      "ks": {
+        "D": 0.367,
+        "p": 0.997
+      },
+      "effectSize": "MEDIUM",
+      "significant": true
+    },
+    {
+      "variable": "Inclination (inc)",
+      "key": "inc",
+      "training": {
+        "n": 45,
+        "mean": 67.511,
+        "median": 67,
+        "sd": 12.319,
+        "min": 46,
+        "max": 90
+      },
+      "external": {
+        "n": 46,
+        "mean": 63.196,
+        "median": 64,
+        "sd": 17.338,
+        "min": 15,
+        "max": 90
+      },
+      "welch": {
+        "t": 1.37,
+        "p": 0.1741,
+        "d": 0.29
+      },
+      "mannWhitney": {
+        "z": 0.89,
+        "p": 0.3761
+      },
+      "ks": {
+        "D": 0.216,
+        "p": 0.7917
+      },
+      "effectSize": "SMALL",
+      "significant": false
+    },
+    {
+      "variable": "RC radial extent (rMax)",
+      "key": "rMax",
+      "training": {
+        "n": 45,
+        "mean": 31.09,
+        "median": 29.23,
+        "sd": 20.86,
+        "min": 4.99,
+        "max": 108.31
+      },
+      "external": {
+        "n": 46,
+        "mean": 9.363,
+        "median": 7.52,
+        "sd": 7.614,
+        "min": 1.08,
+        "max": 46.02
+      },
+      "welch": {
+        "t": 6.57,
+        "p": 0,
+        "d": 1.39
+      },
+      "mannWhitney": {
+        "z": 6.26,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.713,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "Morphological type (T)",
+      "key": "T",
+      "training": {
+        "n": 45,
+        "mean": 4.244,
+        "median": 4,
+        "sd": 2.586,
+        "min": 0,
+        "max": 11
+      },
+      "external": {
+        "n": 46,
+        "mean": 7.761,
+        "median": 9,
+        "sd": 2.263,
+        "min": 4,
+        "max": 11
+      },
+      "welch": {
+        "t": -6.9,
+        "p": 0,
+        "d": -1.45
+      },
+      "mannWhitney": {
+        "z": -5.63,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.671,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "Vflat",
+      "key": "Vflat",
+      "training": {
+        "n": 45,
+        "mean": 169.138,
+        "median": 174,
+        "sd": 58.134,
+        "min": 50.1,
+        "max": 284.8
+      },
+      "external": {
+        "n": 46,
+        "mean": 80.767,
+        "median": 79.85,
+        "sd": 61.107,
+        "min": 0,
+        "max": 241
+      },
+      "welch": {
+        "t": 7.07,
+        "p": 0,
+        "d": 1.48
+      },
+      "mannWhitney": {
+        "z": 5.66,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.584,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "Luminosity L3.6",
+      "key": "L36",
+      "training": {
+        "n": 45,
+        "mean": 86.876,
+        "median": 72.065,
+        "sd": 83.607,
+        "min": 0.028,
+        "max": 340.393
+      },
+      "external": {
+        "n": 46,
+        "mean": 19.629,
+        "median": 2.366,
+        "sd": 44.055,
+        "min": 0.012,
+        "max": 226.932
+      },
+      "welch": {
+        "t": 4.78,
+        "p": 0,
+        "d": 1.01
+      },
+      "mannWhitney": {
+        "z": 5.12,
+        "p": 0
+      },
+      "ks": {
+        "D": 0.561,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    },
+    {
+      "variable": "Disk scale length (Rdisk)",
+      "key": "Rdisk",
+      "training": {
+        "n": 45,
+        "mean": 3.113,
+        "median": 2.55,
+        "sd": 2,
+        "min": 0.2,
+        "max": 9.45
+      },
+      "external": {
+        "n": 46,
+        "mean": 2.102,
+        "median": 1.72,
+        "sd": 1.469,
+        "min": 0.18,
+        "max": 6.11
+      },
+      "welch": {
+        "t": 2.74,
+        "p": 0.0075,
+        "d": 0.58
+      },
+      "mannWhitney": {
+        "z": 2.56,
+        "p": 0.0106
+      },
+      "ks": {
+        "D": 0.321,
+        "p": 0.9861
+      },
+      "effectSize": "MEDIUM",
+      "significant": true
+    },
+    {
+      "variable": "Environment code",
+      "key": "envCode",
+      "training": {
+        "n": 45,
+        "mean": 0.644,
+        "median": 0,
+        "sd": 0.83,
+        "min": 0,
+        "max": 2
+      },
+      "external": {
+        "n": 46,
+        "mean": 0,
+        "median": 0,
+        "sd": 0,
+        "min": 0,
+        "max": 0
+      },
+      "welch": {
+        "t": 5.21,
+        "p": 0,
+        "d": 1.1
+      },
+      "mannWhitney": {
+        "z": 3.47,
+        "p": 0.0005
+      },
+      "ks": {
+        "D": 0.578,
+        "p": 1
+      },
+      "effectSize": "LARGE",
+      "significant": true
+    }
+  ],
+  "qualityDistribution": {
+    "training": {
+      "1": 31,
+      "2": 12,
+      "3": 2
+    },
+    "external": {
+      "1": 19,
+      "2": 24,
+      "3": 3
+    }
+  },
+  "environmentDistribution": {
+    "training": {
+      "0": 26,
+      "1": 9,
+      "2": 10
+    },
+    "external": {
+      "0": 46,
+      "1": 0,
+      "2": 0
+    }
+  },
+  "distanceMethod": {
+    "training": {
+      "1": 19,
+      "2": 13,
+      "3": 3,
+      "4": 9,
+      "5": 1
+    },
+    "external": {
+      "2": 27,
+      "4": 18,
+      "5": 1
+    }
+  },
+  "morphology": {
+    "training": {
+      "0": 2,
+      "1": 2,
+      "2": 7,
+      "3": 9,
+      "4": 8,
+      "5": 6,
+      "6": 5,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 2
+    },
+    "external": {
+      "4": 6,
+      "5": 3,
+      "6": 7,
+      "7": 5,
+      "8": 1,
+      "9": 8,
+      "10": 15,
+      "11": 1
+    }
+  },
+  "nSignificant": 12,
+  "significantVariables": [
+    "logMHI",
+    "logMeanRun",
+    "logA0",
+    "nPts",
+    "Q",
+    "D",
+    "rMax",
+    "T",
+    "Vflat",
+    "L36",
+    "Rdisk",
+    "envCode"
+  ],
+  "overallVerdict": "VERY DIFFERENT POPULATIONS"
+}
