@@ -1,0 +1,65 @@
+{
+  "phase": "79",
+  "title": "Overfitting Audit",
+  "tests": {
+    "nestedCV": {
+      "gap": 38.5,
+      "optimism": 12.5,
+      "M5selectPct": 51.2,
+      "pass": true
+    },
+    "pipelinePermutation": {
+      "nPerm": 1000,
+      "pValue": 0,
+      "null95": 3.5,
+      "null99": 11.3,
+      "nullMax": 27,
+      "pass": true
+    },
+    "collinearity": {
+      "maxVIF": 1.26,
+      "vifs": [
+        {
+          "var": "logMHI",
+          "vif": 1.26
+        },
+        {
+          "var": "logMhost",
+          "vif": 1.23
+        },
+        {
+          "var": "logSigma0",
+          "vif": 1.25
+        },
+        {
+          "var": "logMeanRun",
+          "vif": 1.16
+        },
+        {
+          "var": "Ups_perp",
+          "vif": 1.08
+        }
+      ],
+      "pass": true
+    },
+    "coeffStability": {
+      "nBoot": 1000,
+      "m5WinRatePct": 69.4,
+      "allSignsStable": true,
+      "pass": true
+    },
+    "calibration": {
+      "meanSlope": 0.819,
+      "meanIntercept": 0.644,
+      "meanR2": 0.451,
+      "pass": true
+    },
+    "complexityPenalty": {
+      "bestByLOO": "M5",
+      "bestByBIC": "M3",
+      "m6BeatsM5": false,
+      "pass": true
+    }
+  },
+  "verdict": "ALL-PASS"
+}
