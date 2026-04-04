@@ -1,0 +1,66 @@
+{
+  "phase": "64",
+  "title": "Error-Floor Audit",
+  "n": 45,
+  "residualSource": "B″",
+  "observed": {
+    "residSD": 0.15595531003391264,
+    "skewness": -0.06516562063738178,
+    "kurtosis": -0.907800002142698,
+    "runsZ": 1.0594486987788438
+  },
+  "measurementFloor": {
+    "meanSigma": 0.11109050097089475,
+    "medianSigma": 0.11027395390111688,
+    "expectedResidSD": 0.1153600210258542,
+    "components": {
+      "distance": 0.07073813766226426,
+      "inclination": 0.02451886538399886,
+      "massModel": 0.04,
+      "rcFitting": 0.06111111111111111
+    }
+  },
+  "intrinsicScatter": {
+    "tauInt": 0.1049481980630839,
+    "ci95": [
+      0.04069027118134479,
+      0.14333565622490382
+    ],
+    "touchesZero": false,
+    "measFraction": 54.715493454051014
+  },
+  "noiseSimulation": {
+    "nMocks": 5000,
+    "sdInside": false,
+    "skInside": true,
+    "kuInside": false,
+    "rzInside": true,
+    "nInside": 2,
+    "mockMeans": {
+      "sd": 0.10634124893132517,
+      "skew": 0.001936094213107706,
+      "kurt": 0.2105212488979095,
+      "runsZ": 0.022650799886173096
+    }
+  },
+  "residVsUncertainty": {
+    "rAbsSig": -0.08989216828197995,
+    "tAbsSig": -0.5918585041828499,
+    "rSqSig": -0.10083337650949238,
+    "tSqSig": -0.664595895580296
+  },
+  "qualitySplit": {
+    "lowN": 23,
+    "lowSD": 0.15970596758083225,
+    "highN": 22,
+    "highSD": 0.15567297898204255
+  },
+  "criteria": {
+    "crit1": false,
+    "crit2": false,
+    "crit3": true,
+    "crit4": false,
+    "nPass": 1
+  },
+  "verdict": "FAIL"
+}
