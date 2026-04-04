@@ -1290,3 +1290,22 @@ Files: scripts/phase20-stellar-age.cjs
        public/phase20-stellar-age.json
 
 ================================================================================
+
+Section 50: Phase 21 — Metallicity
+-------------------------------------
+Date: 2026-04-04
+Version: 21.0.0
+
+Best proxy: enrichment, r=-0.299, t=2.3, perm p=0.0244
+LOO gap closure: 4.2% (beats age 0.9% but modest)
+CRITICAL FAILURE: ALL proxies absorbed by MHI (r→0 after control)
+
+All 7 metallicity proxies = redundant labels for Mstar+MHI.
+No independent signal whatsoever.
+
+Scorecard: sSFR=fail, age=fail, metallicity=FAIL (absorbed by MHI)
+
+Files: scripts/phase21-metallicity.cjs
+       public/phase21-metallicity.json
+
+================================================================================

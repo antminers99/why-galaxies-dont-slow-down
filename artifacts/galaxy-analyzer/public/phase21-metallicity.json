@@ -1,0 +1,184 @@
+{
+  "version": "21.0.0",
+  "timestamp": "2026-04-04T13:46:23.713Z",
+  "nGalaxies": 56,
+  "bestMetalProxy": {
+    "name": "enrichment",
+    "r": -0.299,
+    "t": 2.3
+  },
+  "correlations": [
+    {
+      "name": "log(MHI)",
+      "type": "gas mass",
+      "r": -0.388,
+      "t": 3.1
+    },
+    {
+      "name": "log(Mstar)",
+      "type": "stellar mass",
+      "r": -0.323,
+      "t": 2.5
+    },
+    {
+      "name": "n_points",
+      "type": "data quality",
+      "r": 0.306,
+      "t": 2.4
+    },
+    {
+      "name": "enrichment",
+      "type": "metallicity",
+      "r": -0.299,
+      "t": 2.3
+    },
+    {
+      "name": "MZR proxy",
+      "type": "metallicity",
+      "r": -0.294,
+      "t": 2.3
+    },
+    {
+      "name": "metal gradient",
+      "type": "metallicity",
+      "r": 0.28,
+      "t": 2.1
+    },
+    {
+      "name": "log(D)",
+      "type": "distance",
+      "r": -0.272,
+      "t": 2.1
+    },
+    {
+      "name": "closed-box dev",
+      "type": "metallicity",
+      "r": -0.246,
+      "t": 1.9
+    },
+    {
+      "name": "FMR proxy",
+      "type": "metallicity",
+      "r": -0.245,
+      "t": 1.9
+    },
+    {
+      "name": "yield proxy",
+      "type": "metallicity",
+      "r": -0.233,
+      "t": 1.8
+    },
+    {
+      "name": "T (Hubble)",
+      "type": "morphology",
+      "r": 0.214,
+      "t": 1.6
+    },
+    {
+      "name": "eta_rot",
+      "type": "RC shape",
+      "r": 0.127,
+      "t": 0.9
+    },
+    {
+      "name": "log(MHI/L)",
+      "type": "gas fraction",
+      "r": 0.104,
+      "t": 0.8
+    },
+    {
+      "name": "eff. yield",
+      "type": "metallicity",
+      "r": -0.1,
+      "t": 0.7
+    },
+    {
+      "name": "inc",
+      "type": "geometry",
+      "r": 0.036,
+      "t": 0.3
+    }
+  ],
+  "cvResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M_Z1: best Z proxy",
+      "k": 2,
+      "cvRMS": 0.11791,
+      "gapClosed": -2.4
+    },
+    {
+      "name": "M_Z2: MZR+FMR",
+      "k": 3,
+      "cvRMS": 0.12021,
+      "gapClosed": -6.7
+    },
+    {
+      "name": "M_Z3: all Z proxies",
+      "k": 8,
+      "cvRMS": 0.11459,
+      "gapClosed": 3.8
+    },
+    {
+      "name": "M_Z+MHI: Z+gas",
+      "k": 3,
+      "cvRMS": 0.11438,
+      "gapClosed": 4.2
+    },
+    {
+      "name": "M_MHI: gas only",
+      "k": 2,
+      "cvRMS": 0.11265,
+      "gapClosed": 7.4
+    },
+    {
+      "name": "M_kitchen: everything",
+      "k": 16,
+      "cvRMS": 0.11283,
+      "gapClosed": 7.1
+    },
+    {
+      "name": "M6: Per-galaxy",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "bestZGapClosed": 4.2,
+  "independence": {
+    "afterMHI": {
+      "r": -0.013,
+      "t": 0.1
+    }
+  },
+  "permutationP": 0.027,
+  "successCriteria": {
+    "passed": 4,
+    "total": 5
+  },
+  "quartileSplit": {
+    "q1": {
+      "n": 14,
+      "meanA0": 4996,
+      "tau": 0.212
+    },
+    "q4": {
+      "n": 14,
+      "meanA0": 3405,
+      "tau": 0.236
+    },
+    "splitDex": 0.167,
+    "splitT": 1.55
+  },
+  "comparison": {
+    "phase19_sSFR": -1.8,
+    "phase20_age": 0.9,
+    "phase21_metal": 4.2,
+    "phase15_baryon": 15.7
+  }
+}

@@ -4031,3 +4031,53 @@ GALAXY HISTORY SCORECARD:
   Merger:      PENDING
 
 ================================================================================
+
+================================================================================
+  SECTION 39: PHASE 21 — METALLICITY: CHEMICAL ENRICHMENT HISTORY
+  Version 21.0.0
+================================================================================
+
+PURPOSE:
+  Test whether metallicity (chemical enrichment) explains a0 variation.
+  Strict success criteria: |t|>=2, perm p<0.05, LOO>M0, gap>age,
+  AND independent of MHI.
+
+PROXIES (all constructed from Mstar/MHI — no direct Z in SPARC):
+  enrichment, MZR, FMR, yield, metal gradient, eff. yield, closed-box
+
+RESULTS:
+
+  1. Best proxy: "enrichment" r=-0.299 (t=2.3, significant)
+     Permutation p=0.0244 (significant)
+
+  2. CRITICAL TEST — INDEPENDENCE:
+     ALL 7 proxies COMPLETELY ABSORBED by MHI:
+     enrichment: r=-0.299 → after MHI: r=-0.013 (t=0.1) → ZERO
+     MZR:        r=-0.294 → after MHI: r=-0.005 (t=0.0) → ZERO
+     All others: similarly absorbed to r < 0.03
+
+  3. LOO-CV: Modest improvement
+     Best Z model: 4.2% gap closure (beats age's 0.9%)
+     Z + MHI combined: better than either alone? → MHI alone: 7.4%
+     Kitchen sink: similar
+
+  4. QUARTILE SPLIT:
+     Metal-poor: a0=4996, tau=0.212
+     Metal-rich: a0=3405, tau=0.236
+     Split: 0.167 dex (t=1.55)
+
+  5. SCORECARD: 4/5 criteria pass superficially BUT the critical
+     criterion (independence from MHI) FAILS. The "4/5 confirmed"
+     is misleading — metallicity proxies are ENTIRELY redundant
+     with MHI. They add NO independent information.
+
+CONCLUSION:
+  Metallicity proxies are REDUNDANT LABELS for stellar mass and
+  gas mass. Every proxy is constructed from Mstar+MHI, and every
+  one is completely absorbed when MHI is controlled for.
+
+  This is NOT a real "confirmation" — it's a mathematical tautology.
+  True metallicity (measured 12+log(O/H) or [Fe/H]) might behave
+  differently, but we cannot test that with SPARC data.
+
+================================================================================
