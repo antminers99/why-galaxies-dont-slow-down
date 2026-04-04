@@ -1,0 +1,76 @@
+{
+  "phase": "66",
+  "title": "Weak-Bundle / Latent Residual Test",
+  "residualSource": "B″ on N=45",
+  "bundleVars": [
+    "logReff/Rd (N=45)",
+    "logRHI/Rd (N=44)",
+    "logSBeff (N=45)",
+    "logSBdisk (N=45)",
+    "morphT (N=45)",
+    "inc (N=45)",
+    "logD (N=45)",
+    "HI_def (N=45)",
+    "logL36 (N=45)",
+    "logFracErr (N=45)",
+    "envCode (N=45)"
+  ],
+  "olsBundleR2": 0.26100855024928027,
+  "ridgeBest": {
+    "lambda": 50,
+    "cvRMS": 0.15526243240129836,
+    "gapVsNull": -1.3659922426160875
+  },
+  "looBase": 49.67979849340603,
+  "looAug": 30.648154488267455,
+  "looDelta": -19.031644005138578,
+  "permP": 0.4065,
+  "pca": [
+    {
+      "pc": 1,
+      "eigenvalue": 4.435783766475159,
+      "varPct": 40.32530696795599,
+      "r": 0.0939281413220677,
+      "t": 0.6186631348712672
+    },
+    {
+      "pc": 2,
+      "eigenvalue": 2.257321237481072,
+      "varPct": 20.521102158918836,
+      "r": -0.28716477538667956,
+      "t": -1.965865247715108
+    },
+    {
+      "pc": 3,
+      "eigenvalue": 1.3089431032923626,
+      "varPct": 11.899482757203296,
+      "r": -0.09075602622414375,
+      "t": -0.5975932364783535
+    },
+    {
+      "pc": 4,
+      "eigenvalue": 0.9319483391261071,
+      "varPct": 8.472257628419156,
+      "r": -0.07932677609017451,
+      "t": -0.5218249021800343
+    },
+    {
+      "pc": 5,
+      "eigenvalue": 0.7618339675357165,
+      "varPct": 6.925763341233787,
+      "r": 0.15328203642136737,
+      "t": 1.017157811678038
+    }
+  ],
+  "looPC1": 47.32128026919615,
+  "looPC12": 48.97813503653812,
+  "splitWinRate": 0.002,
+  "criteria": {
+    "crit1_improves": false,
+    "crit2_cvStable": false,
+    "crit3_permSig": false,
+    "crit4_pcSignal": true,
+    "nPass": 1
+  },
+  "verdict": "FAIL"
+}
