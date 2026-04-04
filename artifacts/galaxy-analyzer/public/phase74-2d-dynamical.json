@@ -1,0 +1,88 @@
+{
+  "phase": "74",
+  "title": "2D Dynamical-State Program",
+  "thingsSample": {
+    "n": 7,
+    "galaxies": [
+      "NGC2403",
+      "NGC2841",
+      "NGC2903",
+      "NGC3198",
+      "NGC3521",
+      "NGC5055",
+      "NGC7331"
+    ]
+  },
+  "individualCorrs": {
+    "things_ncm_amp": {
+      "pearson": 0.12398237699755199,
+      "spearman": 0.3571428571428571,
+      "t": 0.27938866859948824
+    },
+    "things_ncm_frac": {
+      "pearson": 0.01482559553001976,
+      "spearman": 0.0357142857142857,
+      "t": 0.03315468328350796
+    },
+    "things_c1": {
+      "pearson": 0.13730281835725666,
+      "spearman": 0.25,
+      "t": 0.3099539724620338
+    },
+    "things_s1": {
+      "pearson": 0.07493068725366536,
+      "spearman": 0.2142857142857143,
+      "t": 0.16802246438128315
+    },
+    "things_c3": {
+      "pearson": 0.21123940690064372,
+      "spearman": 0.3214285714285714,
+      "t": 0.48325053469404966
+    },
+    "things_s3": {
+      "pearson": 0.13399042745323764,
+      "spearman": 0.4285714285714286,
+      "t": 0.30233799888165774
+    },
+    "things_lopsidedness": {
+      "pearson": -0.003249909494417466,
+      "spearman": 0.0357142857142857,
+      "t": -0.007267056927347634
+    },
+    "things_bisymFlow": {
+      "pearson": 0.0804166745723855,
+      "spearman": 0.25,
+      "t": 0.18040141064822052
+    }
+  },
+  "bestComposite": {
+    "name": "c3 alone",
+    "r": 0.2112394069006436,
+    "rs": 0.3214285714285714
+  },
+  "meanRunBridge": {
+    "vsLopsidedness": -0.8284896655049757,
+    "vsBisymFlow": -0.8310794496436414,
+    "vsNcmFrac": -0.8206280507699714,
+    "strongBridge": true
+  },
+  "addsOverMR": {
+    "r": 0.16020797215591873,
+    "rs": 0.1428571428571429
+  },
+  "rcWigLegacy": {
+    "meanAlignMR": 0.3579046227813931,
+    "meanAlignWig": 0.2105379199954825,
+    "mrBetter": true
+  },
+  "pairwise": {
+    "concordance": 13,
+    "total": 21,
+    "pct": 61.904761904761905
+  },
+  "varianceBudget": {
+    "residRMS": 0.15722703033900082,
+    "r2": 0.04462208702773568
+  },
+  "verdict": "PARTIAL"
+}
