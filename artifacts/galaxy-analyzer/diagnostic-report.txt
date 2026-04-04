@@ -5812,3 +5812,31 @@ RESULT: ALL FAIL — INTERNAL STRUCTURE DOOR CLOSED
   Resolution requires external data (IFU, multi-band, HI cubes).
 
 ================================================================================
+
+================================================================================
+  SECTION 83: PHASE 57 (NEW PROGRAM) — HI DEFICIENCY
+  Full formal test against frozen Baselines A and B
+================================================================================
+
+  Definition: DEF_HI = log(MHI_expected) - log(MHI_observed)
+  Expected from L3.6-MHI scaling (Denes+2014 formula on SPARC)
+  N = 56 galaxies
+
+  RESULTS:
+  Raw: r=0.216, t=1.63, p~0.11 (not significant even raw)
+  |logMHI alone: r=-0.015, t=-0.11 — COMPLETELY ABSORBED
+  |Baseline A: r=0.016, t=0.187 — DEAD
+  |Baseline B: r=0.072, t=0.871 — DEAD
+
+  LOO: gets WORSE for both A (-1.8pp) and B (-1.1pp)
+  Perm p: 0.849 (A), 0.394 (B)
+  Bootstrap CI: includes zero in both cases
+  Jackknife sign flips: 5/56 (A), 0/56 (B)
+
+  VERDICT: FAIL
+
+  KEY FINDING: r(HIdef, resid|logMHI) = -0.015
+  HI deficiency is a pure RECODING of logMHI (r=-0.593 between them).
+  Gas deficiency does NOT add information beyond raw gas mass.
+
+================================================================================

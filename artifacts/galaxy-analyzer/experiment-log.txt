@@ -2283,3 +2283,13 @@ FINAL VERDICT:
 - ~57% gap requires external data
 
 ================================================================================
+
+Section 94: Phase 57 (New Program) — HI Deficiency
+------------------------------------------------------
+Date: 2026-04-04
+VERDICT: FAIL
+Raw r=0.216 (p~0.11). After logMHI alone: r=-0.015 (ABSORBED).
+After BL A: r=0.016. After BL B: r=0.072. LOO gets worse.
+Perm p: 0.849/0.394. Bootstrap includes zero.
+HI deficiency = pure recoding of logMHI. Not a new physical dimension.
+
