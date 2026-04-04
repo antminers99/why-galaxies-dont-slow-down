@@ -5300,3 +5300,79 @@ RESULT: FAIL for genuine gas disk proxies. outerBst = mechanical artifact.
     Gas thickness/flaring does NOT explain a0 variation.
 
 ================================================================================
+
+================================================================================
+  SECTION 67: PHASE 46 — HI Extent (Last Gas/Kinematics Variable)
+  Version 46.0.0 — FAST PROTOCOL
+================================================================================
+
+RESULT: outerFrac PARTIAL. All genuine HI extent proxies FAIL.
+
+  8 proxies tested:
+
+  GENUINE HI EXTENT PROXIES (all FAIL/WEAK):
+    logRHI:      |BL t=0.9 WEAK. r=0.96 with MHI (proxy for mass!)
+    RHI/Rd:      |BL t=0.2 WEAK
+    Rmax/Rd:     |BL t=0.1 WEAK
+    Sig_HI:      |BL t=0.9 FAIL-FAST
+    MHI/LB:      |BL t=0.2 FAIL-FAST (= gas/star from Phase 45)
+    Rmax/RHI:    |BL t=0.1 WEAK
+    logRmax:     |BL t=0.5 WEAK
+
+  BORDERLINE:
+    outerFrc:    |BL t=1.7, LOO 31.6%, circ=LOW
+      Raw: r=-0.281 t=2.2 (more outer pts → lower a0)
+      |newBL: r=-0.236 t=1.7 MARGINAL
+      |newBL+Vflat: r=-0.245 t=1.8 MARGINAL
+      Perm p=0.079 (NOT significant at 0.05)
+      Bootstrap: [-0.465, -0.001] barely excludes zero
+      Jackknife: 0 flips, SD=0.017
+
+  ASSESSMENT: outerFrac PARTIAL
+    Negative direction makes sense: more outer sampling → better
+    constrained flat part → possibly lower a0. Related to nPts (Ph44).
+    But deep tests not strong enough for CONFIRMED.
+    NOT adding to baseline.
+
+================================================================================
+
+================================================================================
+  SECTION 68: GAS/KINEMATICS DOOR — CLOSED
+  Combined results from Phases 40-46
+================================================================================
+
+  FINAL SCORECARD:
+
+  Phase 40 — sigma_gas:        FAIL
+    σ/Vflat = 1/Vflat, r=-1.00 collinearity.
+
+  Phase 41 — non-circular:     wigRatio CONFIRMED ★
+    |BL r=0.285 t=2.1, perm p=0.036*, boot [0.045,0.473],
+    survives Vflat (t=2.4). LOW circularity.
+    maxJump PARTIAL.
+
+  Phase 42 — bar strength:     PARTIAL
+    innerRise marginal. External proxies FAIL despite 55% barred.
+
+  Phase 43 — spiral/warp:      outerOsc PARTIAL (suppressor)
+    Raw t=0.8 → |BL t=2.7, perm p=0.006***. Strong suppressor.
+    Boot excludes zero. But raw signal absent.
+
+  Phase 44 — beam smearing:    nPts borderline
+    Fast 3/3 but perm p=0.075, boot crosses zero.
+    KEY NEGATIVE: distance/beam/Q/angSize all FAIL.
+
+  Phase 45 — gas disk thick:   FAIL
+    h_gas=1/Sigma0 (already in BL). All genuine FAIL.
+
+  Phase 46 — HI extent:        outerFrac PARTIAL
+    |BL t=1.7, LOO 31.6%, perm p=0.079, boot barely excl zero.
+
+  ════════════════════════════════════════════
+  DOOR VERDICT: CLOSED
+  Only wigRatio independently CONFIRMED.
+  outerOsc, nPts, outerFrac are PARTIAL/borderline.
+  Baseline unchanged: 27.8%
+  ════════════════════════════════════════════
+
+================================================================================

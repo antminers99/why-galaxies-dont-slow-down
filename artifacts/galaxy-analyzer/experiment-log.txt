@@ -2019,3 +2019,31 @@ Gas disk thickness: FAIL
   Baseline unchanged: MHI + wig + env + Sigma0_bar = 27.8%
 
 ================================================================================
+
+Section 79: Phase 46 — HI Extent + Gas/Kinematics Door CLOSED
+------------------------------------------------------
+Date: 2026-04-04
+Version: 46.0.0
+
+HI extent: outerFrac PARTIAL (perm p=0.079, boot barely excl zero).
+  All genuine HI size proxies FAIL.
+
+  ═══════════════════════════════════════
+  GAS/KINEMATICS DOOR: CLOSED
+  ═══════════════════════════════════════
+
+  Confirmed from this door: wigRatio (only)
+  Partial: outerOsc (suppressor), innerRise (bar),
+           nPts (borderline), outerFrac (borderline)
+
+  ALL FIVE DOORS NOW CLOSED:
+    1. Galaxy History      → MHI CONFIRMED
+    2. Environment         → envCode CONFIRMED (weak)
+    3. Cosmic Context      → FAIL
+    4. Dark Matter Halo    → Sigma0_bar CONFIRMED (reclassified baryon)
+    5. Gas/Kinematics      → wigRatio CONFIRMED
+
+  Baseline: MHI + rcWiggliness + envCode + Sigma0_bar = 27.8%
+  Candidate addition: wigRatio → ~31.8% (Phase 41 flagged)
+
+================================================================================

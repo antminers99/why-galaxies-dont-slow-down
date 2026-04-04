@@ -1,0 +1,108 @@
+{
+  "version": "46.0.0",
+  "timestamp": "2026-04-04T16:24:10.428Z",
+  "nGalaxies": 56,
+  "baseline": {
+    "gc": 27.8
+  },
+  "proxies": [
+    {
+      "name": "logRHI",
+      "circ": "LOW",
+      "note": "absolute HI radius",
+      "rawR": -0.357,
+      "rawT": 2.8,
+      "newBLr": 0.127,
+      "newBLt": 0.9,
+      "looGC": 26.2,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "RHI/Rd",
+      "circ": "ZERO",
+      "note": "HI extent / stellar disk",
+      "rawR": 0.171,
+      "rawT": 1.3,
+      "newBLr": 0.029,
+      "newBLt": 0.2,
+      "looGC": 25.1,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Rmax/Rd",
+      "circ": "LOW",
+      "note": "RC extent / stellar disk",
+      "rawR": 0.27,
+      "rawT": 2.1,
+      "newBLr": 0.019,
+      "newBLt": 0.1,
+      "looGC": 25.6,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "Sig_HI",
+      "circ": "ZERO",
+      "note": "HI surface density",
+      "rawR": -0.074,
+      "rawT": 0.5,
+      "newBLr": -0.127,
+      "newBLt": 0.9,
+      "looGC": 26.2,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "MHI/LB",
+      "circ": "ZERO",
+      "note": "gas richness",
+      "rawR": 0.104,
+      "rawT": 0.8,
+      "newBLr": -0.026,
+      "newBLt": 0.2,
+      "looGC": 25.7,
+      "adds": false,
+      "verdict": "FAIL-FAST"
+    },
+    {
+      "name": "Rmax/RHI",
+      "circ": "LOW",
+      "note": "RC coverage of HI",
+      "rawR": 0.22,
+      "rawT": 1.7,
+      "newBLr": -0.012,
+      "newBLt": 0.1,
+      "looGC": 25.7,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "logRmax",
+      "circ": "LOW",
+      "note": "absolute RC extent",
+      "rawR": -0.262,
+      "rawT": 2,
+      "newBLr": 0.067,
+      "newBLt": 0.5,
+      "looGC": 26.3,
+      "adds": false,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "outerFrc",
+      "circ": "LOW",
+      "note": "fraction outer RC pts",
+      "rawR": -0.281,
+      "rawT": 2.2,
+      "newBLr": -0.236,
+      "newBLt": 1.7,
+      "looGC": 31.6,
+      "adds": true,
+      "verdict": "PROMISING"
+    }
+  ],
+  "bestProxy": "outerFrc",
+  "doorStatus": "CLOSED"
+}
