@@ -1,0 +1,77 @@
+{
+  "phase": "65",
+  "title": "Processing / Infall Proxy Hunt",
+  "residualSource": "B″ on N=45",
+  "candidates": [
+    {
+      "name": "logRPsusc",
+      "desc": "log(MHI/(Vflat²·Rd)) — RP susceptibility",
+      "n": 45,
+      "rawR": -0.10034527523613336,
+      "rawT": -0.6613460016906259,
+      "mhostCtrlR": -0.10101695862592464,
+      "mhostCtrlT": -0.6658183541263509,
+      "perpR": -0.12207845502250152,
+      "perpT": -0.8065546267043715,
+      "looBase": 49.67979849340603,
+      "looAug": 47.86307724542469,
+      "looDelta": -1.8167212479813415,
+      "tInModel": -0.7481702258852857,
+      "permP": 0.4704,
+      "bootCI": [
+        -0.20136759599591333,
+        0.12097573372050234
+      ],
+      "exclZero": false,
+      "jackFlips": 0,
+      "robustness": 1,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "HI_deficiency",
+      "desc": "HI deficiency (obs-expected)",
+      "n": 45,
+      "rawR": -0.02532212355327061,
+      "rawT": -0.166101530020827,
+      "mhostCtrlR": -0.025555005098636518,
+      "mhostCtrlT": -0.16763011998130567,
+      "perpR": -0.045114006504837705,
+      "perpT": -0.2961338344175971,
+      "looBase": 49.67979849340603,
+      "looAug": 47.03655919134317,
+      "looDelta": -2.6432393020628595,
+      "tInModel": -0.27469747299576913,
+      "permP": 0.7776,
+      "bootCI": [
+        -0.3409400395606024,
+        0.23414519561475128
+      ],
+      "exclZero": false,
+      "jackFlips": 3,
+      "robustness": 0,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "logRHI/Rd",
+      "desc": "log(RHI/Rdisk) — gas truncation",
+      "n": 44,
+      "rawR": 0.03343093928597796,
+      "rawT": 0.21677842146704646,
+      "perpR": 0.03437692159806529,
+      "perpT": 0.2229196740222282,
+      "verdict": "FAIL"
+    },
+    {
+      "name": "procScore",
+      "desc": "HI_def - log(RHI/Rd) — processing composite",
+      "n": 44,
+      "rawR": -0.023409832564262562,
+      "rawT": -0.15175464265009136,
+      "perpR": -0.037482699704083015,
+      "perpT": -0.24308647999150856,
+      "verdict": "FAIL"
+    }
+  ],
+  "verdict": "NO_PROCESSING_SIGNAL",
+  "conclusion": "No available processing proxy explains B″ residual structure"
+}
