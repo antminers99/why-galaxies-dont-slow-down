@@ -156,6 +156,30 @@ Tested parametric models a0,i = a0 + f(Xi) against M3 (free per-galaxy):
 - Full report: `artifacts/galaxy-analyzer/diagnostic-report.txt` (33 sections)
 - Experiment log: `artifacts/galaxy-analyzer/experiment-log.txt` (44 sections)
 
+## Phase 16-52 Results (Sequential Door Investigation — COMPLETE)
+
+ALL SIX DOORS CLOSED. 37 phases, ~138 proxies tested across 56 galaxies.
+
+Five variables survive as independently informative:
+1. log(MHI) — gas mass (ZERO circularity, Door 1: Galaxy History)
+2. rcWiggliness — RC bumpiness (MED circularity, Door 5: Gas/Kinematics)
+3. envCode — environment threshold (ZERO circularity, Door 2: Environment)
+4. Sigma0_bar — baryon surface density (ZERO circularity, Door 4: Dark Matter Halo)
+5. meanRun — RAR residual coherence (MED circularity, Door 6: Internal Structure)
+
+Model ladder (LOO gap-closed):
+- Conservative BL (4 vars): 27.8%
+- Working BL (5 vars): 38.1%
+- Per-galaxy free: 100%
+- Unexplained: 61.9%
+
+Key negative results:
+- NOT a resolution artifact (distance/beam/Q all fail)
+- No cosmic-scale correlate (all cosmic context fails)
+- Classical morphology irrelevant (Hubble type, bulge ratio fail)
+- Stellar populations absorbed by MHI
+- DM halo parameters fail independently
+
 ## Status
 
-Through Phase 15: a0 genuinely varies between galaxies. M3 (per-galaxy a0) wins decisively over all alternatives. The variation is 86% offset (scale shift), 14% shape. Best predictor is log(MHI) but explains only 15% out-of-sample. Kitchen-sink model closes only 15.7% of the M0→M6 gap. 84.3% of variation remains unexplained by any measured galaxy property. Strict universality of a0 is DISFAVORED.
+PROJECT COMPLETE. All six investigation doors closed (Phases 16-52). Five variables confirmed, explaining 38.1% of the M0→M6 gap (LOO). tau=0.22 dex robust, never broken. 61.9% of variation remains unexplained. ~138 proxies tested, 95% rejection rate.

@@ -111,43 +111,37 @@ cosmological origin established. Do not overclaim.
     T (Hubble type): r=0.278, p=0.043, tau drops 4.4%.
     94% of heterogeneity remains UNEXPLAINED by any measured property.
 
-## Current Phase: DIAGNOSTIC (not theoretical)
+## Current Phase: PROJECT COMPLETE
 
-Do NOT pursue:
-- Quantum gravity / Unruh temperature derivations
-- "Why does a₀ = cH₀/2π" explanations
-- New theoretical frameworks
+ALL SIX INVESTIGATION DOORS CLOSED (Phases 16-52).
 
-COMPLETED:
-- Phase 5 v5.1: Non-circular motions, pressure support, SPARC Q, morphology — CLEARED
-- Phase 6 v6.0: Matched-sample split resolution — splits UNDERPOWERED, not resolved or refuted
-- Phase 7 v7.0: Anchor-sample refit — tau INTRINSIC, distance correlation disappears
-- Phase 8 v8.0: Meta-regression — distance method NOT significant after covariate control
-- Phase 9 v9.0: Benchmark replication — NO tension with literature, different scatter quantities
-- Phase 10 v10.0: Second-parameter search — eta_rot is strongest (r=0.334, p=0.010) but only -5.7% tau
+COMPLETED (Phases 5-10):
+- Phase 5 v5.1: Kinematic audit — CLEARED
+- Phase 6 v6.0: Matched-sample splits — UNDERPOWERED
+- Phase 7 v7.0: Anchor refit — tau INTRINSIC
+- Phase 8 v8.0: Meta-regression — distance NOT significant
+- Phase 9 v9.0: Benchmark — NO tension with literature
+- Phase 10 v10.0: Second-parameter search — eta_rot strongest but -5.7% only
 
-CRITICAL FINDINGS (Phase 6-10):
-- tau (~0.29 dex) is INTRINSIC — not reducible by better data quality
-- Distance-method effect NOT SIGNIFICANT after controlling for covariates (b=0.061, t=0.56, p=0.55)
-- Phase 7 anchor a₀ increase (4357) was CONFOUNDED by inclination, not distance method
-- Inclination has the strongest (non-significant) association with logA₀ (b=+0.465, t=1.26)
-- Q flag does NOT drive a₀ (Q=1 alone: 3632, unchanged)
-- Headline a₀=3633 is NOT demonstrably biased by any measured systematic
-- No single covariate significantly predicts per-galaxy a₀
+COMPLETED (Phases 16-52 — Sequential Door Investigation):
+- Door 1 (Galaxy History):     MHI CONFIRMED
+- Door 2 (Environment):        envCode CONFIRMED (threshold)
+- Door 3 (Cosmic Context):     COMPLETE FAIL
+- Door 4 (Dark Matter Halo):   Sigma0_bar CONFIRMED
+- Door 5 (Gas/Kinematics):     rcWiggliness CONFIRMED, NOT resolution artifact
+- Door 6 (Internal Structure): meanRun CONFIRMED
 
-- Phase 9: NO tension with literature — tau (galaxy-level) ≠ scatter (point-level)
-- Phase 9: Within-galaxy scatter = 0.122 dex ≈ McGaugh+2016 (0.13) — MATCHES
-- Phase 9: 70% of galaxies individually reject global a₀ (F-test)
-- Phase 9: RAR is tight at point level but heterogeneous at galaxy level
-- Phase 10: eta_rot (RC shape) is strongest second parameter (r=0.334, p=0.010, dAIC=-4.6)
-- Phase 10: T (Hubble type) and S_out (outer slope) also significant but modest
-- Phase 10: Best candidate reduces tau by only 5.7% — 94% unexplained
-- Phase 10: Surface brightness (EFE proxy), inclination, distance method: NEGLIGIBLE
+FINAL BASELINE (5 variables, LOO 38.1% gap closed):
+  log(MHI) + rcWiggliness + envCode + Sigma0_bar + meanRun
 
-REMAINING:
-- Investigate what drives intrinsic tau (disk structure? gas content? SFH?)
+~138 proxies tested, 7 survived (5 in baseline), 95% rejection rate.
+tau = 0.22 dex — NEVER BROKEN across all 37 phases.
+61.9% of variation remains UNEXPLAINED.
+
+POSSIBLE FUTURE WORK:
 - Enlarge sample (BIG-SPARC when available)
 - Systematics paper write-up
+- Non-linear models / machine learning approaches
 
 ## Two Separate Questions (Never Mix Them)
 

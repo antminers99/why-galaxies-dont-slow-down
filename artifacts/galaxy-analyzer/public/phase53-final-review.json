@@ -1,0 +1,107 @@
+{
+  "version": "53.0.0",
+  "timestamp": "2026-04-04T16:57:49.123Z",
+  "nGalaxies": 56,
+  "a0": 3633,
+  "tau": 0.22,
+  "confirmedVariables": [
+    {
+      "name": "log(MHI)",
+      "door": "Galaxy History",
+      "circ": "ZERO",
+      "physics": "Gas-rich galaxies tend toward lower a0"
+    },
+    {
+      "name": "rcWiggliness",
+      "door": "Gas/Kinematics",
+      "circ": "MED",
+      "physics": "Bumpier rotation curves → higher a0"
+    },
+    {
+      "name": "envCode",
+      "door": "Environment",
+      "circ": "ZERO",
+      "physics": "Cluster galaxies have systematically different a0"
+    },
+    {
+      "name": "Sigma0_bar",
+      "door": "Dark Matter Halo",
+      "circ": "ZERO",
+      "physics": "Higher baryon surface density → higher a0"
+    },
+    {
+      "name": "meanRun",
+      "door": "Internal Structure",
+      "circ": "MED",
+      "physics": "More coherent RAR deviations → higher a0"
+    }
+  ],
+  "conservativeBL": {
+    "vars": 4,
+    "gc": 27.8
+  },
+  "workingBL": {
+    "vars": 5,
+    "gc": 38.1
+  },
+  "unexplained": 61.9,
+  "totalProxiesTested": 138,
+  "survived": 7,
+  "doorsOpened": 6,
+  "doorsClosed": 6,
+  "phasesCompleted": "16-52",
+  "doors": [
+    {
+      "num": 1,
+      "name": "Galaxy History",
+      "phases": "16-22",
+      "confirmed": [
+        "MHI (gas mass)"
+      ],
+      "productive": true
+    },
+    {
+      "num": 2,
+      "name": "Environment",
+      "phases": "23-29",
+      "confirmed": [
+        "envCode (cluster/group/field threshold)"
+      ],
+      "productive": true
+    },
+    {
+      "num": 3,
+      "name": "Cosmic Context",
+      "phases": "30-35",
+      "confirmed": [],
+      "productive": false
+    },
+    {
+      "num": 4,
+      "name": "Dark Matter Halo",
+      "phases": "36-40",
+      "confirmed": [
+        "Sigma0_bar (baryon surface density)"
+      ],
+      "productive": true
+    },
+    {
+      "num": 5,
+      "name": "Gas/Kinematics",
+      "phases": "41-46",
+      "confirmed": [
+        "rcWiggliness (rotation curve bumpiness)"
+      ],
+      "productive": true
+    },
+    {
+      "num": 6,
+      "name": "Internal Structure",
+      "phases": "47-52",
+      "confirmed": [
+        "meanRun (RAR residual coherence length)"
+      ],
+      "productive": true
+    }
+  ]
+}
