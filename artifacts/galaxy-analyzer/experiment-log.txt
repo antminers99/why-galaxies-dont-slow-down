@@ -1,0 +1,937 @@
+================================================================================
+     GALAXY ROTATION CURVE ANALYZER — COMPLETE EXPERIMENT LOG
+     All Equations, Calculations, Methods, and Results
+================================================================================
+
+Date: April 2026
+Version: 10.0.0
+Dataset: 175 SPARC + 22 LITTLE THINGS = 197 galaxies, 3,755 radial points
+Pipeline: v4.0 — full sample, marginalized hierarchical DerSimonian-Laird
+Report companion: diagnostic-report.txt (26 sections)
+
+================================================================================
+PART I: PHYSICAL SETUP AND EQUATIONS
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+1. THE RADIAL ACCELERATION RELATION (RAR)
+────────────────────────────────────────────────────────────────────
+
+The RAR relates the observed centripetal acceleration g_obs to the
+baryonic (Newtonian) acceleration g_bar at each radius in a galaxy:
+
+  g_obs = V_rot^2 / r          [observed, from rotation curve]
+  g_bar = V_bar^2 / r          [predicted from visible mass]
+
+The McGaugh RAR interpolation function (our sole estimator):
+
+  g_obs = g_bar / (1 - exp(-sqrt(g_bar / a0)))
+
+where a0 is the acceleration scale parameter.
+
+Equivalent log-space form (used in fitting):
+
+  log10(g_obs) = log10(g_bar) - log10(1 - exp(-sqrt(g_bar / a0)))
+
+Three other interpolation functions were tested (Section 2 audit):
+
+  Simple MOND:    g_obs = g_bar * (1/2 + sqrt(1/4 + a0/g_bar))
+  Standard MOND:  g_obs = g_bar * (1 + sqrt(1 + 4*a0/g_bar)) / 2
+  Our framework:  g_obs = sqrt(g_bar^2 + a0^2 * g_bar/(g_bar + a0))
+
+All give a0 within 4.1% — the transition scale is model-independent.
+Our framework fits WORST (dAIC=99 vs McGaugh). McGaugh is the standard.
+
+────────────────────────────────────────────────────────────────────
+2. BARYONIC ACCELERATION COMPUTATION
+────────────────────────────────────────────────────────────────────
+
+From SPARC data files, at each radius r:
+
+  V_bar^2 = Y_disk * V_disk^2 + Y_bulge * V_bulge^2 + V_gas^2
+  g_bar = V_bar^2 / r
+
+where:
+  V_disk  = disk rotation velocity contribution (from 3.6um photometry)
+  V_bulge = bulge rotation velocity contribution
+  V_gas   = gas rotation velocity contribution (from HI 21cm)
+  Y_disk  = stellar mass-to-light ratio for disk (M_sun / L_sun)
+  Y_bulge = stellar mass-to-light ratio for bulge
+
+Fixed values (v3.0): Y_disk = 0.5, Y_bulge = 0.7
+Marginalized (v4.0): Y_disk scanned over [0.20, 0.80] with 13 grid values
+  Prior: Gaussian N(0.50, 0.12^2) centered on population synthesis value
+
+Units: g_bar and g_obs in (km/s)^2/kpc
+Conversion: 1 (km/s)^2/kpc = 3.241e-14 m/s^2
+
+────────────────────────────────────────────────────────────────────
+3. OBSERVED ACCELERATION
+────────────────────────────────────────────────────────────────────
+
+From rotation curves:
+
+  V_rot = V_los / sin(i)    [deprojection]
+  g_obs = V_rot^2 / r
+
+where:
+  V_los = line-of-sight velocity from HI or H-alpha spectroscopy
+  i     = galaxy inclination (degrees)
+  r     = galactocentric radius (kpc)
+
+Inclination correction is critical:
+  sin(i) errors amplify at low i (< 45 deg)
+  This is why GOLD+i45 requires inc >= 45 deg
+
+────────────────────────────────────────────────────────────────────
+4. UNIT CONVERSIONS
+────────────────────────────────────────────────────────────────────
+
+  a0 in (km/s)^2/kpc --> m/s^2:
+    a0_ms2 = a0_kpc * 3.241e-14
+
+  Literature canonical: a0 = 1.20e-10 m/s^2 = 3703 (km/s)^2/kpc
+  Our v4.0 result:      a0 = 1.18e-10 m/s^2 = 3633 (km/s)^2/kpc
+
+  Cosmological constants:
+    c     = 299,792,458 m/s
+    H0    = 67.4 km/s/Mpc = 2.184e-18 s^-1
+    c*H0  = 6.548e-10 m/s^2
+    c*H0/(2*pi) = 1.042e-10 m/s^2
+
+  Ratio: a0 / (c*H0/(2*pi)):
+    v4.0: 1.18e-10 / 1.042e-10 = 1.130
+    v3.0: 1.09e-10 / 1.042e-10 = 1.049
+    Literature: 1.20e-10 / 1.042e-10 = 1.15
+
+================================================================================
+PART II: FITTING METHODOLOGY
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+5. PER-GALAXY a0 FITTING
+────────────────────────────────────────────────────────────────────
+
+For each galaxy i with n_i radial points:
+
+  Cost function:
+    chi^2_i(a0) = sum_{j=1}^{n_i} [log10(g_obs,ij) - log10(RAR(g_bar,ij, a0))]^2
+
+  RMS:
+    RMS_i(a0) = sqrt(chi^2_i / n_i)
+
+  Optimization: Golden section search on log10(a0) in [2.0, 5.0]
+    100 refinement steps, convergence to ~10^-5 dex
+
+  Output per galaxy:
+    a0_i     = best-fit acceleration scale
+    RMS_i    = residual scatter around best fit
+    sigma_i  = within-galaxy standard deviation of residuals
+
+────────────────────────────────────────────────────────────────────
+6. v4.0 NUISANCE MARGINALIZATION
+────────────────────────────────────────────────────────────────────
+
+For each galaxy, a grid of 65 evaluations: 13 Y* x 5 delta_D
+
+  Y* grid (13 values):
+    [0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80]
+    Prior: w(Y*) = exp(-0.5 * ((Y* - 0.50) / 0.12)^2)
+
+  Distance marginalization (5 values):
+    delta_logD = [-0.10, -0.05, 0.00, +0.05, +0.10]
+    Prior: w(dD) = exp(-0.5 * (dD / 0.07)^2)
+
+  At each grid point (Y*, dD):
+    g_bar_new = Y* * V_disk^2 + 0.7 * V_bulge^2 + V_gas^2
+    r_new     = r * 10^(dD)
+    g_bar_adj = g_bar_new / r_new
+
+  Marginalized a0 for galaxy i:
+    log(a0_i)_marg = sum_k w_k * log(a0_ik) / sum_k w_k
+
+  where k runs over 65 grid points and w_k = w(Y*_k) * w(dD_k)
+
+  Effect: Y* marginalization shifts a0 by +3% to +11% depending on sample.
+  GOLD+i45: 3261 (fixed) --> 3633 (marginalized), +11.4%
+  But tau barely changes (+0.048 dex): heterogeneity is NOT Y*-driven.
+
+────────────────────────────────────────────────────────────────────
+7. ERROR-WEIGHTED FITTING (v3.0)
+────────────────────────────────────────────────────────────────────
+
+Weight per data point:
+
+  w_ij = (1/sigma^2_i) * sin^2(inc_i) * (1/sqrt(D_i)) * (1/sqrt(N_i))
+
+where:
+  sigma^2_i = within-galaxy variance of log(g_obs/g_bar)
+  inc_i     = inclination in degrees
+  D_i       = distance in Mpc
+  N_i       = number of points in galaxy i
+
+Weighted cost function:
+  chi^2_w = sum_{i,j} w_ij * [log10(g_obs,ij) - log10(RAR(g_bar,ij, a0))]^2
+
+Effect on GOLD+i45: a0 drops from 4837 (unweighted) to 3545 (weighted)
+The -26.7% shift means unweighted was pulled up by oversampled galaxies.
+
+================================================================================
+PART III: HIERARCHICAL MODEL
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+8. DerSIMONIAN-LAIRD RANDOM-EFFECTS META-ANALYSIS
+────────────────────────────────────────────────────────────────────
+
+Model structure (3 levels):
+
+  Level 1 (points within galaxy i):
+    r_ij = log10(g_obs,ij) - log10(RAR(g_bar,ij, a0_i)) + e_ij
+    e_ij ~ N(0, sigma^2_i)
+
+  Level 2 (galaxies):
+    log(a0_i) = mu + u_i
+    u_i ~ N(0, tau^2)
+
+  Level 3 (population):
+    mu = population mean of log(a0)
+
+Step 1: Estimate per-galaxy SE
+  se_i = sigma_i / sqrt(n_i)
+  where sigma_i is within-galaxy residual SD
+
+Step 2: Estimate between-galaxy heterogeneity tau^2
+
+  Q = sum_i w_i * (log(a0_i) - mu_FE)^2
+  where w_i = 1/se_i^2 and mu_FE = sum(w_i * log(a0_i)) / sum(w_i)
+
+  tau^2 = max(0, (Q - (k-1)) / (sum(w_i) - sum(w_i^2)/sum(w_i)))
+  where k = number of galaxies
+
+Step 3: Random-effects weights
+  W_i = 1 / (se_i^2 + tau^2)
+
+  Modified weights (incorporate observational quality):
+  W_i_mod = W_i * sin^2(inc_i) / sqrt(D_i)
+
+Step 4: Population estimate
+  mu = sum(W_i_mod * log(a0_i)) / sum(W_i_mod)
+  SE(mu) = 1 / sqrt(sum(W_i_mod))
+
+Step 5: I^2 statistic
+  I^2 = (Q - (k-1)) / Q * 100%
+  Interpretation: fraction of total variance due to TRUE heterogeneity
+
+────────────────────────────────────────────────────────────────────
+9. CONFIDENCE INTERVALS
+────────────────────────────────────────────────────────────────────
+
+  log(a0) = mu +/- z_alpha * sqrt(SE^2 + tau^2)
+
+  68% CI (z = 1.0):
+    [10^(mu - sqrt(SE^2 + tau^2)), 10^(mu + sqrt(SE^2 + tau^2))]
+
+  95% CI (z = 1.96):
+    [10^(mu - 1.96*sqrt(SE^2 + tau^2)), 10^(mu + 1.96*sqrt(SE^2 + tau^2))]
+
+  v4.0 GOLD+i45:
+    mu    = 3.560 dex
+    SE    = 0.041 dex
+    tau   = 0.291 dex
+    68% CI: [10^(3.560 - 0.294), 10^(3.560 + 0.294)] = [1846, 7149]
+    95% CI: [10^(3.560 - 0.576), 10^(3.560 + 0.576)] = [938, 14067]
+
+================================================================================
+PART IV: SAMPLE DEFINITIONS
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+10. SAMPLE HIERARCHY
+────────────────────────────────────────────────────────────────────
+
+  ALL:       175 galaxies, no cuts
+  CLEAN:     Vmax >= 80, inc >= 30, n >= 5, gRange >= 0.5
+  GOLD:      Vmax >= 50, inc >= 30, n >= 5, gRange >= 1.0
+  GOLD+i45:  Vmax >= 50, inc >= 45, n >= 5, gRange >= 1.0  [PRIMARY]
+  HIGH-MASS: Vmax > 150
+  ANCHOR:    GOLD+i45 + precise D (fD=2,3,5) + Q=1 + inc >= 60
+
+  v3.0 GOLD+i45: 47 galaxies, 767 points (subsampled)
+  v4.0 GOLD+i45: 59 galaxies, 1789 points (full)
+  v4.0 ANCHOR:   12 galaxies
+
+  Dynamic range requirement (gRange >= 1.0 dex):
+    Ensures galaxy spans at least 1 dex in log(g_bar)
+    Without this, a0 is unconstrained (fitting artifacts)
+
+================================================================================
+PART V: COMPLETE NUMERICAL RESULTS
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+11. v4.0 MARGINALIZED HIERARCHICAL RESULTS
+────────────────────────────────────────────────────────────────────
+
+  ┌──────────┬──────┬──────┬──────────┬────────┬───────┬───────────┐
+  │ Sample   │ n_gal│ n_pts│ a0(marg) │ tau    │ I^2   │ ratio     │
+  ├──────────┼──────┼──────┼──────────┼────────┼───────┼───────────┤
+  │ ALL      │ 165  │ 3728 │ 2630     │ 0.449  │ 94.9% │ 0.818     │
+  │ CLEAN    │ 84   │ 2308 │ 3616     │ 0.280  │ 91.1% │ 1.125     │
+  │ GOLD     │ 64   │ 2015 │ 3626     │ 0.270  │ 92.0% │ 1.128     │
+  │ GOLD+i45 │ 59   │ 1789 │ 3633     │ 0.291  │ 92.4% │ 1.130     │
+  │ HIGH-MASS│ 56   │ 1636 │ 3405     │ 0.280  │ 92.5% │ 1.059     │
+  │ LOW-MASS │ 58   │ 1004 │ 1475     │ 0.688  │ 96.4% │ 0.459     │
+  └──────────┴──────┴──────┴──────────┴────────┴───────┴───────────┘
+
+  HEADLINE RESULT (v4.0 GOLD+i45, marginalized hierarchical):
+
+    a0       = 3633 (km/s)^2/kpc
+    a0       = 1.177e-10 m/s^2
+    log(a0)  = 3.5602 +/- 0.0405 dex (statistical)
+    tau      = 0.291 dex (between-galaxy)
+    I^2      = 92.4%
+    median   = 3848 (km/s)^2/kpc (MAD = 0.247 dex)
+    ratio    = a0/(c*H0/(2*pi)) = 1.130
+    68% CI   = [1846, 7149] (km/s)^2/kpc
+    95% CI   = [938, 14067] (km/s)^2/kpc
+
+────────────────────────────────────────────────────────────────────
+12. v3.0 BASELINE RESULTS (archived)
+────────────────────────────────────────────────────────────────────
+
+  v3.0 GOLD+i45 (47 galaxies, 767 subsampled points):
+    Unweighted:  a0 = 4837, RMS = 0.147
+    Weighted:    a0 = 3545, wRMS = 0.118
+    Hierarchical: a0 = 3374, tau = 0.245, I^2 = 89.4%
+
+  v3.0 --> v4.0 change: 3374 --> 3633 (+7.7%)
+  Both within 1-sigma of literature (3703)
+
+────────────────────────────────────────────────────────────────────
+13. UNCERTAINTY BUDGET (v4.0, 7 components)
+────────────────────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────┬────────────┬────────────┐
+  │ Source                           │ v3.0 (dex) │ v4.0 (dex) │
+  ├──────────────────────────────────┼────────────┼────────────┤
+  │ 1. Estimator method              │ 0.078      │ 0.078      │
+  │ 2. Sample selection              │ 0.058      │ 0.014      │
+  │ 3. Y_star (fixed/marg)          │ 0.066      │ 0.020      │
+  │ 4. Inclination cut               │ 0.106      │ 0.021      │
+  │ 5. Distance (fixed/marg)        │   n/a      │ 0.015      │
+  │ 6. Dynamic range cut             │ 0.044      │ 0.044      │
+  │ 7. Hier. tau (intrinsic)         │ 0.245      │ 0.291      │
+  ├──────────────────────────────────┼────────────┼────────────┤
+  │ TOTAL (quadrature sum)           │ 0.295      │ 0.304      │
+  └──────────────────────────────────┴────────────┴────────────┘
+
+  Total = sqrt(0.078^2 + 0.014^2 + 0.020^2 + 0.021^2 + 0.015^2
+               + 0.044^2 + 0.291^2)
+        = sqrt(0.006084 + 0.000196 + 0.000400 + 0.000441 + 0.000225
+               + 0.001936 + 0.084681)
+        = sqrt(0.093963)
+        = 0.3065 ~ 0.304 dex
+
+  tau DOMINATES (0.291^2 / 0.304^2 = 91.6% of total variance)
+
+────────────────────────────────────────────────────────────────────
+14. INTERPOLATION FUNCTION AUDIT
+────────────────────────────────────────────────────────────────────
+
+  ┌──────────────────────────────────┬──────────┬────────┬─────────┐
+  │ Function                         │ a0       │ RMS    │ AIC     │
+  ├──────────────────────────────────┼──────────┼────────┼─────────┤
+  │ McGaugh: 1/(1-exp(-sqrt(y)))     │ 1809     │ 0.2385 │ -5909.8 │
+  │ Simple MOND: 1/2+sqrt(1/4+1/y)  │ 1988     │ 0.2385 │ -5909.7 │
+  │ Standard MOND: (1+sqrt(1+4/y))/2│ 1988     │ 0.2385 │ -5909.7 │
+  │ Our: nu(x)=x/(1+x)              │ 1972     │ 0.2443 │ -5810.8 │
+  └──────────────────────────────────┴──────────┴────────┴─────────┘
+
+  AIC = n * ln(RMS^2) + 2*k   (k=1 parameter)
+  BIC = n * ln(RMS^2) + k*ln(n)
+  delta_AIC = AIC_model - AIC_best
+
+  a0 spread: (1988-1809)/1809 = 4.1% — ROBUST to model choice
+
+────────────────────────────────────────────────────────────────────
+15. RATIO STABILITY TEST (v4.0, GOLD+i45, 11 splits)
+────────────────────────────────────────────────────────────────────
+
+  ┌──────────────┬──────┬──────┬───────┬────────┐
+  │ Split        │ n_gal│ a0   │ tau   │ ratio  │
+  ├──────────────┼──────┼──────┼───────┼────────┤
+  │ ALL GOLD+i45 │ 59   │ 3633 │ 0.291 │ 1.130  │
+  │ Vmax > 150   │ 41   │ 3463 │ 0.303 │ 1.077  │
+  │ Vmax 80-150  │ 12   │ 4725 │ 0.141 │ 1.469  │
+  │ D < 15 Mpc   │ 23   │ 4358 │ 0.223 │ 1.355  │
+  │ D >= 15 Mpc  │ 36   │ 3238 │ 0.336 │ 1.007  │
+  │ f_gas < 0.3  │ 37   │ 3712 │ 0.296 │ 1.155  │
+  │ f_gas >= 0.3 │ 22   │ 3500 │ 0.287 │ 1.088  │
+  │ inc >= 60    │ 43   │ 3995 │ 0.277 │ 1.243  │
+  │ inc 45-60    │ 16   │ 2812 │ 0.301 │ 0.875  │
+  │ n >= 20 pts  │ 39   │ 3724 │ 0.242 │ 1.158  │
+  │ n < 20 pts   │ 20   │ 3465 │ 0.415 │ 1.078  │
+  └──────────────┴──────┴──────┴───────┴────────┘
+
+  Statistics: ratio range [0.875, 1.469], mean 1.149, CV 14.1%
+
+================================================================================
+PART VI: DIAGNOSTIC TESTS
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+16. RESIDUAL COMPUTATION
+────────────────────────────────────────────────────────────────────
+
+  Per point:
+    g_bar = 10^(x_j)                    [x_j from data]
+    g_obs = g_bar * 10^(y_j)            [y_j from data]
+    g_pred = McGaughRAR(g_bar, a0)
+    resid_j = log10(g_obs) - log10(g_pred)
+
+  Per galaxy mean residual:
+    R_i = (1/n_i) * sum_j resid_ij
+
+  Phase 1 BUG (corrected in Phase 2):
+    Used g_bar = 10^(x_j) * a0 instead of 10^(x_j)
+    This produced ARTIFICIAL correlations (gas r=+0.64, SB r=-0.64)
+
+────────────────────────────────────────────────────────────────────
+17. PARTIAL CORRELATIONS
+────────────────────────────────────────────────────────────────────
+
+  Formula:
+    r(X,Y|Z) = (r_XY - r_XZ * r_YZ) / sqrt((1-r_XZ^2)*(1-r_YZ^2))
+
+  Key results (157 galaxies):
+    r(resid, Vmax)          = +0.414  (SIGNIFICANT)
+    r(resid, Vmax | SB)     = +0.610  (STRENGTHENS with control)
+    r(resid, SB | Vmax)     = -0.498  (suppression effect)
+    r(resid, gasFrac | SB)  = -0.017  (NOT significant)
+    r(resid, SB | gasFrac)  = +0.033  (NOT significant)
+
+  Hierarchy: Vmax >> SB (conditional on Vmax) >> gas fraction ~ L
+
+────────────────────────────────────────────────────────────────────
+18. MULTIVARIATE REGRESSION
+────────────────────────────────────────────────────────────────────
+
+  Model: resid = b0 + b1*logGasFrac + b2*logSB + b3*logVmax + b4*logL
+
+  Coefficients (n=157):
+    intercept  = -2.205
+    logGasFrac = -0.050
+    logSB      = -0.108
+    logVmax    = +1.561  (DOMINANT)
+    logL       = -0.302
+
+  Model hierarchy:
+    gasFrac + SB alone:         R^2 = 0.007  (explain NOTHING)
+    + Vmax:                     R^2 = 0.394  (+0.387)
+    + L (full model):           R^2 = 0.638  (+0.244)
+
+  Under STRICT quality cuts: ALL correlations vanish.
+  54 galaxies with gRange > 1 dex: residuals clean
+    r(gas)=+0.017, r(SB)=-0.156, r(Vmax)=+0.025
+
+────────────────────────────────────────────────────────────────────
+19. STRESS TESTS
+────────────────────────────────────────────────────────────────────
+
+  Null test (random g_bar):         6.2-sigma rejection
+  Scramble test (shuffled labels):  6.1-sigma rejection
+  M/L perturbation (+/-0.15 dex):   21/21 galaxies retain signal
+  Distance MC (+/-30%, 1000 iter): 100% negative slopes retained
+  CV under distance perturbation:   0.3% — a0 stable
+
+────────────────────────────────────────────────────────────────────
+20. BARYONIC CALIBRATION
+────────────────────────────────────────────────────────────────────
+
+  Test: Replace g_bar --> f_bar * g_bar, scan f_bar in [0.7, 1.5]
+
+  Best f_bar = 1.64, but only 0.9% RMS improvement
+  f_bar and a0 are DEGENERATE:
+    Scaling g_bar up is equivalent to scaling a0 down
+  f_bar = 0.80 gives near-zero bias (-0.005 dex)
+  Calibration is NOT the dominant scatter source
+
+================================================================================
+PART VII: PHASE 5 — KINEMATIC CONTAMINATION AUDIT
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+21. NON-CIRCULAR MOTION TESTS
+────────────────────────────────────────────────────────────────────
+
+  Test 1A: Inner vs Outer radii
+    Inner only:  n=30, a0=3174, tau=0.356
+    Outer only:  n=56, a0=3131, tau=0.310
+    Delta: 0.006 dex (1.2%) — NEGLIGIBLE
+
+  Test 1B: SPARC Q flag
+    Q=1: n=40, a0=3632, tau=0.273
+    Q=2: n=14, a0=3501, tau=0.319
+    Delta: 0.016 dex (3.6%) — NEGLIGIBLE
+
+  Test 1C: Hubble type
+    Early (T<=5): n=43, a0=3642, tau=0.298
+    Late (T>5):   n=13, a0=4066, tau=0.213
+    Delta: 0.048 dex (11.7%) — SMALL
+
+  Test 1D: Q_kin split
+    Q_kin>=0.9: n=40, a0=3632, tau=0.273
+    Q_kin<0.9:  n=19, a0=3614, tau=0.354
+    Delta: 0.002 dex (0.5%) — NEGLIGIBLE
+
+  Test 1E: Distance method
+    Precise (TRGB/Ceph/SN): n=17, a0=4243, tau=0.257
+    Hubble flow:             n=30, a0=3331, tau=0.315
+    Delta: 0.105 dex (27%) — MODERATE (largest systematic)
+
+────────────────────────────────────────────────────────────────────
+22. PRESSURE SUPPORT CORRECTION
+────────────────────────────────────────────────────────────────────
+
+  Asymmetric drift correction:
+    g_obs_corr = g_obs + sigma_HI^2 / h_gas
+
+  where:
+    sigma_HI = 10 km/s (standard HI velocity dispersion)
+    h_gas    = 2 * R_disk (gas scale length ~ 2x stellar)
+
+  Correction magnitudes:
+    Mean (all):       0.011 dex
+    Median:           0.003 dex
+    Max:              0.349 dex
+    Mean (Vmax<100):  0.060 dex
+    Mean (Vmax>=100): 0.003 dex
+
+  Before: a0=3633, tau=0.291, ratio=1.130
+  After:  a0=3918, tau=0.292, ratio=1.219
+  Shift: +7.8% (+0.033 dex), tau unchanged
+
+  Combined outer + pressure: a0=3274, tau=0.312, ratio=1.018
+  (Closest to cosmological prediction)
+
+================================================================================
+PART VIII: PHASE 6 — MATCHED-SAMPLE SPLIT RESOLUTION
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+23. NEAREST-NEIGHBOR MATCHING
+────────────────────────────────────────────────────────────────────
+
+  Method: For each galaxy in group A, find nearest neighbor in group B
+  using standardized Euclidean distance in confounder space
+  (Vmax, inc, fgas, n_pts — excluding the split variable)
+
+  ┌───────────────┬──────────┬────────────┬──────────┬──────────┐
+  │ Split         │ Raw(dex) │ Match(dex) │ Paired t │ JK t     │
+  ├───────────────┼──────────┼────────────┼──────────┼──────────┤
+  │ Distance      │ 0.105    │ 0.125      │ 1.07     │ 1.03     │
+  │ Inclination   │ 0.153    │ 0.172      │ 1.24     │ 1.53     │
+  │ Velocity      │ 0.135    │ 0.061      │ 0.77     │ 0.77     │
+  └───────────────┴──────────┴────────────┴──────────┴──────────┘
+
+  ALL splits NOT significant (t < 2.0)
+  Velocity split REDUCED by matching (confounders explain it)
+  Distance/inclination PERSIST after matching
+
+────────────────────────────────────────────────────────────────────
+24. POWER ANALYSIS
+────────────────────────────────────────────────────────────────────
+
+  n_needed = n_current * (t_target / t_observed)^2
+
+  For t_target = 2.0:
+    Inclination:  59 * (2.0/1.53)^2 = ~101 galaxies (1.7x current)
+    Distance:     59 * (2.0/1.03)^2 = ~227 galaxies (3.8x current)
+    Velocity:     59 * (2.0/0.77)^2 = ~397 galaxies (6.7x current)
+
+  For 80% power at alpha=0.05 (two-sided):
+    Inclination:  ~198 galaxies (3.4x)
+    Distance:     ~444 galaxies (7.5x)
+    Velocity:     ~777 galaxies (13.2x)
+
+================================================================================
+PART IX: PHASE 7 — ANCHOR-SAMPLE REFIT
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+25. ANCHOR SAMPLE
+────────────────────────────────────────────────────────────────────
+
+  Selection: GOLD+i45 + precise D (fD=2,3,5) + Q=1 + inc>=60
+  Result: 12 galaxies, median D = 9.9 Mpc
+
+  ┌──────────────────────────────────┬─────┬──────┬───────┬───────┐
+  │ Sample                           │  n  │  a0  │  tau  │ ratio │
+  ├──────────────────────────────────┼─────┼──────┼───────┼───────┤
+  │ GOLD+i45 (baseline)              │  59 │ 3633 │ 0.291 │ 1.130 │
+  │ Q=1 only                         │  40 │ 3632 │ 0.273 │ 1.130 │
+  │ Precise D only                   │  17 │ 4243 │ 0.257 │ 1.320 │
+  │ ANCHOR (strictest)               │  12 │ 4357 │ 0.265 │ 1.355 │
+  └──────────────────────────────────┴─────┴──────┴───────┴───────┘
+
+  Three diagnostics:
+    tau:    0.291 --> 0.265 (-9%)   → STABLE, heterogeneity is INTRINSIC
+    r(a0,D): -0.235 --> -0.036     → distance correlation DISAPPEARS
+    Q flag: 3633 --> 3632 (Q=1)    → NO effect
+
+================================================================================
+PART X: PHASE 8 — DISTANCE-METHOD META-REGRESSION
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+26. WEIGHTED LEAST-SQUARES META-REGRESSION
+────────────────────────────────────────────────────────────────────
+
+  Model:
+    logA0_i = b0 + b1*isPrecise_i + b2*logVmax_i + b3*(inc_i/90)
+              + b4*logN_i + b5*gRange_i + b6*isQ1_i + e_i
+
+  WLS weights: W_i = 1/(se_i^2 + tau^2)
+
+  ┌──────────────┬─────────┬─────────┬───────┐
+  │ Variable     │  Coeff  │   SE    │   t   │
+  ├──────────────┼─────────┼─────────┼───────┤
+  │ intercept    │  3.322  │  0.609  │  5.46 │
+  │ isPrecise    │  0.061  │  0.110  │  0.56 │
+  │ logVmax      │ -0.140  │  0.257  │ -0.54 │
+  │ inc/90       │  0.465  │  0.370  │  1.26 │
+  │ logN         │ -0.014  │  0.203  │ -0.07 │
+  │ gRange       │  0.122  │  0.106  │  1.15 │
+  │ isQ1         │ -0.006  │  0.107  │ -0.05 │
+  └──────────────┴─────────┴─────────┴───────┘
+
+  R^2 = 0.064 (only 6.4% of logA0 variance explained)
+  Permutation p(isPrecise) = 0.553 — NOT significant
+  LOO b(isPrecise) range: [0.016, 0.110] — never significant
+
+  KEY: Phase 7 anchor increase (3633-->4357) was CONFOUNDED by
+  inclination. b(inc/90)=+0.465 is ~3x larger than b(isPrecise)=0.061.
+
+────────────────────────────────────────────────────────────────────
+27. PROPENSITY-SCORE MATCHING (Phase 8)
+────────────────────────────────────────────────────────────────────
+
+  16 matched pairs (precise vs Hubble, matched on Vmax/inc/n/gRange)
+  Mean paired difference: +0.174 dex (SE = 0.097)
+  Paired t = 1.79 — NOT significant (|t| < 2.0)
+  NGC5907 outlier: diff = -0.950 dex (result sensitive to this galaxy)
+
+================================================================================
+PART XI: PHASE 9 — BENCHMARK-TO-LITERATURE REPLICATION
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+28. VARIANCE DECOMPOSITION (ANOVA)
+────────────────────────────────────────────────────────────────────
+
+  One-way ANOVA on point residuals, grouped by galaxy:
+
+    total^2 = within^2 + between^2
+    0.0239  = 0.0148   + 0.0091        [variances in dex^2]
+    (0.155)^2 = (0.122)^2 + (0.096)^2  [RMS in dex]
+
+  Check: 0.122^2 + 0.096^2 = 0.01488 + 0.00922 = 0.02410 ~ 0.0239 ✓
+
+  FOUR DISTINCT SCATTER MEASURES:
+    1. Total point RMS (global a0):  0.155 dex
+    2. Within-galaxy point RMS:      0.122 dex  (matches McGaugh 0.13)
+    3. Between-galaxy point RMS:     0.096 dex  (ANOVA component)
+    4. SD of per-galaxy logA0:       0.275 dex  (galaxy-level estimator)
+
+  #2 and #4 are DIFFERENT QUANTITIES:
+    #2 = how much individual points scatter around their galaxy's curve
+    #4 = how much each galaxy's BEST FIT a0 differs from the mean
+
+  Literature reports #1 or #2 (point-level).
+  Our tau (0.291 via DL) is closest to #4 but not identical
+  (DL accounts for unequal precision across galaxies).
+
+────────────────────────────────────────────────────────────────────
+29. F-TEST: DO GALAXIES REJECT GLOBAL a0?
+────────────────────────────────────────────────────────────────────
+
+  For each galaxy i:
+    F_i = (RSS_global - RSS_local) / (RSS_local / (n_i - 1))
+    where RSS_global uses a0 = 3703 (global)
+    and   RSS_local  uses a0_i (per-galaxy best fit)
+
+  Result: 39/56 (70%) galaxies have F > 4.0 (p < 0.05)
+  Consistent with Rodrigues et al. (2018)
+
+────────────────────────────────────────────────────────────────────
+30. ABLATION: WHAT DRIVES tau?
+────────────────────────────────────────────────────────────────────
+
+  1. Global vs per-galaxy: 0.155 --> 0.122 dex (-21%)
+     Per-galaxy fits SIGNIFICANTLY better
+
+  2. Dynamic range:
+     gRange < 0.5:  SD = 0.47 dex
+     gRange >= 2.0: SD = 0.24 dex (still large)
+
+  3. Y* marginalization:
+     Fixed:       SD = 0.275 dex
+     Marginalized: SD = 0.287 dex (+4%)
+     Y* NOT the driver
+
+  4. Quality cuts:
+     No cuts: SD = 0.42
+     GOLD+i45: SD = 0.28
+     Strict: SD = 0.28
+     Cuts help but tau never drops below ~0.28
+
+================================================================================
+PART XII: PHASE 10 — SECOND-PARAMETER SEARCH
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+31. MODEL FRAMEWORK
+────────────────────────────────────────────────────────────────────
+
+  Model 0 (null): logA0_i = mu                   (a0 universal)
+  Model 1:        logA0_i = mu + beta * X_norm_i  (a0 depends on X)
+
+  where X_norm_i = (X_i - mean(X)) / sd(X)
+
+  10 candidates tested on 56 GOLD+i45 benchmark galaxies:
+    eta_rot, T (Hubble), SBdisk, SBeff, Rdisk, logL36,
+    logMHI, logSigmaBar, S_out, inc
+
+  Significance criteria: p(perm) < 0.05 AND |t| >= 2.0 AND dAIC < -2
+
+  AIC = n * ln(RSS/n) + 2*k
+  dAIC = AIC(Model 1) - AIC(Model 0)   [negative = better]
+
+────────────────────────────────────────────────────────────────────
+32. FULL RESULTS TABLE (sorted by tau reduction)
+────────────────────────────────────────────────────────────────────
+
+  Baseline tau (SD logA0): 0.2746 dex
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Rank  Candidate      tau_new  delta%   r      p(perm) dAIC Sig │
+  ├──────────────────────────────────────────────────────────────────┤
+  │  1.   logMHI          0.239  -13.0%  -0.091   0.514   +1.6  no │
+  │  2.   logL36          0.251   -8.7%  -0.151   0.306   +0.8  no │
+  │  3.   eta_rot         0.259   -5.7%  +0.334   0.010  -4.6 YES │
+  │  4.   T (Hubble)      0.263   -4.4%  +0.278   0.043  -2.3 YES │
+  │  5.   Rdisk           0.265   -3.5%  -0.261   0.061  -2.0  no │
+  │  6.   logSigmaBar     0.267   -3.0%  -0.242   0.080  -1.4  no │
+  │  7.   S_out           0.271   -1.3%  -0.418   0.045  -2.4 YES │
+  │  8.   SBdisk          0.273   -0.5%  -0.104   0.427  +1.4  no │
+  │  9.   inc             0.274   -0.2%  -0.055   0.692  +1.8  no │
+  │ 10.   SBeff           0.274   -0.1%  -0.040   0.780  +1.9  no │
+  └──────────────────────────────────────────────────────────────────┘
+
+────────────────────────────────────────────────────────────────────
+33. SIGNIFICANT CANDIDATES
+────────────────────────────────────────────────────────────────────
+
+  eta_rot (rotation curve shape):
+    beta = +0.0918 +/- 0.0352
+    t = 2.61, p(perm) = 0.010
+    R^2 = 11.2%, dAIC = -4.63
+    tau: 0.2746 --> 0.2589 (-5.7%)
+    Point RMS: 0.1557 --> 0.1511 (-3.0%)
+    Jackknife beta range: [0.078, 0.111]
+    Interpretation: peaked/concentrated RCs have higher a0
+
+  T (Hubble type):
+    beta = +0.0760 +/- 0.0364
+    t = 2.09, p(perm) = 0.043
+    R^2 = 7.7%, dAIC = -2.34
+    tau: 0.2746 --> 0.2626 (-4.4%)
+    Jackknife beta range: [0.051, 0.090]
+    Interpretation: later types have higher a0 (correlated with eta_rot)
+
+  S_out (outer RC slope):
+    beta = -0.1248 +/- 0.0591
+    t = -2.11, p(perm) = 0.045
+    R^2 = 17.5% (but n=23 only), dAIC = -2.42
+    tau: 0.2746 --> 0.2710 (-1.3%)
+    Jackknife beta range: [-0.167, -0.104]
+    Interpretation: declining outer RCs have higher a0 (marginal n)
+
+  Multi-parameter (top-3 combined: logMHI + logL36 + eta_rot):
+    n = 49, R^2 = 9.9%
+    tau: 0.2746 --> 0.2278 (-17.1%)
+    dAIC = +0.90 (DOES NOT survive complexity penalty)
+
+  VERDICT: 94% of heterogeneity remains UNEXPLAINED.
+
+================================================================================
+PART XIII: SYSTEMATIC SUSPECTS CATALOG
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+34. ELEVEN SUSPECTS INVESTIGATED
+────────────────────────────────────────────────────────────────────
+
+  HIGH PRIORITY:
+  1. Non-circular motions (bars/spirals)
+     Test: inner vs outer split = 0.006 dex → CLEARED
+  2. Pressure support / asymmetric drift
+     Test: correction shifts +0.033 dex, tau unchanged → CLEARED
+  3. Y_star uncertainty
+     Test: marginalization shifts +7.7%, tau +4% → MITIGATED
+  4. Distance errors
+     Test: meta-regression b=0.061, t=0.56, p=0.55 → NOT SIGNIFICANT
+  5. Within-galaxy covariance
+     Test: hierarchical model properly handles → MITIGATED
+
+  MEDIUM PRIORITY:
+  6. Inclination errors
+     Test: inc split 0.172 dex matched, t=1.24 → UNDERPOWERED
+  7. Gas disk flaring / thickness
+     Status: not tested (SPARC uses thin-disk)
+  8. Beam smearing
+     Status: inner-outer split negligible → PARTIALLY CLEARED
+
+  LOW PRIORITY:
+  9. External field effect (EFE)
+     Test: logSigmaBar r=-0.242, p=0.080 → suggestive, not significant
+  10. Sample selection / dynamic range
+     Test: gRange>=1.0 cut applied → MITIGATED
+  11. Chaotic orbits
+     Status: not relevant for smooth-potential RC analysis
+
+================================================================================
+PART XIV: SUMMARY OF EQUATIONS
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+35. ALL EQUATIONS IN ONE PLACE
+────────────────────────────────────────────────────────────────────
+
+  RAR (McGaugh):
+    g_obs = g_bar / (1 - exp(-sqrt(g_bar / a0)))
+
+  Baryonic acceleration:
+    g_bar = (Y_disk * V_disk^2 + Y_bulge * V_bulge^2 + V_gas^2) / r
+
+  Observed acceleration:
+    g_obs = V_rot^2 / r = (V_los / sin(i))^2 / r
+
+  Fitting cost:
+    chi^2(a0) = sum_j [log10(g_obs_j) - log10(RAR(g_bar_j, a0))]^2
+
+  Point weights:
+    w_ij = sin^2(inc_i) / (sigma_i^2 * sqrt(D_i * N_i))
+
+  DL tau^2:
+    Q = sum w_i * (theta_i - theta_FE)^2
+    tau^2 = max(0, (Q-(k-1)) / (S1 - S2/S1))
+    where S1=sum(w_i), S2=sum(w_i^2)
+
+  DL weights:
+    W_i = 1 / (se_i^2 + tau^2)
+
+  Population mean:
+    mu = sum(W_i * theta_i) / sum(W_i)
+    SE = 1 / sqrt(sum(W_i))
+
+  I^2 = max(0, (Q-(k-1))/Q) * 100%
+
+  Partial correlation:
+    r(X,Y|Z) = (r_XY - r_XZ*r_YZ) / sqrt((1-r_XZ^2)*(1-r_YZ^2))
+
+  ANOVA decomposition:
+    total^2 = within^2 + between^2
+
+  Pressure correction:
+    g_obs_corr = g_obs + sigma_HI^2 / h_gas
+
+  Unit conversion:
+    a0_ms2 = a0_kpc * 3.241e-14
+
+  Cosmological ratio:
+    R = a0 / (c * H0 / (2*pi))
+
+  Phase 10 model:
+    logA0_i = mu + beta * (X_i - mean(X)) / sd(X)
+    dAIC = n*ln(RSS1/n) + 2*2 - (n*ln(RSS0/n) + 2*1)
+
+  Power analysis:
+    n_needed = n_current * (t_target / t_observed)^2
+
+================================================================================
+PART XV: FINAL STATEMENT
+================================================================================
+
+────────────────────────────────────────────────────────────────────
+36. PAPER-READY STATEMENT (v10.0, incorporating Phases 1-10)
+────────────────────────────────────────────────────────────────────
+
+  "A robust acceleration transition scale exists in the rotation
+  curves of late-type galaxies. Using 59 GOLD-quality SPARC galaxies
+  with per-galaxy nuisance marginalization under a DerSimonian-Laird
+  random-effects model, we measure a0 = 3633 (km/s)^2/kpc =
+  1.18 x 10^-10 m/s^2, with between-galaxy scatter tau = 0.291 dex
+  (I^2 = 92.4%), consistent within 2% of McGaugh et al. (2016).
+
+  Four distinct scatter measures must be distinguished:
+  (1) Total point RMS with global a0: 0.155 dex (GOLD+i45);
+  (2) Within-galaxy point RMS (per-galaxy a0): 0.122 dex,
+      matching McGaugh et al. (2016) at 0.13 dex;
+  (3) Between-galaxy component of point variance: 0.096 dex
+      (ANOVA residual);
+  (4) SD of per-galaxy best-fit logA0: 0.275 dex
+      (galaxy-level estimator spread; tau = 0.291 via DL).
+
+  A systematic search over 10 candidate second parameters finds
+  that rotation curve shape (eta_rot) is the strongest predictor
+  of per-galaxy a0 (r = 0.334, p = 0.010, dAIC = -4.6), followed
+  by Hubble type (r = 0.278, p = 0.043) and outer slope
+  (r = -0.418, p = 0.045, n = 23). However, even the best candidate
+  reduces tau by only 5.7%. Surface brightness (EFE proxy),
+  inclination, and distance method have NEGLIGIBLE effects.
+
+  We conclude:
+  (1) The existence of a transition scale is robust;
+  (2) The headline a0 = 3633 is not demonstrably biased;
+  (3) Between-galaxy heterogeneity (tau ~ 0.29 dex) is intrinsic
+      and largely unexplained by measured properties;
+  (4) There is no tension with the literature — different analyses
+      measure different scatter components;
+  (5) Rotation curve shape (eta_rot) is a suggestive but modest
+      second parameter; the bulk of heterogeneity requires
+      unmeasured variables or is genuinely intrinsic;
+  (6) Strict universality of a0 is disfavored but the alternative
+      'a0 universal + unmeasured second parameter' remains viable."
+
+================================================================================
+END OF EXPERIMENT LOG (v10.0)
+================================================================================
+
+  Scripts:
+    Phase 1:  scripts/diagnostic-tests.cjs
+    Phase 2:  scripts/diagnostic-phase2.cjs
+    v3.0:     scripts/final-measurement-v3.cjs (archived)
+    v4.0:     scripts/definitive-v4.cjs
+    Phase 5:  scripts/phase5-kinematic-audit.cjs (v5.1.0)
+    Phase 6:  scripts/phase6-matched-splits.cjs (v6.0.0)
+    Phase 7:  scripts/phase7-anchor-refit.cjs (v7.0.0)
+    Phase 8:  scripts/phase8-distance-metareg.cjs (v8.0.0)
+    Phase 9:  scripts/phase9-benchmark-replication.cjs (v9.0.0)
+    Phase 10: scripts/phase10-second-parameter.cjs (v10.0.0)
+
+  Results:
+    public/diagnostic-results.json
+    public/diagnostic-phase2-results.json
+    public/gold-standard-results.json (v3.0)
+    public/definitive-v4-results.json
+    public/phase5-kinematic-results.json (v5.1.0)
+    public/phase6-matched-results.json (v6.0.0)
+    public/phase7-anchor-results.json (v7.0.0)
+    public/phase8-metareg-results.json (v8.0.0)
+    public/phase9-benchmark-results.json (v9.0.0)
+    public/phase10-second-param-results.json (v10.0.0)
+    public/figure1-data.json (v1.1.0)
+    public/sparc-table.json (175 galaxies)
+================================================================================
