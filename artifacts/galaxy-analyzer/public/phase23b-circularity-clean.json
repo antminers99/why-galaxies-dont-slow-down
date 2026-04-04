@@ -1,0 +1,153 @@
+{
+  "version": "23b.0.0",
+  "timestamp": "2026-04-04T14:03:22.057Z",
+  "nGalaxies": 56,
+  "proxyResults": [
+    {
+      "name": "kinematicDist",
+      "circularity": "CIRCULAR",
+      "rRaw": 0.37,
+      "tRaw": 2.9,
+      "rAfterMHI": 0.411,
+      "tAfterMHI": 3.3,
+      "verdict": "STRONG"
+    },
+    {
+      "name": "rcScatter",
+      "circularity": "CIRCULAR",
+      "rRaw": 0.232,
+      "tRaw": 1.8,
+      "rAfterMHI": 0.245,
+      "tAfterMHI": 1.8,
+      "verdict": "MARGINAL"
+    },
+    {
+      "name": "slopeMismatch",
+      "circularity": "SEMI",
+      "rRaw": 0.113,
+      "tRaw": 0.8,
+      "rAfterMHI": -0.08,
+      "tAfterMHI": 0.6,
+      "verdict": "NONE"
+    },
+    {
+      "name": "rcWiggliness",
+      "circularity": "SEMI",
+      "rRaw": 0.282,
+      "tRaw": 2.2,
+      "rAfterMHI": 0.365,
+      "tAfterMHI": 2.9,
+      "verdict": "STRONG"
+    },
+    {
+      "name": "vPeakDip",
+      "circularity": "SEMI",
+      "rRaw": 0.092,
+      "tRaw": 0.7,
+      "rAfterMHI": 0.295,
+      "tAfterMHI": 2.3,
+      "verdict": "STRONG"
+    },
+    {
+      "name": "sbAsymmetry",
+      "circularity": "CLEAN",
+      "rRaw": -0.178,
+      "tRaw": 1.3,
+      "rAfterMHI": -0.158,
+      "tAfterMHI": 1.2,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "sizeAnomaly",
+      "circularity": "CLEAN",
+      "rRaw": -0.086,
+      "tRaw": 0.6,
+      "rAfterMHI": -0.021,
+      "tAfterMHI": 0.2,
+      "verdict": "NONE"
+    },
+    {
+      "name": "lopsidedness",
+      "circularity": "CLEAN",
+      "rRaw": -0.031,
+      "tRaw": 0.2,
+      "rAfterMHI": -0.057,
+      "tAfterMHI": 0.4,
+      "verdict": "NONE"
+    },
+    {
+      "name": "profileIrreg",
+      "circularity": "CLEAN",
+      "rRaw": -0.17,
+      "tRaw": 1.3,
+      "rAfterMHI": -0.151,
+      "tAfterMHI": 1.1,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "gasStarMismatch",
+      "circularity": "CLEAN",
+      "rRaw": 0.171,
+      "tRaw": 1.3,
+      "rAfterMHI": 0.076,
+      "tAfterMHI": 0.6,
+      "verdict": "NONE"
+    },
+    {
+      "name": "morphDisturb",
+      "circularity": "CLEAN",
+      "rRaw": -0.167,
+      "tRaw": 1.2,
+      "rAfterMHI": -0.147,
+      "tAfterMHI": 1.1,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "edgeOnWarp",
+      "circularity": "CLEAN",
+      "rRaw": -0.138,
+      "tRaw": 1,
+      "rAfterMHI": -0.125,
+      "tAfterMHI": 0.9,
+      "verdict": "WEAK"
+    },
+    {
+      "name": "cleanComposite",
+      "circularity": "CLEAN",
+      "rRaw": 0.179,
+      "tRaw": 1.3,
+      "rAfterMHI": 0.099,
+      "tAfterMHI": 0.7,
+      "verdict": "NONE"
+    }
+  ],
+  "bestByClass": {
+    "circular": {
+      "name": "kinematicDist",
+      "rAfterMHI": 0.411,
+      "tAfterMHI": 3.3
+    },
+    "semi": {
+      "name": "rcWiggliness",
+      "rAfterMHI": 0.365,
+      "tAfterMHI": 2.9
+    },
+    "clean": {
+      "name": "sbAsymmetry",
+      "rAfterMHI": -0.158,
+      "tAfterMHI": 1.2
+    }
+  },
+  "looGapClosed": {
+    "circular": 11.2,
+    "semi": 2.8,
+    "clean": 1.4,
+    "mhi": 7.4,
+    "mhiPlusCirc": 16.2,
+    "mhiPlusSemi": 11.5,
+    "mhiPlusClean": 8.3
+  },
+  "cleanSignalSurvives": false,
+  "semiSignalSurvives": true,
+  "doorStatus": "AMBIGUOUS"
+}

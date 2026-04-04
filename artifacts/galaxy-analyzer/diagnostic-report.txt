@@ -4198,3 +4198,58 @@ GALAXY HISTORY DOOR STATUS:
   But the circularity caveat means this needs careful interpretation.
 
 ================================================================================
+
+================================================================================
+  SECTION 42: PHASE 23b — CIRCULARITY-CLEAN DISTURBANCE TEST
+  Version 23b.0.0
+================================================================================
+
+PURPOSE:
+  Resolve whether Phase 23's strong kinematicDist signal (r=0.411 after MHI)
+  is genuine or a circular artifact of RAR fit quality.
+
+METHOD:
+  Classified all disturbance proxies into 3 tiers:
+    CIRCULAR: derived from RAR fit (kinematicDist, rcScatter)
+    SEMI-CIRCULAR: from rotation curve shape, not RAR fit
+                   (slopeMismatch, rcWiggliness, vPeakDip)
+    CLEAN: purely photometric/HI (sbAsymmetry, sizeAnomaly,
+           lopsidedness, profileIrreg, gasStarMismatch, morphDisturb)
+
+RESULTS BY CLASS (after MHI control):
+
+  CIRCULAR:  kinematicDist → r=0.411, t=3.3, LOO=11.2%  → STRONG
+  SEMI:      rcWiggliness  → r=0.365, t=2.9, perm p=0.0047 → STRONG
+             vPeakDip      → r=0.295, t=2.3, perm p=0.028  → SIGNIFICANT
+  CLEAN:     sbAsymmetry   → r=-0.158, t=1.2, perm p=0.24  → NOT SIGNIFICANT
+
+LOO GAP CLOSURE:
+  Circular alone:     11.2%
+  Semi alone:          2.8%
+  Clean alone:         1.4%
+  MHI + Circular:     16.2% (best ever)
+  MHI + Semi:         11.5%
+  MHI + Clean:         8.3% (barely above MHI's 7.4%)
+
+ADDS TO MHI?
+  Circular: YES (+8.8%)
+  Semi:     YES (+4.1%)
+  Clean:    NO
+
+SURPRISE — QUARTILE tau REDUCTION:
+  sbAsymmetry (CLEAN): 27.2% tau reduction — BEST EVER
+  But: overall LOO and correlation too weak to be definitive.
+
+VERDICT:
+  AMBIGUOUS. Semi-circular proxies (rcWiggliness) retain significant
+  signal (perm p=0.005) and add to MHI. But they still use RC data.
+  Clean photometric proxies do NOT reach significance.
+
+  The disturbance signal is PARTLY real (RC shape matters) but
+  we cannot confirm it with purely non-circular measures.
+
+GALAXY HISTORY DOOR: NOT CLOSED, NOT OPEN — AMBIGUOUS
+  The kinematic channel retains signal that isn't purely from
+  RAR fit quality. But photometric disturbance measures fail.
+
+================================================================================

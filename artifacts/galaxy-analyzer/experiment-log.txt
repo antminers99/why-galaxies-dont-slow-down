@@ -1351,3 +1351,31 @@ Files: scripts/phase23-merger-disturbance.cjs
        public/phase23-merger-disturbance.json
 
 ================================================================================
+
+Section 53: Phase 23b — Circularity-Clean Disturbance Test
+-----------------------------------------------------------
+Date: 2026-04-04
+Version: 23b.0.0
+
+PROXY CLASSIFICATION:
+  CIRCULAR: kinematicDist (r=0.411 after MHI) — strong but circular
+  SEMI: rcWiggliness (r=0.365, perm p=0.005) — SIGNIFICANT
+  CLEAN: sbAsymmetry (r=-0.158, perm p=0.24) — NOT significant
+
+KEY NUMBERS:
+  rcWiggliness: r=0.365, t=2.9, perm p=0.0047 (after MHI control)
+  vPeakDip:     r=0.295, t=2.3, perm p=0.028  (after MHI control)
+  sbAsymmetry:  r=-0.158, t=1.2, perm p=0.24  (FAILS)
+
+  LOO: Semi adds +4.1% to MHI. Clean does NOT add.
+  sbAsymmetry quartile tau reduction: 27.2% (best ever, but LOO fails)
+
+VERDICT: AMBIGUOUS
+  Semi-circular (RC shape) proxies retain real signal
+  Clean photometric proxies fail
+  Galaxy history door: neither closed nor open
+
+Files: scripts/phase23b-circularity-clean.cjs
+       public/phase23b-circularity-clean.json
+
+================================================================================
