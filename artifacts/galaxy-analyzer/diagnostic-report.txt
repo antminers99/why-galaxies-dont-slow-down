@@ -4446,3 +4446,42 @@ CONCLUSION:
   without adding signal.
 
 ================================================================================
+
+================================================================================
+  SECTION 47: PHASE 27 — NEAREST MASSIVE NEIGHBOR DISTANCE
+  Version 27.0.0
+  Does physical proximity to a massive galaxy predict a0?
+================================================================================
+
+DATA QUALITY:
+  9 high confidence, 11 medium, 36 low (64% low!)
+  Without RA/Dec in SPARC, dNN for field galaxies is estimated from
+  astronomical knowledge. Many distant field galaxies → default 5.0 Mpc ceiling.
+
+RESULT: 1/6 CRITERIA — FAILS
+
+  1. Clear raw |t|>=2:              NO  (r=0.206, t=1.5)
+  2. Independent of MHI:            YES (r=0.310, t=2.4 — suppressor)
+  3. Independent of MHI+wig:        NO  (r=0.201, t=1.5)
+  4. LOO-CV > M0:                   NO  (0.9%)
+  5. Adds to MHI+wig:               NO  (+0.2%)
+  6. Adds beyond envCode:           NO  (+0.7%)
+
+HIGH-CONFIDENCE SUBSAMPLE (n=20):
+  log(dNN) vs delta_a0 raw: r=-0.005 (t=0.0!) → NO SIGNAL
+  log(dNN) vs delta_a0 |MHI: r=0.034 (t=0.1) → NO SIGNAL
+
+CRITICAL: When restricted to galaxies where dNN is actually known,
+  there is ZERO correlation. The weak full-sample signal comes entirely
+  from the artificial dNN=5.0 ceiling assigned to distant field galaxies,
+  which mirrors envCode.
+
+COLLINEARITY: log(dNN) vs envCode: r=-0.839 (extremely high!)
+  dNN is almost entirely redundant with group membership.
+
+CONCLUSION:
+  Physical proximity does not improve on group membership.
+  The environmental signal is categorical (in a group or not),
+  not continuous (how close the nearest massive neighbor is).
+
+================================================================================

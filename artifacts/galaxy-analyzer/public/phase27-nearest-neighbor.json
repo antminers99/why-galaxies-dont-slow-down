@@ -1,0 +1,440 @@
+{
+  "version": "27.0.0",
+  "timestamp": "2026-04-04T14:41:40.768Z",
+  "nGalaxies": 56,
+  "dataQuality": {
+    "high": 9,
+    "medium": 11,
+    "low": 36
+  },
+  "rawCorrelation": {
+    "r": 0.206,
+    "t": 1.5
+  },
+  "afterMHI": {
+    "r": 0.31,
+    "t": 2.4
+  },
+  "afterMHIWig": {
+    "r": 0.201,
+    "t": 1.5
+  },
+  "dNNvsEnvCode": {
+    "r": -0.916
+  },
+  "dNNafterEnv": {
+    "r": -0.163,
+    "t": 1.2
+  },
+  "envAfterDNN": {
+    "r": -0.268,
+    "t": 2
+  },
+  "looGapClosed": {
+    "dNN": 0.9,
+    "env": 7.4,
+    "mhiWig": 11.5,
+    "mhiWigDNN": 11.7,
+    "mhiWigEnv": 14.9,
+    "mhiWigEnvDNN": 15.6
+  },
+  "successCriteria": {
+    "passed": 1,
+    "total": 6
+  },
+  "verdict": "FAILED",
+  "galaxyNeighbors": [
+    {
+      "name": "ESO563-G021",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "F571-8",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "IC4202",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC0024",
+      "dNN": 0.35,
+      "logDNN": -0.456,
+      "neighbor": "NGC253",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC0289",
+      "dNN": 3.5,
+      "logDNN": 0.544,
+      "neighbor": "NGC253?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC0801",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC0891",
+      "dNN": 1.5,
+      "logDNN": 0.176,
+      "neighbor": "NGC1023",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC1003",
+      "dNN": 3,
+      "logDNN": 0.477,
+      "neighbor": "NGC891?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC1090",
+      "dNN": 4,
+      "logDNN": 0.602,
+      "neighbor": "NGC1068?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC1705",
+      "dNN": 3,
+      "logDNN": 0.477,
+      "neighbor": "NGC1559?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2403",
+      "dNN": 0.6,
+      "logDNN": -0.222,
+      "neighbor": "M81",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC2683",
+      "dNN": 3,
+      "logDNN": 0.477,
+      "neighbor": "NGC2841?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2841",
+      "dNN": 3,
+      "logDNN": 0.477,
+      "neighbor": "NGC2683?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2903",
+      "dNN": 3.5,
+      "logDNN": 0.544,
+      "neighbor": "NGC2683?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2915",
+      "dNN": 4,
+      "logDNN": 0.602,
+      "neighbor": "NGC3109?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2955",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC2998",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC3198",
+      "dNN": 2,
+      "logDNN": 0.301,
+      "neighbor": "NGC3319?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC3521",
+      "dNN": 3.5,
+      "logDNN": 0.544,
+      "neighbor": "NGC3627?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC3726",
+      "dNN": 0.4,
+      "logDNN": -0.398,
+      "neighbor": "NGC3992",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC3741",
+      "dNN": 2.5,
+      "logDNN": 0.398,
+      "neighbor": "NGC4214?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC3769",
+      "dNN": 0.15,
+      "logDNN": -0.824,
+      "neighbor": "NGC3893",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC3893",
+      "dNN": 0.15,
+      "logDNN": -0.824,
+      "neighbor": "NGC3769",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC4013",
+      "dNN": 0.3,
+      "logDNN": -0.523,
+      "neighbor": "NGC3992",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC4100",
+      "dNN": 0.35,
+      "logDNN": -0.456,
+      "neighbor": "NGC4157",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC4138",
+      "dNN": 0.4,
+      "logDNN": -0.398,
+      "neighbor": "NGC4051",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC4157",
+      "dNN": 0.3,
+      "logDNN": -0.523,
+      "neighbor": "NGC4100",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC4217",
+      "dNN": 0.2,
+      "logDNN": -0.699,
+      "neighbor": "NGC4226",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC4559",
+      "dNN": 0.8,
+      "logDNN": -0.097,
+      "neighbor": "NGC4565",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC5005",
+      "dNN": 0.3,
+      "logDNN": -0.523,
+      "neighbor": "NGC5033",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC5033",
+      "dNN": 0.3,
+      "logDNN": -0.523,
+      "neighbor": "NGC5005",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC5055",
+      "dNN": 0.5,
+      "logDNN": -0.301,
+      "neighbor": "M51/NGC5194",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC5371",
+      "dNN": 1,
+      "logDNN": 0,
+      "neighbor": "NGC5353/4",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC5907",
+      "dNN": 0.5,
+      "logDNN": -0.301,
+      "neighbor": "NGC5866",
+      "confidence": "high"
+    },
+    {
+      "name": "NGC6015",
+      "dNN": 3,
+      "logDNN": 0.477,
+      "neighbor": "NGC5907?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC6195",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC6503",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "NGC5907?",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC6674",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "NGC7331",
+      "dNN": 2,
+      "logDNN": 0.301,
+      "neighbor": "NGC7217",
+      "confidence": "medium"
+    },
+    {
+      "name": "NGC7814",
+      "dNN": 2.5,
+      "logDNN": 0.398,
+      "neighbor": "NGC7331",
+      "confidence": "medium"
+    },
+    {
+      "name": "UGC00128",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC01281",
+      "dNN": 2,
+      "logDNN": 0.301,
+      "neighbor": "NGC672?",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC02885",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC02916",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC02953",
+      "dNN": 2.5,
+      "logDNN": 0.398,
+      "neighbor": "NGC2768?",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC03205",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC03546",
+      "dNN": 4,
+      "logDNN": 0.602,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC03580",
+      "dNN": 3.5,
+      "logDNN": 0.544,
+      "neighbor": "NGC2768?",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC05721",
+      "dNN": 2.5,
+      "logDNN": 0.398,
+      "neighbor": "NGC3274?",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC06786",
+      "dNN": 4,
+      "logDNN": 0.602,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC06787",
+      "dNN": 3.5,
+      "logDNN": 0.544,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC06973",
+      "dNN": 0.4,
+      "logDNN": -0.398,
+      "neighbor": "NGC3992",
+      "confidence": "medium"
+    },
+    {
+      "name": "UGC08490",
+      "dNN": 2.5,
+      "logDNN": 0.398,
+      "neighbor": "NGC4214?",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC08699",
+      "dNN": 4,
+      "logDNN": 0.602,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC09037",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    },
+    {
+      "name": "UGC09133",
+      "dNN": 5,
+      "logDNN": 0.699,
+      "neighbor": "unknown",
+      "confidence": "low"
+    }
+  ]
+}

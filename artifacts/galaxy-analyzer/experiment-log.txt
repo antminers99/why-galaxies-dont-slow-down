@@ -1478,3 +1478,30 @@ Files: scripts/phase26-satellite-central.cjs
        public/phase26-satellite-central.json
 
 ================================================================================
+
+Section 58: Phase 27 — Nearest Massive Neighbor Distance
+------------------------------------------------------
+Date: 2026-04-04
+Version: 27.0.0
+
+NEAREST NEIGHBOR DISTANCE: 1/6 — FAILS
+
+  log(dNN) vs delta_a0 raw: r=0.206, t=1.5
+  After MHI: r=0.310, t=2.4 (but suppressor, artifact of collinearity)
+  After MHI+wig: r=0.201, t=1.5
+  LOO: 0.9% alone, +0.2% above MHI+wig (no improvement)
+  log(dNN) vs envCode: r=-0.839 (near-total redundancy)
+
+  HIGH-CONFIDENCE SUBSAMPLE (n=20): r=-0.005 → ZERO signal!
+  The weak full-sample signal is entirely an artifact of
+  dNN ceiling assignment mimicking envCode.
+
+  Environment door scorecard:
+    group membership (envCode):    6/6 PASS ← best
+    satellite vs central:          1/6 FAIL
+    nearest neighbor distance:     1/6 FAIL
+
+Files: scripts/phase27-nearest-neighbor.cjs
+       public/phase27-nearest-neighbor.json
+
+================================================================================
