@@ -2789,16 +2789,34 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   drops to 0.122 dex — comparable to their 0.13 dex.
 
   ────────────────────────────────────────────────────────────────────
-  VARIANCE DECOMPOSITION
+  VARIANCE DECOMPOSITION (ANOVA-style on point residuals)
   ────────────────────────────────────────────────────────────────────
 
   total^2 = within-galaxy^2 + between-galaxy^2
-  (0.155)^2  = (0.122)^2 + (0.275)^2   [GOLD+i45]
-   0.024     =  0.015    +  0.076       [approximate]
+  0.0239  = 0.0148          + 0.0091
+  (0.155)^2 = (0.122)^2     + (0.096)^2   [GOLD+i45, dex]
 
-  The TOTAL point scatter is dominated by between-galaxy variation,
-  not within-galaxy noise. The literature reports only the
-  within-galaxy component (after fitting a global a0).
+  The between-galaxy component of point-level variance (0.096 dex)
+  measures how much galaxy identity contributes to individual point
+  residuals. This is SMALLER than the within-galaxy noise (0.122 dex)
+  at the point level.
+
+  HOWEVER, the SD of per-galaxy best-fit logA0 values is 0.275 dex.
+  This is a DIFFERENT quantity: it measures how much the OPTIMAL a0
+  varies from galaxy to galaxy, amplified by the fitting process.
+
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ FOUR DISTINCT SCATTER MEASURES                                  │
+  ├──────────────────────────────────────────────────────────────────┤
+  │ 1. Total point RMS (global a0):  0.155 dex                     │
+  │ 2. Within-galaxy point RMS:      0.122 dex  (≈ McGaugh 0.13)  │
+  │ 3. Between-galaxy point RMS:     0.096 dex  (ANOVA component)  │
+  │ 4. SD of per-galaxy logA0:       0.275 dex  (galaxy estimates)  │
+  │                                                                  │
+  │ Literature reports #1 or #2 (point-level).                      │
+  │ Our tau (0.291 dex, hierarchical DL) is closest to #4.         │
+  │ #3 and #4 are related but NOT equal.                            │
+  └──────────────────────────────────────────────────────────────────┘
 
   ────────────────────────────────────────────────────────────────────
   ABLATION: WHAT DRIVES tau?
@@ -2896,12 +2914,18 @@ SECTION 19: OPEN QUESTIONS AND NEXT STEPS
   1.18 x 10^-10 m/s^2, with between-galaxy scatter tau = 0.291 dex
   (I^2 = 92.4%), consistent within 2% of McGaugh et al. (2016).
 
-  Within-galaxy point-level scatter (0.12 dex, GOLD+i45) matches
-  the literature's reported RAR scatter. The between-galaxy scatter
-  in best-fit a0 (tau = 0.29 dex) is a distinct, complementary
-  quantity that measures galaxy-to-galaxy variation rather than
-  point-level noise. These two scatters are compatible: the RAR is
-  tight at the data-point level but heterogeneous at the galaxy level.
+  Four distinct scatter measures must be distinguished:
+  (1) Total point RMS with global a0: 0.155 dex (GOLD+i45);
+  (2) Within-galaxy point RMS (per-galaxy a0): 0.122 dex,
+      matching McGaugh et al. (2016) at 0.13 dex;
+  (3) Between-galaxy component of point variance: 0.096 dex
+      (ANOVA residual);
+  (4) SD of per-galaxy best-fit logA0: 0.275 dex
+      (galaxy-level estimator spread; tau = 0.291 via DL).
+
+  The literature reports (1) or (2). Our tau is (4), a distinct
+  quantity. The RAR is tight at the data-point level but
+  heterogeneous at the galaxy level — no tension exists.
 
   Ablation tests show tau is not driven by Y* marginalization (+4%),
   quality cuts (persists at all tiers), or dynamic range (still ~0.24

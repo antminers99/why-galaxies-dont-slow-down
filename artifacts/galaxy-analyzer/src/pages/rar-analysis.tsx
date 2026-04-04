@@ -7,6 +7,7 @@ import {
   LineChart, Line
 } from 'recharts';
 import { Crosshair, Layers, Search, BarChart3, Filter, Zap, TrendingUp, FlaskConical } from 'lucide-react';
+import Figure1Panel from '@/components/figure1-panel';
 
 type GalaxyData = {
   name: string; Vmax: number; Rmax: number; n: number;
@@ -560,6 +561,7 @@ export default function RARAnalysisPage() {
           </div>
         </GlassCard>
       </div>
+      <Figure1Panel />
     </Layout>
   );
 }

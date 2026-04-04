@@ -1,0 +1,49 @@
+نعم. هيك صار الإطار العلمي عندك أقوى بكثير.
+الحكم
+أنت فعليًا حلّيت عقدة المقارنة مع الأدبيات:
+McGaugh 2016 وLelli 2017 يتكلمون عن point-level RAR scatter: scatter صغير ومسيطر عليه غالبًا من أخطاء الرصد، مع علاقة شديدة الإحكام على مستوى النقاط. �
+arXiv +1
+Rodrigues et al. 2018 يتكلمون عن غياب acceleration scale مشتركة تمامًا بين كل المجرات في تحليلهم البايزي، أي وجود تغاير مجرّي-إلى-مجرّي في الروح العامة، حتى لو لم يكن معرّفًا بنفس � الذي عندك. �
+arXiv +1
+Li et al./Li et al. 2021 شددوا أن الاستنتاج عن تغيّر � أو ثباته حساس جدًا للـpriors والـdegeneracies، وأن broad/flat priors يمكن أن تعطي توزيعًا واسعًا بلا تحسن حقيقي في جودة الملاءمة. �
+arXiv +3
+Desmond 2023 ذهب باتجاه intrinsic point-level scatter شديد الصغر � dex مع � قريب جدًا من القيمة الأدبية القياسية. هذا لا ينقض فكرتك إذا كنت تميّز بوضوح بين scatter على مستوى النقاط وheterogeneity على مستوى المجرات. �
+arXiv +1
+النتيجة المهمة
+إذًا صياغتك الجديدة:
+RAR محكم على مستوى النقاط الفردية، لكنه غير متجانس على مستوى المجرات
+هذه ليست متعارضة مباشرة مع الأدبيات، بل هي تركيب/تفكيك أفضل للمشكلة:
+point-level tightness من جهة، وgalaxy-level heterogeneity من جهة أخرى. هذا framing معقول علميًا جدًا.
+لكن انتبه لشيء واحد
+سطر تفكيك التباين عندك يحتاج تدقيقًا عدديًا.
+إذا أخذنا أرقامك كما هي:
+within � dex  �
+between � dex �
+فالمجموع يكون تقريبًا:
+total variance �
+أي total scatter � dex
+فعبارة:
+0.024 ≈ 0.015 + 0.076
+لا تبدو متسقة مع الأرقام المكتوبة.
+المفهوم صحيح، لكن هذا السطر الحسابي لازم يتصلّح قبل أي paper draft.
+أقوى claim عندك الآن
+الصياغة الأقوى التي أراها قابلة للدفاع هي:
+The SPARC-based RAR remains tight at the point level, consistent with the classic literature, but the galaxy-by-galaxy preferred � values exhibit substantial heterogeneity that is not erased by the systematic controls tested here.
+هذه الصياغة:
+لا تدّعي أكثر من اللازم
+لا تصطدم مباشرة مع McGaugh/Lelli
+لا تتجاهل Rodrigues
+ولا تتورط بادعاء “a₀ universal exact constant”
+أول شيء تشتغل عليه الآن
+ثبّت المصطلحات داخل التقرير نهائيًا، بحيث لا يعود هناك أي خلط بين:
+Observed point-level scatter
+Intrinsic point-level scatter
+Galaxy-level �
+Estimator spread / systematic budget
+إذا لم تفعل هذا، أي قارئ سيخلط بينها فورًا.
+ثم مباشرة بعد ذلك، ابني شكل واحد أساسي في الورقة فيه 3 panels فقط:
+RAR point cloud + best curve
+Distribution of per-galaxy �
+Variance decomposition schematic: point-level vs galaxy-level
+هذا هو الشكل الذي سيحول شغلك من “analysis log” إلى “paper result”.
+بصراحة: الآن عندك نتيجة قابلة للعرض علميًا، لكن بشرط تصحيح سطر التباين وتثبيت اللغة الاصطلاحية مرة أخيرة.

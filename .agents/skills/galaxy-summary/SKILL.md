@@ -92,7 +92,8 @@ Phase 8 meta-regression OVERRIDES the Phase 7 "Hubble-flow bias" interpretation:
 NO TENSION with literature. Different analyses measure different scatter components:
 - Point-level (within-galaxy) scatter: 0.122 dex ≈ McGaugh+2016 (0.13 dex) ✓
 - Galaxy-level (between-galaxy) tau: 0.29 dex — DIFFERENT QUANTITY from literature's scatter
-- Variance decomposition: total² = within² + between² → compatible
+- Variance decomposition (ANOVA): total²=0.0239 = within²=0.0148 + between²=0.0091 (point-level)
+- SD of per-galaxy logA0 = 0.275 dex (DIFFERENT from between-galaxy point-level component 0.096 dex)
 - Ablation: tau not driven by Y* marg (+4%), quality cuts, or dynamic range
 - F-test: 39/56 (70%) galaxies individually reject global a₀ (consistent with Rodrigues+2018)
 - Position: complements literature — RAR is tight at point level, heterogeneous at galaxy level
