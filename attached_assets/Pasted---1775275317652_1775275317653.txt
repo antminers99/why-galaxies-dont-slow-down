@@ -1,0 +1,49 @@
+إي، في داتا مهمّة جدًا من الليستة موجودة أصلًا على النت، لكن مو مجمّعة بكاتالوغ واحد جاهز للحسم. عمليًا وضعك الآن هو:
+موجود وجاهز
+SPARC: فيه rotation curves، و3.6µm photometry، وmass models لـ 175 مجرة، ويمكن تنزيل البيانات الأساسية مباشرة. �
+Astroweb +1
+LITTLE THINGS: فيه HI cubes وmoment 0/1/2 maps علنًا، يعني integrated flux وvelocity fields وvelocity dispersion maps، ومعها صور optical/NIR/UV/Hα. �
+NRAO Science Site +1
+THINGS: فيه خرائط HI وvelocity fields وsecond-moment / velocity-dispersion maps كمنتجات عامة على صفحة المشروع. �
+Astrophysics Data System +1
+PHANGS: عنده public releases كثيرة جدًا: PHANGS-MUSE وPHANGS-ALMA وPHANGS-HST/JWST، ومعها environmental masks لـ 74 مجرة، وspiral-arm masks، وحتى rotation curves / disk orientations من PHANGS CO kinematics. �
+PHANGS +1
+CALIFA: عنده DR3 عام يشمل 667 مجرة و1576 datacubes عامة. �
+arXiv +1
+MaNGA DR17: عنده بيانات IFU عامة لأكثر من 10,000 مجرة، وتشمل gas kinematics وstellar kinematics وstellar population maps. �
+SDSS
+مسافات دقيقة: في EDD كقاعدة بيانات عامة للمسافات، وPHANGS نفسه نشر TRGB distances لـ 11 مجرة مع distance compilation لـ 118 مجرة في العينة الكاملة. �
+Edd +3
+موجود جزئيًا، وليس كاملًا على كل SPARC
+� مستقل لكل مجرة: موجود جزئيًا.
+DiskMass Survey يقيس stellar/gas kinematics، وعنده 46 مجرة بقياسات stellar velocities/dispersion و30 mass decompositions ديناميكية؛ وCALIFA/MaNGA/EDGE يمكن أن يزوّدوك بخرائط stellar populations/kinematics تساعد في بناء � أفضل. لكن ما لقيت catalog واحدًا متجانسًا وجاهزًا يغطي كل SPARC مباشرة. �
+arXiv +3
+ضغط الغاز / asymmetric drift: موجود جزئيًا لأن THINGS وLITTLE THINGS يعطونك velocity-dispersion maps، وPHANGS-MeerKAT/MHONGOOSE فيها moment-2 maps أيضًا، لكن ليس كتصحيح موحّد جاهز لكل المجرات التي تريدها. �
+NRAO Science Site +2
+المتغيرات البنيوية مثل bars / spiral arms / environments: موجودة بشكل جيد في PHANGS masks، ويوجد أيضًا كاتالوغ S4G كبير للميزات المورفولوجية مثل bars/rings/lenses. �
+PHANGS +1
+� داخل المجرة: ليس عادةً “منتجًا جاهزًا” باسم هذا الشكل، لكن يمكن اشتقاقه لأن عندك per-radius rotation curves وmass models في SPARC، ومع خرائط 2D في THINGS/LITTLE THINGS/PHANGS تستطيع تعمل inversion أو اختبارات داخلية على نصف القطر. �
+Astroweb +2
+غير متوفر غالبًا كمنتج جاهز
+covariance matrix داخل كل مجرة: أنا ما لقيت release قياسي جاهز لهذا في الصفحات الأساسية التي فتحتها. بدلًا من ذلك، توجد أعمال حديثة تعالج radial correlations في SPARC كنيوسانس/نموذج إحصائي، وهذا يوحي أن هذا الجزء ما يزال عادةً يُبنى في التحليل أكثر مما يُحمَّل جاهزًا. �
+arXiv +1
+قريبًا وقد يكون مهم جدًا
+BIG-SPARC: هذا يبدو واعدًا جدًا، لأنه قيد البناء ليصل إلى نحو 4000 مجرة من public HI archives مع homogeneously derived HI rotation curves وsurface-brightness profiles وmass models. لكنّه بالنسبة لسؤالك الآن مش الحل الجاهز النهائي بعد؛ هو مشروع قيد التطوير. �
+arXiv +2
+الحكم العملي
+يعني بصيغة واضحة:
+نعم: عندك الآن داتا قوية فعلًا لـ
+المسافات، 2D kinematics، velocity dispersion، structural masks، وindependent surveys. �
+arXiv +3
+جزئيًا: عندك داتا مفيدة لـ
+� المستقل وpressure support corrections، لكن ليس بشكل موحد ومتكامل على كامل عينتك. �
+arXiv +2
+لا، ليس جاهزًا:
+covariance matrix لكل مجرة غالبًا ستحتاج تبنيه أنت أو تنمذجه. �
+arXiv
+أهم نتيجة:
+الخطوة التالية الواقعية ليست “البحث عن بيانات من الصفر”، بل cross-match بين: SPARC + EDD + THINGS/LITTLE THINGS + PHANGS + DiskMass/CALIFA/MaNGA
+لعمل عينة ذهبية صغيرة لكن حاسمة. �
+Astroweb +5
+إذا بدك، أعمل لك الآن جدول قرار:
+“كل بند من الليستة ↔ أي survey يعطيه ↔ هل هو كامل أو جزئي ↔ أيه أنسب واحد لعينتك.”

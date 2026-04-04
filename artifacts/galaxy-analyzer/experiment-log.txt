@@ -1083,3 +1083,30 @@ Files: scripts/phase12b-mock-v2.cjs
        public/phase12b-mock-v2.json
 
 ================================================================================
+
+Section 41: External Data Cross-Match & Decision Matrix
+---------------------------------------------------------
+Date: 2026-04-04
+
+CROSS-MATCH: SPARC × external surveys
+  THINGS:        14 overlap (7 in GOLD+i45) — 2D kinematics + vel. dispersion
+  LITTLE THINGS: 4 overlap (0 in GOLD+i45) — dwarfs only
+  PHANGS:        3 overlap (0 in GOLD+i45) — CO kinematics
+  DiskMass:      1 overlap — independent Υ★
+  EDD:           ~30 overlap — TRGB/Cepheid distances
+  MaNGA:         ~10 overlap — stellar kinematics
+  BIG-SPARC:     ~4000 future — game changer
+
+PLATINUM SAMPLE (GOLD+i45 ∩ THINGS): 7 galaxies
+  NGC2403, NGC2841, NGC2903, NGC3198, NGC3521, NGC5055, NGC7331
+  Mean a0 = 3560, SD = 0.262 dex (consistent with full sample)
+
+PRIORITY MAP (tied to Phase 12b systematics budget):
+  #1 NCM corrections (THINGS 2D): addresses 40% of gap
+  #2 Distance (EDD TRGB): addresses 27% of gap
+  #3 Υ★ (DiskMass/MaNGA): addresses 32% of gap
+  Combined: ~70% of gap → leaves 0.08 dex unexplained
+
+NEXT STEP: M0 vs M1 vs M2 formal model comparison on current data
+
+================================================================================

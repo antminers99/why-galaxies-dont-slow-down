@@ -3464,3 +3464,52 @@ INTERPRETATION:
   The strict universality hypothesis is under pressure but not decisively refuted.
 
 ================================================================================
+
+================================================================================
+  SECTION 30: EXTERNAL DATA CROSS-MATCH & DECISION MATRIX
+================================================================================
+
+PURPOSE:
+  Map available external datasets against SPARC galaxies to identify
+  what data exists to resolve the remaining 0.080 dex gap (30% of tau).
+
+CROSS-MATCH RESULTS:
+
+  Survey            Overlap with SPARC    In GOLD+i45    Public?
+  ─────────────────────────────────────────────────────────────────
+  THINGS            14/175                7/59           YES
+  LITTLE THINGS     4/175                 0/59           YES
+  PHANGS            3/175                 0/59           YES
+  DiskMass          1/175                 0/59           YES
+  EDD (distances)   ~30/175               ~15/59         YES
+  MaNGA DR17        ~10/175               ~5/59          YES
+  CALIFA DR3        ~5/175                ~3/59          YES
+  BIG-SPARC         ~4000 (future)        —              UPCOMING
+
+"PLATINUM" CROSS-MATCH SAMPLE (GOLD+i45 ∩ THINGS):
+  7 galaxies with SPARC rotation curves + THINGS 2D kinematics:
+    NGC2403   a0=4610   RMS=0.035   n=73
+    NGC2841   a0=10677  RMS=0.057   n=50
+    NGC2903   a0=3481   RMS=0.218   n=34
+    NGC3198   a0=2581   RMS=0.130   n=43
+    NGC3521   a0=4310   RMS=0.028   n=41
+    NGC5055   a0=1661   RMS=0.040   n=28
+    NGC7331   a0=2291   RMS=0.058   n=36
+
+  Platinum statistics: mean a0=3560, SD=0.262 dex
+  (consistent with full sample: a0=3633, SD=0.275)
+
+WHAT EACH DATASET RESOLVES (from Phase 12b mock v2):
+  THINGS 2D kinematics  →  non-circular motions (S4: 40% of gap)
+  EDD TRGB distances    →  distance systematics (S2: 27% of gap)
+  DiskMass/MaNGA Υ★     →  mass-to-light errors (S3: 32% of gap)
+  THINGS vel. disp.     →  pressure support     (S5: 3% of gap)
+  S4G/PHANGS morphology →  bar/arm corrections  (S6: 9% of gap)
+
+RECOMMENDED PRIORITY:
+  1. IMMEDIATE: M0 vs M1 vs M2 model comparison on current data
+  2. SHORT TERM: THINGS cross-match for NCM corrections
+  3. MEDIUM TERM: EDD distances + MaNGA Υ★ for Platinum sample
+  4. FUTURE: BIG-SPARC (~4000 galaxies, decisive statistical power)
+
+================================================================================
