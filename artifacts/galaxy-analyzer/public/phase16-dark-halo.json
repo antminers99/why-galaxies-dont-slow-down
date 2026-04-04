@@ -1,0 +1,1042 @@
+{
+  "version": "16.0.0",
+  "timestamp": "2026-04-04T12:47:07.106Z",
+  "description": "Phase 16: Dark Halo Explanatory Test",
+  "nGalaxies": 56,
+  "haloFitSummary": {
+    "meanLogRs": 1.3,
+    "meanLogRhoS": 6.728,
+    "meanFDM_out": 0.75,
+    "meanVmaxDM": 148.4
+  },
+  "dmCorrelations": [
+    {
+      "name": "log(rs)",
+      "r": -0.466
+    },
+    {
+      "name": "log(rho_s)",
+      "r": 0.516
+    },
+    {
+      "name": "f_DM(half)",
+      "r": 0.451
+    },
+    {
+      "name": "f_DM(out)",
+      "r": 0.585
+    },
+    {
+      "name": "V_max,DM",
+      "r": 0.227
+    },
+    {
+      "name": "log(V_maxDM)",
+      "r": 0.114
+    },
+    {
+      "name": "c_approx",
+      "r": 0.06
+    },
+    {
+      "name": "log(A)",
+      "r": -0.336
+    }
+  ],
+  "cvResults": [
+    {
+      "name": "M0: Universal a0",
+      "k": 1,
+      "cvRMS": 0.11662,
+      "gapClosed": 0
+    },
+    {
+      "name": "M1: Baryon only",
+      "k": 9,
+      "cvRMS": 0.10557,
+      "gapClosed": 20.6
+    },
+    {
+      "name": "M2: DM halo only",
+      "k": 9,
+      "cvRMS": 0.07361,
+      "gapClosed": 80
+    },
+    {
+      "name": "M3: Baryon + DM",
+      "k": 17,
+      "cvRMS": 0.07658,
+      "gapClosed": 74.5
+    },
+    {
+      "name": "M6: Per-galaxy",
+      "k": 56,
+      "cvRMS": 0.06287,
+      "gapClosed": 100
+    }
+  ],
+  "ridgeDM": {
+    "cvRMS": 0.07267,
+    "gapClosed": 81.8,
+    "lambda": 0.1
+  },
+  "ridgeCombined": {
+    "cvRMS": 0.07203,
+    "gapClosed": 83
+  },
+  "verdict": "DM_EXPLAINS",
+  "perGalaxy": [
+    {
+      "name": "ESO563-G021",
+      "logA0": 3.9334,
+      "deltaA0": 0.37,
+      "halo": {
+        "logA": 7.218,
+        "logRs": 1.61,
+        "rs": 40.74,
+        "logRhoS": 6.655,
+        "VmaxDM": 281.5,
+        "fDM_half": 0.625,
+        "fDM_out": 0.781,
+        "c_approx": 2.1,
+        "rms": 0.1576,
+        "n": 27
+      }
+    },
+    {
+      "name": "F571-8",
+      "logA0": 3.7879,
+      "deltaA0": 0.2244,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.75,
+        "rs": 56.23,
+        "logRhoS": 5.967,
+        "VmaxDM": 125.6,
+        "fDM_half": 0.747,
+        "fDM_out": 0.92,
+        "c_approx": 1,
+        "rms": 0.227,
+        "n": 9
+      }
+    },
+    {
+      "name": "IC4202",
+      "logA0": 3.6353,
+      "deltaA0": 0.0718,
+      "halo": {
+        "logA": 6.7,
+        "logRs": 1.4,
+        "rs": 25.12,
+        "logRhoS": 6.767,
+        "VmaxDM": 197.2,
+        "fDM_half": 0.467,
+        "fDM_out": 0.641,
+        "c_approx": 2.1,
+        "rms": 0.0537,
+        "n": 28
+      }
+    },
+    {
+      "name": "NGC0024",
+      "logA0": 4.0928,
+      "deltaA0": 0.5293,
+      "halo": {
+        "logA": 6.7,
+        "logRs": 1.45,
+        "rs": 28.18,
+        "logRhoS": 6.617,
+        "VmaxDM": 150.2,
+        "fDM_half": 0.731,
+        "fDM_out": 0.899,
+        "c_approx": 1,
+        "rms": 0.2101,
+        "n": 29
+      }
+    },
+    {
+      "name": "NGC0289",
+      "logA0": 3.325,
+      "deltaA0": -0.2385,
+      "halo": {
+        "logA": 6.187,
+        "logRs": 1.187,
+        "rs": 15.39,
+        "logRhoS": 6.893,
+        "VmaxDM": 147,
+        "fDM_half": 0.721,
+        "fDM_out": 0.815,
+        "c_approx": 9.2,
+        "rms": 0.1402,
+        "n": 28
+      }
+    },
+    {
+      "name": "NGC0801",
+      "logA0": 3.2042,
+      "deltaA0": -0.3593,
+      "halo": {
+        "logA": 6,
+        "logRs": 0.9,
+        "rs": 7.94,
+        "logRhoS": 7.567,
+        "VmaxDM": 165,
+        "fDM_half": 0.423,
+        "fDM_out": 0.636,
+        "c_approx": 15.1,
+        "rms": 0.1136,
+        "n": 11
+      }
+    },
+    {
+      "name": "NGC0891",
+      "logA0": 3.4046,
+      "deltaA0": -0.1589,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.7,
+        "rs": 50.12,
+        "logRhoS": 6.117,
+        "VmaxDM": 142.9,
+        "fDM_half": 0.398,
+        "fDM_out": 0.491,
+        "c_approx": 1,
+        "rms": 0.1048,
+        "n": 12
+      }
+    },
+    {
+      "name": "NGC1003",
+      "logA0": 3.4521,
+      "deltaA0": -0.1114,
+      "halo": {
+        "logA": 6.2,
+        "logRs": 1.45,
+        "rs": 28.18,
+        "logRhoS": 6.117,
+        "VmaxDM": 105.3,
+        "fDM_half": 0.812,
+        "fDM_out": 0.857,
+        "c_approx": 2.1,
+        "rms": 0.0711,
+        "n": 36
+      }
+    },
+    {
+      "name": "NGC1090",
+      "logA0": 3.3626,
+      "deltaA0": -0.2008,
+      "halo": {
+        "logA": 6.2,
+        "logRs": 1.25,
+        "rs": 17.78,
+        "logRhoS": 6.717,
+        "VmaxDM": 138,
+        "fDM_half": 0.559,
+        "fDM_out": 0.672,
+        "c_approx": 3.4,
+        "rms": 0.0639,
+        "n": 21
+      }
+    },
+    {
+      "name": "NGC1705",
+      "logA0": 4.1197,
+      "deltaA0": 0.5562,
+      "halo": {
+        "logA": 4.45,
+        "logRs": 0.1,
+        "rs": 1.26,
+        "logRhoS": 8.417,
+        "VmaxDM": 69.6,
+        "fDM_half": 0.889,
+        "fDM_out": 0.923,
+        "c_approx": 9.5,
+        "rms": 0.0417,
+        "n": 14
+      }
+    },
+    {
+      "name": "NGC2403",
+      "logA0": 3.6637,
+      "deltaA0": 0.1002,
+      "halo": {
+        "logA": 6,
+        "logRs": 1.15,
+        "rs": 14.13,
+        "logRhoS": 6.817,
+        "VmaxDM": 122,
+        "fDM_half": 0.561,
+        "fDM_out": 0.853,
+        "c_approx": 3,
+        "rms": 0.0647,
+        "n": 73
+      }
+    },
+    {
+      "name": "NGC2683",
+      "logA0": 3.4383,
+      "deltaA0": -0.1252,
+      "halo": {
+        "logA": 5.845,
+        "logRs": 0.895,
+        "rs": 7.86,
+        "logRhoS": 7.426,
+        "VmaxDM": 138.8,
+        "fDM_half": 0.671,
+        "fDM_out": 0.76,
+        "c_approx": 8.8,
+        "rms": 0.067,
+        "n": 11
+      }
+    },
+    {
+      "name": "NGC2841",
+      "logA0": 4.0284,
+      "deltaA0": 0.465,
+      "halo": {
+        "logA": 6.55,
+        "logRs": 1.05,
+        "rs": 11.22,
+        "logRhoS": 7.667,
+        "VmaxDM": 261.5,
+        "fDM_half": 0.631,
+        "fDM_out": 0.864,
+        "c_approx": 11.3,
+        "rms": 0.0387,
+        "n": 50
+      }
+    },
+    {
+      "name": "NGC2903",
+      "logA0": 3.5894,
+      "deltaA0": 0.0259,
+      "halo": {
+        "logA": 6.7,
+        "logRs": 1.5,
+        "rs": 31.62,
+        "logRhoS": 6.467,
+        "VmaxDM": 168.1,
+        "fDM_half": 0.589,
+        "fDM_out": 0.75,
+        "c_approx": 1.6,
+        "rms": 0.1143,
+        "n": 26
+      }
+    },
+    {
+      "name": "NGC2915",
+      "logA0": 4.0841,
+      "deltaA0": 0.5206,
+      "halo": {
+        "logA": 5.095,
+        "logRs": 0.645,
+        "rs": 4.42,
+        "logRhoS": 7.426,
+        "VmaxDM": 78.1,
+        "fDM_half": 0.927,
+        "fDM_out": 0.928,
+        "c_approx": 4.5,
+        "rms": 0.0864,
+        "n": 27
+      }
+    },
+    {
+      "name": "NGC2955",
+      "logA0": 3.3881,
+      "deltaA0": -0.1754,
+      "halo": {
+        "logA": 6.25,
+        "logRs": 1.2,
+        "rs": 15.85,
+        "logRhoS": 6.917,
+        "VmaxDM": 155.7,
+        "fDM_half": 0.308,
+        "fDM_out": 0.463,
+        "c_approx": 4.5,
+        "rms": 0.2026,
+        "n": 20
+      }
+    },
+    {
+      "name": "NGC2998",
+      "logA0": 3.8076,
+      "deltaA0": 0.2441,
+      "halo": {
+        "logA": 5.863,
+        "logRs": 0.713,
+        "rs": 5.16,
+        "logRhoS": 7.991,
+        "VmaxDM": 174.6,
+        "fDM_half": 0.481,
+        "fDM_out": 0.694,
+        "c_approx": 16.4,
+        "rms": 0.1193,
+        "n": 13
+      }
+    },
+    {
+      "name": "NGC3198",
+      "logA0": 3.4749,
+      "deltaA0": -0.0885,
+      "halo": {
+        "logA": 6.291,
+        "logRs": 1.345,
+        "rs": 22.15,
+        "logRhoS": 6.522,
+        "VmaxDM": 138,
+        "fDM_half": 0.591,
+        "fDM_out": 0.811,
+        "c_approx": 4,
+        "rms": 0.0828,
+        "n": 39
+      }
+    },
+    {
+      "name": "NGC3521",
+      "logA0": 3.6344,
+      "deltaA0": 0.071,
+      "halo": {
+        "logA": 6.655,
+        "logRs": 1.405,
+        "rs": 25.38,
+        "logRhoS": 6.708,
+        "VmaxDM": 173.7,
+        "fDM_half": 0.17,
+        "fDM_out": 0.702,
+        "c_approx": 1.4,
+        "rms": 0.1283,
+        "n": 41
+      }
+    },
+    {
+      "name": "NGC3726",
+      "logA0": 3.233,
+      "deltaA0": -0.3304,
+      "halo": {
+        "logA": 7,
+        "logRs": 1.9,
+        "rs": 79.43,
+        "logRhoS": 5.567,
+        "VmaxDM": 127.3,
+        "fDM_half": 0.389,
+        "fDM_out": 0.768,
+        "c_approx": 1,
+        "rms": 0.1948,
+        "n": 12
+      }
+    },
+    {
+      "name": "NGC3741",
+      "logA0": 3.5545,
+      "deltaA0": -0.0089,
+      "halo": {
+        "logA": 6.75,
+        "logRs": 1.9,
+        "rs": 79.43,
+        "logRhoS": 5.317,
+        "VmaxDM": 52.8,
+        "fDM_half": 0.897,
+        "fDM_out": 0.93,
+        "c_approx": 1,
+        "rms": 0.0568,
+        "n": 21
+      }
+    },
+    {
+      "name": "NGC3769",
+      "logA0": 3.3375,
+      "deltaA0": -0.226,
+      "halo": {
+        "logA": 6.25,
+        "logRs": 1.45,
+        "rs": 28.18,
+        "logRhoS": 6.167,
+        "VmaxDM": 114.1,
+        "fDM_half": 0.665,
+        "fDM_out": 0.836,
+        "c_approx": 2.6,
+        "rms": 0.1352,
+        "n": 11
+      }
+    },
+    {
+      "name": "NGC3893",
+      "logA0": 3.6091,
+      "deltaA0": 0.0456,
+      "halo": {
+        "logA": 6.083,
+        "logRs": 1.087,
+        "rs": 12.22,
+        "logRhoS": 7.088,
+        "VmaxDM": 144.8,
+        "fDM_half": 0.575,
+        "fDM_out": 0.674,
+        "c_approx": 3.1,
+        "rms": 0.0507,
+        "n": 9
+      }
+    },
+    {
+      "name": "NGC4013",
+      "logA0": 3.4406,
+      "deltaA0": -0.1229,
+      "halo": {
+        "logA": 6.5,
+        "logRs": 1.45,
+        "rs": 28.18,
+        "logRhoS": 6.417,
+        "VmaxDM": 149.2,
+        "fDM_half": 0.591,
+        "fDM_out": 0.768,
+        "c_approx": 2.2,
+        "rms": 0.0634,
+        "n": 36
+      }
+    },
+    {
+      "name": "NGC4100",
+      "logA0": 3.6226,
+      "deltaA0": 0.0592,
+      "halo": {
+        "logA": 6,
+        "logRs": 1,
+        "rs": 10,
+        "logRhoS": 7.267,
+        "VmaxDM": 147,
+        "fDM_half": 0.635,
+        "fDM_out": 0.721,
+        "c_approx": 4.6,
+        "rms": 0.0616,
+        "n": 24
+      }
+    },
+    {
+      "name": "NGC4138",
+      "logA0": 3.5278,
+      "deltaA0": -0.0356,
+      "halo": {
+        "logA": 6.2,
+        "logRs": 1.25,
+        "rs": 17.78,
+        "logRhoS": 6.717,
+        "VmaxDM": 132,
+        "fDM_half": 0.589,
+        "fDM_out": 0.725,
+        "c_approx": 2.1,
+        "rms": 0.1736,
+        "n": 7
+      }
+    },
+    {
+      "name": "NGC4157",
+      "logA0": 3.3317,
+      "deltaA0": -0.2318,
+      "halo": {
+        "logA": 7,
+        "logRs": 1.8,
+        "rs": 63.1,
+        "logRhoS": 5.867,
+        "VmaxDM": 148.6,
+        "fDM_half": 0.475,
+        "fDM_out": 0.713,
+        "c_approx": 1,
+        "rms": 0.0519,
+        "n": 15
+      }
+    },
+    {
+      "name": "NGC4217",
+      "logA0": 3.2256,
+      "deltaA0": -0.3379,
+      "halo": {
+        "logA": 6.75,
+        "logRs": 1.7,
+        "rs": 50.12,
+        "logRhoS": 5.917,
+        "VmaxDM": 112.7,
+        "fDM_half": 0.377,
+        "fDM_out": 0.499,
+        "c_approx": 1,
+        "rms": 0.1937,
+        "n": 11
+      }
+    },
+    {
+      "name": "NGC4559",
+      "logA0": 3.2236,
+      "deltaA0": -0.3398,
+      "halo": {
+        "logA": 6.75,
+        "logRs": 1.75,
+        "rs": 56.23,
+        "logRhoS": 5.767,
+        "VmaxDM": 110.2,
+        "fDM_half": 0.593,
+        "fDM_out": 0.661,
+        "c_approx": 1,
+        "rms": 0.104,
+        "n": 32
+      }
+    },
+    {
+      "name": "NGC5005",
+      "logA0": 3.5918,
+      "deltaA0": 0.0283,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.6,
+        "rs": 39.81,
+        "logRhoS": 6.417,
+        "VmaxDM": 151.4,
+        "fDM_half": 0.262,
+        "fDM_out": 0.422,
+        "c_approx": 1,
+        "rms": 0.0686,
+        "n": 12
+      }
+    },
+    {
+      "name": "NGC5033",
+      "logA0": 3.5919,
+      "deltaA0": 0.0284,
+      "halo": {
+        "logA": 6.363,
+        "logRs": 1.213,
+        "rs": 16.33,
+        "logRhoS": 6.991,
+        "VmaxDM": 174.8,
+        "fDM_half": 0.697,
+        "fDM_out": 0.796,
+        "c_approx": 5.5,
+        "rms": 0.0529,
+        "n": 19
+      }
+    },
+    {
+      "name": "NGC5055",
+      "logA0": 3.2345,
+      "deltaA0": -0.3289,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.85,
+        "rs": 70.79,
+        "logRhoS": 5.667,
+        "VmaxDM": 149.1,
+        "fDM_half": 0.579,
+        "fDM_out": 0.739,
+        "c_approx": 1.5,
+        "rms": 0.1611,
+        "n": 21
+      }
+    },
+    {
+      "name": "NGC5371",
+      "logA0": 3.1167,
+      "deltaA0": -0.4468,
+      "halo": {
+        "logA": 5.595,
+        "logRs": 0.641,
+        "rs": 4.37,
+        "logRhoS": 7.94,
+        "VmaxDM": 139.4,
+        "fDM_half": 0.213,
+        "fDM_out": 0.589,
+        "c_approx": 21.1,
+        "rms": 0.148,
+        "n": 19
+      }
+    },
+    {
+      "name": "NGC5907",
+      "logA0": 3.5194,
+      "deltaA0": -0.044,
+      "halo": {
+        "logA": 6.176,
+        "logRs": 1.012,
+        "rs": 10.27,
+        "logRhoS": 7.408,
+        "VmaxDM": 177.6,
+        "fDM_half": 0.642,
+        "fDM_out": 0.74,
+        "c_approx": 9.8,
+        "rms": 0.0565,
+        "n": 19
+      }
+    },
+    {
+      "name": "NGC6015",
+      "logA0": 3.6764,
+      "deltaA0": 0.1129,
+      "halo": {
+        "logA": 5.964,
+        "logRs": 1.026,
+        "rs": 10.61,
+        "logRhoS": 7.154,
+        "VmaxDM": 137,
+        "fDM_half": 0.626,
+        "fDM_out": 0.831,
+        "c_approx": 5.5,
+        "rms": 0.1125,
+        "n": 44
+      }
+    },
+    {
+      "name": "NGC6195",
+      "logA0": 3.1492,
+      "deltaA0": -0.4143,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.8,
+        "rs": 63.1,
+        "logRhoS": 5.817,
+        "VmaxDM": 148.2,
+        "fDM_half": 0.116,
+        "fDM_out": 0.501,
+        "c_approx": 1.2,
+        "rms": 0.1627,
+        "n": 20
+      }
+    },
+    {
+      "name": "NGC6503",
+      "logA0": 3.5598,
+      "deltaA0": -0.0036,
+      "halo": {
+        "logA": 5.7,
+        "logRs": 1,
+        "rs": 10,
+        "logRhoS": 6.967,
+        "VmaxDM": 104.1,
+        "fDM_half": 0.775,
+        "fDM_out": 0.861,
+        "c_approx": 4.7,
+        "rms": 0.0921,
+        "n": 31
+      }
+    },
+    {
+      "name": "NGC6674",
+      "logA0": 3.7087,
+      "deltaA0": 0.1452,
+      "halo": {
+        "logA": 6.45,
+        "logRs": 1.1,
+        "rs": 12.59,
+        "logRhoS": 7.417,
+        "VmaxDM": 220,
+        "fDM_half": 0.72,
+        "fDM_out": 0.85,
+        "c_approx": 11.5,
+        "rms": 0.0668,
+        "n": 15
+      }
+    },
+    {
+      "name": "NGC7331",
+      "logA0": 3.3905,
+      "deltaA0": -0.1729,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.7,
+        "rs": 50.12,
+        "logRhoS": 6.117,
+        "VmaxDM": 175,
+        "fDM_half": 0.465,
+        "fDM_out": 0.676,
+        "c_approx": 1.4,
+        "rms": 0.0771,
+        "n": 27
+      }
+    },
+    {
+      "name": "NGC7814",
+      "logA0": 3.8055,
+      "deltaA0": 0.2421,
+      "halo": {
+        "logA": 7,
+        "logRs": 1.6,
+        "rs": 39.81,
+        "logRhoS": 6.467,
+        "VmaxDM": 189.4,
+        "fDM_half": 0.603,
+        "fDM_out": 0.753,
+        "c_approx": 1,
+        "rms": 0.1158,
+        "n": 16
+      }
+    },
+    {
+      "name": "UGC00128",
+      "logA0": 3.5456,
+      "deltaA0": -0.0178,
+      "halo": {
+        "logA": 6.405,
+        "logRs": 1.505,
+        "rs": 31.96,
+        "logRhoS": 6.158,
+        "VmaxDM": 130.3,
+        "fDM_half": 0.821,
+        "fDM_out": 0.89,
+        "c_approx": 3.4,
+        "rms": 0.0879,
+        "n": 22
+      }
+    },
+    {
+      "name": "UGC01281",
+      "logA0": 3.3955,
+      "deltaA0": -0.168,
+      "halo": {
+        "logA": 6.5,
+        "logRs": 1.75,
+        "rs": 56.23,
+        "logRhoS": 5.517,
+        "VmaxDM": 47.2,
+        "fDM_half": 0.799,
+        "fDM_out": 0.819,
+        "c_approx": 1,
+        "rms": 0.2156,
+        "n": 23
+      }
+    },
+    {
+      "name": "UGC02885",
+      "logA0": 3.6148,
+      "deltaA0": 0.0514,
+      "halo": {
+        "logA": 6.613,
+        "logRs": 1.208,
+        "rs": 16.16,
+        "logRhoS": 7.255,
+        "VmaxDM": 234.3,
+        "fDM_half": 0.636,
+        "fDM_out": 0.762,
+        "c_approx": 9.2,
+        "rms": 0.157,
+        "n": 19
+      }
+    },
+    {
+      "name": "UGC02916",
+      "logA0": 3.3525,
+      "deltaA0": -0.211,
+      "halo": {
+        "logA": 5.539,
+        "logRs": 0.639,
+        "rs": 4.35,
+        "logRhoS": 7.89,
+        "VmaxDM": 131.1,
+        "fDM_half": 0.373,
+        "fDM_out": 0.564,
+        "c_approx": 17.5,
+        "rms": 0.291,
+        "n": 31
+      }
+    },
+    {
+      "name": "UGC02953",
+      "logA0": 3.8192,
+      "deltaA0": 0.2558,
+      "halo": {
+        "logA": 6.655,
+        "logRs": 1.255,
+        "rs": 17.97,
+        "logRhoS": 7.158,
+        "VmaxDM": 233,
+        "fDM_half": 0.399,
+        "fDM_out": 0.859,
+        "c_approx": 6.9,
+        "rms": 0.2334,
+        "n": 97
+      }
+    },
+    {
+      "name": "UGC03205",
+      "logA0": 3.7656,
+      "deltaA0": 0.2021,
+      "halo": {
+        "logA": 6.095,
+        "logRs": 0.945,
+        "rs": 8.82,
+        "logRhoS": 7.526,
+        "VmaxDM": 174.8,
+        "fDM_half": 0.431,
+        "fDM_out": 0.824,
+        "c_approx": 9.1,
+        "rms": 0.1398,
+        "n": 46
+      }
+    },
+    {
+      "name": "UGC03546",
+      "logA0": 3.4787,
+      "deltaA0": -0.0848,
+      "halo": {
+        "logA": 7,
+        "logRs": 1.75,
+        "rs": 56.23,
+        "logRhoS": 6.017,
+        "VmaxDM": 161.8,
+        "fDM_half": 0.54,
+        "fDM_out": 0.752,
+        "c_approx": 1,
+        "rms": 0.1569,
+        "n": 15
+      }
+    },
+    {
+      "name": "UGC03580",
+      "logA0": 3.35,
+      "deltaA0": -0.2134,
+      "halo": {
+        "logA": 6.5,
+        "logRs": 1.6,
+        "rs": 39.81,
+        "logRhoS": 5.967,
+        "VmaxDM": 115.4,
+        "fDM_half": 0.631,
+        "fDM_out": 0.844,
+        "c_approx": 1.4,
+        "rms": 0.3023,
+        "n": 24
+      }
+    },
+    {
+      "name": "UGC05721",
+      "logA0": 4.0354,
+      "deltaA0": 0.4719,
+      "halo": {
+        "logA": 5,
+        "logRs": 0.55,
+        "rs": 3.55,
+        "logRhoS": 7.617,
+        "VmaxDM": 77.9,
+        "fDM_half": 0.847,
+        "fDM_out": 0.877,
+        "c_approx": 3.8,
+        "rms": 0.1152,
+        "n": 23
+      }
+    },
+    {
+      "name": "UGC06786",
+      "logA0": 3.9539,
+      "deltaA0": 0.3904,
+      "halo": {
+        "logA": 6.2,
+        "logRs": 1,
+        "rs": 10,
+        "logRhoS": 7.467,
+        "VmaxDM": 185.1,
+        "fDM_half": 0.487,
+        "fDM_out": 0.862,
+        "c_approx": 6.8,
+        "rms": 0.2255,
+        "n": 45
+      }
+    },
+    {
+      "name": "UGC06787",
+      "logA0": 3.904,
+      "deltaA0": 0.3405,
+      "halo": {
+        "logA": 6.95,
+        "logRs": 1.5,
+        "rs": 31.62,
+        "logRhoS": 6.717,
+        "VmaxDM": 238.4,
+        "fDM_half": 0.583,
+        "fDM_out": 0.874,
+        "c_approx": 2.4,
+        "rms": 0.0569,
+        "n": 52
+      }
+    },
+    {
+      "name": "UGC06973",
+      "logA0": 3.4244,
+      "deltaA0": -0.139,
+      "halo": {
+        "logA": 7,
+        "logRs": 1.75,
+        "rs": 56.23,
+        "logRhoS": 6.017,
+        "VmaxDM": 102.1,
+        "fDM_half": 0.356,
+        "fDM_out": 0.467,
+        "c_approx": 1,
+        "rms": 0.1719,
+        "n": 5
+      }
+    },
+    {
+      "name": "UGC08490",
+      "logA0": 3.8021,
+      "deltaA0": 0.2386,
+      "halo": {
+        "logA": 4.905,
+        "logRs": 0.505,
+        "rs": 3.2,
+        "logRhoS": 7.658,
+        "VmaxDM": 73.7,
+        "fDM_half": 0.847,
+        "fDM_out": 0.879,
+        "c_approx": 6.4,
+        "rms": 0.0224,
+        "n": 30
+      }
+    },
+    {
+      "name": "UGC08699",
+      "logA0": 3.7134,
+      "deltaA0": 0.1499,
+      "halo": {
+        "logA": 5.866,
+        "logRs": 0.866,
+        "rs": 7.34,
+        "logRhoS": 7.536,
+        "VmaxDM": 147,
+        "fDM_half": 0.554,
+        "fDM_out": 0.817,
+        "c_approx": 7,
+        "rms": 0.1139,
+        "n": 36
+      }
+    },
+    {
+      "name": "UGC09037",
+      "logA0": 3.0566,
+      "deltaA0": -0.5068,
+      "halo": {
+        "logA": 7.091,
+        "logRs": 1.995,
+        "rs": 98.96,
+        "logRhoS": 5.372,
+        "VmaxDM": 112.2,
+        "fDM_half": 0.491,
+        "fDM_out": 0.579,
+        "c_approx": 1,
+        "rms": 0.1386,
+        "n": 19
+      }
+    },
+    {
+      "name": "UGC09133",
+      "logA0": 3.4647,
+      "deltaA0": -0.0988,
+      "halo": {
+        "logA": 6.75,
+        "logRs": 1.45,
+        "rs": 28.18,
+        "logRhoS": 6.667,
+        "VmaxDM": 207.7,
+        "fDM_half": 0.512,
+        "fDM_out": 0.829,
+        "c_approx": 7.7,
+        "rms": 0.1825,
+        "n": 60
+      }
+    }
+  ]
+}

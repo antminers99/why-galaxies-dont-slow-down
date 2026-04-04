@@ -1181,3 +1181,24 @@ Files: scripts/phase15-model-ladder.cjs
        public/phase15-model-ladder.json
 
 ================================================================================
+
+Section 45: Phase 16 — Dark Halo Explanatory Test
+--------------------------------------------------
+Date: 2026-04-04
+Version: 16.0.0
+
+NFW halo fits for 56 galaxies. DM properties as explanatory variables for a0 variation.
+
+KEY RESULT: DM halo closes 80% of M0→M6 gap (vs 20.6% for baryons alone)
+  Best predictor: f_DM(out), r=0.585 (t=5.3)
+  Ridge DM-only: 81.8% gap closed
+  Baryon+DM ridge: 83.0% gap closed
+  Remaining unexplained: 17%
+
+VERDICT: Apparent a0 variation largely reflects halo structure diversity.
+CAUTION: Possible circularity — NFW fits use same data as a0 fits.
+
+Files: scripts/phase16-dark-halo-test.cjs
+       public/phase16-dark-halo.json
+
+================================================================================

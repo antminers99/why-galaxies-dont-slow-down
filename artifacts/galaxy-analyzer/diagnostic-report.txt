@@ -3721,3 +3721,81 @@ INTERPRETATION:
   per-galaxy freedom.
 
 ================================================================================
+
+================================================================================
+  SECTION 34: PHASE 16 — DARK HALO EXPLANATORY TEST
+  Version 16.0.0
+================================================================================
+
+PURPOSE:
+  Test whether dark matter halo structure explains the a0 variation
+  found in Phases 13-15. If halo properties predict a0,i, then the
+  "variation" is not genuine but reflects halo diversity.
+
+METHOD:
+  1. Fit NFW halos to each galaxy (extract rs, rho_s, fDM, VmaxDM)
+  2. Test these as predictors of delta_a0
+  3. Galaxy-level LOO cross-validation (train on galaxies, test on others)
+  4. Ridge regularization to prevent overfitting
+
+NFW HALO FIT SUMMARY (56 galaxies):
+  log(rs) mean = 1.30 kpc
+  log(rho_s) mean = 6.73 M_sun/kpc^3
+  f_DM(outer) mean = 0.750
+  V_max,DM mean = 148.4 km/s
+
+KEY CORRELATIONS WITH delta_a0:
+  f_DM(out):      r = 0.585  (t=5.3, p<<0.01) — STRONGEST
+  log(rho_s):     r = 0.516  (t=4.4)
+  log(rs):        r = -0.466 (t=3.9)
+  f_DM(half):     r = 0.451  (t=3.7)
+  [Compare: best baryon predictor log(MHI) had r = -0.388]
+
+MODEL LADDER (LOO-CV, galaxy-level):
+  ┌────────────────────────────────────────────────────────┐
+  │  M0: Universal a0         gap closed:   0.0%         │
+  │  M1: Baryon only          gap closed:  20.6%         │
+  │  M2: DM halo only         gap closed:  80.0%         │
+  │  M2r: DM ridge            gap closed:  81.8%         │
+  │  M3: Baryon + DM          gap closed:  74.5%         │
+  │  M3r: Baryon+DM ridge     gap closed:  83.0%         │
+  │  M6: Per-galaxy free      gap closed: 100.0%         │
+  └────────────────────────────────────────────────────────┘
+
+VERDICT:
+  ╔═══════════════════════════════════════════════════════════════════╗
+  ║  DM HALO STRUCTURE EXPLAINS ~80% OF THE a0 VARIATION.          ║
+  ║  The "variation" is largely a reflection of halo diversity.     ║
+  ║  a0 may be effectively universal after halo corrections.        ║
+  ╚═══════════════════════════════════════════════════════════════════╝
+
+  DM halo is 4× better than baryons at predicting a0 variation.
+  f_DM(outer) — the dark matter fraction at the outermost point —
+  is the single most powerful predictor (r=0.585).
+
+  Galaxies with HIGH dark matter fraction → HIGHER apparent a0
+  Galaxies with LOW dark matter fraction → LOWER apparent a0
+
+INTERPRETATION:
+  The a0 "variation" found in Phase 13-15 is NOT evidence that the
+  acceleration scale genuinely differs between galaxies. Instead:
+  → The NFW halo's contribution to the rotation curve creates an
+    apparent shift in a0 when we fit a single-parameter RAR.
+  → Galaxies with denser, more concentrated halos appear to have
+    different a0, but this is a halo structure effect.
+  → After accounting for halo properties, only ~17% of the gap
+    remains unexplained.
+
+  This DOES NOT prove MOND wrong or right. It means:
+  → If MOND is correct, a0 is more universal than Phase 13 suggested
+  → If DM is correct, the RAR is a consequence of halo-baryon scaling
+
+CAUTION:
+  The NFW fits use the SAME data (rotation curves) as the a0 fits.
+  There is inherent circularity: NFW parameters are derived from
+  the same gobs that determines a0. The 80% gap closure may partly
+  reflect this circularity rather than true explanatory power.
+  External halo constraints (lensing, X-ray) would be needed to
+  break this degeneracy.
+
+================================================================================
