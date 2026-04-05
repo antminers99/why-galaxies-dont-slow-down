@@ -35,7 +35,7 @@ const upsilonMap = {
 
 const Y = gals45.map(g => g.logA0);
 const sdY = sd(Y);
-const morphT = gals45.map(g => sparcMap[g.name]?.T || 5);
+const morphT = gals45.map(g => sparcMap[g.name]?.T ?? 5);
 const logUps = gals45.map(g => Math.log10(upsilonMap[g.name] || 0.50));
 const logMhost = gals45.map(g => tdMap[g.name].logMhost);
 function gapV(rms){return 100*(1-rms**2/sdY**2);}

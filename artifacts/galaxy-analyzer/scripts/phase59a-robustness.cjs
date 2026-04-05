@@ -86,8 +86,8 @@ console.log();
 
 // Cross-corrs on N=33 vs N=45
 console.log('CROSS-CORRELATIONS: N=33 (published only)');
-const morphT33 = pubGals.map(g => sparcMap[g.name]?.T || 5);
-const morphT45 = gals45.map(g => sparcMap[g.name]?.T || 5);
+const morphT33 = pubGals.map(g => sparcMap[g.name]?.T ?? 5);
+const morphT45 = gals45.map(g => sparcMap[g.name]?.T ?? 5);
 [
   {name:'logMHI', v33:pubGals.map(g=>g.logMHI), v45:gals45.map(g=>g.logMHI)},
   {name:'logSigma0', v33:pubGals.map(g=>g.logSigma0), v45:gals45.map(g=>g.logSigma0)},

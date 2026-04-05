@@ -41,7 +41,7 @@ function ols(Y,X){const n=Y.length,p=X[0].length+1;const Xa=X.map(r=>[1,...r]);c
 function looCV(Y,X){const n=Y.length;let ss=0;for(let i=0;i<n;i++){const Yt=[...Y.slice(0,i),...Y.slice(i+1)],Xt=[...X.slice(0,i),...X.slice(i+1)];const f=ols(Yt,Xt);const xi=[1,...X[i]];ss+=(Y[i]-xi.reduce((s,x,j)=>s+x*f.beta[j],0))**2;}return Math.sqrt(ss/n);}
 
 // ── Phase 63a: Build raw replication input from scratch ──
-const morphT = gals45.map(g => sparcMap[g.name]?.T || 5);
+const morphT = gals45.map(g => sparcMap[g.name]?.T ?? 5);
 const logUps = gals45.map(g => Math.log10(upsilonMap[g.name] || 0.50));
 const logMhost = gals45.map(g => tdMap[g.name].logMhost);
 

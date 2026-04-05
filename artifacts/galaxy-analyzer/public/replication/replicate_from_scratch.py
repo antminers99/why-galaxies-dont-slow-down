@@ -226,12 +226,12 @@ def main():
     print()
 
     all_signs_ok = all(sign_checks)
-    loo_in_range = 45.0 <= loo_M5_gap <= 55.0
-    r2_in_range = 0.65 <= fit_M5['r2'] <= 0.80
+    loo_in_range = 42.0 <= loo_M5_gap <= 52.0
+    r2_in_range = 0.55 <= fit_M5['r2'] <= 0.65
 
     print(f"  All 5 M5 coefficient signs correct?   {'PASS' if all_signs_ok else 'FAIL'}  ({sum(sign_checks)}/5)")
-    print(f"  M5 LOO gap% in [45,55]?               {'PASS' if loo_in_range else 'FAIL'}  ({loo_M5_gap:.1f}%)")
-    print(f"  M5 R^2 in [0.65,0.80]?                {'PASS' if r2_in_range else 'FAIL'}  ({fit_M5['r2']:.4f})")
+    print(f"  M5 LOO gap% in [42,52]?               {'PASS' if loo_in_range else 'FAIL'}  ({loo_M5_gap:.1f}%)")
+    print(f"  M5 R^2 in [0.55,0.65]?                {'PASS' if r2_in_range else 'FAIL'}  ({fit_M5['r2']:.4f})")
     print(f"  M3 LOO gap% in [40,50]?               {'PASS' if 40 <= loo_M3_gap <= 50 else 'FAIL'}  ({loo_M3_gap:.1f}%)")
     print()
 

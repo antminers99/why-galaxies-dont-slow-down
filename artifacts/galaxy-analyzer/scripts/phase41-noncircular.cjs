@@ -182,7 +182,7 @@ for (const gal of p11.galaxies) {
   const fitOuter = fitA0(secondHalf.length >= 4 ? secondHalf : sorted);
   const a0Gradient = fitOuter.logA0 - fitInner.logA0;
 
-  const T = sp.T || 5;
+  const T = sp.T ?? 5;
   const isBarred = (T >= 1 && T <= 4) ? 1 : 0;
 
   const inc = sp.inc || 60;

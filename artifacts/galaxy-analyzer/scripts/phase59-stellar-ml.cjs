@@ -212,7 +212,7 @@ const pairs = [
   {name:'rcWiggliness', fn:g=>g.rcWiggliness},
   {name:'logSigma0', fn:g=>g.logSigma0},
   {name:'logMeanRun', fn:g=>g.logMeanRun},
-  {name:'morphT', fn:g=>sparcMap[g.name]?.T || 5}
+  {name:'morphT', fn:g=>sparcMap[g.name]?.T ?? 5}
 ];
 pairs.forEach(p => {
   const v = gals.map((g,i) => p.fn(g,i));

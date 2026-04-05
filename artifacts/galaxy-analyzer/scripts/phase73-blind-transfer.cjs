@@ -45,7 +45,7 @@ const upsilonMap = {
 // STEP 1: Train on N=45 (frozen coefficients)
 // ═══════════════════════════════════════════════════════════════════
 const Y_train = gals45.map(g => g.logA0);
-const morphT_train = gals45.map(g => sparcMap[g.name]?.T || 5);
+const morphT_train = gals45.map(g => sparcMap[g.name]?.T ?? 5);
 const logUps_train = gals45.map(g => Math.log10(upsilonMap[g.name] || 0.50));
 const logMhost_train = gals45.map(g => tdMap[g.name].logMhost);
 
@@ -91,7 +91,7 @@ const sdY_test = sd(Y_test);
 const meanY_train = mean(Y_train);
 
 // Compute Υ★⊥ for test galaxies using TRAINING confounder model
-const morphT_test = testGals.map(g => sparcMap[g.name]?.T || 5);
+const morphT_test = testGals.map(g => sparcMap[g.name]?.T ?? 5);
 const logUps_test = testGals.map(g => Math.log10(upsilonMap[g.name] || 0.50));
 const logMhost_test = testGals.map(g => tdMap[g.name].logMhost);
 

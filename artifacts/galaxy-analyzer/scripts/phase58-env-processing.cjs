@@ -192,7 +192,7 @@ for (const gal of p11.galaxies) {
 
   const hiDef = logHIrichness < -0.3 ? 1 : 0;
 
-  const T = sp.T || gal.T || 5;
+  const T = sp.T || gal.T ?? 5;
   const colorProxy = T < 3 ? 1 : (T < 6 ? 0.5 : 0);
 
   const rpSusceptibility = fgas > 0.3 ? Math.log10(fgas * (sp.Vflat > 0 ? 1/sp.Vflat : 0.01)) : -2;

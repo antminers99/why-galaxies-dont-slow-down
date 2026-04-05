@@ -44,7 +44,7 @@ const upsilonMap = {
 // For the 11 holdout: assign estimated Upsilon by morphology
 const holdoutUps = {};
 gals11.forEach(g => {
-  const T = sparcMap[g.name]?.T || 5;
+  const T = sparcMap[g.name]?.T ?? 5;
   if (T <= 2) holdoutUps[g.name] = 0.65;
   else if (T <= 4) holdoutUps[g.name] = 0.50;
   else if (T <= 6) holdoutUps[g.name] = 0.40;
@@ -53,7 +53,7 @@ gals11.forEach(g => {
   if (upsilonMap[g.name]) holdoutUps[g.name] = upsilonMap[g.name];
 });
 
-const morphT45 = gals45.map(g => sparcMap[g.name]?.T || 5);
+const morphT45 = gals45.map(g => sparcMap[g.name]?.T ?? 5);
 const logUps45 = gals45.map(g => Math.log10(upsilonMap[g.name] || 0.50));
 const logMhost45 = gals45.map(g => tdMap[g.name].logMhost);
 const Y45 = gals45.map(g => g.logA0);
@@ -260,7 +260,7 @@ console.log('━━━━━━━━━━━━━━━━━━━━━━�
 // Split: early (T<=4) vs late (T>4)
 const earlyIdx = [], lateIdx = [];
 gals45.forEach((g,i) => {
-  const T = sparcMap[g.name]?.T || 5;
+  const T = sparcMap[g.name]?.T ?? 5;
   if (T <= 4) earlyIdx.push(i); else lateIdx.push(i);
 });
 

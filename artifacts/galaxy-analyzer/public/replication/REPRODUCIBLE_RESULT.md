@@ -332,4 +332,21 @@ print(f"LOO(ratio+Mbar) = {loo_r2_2var(...):.3f}")            # ~0.58
 
 ---
 
+## Errata (Superseded Phases 1-100 Analysis)
+
+**T||5 bug in old scripts (fixed):** JavaScript scripts from Phases 1-100 used
+`sparcMap[g.name]?.T || 5` which treated morphological type T=0 (valid for S0
+galaxies NGC4138, UGC06786) as falsy, replacing it with T=5. This affected the
+M5 model's Upsilon_perp construction. Corrected M5 numbers: LOO gap% = 46.6%
+(was 50.9%), Upsilon_perp coefficient = 0.372 (was 0.658). M3 was unaffected
+(44.1%). Fixed by using `?? 5` (nullish coalescing) in 21 scripts. These models
+are superseded by the current Phases 101-122 analysis and this bug does not
+affect the current result.
+
+**logA0 units in CSV:** The logA0 column in N45_final_dataset.csv is in
+log10((km/s)^2/kpc), NOT log10(m/s^2) as previously documented. To convert:
+log10(m/s^2) = logA0 - 13.489. Values range [3.1, 4.1] in CSV units.
+
+---
+
 **Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results included for full reproducibility. This is a non-peer-reviewed computational analysis report. Analysis frozen at Phase 122.
