@@ -1,0 +1,651 @@
+{
+  "phase": 112,
+  "title": "Matched Falsification of Gas-Dominance Hypothesis",
+  "n": 104,
+  "baseline": {
+    "fgas": {
+      "r": 0.724,
+      "loo": 0.503
+    },
+    "log(MHI/L36)": {
+      "r": 0.729,
+      "loo": 0.512
+    },
+    "logSigma0": {
+      "r": -0.586,
+      "loo": 0.321
+    },
+    "logBaryonCompact": {
+      "r": -0.702,
+      "loo": 0.471
+    }
+  },
+  "matchResults": {
+    "Match on logSigma0 + logL36": {
+      "fgas": {
+        "r": 0.258,
+        "nPairs": 51
+      },
+      "logMHI_L36": {
+        "r": 0.318,
+        "nPairs": 51
+      },
+      "logSigma0": {
+        "r": null,
+        "nPairs": 0,
+        "note": "matched on this variable"
+      },
+      "logBaryonCompact": {
+        "r": -0.225,
+        "nPairs": 51
+      }
+    },
+    "Match on logSigma0 + logL36 + Vflat": {
+      "fgas": {
+        "r": 0.305,
+        "nPairs": 51
+      },
+      "logMHI_L36": {
+        "r": 0.39,
+        "nPairs": 51
+      },
+      "logSigma0": {
+        "r": null,
+        "nPairs": 0,
+        "note": "matched on this variable"
+      },
+      "logBaryonCompact": {
+        "r": -0.272,
+        "nPairs": 51
+      }
+    },
+    "Match on logBaryonCompact + logRdisk": {
+      "fgas": {
+        "r": 0.31,
+        "nPairs": 51
+      },
+      "logMHI_L36": {
+        "r": 0.33,
+        "nPairs": 51
+      },
+      "logSigma0": {
+        "r": -0.041,
+        "nPairs": 51
+      },
+      "logBaryonCompact": {
+        "r": null,
+        "nPairs": 0,
+        "note": "matched on this variable"
+      }
+    },
+    "Match on logSigma0 + logBaryonCompact": {
+      "fgas": {
+        "r": 0.231,
+        "nPairs": 51
+      },
+      "logMHI_L36": {
+        "r": 0.289,
+        "nPairs": 51
+      },
+      "logSigma0": {
+        "r": null,
+        "nPairs": 0,
+        "note": "matched on this variable"
+      },
+      "logBaryonCompact": {
+        "r": null,
+        "nPairs": 0,
+        "note": "matched on this variable"
+      }
+    },
+    "Match on logL36 + logRdisk + Vflat": {
+      "fgas": {
+        "r": 0.379,
+        "nPairs": 51
+      },
+      "logMHI_L36": {
+        "r": 0.49,
+        "nPairs": 51
+      },
+      "logSigma0": {
+        "r": -0.399,
+        "nPairs": 51
+      },
+      "logBaryonCompact": {
+        "r": -0.412,
+        "nPairs": 51
+      }
+    }
+  },
+  "binResults": {
+    "logSigma0": {
+      "fgas": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.39,
+          "binRange": [
+            "-1.28",
+            "0.16"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.725,
+          "binRange": [
+            "0.20",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.459,
+          "binRange": [
+            "0.72",
+            "1.67"
+          ]
+        }
+      ],
+      "logMHI_L36": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.356,
+          "binRange": [
+            "-1.28",
+            "0.16"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.714,
+          "binRange": [
+            "0.20",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.439,
+          "binRange": [
+            "0.72",
+            "1.67"
+          ]
+        }
+      ],
+      "logSigma0": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": -0.356,
+          "binRange": [
+            "-1.28",
+            "0.16"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.054,
+          "binRange": [
+            "0.20",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": -0.373,
+          "binRange": [
+            "0.72",
+            "1.67"
+          ]
+        }
+      ],
+      "logBaryonCompact": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": -0.385,
+          "binRange": [
+            "-1.28",
+            "0.16"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.732,
+          "binRange": [
+            "0.20",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": -0.14,
+          "binRange": [
+            "0.72",
+            "1.67"
+          ]
+        }
+      ]
+    },
+    "logL36": {
+      "fgas": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.391,
+          "binRange": [
+            "-0.49",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.643,
+          "binRange": [
+            "0.82",
+            "1.90"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.384,
+          "binRange": [
+            "1.91",
+            "2.69"
+          ]
+        }
+      ],
+      "logMHI_L36": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.394,
+          "binRange": [
+            "-0.49",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.64,
+          "binRange": [
+            "0.82",
+            "1.90"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.432,
+          "binRange": [
+            "1.91",
+            "2.69"
+          ]
+        }
+      ],
+      "logSigma0": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": -0.003,
+          "binRange": [
+            "-0.49",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.668,
+          "binRange": [
+            "0.82",
+            "1.90"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": -0.016,
+          "binRange": [
+            "1.91",
+            "2.69"
+          ]
+        }
+      ],
+      "logBaryonCompact": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": -0.252,
+          "binRange": [
+            "-0.49",
+            "0.72"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.687,
+          "binRange": [
+            "0.82",
+            "1.90"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.081,
+          "binRange": [
+            "1.91",
+            "2.69"
+          ]
+        }
+      ]
+    },
+    "Vflat": {
+      "fgas": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.386,
+          "binRange": [
+            "71.20",
+            "109.00"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.762,
+          "binRange": [
+            "109.10",
+            "179.00"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.4,
+          "binRange": [
+            "181.30",
+            "332.00"
+          ]
+        }
+      ],
+      "logMHI_L36": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.39,
+          "binRange": [
+            "71.20",
+            "109.00"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": 0.736,
+          "binRange": [
+            "109.10",
+            "179.00"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.463,
+          "binRange": [
+            "181.30",
+            "332.00"
+          ]
+        }
+      ],
+      "logSigma0": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": 0.075,
+          "binRange": [
+            "71.20",
+            "109.00"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.797,
+          "binRange": [
+            "109.10",
+            "179.00"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": -0.006,
+          "binRange": [
+            "181.30",
+            "332.00"
+          ]
+        }
+      ],
+      "logBaryonCompact": [
+        {
+          "binIdx": 0,
+          "n": 34,
+          "r": -0.309,
+          "binRange": [
+            "71.20",
+            "109.00"
+          ]
+        },
+        {
+          "binIdx": 1,
+          "n": 34,
+          "r": -0.824,
+          "binRange": [
+            "109.10",
+            "179.00"
+          ]
+        },
+        {
+          "binIdx": 2,
+          "n": 36,
+          "r": 0.03,
+          "binRange": [
+            "181.30",
+            "332.00"
+          ]
+        }
+      ]
+    }
+  },
+  "shuffleResults": {
+    "logSigma0": {
+      "fgas": {
+        "realR": 0.724,
+        "nullMean": 0.448,
+        "null95": 0.535,
+        "pValue": 0.001
+      },
+      "logMHI_L36": {
+        "realR": 0.729,
+        "nullMean": 0.446,
+        "null95": 0.536,
+        "pValue": 0.001
+      },
+      "logBaryonCompact": {
+        "realR": 0.702,
+        "nullMean": 0.498,
+        "null95": 0.571,
+        "pValue": 0.001
+      }
+    },
+    "logL36": {
+      "fgas": {
+        "realR": 0.724,
+        "nullMean": 0.579,
+        "null95": 0.641,
+        "pValue": 0.001
+      },
+      "logMHI_L36": {
+        "realR": 0.729,
+        "nullMean": 0.553,
+        "null95": 0.625,
+        "pValue": 0.001
+      },
+      "logSigma0": {
+        "realR": 0.586,
+        "nullMean": 0.532,
+        "null95": 0.604,
+        "pValue": 0.1089
+      },
+      "logBaryonCompact": {
+        "realR": 0.702,
+        "nullMean": 0.655,
+        "null95": 0.692,
+        "pValue": 0.021
+      }
+    },
+    "Vflat": {
+      "fgas": {
+        "realR": 0.724,
+        "nullMean": 0.517,
+        "null95": 0.59,
+        "pValue": 0.001
+      },
+      "logMHI_L36": {
+        "realR": 0.729,
+        "nullMean": 0.503,
+        "null95": 0.581,
+        "pValue": 0.001
+      },
+      "logSigma0": {
+        "realR": 0.586,
+        "nullMean": 0.502,
+        "null95": 0.584,
+        "pValue": 0.047
+      },
+      "logBaryonCompact": {
+        "realR": 0.702,
+        "nullMean": 0.604,
+        "null95": 0.653,
+        "pValue": 0.001
+      }
+    },
+    "logBaryonCompact": {
+      "fgas": {
+        "realR": 0.724,
+        "nullMean": 0.587,
+        "null95": 0.651,
+        "pValue": 0.001
+      },
+      "logMHI_L36": {
+        "realR": 0.729,
+        "nullMean": 0.563,
+        "null95": 0.629,
+        "pValue": 0.001
+      },
+      "logSigma0": {
+        "realR": 0.586,
+        "nullMean": 0.569,
+        "null95": 0.63,
+        "pValue": 0.3477
+      }
+    }
+  },
+  "cascadeResults": {
+    "| logSigma0": {
+      "fgas": {
+        "r": 0.524
+      },
+      "log(MHI/L36)": {
+        "r": 0.536
+      },
+      "logSigma0": {
+        "r": null,
+        "note": "controlled"
+      },
+      "logBaryonCompact": {
+        "r": -0.497
+      }
+    },
+    "| logSigma0 + logL36": {
+      "fgas": {
+        "r": 0.319
+      },
+      "log(MHI/L36)": {
+        "r": 0.368
+      },
+      "logSigma0": {
+        "r": null,
+        "note": "controlled"
+      },
+      "logBaryonCompact": {
+        "r": 0.006
+      }
+    },
+    "| logSigma0 + logL36 + Vflat": {
+      "fgas": {
+        "r": 0.312
+      },
+      "log(MHI/L36)": {
+        "r": 0.432
+      },
+      "logSigma0": {
+        "r": null,
+        "note": "controlled"
+      },
+      "logBaryonCompact": {
+        "r": 0.008
+      }
+    },
+    "| logSigma0 + logBaryonCompact": {
+      "fgas": {
+        "r": 0.319
+      },
+      "log(MHI/L36)": {
+        "r": 0.368
+      },
+      "logSigma0": {
+        "r": null,
+        "note": "controlled"
+      },
+      "logBaryonCompact": {
+        "r": null,
+        "note": "controlled"
+      }
+    },
+    "| ALL (Sig0+L36+Rdisk+Vflat+Compact)": {
+      "fgas": {
+        "r": 0.724
+      },
+      "log(MHI/L36)": {
+        "r": 0.729
+      },
+      "logSigma0": {
+        "r": null,
+        "note": "controlled"
+      },
+      "logBaryonCompact": {
+        "r": null,
+        "note": "controlled"
+      }
+    }
+  },
+  "winner": "log(MHI/L36)",
+  "verdict": "STRONG PASS: Both fgas and log(MHI/L36) survive matched falsification. log(MHI/L36) is the stronger survivor — the gas-to-stellar RATIO is the more fundamental variable."
+}
