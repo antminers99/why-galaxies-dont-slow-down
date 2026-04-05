@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 98. External replication: PARTIAL. Signal replicates qualitatively within N45 (r=0.625, p<0.0001) but calibration differs 45.7% between samples. Train non-N45→test N45: R²=0.23 (weak but positive). Reverse: R²=0.607 (strong). Within-N45 LOO R²=0.327. Attenuation is consistent with restricted-range effect, not law failure. The inside-to-outside coupling is ROBUST; quantification needs distance/resolution attention. Phase chain: 93→94→95→96→97→98.
+PROGRAM AT PHASE 99. Calibration law found: distance modulates the slope. logD interaction ΔR²=0.056; at greater distances beam smearing flattens inner Vmax, reducing effective slope. Distance-corrected model: LOO R²=0.750 (vs 0.691 uncorrected). N45 range restriction confirmed (sd 71% of non-N45). Log form validated (linear fraction fails). Full cross-sample transfer still incomplete — radial coverage/data density also contribute. Phase chain: 93→94→95→96→97→98→99.

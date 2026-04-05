@@ -1,0 +1,150 @@
+{
+  "phase": "99",
+  "title": "Calibration Law",
+  "n45hi": 42,
+  "nonN45hi": 62,
+  "sampleDiffs": [
+    {
+      "name": "nPts",
+      "n45med": 29.5,
+      "nonMed": 15,
+      "pctDiff": 65.2
+    },
+    {
+      "name": "Distance (Mpc)",
+      "n45med": 16.95,
+      "nonMed": 18,
+      "pctDiff": -6
+    },
+    {
+      "name": "logVflat",
+      "n45med": 2.247,
+      "nonMed": 2.042,
+      "pctDiff": 9.5
+    },
+    {
+      "name": "logInnerVmax",
+      "n45med": 2.3,
+      "nonMed": 2.015,
+      "pctDiff": 13.2
+    },
+    {
+      "name": "logRatio",
+      "n45med": -0.032,
+      "nonMed": 0.022,
+      "pctDiff": -200
+    },
+    {
+      "name": "outerSlope",
+      "n45med": -0.026,
+      "nonMed": 0.063,
+      "pctDiff": -200
+    },
+    {
+      "name": "Q",
+      "n45med": 1,
+      "nonMed": 1,
+      "pctDiff": 0
+    },
+    {
+      "name": "radialCoverage (R/Rd)",
+      "n45med": 10.569,
+      "nonMed": 5.527,
+      "pctDiff": 62.7
+    },
+    {
+      "name": "logRadialRange",
+      "n45med": 1.493,
+      "nonMed": 1.287,
+      "pctDiff": 14.8
+    },
+    {
+      "name": "logSigma0",
+      "n45med": 0.777,
+      "nonMed": 0.084,
+      "pctDiff": 160.8
+    },
+    {
+      "name": "fgas",
+      "n45med": 0.151,
+      "nonMed": 0.367,
+      "pctDiff": -83.6
+    },
+    {
+      "name": "nInner",
+      "n45med": 14.5,
+      "nonMed": 7,
+      "pctDiff": 69.8
+    },
+    {
+      "name": "angularRes (arcsec)",
+      "n45med": 38258.773,
+      "nonMed": 29369.304,
+      "pctDiff": 26.3
+    },
+    {
+      "name": "Rdisk (kpc)",
+      "n45med": 3.015,
+      "nonMed": 2.83,
+      "pctDiff": 6.3
+    },
+    {
+      "name": "sd(outerSlope)",
+      "n45med": 0.013,
+      "nonMed": 0.015,
+      "pctDiff": -12.6
+    }
+  ],
+  "varianceRestriction": {
+    "sdRatio": {
+      "n45": 0.052,
+      "non": 0.073,
+      "ratio": 0.71
+    },
+    "sdSlope": {
+      "n45": 0.111,
+      "non": 0.178,
+      "ratio": 0.62
+    }
+  },
+  "interactionRank": [
+    {
+      "name": "logD",
+      "interBeta": -1.3616,
+      "deltaR2": 0.056
+    },
+    {
+      "name": "radialCoverage",
+      "interBeta": -0.1014,
+      "deltaR2": 0.028
+    },
+    {
+      "name": "logRadialRange",
+      "interBeta": -0.7567,
+      "deltaR2": 0.025
+    },
+    {
+      "name": "logRdisk",
+      "interBeta": -1.3488,
+      "deltaR2": 0.018
+    },
+    {
+      "name": "Q",
+      "interBeta": -0.0086,
+      "deltaR2": 0.004
+    }
+  ],
+  "theilSen": {
+    "all": 1.835,
+    "n45": 1.397,
+    "non": 2.116,
+    "pctDiff": 40.9
+  },
+  "linearFraction": {
+    "slopeDiff": 63.5,
+    "crossVal": {
+      "nonToN45": -0.051,
+      "n45ToNon": 0.502
+    }
+  }
+}
