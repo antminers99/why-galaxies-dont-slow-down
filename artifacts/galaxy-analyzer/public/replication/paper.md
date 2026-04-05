@@ -471,9 +471,21 @@ Phase 83 showed the law fails even on regime-matched galaxies, suggesting the pr
 
 *Summary*: Of 23 controlled pools tested, 11 make training $r$ typical ($p > 0.10$), 5 unusual ($0.01 < p \leq 0.10$), and 7 extreme ($p \leq 0.01$). The training $r = -0.322$ is a **normal draw from the high-Vflat regime**, not a selection-amplified extreme. The multi-axis law captures a real mass-regime effect that becomes visible when dwarfs are excluded.
 
+**12.8.7 Regime transition mapping (Phase 87).** Seven complementary tests locate and characterize the transition:
+
+*Broken regression (Test 4)*: A piecewise-linear model with separate MHI slopes above and below a $V_\mathrm{flat}$ breakpoint achieves optimal BIC at $V_\mathrm{flat} = 70$ km/s ($\Delta\mathrm{BIC} = -23.8$ vs. single-slope model — decisive evidence for two regimes). Below: $\partial \log a_0 / \partial \log M_\mathrm{HI} = +0.059$; above: $-0.127$. The slopes cleanly reverse sign.
+
+*Interaction model (Test 5)*: A continuous $\log M_\mathrm{HI} \times \log V_\mathrm{flat}$ interaction gives $\beta_\mathrm{int} = -0.079$ (substantial). The MHI slope crosses zero at $V_\mathrm{flat} = 48$ km/s. BIC slightly disfavors the interaction vs. additive model ($\Delta\mathrm{BIC} = +3.5$), suggesting the transition is better described as a break than a smooth gradient.
+
+*Logistic fit to sliding windows (Test 6)*: Fitting $r(\mathrm{MHI}, a_0) = r_\mathrm{hi} + (r_\mathrm{lo} - r_\mathrm{hi}) / (1 + e^{(V-V_0)/w})$ gives $V_0 = 40$ km/s, $w = 13$ km/s. The transition is **sharp** (10–90% range: 11–69 km/s), with $r_\mathrm{lo} = +0.10$ and $r_\mathrm{hi} = -0.30$.
+
+*Alternative separators (Test 7)*: $\log V_\mathrm{flat}$ is the **best** transition variable ($\Delta\mathrm{BIC} = -23.0$ vs. no-break). Alternatives — $\log M_\mathrm{HI}$ ($+7.1$), $\log L_{3.6}$ ($+5.0$), morphology $T$ ($+3.1$) — all have positive $\Delta\mathrm{BIC}$ (no improvement). The regime boundary is fundamentally kinematic, not morphological or luminosity-based.
+
+*Summary*: The MHI–$a_0$ relationship reverses sign across a sharp kinematic boundary at $V_\mathrm{flat} \approx 50$–$70$ km/s. Below this threshold, gas-rich dwarfs show a weak positive MHI–$a_0$ correlation; above it, massive spirals show a moderate negative anticorrelation. This is a genuine two-regime structure in the data, not a selection artifact.
+
 ### 12.9 Verdict
 
-**The structured $a_0$ law reflects a real mass-regime boundary, not a pure selection artifact.** The MHI–$a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$), but it is a **normal feature** of the high-Vflat regime ($V_\mathrm{flat} \geq 80$: population $r = -0.215$). Phase 86 demonstrates that the training $r = -0.322$ falls within the typical range of random $N = 45$ draws from this regime ($p = 0.17$, i.e. 17% of draws are as extreme or more). Within the $Q = 1$ high-quality subset, training sits at the *median* ($p = 0.58$). The multi-axis law is not a collider-amplified extreme but a valid description of the high-mass spiral regime — it fails externally because external galaxies are predominantly low-mass dwarfs inhabiting a different correlation regime where MHI and $a_0$ are positively correlated.
+**The structured $a_0$ law reflects a real mass-regime boundary, not a pure selection artifact.** The MHI–$a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$), but it is a **normal feature** of the high-Vflat regime ($V_\mathrm{flat} \geq 80$: population $r = -0.215$). Phase 86 demonstrates that the training $r = -0.322$ falls within the typical range of random $N = 45$ draws from this regime ($p = 0.17$). Phase 87 locates the transition: the MHI–$a_0$ slope reverses sign at $V_\mathrm{flat} \approx 70$ km/s ($\Delta\mathrm{BIC} = -23.8$ for piecewise vs. single-slope model). The transition is sharp ($w \approx 13$ km/s), kinematic in nature ($V_\mathrm{flat}$ is the best separator, far surpassing morphology, luminosity, or gas mass), and fundamentally changes the correlation structure between regimes. The multi-axis law is a valid description of the high-$V_\mathrm{flat}$ regime; it fails externally because external galaxies predominantly inhabit the opposite regime.
 
 ---
 
@@ -504,7 +516,9 @@ We conclude that the structured $a_0$ variation observed in $N = 45$ is a **regi
 3. **Residual amplification**: While the core anticorrelation is regime-typical, the specific $N = 45$ sample may be further shaped by $f_D \geq 2$ (which makes the pool deterministic) and morphology cuts. The $f_D$ criterion alone does not flip the sign ($r = +0.306$) but narrows the pool to exactly the training set.
 4. **Mhost confound**: Group-catalog host masses remain available only for the training set. External galaxies require $V_\mathrm{flat}$-based proxies with $-$0.74 dex mean bias.
 
-The key methodological lesson remains: internal cross-validation (LOO, permutation, bootstrap) cannot detect regime boundaries. External validation on galaxies spanning different mass regimes is essential. But the finding is more interesting than "pure artifact" — there is a genuine mass-dependent structure in $a_0$ variation that deserves investigation with larger, regime-stratified samples.
+Phase 87 locates the transition precisely: a broken regression identifies $V_\mathrm{flat} \approx 70$ km/s as the optimal breakpoint ($\Delta\mathrm{BIC} = -23.8$), with the MHI slope reversing from $+0.059$ (below) to $-0.127$ (above). The transition is sharp (logistic width $w = 13$ km/s) and fundamentally kinematic — $V_\mathrm{flat}$ is the only variable that produces a significant broken model ($\Delta\mathrm{BIC} = -23.0$); morphology, luminosity, and gas mass all fail.
+
+The key methodological lesson remains: internal cross-validation (LOO, permutation, bootstrap) cannot detect regime boundaries. External validation spanning different mass regimes is essential. But the finding is considerably more interesting than "pure artifact" — there is a genuine, sharp, kinematic regime transition in how $a_0$ correlates with galaxy properties, centered at $V_\mathrm{flat} \approx 50$–$70$ km/s. This boundary deserves investigation with larger, regime-stratified samples and, potentially, separate laws for the two regimes.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -527,6 +541,8 @@ The key methodological lesson remains: internal cross-validation (LOO, permutati
 | **Vflat cut is the primary driver** | **Vflat≥80 alone flips sign (r=−0.215, N=99); additional criteria amplify to −0.322** | **Confirmed** |
 | **Training r is TYPICAL in Vflat≥80** | **p=0.17 (5000 draws); in Q=1 subset p=0.58; not a selection extreme but a regime effect** | **Confirmed** |
 | **Law is regime-specific, not artifact** | **11/23 pools make training r typical; overturns pure-collider interpretation** | **Revised** |
+| **Regime transition at Vflat≈70** | **Broken regression ΔBIC=−23.8; slope reverses from +0.059 (dwarfs) to −0.127 (massive); sharp transition w=13 km/s** | **Confirmed** |
+| **Vflat is the best separator** | **logVflat ΔBIC=−23.0; logMHI, logL36, T all fail (positive ΔBIC)** | **Confirmed** |
 
 ---
 

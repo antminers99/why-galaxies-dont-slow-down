@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 86. Conclusion upgraded from "pure collider artifact" to "regime-specific finding". The MHI–a₀ anticorrelation is typical within Vflat≥80 (p=0.17). Law is valid for massive spirals but not universal. Key open question: can the law be validated on an independent sample of high-Vflat spirals?
+PROGRAM AT PHASE 87. Conclusion: regime-specific finding with sharp kinematic boundary. Regime transition at Vflat≈70 km/s (ΔBIC=−23.8). Below: MHI slope +0.059 (dwarfs); above: −0.127 (massive). Transition is sharp (w=13 km/s), kinematic (Vflat best separator, morphology/luminosity fail). Next: Phase 88 — separate laws for the two regimes.
