@@ -1,0 +1,100 @@
+{
+  "phase": 108,
+  "title": "Mediation / Proxy Dissection",
+  "n": 104,
+  "rawFgas": {
+    "r": 0.724,
+    "loo": 0.503
+  },
+  "fgasPerpResults": {
+    "logSigma0": {
+      "r": 0.424,
+      "loo": 0.145,
+      "retained": 58.6
+    },
+    "logL36": {
+      "r": 0.243,
+      "loo": 0.015,
+      "retained": 33.5
+    },
+    "logRdisk": {
+      "r": 0.601,
+      "loo": 0.337,
+      "retained": 83.1
+    },
+    "logMHI": {
+      "r": 0.633,
+      "loo": 0.379,
+      "retained": 87.5
+    },
+    "logBaryonCompact": {
+      "r": 0.219,
+      "loo": 0.008,
+      "retained": 30.2
+    },
+    "all": {
+      "r": 0.724,
+      "loo": 0.503,
+      "retained": 100
+    }
+  },
+  "competitorPerpResults": {
+    "logSigma0": {
+      "rawR": -0.586,
+      "perpR": 0.004,
+      "loo": -0.054,
+      "retained": -0.7
+    },
+    "logL36": {
+      "rawR": -0.705,
+      "perpR": -0.177,
+      "loo": -0.016,
+      "retained": 25.2
+    },
+    "logRdisk": {
+      "rawR": -0.433,
+      "perpR": -0.157,
+      "loo": -0.03,
+      "retained": 36.4
+    },
+    "logMHI": {
+      "rawR": -0.375,
+      "perpR": -0.134,
+      "loo": -0.031,
+      "retained": 35.6
+    },
+    "logBaryonCompact": {
+      "rawR": -0.702,
+      "perpR": -0.129,
+      "loo": -0.026,
+      "retained": 18.4
+    }
+  },
+  "symmetricMediation": {
+    "fgas_perpSigma0": {
+      "r": 0.424,
+      "loo": 0.145
+    },
+    "sigma0_perpFgas": {
+      "r": 0.004,
+      "loo": -0.054
+    }
+  },
+  "fgasDecomposition": {
+    "logMHI": {
+      "r": -0.375,
+      "loo": 0.101
+    },
+    "logL36": {
+      "r": -0.705,
+      "loo": 0.474
+    },
+    "logMHI_L36_ratio": {
+      "r": 0.729,
+      "loo": 0.512
+    },
+    "logMHI_perpL36": 0.273,
+    "logL36_perpMHI": -0.656
+  },
+  "verdict": "CAUSAL CANDIDATE: fgas has unique predictive content that survives controlling for Sigma0. Sigma0 is fully mediated by fgas. fgas is not a proxy for surface density."
+}
