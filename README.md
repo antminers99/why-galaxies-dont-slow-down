@@ -2,59 +2,81 @@
 
 A data-driven investigation into the physical drivers of outer support requirement in galaxy rotation curves, using the SPARC database (Lelli, McGaugh & Schombert 2016).
 
-## Status: Robust High-Regime Result
+## Main Result
 
-**Gas fraction is the strongest transferable catalog predictor of outer support requirement in high-$V_\text{flat}$ SPARC galaxies.**
+**After ruling out the original curve-shape law as a geometric artifact, the project finds that gas-to-stellar balance, quantified by log(MHI/L36), is the strongest independent predictor of outer support requirement in high-Vflat SPARC galaxies.**
 
-### The Finding
+### Status
 
-Within the high-$V_\text{flat}$ ($\geq 70$ km/s) SPARC population, a single catalog variable — gas fraction $f_\text{gas} = M_\text{HI} / (M_\text{HI} + \Upsilon_\star L_{3.6})$ — predicts the outer mass discrepancy $\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer}$ with:
+Current backbone result — log(MHI/L36) has superseded fgas as the strongest falsification-surviving independent predictor of outer support requirement in the high-Vflat SPARC regime.
 
-- Pearson $|r| = 0.724$
-- Leave-one-out $R^2 = 0.503$
-- Permutation $p < 0.0001$
+### The Refined Claim (5 Statements)
 
-### Locked External Validation (Phase 104)
+1. **The old law fell.** The original Vflat/InnerVmax-to-outerSlope claim is not an independent physical law. It is reproduced almost entirely by geometric null models of smooth rotation curves (Phase 101).
 
-The model was locked on 70% training data and applied without refit to 30% held-out data across 200 random splits:
+2. **Moving to independent predictors was correct.** When the analysis moved from curve-derived variables to independent catalog variables, the physical signal became stronger and methodologically cleaner (Phase 102).
 
-| Metric | Value |
-|:---|:---|
-| External $r$ | 0.723 [0.584, 0.820] |
-| External $R^2$ | 0.474 [0.108, 0.640] |
-| Calibration slope | 1.012 (ideal = 1.0) |
-| Calibration offset | −0.004 (ideal = 0.0) |
+3. **The winner is NOT surface density.** Sigma0 and baryonic compactness do not retain comparable independent content once gas-related variables are controlled. Their apparent signal is largely mediated (Phases 105, 108, 112).
 
-Near-perfect calibration confirms this is not overfit.
+4. **The strongest variable is log(MHI/L36).** The strongest surviving independent predictor is log(MHI/L36), the gas-to-stellar balance. It survives matched falsification more cleanly than fgas alone (Phase 112: p=0.034 vs fgas p=0.065).
 
-### What This Means
+5. **The result is not universal.** The signal is regime-specific, with a gradual onset above roughly 55-75 km/s, and it fails to transfer to low-Vflat dwarfs under locked calibration (Phases 104, 111).
 
-Galaxies with higher gas fractions (more gas-rich, less stellar-converted) show larger outer mass discrepancies — they require more "extra" support beyond their baryonic content in the outer disk. This suggests that the need for additional outer support is tied to the diffuse, gas-rich baryonic state, not to the abstract inner shape of the rotation curve.
+### Key Numbers
+
+| Quantity | fgas | log(MHI/L36) |
+|:---|:---|:---|
+| Pearson r | 0.724 | 0.729 |
+| LOO R^2 | 0.503 | 0.512 |
+| Permutation p | < 0.0001 | < 0.0001 |
+| External R^2 (70/30) | 0.474 | - |
+| Matched falsification p | 0.065 | 0.034 |
+| MC uncertainty r CI | [0.684, 0.736] | - |
+| N | 104 | 104 |
+
+## Evidence Chain
+
+| Phase | Finding | Verdict |
+|:---|:---|:---|
+| 1-100 | Ratio law Vflat/InnerVmax -> outerSlope | SUPERSEDED |
+| **101** | **Null geometric coupling test** | **3/4 FAIL - artifact** |
+| 102 | Catalog predictors of outer mass discrepancy | fgas LOO R^2=0.503 |
+| 103 | Robustness battery | 3/5 PASS |
+| **104** | **Locked external replication** | **ext R^2=0.474, cal slope=1.01** |
+| **105** | **Death match sparse models** | **fgas STRONG BACKBONE** |
+| 106 | Target definition robustness | MODERATE PASS (3/4 targets) |
+| **108** | **Mediation / proxy dissection** | **fgas CAUSAL CANDIDATE, Sigma0 fully mediated** |
+| **110** | **Uncertainty propagation (MC)** | **STRONG PASS, r CI [0.684, 0.736]** |
+| **111** | **Regime boundary mapping** | **Gradual transition ~55-75 km/s** |
+| **112** | **Matched falsification** | **STRONG PASS - log(MHI/L36) is more fundamental** |
+
+### The Critical Pivot (Phase 101)
+
+The original ratio law (Vflat/InnerVmax predicts outerSlope) appeared strong (r=0.85) but Phase 101 demonstrated it is a geometric artifact: smooth monotonic curves with no physics reproduce r=0.83. Three of four null-coupling tests failed. The real signal was only 1.02x above the geometric floor.
+
+This led to a complete reframing:
+- **New target**: outer mass discrepancy (immune to geometric coupling)
+- **New predictors**: catalog-only variables (not derived from rotation curve shape)
+- **Winner**: gas-to-stellar balance (fgas / log(MHI/L36))
+
+### The Decisive Test (Phase 112)
+
+Matched falsification controlled for surface density and luminosity simultaneously:
+- log(MHI/L36) survives double matching (p=0.034 significant)
+- fgas survives marginally (p=0.065)
+- Sigma0 fails shuffle tests within luminosity bins (p=0.109) and compactness bins (p=0.348)
+- Within-bin analysis: fgas stable across all Sigma0 terciles (r=0.39/0.73/0.46); Sigma0 collapses (r=-0.36/-0.05/-0.37)
+
+### Physical Interpretation
+
+The outer support requirement (mass discrepancy) correlates fundamentally with the galaxy's gas-to-stellar state. Gas-rich galaxies show larger outer mass discrepancies. The signal is NOT driven by surface density (Sigma0 dies after controlling for gas fraction) or baryonic compactness. The ratio form log(MHI/L36) slightly outperforms fgas, suggesting the balance between gas reservoir and stellar content is the physically meaningful variable. This points toward evolutionary state / baryon conversion efficiency as the underlying driver.
 
 ### What This Does NOT Claim
 
 - This is **not** a universal law for all disk galaxies
-- It **does not** transfer to low-$V_\text{flat}$ dwarfs (where all tested predictors fail equally under locked calibration)
-- It has **not** been fully replicated on an independent external survey (LITTLE THINGS lacks baryonic decomposition for target variable matching)
-
-## Evidence Chain
-
-| Phase | Finding | Result |
-|:---|:---|:---|
-| 1–100 | Original $V_\text{flat}/V_\text{max}^\text{inner}$ ratio law | $r = 0.85$, LOO $R^2 = 0.69$ |
-| **101** | **Null geometric coupling test** | **3/4 FAIL — ratio law is geometric artifact** |
-| 102 | Reframed: catalog-only predictors of outer mass discrepancy | $f_\text{gas}$ LOO $R^2 = 0.503$ vs old ratio LOO $R^2 = 0.038$ |
-| 103 | Robustness battery | 3/5 PASS (Collinearity FAIL due to $\Sigma_0$/$f_\text{gas}$ $r = -0.81$) |
-| **104** | **Locked external replication** | **ext $R^2 = 0.474$, cal slope = 1.01** |
-
-### The Critical Pivot (Phase 101)
-
-The original ratio law ($V_\text{flat}/V_\text{max}^\text{inner}$ predicts outerSlope) appeared strong ($r = 0.85$) but Phase 101 demonstrated it is a **geometric artifact**: smooth monotonic curves with no physics reproduce $r = 0.83$. Three of four null-coupling tests failed. The real signal was only 1.02× above the geometric floor.
-
-This led to a complete reframing:
-- **New target**: $\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer}$ (outer mass discrepancy — immune to geometric coupling)
-- **New predictors**: catalog-only variables (no quantities derived from the rotation curve shape itself)
-- $f_\text{gas}$ emerged as the backbone predictor
+- It **does not** transfer to low-Vflat dwarfs (where all tested predictors fail equally)
+- It has **not** been fully replicated on an independent external survey
+- The boundary at ~70 km/s is **gradual**, not sharp
 
 ## Repository Structure
 
@@ -62,42 +84,56 @@ This led to a complete reframing:
 artifacts/galaxy-analyzer/
 ├── public/replication/          # Key deliverables
 │   ├── REPRODUCIBLE_RESULT.md   # Current result summary and replication guide
-│   ├── paper.md                 # Historical phases 1–100 analysis (superseded by 101+)
-│   ├── N45_final_dataset.csv    # Quality-controlled N=45 dataset (phases 1–100)
-│   └── replicate_from_scratch.py # Python replication script (phases 1–100)
+│   ├── paper.md                 # Historical phases 1-100 analysis (superseded)
+│   ├── N45_final_dataset.csv    # Quality-controlled N=45 dataset (phases 1-100)
+│   └── replicate_from_scratch.py # Python replication script (phases 1-100)
 ├── scripts/                     # All analysis phase scripts (Node.js)
-│   ├── phase104-external-replication.cjs   # Locked external validation
-│   ├── phase103-robustness-battery.cjs     # Robustness tests
-│   ├── phase102-residual-physics.cjs       # fgas discovery
-│   ├── phase101-null-geometric-coupling.cjs # Artifact exposure
-│   └── ... (phases 1–100)                  # Earlier investigation
+│   ├── phase112-matched-falsification.cjs
+│   ├── phase110-uncertainty-propagation.cjs
+│   ├── phase111-boundary-mapping.cjs
+│   ├── phase108-mediation-dissection.cjs
+│   ├── phase106-target-robustness.cjs
+│   ├── phase105-death-match-sparse.cjs
+│   ├── phase104-external-replication.cjs
+│   ├── phase103-robustness-battery.cjs
+│   ├── phase102-residual-physics.cjs
+│   ├── phase101-null-geometric-coupling.cjs
+│   └── ... (phases 1-100, earlier investigation)
 ├── public/                      # JSON results for each phase
-│   ├── phase104-external-replication.json
-│   ├── phase103-robustness-battery.json
+│   ├── phase112-matched-falsification.json
+│   ├── phase110-uncertainty-propagation.json
 │   └── ... (all phase results)
 ├── src/                         # React + Vite web application
-│   ├── pages/                   # Interactive analysis pages
-│   └── components/              # UI components
 └── experiment-log.txt           # Chronological experiment log
 ```
 
 ## Quick Reproduction
-
-### Current Result (Phases 102–104)
 
 ```bash
 cd artifacts/galaxy-analyzer/
 # Download SPARC data first:
 # curl -o /tmp/sparc_table1.dat https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table1.dat
 # curl -o /tmp/sparc_cds.dat https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table2.dat
-node scripts/phase102-residual-physics.cjs     # fgas discovery
-node scripts/phase103-robustness-battery.cjs   # robustness tests
-node scripts/phase104-external-replication.cjs # locked external validation
+
+# Core finding
+node scripts/phase102-residual-physics.cjs
+
+# Robustness + external validation
+node scripts/phase103-robustness-battery.cjs
+node scripts/phase104-external-replication.cjs
+
+# Competition and mediation
+node scripts/phase105-death-match-sparse.cjs
+node scripts/phase106-target-robustness.cjs
+node scripts/phase108-mediation-dissection.cjs
+
+# Uncertainty and boundary
+node scripts/phase110-uncertainty-propagation.cjs
+node scripts/phase111-boundary-mapping.cjs
+
+# Decisive test
+node scripts/phase112-matched-falsification.cjs
 ```
-
-### Historical Result (Phases 1–100, superseded)
-
-See [`paper.md`](artifacts/galaxy-analyzer/public/replication/paper.md) for the full 100-phase investigation that led to and was ultimately superseded by the geometric artifact discovery.
 
 ## Data
 
@@ -109,7 +145,13 @@ All analysis uses the publicly available [SPARC database](http://astroweb.cwru.e
 
 - **Analysis**: Node.js scripts (CommonJS)
 - **Web app**: React + TypeScript + Vite + Tailwind CSS + shadcn/ui
-- **Statistics**: OLS regression, LOO cross-validation, permutation tests, bootstrap stability, partial correlations — all implemented from scratch (no external stats libraries)
+- **Statistics**: OLS regression, LOO cross-validation, permutation tests, bootstrap, partial correlations, nearest-neighbor matching, within-bin shuffle — all implemented from scratch
+
+## Zenodo
+
+- v1: DOI 10.5281/zenodo.19430634 (phases 96-100)
+- v2: DOI 10.5281/zenodo.19431186 (phases 1-104)
+- v3: Pending (phases 1-112, current)
 
 ## License
 

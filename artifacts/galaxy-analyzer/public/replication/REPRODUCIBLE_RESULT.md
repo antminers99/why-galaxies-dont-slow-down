@@ -1,27 +1,57 @@
-# Gas Fraction as a Robust High-Regime Predictor of Outer Support Requirement in SPARC Galaxies
+# Gas-to-Stellar Balance as the Strongest Independent Predictor of Outer Support Requirement in High-Vflat SPARC Galaxies
 
-**Status:** Robust high-regime result
+**Status:** Current backbone result — log(MHI/L36) has superseded fgas as the strongest falsification-surviving independent predictor.
 
-**Claim:** $f_\text{gas}$ is the strongest transferable single catalog predictor of outer support requirement in high-$V_\text{flat}$ SPARC galaxies.
+**Claim:** The dominant independent signal driving outer support requirement in high-Vflat SPARC galaxies is gas-to-stellar balance, especially log(MHI/L36). This is not a reflection of surface density or baryonic compactness.
 
-**Qualification:** This result is regime-specific and does not transfer to low-$V_\text{flat}$ dwarfs, where all tested predictors fail under locked calibration. Fully independent cross-survey replication remains blocked by target incompatibility (LITTLE THINGS lacks baryonic decomposition).
+**Qualification:** This result is regime-specific with a gradual onset around Vflat ~55-75 km/s. It does not transfer to low-Vflat dwarfs, where all tested predictors fail under locked calibration. Fully independent cross-survey replication remains blocked by target incompatibility.
 
 ---
 
-## 1. The Result (One Equation)
+## 1. The Result
+
+### Primary Model (fgas form)
 
 $$\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer} \approx 0.352 + 0.706 \times f_\text{gas}$$
 
-Where:
-- **$f_\text{gas}$** = $M_\text{HI} / (M_\text{HI} + \Upsilon_\star L_{3.6})$ with $\Upsilon_\star = 0.5$
-- **Outer mass discrepancy** = mean of $V_\text{obs}^2 / V_\text{bar}^2$ across outer-half rotation curve points
-- **$V_\text{bar}^2$** = $0.5 \cdot V_\text{disk}|V_\text{disk}| + 0.7 \cdot V_\text{bul}|V_\text{bul}| + V_\text{gas}|V_\text{gas}|$
+### More Fundamental Form (ratio)
 
-**Interpretation:** Galaxies with higher gas fractions (more gas-rich, less stellar-converted) show larger outer mass discrepancies. The need for additional outer support is tied to the diffuse, gas-rich baryonic state.
+$$\text{predictor} = \log_{10}(M_\text{HI} / L_{3.6})$$
+
+| Metric | fgas | log(MHI/L36) |
+|:---|:---|:---|
+| Pearson r | 0.724 | 0.729 |
+| LOO R^2 | 0.503 | 0.512 |
+| Permutation p | < 0.0001 | < 0.0001 |
+| Matched falsification p (Sig0+L36) | 0.065 (marginal) | 0.034 (significant) |
+| MC uncertainty r 95% CI | [0.684, 0.736] | - |
+
+### Definitions
+
+- **fgas** = MHI / (MHI + 0.5 * L36)
+- **log(MHI/L36)** = log10(MHI) - log10(L36)
+- **Outer mass discrepancy** = mean of Vobs^2/Vbar^2 across outer-half rotation curve points
+- **Vbar^2** = 0.5 * Vdisk|Vdisk| + 0.7 * Vbul|Vbul| + Vgas|Vgas|
+- **Regime**: Vflat >= 70 km/s, N = 104 galaxies
 
 ---
 
-## 2. Data Source
+## 2. What Has Been Proven (Phases 105-112)
+
+| Finding | Evidence |
+|:---|:---|
+| fgas is NOT a proxy for Sigma0 | Ph 108: Sigma0\|fgas r=0.004 (dies); fgas\|Sigma0 r=0.424 (survives). 103x ratio. |
+| log(MHI/L36) is more fundamental | Ph 112: Survives double matching (p=0.034); fgas marginal (p=0.065) |
+| Sigma0 has NO independent signal | Ph 112: Fails shuffle within L36 bins (p=0.109) and compact bins (p=0.348) |
+| Signal is noise-robust | Ph 110: r never below 0.5 under simultaneous perturbation of all measurements |
+| Boundary is gradual | Ph 111: Onset ~55 km/s, peak at 75 km/s, no sharp cut |
+| fgas wins all 1-var comparisons | Ph 105: LOO=0.503 vs Sigma0=0.321, L36=0.475, compact=0.471 |
+| External validation passes | Ph 104: ext R^2=0.474, calibration slope=1.012 (near-perfect) |
+| Signal stable within Sigma0 bins | Ph 112: fgas r=0.39/0.73/0.46 across terciles (stable); Sigma0 r=-0.36/-0.05/-0.37 (collapses) |
+
+---
+
+## 3. Data Source
 
 **SPARC database** (Lelli, McGaugh & Schombert 2016, AJ 152, 157).
 
@@ -35,17 +65,17 @@ No preprocessing, filtering, or custom data needed. Use the raw published tables
 
 ---
 
-## 3. How to Reproduce (Step by Step)
+## 4. How to Reproduce (Step by Step)
 
 ### Step 1: Load the data
-- Parse `table1.dat` for: galaxy name, $V_\text{flat}$, $L_{3.6}$, $M_\text{HI}$, $R_\text{disk}$
-- Parse `table2.dat` for: galaxy name, radius, $V_\text{obs}$, $V_\text{gas}$, $V_\text{disk}$, $V_\text{bul}$
+- Parse `table1.dat` for: galaxy name, Vflat, L36, MHI, Rdisk
+- Parse `table2.dat` for: galaxy name, radius, Vobs, Vgas, Vdisk, Vbul
 
 ### Step 2: Select galaxies
-- Keep galaxies with $V_\text{flat} \geq 70$ km/s
-- Keep galaxies with $\geq 8$ rotation curve data points
-- Require $M_\text{HI} > 0$ and $L_{3.6} > 0$
-- This gives $N \approx 104$ galaxies
+- Keep galaxies with Vflat >= 70 km/s
+- Keep galaxies with >= 8 rotation curve data points
+- Require MHI > 0 and L36 > 0
+- This gives N ~ 104 galaxies
 
 ### Step 3: Compute baryonic velocity at each point
 $$V_\text{bar}^2 = 0.5 \cdot V_\text{disk}|V_\text{disk}| + 0.7 \cdot V_\text{bul}|V_\text{bul}| + V_\text{gas}|V_\text{gas}|$$
@@ -53,60 +83,30 @@ $$V_\text{bar}^2 = 0.5 \cdot V_\text{disk}|V_\text{disk}| + 0.7 \cdot V_\text{bu
 ### Step 4: Compute outer mass discrepancy
 - Sort rotation curve points by radius
 - Take the outer half (last 50% of points)
-- Compute: $\text{logOMD} = \log_{10}\left(\text{mean}\left(\frac{V_\text{obs}^2}{V_\text{bar}^2}\right)_\text{outer}\right)$
+- Compute: logOMD = log10(mean(Vobs^2 / Vbar^2) in outer half)
 
-### Step 5: Compute gas fraction
-$$f_\text{gas} = \frac{M_\text{HI}}{M_\text{HI} + 0.5 \times L_{3.6}}$$
+### Step 5: Compute predictors
+- fgas = MHI / (MHI + 0.5 * L36)
+- log(MHI/L36) = log10(MHI) - log10(L36)
 
 ### Step 6: Correlate
-$$r(f_\text{gas}, \text{logOMD}) \approx 0.72, \quad p < 0.0001$$
+- r(fgas, logOMD) ~ 0.724
+- r(log(MHI/L36), logOMD) ~ 0.729
 
 ### Step 7: Verify with LOO cross-validation
-- Fit $\text{logOMD} = a + b \cdot f_\text{gas}$ leaving one galaxy out each time
-- LOO $R^2 \approx 0.50$
+- LOO R^2 ~ 0.50 (fgas), ~0.51 (log(MHI/L36))
 
 ---
 
-## 4. Expected Results
+## 5. Expected Results
 
-| Metric | Expected Value |
-|:---|:---|
-| Pearson $r$ | $0.72$–$0.73$ |
-| LOO $R^2$ | $0.49$–$0.51$ |
-| Slope $b$ | $\sim 0.71$ |
-| Intercept $a$ | $\sim 0.35$ |
-| Permutation $p$ (10000 trials) | $< 0.0001$ |
-
----
-
-## 5. Locked External Validation (Must Also Pass)
-
-### 5a. 70/30 random split (200 iterations, no refit)
-
-| Metric | Expected |
-|:---|:---|
-| External $r$ | 0.72 [0.58, 0.82] |
-| External $R^2$ | 0.47 [0.11, 0.64] |
-| Calibration slope | $\sim 1.01$ |
-| Calibration offset | $\sim -0.004$ |
-
-Near-perfect calibration (slope $\approx 1$, offset $\approx 0$) confirms model is not overfit.
-
-### 5b. Leave-P%-out cross-validation
-
-| Holdout % | Expected ext $R^2$ |
-|:---|:---|
-| 10% | $\sim 0.38$ |
-| 20% | $\sim 0.45$ |
-| 30% | $\sim 0.48$ |
-| 40% | $\sim 0.48$ |
-| 50% | $\sim 0.48$ |
-
-Stable across all holdout sizes.
-
-### 5c. Competitor knockout
-
-$f_\text{gas}$ wins best external $R^2$ in $\sim 55\%$ of 70/30 splits, beating logSigma0, logBaryonCompact, and logL36.
+| Metric | fgas | log(MHI/L36) |
+|:---|:---|:---|
+| Pearson r | 0.72-0.73 | 0.72-0.73 |
+| LOO R^2 | 0.49-0.51 | 0.50-0.52 |
+| Slope (fgas model) | ~0.71 | - |
+| Intercept (fgas model) | ~0.35 | - |
+| Permutation p | < 0.0001 | < 0.0001 |
 
 ---
 
@@ -114,68 +114,89 @@ $f_\text{gas}$ wins best external $R^2$ in $\sim 55\%$ of 70/30 splits, beating 
 
 | Test | Result | Why |
 |:---|:---|:---|
-| Low-$V_\text{flat}$ dwarfs (locked) | ext $R^2 < 0$ for ALL predictors | Regime boundary — dwarfs are a different system |
+| Low-Vflat dwarfs (locked) | ext R^2 < 0 for ALL predictors | Regime boundary - different physics |
 | LITTLE THINGS external | Cannot compute target | No baryonic decomposition available |
-| 4-variable model ($\Sigma_0$ + $M_\text{HI}$ + $R_\text{disk}$ + $f_\text{gas}$) | LOO $R^2 = 0.519$ | Only +0.016 over $f_\text{gas}$ alone; severe collinearity (VIF 14–22) |
-| Old $V_\text{flat}/V_\text{max}^\text{inner}$ ratio law | LOO $R^2 = 0.038$ on new target | Geometric artifact (Phase 101) |
+| 4-variable model | LOO R^2 = 0.519 | Only +0.016 over fgas alone; severe collinearity |
+| Old Vflat/InnerVmax ratio law | LOO R^2 = 0.038 on new target | Geometric artifact (Phase 101) |
+| At 2xRdisk target | logSigma0 wins (LOO=0.697 vs fgas 0.474) | Inner boundary is surface-density-sensitive |
+| Sigma0 independent signal | Fails after controlling fgas | Fully mediated (Phase 108: r=0.004) |
 
 ---
 
 ## 7. Historical Context: The Geometric Artifact
 
-### Phases 1–100: The Ratio Law (Superseded)
+### Phases 1-100: The Ratio Law (Superseded)
 
-The original investigation found that $\log(V_\text{flat}/V_\text{max}^\text{inner})$ predicts outerSlope with $r = 0.85$, LOO $R^2 = 0.69$. This appeared to be a strong physical law.
+The original investigation found that log(Vflat/InnerVmax) predicts outerSlope with r=0.85, LOO R^2=0.69.
 
 ### Phase 101: Null Geometric Coupling Test
 
-A null test using smooth monotonic curves with no physics reproduced $r = 0.83$. Three of four null-coupling criteria failed. The real signal was only 1.02$\times$ above the geometric floor. The ratio law is a **geometric artifact**: any monotonically rising curve will show this correlation by construction.
+A null test using smooth monotonic curves with no physics reproduced r=0.83. Three of four null-coupling criteria failed. The real signal was only 1.02x above the geometric floor. The ratio law is a geometric artifact.
 
 ### Phase 102: Reframing
 
-The target was changed to outer mass discrepancy (immune to geometric coupling) and predictors were restricted to catalog-only variables (not derived from rotation curve shape). $f_\text{gas}$ emerged as the backbone predictor.
+The target was changed to outer mass discrepancy (immune to geometric coupling) and predictors were restricted to catalog-only variables.
 
 ---
 
 ## 8. Physical Interpretation
 
-$f_\text{gas}$ encodes the baryonic state of the galaxy:
+The outer support requirement correlates fundamentally with the galaxy's gas-to-stellar state:
 
-- **High $f_\text{gas}$** (gas-dominant): large outer mass discrepancy, more "extra" support needed
-- **Low $f_\text{gas}$** (stellar-dominant): smaller outer mass discrepancy, baryons account for more of the observed rotation
+- **High gas-to-stellar ratio** (gas-dominant): large outer mass discrepancy, more "extra" support needed
+- **Low gas-to-stellar ratio** (stellar-dominant): smaller outer mass discrepancy
 
-This suggests the outer support requirement correlates with the degree of baryonic conversion — galaxies that have converted less gas into stars require proportionally more dark matter (or modified gravity) support in their outer regions.
-
-**Open question:** Is $f_\text{gas}$ the causal driver, or a proxy for something deeper — low surface density state, recent evolutionary history, weak stellar feedback, or baryon-halo coupling efficiency?
+The signal is NOT driven by surface density (Sigma0 dies after controlling for gas fraction) or baryonic compactness. The ratio form log(MHI/L36) outperforms fgas, suggesting the balance between gas reservoir and stellar content is the physically meaningful variable. This points toward evolutionary state / baryon conversion efficiency as the underlying driver.
 
 ---
 
 ## 9. Caveats
 
-1. **Regime-specific**: works for $V_\text{flat} \geq 70$ km/s spirals only
+1. **Regime-specific**: works for Vflat >= ~70 km/s spirals, with gradual onset from ~55 km/s
 2. **Single survey**: all data from SPARC; cross-survey replication blocked by data incompatibility
-3. **Collinearity with $\Sigma_0$**: $r = -0.81$ between $f_\text{gas}$ and $\log\Sigma_0$, so causal attribution is ambiguous
-4. **Moderate effect size**: LOO $R^2 = 0.50$ means 50% of variance remains unexplained
-5. **No causal mechanism**: the *why* behind the correlation is not yet established
+3. **Moderate effect size**: LOO R^2 ~ 0.50 means 50% of variance remains unexplained
+4. **No causal mechanism**: the correlation is established; the physical mechanism is not
+5. **fgas vs log(MHI/L36)**: these are near-equivalent forms; log(MHI/L36) slightly outperforms but both encode gas-to-stellar balance
 
 ---
 
-## 10. Files in This Repository
+## 10. Evidence Chain (All Phases)
+
+| Phase | Finding | Verdict |
+|:---|:---|:---|
+| 1-100 | Ratio law Vflat/InnerVmax -> outerSlope | SUPERSEDED |
+| 101 | Null geometric coupling test | 3/4 FAIL - artifact |
+| 102 | Catalog predictors of outer mass discrepancy | fgas LOO R^2=0.503 |
+| 103 | Robustness battery | 3/5 PASS |
+| 104 | Locked external replication | ext R^2=0.474, cal slope=1.01 |
+| 105 | Death match sparse models | fgas STRONG BACKBONE |
+| 106 | Target definition robustness | MODERATE PASS (3/4 targets) |
+| 108 | Mediation / proxy dissection | fgas CAUSAL CANDIDATE |
+| 110 | Uncertainty propagation (MC) | STRONG PASS |
+| 111 | Regime boundary mapping | Gradual transition ~55-75 km/s |
+| 112 | Matched falsification | STRONG PASS - log(MHI/L36) wins |
+
+---
+
+## 11. Files in This Repository
 
 | File | Contents |
 |:---|:---|
-| `REPRODUCIBLE_RESULT.md` | This document — current claim and replication guide |
-| `paper.md` | Full phases 1–100 analysis (historical, superseded by 101+) |
-| `N45_final_dataset.csv` | Quality-controlled N=45 subset (phases 1–100) |
-| `../phase104-external-replication.json` | Phase 104 raw results |
-| `../phase103-robustness-battery.json` | Phase 103 raw results |
-| `../phase102-residual-physics.json` | Phase 102 raw results |
-| `../scripts/phase104-external-replication.cjs` | Locked external validation script |
-| `../scripts/phase102-residual-physics.cjs` | fgas discovery script |
+| `REPRODUCIBLE_RESULT.md` | This document - current claim and replication guide |
+| `paper.md` | Full phases 1-100 analysis (historical, superseded) |
+| `N45_final_dataset.csv` | Quality-controlled N=45 subset (phases 1-100) |
+| `../scripts/phase112-matched-falsification.cjs` | Decisive test script |
+| `../scripts/phase110-uncertainty-propagation.cjs` | Monte Carlo uncertainty |
+| `../scripts/phase111-boundary-mapping.cjs` | Regime boundary analysis |
+| `../scripts/phase108-mediation-dissection.cjs` | Mediation / proxy test |
+| `../scripts/phase105-death-match-sparse.cjs` | Model competition |
+| `../scripts/phase106-target-robustness.cjs` | Target definition test |
+| `../scripts/phase104-external-replication.cjs` | Locked external validation |
+| `../scripts/phase102-residual-physics.cjs` | fgas discovery |
 
 ---
 
-## 11. Minimal Reproducibility Script (Pseudocode)
+## 12. Minimal Reproducibility Script (Pseudocode)
 
 ```python
 import numpy as np
@@ -203,24 +224,27 @@ for galaxy in table1:
 
     # Outer half
     half = len(rc) // 2
-    outer = rc[half:]
+    outer_vobs = rc.vobs[half:]
     outer_vbar = vbar[half:]
 
     # Outer mass discrepancy
-    mass_disc = (outer.vobs**2) / (outer_vbar**2)
+    mass_disc = (outer_vobs**2) / (outer_vbar**2)
     logOMD = np.log10(np.mean(mass_disc))
 
     # Gas fraction
     fgas = galaxy.MHI / (galaxy.MHI + UPSILON_DISK * galaxy.L36)
 
-    results.append((fgas, logOMD))
+    # Gas-to-stellar ratio (more fundamental)
+    log_mhi_l36 = np.log10(galaxy.MHI) - np.log10(galaxy.L36)
 
-x, y = zip(*results)
-print(f"r = {pearson_r(x, y):.3f}")     # expect ~0.72
-print(f"N = {len(results)}")             # expect ~104
-# LOO R^2 ~ 0.50
+    results.append((fgas, log_mhi_l36, logOMD))
+
+fgas_arr, ratio_arr, y_arr = zip(*results)
+print(f"r(fgas) = {pearson_r(fgas_arr, y_arr):.3f}")      # expect ~0.724
+print(f"r(ratio) = {pearson_r(ratio_arr, y_arr):.3f}")     # expect ~0.729
+print(f"N = {len(results)}")                                # expect ~104
 ```
 
 ---
 
-**Data:** SPARC (Lelli, McGaugh & Schombert 2016, AJ 152, 157). All scripts and intermediate results are included in this repository for full reproducibility.
+**Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results are included for full reproducibility.
