@@ -1,0 +1,63 @@
+{
+  "phase": 120,
+  "title": "Mechanism Map: Why does log(MHI/L3.6) predict outer support requirement?",
+  "N": 104,
+  "table1_component": [
+    {
+      "name": "log(MHI/L3.6)",
+      "r": 0.7280868467509184,
+      "loo": 0.5097922502981678,
+      "aic": -391.63930494381566,
+      "bic": -386.3505231455329
+    },
+    {
+      "name": "log(MHI)",
+      "r": -0.3758289422343851,
+      "loo": 0.10119151029828988,
+      "aic": -328.9290495498906,
+      "bic": -323.64026775160784
+    },
+    {
+      "name": "log(L3.6)",
+      "r": -0.7045407147376257,
+      "loo": 0.4745027411304513,
+      "aic": -384.42907955178475,
+      "bic": -379.140297753502
+    },
+    {
+      "name": "fgas",
+      "r": 0.7219227503624781,
+      "loo": 0.5001066099389511,
+      "aic": -389.6796493108634,
+      "bic": -384.39086751258066
+    },
+    {
+      "name": "log(MHI)+log(L3.6)",
+      "r": 0.7551147129485022,
+      "loo": 0.5364094566871931,
+      "aic": -398.9133541829217,
+      "bic": -390.98018148549755
+    }
+  ],
+  "table2_residual": {
+    "MHI_perp": {
+      "r": 0.2716994865440413,
+      "loo": 0.033815560039557435
+    },
+    "L36_perp": {
+      "r": -0.6549433837289163,
+      "loo": 0.40742931576851826
+    },
+    "ratio_surviving_structure": 0.3721869911064307,
+    "ratio_surviving_mass": 0.4868549877696595,
+    "ratio_surviving_SFE": 0.45704118788415704
+  },
+  "table3_verdict": {
+    "gas_only": "FAIL",
+    "stars_only": "FAIL",
+    "ratio_state": "PASS",
+    "structure_only": "FAIL",
+    "halo_mediated": "FAIL"
+  },
+  "target_sentence_achieved": true
+}
