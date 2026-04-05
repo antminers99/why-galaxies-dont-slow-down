@@ -1,0 +1,245 @@
+{
+  "phase": 103,
+  "title": "Robustness Battery: Bootstrap, Ablation, Collinearity, Threshold, Influence",
+  "nGalaxies": 104,
+  "fullModel": {
+    "vars": [
+      "logSigma0",
+      "logMHI",
+      "logRdisk",
+      "fgas"
+    ],
+    "R2": 0.573,
+    "LOO_R2": 0.5193,
+    "coefficients": {
+      "intercept": 0.8246,
+      "logSigma0": -0.2546,
+      "logMHI": 0.1934,
+      "logRdisk": -0.5633,
+      "fgas": -0.0022
+    }
+  },
+  "bootstrap": {
+    "nTrials": 2000,
+    "coefficients": {
+      "intercept": {
+        "mean": 0.8107,
+        "sd": 0.1746,
+        "ci025": 0.4579,
+        "ci975": 1.1393,
+        "crossesZero": false
+      },
+      "logSigma0": {
+        "mean": -0.2447,
+        "sd": 0.1071,
+        "ci025": -0.4469,
+        "ci975": -0.0242,
+        "crossesZero": false
+      },
+      "logMHI": {
+        "mean": 0.1817,
+        "sd": 0.0938,
+        "ci025": -0.0217,
+        "ci975": 0.3518,
+        "crossesZero": true
+      },
+      "logRdisk": {
+        "mean": -0.5413,
+        "sd": 0.2117,
+        "ci025": -0.931,
+        "ci975": -0.0807,
+        "crossesZero": false
+      },
+      "fgas": {
+        "mean": 0.0176,
+        "sd": 0.275,
+        "ci025": -0.5118,
+        "ci975": 0.5693,
+        "crossesZero": true
+      }
+    },
+    "R2": {
+      "mean": 0.5897,
+      "sd": 0.0579,
+      "ci025": 0.4692,
+      "ci975": 0.6969
+    },
+    "stableCoefficients": "2/4",
+    "verdict": "FAIL"
+  },
+  "ablation": [
+    {
+      "name": "Full (Sigma0+MHI+Rdisk+fgas)",
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "dropPct": 0
+    },
+    {
+      "name": "Without fgas",
+      "R2": 0.573,
+      "LOO_R2": 0.528,
+      "dropPct": -1.6
+    },
+    {
+      "name": "Without logSigma0",
+      "R2": 0.549,
+      "LOO_R2": 0.499,
+      "dropPct": 3.8
+    },
+    {
+      "name": "Without logMHI",
+      "R2": 0.556,
+      "LOO_R2": 0.507,
+      "dropPct": 2.4
+    },
+    {
+      "name": "Without logRdisk",
+      "R2": 0.542,
+      "LOO_R2": 0.492,
+      "dropPct": 5.2
+    },
+    {
+      "name": "fgas alone",
+      "R2": 0.524,
+      "LOO_R2": 0.503,
+      "dropPct": 3.2
+    },
+    {
+      "name": "logSigma0 alone",
+      "R2": 0.344,
+      "LOO_R2": 0.321,
+      "dropPct": 38.3
+    },
+    {
+      "name": "logBaryonCompact alone",
+      "R2": 0.493,
+      "LOO_R2": 0.471,
+      "dropPct": 9.3
+    },
+    {
+      "name": "fgas + logSigma0 only",
+      "R2": 0.524,
+      "LOO_R2": 0.49,
+      "dropPct": 5.7
+    },
+    {
+      "name": "fgas + logBaryonCompact only",
+      "R2": 0.54,
+      "LOO_R2": 0.507,
+      "dropPct": 2.4
+    }
+  ],
+  "collinearity": {
+    "VIF": {
+      "logSigma0": 21.82,
+      "logMHI": 13.75,
+      "logRdisk": 19.06,
+      "fgas": 19.32
+    },
+    "maxVIF": 21.82,
+    "verdict": "FAIL"
+  },
+  "thresholdSweep": [
+    {
+      "threshold": 0,
+      "n": 104,
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "rFgas": 0.724
+    },
+    {
+      "threshold": 40,
+      "n": 104,
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "rFgas": 0.724
+    },
+    {
+      "threshold": 50,
+      "n": 104,
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "rFgas": 0.724
+    },
+    {
+      "threshold": 60,
+      "n": 104,
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "rFgas": 0.724
+    },
+    {
+      "threshold": 70,
+      "n": 104,
+      "R2": 0.573,
+      "LOO_R2": 0.519,
+      "rFgas": 0.724
+    },
+    {
+      "threshold": 80,
+      "n": 94,
+      "R2": 0.614,
+      "LOO_R2": 0.563,
+      "rFgas": 0.766
+    },
+    {
+      "threshold": 90,
+      "n": 83,
+      "R2": 0.571,
+      "LOO_R2": 0.511,
+      "rFgas": 0.733
+    },
+    {
+      "threshold": 100,
+      "n": 77,
+      "R2": 0.545,
+      "LOO_R2": 0.478,
+      "rFgas": 0.716
+    },
+    {
+      "threshold": 120,
+      "n": 60,
+      "R2": 0.286,
+      "LOO_R2": 0.128,
+      "rFgas": 0.497
+    }
+  ],
+  "influence": {
+    "top5": [
+      {
+        "name": "NGC1705",
+        "cooksD": 0.0194
+      },
+      {
+        "name": "NGC2976",
+        "cooksD": 0.0145
+      },
+      {
+        "name": "UGC06667",
+        "cooksD": 0.0102
+      },
+      {
+        "name": "UGC00731",
+        "cooksD": 0.0079
+      },
+      {
+        "name": "NGC5005",
+        "cooksD": 0.0061
+      }
+    ],
+    "nInfluential": 0,
+    "afterRemove5": {
+      "n": 99,
+      "R2": 0.584,
+      "LOO_R2": 0.536
+    },
+    "afterRemove10": {
+      "n": 94,
+      "R2": 0.62,
+      "LOO_R2": 0.577
+    },
+    "verdict": "PASS"
+  },
+  "overallScore": "3/5",
+  "overallVerdict": "MOSTLY ROBUST"
+}
