@@ -1,0 +1,181 @@
+{
+  "phase": "131",
+  "title": "Decode the Kinematic Residual Inside Vflat",
+  "vfresid_stats": {
+    "r2_structure_explains_vflat": 0.922,
+    "unique_fraction_pct": 7.8,
+    "r_with_logA0": 0.702,
+    "sd": 0.0503
+  },
+  "probe1_systematics": {
+    "inclination": 0.065,
+    "logDistance": -0.03,
+    "Q (quality)": -0.074,
+    "eVflat/Vflat": 0.105,
+    "rcWiggliness": -0.057,
+    "envCode": -0.384
+  },
+  "probe2_structural": {
+    "logReff": -0.17,
+    "logSBeff": 0.219,
+    "logSBdisk": -0.164,
+    "concentration": -0.289,
+    "logRHI": -0.14,
+    "logRHI/Rdisk": -0.185,
+    "logSig0": 0,
+    "morphT": 0
+  },
+  "probe3_kinematic": {
+    "logVmax/Vflat": -0.214,
+    "logMaxR/Rdisk": -0.14,
+    "logMeanRun": 0.388,
+    "rcWiggliness": -0.057
+  },
+  "probe5_full_control": {
+    "inc": -0.034,
+    "logDistance": 0.003,
+    "Q": -0.01,
+    "logVmax/Vflat": -0.329,
+    "logMaxR/Rdisk": -0.129,
+    "concentration": -0.276,
+    "logRHI/Rdisk": -0.113,
+    "logSBeff": 0.212,
+    "logSBdisk": -0.151,
+    "logSig0": 0,
+    "rcWiggliness": -0.099,
+    "envCode": -0.001,
+    "haloK": 0.411,
+    "mondImprove": -0.298,
+    "logMeanRun": 0
+  },
+  "ranked_correlates": [
+    {
+      "name": "haloK",
+      "r": 0.598
+    },
+    {
+      "name": "mondImprove",
+      "r": -0.542
+    },
+    {
+      "name": "logMeanRun",
+      "r": 0.388
+    },
+    {
+      "name": "envCode",
+      "r": -0.384
+    },
+    {
+      "name": "concentration",
+      "r": -0.289
+    },
+    {
+      "name": "logSBeff",
+      "r": 0.219
+    },
+    {
+      "name": "logVmax/Vflat",
+      "r": -0.214
+    },
+    {
+      "name": "logRHI/Rdisk",
+      "r": -0.185
+    },
+    {
+      "name": "logSBdisk",
+      "r": -0.164
+    },
+    {
+      "name": "logMaxR/Rdisk",
+      "r": -0.14
+    },
+    {
+      "name": "Q",
+      "r": -0.074
+    },
+    {
+      "name": "inc",
+      "r": 0.065
+    },
+    {
+      "name": "rcWiggliness",
+      "r": -0.057
+    },
+    {
+      "name": "logDistance",
+      "r": -0.03
+    },
+    {
+      "name": "logSig0",
+      "r": 0
+    }
+  ],
+  "identity": "HALO_COUPLING",
+  "identity_description": "HALO_COUPLING — VfResid strongly correlates with dark halo strength (haloK r=0.60) and anti-correlates with MOND improvement (r=-0.54). It encodes the excess dynamical support beyond baryonic structure — the baryon-halo coupling efficiency",
+  "galaxy_extremes": {
+    "high_vfresid": [
+      {
+        "name": "UGC06787",
+        "vfResid": 0.116,
+        "vflat": 248.1,
+        "morphT": 2
+      },
+      {
+        "name": "NGC2841",
+        "vfResid": 0.11,
+        "vflat": 284.8,
+        "morphT": 3
+      },
+      {
+        "name": "NGC5005",
+        "vfResid": 0.108,
+        "vflat": 262.2,
+        "morphT": 4
+      },
+      {
+        "name": "NGC7814",
+        "vfResid": 0.073,
+        "vflat": 218.9,
+        "morphT": 2
+      },
+      {
+        "name": "UGC06786",
+        "vfResid": 0.072,
+        "vflat": 219.4,
+        "morphT": 0
+      }
+    ],
+    "low_vfresid": [
+      {
+        "name": "NGC4559",
+        "vfResid": -0.066,
+        "vflat": 121.2,
+        "morphT": 6
+      },
+      {
+        "name": "NGC4138",
+        "vfResid": -0.071,
+        "vflat": 147.3,
+        "morphT": 0
+      },
+      {
+        "name": "NGC3769",
+        "vfResid": -0.071,
+        "vflat": 118.6,
+        "morphT": 3
+      },
+      {
+        "name": "NGC5055",
+        "vfResid": -0.074,
+        "vflat": 179,
+        "morphT": 4
+      },
+      {
+        "name": "NGC2683",
+        "vfResid": -0.087,
+        "vflat": 154,
+        "morphT": 3
+      }
+    ]
+  }
+}
