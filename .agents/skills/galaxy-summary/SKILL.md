@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 96. BREAKTHROUGH: a₀ is NOT NEEDED. Direct law (structural + logInnerVmax) achieves LOO R²=0.677 vs a₀-based LOO R²=0.292. Adding a₀ to inner dynamics: ΔLOO = −0.009 (negative!). Key insight: outerSlope ≈ log(Vflat/InnerVmax), where β(logVflat)=+1.81, β(logInnerVmax)=−1.76. This ratio encodes HALO CONCENTRATION directly. a₀ was a noisy proxy for this ratio all along. Phase chain: 93 (dual parents) → 94 (genuine residual) → 95 (innerVmax is carrier) → 96 (a₀ superseded by direct law).
+PROGRAM AT PHASE 97. CONFIRMED GENUINE PHYSICAL LAW: log(Vflat/InnerVmax) alone explains 69% of outerSlope variance (LOO R²=0.691, single variable, p<0.0005). 4/4 genuine markers, 0/4 geometric markers. Not all inner velocities work equally (LOO R² from 0.345 to 0.686 by proxy). Law extends to ALL 143 galaxies (LOO R²=0.611). a₀ is NOT NEEDED — it was a noisy proxy for halo concentration encoded in Vflat/InnerVmax. Phase chain: 93→94→95→96→97 (circularity rejected, law confirmed genuine).

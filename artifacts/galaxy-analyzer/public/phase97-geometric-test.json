@@ -1,0 +1,56 @@
+{
+  "phase": "97",
+  "title": "Is the Direct Law Genuine or Geometric?",
+  "hiN": 104,
+  "splitHalf": {
+    "note": "innerVmax from inner half, outerSlope from outer half — NO overlap by construction",
+    "rDirect": -0.657,
+    "rRatio": 0.846,
+    "rPartDirect": -0.761,
+    "rPartRatio": 0.761
+  },
+  "fixedRadiusProxies": [
+    {
+      "name": "V(1 Rdisk)",
+      "rRaw": -0.566,
+      "rPart": -0.488
+    },
+    {
+      "name": "V(2 Rdisk)",
+      "rRaw": -0.54,
+      "rPart": -0.409
+    },
+    {
+      "name": "Vpeak (entire RC)",
+      "rRaw": -0.531,
+      "rPart": -0.326
+    },
+    {
+      "name": "InnerVmax (half)",
+      "rRaw": -0.657,
+      "rPart": -0.761
+    }
+  ],
+  "extendedControls": {
+    "rPartRatio": 0.772,
+    "rPartDirect": -0.772,
+    "looExt": 0.689
+  },
+  "ratioVsBoth": {
+    "looRatioOnly": 0.691,
+    "looBothOnly": 0.688,
+    "looRatioFull": 0.692,
+    "looBothFull": 0.686
+  },
+  "allGalaxies": {
+    "n": 143,
+    "looR2": 0.611
+  },
+  "permutation": {
+    "r": 0.846,
+    "p": 0
+  },
+  "genuineMarkers": 4,
+  "geometricMarkers": 0,
+  "verdict": "GENUINE"
+}
