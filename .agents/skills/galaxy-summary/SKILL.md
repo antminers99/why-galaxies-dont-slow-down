@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 91. Full diagnostic complete. The Vflat≈70 boundary is a CONVERGENCE of 4 transitions: (1) fgas 0.31→0.60 (gas dominance), (2) gbar range 1.19→0.51 dex (a₀ degenerate), (3) deep MOND (median gbar 2.91→2.33), (4) rising RCs 34%→73% (Vflat undefined). Per-galaxy a₀ is OPERATIONALLY ILL-DEFINED in dwarfs — not because MOND fails, but because the fitting methodology breaks down in gas-dominated, low-acceleration systems.
+PROGRAM AT PHASE 92. Phase 92 connects a₀ law to RC flatness. Key finding: a₀ does NOT directly predict flatness (r=−0.052), BUT the same M3 properties predict BOTH a₀ and outer slope (R²=0.36, gap=16.9%, p<0.001). They are PARALLEL CONSEQUENCES of baryon-dominated disk structure. Σ₀ is the strongest single predictor of flatness (r=−0.518). The Vflat≈70 boundary = convergence of 4 transitions (Phase 91). Per-galaxy a₀ is operationally ill-defined in dwarfs (Phases 89-91).

@@ -551,6 +551,20 @@ Phase 90 established that the $V_\mathrm{flat} \approx 70$ km/s boundary is genu
 
 **Implication for MOND.** This analysis does not test whether MOND is correct. It shows that the structured $a_0$ variation found in massive spirals cannot be extended to dwarfs — not because dwarfs violate MOND, but because the parameter $a_0$ becomes **operationally ill-defined** in the dwarf regime. The combination of narrow acceleration range, deep-MOND degeneracy, and rising RCs means that galaxy-by-galaxy $a_0$ fitting is an inappropriate tool for characterizing MOND in dwarfs. Future work should use methods that do not require individual $a_0$ estimates, such as stacked RAR analyses or direct dynamical modeling.
 
+### 12.14 From $a_0$ Law to Rotation Curve Flatness (Phase 92)
+
+If the high-regime $a_0$ law captures real physics, it should connect to the most fundamental observable: rotation curve shape. Phase 92 tests whether the M3/M5 predictors — and $a_0$ itself — predict RC flatness in the high-$V_\mathrm{flat}$ regime ($N = 112$).
+
+**$a_0$ does not directly predict RC shape.** The correlation between $\log a_0$ and outer slope is $r = -0.052$ (negligible). After removing the common $V_\mathrm{flat}$ dependence, the partial correlation is $r = -0.072$. The inferred acceleration scale and rotation curve shape are **independent phenomena** — knowing a galaxy's $a_0$ tells you nothing about whether its RC is flat, rising, or declining.
+
+**But the same galaxy properties predict both.** The M3 variables (logMHI, logMeanRun, logSigma0) predict outer slope with $R^2 = 0.361$ and LOO gap $= 16.9\%$ (perm $p < 0.001$). Adding $\log a_0$ to M5 yields the best model: $R^2 = 0.432$, LOO gap $= 18.8\%$. The strongest single predictor of flatness is baryonic surface density: $r(\log \Sigma_0, \mathrm{outerSlope}) = -0.518$.
+
+For the flatness ratio $V_\mathrm{last3}/V_\mathrm{max}$, M3 achieves $R^2 = 0.326$, LOO gap $= 14.3\%$. Morphological type ($T$) correlates most strongly ($r = 0.559$): later types have flatter RCs.
+
+**Flat vs. rising in the high regime.** Among 112 high-$V_\mathrm{flat}$ galaxies: 50% have flat outer RCs ($|\mathrm{slope}| \leq 0.1$), 34% rising, 16% declining. Flat galaxies differ from rising ones by: higher surface density ($\Delta \log \Sigma_0 = +0.51$), lower gas fraction ($\Delta f_\mathrm{gas} = -0.15$), higher $V_\mathrm{flat}$ ($\Delta \log V_\mathrm{flat} = +0.17$), and earlier type ($\Delta T = -1.4$).
+
+**Interpretation.** The $a_0$ law and RC flatness are **parallel consequences** of the same underlying galaxy structure, not causally linked to each other. Baryonic surface density ($\Sigma_0$) and gas fraction ($f_\mathrm{gas}$) jointly determine both the inferred $a_0$ and the outer RC shape — but through different physical pathways. This means the high-regime law is not "about flatness" directly; it describes a structured pattern in how galaxies populate the RAR, and that pattern correlates with RC shape because both are manifestations of the same baryon-dominated disk physics.
+
 ---
 
 ## 13. Limitations
@@ -591,6 +605,8 @@ The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-qual
 
 Phase 91 identifies **why** the law exists only in the high regime: the boundary at $V_\mathrm{flat} \approx 70$ km/s marks a convergence of four independent transitions — gas fraction crosses $\sim 50\%$ (stellar disk loses dominance), acceleration range narrows from 1.19 to 0.51 dex (a₀ becomes degenerate), galaxies enter deep MOND (RAR shape insensitive to $a_0$), and 73% of dwarfs have rising RCs vs. 34% of spirals ($V_\mathrm{flat}$ itself undefined). These four effects converge to make the per-galaxy $a_0$ parameter **operationally ill-defined** in the dwarf regime — not because MOND fails, but because the fitting methodology breaks down when applied to gas-dominated, low-acceleration systems with incomplete rotation curves.
 
+Finally, Phase 92 connects the $a_0$ law to the central question of rotation curve flatness. The inferred $a_0$ does **not** directly predict RC shape ($r = -0.052$). But the same M3 galaxy properties (logMHI, logMeanRun, logSigma0) that predict $a_0$ variation also predict outer slope with $R^2 = 0.36$ and LOO gap $= 16.9\%$ ($p < 0.001$). The $a_0$ law and RC flatness are **parallel consequences** of baryon-dominated disk structure — not causally linked to each other, but both emergent from the same underlying physics. Baryonic surface density ($\Sigma_0$) is the strongest single predictor of both phenomena ($r = -0.518$ with outer slope, $r = -0.157$ with $a_0$).
+
 **Table 5b. Evidence $\to$ Claim Traceability**
 
 | Claim | Evidence | Status |
@@ -628,6 +644,9 @@ Phase 91 identifies **why** the law exists only in the high regime: the boundary
 | **Regime boundary is physical + quality** | **Scatter amplitude = quality; correlation structure = physics; both contribute** | **Key finding** |
 | **Convergent transitions at 70 km/s** | **Phase 91: fgas (0.31→0.60), gbar range (1.19→0.51 dex), deep MOND, rising RCs (34%→73%)** | **Key finding** |
 | **a₀ operationally ill-defined in dwarfs** | **Narrow range + deep MOND + rising RC = degenerate fit; a₀ not meaningful per-galaxy** | **Confirmed** |
+| **a₀ does NOT predict RC flatness** | **Phase 92: r(logA0, outerSlope) = −0.052; partial r = −0.072 after Vflat** | **Confirmed** |
+| **Same properties predict BOTH a₀ and flatness** | **M3→outerSlope: R²=0.36, gap=16.9%, p<0.001; Σ₀ strongest (r=−0.518)** | **Key finding** |
+| **a₀ and flatness are parallel consequences** | **Not causally linked; both driven by baryon-dominated disk structure** | **Key finding** |
 
 ---
 
