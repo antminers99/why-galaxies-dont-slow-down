@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 97. CONFIRMED GENUINE PHYSICAL LAW: log(Vflat/InnerVmax) alone explains 69% of outerSlope variance (LOO R²=0.691, single variable, p<0.0005). 4/4 genuine markers, 0/4 geometric markers. Not all inner velocities work equally (LOO R² from 0.345 to 0.686 by proxy). Law extends to ALL 143 galaxies (LOO R²=0.611). a₀ is NOT NEEDED — it was a noisy proxy for halo concentration encoded in Vflat/InnerVmax. Phase chain: 93→94→95→96→97 (circularity rejected, law confirmed genuine).
+PROGRAM AT PHASE 98. External replication: PARTIAL. Signal replicates qualitatively within N45 (r=0.625, p<0.0001) but calibration differs 45.7% between samples. Train non-N45→test N45: R²=0.23 (weak but positive). Reverse: R²=0.607 (strong). Within-N45 LOO R²=0.327. Attenuation is consistent with restricted-range effect, not law failure. The inside-to-outside coupling is ROBUST; quantification needs distance/resolution attention. Phase chain: 93→94→95→96→97→98.
