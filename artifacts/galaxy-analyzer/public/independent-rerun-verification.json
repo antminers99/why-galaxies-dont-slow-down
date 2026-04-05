@@ -1,0 +1,33 @@
+{
+  "verification": "independent-rerun",
+  "date": "2026-04-05T21:02:42.429Z",
+  "allPass": false,
+  "core": {
+    "r_ratio": 0.7293704919091307,
+    "r_fgas": 0.7237479378172479,
+    "loo_ratio": 0.5116845122338346,
+    "loo_fgas": 0.5027840787072768,
+    "N": 104
+  },
+  "antiCircularity": {
+    "r_stars": 0.8682849244009855,
+    "r_gas": -0.2552310957144134,
+    "perm_p": 0
+  },
+  "mechanism": {
+    "r_logMHI": -0.3749495410983042,
+    "r_logL36": -0.7045308035468104,
+    "pr_ratio_sigma": 0.5357601046509516
+  },
+  "adoptedModel": {
+    "intercept": 1.7401938897460165,
+    "beta_ratio": 0.2048186182473078,
+    "beta_mbar": -0.09957827258282632,
+    "loo": 0.5852418937783952,
+    "perm_p": 0.003
+  },
+  "mediation": {
+    "pr_fgas_sigma": 0.5238822084108709,
+    "pr_sigma_fgas": 0.005992480353223136
+  }
+}
