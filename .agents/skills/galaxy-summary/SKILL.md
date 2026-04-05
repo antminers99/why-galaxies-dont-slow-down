@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 94. Phase 94 CONFIRMED that the a₀ residual is GENUINE, not circularity. Split-half test: a₀(inner half) vs outerSlope partial r = −0.325 (p=0.003), ratio split/full = 1.07. Information flows OUTWARD: a₀(inner)→outerSlope r=−0.325, but a₀(outer)→innerSlope r=+0.071 (no signal). The inner potential encodes dynamical content that shapes the outer RC. Dual parents Σ₀+Vflat remain confirmed. a₀ carries genuine extra dynamical info beyond baryonic observables — likely halo concentration or MOND transition radius.
+PROGRAM AT PHASE 95. Phase 95 identified the hidden inner quantity: logInnerVmax absorbs 79.2% of the a₀ residual (r=−0.761 with outerSlope after structural controls — far stronger than a₀ itself). Inner mass discrepancy (DM proxy) absorbs 46.9%. Top 3 combined absorb 76.1%. a₀(inner) is NOT irreducible — it is a COMPOSITE PROXY for halo concentration (inner Vmax) + inner DM contribution. Phase 94 confirmed the residual is genuine (split-half ratio=1.07, p=0.003), info flows outward only. Dual parents Σ₀+Vflat remain confirmed from Phase 93.

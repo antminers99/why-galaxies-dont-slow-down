@@ -1,0 +1,140 @@
+{
+  "phase": "95",
+  "title": "What Is the Hidden Inner Quantity?",
+  "hiN": 104,
+  "baseline": -0.325,
+  "candidateRankByOuterSlope": [
+    {
+      "name": "logInnerVmax",
+      "label": "Inner Vmax",
+      "rPartOuter": -0.761,
+      "rPartA0": 0.374
+    },
+    {
+      "name": "innerMassConc",
+      "label": "Inner mass concentration (enc_last/enc_mid)",
+      "rPartOuter": 0.306,
+      "rPartA0": -0.123
+    },
+    {
+      "name": "innerDiscrepancy",
+      "label": "Inner mass discrepancy (mean logGobs-logGbar)",
+      "rPartOuter": -0.283,
+      "rPartA0": 0.789
+    },
+    {
+      "name": "innerSlope",
+      "label": "Inner RC slope (logV vs logR)",
+      "rPartOuter": 0.243,
+      "rPartA0": -0.004
+    },
+    {
+      "name": "innerVrise",
+      "label": "Inner velocity rise (dV/dR)",
+      "rPartOuter": 0.21,
+      "rPartA0": 0.143
+    },
+    {
+      "name": "innerGbarRange",
+      "label": "Inner gbar range (dex)",
+      "rPartOuter": -0.16,
+      "rPartA0": -0.037
+    },
+    {
+      "name": "innerBaryonFrac",
+      "label": "Inner baryon fraction (Vbar²/Vobs²)",
+      "rPartOuter": 0.149,
+      "rPartA0": -0.79
+    },
+    {
+      "name": "innerRARresid",
+      "label": "Inner RAR RMS residual",
+      "rPartOuter": 0.139,
+      "rPartA0": -0.348
+    },
+    {
+      "name": "innerCurvature",
+      "label": "Inner RC curvature (quadratic term)",
+      "rPartOuter": 0.041,
+      "rPartA0": -0.124
+    },
+    {
+      "name": "innerDiscSlope",
+      "label": "Inner discrepancy slope (d(Gobs-Gbar)/dGbar)",
+      "rPartOuter": 0.009,
+      "rPartA0": 0.108
+    },
+    {
+      "name": "innerRARslope",
+      "label": "Inner RAR slope (logGobs vs logGbar)",
+      "rPartOuter": 0.009,
+      "rPartA0": 0.108
+    }
+  ],
+  "mediationRank": [
+    {
+      "name": "logInnerVmax",
+      "rAfter": -0.068,
+      "reduction": 79.2
+    },
+    {
+      "name": "innerDiscrepancy",
+      "rAfter": -0.173,
+      "reduction": 46.9
+    },
+    {
+      "name": "innerCurvature",
+      "rAfter": -0.241,
+      "reduction": 26
+    },
+    {
+      "name": "innerRARresid",
+      "rAfter": -0.298,
+      "reduction": 8.3
+    },
+    {
+      "name": "innerMassConc",
+      "rAfter": -0.305,
+      "reduction": 6.4
+    },
+    {
+      "name": "innerDiscSlope",
+      "rAfter": -0.328,
+      "reduction": -0.9
+    },
+    {
+      "name": "innerRARslope",
+      "rAfter": -0.328,
+      "reduction": -0.9
+    },
+    {
+      "name": "innerSlope",
+      "rAfter": -0.335,
+      "reduction": -2.8
+    },
+    {
+      "name": "innerGbarRange",
+      "rAfter": -0.336,
+      "reduction": -3.2
+    },
+    {
+      "name": "innerBaryonFrac",
+      "rAfter": -0.343,
+      "reduction": -5.3
+    },
+    {
+      "name": "innerVrise",
+      "rAfter": -0.367,
+      "reduction": -12.9
+    }
+  ],
+  "top3combined": {
+    "names": [
+      "logInnerVmax",
+      "innerDiscrepancy",
+      "innerCurvature"
+    ],
+    "rAfterAll": -0.078,
+    "reduction": 76.1
+  }
+}
