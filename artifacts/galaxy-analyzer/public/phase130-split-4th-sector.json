@@ -1,0 +1,92 @@
+{
+  "phase": "130",
+  "title": "Split the 4th Sector",
+  "N": 45,
+  "models": {
+    "C": {
+      "name": "MHI+Mhost+MR+Vflat",
+      "k": 5,
+      "gap": 52.1,
+      "loo_rms": 0.1785,
+      "aic": -155.63,
+      "bic": -146.6,
+      "r2adj": 0.5735,
+      "max_flip": 0.1
+    },
+    "D5a": {
+      "name": "MHI+Mhost+MR+PC1+VfResid",
+      "k": 6,
+      "gap": 48.7,
+      "loo_rms": 0.1847,
+      "aic": -166.19,
+      "bic": -155.35,
+      "r2adj": 0.6691,
+      "max_flip": 36.3
+    },
+    "D5b": {
+      "name": "MHI+Mhost+MR+Mbar+VfResid",
+      "k": 6,
+      "gap": 49.9,
+      "loo_rms": 0.1825,
+      "aic": -166.41,
+      "bic": -155.57,
+      "r2adj": 0.6708,
+      "max_flip": 30.6
+    },
+    "D5c": {
+      "name": "MHI+Mhost+MR+L36+VfResid",
+      "k": 6,
+      "gap": 49.6,
+      "loo_rms": 0.1831,
+      "aic": -166.05,
+      "bic": -155.21,
+      "r2adj": 0.6681,
+      "max_flip": 50.9
+    },
+    "M4": {
+      "name": "MHI+Mhost+MR+Sigma0",
+      "k": 5,
+      "gap": 47.4,
+      "loo_rms": 0.1871,
+      "aic": -151.77,
+      "bic": -142.74,
+      "r2adj": 0.5353,
+      "max_flip": 3.2
+    }
+  },
+  "nested_cv": {
+    "gap": 49.9,
+    "selection": {
+      "C": 0,
+      "D5b": 45
+    },
+    "models_compared": [
+      "C",
+      "D5b"
+    ]
+  },
+  "component_analysis": {
+    "core_gap": 44.1,
+    "pc1_marginal": 0.4,
+    "vfResid_marginal": 17.1,
+    "vflat_marginal": 8,
+    "combined_marginal": 5.9
+  },
+  "pc1": {
+    "loadings": {
+      "logMbar": 0.524,
+      "logL36": 0.525,
+      "logRdisk": 0.493,
+      "morphT": -0.455
+    },
+    "var_explained": 87.1
+  },
+  "vflat_residual": {
+    "r2_structure_explains": 0.922,
+    "unique_fraction": 7.8,
+    "r_with_logA0": 0.702
+  },
+  "final_verdict": "VFLAT_REMAINS_OPTIMAL",
+  "final_verdict_description": "The decomposition does not improve on Vflat. The 4th axis is operationally irreducible to a single kinematic variable.",
+  "best_decomposed": "D5b"
+}
