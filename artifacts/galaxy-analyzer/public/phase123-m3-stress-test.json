@@ -1,0 +1,198 @@
+{
+  "phase": "123",
+  "title": "M3 Stress Test + Regime Test",
+  "question": "Is M3 a genuine state law, or only a compressed statistical bundle?",
+  "m3": {
+    "formula": "logA0 = 5.1816 + -0.1980*logMHI + -0.1552*logMhost + 0.4591*logMeanRun",
+    "gap_pct": 44.1,
+    "loo_rms": 0.1929,
+    "r2adj": 0.4876,
+    "coefficients": {
+      "intercept": 5.1816,
+      "logMHI": -0.198,
+      "logMhost": -0.1552,
+      "logMeanRun": 0.4591
+    }
+  },
+  "testA": {
+    "title": "Death Match",
+    "total_models": 92,
+    "m3_rank": 3,
+    "top10": [
+      {
+        "name": "logMhost+logVflat+logL36",
+        "k": 3,
+        "gap": 45.3
+      },
+      {
+        "name": "logMhost+logVflat+logRdisk",
+        "k": 3,
+        "gap": 44.5
+      },
+      {
+        "name": "logMHI+logMhost+logMR",
+        "k": 3,
+        "gap": 44.1
+      },
+      {
+        "name": "logMR+logVflat+logL36",
+        "k": 3,
+        "gap": 38.7
+      },
+      {
+        "name": "logMhost+logMR+logRdisk",
+        "k": 3,
+        "gap": 37.8
+      },
+      {
+        "name": "logMHI+logMhost+logVflat",
+        "k": 3,
+        "gap": 37
+      },
+      {
+        "name": "logMHI+logMR+logVflat",
+        "k": 3,
+        "gap": 36.9
+      },
+      {
+        "name": "logSig0+logVflat+logRdisk",
+        "k": 3,
+        "gap": 36.4
+      },
+      {
+        "name": "logVflat+logL36",
+        "k": 2,
+        "gap": 36.4
+      },
+      {
+        "name": "logVflat+logL36+logRdisk",
+        "k": 3,
+        "gap": 36.4
+      }
+    ],
+    "bootstrap_sign_flips": {
+      "logMHI": 0,
+      "logMhost": 0.1,
+      "logMeanRun": 0.1,
+      "all_stable": true
+    },
+    "permutation": {
+      "p": 0.0002,
+      "n_perms": 5000,
+      "significant": true
+    }
+  },
+  "testB": {
+    "title": "Vflat Regime Scan",
+    "thresholds": [
+      {
+        "vflat_min": 0,
+        "n": 45,
+        "gap": 44.1,
+        "rms": 0.1929,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 60,
+        "n": 43,
+        "gap": 55.9,
+        "rms": 0.1742,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 70,
+        "n": 43,
+        "gap": 55.9,
+        "rms": 0.1742,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 80,
+        "n": 40,
+        "gap": 45.9,
+        "rms": 0.1792,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 90,
+        "n": 39,
+        "gap": 38,
+        "rms": 0.1819,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 100,
+        "n": 39,
+        "gap": 38,
+        "rms": 0.1819,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 120,
+        "n": 35,
+        "gap": 24.3,
+        "rms": 0.1929,
+        "signs_correct": true
+      },
+      {
+        "vflat_min": 150,
+        "n": 31,
+        "gap": 28.7,
+        "rms": 0.1901,
+        "signs_correct": true
+      }
+    ],
+    "sign_stable_count": 8,
+    "peak": {
+      "vflat_min": 60,
+      "gap": 55.9
+    }
+  },
+  "testC": {
+    "title": "Physical Axis Decomposition",
+    "individual": [
+      {
+        "name": "logMHI",
+        "r_logA0": -0.398,
+        "loo_gap_1var": 8.4,
+        "physics": "Gas reservoir / evolutionary state"
+      },
+      {
+        "name": "logMhost",
+        "r_logA0": -0.529,
+        "loo_gap_1var": 22.8,
+        "physics": "Environmental depth / tidal processing"
+      },
+      {
+        "name": "logMeanRun",
+        "r_logA0": 0.381,
+        "loo_gap_1var": 10.2,
+        "physics": "Dynamical coherence / inner structure"
+      }
+    ],
+    "meanRun_independence": 0.386,
+    "axis_correlations": {
+      "MHI_Mhost": 0.183,
+      "MHI_MR": 0.242,
+      "Mhost_MR": -0.201
+    }
+  },
+  "testD": {
+    "title": "Nested CV",
+    "nested_gap": 0,
+    "standard_gap": 44.1,
+    "optimism": 44.1,
+    "m3_selected_pct": 22
+  },
+  "verdict": {
+    "tests_passed": 3,
+    "tests_total": 4,
+    "result": "PASS — M3 is more than a statistical bundle",
+    "details": {
+      "A": true,
+      "B": true,
+      "C": true,
+      "D": false
+    }
+  }
+}
