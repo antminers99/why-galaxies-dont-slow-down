@@ -1,0 +1,67 @@
+{
+  "phase": 115,
+  "title": "BTFR Residual Analysis: Does gas state predict Baryonic Tully-Fisher scatter?",
+  "nAll": 135,
+  "nHighV": 112,
+  "btfrFit": {
+    "intercept": 3.4,
+    "slope": 3.189,
+    "rms": 0.2888
+  },
+  "test1_fullSample": {
+    "fgas": {
+      "r": -0.112,
+      "loo": -0.017
+    },
+    "log(MHI/L36)": {
+      "r": -0.095,
+      "loo": -0.02
+    },
+    "logSigma0": {
+      "r": 0.102,
+      "loo": -0.016
+    },
+    "logL36": {
+      "r": 0.303,
+      "loo": 0.062
+    }
+  },
+  "test2_highV": {
+    "fgas": {
+      "r": 0.056,
+      "loo": -0.033
+    },
+    "log(MHI/L36)": {
+      "r": 0.101,
+      "loo": -0.028
+    },
+    "logSigma0": {
+      "r": -0.029,
+      "loo": -0.034
+    },
+    "logL36": {
+      "r": 0.232,
+      "loo": 0.015
+    }
+  },
+  "test4_terciles": [
+    {
+      "name": "Low fgas",
+      "n": 37,
+      "meanResid": -0.028,
+      "rms": 0.2193
+    },
+    {
+      "name": "Mid fgas",
+      "n": 37,
+      "meanResid": 0.0235,
+      "rms": 0.2028
+    },
+    {
+      "name": "High fgas",
+      "n": 38,
+      "meanResid": 0.0044,
+      "rms": 0.2215
+    }
+  ]
+}

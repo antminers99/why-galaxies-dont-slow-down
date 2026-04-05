@@ -1,0 +1,218 @@
+{
+  "phase": 114,
+  "title": "Diversity Connection: Gas-to-stellar balance and rotation curve shape diversity",
+  "nHighV": 104,
+  "nAll": 122,
+  "test1_highV_shapeVsGas": {
+    "outerSlope": {
+      "fgas": {
+        "r": 0.459,
+        "loo": 0.18
+      },
+      "log(MHI/L36)": {
+        "r": 0.449,
+        "loo": 0.16
+      },
+      "logSigma0": {
+        "r": -0.501,
+        "loo": 0.219
+      },
+      "logL36": {
+        "r": -0.568,
+        "loo": 0.298
+      }
+    },
+    "VmaxVflat": {
+      "fgas": {
+        "r": -0.434,
+        "loo": 0.157
+      },
+      "log(MHI/L36)": {
+        "r": -0.441,
+        "loo": 0.153
+      },
+      "logSigma0": {
+        "r": 0.46,
+        "loo": 0.18
+      },
+      "logL36": {
+        "r": 0.504,
+        "loo": 0.227
+      }
+    },
+    "flatness": {
+      "fgas": {
+        "r": 0.105,
+        "loo": -0.035
+      },
+      "log(MHI/L36)": {
+        "r": 0.105,
+        "loo": -0.032
+      },
+      "logSigma0": {
+        "r": -0.178,
+        "loo": -0.009
+      },
+      "logL36": {
+        "r": -0.136,
+        "loo": -0.022
+      }
+    },
+    "concentration": {
+      "fgas": {
+        "r": -0.505,
+        "loo": 0.224
+      },
+      "log(MHI/L36)": {
+        "r": -0.499,
+        "loo": 0.221
+      },
+      "logSigma0": {
+        "r": 0.315,
+        "loo": 0.064
+      },
+      "logL36": {
+        "r": 0.577,
+        "loo": 0.305
+      }
+    },
+    "riseSteepness": {
+      "fgas": {
+        "r": 0.309,
+        "loo": 0.058
+      },
+      "log(MHI/L36)": {
+        "r": 0.284,
+        "loo": 0.044
+      },
+      "logSigma0": {
+        "r": -0.097,
+        "loo": -0.028
+      },
+      "logL36": {
+        "r": -0.368,
+        "loo": 0.097
+      }
+    },
+    "baryonDom": {
+      "fgas": {
+        "r": -0.646,
+        "loo": 0.395
+      },
+      "log(MHI/L36)": {
+        "r": -0.69,
+        "loo": 0.457
+      },
+      "logSigma0": {
+        "r": 0.611,
+        "loo": 0.353
+      },
+      "logL36": {
+        "r": 0.608,
+        "loo": 0.345
+      }
+    }
+  },
+  "test2_fullSample": {
+    "outerSlope": {
+      "fgas": {
+        "r": 0.466
+      },
+      "log(MHI/L36)": {
+        "r": 0.463
+      }
+    },
+    "VmaxVflat": {
+      "fgas": {
+        "r": -0.453
+      },
+      "log(MHI/L36)": {
+        "r": -0.462
+      }
+    },
+    "flatness": {
+      "fgas": {
+        "r": 0.22
+      },
+      "log(MHI/L36)": {
+        "r": 0.214
+      }
+    },
+    "concentration": {
+      "fgas": {
+        "r": -0.658
+      },
+      "log(MHI/L36)": {
+        "r": -0.644
+      }
+    },
+    "riseSteepness": {
+      "fgas": {
+        "r": 0.515
+      },
+      "log(MHI/L36)": {
+        "r": 0.494
+      }
+    },
+    "baryonDom": {
+      "fgas": {
+        "r": -0.613
+      },
+      "log(MHI/L36)": {
+        "r": -0.658
+      }
+    }
+  },
+  "test3_partial": {
+    "outerSlope": {
+      "pr_fgas": 0.105,
+      "pr_logMHI_L36": 0.096,
+      "pr_logSigma0": -0.231
+    },
+    "VmaxVflat": {
+      "pr_fgas": -0.143,
+      "pr_logMHI_L36": -0.162,
+      "pr_logSigma0": 0.224
+    },
+    "flatness": {
+      "pr_fgas": -0.039,
+      "pr_logMHI_L36": -0.034,
+      "pr_logSigma0": -0.092
+    },
+    "concentration": {
+      "pr_fgas": -0.091,
+      "pr_logMHI_L36": -0.09,
+      "pr_logSigma0": -0.171
+    },
+    "riseSteepness": {
+      "pr_fgas": 0.018,
+      "pr_logMHI_L36": -0.018,
+      "pr_logSigma0": 0.263
+    },
+    "baryonDom": {
+      "pr_fgas": -0.407,
+      "pr_logMHI_L36": -0.496,
+      "pr_logSigma0": 0.37
+    }
+  },
+  "strongShapeLinks": [
+    "Outer slope (Vlast-Vmax)/Vmax <-> fgas (r=0.459)",
+    "Outer slope (Vlast-Vmax)/Vmax <-> log(MHI/L36) (r=0.449)",
+    "Outer slope (Vlast-Vmax)/Vmax <-> logSigma0 (r=-0.501)",
+    "Outer slope (Vlast-Vmax)/Vmax <-> logL36 (r=-0.568)",
+    "Vmax/Vflat ratio (Verheijen 2001) <-> fgas (r=-0.434)",
+    "Vmax/Vflat ratio (Verheijen 2001) <-> log(MHI/L36) (r=-0.441)",
+    "Vmax/Vflat ratio (Verheijen 2001) <-> logSigma0 (r=0.46)",
+    "Vmax/Vflat ratio (Verheijen 2001) <-> logL36 (r=0.504)",
+    "Inner concentration (V@1Rd/Vmax) <-> fgas (r=-0.505)",
+    "Inner concentration (V@1Rd/Vmax) <-> log(MHI/L36) (r=-0.499)",
+    "Inner concentration (V@1Rd/Vmax) <-> logSigma0 (r=0.315)",
+    "Inner concentration (V@1Rd/Vmax) <-> logL36 (r=0.577)",
+    "Rise steepness (r50/Rdisk) <-> fgas (r=0.309)",
+    "Rise steepness (r50/Rdisk) <-> logL36 (r=-0.368)",
+    "Baryon dominance fraction <-> fgas (r=-0.646)",
+    "Baryon dominance fraction <-> log(MHI/L36) (r=-0.69)",
+    "Baryon dominance fraction <-> logSigma0 (r=0.611)",
+    "Baryon dominance fraction <-> logL36 (r=0.608)"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "phase": 113,
+  "title": "RAR-Gas Connection: Does gas-to-stellar balance predict RAR residuals?",
+  "nHighV": 104,
+  "nRARpoints": 3012,
+  "test1_galaxyLevel": {
+    "mean RAR residual": {
+      "fgas": {
+        "r": 0.198,
+        "loo": 0.003
+      },
+      "log(MHI/L36)": {
+        "r": 0.181,
+        "loo": -0.003
+      },
+      "logSigma0": {
+        "r": -0.187,
+        "loo": -0.006
+      }
+    },
+    "outer RAR residual": {
+      "fgas": {
+        "r": 0.137,
+        "loo": -0.022
+      },
+      "log(MHI/L36)": {
+        "r": 0.109,
+        "loo": -0.028
+      },
+      "logSigma0": {
+        "r": -0.097,
+        "loo": -0.033
+      }
+    },
+    "inner RAR residual": {
+      "fgas": {
+        "r": 0.203,
+        "loo": 0.005
+      },
+      "log(MHI/L36)": {
+        "r": 0.195,
+        "loo": 0.002
+      },
+      "logSigma0": {
+        "r": -0.214,
+        "loo": 0.004
+      }
+    },
+    "RAR scatter (sd)": {
+      "fgas": {
+        "r": 0.248,
+        "loo": 0.024
+      },
+      "log(MHI/L36)": {
+        "r": 0.239,
+        "loo": 0.021
+      },
+      "logSigma0": {
+        "r": -0.247,
+        "loo": 0.024
+      }
+    }
+  },
+  "test2_outerVsInner": {
+    "fgas": {
+      "outerR": 0.137,
+      "innerR": 0.203
+    },
+    "logMHI_L36": {
+      "outerR": 0.109,
+      "innerR": 0.195
+    },
+    "outerStronger": false
+  },
+  "test3_terciles": [
+    {
+      "name": "Low fgas (stellar-dominated)",
+      "nGal": 34,
+      "nPts": 1013,
+      "fgasRange": [
+        "0.012",
+        "0.135"
+      ],
+      "meanRARresid": -0.0177,
+      "outerRARresid": -0.0039,
+      "rmsScatter": 0.1493
+    },
+    {
+      "name": "Mid fgas",
+      "nGal": 34,
+      "nPts": 841,
+      "fgasRange": [
+        "0.145",
+        "0.375"
+      ],
+      "meanRARresid": 0.0013,
+      "outerRARresid": -0.0052,
+      "rmsScatter": 0.1373
+    },
+    {
+      "name": "High fgas (gas-dominated)",
+      "nGal": 36,
+      "nPts": 735,
+      "fgasRange": [
+        "0.389",
+        "0.918"
+      ],
+      "meanRARresid": 0.0322,
+      "outerRARresid": 0.027,
+      "rmsScatter": 0.175
+    }
+  ],
+  "test6_logOMD_vs_RAR": {
+    "r_logOMD_meanRAR": 0.573,
+    "r_logOMD_outerRAR": 0.594
+  },
+  "verdict": "WEAK CONNECTION: Gas-fraction terciles show different RAR residuals, but the correlation is weak at the galaxy level."
+}

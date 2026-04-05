@@ -1,0 +1,43 @@
+{
+  "phase": 116,
+  "title": "Acceleration Scale vs Gas State",
+  "nHighV": 104,
+  "a0_distribution": {
+    "mean": -9.914,
+    "median": -9.925,
+    "sd": 0.302
+  },
+  "correlations": {
+    "fgas": 0.173,
+    "logMHI_L36": 0.142,
+    "logSigma0": -0.158,
+    "logVflat": -0.043
+  },
+  "terciles": [
+    {
+      "name": "Low fgas",
+      "n": 34,
+      "meanLogA0": -9.963,
+      "medianLogA0": -9.955,
+      "sdLogA0": 0.322,
+      "meanRMS": 0.0947
+    },
+    {
+      "name": "Mid fgas",
+      "n": 34,
+      "meanLogA0": -9.929,
+      "medianLogA0": -9.925,
+      "sdLogA0": 0.257,
+      "meanRMS": 0.0941
+    },
+    {
+      "name": "High fgas",
+      "n": 36,
+      "meanLogA0": -9.853,
+      "medianLogA0": -9.85,
+      "sdLogA0": 0.319,
+      "meanRMS": 0.1132
+    }
+  ],
+  "a0_tercileDiff": 0.11
+}
