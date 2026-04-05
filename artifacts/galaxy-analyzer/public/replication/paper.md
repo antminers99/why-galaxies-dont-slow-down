@@ -565,6 +565,22 @@ For the flatness ratio $V_\mathrm{last3}/V_\mathrm{max}$, M3 achieves $R^2 = 0.3
 
 **Interpretation.** The $a_0$ law and RC flatness are **parallel consequences** of the same underlying galaxy structure, not causally linked to each other. Baryonic surface density ($\Sigma_0$) and gas fraction ($f_\mathrm{gas}$) jointly determine both the inferred $a_0$ and the outer RC shape — but through different physical pathways. This means the high-regime law is not "about flatness" directly; it describes a structured pattern in how galaxies populate the RAR, and that pattern correlates with RC shape because both are manifestations of the same baryon-dominated disk physics.
 
+### 12.15 Mediation Analysis: What Is the Parent Variable? (Phase 93)
+
+Phase 92 showed that $a_0$ and RC flatness share common structural causes. Phase 93 identifies those causes through partial-correlation mediation analysis on the high-$V_\mathrm{flat}$ sample ($N = 112$).
+
+**Σ₀ has independent paths to both a₀ and slope.** Controlling for outer slope, $r(\Sigma_0, a_0) = -0.215$ (survives); controlling for $a_0$, $r(\Sigma_0, \mathrm{slope}) = -0.533$ (strengthens). This pattern is consistent with $\Sigma_0$ as a common cause rather than a mediator.
+
+**Dual parent structure.** Both $\Sigma_0$ and $V_\mathrm{flat}$ maintain independent partial correlations with outer slope when controlling for each other: $r(\Sigma_0, \mathrm{slope} \,|\, V_\mathrm{flat}) = -0.270$ and $r(V_\mathrm{flat}, \mathrm{slope} \,|\, \Sigma_0) = -0.212$. Neither fully mediates the other. The flatness of rotation curves is driven by **two independent structural axes**: baryonic surface density (how concentrated the baryons are) and rotation velocity (how deep the potential well is).
+
+**a₀ retains a residual connection to flatness.** After controlling for all four structural variables ($\Sigma_0$, $V_\mathrm{flat}$, $f_\mathrm{gas}$, $M_\mathrm{HI}$), the partial correlation $r(\log a_0, \mathrm{slope}) = -0.294$ — a substantial residual. This means $a_0$ contains information about RC shape that the measured structural properties do not capture. One interpretation: the galaxy-specific $a_0$ encodes aspects of the dark-matter/MOND potential that are not fully determined by the baryonic observables.
+
+**Baryon dominance as partial mediator.** The composite of $\Sigma_0$, $f_\mathrm{gas}$, and disk dominance fraction explains $R^2 = 0.344$ of outer slope variance but only $R^2 = 0.034$ of $a_0$ variance. After removing the baryon-dominance composite from both, the residual $a_0$–slope correlation is $r = -0.165$, confirming partial but incomplete mediation.
+
+**Strongest mediators for individual paths.** The $M_\mathrm{HI}$–slope connection ($r = -0.465$) is most reduced by controlling $M_\star$ ($-78\%$) or $V_\mathrm{flat}$ ($-63\%$). The $V_\mathrm{flat}$–slope connection ($r = -0.496$) is most reduced by $M_\star$ ($-111\%$, fully mediated) and $\Sigma_0$ ($-57\%$). After controlling all structural variables simultaneously, **no single predictor retains a significant partial correlation with slope** — the effect is fully distributed across the structural basis.
+
+**Verdict.** The causal structure is not a simple tree with one parent. It is a **dual-parent network**: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) jointly and independently shape both $a_0$ and RC flatness. The residual $a_0$–slope connection ($r = -0.294$ after controlling structural variables) suggests that the inferred acceleration scale carries additional dynamical information beyond what the baryonic observables provide.
+
 ---
 
 ## 13. Limitations
@@ -605,7 +621,7 @@ The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-qual
 
 Phase 91 identifies **why** the law exists only in the high regime: the boundary at $V_\mathrm{flat} \approx 70$ km/s marks a convergence of four independent transitions — gas fraction crosses $\sim 50\%$ (stellar disk loses dominance), acceleration range narrows from 1.19 to 0.51 dex (a₀ becomes degenerate), galaxies enter deep MOND (RAR shape insensitive to $a_0$), and 73% of dwarfs have rising RCs vs. 34% of spirals ($V_\mathrm{flat}$ itself undefined). These four effects converge to make the per-galaxy $a_0$ parameter **operationally ill-defined** in the dwarf regime — not because MOND fails, but because the fitting methodology breaks down when applied to gas-dominated, low-acceleration systems with incomplete rotation curves.
 
-Finally, Phase 92 connects the $a_0$ law to the central question of rotation curve flatness. The inferred $a_0$ does **not** directly predict RC shape ($r = -0.052$). But the same M3 galaxy properties (logMHI, logMeanRun, logSigma0) that predict $a_0$ variation also predict outer slope with $R^2 = 0.36$ and LOO gap $= 16.9\%$ ($p < 0.001$). The $a_0$ law and RC flatness are **parallel consequences** of baryon-dominated disk structure — not causally linked to each other, but both emergent from the same underlying physics. Baryonic surface density ($\Sigma_0$) is the strongest single predictor of both phenomena ($r = -0.518$ with outer slope, $r = -0.157$ with $a_0$).
+Phase 92 connects the $a_0$ law to rotation curve flatness: the inferred $a_0$ does **not** directly predict RC shape ($r = -0.052$), but the same M3 properties predict outer slope with $R^2 = 0.36$ ($p < 0.001$). Phase 93 reveals the underlying causal structure through mediation analysis: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) are **dual parents**, each maintaining independent partial correlations with both $a_0$ and flatness. Most strikingly, after controlling for all measured structural variables, $a_0$ retains a residual partial correlation with outer slope of $r = -0.294$ — the inferred acceleration scale carries dynamical information about RC shape that the baryonic observables do not fully capture. This residual may encode aspects of the dark-matter halo or modified-gravity potential that exist beyond the baryonic surface.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -647,6 +663,9 @@ Finally, Phase 92 connects the $a_0$ law to the central question of rotation cur
 | **a₀ does NOT predict RC flatness** | **Phase 92: r(logA0, outerSlope) = −0.052; partial r = −0.072 after Vflat** | **Confirmed** |
 | **Same properties predict BOTH a₀ and flatness** | **M3→outerSlope: R²=0.36, gap=16.9%, p<0.001; Σ₀ strongest (r=−0.518)** | **Key finding** |
 | **a₀ and flatness are parallel consequences** | **Not causally linked; both driven by baryon-dominated disk structure** | **Key finding** |
+| **Dual parent structure** | **Phase 93: Σ₀ and Vflat both survive controlling for each other (r=−0.270, −0.212)** | **Confirmed** |
+| **a₀ residual after structural controls** | **r(logA0, slope \| all structural) = −0.294; a₀ carries extra dynamical info** | **Key finding** |
+| **Σ₀ has independent paths to both** | **r(Σ₀, A0 \| slope) = −0.215; r(Σ₀, slope \| A0) = −0.533** | **Confirmed** |
 
 ---
 

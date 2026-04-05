@@ -1,0 +1,76 @@
+{
+  "phase": "93",
+  "title": "Mediation Test: Is Σ₀ the Parent Variable?",
+  "hiN": 112,
+  "mediationResults": {
+    "logSigma0": {
+      "partial": -0.158,
+      "delta": -0.106,
+      "mediation": "NONE"
+    },
+    "logVflat": {
+      "partial": -0.072,
+      "delta": -0.02,
+      "mediation": "NONE"
+    },
+    "fgas": {
+      "partial": -0.137,
+      "delta": -0.085,
+      "mediation": "NONE"
+    },
+    "logMHI": {
+      "partial": -0.18,
+      "delta": -0.128,
+      "mediation": "NONE"
+    },
+    "logMstar": {
+      "partial": -0.217,
+      "delta": -0.164,
+      "mediation": "NONE"
+    },
+    "diskDom": {
+      "partial": -0.092,
+      "delta": -0.04,
+      "mediation": "NONE"
+    },
+    "T": {
+      "partial": -0.108,
+      "delta": -0.056,
+      "mediation": "NONE"
+    }
+  },
+  "paths": {
+    "Sigma0_to_slope": {
+      "raw": -0.518,
+      "ctrlA0": -0.533,
+      "ctrlVflat": -0.27
+    },
+    "Sigma0_to_A0": {
+      "raw": -0.157,
+      "ctrlSlope": -0.215,
+      "ctrlVflat": -0.201
+    },
+    "Vflat_to_slope": {
+      "raw": -0.496,
+      "ctrlSigma0": -0.212
+    },
+    "Vflat_to_A0": {
+      "raw": -0.021,
+      "ctrlSigma0": 0.13
+    },
+    "A0_to_slope": {
+      "raw": -0.052,
+      "ctrlSigma0": -0.158
+    }
+  },
+  "baryonDominance": {
+    "a0R2": 0.0344,
+    "slopeR2": 0.3442,
+    "residualR": -0.165
+  },
+  "sigma0alone": {
+    "r2": 0.2682,
+    "looGap": 13.2
+  },
+  "verdict": "DUAL-PARENTS"
+}

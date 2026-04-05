@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 92. Phase 92 connects a₀ law to RC flatness. Key finding: a₀ does NOT directly predict flatness (r=−0.052), BUT the same M3 properties predict BOTH a₀ and outer slope (R²=0.36, gap=16.9%, p<0.001). They are PARALLEL CONSEQUENCES of baryon-dominated disk structure. Σ₀ is the strongest single predictor of flatness (r=−0.518). The Vflat≈70 boundary = convergence of 4 transitions (Phase 91). Per-galaxy a₀ is operationally ill-defined in dwarfs (Phases 89-91).
+PROGRAM AT PHASE 93. Mediation analysis reveals DUAL PARENT structure: Σ₀ and Vflat both independently drive a₀ and flatness. SURPRISE: after controlling ALL structural vars, r(logA0, slope) = −0.294 — a₀ carries extra dynamical info not captured by baryonic observables. Σ₀→slope survives controlling A0 (r=−0.533) and vice versa. The a₀ law and flatness are parallel consequences of disk structure, but a₀ also encodes halo/MOND potential beyond the baryonic surface.
