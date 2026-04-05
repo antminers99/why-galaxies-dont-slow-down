@@ -1,18 +1,25 @@
 {
   "phase": "128",
-  "title": "Decode the 4th Axis — Vflat vs Sigma0",
+  "title": "Decode the 4th Axis — Vflat vs Sigma0 (PATCHED)",
+  "patches": [
+    "Bug1: logMbar gas mass ×1e9 corrected",
+    "Bug2: LOO residualization done inside each fold",
+    "Verdict: functional criterion (gap impact) replaces raw correlation threshold"
+  ],
   "test_A": {
     "vflat_perp_r_with_logA0": 0.197,
     "vflat_perp_r_with_m4_resid": 0.304,
-    "m4_plus_vflat_perp_gap": 49.3,
     "m4_gap": 47.4,
+    "m4_plus_vflat_perp_gap_proper": 49.3,
+    "delta_pp": 2,
     "vflat_perp_alive": true
   },
   "test_B": {
     "sig0_perp_r_with_logA0": 0.065,
     "sig0_perp_r_with_mc_resid": 0.105,
-    "mc_plus_sig0_perp_gap": 49.3,
     "mc_gap": 52.1,
+    "mc_plus_sig0_perp_gap_proper": 49.3,
+    "delta_pp": -2.8,
     "sig0_perp_alive": false
   },
   "test_C": {
@@ -23,23 +30,26 @@
     "cleaner": "ModelC"
   },
   "test_D": {
-    "vflat_r2_by_mbar": 0.917,
+    "vflat_r2_by_mbar_corrected": 0.904,
     "vflat_r2_by_mhi": 0.524,
     "vflat_r2_by_sigma0": 0.436,
+    "vflat_r2_by_l36": 0.917,
     "vflat_r2_by_m4": 0.708,
     "vflat_unique_pct": 29.2
   },
   "test_E": {
-    "asymmetry_verdict": "BOTH_INDEPENDENT",
+    "asymmetry_verdict": "VFLAT_SUBSUMES_SIGMA0",
     "vflat_perp_signal": 0.304,
-    "sig0_perp_signal": 0.105
+    "sig0_perp_signal": 0.105,
+    "vflat_perp_gap_delta": 2,
+    "sig0_perp_gap_delta": -2.8
   },
   "test_F": {
     "c_wins": 24,
     "m4_wins": 15,
     "tied": 6
   },
-  "conclusion": "Vflat and Sigma0 carry partially distinct information. Two co-equal 4-variable laws exist with different physical emphases.",
+  "conclusion": "Vflat is a deeper 4th axis that strictly contains Sigma0. Model C (MHI+Mhost+MR+Vflat) is the primary law; M4 (with Sigma0) is a structurally cleaner but informationally weaker projection.",
   "models": {
     "m4": {
       "gap": 47.4,

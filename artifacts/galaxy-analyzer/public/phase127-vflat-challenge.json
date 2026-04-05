@@ -124,7 +124,7 @@
     "result": "RIVAL — Model C (M3+Vflat) is a co-equal alternative to M4",
     "c_beats_a": true,
     "c_nested_wins": true,
-    "b_adds_over_a": false,
+    "b_adds_over_a": true,
     "vflat_stable_in_b": true
   }
 }

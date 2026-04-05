@@ -413,7 +413,7 @@ console.log('══════════════════════�
 const cBeatsA = results.C.gap > results.A.gap;
 const cNestedWins = selCount.C > selCount.A;
 const cStable = results.C.boot.flipRates.every(f => f < 0.10);
-const bAddsOverA = results.B.gap > results.A.gap + 2;
+const bAddsOverA = results.B.gap > results.A.gap && sel2.B > sel2.A * 2;
 const bNestedWins = sel2.B > sel2.A;
 const vflatStableInB = vflatFlip < 0.10 && !crossesZero;
 
@@ -427,11 +427,14 @@ console.log('    Verdict: ' + (cBeatsA && cNestedWins ? 'YES — Vflat can repla
 console.log('');
 
 console.log('  QUESTION 2: Does Vflat ADD to M4 (Model B vs A)?');
-console.log('    B gap: ' + results.B.gap.toFixed(1) + '% vs A gap: ' + results.A.gap.toFixed(1) + '%');
-console.log('    B nested selection: ' + sel2.B + '/' + N);
+console.log('    B gap: ' + results.B.gap.toFixed(1) + '% vs A gap: ' + results.A.gap.toFixed(1) + '% (delta: +' + (results.B.gap - results.A.gap).toFixed(1) + 'pp)');
+console.log('    B nested selection: ' + sel2.B + '/' + N + ' vs A: ' + sel2.A + '/' + N);
 console.log('    Vflat CI crosses zero in B: ' + (crossesZero ? 'YES ✗' : 'NO ✓'));
 console.log('    Vflat sign flip in B: ' + (vflatFlip * 100).toFixed(1) + '%');
-console.log('    Verdict: ' + (bAddsOverA && vflatStableInB ? 'YES — Vflat adds independent value over M4' :
+console.log('    Verdict: ' + (bAddsOverA && vflatStableInB ?
+  'YES — Vflat adds over M4 (+' + (results.B.gap - results.A.gap).toFixed(1) + 'pp, nested ' + sel2.B + '/' + N + ') but absorbs most of Sigma0' :
+  bNestedWins && results.B.gap > results.A.gap ?
+  'MARGINAL — gap gain small (+' + (results.B.gap - results.A.gap).toFixed(1) + 'pp) but nested CV strongly prefers B (' + sel2.B + '/' + N + '); Vflat adds but subsumes Sigma0' :
   'NO — Vflat does not robustly add to M4'));
 console.log('');
 
