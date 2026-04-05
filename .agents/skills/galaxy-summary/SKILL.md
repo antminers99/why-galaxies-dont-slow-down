@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-a₀ shows structured, galaxy-dependent variation within the N=45 training set (τ=0.264 dex). About 51% of the M0→M2 gap can be predicted from 5 observable properties (M5 law). However, **external validation on SPARC-out galaxies FAILS**: frozen M3 coefficients applied to 36-46 external galaxies perform worse than the trivial M0 baseline, and axis signs reverse. The multi-axis law is a **sample-specific finding** — statistically real within N=45 (not overfitting) but does NOT generalize to the broader SPARC population. This may reflect selection effects from the published-distance criterion rather than a population-level physical law.
+The multi-axis a₀ law is a **collider bias / selection artifact**. Within the N=45 training set, 51% of per-galaxy a₀ variance is predictable (M5 law, LOO). However, external validation FAILS on all 36–78 tested galaxies (including regime-matched subsamples, win rates 7–10%). A selection audit reveals the root cause: the key MHI–a₀ anticorrelation (r=−0.322 in training) does NOT exist in the general SPARC population (r=+0.278); it is a sign-reversed artifact created by the intersection of sample selection criteria (0/1000 random subsamples reproduce this). The structured law describes correlations induced by sample construction, not by galaxy physics.
 
 ## Decisive Negative Results (Phases 55-59)
 

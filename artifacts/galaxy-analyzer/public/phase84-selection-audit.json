@@ -1,0 +1,347 @@
+{
+  "phase": "84",
+  "title": "Selection / Collider Audit",
+  "nTotal": 171,
+  "nTraining": 45,
+  "nExternal": 126,
+  "baselineAll": {
+    "n": 171,
+    "beta": [
+      2.9735435169532494,
+      0.18717596903371003,
+      0.47040191479192117
+    ],
+    "rmsM0": 0.591,
+    "rmsModel": 0.567,
+    "gapPct": 4,
+    "r_logMHI": 0.278,
+    "r_logMeanRun": 0.259,
+    "signsCorrect": false,
+    "betaLogMHI": 0.1872,
+    "betaLogMeanRun": 0.4704
+  },
+  "baseline45": {
+    "n": 45,
+    "beta": [
+      3.3949549099828573,
+      -0.1698065973324816,
+      0.29271484318459073
+    ],
+    "rmsM0": 0.281,
+    "rmsModel": 0.274,
+    "gapPct": 2.6,
+    "r_logMHI": -0.322,
+    "r_logMeanRun": 0.212,
+    "signsCorrect": true,
+    "betaLogMHI": -0.1698,
+    "betaLogMeanRun": 0.2927
+  },
+  "singleCriterionTests": [
+    {
+      "criterion": "Published distance (fD>=2)",
+      "n": 76,
+      "beta": [
+        3.0610893549857536,
+        0.3166442332690691,
+        0.315300172718068
+      ],
+      "rmsM0": 0.602,
+      "rmsModel": 0.574,
+      "gapPct": 4.7,
+      "r_logMHI": 0.392,
+      "r_logMeanRun": 0.206,
+      "signsCorrect": false,
+      "betaLogMHI": 0.3166,
+      "betaLogMeanRun": 0.3153
+    },
+    {
+      "criterion": "Quality Q<=2",
+      "n": 159,
+      "beta": [
+        3.2294283992213053,
+        0.17939422180545606,
+        0.2044725631256199
+      ],
+      "rmsM0": 0.48,
+      "rmsModel": 0.469,
+      "gapPct": 2.4,
+      "r_logMHI": 0.288,
+      "r_logMeanRun": 0.184,
+      "signsCorrect": false,
+      "betaLogMHI": 0.1794,
+      "betaLogMeanRun": 0.2045
+    },
+    {
+      "criterion": "nPts >= 10",
+      "n": 124,
+      "beta": [
+        3.401085853345819,
+        0.005743004370158289,
+        0.1043173388142975
+      ],
+      "rmsM0": 0.405,
+      "rmsModel": 0.41,
+      "gapPct": -1.2,
+      "r_logMHI": 0.017,
+      "r_logMeanRun": 0.057,
+      "signsCorrect": false,
+      "betaLogMHI": 0.0057,
+      "betaLogMeanRun": 0.1043
+    },
+    {
+      "criterion": "Vflat >= 80 km/s",
+      "n": 99,
+      "beta": [
+        3.404194148777691,
+        -0.16389552858644763,
+        0.3221850890461937
+      ],
+      "rmsM0": 0.305,
+      "rmsModel": 0.297,
+      "gapPct": 2.6,
+      "r_logMHI": -0.215,
+      "r_logMeanRun": 0.17,
+      "signsCorrect": true,
+      "betaLogMHI": -0.1639,
+      "betaLogMeanRun": 0.3222
+    },
+    {
+      "criterion": "T <= 8 (not Sdm/Sm/Im)",
+      "n": 104,
+      "beta": [
+        3.1697516160103163,
+        -0.021683995026115177,
+        0.4240222866260339
+      ],
+      "rmsM0": 0.435,
+      "rmsModel": 0.431,
+      "gapPct": 0.8,
+      "r_logMHI": 0.031,
+      "r_logMeanRun": 0.222,
+      "signsCorrect": false,
+      "betaLogMHI": -0.0217,
+      "betaLogMeanRun": 0.424
+    },
+    {
+      "criterion": "logA0 in [3.0, 4.2]",
+      "n": 144,
+      "beta": [
+        3.3702541240990413,
+        -0.01061320399328558,
+        0.227156775157475
+      ],
+      "rmsM0": 0.285,
+      "rmsModel": 0.285,
+      "gapPct": -0.1,
+      "r_logMHI": 0.036,
+      "r_logMeanRun": 0.178,
+      "signsCorrect": false,
+      "betaLogMHI": -0.0106,
+      "betaLogMeanRun": 0.2272
+    },
+    {
+      "criterion": "In groups/clusters",
+      "n": 19,
+      "beta": [
+        3.501837458456457,
+        -0.2713195520706897,
+        0.12810941486708316
+      ],
+      "rmsM0": 0.249,
+      "rmsModel": 0.261,
+      "gapPct": -4.9,
+      "r_logMHI": -0.447,
+      "r_logMeanRun": 0.152,
+      "signsCorrect": true,
+      "betaLogMHI": -0.2713,
+      "betaLogMeanRun": 0.1281
+    }
+  ],
+  "cumulativeSelection": [
+    {
+      "step": "All SPARC",
+      "nTotal": 171,
+      "nIn45": 45,
+      "n": 171,
+      "beta": [
+        2.9735435169532494,
+        0.18717596903371003,
+        0.47040191479192117
+      ],
+      "rmsM0": 0.591,
+      "rmsModel": 0.567,
+      "gapPct": 4,
+      "r_logMHI": 0.278,
+      "r_logMeanRun": 0.259,
+      "signsCorrect": false,
+      "betaLogMHI": 0.1872,
+      "betaLogMeanRun": 0.4704
+    },
+    {
+      "step": "+ fD>=2",
+      "nTotal": 76,
+      "nIn45": 26,
+      "n": 76,
+      "beta": [
+        3.0610893549857536,
+        0.3166442332690691,
+        0.315300172718068
+      ],
+      "rmsM0": 0.602,
+      "rmsModel": 0.574,
+      "gapPct": 4.7,
+      "r_logMHI": 0.392,
+      "r_logMeanRun": 0.206,
+      "signsCorrect": false,
+      "betaLogMHI": 0.3166,
+      "betaLogMeanRun": 0.3153
+    },
+    {
+      "step": "+ Q<=2",
+      "nTotal": 69,
+      "nIn45": 24,
+      "n": 69,
+      "beta": [
+        3.1844598591130335,
+        0.3225783108218363,
+        0.20266866987686427
+      ],
+      "rmsM0": 0.521,
+      "rmsModel": 0.495,
+      "gapPct": 5,
+      "r_logMHI": 0.451,
+      "r_logMeanRun": 0.184,
+      "signsCorrect": false,
+      "betaLogMHI": 0.3226,
+      "betaLogMeanRun": 0.2027
+    },
+    {
+      "step": "+ nPts>=10",
+      "nTotal": 49,
+      "nIn45": 23,
+      "n": 49,
+      "beta": [
+        3.3786352222539335,
+        -0.029944221250128966,
+        0.11033252191504772
+      ],
+      "rmsM0": 0.277,
+      "rmsModel": 0.291,
+      "gapPct": -5,
+      "r_logMHI": -0.061,
+      "r_logMeanRun": 0.089,
+      "signsCorrect": true,
+      "betaLogMHI": -0.0299,
+      "betaLogMeanRun": 0.1103
+    },
+    {
+      "step": "+ Vflat>=80",
+      "nTotal": 36,
+      "nIn45": 20,
+      "n": 36,
+      "beta": [
+        3.4201925286941375,
+        -0.21516038399722026,
+        0.22163186425871118
+      ],
+      "rmsM0": 0.283,
+      "rmsModel": 0.295,
+      "gapPct": -4.2,
+      "r_logMHI": -0.335,
+      "r_logMeanRun": 0.155,
+      "signsCorrect": true,
+      "betaLogMHI": -0.2152,
+      "betaLogMeanRun": 0.2216
+    },
+    {
+      "step": "+ T<=8",
+      "nTotal": 32,
+      "nIn45": 19,
+      "n": 32,
+      "beta": [
+        3.301313898550788,
+        -0.15539575247981752,
+        0.32841143476663603
+      ],
+      "rmsM0": 0.262,
+      "rmsModel": 0.279,
+      "gapPct": -6.7,
+      "r_logMHI": -0.238,
+      "r_logMeanRun": 0.285,
+      "signsCorrect": true,
+      "betaLogMHI": -0.1554,
+      "betaLogMeanRun": 0.3284
+    },
+    {
+      "step": "+ envCode>=1",
+      "nTotal": 14,
+      "nIn45": 14,
+      "n": 14,
+      "beta": [
+        3.6694567290693954,
+        -0.34651801454525,
+        0.009904306694267007
+      ],
+      "rmsM0": 0.265,
+      "rmsModel": 0.28,
+      "gapPct": -5.9,
+      "r_logMHI": -0.537,
+      "r_logMeanRun": 0.221,
+      "signsCorrect": true,
+      "betaLogMHI": -0.3465,
+      "betaLogMeanRun": 0.0099
+    }
+  ],
+  "correlationStructure": [
+    {
+      "name": "All SPARC",
+      "n": 171,
+      "r_logMHI": 0.278,
+      "r_logMeanRun": 0.259
+    },
+    {
+      "name": "fD >= 2 only",
+      "n": 76,
+      "r_logMHI": 0.392,
+      "r_logMeanRun": 0.206
+    },
+    {
+      "name": "fD >= 2, Q <= 2",
+      "n": 69,
+      "r_logMHI": 0.451,
+      "r_logMeanRun": 0.184
+    },
+    {
+      "name": "Training N=45",
+      "n": 45,
+      "r_logMHI": -0.322,
+      "r_logMeanRun": 0.212
+    },
+    {
+      "name": "External (all)",
+      "n": 126,
+      "r_logMHI": 0.309,
+      "r_logMeanRun": 0.218
+    },
+    {
+      "name": "External fD>=2",
+      "n": 50,
+      "r_logMHI": 0.458,
+      "r_logMeanRun": 0.109
+    },
+    {
+      "name": "fD==1 only (Hubble flow)",
+      "n": 95,
+      "r_logMHI": 0.134,
+      "r_logMeanRun": 0.297
+    }
+  ],
+  "randomSubsampleTest": {
+    "nPermutations": 1000,
+    "training_r_MHI": -0.322,
+    "training_r_MeanRun": 0.212,
+    "pValueMHI": 0,
+    "pValueMeanRun": 0.652,
+    "pctBothCorrectSign": 1.6
+  }
+}

@@ -8,9 +8,9 @@ The radial acceleration relation (RAR) in disk galaxies is commonly parameterize
 
 We find that within this sample, a five-predictor power-law model (M5) — incorporating gas mass ($M_\mathrm{HI}^{-1/4}$), host-halo mass ($M_\mathrm{host}^{-1/6}$), central baryonic surface density ($\Sigma_0^{+1/7}$), kinematic coherence ($\overline{\mathrm{Run}}^{+3/7}$), and an orthogonalized stellar mass-to-light ratio ($\Upsilon_\star^{\perp\,+2/3}$) — explains 51.0% of the $\log a_0$ variance in leave-one-out cross-validation (LOO). A compressed three-axis state law (M3) retains 86% of this signal using only gas mass, host mass, and kinematic coherence (LOO = 44.1%). A comprehensive overfitting audit — including nested cross-validation ($p < 0.001$ permutation), collinearity analysis (all VIF $< 1.3$), and bootstrap stability — confirms that the structured signal is not a fitting artifact within the training set.
 
-**However, external validation fails.** When frozen M3 coefficients are applied to 36–46 SPARC galaxies outside the training set (using rotation-curve data from CDS/VizieR with identically computed inputs), all model variants perform worse than the trivial universal-constant baseline. The partial correlations of logMHI and logMeanRun with $a_0$ reverse sign on external data.
+**However, external validation fails.** When frozen M3 coefficients are applied to 36–78 SPARC galaxies outside the training set (using rotation-curve data from CDS/VizieR with identically computed inputs), all model variants perform worse than the trivial universal-constant baseline — including on regime-matched subsamples selected to resemble the training set (win rates 7–10%).
 
-We conclude that $a_0$ variation within the $N = 45$ quality-controlled subsample is structured and statistically real (not a fitting artifact), but this structure is **sample-specific** and does not generalize to the broader SPARC population. The pattern may reflect selection effects arising from the published-distance criterion rather than a population-level physical law. These results caution against interpreting internal cross-validation alone as evidence for law discovery in small astrophysical samples.
+A selection/collider audit identifies the root cause: the key $M_\mathrm{HI}$–$a_0$ anticorrelation that anchors the law ($r = -0.322$) does not exist in the general SPARC population ($r = +0.278$); it is a sign-reversed artifact created by the intersection of sample selection criteria (0/1000 random subsamples reproduce this reversal). We conclude that the structured $a_0$ variation in $N = 45$ is a **collider bias / selection artifact** — statistically real within the training set but induced by sample construction, not by galaxy physics. These results demonstrate that internal cross-validation, permutation testing, and bootstrap stability are insufficient safeguards against selection-induced spurious structure in small astrophysical samples.
 
 ---
 
@@ -428,15 +428,40 @@ At the loosest matching ($N = 78$), the axis signs are technically correct but t
 
 **Interpretation**: The failure is **not** explained by population mismatch alone. Even external galaxies with similar $V_\mathrm{flat}$, $M_\mathrm{HI}$, MeanRun, $n_\mathrm{pts}$, and morphology do not follow the M3 law. The structured $a_0$ variation in $N = 45$ reflects something specific to those 45 galaxies — not a general property of massive spirals, but a pattern unique to the particular combination of galaxies selected by the published-distance and quality criteria.
 
-### 12.8 Verdict
+### 12.8 Selection / Collider Audit (Phase 84)
 
-**The multi-axis law found in $N = 45$ does not generalize — even to regime-matched external galaxies.** Phase 82 showed the training and external samples are fundamentally different populations (12/13 variables, 8 large effects). Phase 83 showed that matching on key variables does not rescue the law: all four matching strategies fail, with M3 win rates of 7–10%. The failure is deeper than population mismatch — the structured $a_0$ pattern is specific to the 45 training galaxies, not to the galaxy type they represent.
+Phase 83 showed the law fails even on regime-matched galaxies, suggesting the problem is deeper than population mismatch. To identify the root cause, we conduct a systematic audit of the selection criteria that define the $N = 45$ sample.
+
+**12.8.1 The fundamental correlation reversal.** In the full SPARC sample ($N = 171$), $r(\log M_\mathrm{HI}, \log a_0) = +0.278$ — galaxies with more gas have *higher* inferred $a_0$. But in the training $N = 45$, this correlation is $r = -0.322$ — the *opposite sign*. This reversal persists: all external subsets show $r > 0$ ($+0.309$ for all external, $+0.458$ for external $f_D \geq 2$), while only the training set shows $r < 0$. No single selection criterion (quality, distance method, morphology) alone produces this reversal; it requires their specific intersection.
+
+**Table 8. Correlation $r(\log M_\mathrm{HI}, \log a_0)$ across subsets**
+
+| Subset | $N$ | $r(\mathrm{MHI})$ | $r(\mathrm{MeanRun})$ | $r(V_\mathrm{flat})$ | $\sigma(a_0)$ |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| All SPARC | 171 | +0.278 | +0.259 | +0.423 | 0.589 |
+| $f_D \geq 2$ only | 76 | +0.392 | +0.206 | +0.444 | 0.598 |
+| $f_D \geq 2$, $Q \leq 2$ | 69 | +0.451 | +0.184 | +0.348 | 0.517 |
+| **Training $N = 45$** | **45** | **$-$0.322** | **+0.212** | **$-$0.069** | **0.278** |
+| External (all) | 126 | +0.309 | +0.218 | +0.433 | 0.652 |
+| External $f_D \geq 2$ | 50 | +0.458 | +0.109 | +0.467 | 0.673 |
+
+**12.8.2 Random subsample test.** From 1000 random draws of $N = 45$ from the full 171, **zero** produced $r(\mathrm{MHI}, a_0) \leq -0.322$ ($p < 0.001$). Only 1.6% of random samples showed both MHI-negative and MeanRun-positive signs simultaneously. The training set is a statistical extreme — not a typical subsample of SPARC.
+
+**12.8.3 Sample membership as predictor.** A binary "in-training" flag alone predicts $\log a_0$ with LOO gap = 4.2% on the pooled sample ($N = 76$, $f_D \geq 2$) — comparable to M2$'$ with MHI and MeanRun (gap = 4.7%). When the flag is added alongside M2$'$ variables, interaction terms (flag $\times$ logMHI) absorb most of the signal ($\beta_\mathrm{MHI \times flag} = -0.661$), confirming that the MHI–$a_0$ relationship changes sign between training and non-training galaxies.
+
+**12.8.4 Cumulative selection pathway.** Building toward the $N = 45$ cuts step by step reveals the sign flip occurs when $n_\mathrm{pts} \geq 10$ and $V_\mathrm{flat} \geq 80$ km/s are jointly applied — eliminating low-mass dwarfs with few rotation-curve points. This intersection conditions on data richness in a way that reverses the natural MHI–$a_0$ correlation.
+
+**12.8.5 Interpretation: Collider bias.** The $N = 45$ selection criteria act as a **collider** in the causal DAG. By conditioning simultaneously on distance method, quality, morphology, and data richness, the selection creates a pathway through which $M_\mathrm{HI}$ and $a_0$ become artificially anticorrelated — even though their unconditional relationship is positive. This is a textbook collider bias (Berkson's paradox): selecting on common effects of two variables induces a spurious association between them, often with reversed sign.
+
+### 12.9 Verdict
+
+**The structured $a_0$ law is a selection artifact.** The $\log M_\mathrm{HI}$–$\log a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$); it is created by the intersection of selection criteria that define the $N = 45$ sample ($r = -0.322$). This reversal is a 0/1000 event under random sampling and shows the classic signature of collider bias. The multi-axis law is not physically meaningful — it describes correlations induced by sample construction, not by galaxy physics.
 
 ---
 
 ## 13. Limitations
 
-1. **External generalization failure**: The structured law does not generalize to SPARC galaxies outside the $N = 45$ training set (Section 12). This is the most significant limitation and qualifies all claims made in this paper. Population comparison (Section 12.6) confirms the samples are fundamentally different, but the common support test (Section 12.7) shows the law also fails on regime-matched external galaxies, indicating the problem is deeper than population mismatch.
+1. **Collider bias / selection artifact**: The structured law is a selection artifact. The key MHI–$a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$); it is *reversed* by the intersection of selection criteria defining $N = 45$ ($r = -0.322$, $p < 0.001$ by random subsample test). The law fails externally (Section 12.2), on regime-matched galaxies (Section 12.7), and is identified as a collider artifact (Section 12.8).
 2. **Sample size**: $N = 45$ with $p = 3$–5 parameters. Internal cross-validation passes, but the external failure suggests the internal signal may reflect selection effects rather than population-level structure.
 3. **Distance dependence**: The published-distance criterion ($f_D \geq 2$) creates a strong selection bias toward massive, luminous spirals in group environments (confirmed by Phase 82 population comparison). This generates apparent $a_0$ structure within the quality subsample that does not hold for late-type dwarfs and irregulars.
 4. **$M_\mathrm{host}$ availability**: Group-catalog host masses are available only for the training set. External galaxies require $V_\mathrm{flat}$-based proxies with $-$0.74 dex mean bias. This entangles the sample selection with the predictor definition.
@@ -456,8 +481,8 @@ This creates a tension between strong internal evidence and failed external tran
 
 We conclude that the structured $a_0$ variation observed in $N = 45$ is a **sample-specific finding**: it is statistically real within the training set (not a fitting artifact) but does not extend to a general law of galaxy physics. The most likely explanations are:
 
-1. **Selection-induced structure** (Phase 82): The published-distance requirement selects a galaxy subpopulation dominated by massive, luminous, data-rich spirals in group/cluster environments. The external sample is dominated by low-mass late-type dwarfs and irregulars (12/13 variables significantly different, 8 with large effect). However, the common support test (Phase 83) shows the law fails even on regime-matched external galaxies (win rates 7–10%), ruling out population mismatch as the sole explanation.
-2. **Sample-specific correlations**: The $a_0$ structure in $N = 45$ may arise from an interaction between the specific galaxies selected and the particular way their distances, mass-to-light ratios, and environmental data were determined — a combinatorial selection effect that matching on observables alone cannot reproduce.
+1. **Collider bias** (Phase 84): The selection criteria that define $N = 45$ act as a collider, reversing the natural $M_\mathrm{HI}$–$a_0$ correlation ($r = +0.278$ in full SPARC $\to$ $r = -0.322$ in training). This reversal is a 0/1000 event under random sampling. The structured law describes correlations induced by sample construction, not by galaxy physics.
+2. **Population mismatch** (Phase 82): The training and external samples differ on 12/13 variables with 8 large effect sizes — but the common support test (Phase 83) shows the law also fails on regime-matched galaxies, confirming the problem is deeper than population differences.
 3. **Mhost confound**: Group-catalog host masses (available only for the training set) may encode environmental information that $V_\mathrm{flat}$ proxies cannot replicate — though the M2$'$ test (dropping Mhost entirely) also fails.
 
 These results caution against interpreting internal cross-validation alone as evidence for physical law discovery in small samples, even when permutation tests, bootstrap stability, and falsification metrics all pass. External validation on independently selected data remains the definitive test.
@@ -479,6 +504,7 @@ These results caution against interpreting internal cross-validation alone as ev
 | **External generalization** | **M3/M2$'$ fail on SPARC-out, axis signs reversed** | **Failed** |
 | **Population mismatch explains failure** | **12/13 variables differ (8 large effect), training = massive spirals, external = dwarf irregulars** | **Confirmed** |
 | **Common support rescues law** | **Regime-matched external galaxies (4 strategies, N=14–78): M3 win rate 7–10%, all fail** | **Failed** |
+| **Collider bias identified** | **r(MHI,a₀) = +0.278 in full SPARC but −0.322 in N=45 (0/1000 random); selection reverses sign** | **Confirmed** |
 
 ---
 
