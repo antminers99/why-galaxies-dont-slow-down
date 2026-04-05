@@ -1,0 +1,68 @@
+{
+  "phase": 106,
+  "title": "Target Definition Robustness",
+  "n": 104,
+  "targetResults": [
+    {
+      "name": "log10(mean Vobs2/Vbar2) outer [BASELINE]",
+      "key": "logMeanRatio",
+      "n": 104,
+      "r": 0.724,
+      "r2": 0.524,
+      "loo": 0.503,
+      "slope": 0.7062,
+      "intercept": 0.3515
+    },
+    {
+      "name": "log10(median Vobs2/Vbar2) outer",
+      "key": "logMedianRatio",
+      "n": 104,
+      "r": 0.727,
+      "r2": 0.529,
+      "loo": 0.507,
+      "slope": 0.7327,
+      "intercept": 0.3324
+    },
+    {
+      "name": "log10(Vobs2/Vbar2) at last point",
+      "key": "logLastPoint",
+      "n": 104,
+      "r": 0.453,
+      "r2": 0.205,
+      "loo": 0.171,
+      "slope": 0.4091,
+      "intercept": 0.5267
+    },
+    {
+      "name": "log10(Vobs2/Vbar2) at 2*Rdisk",
+      "key": "logAt2Rd",
+      "n": 102,
+      "r": 0.704,
+      "r2": 0.496,
+      "loo": 0.474,
+      "slope": 0.8996,
+      "intercept": 0.1341
+    },
+    {
+      "name": "mean(Vobs2 - Vbar2) outer [linear diff]",
+      "key": "meanDiff",
+      "n": 104,
+      "r": -0.541,
+      "r2": 0.293,
+      "loo": 0.267,
+      "slope": -38342.0933,
+      "intercept": 29843.2027
+    },
+    {
+      "name": "mean(Vobs2/Vbar2) outer [linear ratio]",
+      "key": "linearMeanRatio",
+      "n": 104,
+      "r": 0.682,
+      "r2": 0.465,
+      "loo": 0.439,
+      "slope": 6.8329,
+      "intercept": 2.1021
+    }
+  ],
+  "verdict": "MODERATE PASS: fgas survives 3/4 log-based targets. Linear targets: 2/2 survive (r>0.4)."
+}

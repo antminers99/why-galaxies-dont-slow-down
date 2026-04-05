@@ -1,0 +1,136 @@
+{
+  "phase": 105,
+  "title": "Death Match: Sparse Model Competition",
+  "n": 104,
+  "models": [
+    {
+      "name": "fgas + logL36",
+      "k": 2,
+      "r2": 0.5553,
+      "loo": 0.5182,
+      "cv5": 0.5151,
+      "cv10": 0.5155,
+      "aic": -100.2,
+      "bic": -92.3
+    },
+    {
+      "name": "fgas + logBaryonCompact",
+      "k": 2,
+      "r2": 0.5404,
+      "loo": 0.5068,
+      "cv5": 0.5056,
+      "cv10": 0.504,
+      "aic": -96.8,
+      "bic": -88.9
+    },
+    {
+      "name": "fgas only",
+      "k": 1,
+      "r2": 0.5238,
+      "loo": 0.5028,
+      "cv5": 0.5025,
+      "cv10": 0.502,
+      "aic": -95.1,
+      "bic": -89.8
+    },
+    {
+      "name": "fgas + logSigma0",
+      "k": 2,
+      "r2": 0.5238,
+      "loo": 0.4897,
+      "cv5": 0.49,
+      "cv10": 0.4863,
+      "aic": -93.1,
+      "bic": -85.2
+    },
+    {
+      "name": "logL36 only",
+      "k": 1,
+      "r2": 0.4964,
+      "loo": 0.4745,
+      "cv5": 0.4741,
+      "cv10": 0.4726,
+      "aic": -89.3,
+      "bic": -84
+    },
+    {
+      "name": "logBaryonCompact only",
+      "k": 1,
+      "r2": 0.4926,
+      "loo": 0.4709,
+      "cv5": 0.4711,
+      "cv10": 0.4694,
+      "aic": -88.5,
+      "bic": -83.2
+    },
+    {
+      "name": "logSigma0 only",
+      "k": 1,
+      "r2": 0.3437,
+      "loo": 0.3206,
+      "cv5": 0.3209,
+      "cv10": 0.319,
+      "aic": -61.8,
+      "bic": -56.5
+    }
+  ],
+  "partialCorrelations": {
+    "fgas": {
+      "logSigma0": 0.523882208410871,
+      "logBaryonCompact": 0.3068772233338143,
+      "logL36": 0.34194254515751227,
+      "all_others": 0.723747937817248
+    },
+    "logSigma0": {
+      "fgas": 0.005992480353223141,
+      "logBaryonCompact": 0.1628848430486684,
+      "logL36": -0.1389596724590909,
+      "all_others": -0.0007824896602641595
+    },
+    "logBaryonCompact": {
+      "fgas": -0.1866943710270399,
+      "logSigma0": -0.49741618552252587,
+      "logL36": -0.13895967245909077,
+      "all_others": 0.006838403881847871
+    },
+    "logL36": {
+      "fgas": -0.2569522117544509,
+      "logSigma0": -0.4974161855225257,
+      "logBaryonCompact": -0.16288484304866868,
+      "all_others": -0.009462986283816538
+    }
+  },
+  "headToHead": {
+    "fgas only": 261,
+    "logSigma0 only": 12,
+    "logBaryonCompact only": 65,
+    "logL36 only": 162
+  },
+  "correlationMatrix": {
+    "fgas": {
+      "fgas": 1,
+      "logSigma0": -0.813,
+      "logBaryonCompact": -0.888,
+      "logL36": -0.841
+    },
+    "logSigma0": {
+      "fgas": -0.813,
+      "logSigma0": 1,
+      "logBaryonCompact": 0.905,
+      "logL36": 0.738
+    },
+    "logBaryonCompact": {
+      "fgas": -0.888,
+      "logSigma0": 0.905,
+      "logBaryonCompact": 1,
+      "logL36": 0.954
+    },
+    "logL36": {
+      "fgas": -0.841,
+      "logSigma0": 0.738,
+      "logBaryonCompact": 0.954,
+      "logL36": 1
+    }
+  },
+  "verdict": "STRONG BACKBONE: fgas is the irreducible backbone predictor. No second variable adds meaningful improvement."
+}
