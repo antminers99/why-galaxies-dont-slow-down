@@ -1,0 +1,489 @@
+{
+  "phase": "88",
+  "title": "Two-Regime Laws",
+  "vflatBreak": 70,
+  "lowRegime": {
+    "results": [
+      {
+        "name": "M0: constant",
+        "vars": [],
+        "r2": 0,
+        "rms": 0.7656,
+        "loo": 0.7717,
+        "kfold5": 0.7717,
+        "looGapPct": 0,
+        "beta": [
+          2.9956
+        ]
+      },
+      {
+        "name": "Gas only: logMHI",
+        "vars": [
+          "logMHI"
+        ],
+        "r2": 0.0024,
+        "rms": 0.7647,
+        "loo": 0.8011,
+        "kfold5": 0.802,
+        "looGapPct": -3.8,
+        "beta": [
+          3.0162,
+          0.059
+        ]
+      },
+      {
+        "name": "Coherence only: logMeanRun",
+        "vars": [
+          "logMeanRun"
+        ],
+        "r2": 0.0002,
+        "rms": 0.7655,
+        "loo": 0.786,
+        "kfold5": 0.7746,
+        "looGapPct": -1.8,
+        "beta": [
+          3.0216,
+          -0.045
+        ]
+      },
+      {
+        "name": "Density only: logSigma0",
+        "vars": [
+          "logSigma0"
+        ],
+        "r2": 0.0252,
+        "rms": 0.7559,
+        "loo": 0.7878,
+        "kfold5": 0.7859,
+        "looGapPct": -2.1,
+        "beta": [
+          2.8718,
+          -0.257
+        ]
+      },
+      {
+        "name": "Vflat only: logVflat",
+        "vars": [
+          "logVflat"
+        ],
+        "r2": 0.0032,
+        "rms": 0.7644,
+        "loo": 0.7858,
+        "kfold5": 0.7801,
+        "looGapPct": -1.8,
+        "beta": [
+          2.9629,
+          0.0529
+        ],
+        "permPvalue": 0.689
+      },
+      {
+        "name": "Gas + Coherence",
+        "vars": [
+          "logMHI",
+          "logMeanRun"
+        ],
+        "r2": 0.0027,
+        "rms": 0.7645,
+        "loo": 0.8098,
+        "kfold5": 0.8082,
+        "looGapPct": -4.9,
+        "beta": [
+          3.0525,
+          0.0611,
+          -0.0613
+        ]
+      },
+      {
+        "name": "Gas + Density",
+        "vars": [
+          "logMHI",
+          "logSigma0"
+        ],
+        "r2": 0.0324,
+        "rms": 0.7531,
+        "loo": 0.812,
+        "kfold5": 0.8102,
+        "looGapPct": -5.2,
+        "beta": [
+          2.8939,
+          0.1048,
+          -0.2873
+        ]
+      },
+      {
+        "name": "Gas + Coherence + Density",
+        "vars": [
+          "logMHI",
+          "logMeanRun",
+          "logSigma0"
+        ],
+        "r2": 0.0333,
+        "rms": 0.7527,
+        "loo": 0.8222,
+        "kfold5": 0.8299,
+        "looGapPct": -6.5,
+        "beta": [
+          2.9515,
+          0.1087,
+          -0.0998,
+          -0.2904
+        ]
+      }
+    ],
+    "best": {
+      "name": "Vflat only: logVflat",
+      "vars": [
+        "logVflat"
+      ],
+      "r2": 0.0032,
+      "rms": 0.7644,
+      "loo": 0.7858,
+      "kfold5": 0.7801,
+      "looGapPct": -1.8,
+      "beta": [
+        2.9629,
+        0.0529
+      ],
+      "permPvalue": 0.689
+    },
+    "m0rms": 0.7717,
+    "m0mean": 2.996,
+    "n": 63
+  },
+  "highRegime": {
+    "results": [
+      {
+        "name": "M0: constant",
+        "vars": [],
+        "r2": 0,
+        "rms": 0.3002,
+        "loo": 0.3015,
+        "kfold5": 0.3015,
+        "looGapPct": 0,
+        "beta": [
+          3.5595
+        ]
+      },
+      {
+        "name": "Gas only: logMHI",
+        "vars": [
+          "logMHI"
+        ],
+        "r2": 0.0493,
+        "rms": 0.2927,
+        "loo": 0.299,
+        "kfold5": 0.2993,
+        "looGapPct": 0.9,
+        "beta": [
+          3.6243,
+          -0.1265
+        ]
+      },
+      {
+        "name": "Coherence only: logMeanRun",
+        "vars": [
+          "logMeanRun"
+        ],
+        "r2": 0.0413,
+        "rms": 0.2939,
+        "loo": 0.2995,
+        "kfold5": 0.299,
+        "looGapPct": 0.7,
+        "beta": [
+          3.3474,
+          0.2758
+        ]
+      },
+      {
+        "name": "Density only: logSigma0",
+        "vars": [
+          "logSigma0"
+        ],
+        "r2": 0.0245,
+        "rms": 0.2965,
+        "loo": 0.3021,
+        "kfold5": 0.3031,
+        "looGapPct": -0.2,
+        "beta": [
+          3.5891,
+          -0.0768
+        ]
+      },
+      {
+        "name": "Env only: envCode",
+        "vars": [
+          "envCode"
+        ],
+        "r2": 0.0513,
+        "rms": 0.2924,
+        "loo": 0.2965,
+        "kfold5": 0.2978,
+        "looGapPct": 1.7,
+        "beta": [
+          3.5884,
+          -0.1117
+        ]
+      },
+      {
+        "name": "Vflat only: logVflat",
+        "vars": [
+          "logVflat"
+        ],
+        "r2": 0.0005,
+        "rms": 0.3001,
+        "loo": 0.3059,
+        "kfold5": 0.3058,
+        "looGapPct": -1.5,
+        "beta": [
+          3.6329,
+          -0.0342
+        ]
+      },
+      {
+        "name": "Gas + Coherence",
+        "vars": [
+          "logMHI",
+          "logMeanRun"
+        ],
+        "r2": 0.1211,
+        "rms": 0.2814,
+        "loo": 0.2904,
+        "kfold5": 0.2921,
+        "looGapPct": 3.7,
+        "beta": [
+          3.3557,
+          -0.1663,
+          0.3759
+        ]
+      },
+      {
+        "name": "Gas + Density",
+        "vars": [
+          "logMHI",
+          "logSigma0"
+        ],
+        "r2": 0.0563,
+        "rms": 0.2916,
+        "loo": 0.301,
+        "kfold5": 0.3013,
+        "looGapPct": 0.2,
+        "beta": [
+          3.632,
+          -0.1085,
+          -0.0439
+        ]
+      },
+      {
+        "name": "Gas + Env",
+        "vars": [
+          "logMHI",
+          "envCode"
+        ],
+        "r2": 0.0921,
+        "rms": 0.286,
+        "loo": 0.2937,
+        "kfold5": 0.2953,
+        "looGapPct": 2.6,
+        "beta": [
+          3.6452,
+          -0.1155,
+          -0.1025
+        ]
+      },
+      {
+        "name": "Gas + Coherence + Density",
+        "vars": [
+          "logMHI",
+          "logMeanRun",
+          "logSigma0"
+        ],
+        "r2": 0.1325,
+        "rms": 0.2796,
+        "loo": 0.2919,
+        "kfold5": 0.2917,
+        "looGapPct": 3.2,
+        "beta": [
+          3.3565,
+          -0.1447,
+          0.3886,
+          -0.0561
+        ]
+      },
+      {
+        "name": "Gas + Coherence + Env",
+        "vars": [
+          "logMHI",
+          "logMeanRun",
+          "envCode"
+        ],
+        "r2": 0.152,
+        "rms": 0.2764,
+        "loo": 0.2873,
+        "kfold5": 0.287,
+        "looGapPct": 4.7,
+        "beta": [
+          3.395,
+          -0.1538,
+          0.346,
+          -0.0878
+        ]
+      },
+      {
+        "name": "M3-like: Gas + Coherence + Density + Env",
+        "vars": [
+          "logMHI",
+          "logMeanRun",
+          "logSigma0",
+          "envCode"
+        ],
+        "r2": 0.1539,
+        "rms": 0.2761,
+        "loo": 0.2904,
+        "kfold5": 0.2947,
+        "looGapPct": 3.7,
+        "beta": [
+          3.3914,
+          -0.1455,
+          0.3546,
+          -0.0247,
+          -0.0789
+        ]
+      },
+      {
+        "name": "Full: Gas + Coh + Dens + Env + Vflat",
+        "vars": [
+          "logMHI",
+          "logMeanRun",
+          "logSigma0",
+          "envCode",
+          "logVflat"
+        ],
+        "r2": 0.253,
+        "rms": 0.2595,
+        "loo": 0.2771,
+        "kfold5": 0.2816,
+        "looGapPct": 8.1,
+        "beta": [
+          1.2837,
+          -0.3494,
+          0.2628,
+          -0.2021,
+          -0.0597,
+          1.0944
+        ],
+        "permPvalue": 0
+      }
+    ],
+    "best": {
+      "name": "Full: Gas + Coh + Dens + Env + Vflat",
+      "vars": [
+        "logMHI",
+        "logMeanRun",
+        "logSigma0",
+        "envCode",
+        "logVflat"
+      ],
+      "r2": 0.253,
+      "rms": 0.2595,
+      "loo": 0.2771,
+      "kfold5": 0.2816,
+      "looGapPct": 8.1,
+      "beta": [
+        1.2837,
+        -0.3494,
+        0.2628,
+        -0.2021,
+        -0.0597,
+        1.0944
+      ],
+      "permPvalue": 0
+    },
+    "m0rms": 0.3015,
+    "m0mean": 3.559,
+    "n": 112
+  },
+  "signComparison": {
+    "logMHI": {
+      "rLo": 0.049,
+      "rHi": -0.222,
+      "signLo": "+",
+      "signHi": "-",
+      "same": false
+    },
+    "logMeanRun": {
+      "rLo": -0.013,
+      "rHi": 0.203,
+      "signLo": "-",
+      "signHi": "+",
+      "same": false
+    },
+    "logSigma0": {
+      "rLo": -0.159,
+      "rHi": -0.157,
+      "signLo": "-",
+      "signHi": "-",
+      "same": true
+    },
+    "envCode": {
+      "rLo": 0,
+      "rHi": -0.227,
+      "signLo": "-",
+      "signHi": "-",
+      "same": true
+    },
+    "logVflat": {
+      "rLo": 0.056,
+      "rHi": -0.021,
+      "signLo": "+",
+      "signHi": "-",
+      "same": false
+    }
+  },
+  "axisTransition": {
+    "logMHI": {
+      "slopeLo": 0.059,
+      "slopeHi": -0.1265,
+      "deltaBIC": -23.8,
+      "reverses": true
+    },
+    "logMeanRun": {
+      "slopeLo": -0.045,
+      "slopeHi": 0.2758,
+      "deltaBIC": -23.84,
+      "reverses": true
+    },
+    "logSigma0": {
+      "slopeLo": -0.257,
+      "slopeHi": -0.0768,
+      "deltaBIC": -30.59,
+      "reverses": false
+    },
+    "logVflat": {
+      "slopeLo": 0.0529,
+      "slopeHi": -0.0342,
+      "deltaBIC": -1.42,
+      "reverses": true
+    }
+  },
+  "crossValidation": {
+    "hiToLo": {
+      "model": "Full: Gas + Coh + Dens + Env + Vflat",
+      "trainLOO": 0.2771,
+      "testRMS": 1.3678,
+      "testM0": 0.7717,
+      "gap": -77.2
+    },
+    "loToHi": {
+      "model": "Vflat only: logVflat",
+      "trainLOO": 0.7858,
+      "testRMS": 0.5689,
+      "testM0": 0.3015,
+      "gap": -88.7
+    }
+  },
+  "nSignReversals": 3,
+  "nAxesReverseInBroken": 3,
+  "nAxesStrongBroken": 3,
+  "verdict": "PARTIAL"
+}

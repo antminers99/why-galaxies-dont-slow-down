@@ -487,6 +487,22 @@ Phase 83 showed the law fails even on regime-matched galaxies, suggesting the pr
 
 **The structured $a_0$ law reflects a real mass-regime boundary, not a pure selection artifact.** The MHI–$a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$), but it is a **normal feature** of the high-Vflat regime ($V_\mathrm{flat} \geq 80$: population $r = -0.215$). Phase 86 demonstrates that the training $r = -0.322$ falls within the typical range of random $N = 45$ draws from this regime ($p = 0.17$). Phase 87 locates the transition: the MHI–$a_0$ slope reverses sign at $V_\mathrm{flat} \approx 70$ km/s ($\Delta\mathrm{BIC} = -23.8$ for piecewise vs. single-slope model). The transition is sharp ($w \approx 13$ km/s), kinematic in nature ($V_\mathrm{flat}$ is the best separator, far surpassing morphology, luminosity, or gas mass), and fundamentally changes the correlation structure between regimes. The multi-axis law is a valid description of the high-$V_\mathrm{flat}$ regime; it fails externally because external galaxies predominantly inhabit the opposite regime.
 
+### 12.10 Two-Regime Law Analysis (Phase 88)
+
+Splitting the sample at $V_\mathrm{flat} = 70$ km/s yields two populations with fundamentally different $a_0$ structure:
+
+**Low-$V_\mathrm{flat}$ regime ($V_\mathrm{flat} < 70$, $N = 63$).** No structured $a_0$ law exists. The best single-predictor model ($\log V_\mathrm{flat}$) has LOO gap $= -1.8\%$ (worse than the constant baseline). Permutation $p = 0.689$ — the apparent $R^2 = 0.003$ is indistinguishable from chance. The $a_0$ distribution is wide (sd $= 0.77$ dex) and unstructured: no variable — gas mass, coherence, density, or morphology — predicts $a_0$ variation. All environment codes equal zero (no cluster/group members), preventing environment-based models.
+
+**High-$V_\mathrm{flat}$ regime ($V_\mathrm{flat} \geq 70$, $N = 112$).** A five-predictor model (Gas + Coherence + Density + Environment + $V_\mathrm{flat}$) achieves $R^2 = 0.253$, LOO gap $= 8.1\%$, permutation $p < 0.001$. The $a_0$ distribution is tighter (sd $= 0.30$ dex). Key coefficients: $\log M_\mathrm{HI}$ ($-0.35$), $\log\overline{\mathrm{Run}}$ ($+0.26$), $\log\Sigma_0$ ($-0.20$), envCode ($-0.06$), $\log V_\mathrm{flat}$ ($+1.09$). The Gas + Coherence + Environment three-predictor variant retains LOO gap $= 4.7\%$.
+
+**Sign comparison (88d).** Three of five predictor variables reverse sign across the transition: $\log M_\mathrm{HI}$ ($+0.05 \to -0.22$), $\log\overline{\mathrm{Run}}$ ($-0.01 \to +0.20$), and $\log V_\mathrm{flat}$ ($+0.06 \to -0.02$). Only $\log\Sigma_0$ ($-0.16$ both) and envCode ($\sim 0 \to -0.23$) maintain direction. This constitutes a **full state transition**, not merely a gas-regime effect.
+
+**Axis transition strength (88e).** Broken-slope models at $V_\mathrm{flat} = 70$ show strong $\Delta\mathrm{BIC}$ for $\log M_\mathrm{HI}$ ($-23.8$), $\log\overline{\mathrm{Run}}$ ($-23.8$), and $\log\Sigma_0$ ($-30.6$, same sign but magnitude changes). Only $\log V_\mathrm{flat}$ shows weak transition ($\Delta\mathrm{BIC} = -1.4$).
+
+**Cross-regime validation (88f).** Training on one regime and testing on the other fails completely: high$\to$low gap $= -77\%$; low$\to$high gap $= -89\%$. The regimes are genuinely separate — models do not transfer.
+
+**Verdict**: The $a_0$ correlation structure is **regime-asymmetric**. In the high-$V_\mathrm{flat}$ regime, a structured multi-axis law exists (LOO gap $= 8.1\%$, $p < 0.001$). In the low-$V_\mathrm{flat}$ regime, $a_0$ variation is large but unstructured — no predictive law emerges. This is not two symmetric laws but one law plus one regime of irreducible scatter.
+
 ---
 
 ## 13. Limitations
@@ -516,9 +532,9 @@ We conclude that the structured $a_0$ variation observed in $N = 45$ is a **regi
 3. **Residual amplification**: While the core anticorrelation is regime-typical, the specific $N = 45$ sample may be further shaped by $f_D \geq 2$ (which makes the pool deterministic) and morphology cuts. The $f_D$ criterion alone does not flip the sign ($r = +0.306$) but narrows the pool to exactly the training set.
 4. **Mhost confound**: Group-catalog host masses remain available only for the training set. External galaxies require $V_\mathrm{flat}$-based proxies with $-$0.74 dex mean bias.
 
-Phase 87 locates the transition precisely: a broken regression identifies $V_\mathrm{flat} \approx 70$ km/s as the optimal breakpoint ($\Delta\mathrm{BIC} = -23.8$), with the MHI slope reversing from $+0.059$ (below) to $-0.127$ (above). The transition is sharp (logistic width $w = 13$ km/s) and fundamentally kinematic — $V_\mathrm{flat}$ is the only variable that produces a significant broken model ($\Delta\mathrm{BIC} = -23.0$); morphology, luminosity, and gas mass all fail.
+Phase 87 locates the transition precisely: $V_\mathrm{flat} \approx 70$ km/s ($\Delta\mathrm{BIC} = -23.8$), with the MHI slope reversing from $+0.059$ to $-0.127$. Phase 88 reveals the transition is **asymmetric**: a structured five-predictor law exists in the high-$V_\mathrm{flat}$ regime ($N = 112$, $R^2 = 0.253$, LOO gap $= 8.1\%$, $p < 0.001$), but no predictive law emerges in the low-$V_\mathrm{flat}$ regime ($N = 63$, best LOO gap $= -1.8\%$, $p = 0.689$). Three of five predictors reverse sign across the boundary — a full state transition, not merely a gas-regime effect. Cross-regime transfer fails completely (gaps of $-77\%$ and $-89\%$).
 
-The key methodological lesson remains: internal cross-validation (LOO, permutation, bootstrap) cannot detect regime boundaries. External validation spanning different mass regimes is essential. But the finding is considerably more interesting than "pure artifact" — there is a genuine, sharp, kinematic regime transition in how $a_0$ correlates with galaxy properties, centered at $V_\mathrm{flat} \approx 50$–$70$ km/s. This boundary deserves investigation with larger, regime-stratified samples and, potentially, separate laws for the two regimes.
+The final picture: $a_0$ variation in SPARC galaxies divides into two fundamentally different regimes at $V_\mathrm{flat} \approx 70$ km/s. Above this threshold, galaxy properties (gas mass, kinematic coherence, baryonic density, environment) predict $\sim 25\%$ of $a_0$ variance in a structured, cross-validated, permutation-significant law. Below it, $a_0$ variation is large (sd $= 0.77$ dex) but irreducibly noisy — no combination of measured properties captures the scatter. This is not two symmetric laws but **one structured law plus one regime of unstructured scatter**, separated by a sharp kinematic boundary.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -543,6 +559,10 @@ The key methodological lesson remains: internal cross-validation (LOO, permutati
 | **Law is regime-specific, not artifact** | **11/23 pools make training r typical; overturns pure-collider interpretation** | **Revised** |
 | **Regime transition at Vflat≈70** | **Broken regression ΔBIC=−23.8; slope reverses from +0.059 (dwarfs) to −0.127 (massive); sharp transition w=13 km/s** | **Confirmed** |
 | **Vflat is the best separator** | **logVflat ΔBIC=−23.0; logMHI, logL36, T all fail (positive ΔBIC)** | **Confirmed** |
+| **High-Vflat law exists** | **N=112, R²=0.253, LOO gap=8.1%, perm p<0.001; 5 predictors** | **Confirmed** |
+| **Low-Vflat: no law** | **N=63, best LOO gap=−1.8%, perm p=0.689; a₀ scatter is unstructured (sd=0.77 dex)** | **Confirmed** |
+| **Full state transition** | **3/5 variables reverse sign; 3/5 axes have strong broken models (ΔBIC<−6)** | **Confirmed** |
+| **Cross-regime transfer fails** | **Hi→Lo gap=−77%, Lo→Hi gap=−89%; regimes are genuinely separate** | **Failed** |
 
 ---
 
