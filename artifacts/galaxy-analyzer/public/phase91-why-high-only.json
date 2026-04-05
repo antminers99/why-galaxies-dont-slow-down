@@ -1,0 +1,147 @@
+{
+  "phase": "91",
+  "title": "Why Only the High Regime?",
+  "samples": {
+    "hi": 112,
+    "lo": 63,
+    "hiQ1": 77,
+    "loQ1": 22
+  },
+  "propertyDistributions": {
+    "logMHI": {
+      "hiMean": 0.513,
+      "loMean": -0.35,
+      "hiQ1Mean": 0.574,
+      "loQ1Mean": -0.044,
+      "ratio": -1.46
+    },
+    "logMstar": {
+      "hiMean": 0.985,
+      "loMean": -0.548,
+      "hiQ1Mean": 1.035,
+      "loQ1Mean": -0.276,
+      "ratio": -1.8
+    },
+    "logMbar": {
+      "hiMean": 1.177,
+      "loMean": -0.087,
+      "hiQ1Mean": 1.236,
+      "loQ1Mean": 0.209,
+      "ratio": -13.53
+    },
+    "fgas": {
+      "hiMean": 0.309,
+      "loMean": 0.599,
+      "hiQ1Mean": 0.316,
+      "loQ1Mean": 0.612,
+      "ratio": 0.52
+    },
+    "logSigma0": {
+      "hiMean": 0.386,
+      "loMean": -0.482,
+      "hiQ1Mean": 0.362,
+      "loQ1Mean": -0.389,
+      "ratio": -0.8
+    },
+    "logRdisk": {
+      "hiMean": 0.45,
+      "loMean": 0.117,
+      "hiQ1Mean": 0.487,
+      "loQ1Mean": 0.207,
+      "ratio": 3.83
+    },
+    "T": {
+      "hiMean": 5.464,
+      "loMean": 9.127,
+      "hiQ1Mean": 5.429,
+      "loQ1Mean": 8.136,
+      "ratio": 0.6
+    },
+    "diskDom": {
+      "hiMean": 0.808,
+      "loMean": 0.583,
+      "hiQ1Mean": 0.808,
+      "loQ1Mean": 0.597,
+      "ratio": 1.38
+    },
+    "vRatio": {
+      "hiMean": 0.181,
+      "loMean": 0.341,
+      "hiQ1Mean": 0.175,
+      "loQ1Mean": 0.281,
+      "ratio": 0.53
+    },
+    "logGbarRange": {
+      "hiMean": 1.187,
+      "loMean": 0.511,
+      "hiQ1Mean": 1.169,
+      "loQ1Mean": 0.667,
+      "ratio": 2.32
+    },
+    "gbarMedian": {
+      "hiMean": 2.905,
+      "loMean": 2.329,
+      "hiQ1Mean": 2.892,
+      "loQ1Mean": 2.353,
+      "ratio": 1.25
+    },
+    "nPts": {
+      "hiMean": 23.607,
+      "loMean": 11.857,
+      "hiQ1Mean": 23.065,
+      "loQ1Mean": 16.273,
+      "ratio": 1.99
+    },
+    "outerSlope": {
+      "hiMean": 0.044,
+      "loMean": 0.282,
+      "hiQ1Mean": 0.039,
+      "loQ1Mean": 0.261,
+      "ratio": 0.15
+    },
+    "relErr": {
+      "hiMean": 0.064,
+      "loMean": 0.133,
+      "hiQ1Mean": 0.065,
+      "loQ1Mean": 0.112,
+      "ratio": 0.48
+    },
+    "logMeanRun": {
+      "hiMean": 0.769,
+      "loMean": 0.579,
+      "hiQ1Mean": 0.782,
+      "loQ1Mean": 0.68,
+      "ratio": 1.33
+    },
+    "rmsA0": {
+      "hiMean": 0.099,
+      "loMean": 0.13,
+      "hiQ1Mean": 0.099,
+      "loQ1Mean": 0.125,
+      "ratio": 0.77
+    }
+  },
+  "synthesis": {
+    "fgas": {
+      "hi": 0.309,
+      "lo": 0.599
+    },
+    "diskDom": {
+      "hi": 0.808,
+      "lo": 0.583
+    },
+    "gbarRange": {
+      "hi": 1.187,
+      "lo": 0.511
+    },
+    "gbarMedian": {
+      "hi": 2.905,
+      "lo": 2.329
+    },
+    "outerSlope": {
+      "hi": 0.0437,
+      "lo": 0.2822
+    }
+  },
+  "verdict": "CONVERGENT-TRANSITIONS"
+}

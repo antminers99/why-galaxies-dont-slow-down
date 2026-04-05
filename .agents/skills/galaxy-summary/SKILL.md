@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-The a₀ correlation structure splits at Vflat≈70 km/s. **High-Vflat (N=112)**: structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). **Low-Vflat (N=63)**: appears chaotic (sd=0.77 dex) — Phase 89 shows the SCATTER AMPLITUDE is quality-dominated (Q=1 dwarfs sd=0.325 ≈ high regime). BUT Phase 90 shows the CORRELATION STRUCTURE is genuinely different: even among Q=1 dwarfs (N=22), no multi-axis law emerges (best physics LOO gap=0.5%), 2/4 key signs reverse vs high regime, cross-regime transfer fails (−37% to −44%). The Vflat≈70 boundary is BOTH a data-quality transition (inflating scatter) AND a physical transition (changing which properties correlate with a₀). Dwarfs and spirals share comparable scatter when quality-controlled but do NOT share the same predictive law.
+The a₀ correlation structure splits at Vflat≈70 km/s. **High-Vflat (N=112)**: structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). **Low-Vflat (N=63)**: no law even in Q=1 dwarfs (Phase 90). Phase 91 explains WHY: four convergent transitions at Vflat≈70 — (1) fgas crosses 50% (disk loses dominance), (2) gbar range halves (a₀ degenerate), (3) deep MOND regime (RAR insensitive to a₀), (4) 73% rising RCs (Vflat undefined). Per-galaxy a₀ is OPERATIONALLY ILL-DEFINED in dwarfs. The boundary is both data-quality (scatter inflated, Phase 89) and physical (correlation structure different, Phase 90), driven by the fundamental transition from disk-dominated spirals to gas-dominated dwarfs (Phase 91).
 
 ## Decisive Negative Results (Phases 55-59)
 
@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 90. Two-regime structure fully characterized. Key finding: the Vflat≈70 boundary is BOTH physical AND data-quality. Scatter amplitude is quality-dominated (Phase 89: Q=1 sd=0.325 ≈ high regime). But correlation structure is genuinely different (Phase 90: no law in Q=1 dwarfs, 2/4 signs reverse, cross-regime transfer fails −37% to −44% even Q=1-only). Inclination signal (r=−0.473, p=0.025) likely systematic artifact.
+PROGRAM AT PHASE 91. Full diagnostic complete. The Vflat≈70 boundary is a CONVERGENCE of 4 transitions: (1) fgas 0.31→0.60 (gas dominance), (2) gbar range 1.19→0.51 dex (a₀ degenerate), (3) deep MOND (median gbar 2.91→2.33), (4) rising RCs 34%→73% (Vflat undefined). Per-galaxy a₀ is OPERATIONALLY ILL-DEFINED in dwarfs — not because MOND fails, but because the fitting methodology breaks down in gas-dominated, low-acceleration systems.

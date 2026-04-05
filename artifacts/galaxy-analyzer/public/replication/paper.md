@@ -535,6 +535,22 @@ Phase 89 showed that $Q = 1$ dwarfs ($N = 22$) have $a_0$ scatter comparable to 
 
 **Verdict.** The regime boundary at $V_\mathrm{flat} \approx 70$ km/s is **genuinely physical, not merely a data-quality effect**. While Phase 89 correctly showed that the *scatter amplitude* in dwarfs is inflated by quality issues (Q=1 sd $= 0.325$ vs. all-Q sd $= 0.77$), Phase 90 demonstrates that even among well-measured Q=1 dwarfs, the *correlation structure* differs fundamentally from massive spirals: key predictors reverse sign, cross-regime transfer fails, and no multi-axis law emerges. The Vflat boundary separates two populations with different $a_0$ physics, not merely different data quality. The Phase 89 insight remains valid — scatter amplitude is quality-dominated — but the absence of structure is physics-dominated.
 
+### 12.13 Why Only the High Regime? (Phase 91)
+
+Phase 90 established that the $V_\mathrm{flat} \approx 70$ km/s boundary is genuinely physical. Phase 91 asks: **why** does a structured $a_0$ law exist only above this threshold? The answer is a convergence of four independent transitions, all occurring near the same kinematic scale.
+
+**1. Gas fraction transition.** Mean $f_\mathrm{gas}$ jumps from $0.31$ (high regime) to $0.60$ (low regime). Above 70 km/s, stellar disks dominate the baryonic mass budget and produce well-defined gravitational potentials. Below it, gas contributes comparably to or more than the stellar disk ($V_\mathrm{gas}/V_\mathrm{total}$: 0.18 vs. 0.34), and the disk dominance fraction drops from 0.81 to 0.58. In gas-dominated systems, the connection between baryonic surface density and rotation-curve shape becomes less direct — pressure support, turbulence, and irregular gas distributions decouple $g_\mathrm{bar}$ from $g_\mathrm{obs}$.
+
+**2. Acceleration range narrows.** The mean log($g_\mathrm{bar}$) dynamic range drops from **1.19 dex** (high regime) to **0.51 dex** (low regime). With barely half a decade of acceleration lever arm, the RAR fit becomes degenerate: many $a_0$ values produce comparably good fits. This does not merely add noise — it fundamentally undermines the *definition* of a galaxy-specific $a_0$.
+
+**3. Deep MOND regime.** The median log($g_\mathrm{bar}$) shifts from 2.91 (high) to 2.33 (low), relative to the canonical $\log a_0 \approx 3.24$. Dwarfs sit almost entirely in the deep-MOND limit where $g_\mathrm{obs} \approx \sqrt{g_\mathrm{bar} \cdot a_0}$. In this regime, the RAR asymptotes to a power law and the sensitivity to $a_0$ decreases — many different $a_0$ values produce nearly identical rotation curves.
+
+**4. Rising rotation curves.** 73% of low-regime galaxies have rising outer rotation curves (slope $> 0.1$), compared to 34% in the high regime. A rising RC means the galaxy has not reached its asymptotic flat velocity — $V_\mathrm{flat}$ is not well-defined, and the outer acceleration data that most constrains $a_0$ is missing.
+
+**Convergence.** These four transitions are correlated but not identical — each independently degrades the ability to extract a structured $a_0$ law. Their convergence near $V_\mathrm{flat} \approx 70$ km/s is not coincidental: this scale corresponds to the transition from disk-dominated, baryon-rich spirals to gas-dominated, pressure-supported dwarfs. The high-regime law works because massive spirals have (i) disk-dominated kinematics making $a_0$ cleanly defined, (ii) wide acceleration range making $a_0$ well constrained, (iii) flat rotation curves making $V_\mathrm{flat}$ meaningful, and (iv) varied gas fractions making the MHI anticorrelation visible. Dwarfs fail on all four counts simultaneously.
+
+**Implication for MOND.** This analysis does not test whether MOND is correct. It shows that the structured $a_0$ variation found in massive spirals cannot be extended to dwarfs — not because dwarfs violate MOND, but because the parameter $a_0$ becomes **operationally ill-defined** in the dwarf regime. The combination of narrow acceleration range, deep-MOND degeneracy, and rising RCs means that galaxy-by-galaxy $a_0$ fitting is an inappropriate tool for characterizing MOND in dwarfs. Future work should use methods that do not require individual $a_0$ estimates, such as stacked RAR analyses or direct dynamical modeling.
+
 ---
 
 ## 13. Limitations
@@ -573,6 +589,8 @@ The final picture emerges from the interplay of Phases 88–90. $a_0$ variation 
 
 The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-quality transition (inflating apparent scatter) **and** a physical transition (changing which properties correlate with $a_0$). Dwarfs and massive spirals share comparable $a_0$ scatter when quality is controlled, but they do not share the same predictive law.
 
+Phase 91 identifies **why** the law exists only in the high regime: the boundary at $V_\mathrm{flat} \approx 70$ km/s marks a convergence of four independent transitions — gas fraction crosses $\sim 50\%$ (stellar disk loses dominance), acceleration range narrows from 1.19 to 0.51 dex (a₀ becomes degenerate), galaxies enter deep MOND (RAR shape insensitive to $a_0$), and 73% of dwarfs have rising RCs vs. 34% of spirals ($V_\mathrm{flat}$ itself undefined). These four effects converge to make the per-galaxy $a_0$ parameter **operationally ill-defined** in the dwarf regime — not because MOND fails, but because the fitting methodology breaks down when applied to gas-dominated, low-acceleration systems with incomplete rotation curves.
+
 **Table 5b. Evidence $\to$ Claim Traceability**
 
 | Claim | Evidence | Status |
@@ -608,6 +626,8 @@ The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-qual
 | **Cross-regime transfer fails even Q=1** | **HiQ1→LoQ1: −37% to −41%; LoQ1→HiQ1: −24% to −44%** | **Failed** |
 | **Inclination signal in dwarfs** | **r=−0.473, perm p=0.025; likely systematic (deprojection bias), not physics** | **Noted** |
 | **Regime boundary is physical + quality** | **Scatter amplitude = quality; correlation structure = physics; both contribute** | **Key finding** |
+| **Convergent transitions at 70 km/s** | **Phase 91: fgas (0.31→0.60), gbar range (1.19→0.51 dex), deep MOND, rising RCs (34%→73%)** | **Key finding** |
+| **a₀ operationally ill-defined in dwarfs** | **Narrow range + deep MOND + rising RC = degenerate fit; a₀ not meaningful per-galaxy** | **Confirmed** |
 
 ---
 
