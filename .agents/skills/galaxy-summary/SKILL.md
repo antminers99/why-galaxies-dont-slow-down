@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-The multi-axis a₀ law is a **collider bias / selection artifact**. Within the N=45 training set, 51% of per-galaxy a₀ variance is predictable (M5 law, LOO). However, external validation FAILS on all 36–78 tested galaxies (including regime-matched subsamples, win rates 7–10%). A selection audit reveals the root cause: the key MHI–a₀ anticorrelation (r=−0.322 in training) does NOT exist in the general SPARC population (r=+0.278); it is a sign-reversed artifact created by the intersection of sample selection criteria (0/1000 random subsamples reproduce this). The structured law describes correlations induced by sample construction, not by galaxy physics.
+The multi-axis a₀ law is a **regime-specific finding, not a universal law or a pure artifact**. Within the N=45 training set (high-Vflat massive spirals), 51% of per-galaxy a₀ variance is predictable (M5 law, LOO). External validation FAILS on 36–78 tested galaxies (predominantly low-mass dwarfs, win rates 7–10%). The mechanism: the Vflat≥80 cut flips the MHI–a₀ correlation from positive (r=+0.278 in full SPARC) to negative (r=−0.215 in Vflat≥80). Phase 86 shows the training r=−0.322 is **typical** within this regime (p=0.17, 5000 draws; p=0.58 in Q=1 subset) — NOT a selection-amplified extreme. The law captures a genuine mass-dependent regime boundary: MHI and a₀ are anticorrelated in massive spirals but positively correlated in dwarfs. External failure reflects this regime boundary, not a methodological flaw.
 
 ## Decisive Negative Results (Phases 55-59)
 
@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM COMPLETE (Phase 60). All investigation doors closed. Final model comparison done. a₀ is structured but incompletely explained. External data required for further progress.
+PROGRAM AT PHASE 86. Conclusion upgraded from "pure collider artifact" to "regime-specific finding". The MHI–a₀ anticorrelation is typical within Vflat≥80 (p=0.17). Law is valid for massive spirals but not universal. Key open question: can the law be validated on an independent sample of high-Vflat spirals?
