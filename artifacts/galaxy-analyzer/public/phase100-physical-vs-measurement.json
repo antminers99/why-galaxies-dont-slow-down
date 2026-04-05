@@ -1,0 +1,119 @@
+{
+  "phase": "100",
+  "title": "Physical vs Measurement Artifact",
+  "nHi": 104,
+  "distanceBins": [
+    {
+      "label": "Near (D < 14 Mpc)",
+      "n": 34,
+      "r": 0.934,
+      "p": 0
+    },
+    {
+      "label": "Mid (14 <= D < 21 Mpc)",
+      "n": 34,
+      "r": 0.782,
+      "p": 0
+    },
+    {
+      "label": "Far (D >= 21 Mpc)",
+      "n": 36,
+      "r": 0.832,
+      "p": 0
+    }
+  ],
+  "halves": {
+    "near": {
+      "n": 45,
+      "r": 0.924,
+      "p": 0
+    },
+    "far": {
+      "n": 59,
+      "r": 0.796,
+      "p": 0
+    }
+  },
+  "partialCorrelations": {
+    "logD": 0.843,
+    "logD_nPts": 0.835,
+    "logD_nPts_radCov": 0.806
+  },
+  "distanceMatchedPairs": {
+    "nPairs": 51,
+    "r": 0.813,
+    "p": 0
+  },
+  "alternativeProxies": [
+    {
+      "name": "InnerVmax (original)",
+      "n": 104,
+      "r": 0.846,
+      "p": 0,
+      "partialR_D": 0.843,
+      "partialR_all": 0.806
+    },
+    {
+      "name": "V at 1 Rdisk",
+      "n": 91,
+      "r": 0.588,
+      "p": 0,
+      "partialR_D": 0.579,
+      "partialR_all": 0.591
+    },
+    {
+      "name": "Mean inner V",
+      "n": 104,
+      "r": 0.777,
+      "p": 0,
+      "partialR_D": 0.775,
+      "partialR_all": 0.724
+    },
+    {
+      "name": "Deep inner Vmax (inner 50%)",
+      "n": 104,
+      "r": 0.727,
+      "p": 0,
+      "partialR_D": 0.724,
+      "partialR_all": 0.663
+    },
+    {
+      "name": "Inner baryon Vmax",
+      "n": 104,
+      "r": 0.594,
+      "p": 0,
+      "partialR_D": 0.584,
+      "partialR_all": 0.529
+    }
+  ],
+  "innerDiscrepancy": {
+    "r": 0.364,
+    "p": 0.0005,
+    "partialR_D": 0.352,
+    "partialR_all": 0.299
+  },
+  "verdicts": [
+    {
+      "test": "Distance bins",
+      "result": "PASS",
+      "detail": "3/3 bins significant"
+    },
+    {
+      "test": "Partial r (all controls)",
+      "result": "PASS",
+      "detail": "r=0.806"
+    },
+    {
+      "test": "Distance-matched pairs",
+      "result": "PASS",
+      "detail": "r=0.813"
+    },
+    {
+      "test": "Alternative proxies",
+      "result": "PASS",
+      "detail": "Mean inner V partial r=0.724"
+    }
+  ],
+  "physicalScore": 8,
+  "measurementScore": 0
+}

@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 99. Calibration law found: distance modulates the slope. logD interaction ΔR²=0.056; at greater distances beam smearing flattens inner Vmax, reducing effective slope. Distance-corrected model: LOO R²=0.750 (vs 0.691 uncorrected). N45 range restriction confirmed (sd 71% of non-N45). Log form validated (linear fraction fails). Full cross-sample transfer still incomplete — radial coverage/data density also contribute. Phase chain: 93→94→95→96→97→98→99.
+PROGRAM AT PHASE 100. THE LAW IS PHYSICAL: 8/8 physical score, 0/8 measurement. Survives within every distance bin (r=0.78–0.93, all p<0.0001), 51 distance-matched pairs (r=0.813), 5 alternative inner proxies (partial r=0.53–0.81 after ALL controls), and partial r=0.806 controlling D+nPts+radCov (only 4.7% drop from raw 0.846). Distance modulates calibration but does NOT create the signal. Inner baryon Vmax (resolution-independent) still correlates at r=0.529. Phase chain: 93→94→95→96→97→98→99→100.
