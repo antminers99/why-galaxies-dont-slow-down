@@ -1,0 +1,48 @@
+{
+  "phase": "94",
+  "title": "Circularity vs Genuine Extra Dynamics",
+  "hiN": 104,
+  "baseline": {
+    "r": -0.305
+  },
+  "splitHalf": {
+    "innerA0_outerSlope": {
+      "raw": -0.141,
+      "partial": -0.325
+    },
+    "outerA0_innerSlope": {
+      "raw": 0.132,
+      "partial": 0.071
+    }
+  },
+  "thirds": {
+    "firstA0_outerSlope": {
+      "raw": -0.105,
+      "partial": -0.255
+    },
+    "lastA0_innerSlope": {
+      "raw": 0.088,
+      "partial": 0.049
+    }
+  },
+  "extendedControls": {
+    "r": -0.116,
+    "rNoCV": -0.283
+  },
+  "splitHalfExtended": {
+    "r": -0.196
+  },
+  "permutation": {
+    "splitHalf": {
+      "r": -0.325,
+      "p": 0.003
+    },
+    "full": {
+      "r": -0.305,
+      "p": 0.002
+    }
+  },
+  "innerOuterConsistency": 0.494,
+  "ratio": 1.07,
+  "verdict": "GENUINE-DYNAMICS"
+}

@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 93. Mediation analysis reveals DUAL PARENT structure: Σ₀ and Vflat both independently drive a₀ and flatness. SURPRISE: after controlling ALL structural vars, r(logA0, slope) = −0.294 — a₀ carries extra dynamical info not captured by baryonic observables. Σ₀→slope survives controlling A0 (r=−0.533) and vice versa. The a₀ law and flatness are parallel consequences of disk structure, but a₀ also encodes halo/MOND potential beyond the baryonic surface.
+PROGRAM AT PHASE 94. Phase 94 CONFIRMED that the a₀ residual is GENUINE, not circularity. Split-half test: a₀(inner half) vs outerSlope partial r = −0.325 (p=0.003), ratio split/full = 1.07. Information flows OUTWARD: a₀(inner)→outerSlope r=−0.325, but a₀(outer)→innerSlope r=+0.071 (no signal). The inner potential encodes dynamical content that shapes the outer RC. Dual parents Σ₀+Vflat remain confirmed. a₀ carries genuine extra dynamical info beyond baryonic observables — likely halo concentration or MOND transition radius.

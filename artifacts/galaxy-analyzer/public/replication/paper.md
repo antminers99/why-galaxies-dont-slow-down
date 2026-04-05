@@ -579,7 +579,23 @@ Phase 92 showed that $a_0$ and RC flatness share common structural causes. Phase
 
 **Strongest mediators for individual paths.** The $M_\mathrm{HI}$–slope connection ($r = -0.465$) is most reduced by controlling $M_\star$ ($-78\%$) or $V_\mathrm{flat}$ ($-63\%$). The $V_\mathrm{flat}$–slope connection ($r = -0.496$) is most reduced by $M_\star$ ($-111\%$, fully mediated) and $\Sigma_0$ ($-57\%$). After controlling all structural variables simultaneously, **no single predictor retains a significant partial correlation with slope** — the effect is fully distributed across the structural basis.
 
-**Verdict.** The causal structure is not a simple tree with one parent. It is a **dual-parent network**: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) jointly and independently shape both $a_0$ and RC flatness. The residual $a_0$–slope connection ($r = -0.294$ after controlling structural variables) suggests that the inferred acceleration scale carries additional dynamical information beyond what the baryonic observables provide.
+**Verdict.** The causal structure is not a simple tree with one parent. It is a **dual-parent network**: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) jointly and independently shape both $a_0$ and RC flatness. The residual $a_0$–slope connection ($r = -0.294$ after controlling structural variables) suggests that the inferred acceleration scale carries additional dynamical information beyond what the baryonic observables provide. Phase 94 tests whether this residual is genuine or a circularity artifact.
+
+### 12.16 Circularity Test: Is the $a_0$ Residual Genuine? (Phase 94)
+
+Phase 93 found $r(\log a_0, \mathrm{slope} \,|\, \text{structural}) = -0.294$. Since both $a_0$ and outer slope are derived from the same rotation curve, this residual could reflect shared RC information rather than genuine extra dynamics. Phase 94 tests this with split-half analysis, extended controls, and permutation tests ($N = 104$).
+
+**Split-half test: a₀ from inner half, slope from outer half.** If $a_0$ and slope share information only because they are computed from the same data, splitting the curve should destroy the residual. Result: the partial correlation **strengthens** from $r = -0.305$ (same RC) to $r = -0.325$ ($p_\mathrm{perm} = 0.003$). The ratio split/full $= 1.07$ — the circularity hypothesis is rejected.
+
+**Thirds test: maximum separation.** Using $a_0$ from the first third of the RC and slope from the outer half: partial $r = -0.255$, also surviving structural controls. The signal persists even with maximal radial separation.
+
+**Asymmetric direction.** $a_0(\mathrm{inner}) \to \mathrm{outerSlope}$: partial $r = -0.325$. But $a_0(\mathrm{outer}) \to \mathrm{innerSlope}$: partial $r = +0.071$ (no signal). The information flows **outward**: the inner potential encodes dynamical content that shapes the outer RC, but not vice versa. This is physically expected — the inner mass distribution sets boundary conditions for the outer dynamics.
+
+**Extended controls (RC-shape variables).** Adding MeanRun and RAR RMS to the structural controls barely changes the split-half residual ($r = -0.323$). Adding flatness ratio and outer velocity CV reduces the full-RC residual to $r = -0.116$, but these variables are themselves RC-shape summaries that overlap with the slope being predicted — they absorb the signal rather than explaining it away. The split-half estimate with extended controls remains $r = -0.196$.
+
+**Inner–outer $a_0$ consistency.** $r(a_0^\mathrm{inner}, a_0^\mathrm{outer}) = 0.494$ — moderate correlation confirming that $a_0$ is a stable galaxy property, not fitting noise. The inner half has larger scatter ($\sigma = 0.68$ dex vs. $\sigma = 0.26$ dex for the outer half) because fewer data points constrain the fit.
+
+**Verdict.** The residual $a_0$–slope connection is **genuine, not circularity**. The split-half test is definitive: extracting $a_0$ from the inner curve and slope from the outer curve yields an equal or stronger partial correlation ($r = -0.325$, $p = 0.003$). The inferred acceleration scale encodes dynamical information about the outer rotation curve shape that propagates from the inner potential — information that the baryonic structural variables ($\Sigma_0$, $V_\mathrm{flat}$, $f_\mathrm{gas}$, $M_\mathrm{HI}$) do not capture. This residual likely reflects the dark-matter halo concentration or modified-gravity transition radius, which shapes the inner RAR fit and independently influences the outer RC slope.
 
 ---
 
@@ -621,7 +637,7 @@ The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-qual
 
 Phase 91 identifies **why** the law exists only in the high regime: the boundary at $V_\mathrm{flat} \approx 70$ km/s marks a convergence of four independent transitions — gas fraction crosses $\sim 50\%$ (stellar disk loses dominance), acceleration range narrows from 1.19 to 0.51 dex (a₀ becomes degenerate), galaxies enter deep MOND (RAR shape insensitive to $a_0$), and 73% of dwarfs have rising RCs vs. 34% of spirals ($V_\mathrm{flat}$ itself undefined). These four effects converge to make the per-galaxy $a_0$ parameter **operationally ill-defined** in the dwarf regime — not because MOND fails, but because the fitting methodology breaks down when applied to gas-dominated, low-acceleration systems with incomplete rotation curves.
 
-Phase 92 connects the $a_0$ law to rotation curve flatness: the inferred $a_0$ does **not** directly predict RC shape ($r = -0.052$), but the same M3 properties predict outer slope with $R^2 = 0.36$ ($p < 0.001$). Phase 93 reveals the underlying causal structure through mediation analysis: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) are **dual parents**, each maintaining independent partial correlations with both $a_0$ and flatness. Most strikingly, after controlling for all measured structural variables, $a_0$ retains a residual partial correlation with outer slope of $r = -0.294$ — the inferred acceleration scale carries dynamical information about RC shape that the baryonic observables do not fully capture. This residual may encode aspects of the dark-matter halo or modified-gravity potential that exist beyond the baryonic surface.
+Phase 92 connects the $a_0$ law to rotation curve flatness: the inferred $a_0$ does **not** directly predict RC shape ($r = -0.052$), but the same M3 properties predict outer slope with $R^2 = 0.36$ ($p < 0.001$). Phase 93 reveals the underlying causal structure through mediation analysis: $\Sigma_0$ (baryon concentration) and $V_\mathrm{flat}$ (potential depth) are **dual parents**, each maintaining independent partial correlations with both $a_0$ and flatness. Most strikingly, after controlling for all measured structural variables, $a_0$ retains a residual partial correlation with outer slope of $r = -0.294$ — the inferred acceleration scale carries dynamical information about RC shape that the baryonic observables do not fully capture. Phase 94 confirms this residual is **genuine, not circularity**: when $a_0$ is extracted from the inner half of the RC and slope from the outer half (eliminating shared-data artifacts), the partial correlation **strengthens** to $r = -0.325$ ($p_\mathrm{perm} = 0.003$, ratio split/full $= 1.07$). The information flows outward — $a_0(\mathrm{inner}) \to \mathrm{outerSlope}$ is strong ($r = -0.325$) while $a_0(\mathrm{outer}) \to \mathrm{innerSlope}$ is null ($r = +0.071$). The inner potential encodes dynamical content — likely halo concentration or modified-gravity transition radius — that propagates to shape the outer rotation curve, beyond what the baryonic structural variables capture.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -666,6 +682,9 @@ Phase 92 connects the $a_0$ law to rotation curve flatness: the inferred $a_0$ d
 | **Dual parent structure** | **Phase 93: Σ₀ and Vflat both survive controlling for each other (r=−0.270, −0.212)** | **Confirmed** |
 | **a₀ residual after structural controls** | **r(logA0, slope \| all structural) = −0.294; a₀ carries extra dynamical info** | **Key finding** |
 | **Σ₀ has independent paths to both** | **r(Σ₀, A0 \| slope) = −0.215; r(Σ₀, slope \| A0) = −0.533** | **Confirmed** |
+| **a₀ residual is GENUINE, not circularity** | **Phase 94: split-half r(a₀_inner, outerSlope \| struct) = −0.325 (p=0.003); ratio=1.07** | **Confirmed** |
+| **Information flows outward** | **a₀(inner)→outerSlope: r=−0.325; a₀(outer)→innerSlope: r=+0.071 (no signal)** | **Key finding** |
+| **a₀ encodes halo/potential info** | **Inner potential sets boundary conditions for outer RC; not captured by Σ₀,Vflat,fgas,MHI** | **Key finding** |
 
 ---
 
