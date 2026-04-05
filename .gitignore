@@ -1,5 +1,3 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
 # compiled output
 dist
 tmp
@@ -10,6 +8,7 @@ out-tsc
 
 # dependencies
 node_modules
+pnpm-lock.yaml
 
 # IDEs and editors
 /.idea
@@ -19,31 +18,37 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
 
 # System Files
 .DS_Store
 Thumbs.db
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
-
-# Replit
+# Replit internals
 .cache/
 .local/
+.agents/
+.replit
+.replitignore
+.npmrc
+.config/
+.replit-artifact/
+**/.replit-artifact/
+attached_assets/
+replit.md
+pnpm-workspace.yaml
+tsconfig.base.json
+/scripts/
+/package.json
+/tsconfig.json
+
+# Replit infrastructure (not part of the science)
+artifacts/api-server/
+artifacts/mockup-sandbox/
+lib/
+
+# Logs
+npm-debug.log
+yarn-error.log
+*.log
