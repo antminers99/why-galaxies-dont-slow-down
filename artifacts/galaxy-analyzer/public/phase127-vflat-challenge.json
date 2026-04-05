@@ -1,0 +1,130 @@
+{
+  "phase": "127",
+  "title": "Vflat Challenge Against M4",
+  "models": {
+    "A": {
+      "name": "M4 (MHI+Mhost+MR+Sig0)",
+      "gap": 47.4,
+      "loo_rms": 0.1871,
+      "r2adj": 0.5353,
+      "aic": -151.77,
+      "bic": -142.74,
+      "coefficients": {
+        "intercept": 5.0955,
+        "logMHI": -0.2365,
+        "logMhost": -0.1839,
+        "logMR": 0.4653,
+        "logSig0": 0.1508
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0,
+        "logMhost": 0,
+        "logMR": 0,
+        "logSig0": 3.2
+      }
+    },
+    "B": {
+      "name": "M4+Vflat (5-var)",
+      "gap": 49.3,
+      "loo_rms": 0.1836,
+      "r2adj": 0.5674,
+      "aic": -154.13,
+      "bic": -143.29,
+      "coefficients": {
+        "intercept": 4.2683,
+        "logMHI": -0.3289,
+        "logMhost": -0.182,
+        "logMR": 0.4531,
+        "logSig0": 0.053,
+        "logVflat": 0.5251
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0,
+        "logMhost": 0.1,
+        "logMR": 0,
+        "logSig0": 32.3,
+        "logVflat": 1.7
+      }
+    },
+    "C": {
+      "name": "M3+Vflat (replace Sig0)",
+      "gap": 52.1,
+      "loo_rms": 0.1785,
+      "r2adj": 0.5735,
+      "aic": -155.63,
+      "bic": -146.6,
+      "coefficients": {
+        "intercept": 4.1201,
+        "logMHI": -0.3391,
+        "logMhost": -0.1752,
+        "logMR": 0.4492,
+        "logVflat": 0.6311
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0,
+        "logMhost": 0,
+        "logMR": 0,
+        "logVflat": 0.1
+      }
+    },
+    "D": {
+      "name": "MHI+Mhost+Sig0+Vflat (replace MR)",
+      "gap": 31.6,
+      "loo_rms": 0.2132,
+      "r2adj": 0.4195,
+      "aic": -141.76,
+      "bic": -132.72,
+      "coefficients": {
+        "intercept": 5.028,
+        "logMHI": -0.2831,
+        "logMhost": -0.224,
+        "logSig0": 0.0378,
+        "logVflat": 0.5776
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0,
+        "logMhost": 0,
+        "logSig0": 40.1,
+        "logVflat": 2.1
+      }
+    }
+  },
+  "collinearity": {
+    "r_vflat_mr": 0.168,
+    "r_vflat_logA0": -0.123,
+    "vflat_r2_by_m4": 0.708,
+    "vflat_independent_pct": 29.2,
+    "r_vflat_resid_logA0": 0.197
+  },
+  "nested_cv_acd": {
+    "gap": 52.1,
+    "selection": {
+      "A": 0,
+      "C": 45,
+      "D": 0
+    }
+  },
+  "nested_cv_ab": {
+    "gap": 49.3,
+    "selection": {
+      "A": 1,
+      "B": 44
+    }
+  },
+  "vflat_in_5var": {
+    "coefficient": 0.5251,
+    "ci95": [
+      0.073,
+      1.1642
+    ],
+    "crosses_zero": false,
+    "flip_rate": 1.7
+  },
+  "verdict": {
+    "result": "RIVAL — Model C (M3+Vflat) is a co-equal alternative to M4",
+    "c_beats_a": true,
+    "c_nested_wins": true,
+    "b_adds_over_a": false,
+    "vflat_stable_in_b": true
+  }
+}
