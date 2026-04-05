@@ -1,10 +1,16 @@
 # Gas-to-Stellar Balance as the Strongest Independent Predictor of Outer Support Requirement in High-Vflat SPARC Galaxies
 
-**Status:** Current backbone result — log(MHI/L36) has superseded fgas as the strongest falsification-surviving independent predictor.
+**Status:** Strong validated result — log(MHI/L3.6) supersedes fgas as the leading non-circular, falsification-surviving predictor of outer support requirement in the high-Vflat SPARC regime.
 
-**Claim:** The dominant independent signal driving outer support requirement in high-Vflat SPARC galaxies is gas-to-stellar balance, especially log(MHI/L36). This is not a reflection of surface density or baryonic compactness.
+**Claim:** The gas-to-stellar balance, quantified by log(MHI/L3.6), is a real, non-circular, independently surviving predictor of outer support requirement in high-Vflat SPARC galaxies. The signal is not a geometric artifact, not a computational circularity artifact, and not fully reducible to halo structure, surface density, or simple evolutionary-state proxies alone.
 
 **Qualification:** This result is regime-specific with a gradual onset around Vflat ~55-75 km/s. It does not transfer to low-Vflat dwarfs, where all tested predictors fail under locked calibration. Fully independent cross-survey replication remains blocked by target incompatibility.
+
+---
+
+## Abstract
+
+We initially identified a strong relation between inner-to-outer rotation-curve shape variables, but Phase 101 showed that this apparent law was largely a geometric artifact of smooth monotonic curves. The project then shifted to independent catalog variables and redefined the target as outer support requirement. In this framework, gas-related observables strongly outperformed curve-shape predictors. Robustness, mediation, uncertainty, and matched-falsification analyses showed that the strongest surviving signal is the gas-to-stellar balance, quantified by log(MHI/L3.6), with fgas as a closely related secondary proxy. Anti-circularity tests confirmed that the signal is not produced by shared gas inputs between predictor and target: when gas is removed from the target, the correlation strengthens, while gas-only targets fail. Halo-anchoring tests showed that gas-rich systems are more dark-matter dominated in their inner regions, but most of the predictive signal survives after controlling for halo properties. Model-competition tests found no single standard explanation that fully captures the effect, indicating that the signal reflects a multi-component physical picture rather than a one-variable law. The result is regime-specific, with a gradual strengthening above Vflat around 55 to 75 km/s, and does not transfer as-is to low-V dwarfs. We conclude that gas-to-stellar balance is currently the strongest falsification-surviving state-variable candidate for outer support requirement in the high-Vflat SPARC regime.
 
 ---
 
@@ -36,7 +42,9 @@ $$\text{predictor} = \log_{10}(M_\text{HI} / L_{3.6})$$
 
 ---
 
-## 2. What Has Been Proven (Phases 105-112)
+## 2. What Has Been Proven (Phases 105-119)
+
+### Core Signal (Phases 105-112)
 
 | Finding | Evidence |
 |:---|:---|
@@ -48,6 +56,25 @@ $$\text{predictor} = \log_{10}(M_\text{HI} / L_{3.6})$$
 | fgas wins all 1-var comparisons | Ph 105: LOO=0.503 vs Sigma0=0.321, L36=0.475, compact=0.471 |
 | External validation passes | Ph 104: ext R^2=0.474, calibration slope=1.012 (near-perfect) |
 | Signal stable within Sigma0 bins | Ph 112: fgas r=0.39/0.73/0.46 across terciles (stable); Sigma0 r=-0.36/-0.05/-0.37 (collapses) |
+
+### Independence from Known Scaling Relations (Phases 113-116)
+
+| Finding | Evidence |
+|:---|:---|
+| Independent of RAR residuals | Ph 113: logOMD and RAR residuals share only 35% variance; 65% independent |
+| Gas predicts RC shape (mediated by Vflat) | Ph 114: Baryon dominance fraction survives (partial r=-0.50 \| Vflat) |
+| Independent of BTFR | Ph 115: fgas vs BTFR residual r=0.056; completely orthogonal |
+| a0 roughly universal | Ph 116: a0 vs gas state r=0.17; gas-rich hint +0.11 dex higher a0 |
+
+### Anti-Circularity and Physical Mechanism (Phases 117-119)
+
+| Finding | Evidence |
+|:---|:---|
+| NOT a circularity artifact | Ph 117: 6/6 anti-circularity tests PASS. Stars-only target r=0.885 (stronger); gas-only target r=-0.208 (fails). Permutation p<0.0001 (7.5 sigma). |
+| Connects to halo structure | Ph 118: fgas -> innerDMfrac r=0.637; fgas -> rho0*rc r=-0.414 |
+| Signal persists beyond halo | Ph 118: partial r(fgas, logOMD \| ALL halo props) = 0.562 (76% of original) |
+| No single model explains it | Ph 119: Halo concentration REJECTED (r=-0.001); evolutionary state REJECTED (fgas outperforms SFE); baryon-halo coupling WEAK |
+| Multi-component physics | Ph 119: In combined model, barConc(0.364), logRho0(0.317), fgas(0.307) all retain independent power |
 
 ---
 
@@ -146,7 +173,13 @@ The outer support requirement correlates fundamentally with the galaxy's gas-to-
 - **High gas-to-stellar ratio** (gas-dominant): large outer mass discrepancy, more "extra" support needed
 - **Low gas-to-stellar ratio** (stellar-dominant): smaller outer mass discrepancy
 
-The signal is NOT driven by surface density (Sigma0 dies after controlling for gas fraction) or baryonic compactness. The ratio form log(MHI/L36) outperforms fgas, suggesting the balance between gas reservoir and stellar content is the physically meaningful variable. This points toward evolutionary state / baryon conversion efficiency as the underlying driver.
+The signal is NOT driven by surface density (Sigma0 dies after controlling for gas fraction) or baryonic compactness. The ratio form log(MHI/L36) outperforms fgas, suggesting the balance between gas reservoir and stellar content is the physically meaningful variable.
+
+Anti-circularity tests (Phase 117) definitively rule out shared-input artifacts: removing gas from the target strengthens the correlation (r=0.885 stars-only vs 0.722 full), while gas-only targets fail (r=-0.208). The signal survives permutation at 7.5 sigma.
+
+Halo anchoring (Phase 118) shows that gas-rich galaxies are more dark-matter dominated in their inner regions (r=0.637 with inner DM fraction), but 76% of the predictive signal persists beyond halo properties. The gas-to-stellar balance has a direct effect not fully mediated by halo structure.
+
+Model competition (Phase 119) finds no single standard explanation: halo concentration is uncorrelated with gas state (r=-0.001), baryon-halo coupling is only weakly explanatory, and evolutionary-state proxies underperform fgas. The signal reflects a multi-component physical picture rather than a one-variable law.
 
 ---
 
@@ -155,8 +188,9 @@ The signal is NOT driven by surface density (Sigma0 dies after controlling for g
 1. **Regime-specific**: works for Vflat >= ~70 km/s spirals, with gradual onset from ~55 km/s
 2. **Single survey**: all data from SPARC; cross-survey replication blocked by data incompatibility
 3. **Moderate effect size**: LOO R^2 ~ 0.50 means 50% of variance remains unexplained
-4. **No causal mechanism**: the correlation is established; the physical mechanism is not
+4. **No single causal mechanism**: the correlation is established; no single physical model fully accounts for it (Phase 119)
 5. **fgas vs log(MHI/L36)**: these are near-equivalent forms; log(MHI/L36) slightly outperforms but both encode gas-to-stellar balance
+6. **Not peer-reviewed**: this is a non-peer-reviewed computational analysis report
 
 ---
 
@@ -175,6 +209,13 @@ The signal is NOT driven by surface density (Sigma0 dies after controlling for g
 | 110 | Uncertainty propagation (MC) | STRONG PASS |
 | 111 | Regime boundary mapping | Gradual transition ~55-75 km/s |
 | 112 | Matched falsification | STRONG PASS - log(MHI/L36) wins |
+| 113 | RAR-Gas Connection | logOMD 65% independent of RAR residuals |
+| 114 | Diversity Connection | Gas predicts shape; baryon dominance survives Vflat |
+| 115 | BTFR Residuals | fgas independent of BTFR (r=0.056) |
+| 116 | Acceleration Scale | a0 roughly universal; gas-rich +0.11 dex hint |
+| 117 | Anti-Circularity Battery | 6/6 PASS - NOT circular |
+| 118 | Halo Anchoring | fgas->innerDMfrac r=0.637; 76% persists beyond halo |
+| 119 | Model Competition | No single model wins; multi-faceted physics |
 
 ---
 
@@ -183,8 +224,13 @@ The signal is NOT driven by surface density (Sigma0 dies after controlling for g
 | File | Contents |
 |:---|:---|
 | `REPRODUCIBLE_RESULT.md` | This document - current claim and replication guide |
+| `LITERATURE_SUMMARY.md` | Literature review and novelty positioning |
+| `references.md` | Organized reference list (22 papers, 5 tiers) |
 | `paper.md` | Full phases 1-100 analysis (historical, superseded) |
 | `N45_final_dataset.csv` | Quality-controlled N=45 subset (phases 1-100) |
+| `../scripts/phase117-anti-circularity.cjs` | Anti-circularity battery (6 tests) |
+| `../scripts/phase118-halo-anchoring.cjs` | Halo property fitting and mediation |
+| `../scripts/phase119-model-competition.cjs` | Three-model competition |
 | `../scripts/phase112-matched-falsification.cjs` | Decisive test script |
 | `../scripts/phase110-uncertainty-propagation.cjs` | Monte Carlo uncertainty |
 | `../scripts/phase111-boundary-mapping.cjs` | Regime boundary analysis |
@@ -247,4 +293,4 @@ print(f"N = {len(results)}")                                # expect ~104
 
 ---
 
-**Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results are included for full reproducibility.
+**Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results are included for full reproducibility. This is a non-peer-reviewed computational analysis report.
