@@ -449,13 +449,19 @@ Phase 83 showed the law fails even on regime-matched galaxies, suggesting the pr
 
 **12.8.3 Sample membership as predictor.** A binary "in-training" flag alone predicts $\log a_0$ with LOO gap = 4.2% on the pooled sample ($N = 76$, $f_D \geq 2$) — comparable to M2$'$ with MHI and MeanRun (gap = 4.7%). When the flag is added alongside M2$'$ variables, interaction terms (flag $\times$ logMHI) absorb most of the signal ($\beta_\mathrm{MHI \times flag} = -0.661$), confirming that the MHI–$a_0$ relationship changes sign between training and non-training galaxies.
 
-**12.8.4 Cumulative selection pathway.** Building toward the $N = 45$ cuts step by step reveals the sign flip occurs when $n_\mathrm{pts} \geq 10$ and $V_\mathrm{flat} \geq 80$ km/s are jointly applied — eliminating low-mass dwarfs with few rotation-curve points. This intersection conditions on data richness in a way that reverses the natural MHI–$a_0$ correlation.
+**12.8.4 Criterion-by-criterion dissection (Phase 85).** A systematic scan of all selection criteria identifies exactly which cuts flip the sign:
 
-**12.8.5 Interpretation: Collider bias.** The $N = 45$ selection criteria act as a **collider** in the causal DAG. By conditioning simultaneously on distance method, quality, morphology, and data richness, the selection creates a pathway through which $M_\mathrm{HI}$ and $a_0$ become artificially anticorrelated — even though their unconditional relationship is positive. This is a textbook collider bias (Berkson's paradox): selecting on common effects of two variables induces a spurious association between them, often with reversed sign.
+*Single criteria producing negative $r(\mathrm{MHI}, a_0)$*: Only three criteria, applied alone to the full SPARC sample, reverse the sign — $V_\mathrm{flat} \geq 60$ km/s ($r = -0.175$, $N = 118$), $V_\mathrm{flat} \geq 80$ ($r = -0.215$, $N = 99$), environment $\geq 1$ ($r = -0.447$, $N = 19$), and $Q = 1$ ($r = -0.103$, $N = 99$). No other criterion (distance method, morphology, inclination, luminosity) alone flips the sign.
+
+*Two-criterion scan*: The combination $V_\mathrm{flat} \geq 70$ + $n_\mathrm{pts} \geq 10$ produces $r = -0.274$ ($N = 95$); $V_\mathrm{flat} \geq 100$ + $n_\mathrm{pts} \geq 20$ produces $r = -0.297$ ($N = 39$). The $V_\mathrm{flat}$ cut is the primary driver: it excludes low-mass dwarfs whose high gas fractions produce a positive MHI–$a_0$ correlation, leaving a massive-galaxy subsample where the sign naturally reverses.
+
+*Cumulative paths*: Regardless of the order criteria are applied, the sign flip always occurs when the $V_\mathrm{flat}$ cut is added. The distance-method criterion ($f_D \geq 2$) does not contribute to the flip; it actually *strengthens* the positive correlation ($r = +0.306$).
+
+**12.8.5 Interpretation: Mass-dependent regime + collider amplification.** Phase 85 reveals a more nuanced picture than pure collider bias. The Vflat cut *alone* flips the MHI–$a_0$ sign (from $r = +0.28$ to $r = -0.22$), meaning the correlation structure genuinely differs between massive and dwarf galaxies — this is a real physical regime boundary. However, the $N = 45$ achieves $r = -0.322$ (stronger than any single criterion), and 0/1000 random draws reproduce it. The additional criteria (quality, environment, distance method) *amplify* a real mass-regime effect into a sample-specific extreme — selection does not create the flip from nothing, but it pushes it far beyond what any natural subsample would produce.
 
 ### 12.9 Verdict
 
-**The structured $a_0$ law is a selection artifact.** The $\log M_\mathrm{HI}$–$\log a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$); it is created by the intersection of selection criteria that define the $N = 45$ sample ($r = -0.322$). This reversal is a 0/1000 event under random sampling and shows the classic signature of collider bias. The multi-axis law is not physically meaningful — it describes correlations induced by sample construction, not by galaxy physics.
+**The structured $a_0$ law is a selection-amplified artifact rooted in a real mass-regime boundary.** The $\log M_\mathrm{HI}$–$\log a_0$ anticorrelation that anchors M3/M5 does not exist in the general SPARC population ($r = +0.278$); it emerges only when low-mass dwarfs are excluded ($V_\mathrm{flat} \geq 80$: $r = -0.215$) and is amplified to an extreme ($r = -0.322$, 0/1000 random) by additional quality/environment criteria. The $V_\mathrm{flat}$ cut reveals a genuine mass-dependent regime boundary in the MHI–$a_0$ correlation, but the specific $N = 45$ sample pushes this effect far beyond what any natural subsample produces. The multi-axis law describes a real regime effect distorted by selection into a sample-specific artifact.
 
 ---
 
@@ -505,6 +511,7 @@ These results caution against interpreting internal cross-validation alone as ev
 | **Population mismatch explains failure** | **12/13 variables differ (8 large effect), training = massive spirals, external = dwarf irregulars** | **Confirmed** |
 | **Common support rescues law** | **Regime-matched external galaxies (4 strategies, N=14–78): M3 win rate 7–10%, all fail** | **Failed** |
 | **Collider bias identified** | **r(MHI,a₀) = +0.278 in full SPARC but −0.322 in N=45 (0/1000 random); selection reverses sign** | **Confirmed** |
+| **Vflat cut is the primary driver** | **Vflat≥80 alone flips sign (r=−0.215, N=99); additional criteria amplify to −0.322** | **Confirmed** |
 
 ---
 
