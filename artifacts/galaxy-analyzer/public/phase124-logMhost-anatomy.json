@@ -1,0 +1,212 @@
+{
+  "phase": "124",
+  "title": "Anatomy of logMhost",
+  "q1_proxy": {
+    "correlations": [
+      {
+        "name": "logVflat",
+        "r": 0.232
+      },
+      {
+        "name": "logL36",
+        "r": 0.305
+      },
+      {
+        "name": "logMHI",
+        "r": 0.183
+      },
+      {
+        "name": "logSigma0",
+        "r": 0.322
+      },
+      {
+        "name": "logMeanRun",
+        "r": -0.201
+      },
+      {
+        "name": "envCode",
+        "r": 0.584
+      },
+      {
+        "name": "morphT",
+        "r": -0.364
+      },
+      {
+        "name": "logRdisk",
+        "r": 0.19
+      },
+      {
+        "name": "logDist",
+        "r": 0.15
+      },
+      {
+        "name": "hiDeficiency",
+        "r": 0.135
+      },
+      {
+        "name": "logSBdisk",
+        "r": 0.389
+      },
+      {
+        "name": "rcWiggliness",
+        "r": -0.443
+      },
+      {
+        "name": "logConc(MHI/L36)",
+        "r": -0.302
+      }
+    ],
+    "mhost_alone_gap": 22.8,
+    "is_proxy": false
+  },
+  "q2_form": {
+    "linear_aic": -131.76,
+    "broken_aic": -137.67,
+    "broken_split": 11.5,
+    "quad_aic": -136.68,
+    "quad_coeff": 0.1509,
+    "is_linear": false
+  },
+  "q3_residualization": {
+    "mhost_r2": 0.2798,
+    "residual_sd": 0.2188,
+    "mhi_mr_resid_gap": 25.1,
+    "mhi_mr_independent": true,
+    "competitors": [
+      {
+        "name": "logVflat+logL36",
+        "gap_alone": 36.4,
+        "gap_with_mhost": 45.3
+      },
+      {
+        "name": "logMHI+logMR",
+        "gap_alone": 32.1,
+        "gap_with_mhost": 44.1
+      },
+      {
+        "name": "logVflat+logRdisk",
+        "gap_alone": 15.6,
+        "gap_with_mhost": 44.5
+      }
+    ]
+  },
+  "q4_residuals": {
+    "universal_sd": 0.2579,
+    "mhost_only_sd": 0.2188,
+    "m3_sd": 0.1782,
+    "top_residual_correlations": [
+      {
+        "name": "logSigma0",
+        "r": 0.304
+      },
+      {
+        "name": "logVflat",
+        "r": 0.296
+      },
+      {
+        "name": "logConc(MHI/L36)",
+        "r": -0.22
+      },
+      {
+        "name": "morphT",
+        "r": -0.216
+      },
+      {
+        "name": "hiDeficiency",
+        "r": 0.198
+      }
+    ]
+  },
+  "q5_benefiters": {
+    "n_benefit": 9,
+    "n_total": 45,
+    "top10": [
+      {
+        "name": "NGC4013",
+        "delta": 0.178,
+        "logMhost": 13,
+        "Vflat": 172.9,
+        "envCode": 2
+      },
+      {
+        "name": "NGC4217",
+        "delta": 0.168,
+        "logMhost": 13,
+        "Vflat": 181.3,
+        "envCode": 2
+      },
+      {
+        "name": "NGC2915",
+        "delta": 0.166,
+        "logMhost": 10.665059426450807,
+        "Vflat": 83.5,
+        "envCode": 0
+      },
+      {
+        "name": "NGC4157",
+        "delta": 0.162,
+        "logMhost": 13,
+        "Vflat": 184.7,
+        "envCode": 2
+      },
+      {
+        "name": "UGC05721",
+        "delta": 0.161,
+        "logMhost": 10.604374964188336,
+        "Vflat": 79.7,
+        "envCode": 0
+      },
+      {
+        "name": "NGC1705",
+        "delta": 0.16,
+        "logMhost": 10.470186671148648,
+        "Vflat": 71.9,
+        "envCode": 0
+      },
+      {
+        "name": "NGC3741",
+        "delta": 0.136,
+        "logMhost": 12.5,
+        "Vflat": 50.1,
+        "envCode": 0
+      },
+      {
+        "name": "NGC0024",
+        "delta": 0.095,
+        "logMhost": 10.97959979356989,
+        "Vflat": 106.3,
+        "envCode": 1
+      },
+      {
+        "name": "NGC5907",
+        "delta": 0.094,
+        "logMhost": 11.6,
+        "Vflat": 215,
+        "envCode": 1
+      },
+      {
+        "name": "NGC6674",
+        "delta": 0.049,
+        "logMhost": 11.8,
+        "Vflat": 241.3,
+        "envCode": 0
+      }
+    ]
+  },
+  "q6_sources": [
+    {
+      "source": "UNGC",
+      "n": 6
+    },
+    {
+      "source": "KT2017",
+      "n": 39
+    }
+  ],
+  "synthesis": {
+    "mhost_is_proxy": false,
+    "form_is_linear": false,
+    "mhi_mr_independent_of_mhost": true,
+    "m3_residuals_clean": false
+  }
+}
