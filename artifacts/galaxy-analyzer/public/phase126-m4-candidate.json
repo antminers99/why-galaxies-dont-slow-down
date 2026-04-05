@@ -1,0 +1,101 @@
+{
+  "phase": "126",
+  "title": "M4 Candidate — M3 + logSigma0",
+  "m3": {
+    "formula": "logA0 = 5.1816 + -0.1980*logMHI + -0.1552*logMhost + 0.4591*logMR",
+    "gap": 44.1,
+    "loo_rms": 0.1929,
+    "r2adj": 0.4876,
+    "aic": -148.26,
+    "bic": -141.03,
+    "coefficients": {
+      "intercept": 5.1816,
+      "logMHI": -0.198,
+      "logMhost": -0.1552,
+      "logMR": 0.4591
+    }
+  },
+  "m4": {
+    "formula": "logA0 = 5.0955 + -0.2365*logMHI + -0.1839*logMhost + 0.4653*logMR + 0.1508*logSigma0",
+    "gap": 47.4,
+    "loo_rms": 0.1871,
+    "r2adj": 0.5353,
+    "aic": -151.77,
+    "bic": -142.74,
+    "coefficients": {
+      "intercept": 5.0955,
+      "logMHI": -0.2365,
+      "logMhost": -0.1839,
+      "logMR": 0.4653,
+      "logSigma0": 0.1508
+    }
+  },
+  "comparison": {
+    "delta_gap": 3.3,
+    "delta_aic": 3.52,
+    "delta_bic": 1.71
+  },
+  "bootstrap": {
+    "m4_flip_rates": {
+      "logMHI": 0,
+      "logMhost": 0,
+      "logMR": 0,
+      "logSigma0": 3.2
+    },
+    "all_stable": true
+  },
+  "loo_stability": {
+    "all_signs_consistent": true
+  },
+  "nested_cv": {
+    "gap": 42.7,
+    "m3_selected": 2,
+    "m4_selected": 43,
+    "m4_wins": true
+  },
+  "permutation": {
+    "p": 0.039,
+    "significant": true,
+    "n_perms": 3000
+  },
+  "fourth_axis_ranking": [
+    {
+      "name": "logVflat",
+      "gap": 52.1
+    },
+    {
+      "name": "logSigma0",
+      "gap": 47.4
+    },
+    {
+      "name": "logL36",
+      "gap": 45.6
+    },
+    {
+      "name": "morphT",
+      "gap": 44.7
+    },
+    {
+      "name": "envCode",
+      "gap": 41.6
+    },
+    {
+      "name": "logRdisk",
+      "gap": 40.5
+    },
+    {
+      "name": "rcWig",
+      "gap": 40.5
+    }
+  ],
+  "sigma0_independence": {
+    "r2_explained_by_m3_predictors": 0.1986,
+    "independent_fraction": 80.1,
+    "r_unique_with_logA0": 0.235
+  },
+  "verdict": {
+    "result": "ADOPTED",
+    "strong_criteria": 3,
+    "support_criteria": 4
+  }
+}
