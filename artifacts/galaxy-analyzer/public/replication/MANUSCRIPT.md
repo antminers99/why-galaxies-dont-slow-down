@@ -183,4 +183,4 @@ See `references.md` and `LITERATURE_SUMMARY.md` for the full reference list (22 
 
 ---
 
-*Analysis frozen at Phase 122. All scripts and intermediate results are included in the repository for full reproducibility. DOI: 10.5281/zenodo.19431363 (concept DOI, all versions).*
+*Analysis frozen at Phase 122. All scripts and intermediate results are included in the repository for full reproducibility. DOI: 10.5281/zenodo.19432087 (v5). Concept DOI: 10.5281/zenodo.19431363 (all versions).*

@@ -130,7 +130,7 @@ All analysis uses the publicly available [SPARC database](http://astroweb.cwru.e
 - v2: DOI 10.5281/zenodo.19431186 (phases 1-104)
 - v3: DOI 10.5281/zenodo.19431363 (phases 1-116 + literature)
 - v4: DOI 10.5281/zenodo.19431868 (phases 1-119 + anti-circularity)
-- v5: Pending (phases 1-122, FROZEN)
+- v5: DOI 10.5281/zenodo.19432087 (phases 1-122, FROZEN)
 
 ## License
 
