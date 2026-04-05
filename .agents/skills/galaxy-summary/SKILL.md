@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 95. Phase 95 identified the hidden inner quantity: logInnerVmax absorbs 79.2% of the a₀ residual (r=−0.761 with outerSlope after structural controls — far stronger than a₀ itself). Inner mass discrepancy (DM proxy) absorbs 46.9%. Top 3 combined absorb 76.1%. a₀(inner) is NOT irreducible — it is a COMPOSITE PROXY for halo concentration (inner Vmax) + inner DM contribution. Phase 94 confirmed the residual is genuine (split-half ratio=1.07, p=0.003), info flows outward only. Dual parents Σ₀+Vflat remain confirmed from Phase 93.
+PROGRAM AT PHASE 96. BREAKTHROUGH: a₀ is NOT NEEDED. Direct law (structural + logInnerVmax) achieves LOO R²=0.677 vs a₀-based LOO R²=0.292. Adding a₀ to inner dynamics: ΔLOO = −0.009 (negative!). Key insight: outerSlope ≈ log(Vflat/InnerVmax), where β(logVflat)=+1.81, β(logInnerVmax)=−1.76. This ratio encodes HALO CONCENTRATION directly. a₀ was a noisy proxy for this ratio all along. Phase chain: 93 (dual parents) → 94 (genuine residual) → 95 (innerVmax is carrier) → 96 (a₀ superseded by direct law).

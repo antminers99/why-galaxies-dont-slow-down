@@ -1,0 +1,63 @@
+{
+  "phase": "96",
+  "title": "Direct Dynamical Law Without a₀",
+  "hiN": 95,
+  "models": [
+    {
+      "name": "M1: Structural only",
+      "r2": 0.374,
+      "looR2": 0.275,
+      "nPredictors": 4
+    },
+    {
+      "name": "M2: Structural + a₀",
+      "r2": 0.41,
+      "looR2": 0.292,
+      "nPredictors": 5
+    },
+    {
+      "name": "M3: Structural + innerVmax",
+      "r2": 0.731,
+      "looR2": 0.677,
+      "nPredictors": 5
+    },
+    {
+      "name": "M4: Structural + inner dynamics",
+      "r2": 0.735,
+      "looR2": 0.665,
+      "nPredictors": 7
+    },
+    {
+      "name": "M5: Inner dynamics only",
+      "r2": 0.418,
+      "looR2": 0.354,
+      "nPredictors": 3
+    },
+    {
+      "name": "M6: logInnerVmax only",
+      "r2": 0.402,
+      "looR2": 0.363,
+      "nPredictors": 1
+    },
+    {
+      "name": "M7: logA0_inner only",
+      "r2": 0.015,
+      "looR2": -0.023,
+      "nPredictors": 1
+    }
+  ],
+  "a0_adds_to_inner": false,
+  "a0_improvement": -0.009,
+  "innerVmax_adds_to_a0": 0.39,
+  "bestModel": "M3: Structural + innerVmax",
+  "bestLooR2": 0.677,
+  "m3_coefficients": {
+    "intercept": -0.013,
+    "logSigma0": -0.059,
+    "logVflat": 1.809,
+    "fgas": -0.117,
+    "logMHI": -0.042,
+    "logInnerVmax": -1.755
+  },
+  "m6_equation": "outerSlope = 1.036 + -0.464 * logInnerVmax"
+}
