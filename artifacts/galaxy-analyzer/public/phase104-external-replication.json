@@ -1,0 +1,133 @@
+{
+  "phase": 104,
+  "title": "Locked External Replication: fgas as single predictor",
+  "lockedModel": {
+    "variable": "fgas",
+    "intercept": 0.3515,
+    "slope": 0.7062,
+    "trainingR2": 0.5238,
+    "trainingN": 104
+  },
+  "test1_split7030": {
+    "nSplits": 200,
+    "fgas": {
+      "r": {
+        "mean": 0.723,
+        "ci025": 0.584,
+        "ci975": 0.82
+      },
+      "exR2": {
+        "mean": 0.474,
+        "ci025": 0.108,
+        "ci975": 0.64
+      },
+      "rmse": 0.1525,
+      "calSlope": 1.012,
+      "calOffset": -0.0044
+    },
+    "logSigma0": {
+      "r": {
+        "mean": 0.588,
+        "ci025": 0.373,
+        "ci975": 0.775
+      },
+      "exR2": {
+        "mean": 0.293,
+        "ci025": -0.103,
+        "ci975": 0.546
+      },
+      "rmse": 0.1775,
+      "calSlope": 1.037,
+      "calOffset": -0.0165
+    },
+    "logBaryonCompact": {
+      "r": {
+        "mean": 0.701,
+        "ci025": 0.537,
+        "ci975": 0.818
+      },
+      "exR2": {
+        "mean": 0.437,
+        "ci025": 0.099,
+        "ci975": 0.602
+      },
+      "rmse": 0.1578,
+      "calSlope": 1.011,
+      "calOffset": -0.0012
+    },
+    "logL36": {
+      "r": {
+        "mean": 0.7,
+        "ci025": 0.543,
+        "ci975": 0.82
+      },
+      "exR2": {
+        "mean": 0.434,
+        "ci025": 0.088,
+        "ci975": 0.632
+      },
+      "rmse": 0.1579,
+      "calSlope": 0.996,
+      "calOffset": 0.0058
+    },
+    "fgasWinRate": 54.5
+  },
+  "test2_domainTransfer": {
+    "nLowVflat": 18,
+    "fgas": {
+      "n": 18,
+      "r": 0.283,
+      "rho": 0.255,
+      "exR2": -0.828,
+      "rmse": 0.3168,
+      "calSlope": 0.939,
+      "calOffset": -0.1686
+    },
+    "logSigma0": {
+      "n": 18,
+      "r": -0.089,
+      "rho": -0.082,
+      "exR2": -0.482,
+      "rmse": 0.2853,
+      "calSlope": -0.21,
+      "calOffset": 0.8326
+    },
+    "logBaryonCompact": {
+      "n": 18,
+      "r": 0.248,
+      "rho": 0.387,
+      "exR2": -0.908,
+      "rmse": 0.3237,
+      "calSlope": 0.638,
+      "calOffset": 0.0966
+    },
+    "logL36": {
+      "n": 18,
+      "r": 0.458,
+      "rho": 0.494,
+      "exR2": -0.896,
+      "rmse": 0.3226,
+      "calSlope": 1.123,
+      "calOffset": -0.3584
+    }
+  },
+  "test3_littleThings": {
+    "status": "INCOMPLETE",
+    "reason": "No baryonic decomposition in LITTLE THINGS",
+    "nGalaxies": 20
+  },
+  "test5_competitorKnockout": {
+    "nSplits": 500,
+    "wins": {
+      "fgas": 273,
+      "logSigma0": 0,
+      "logBaryonCompact": 0,
+      "logL36": 0,
+      "lum": null,
+      "compact": null,
+      "sigma0": null
+    },
+    "fgasWinPct": 54.6
+  },
+  "verdict": "MODERATE SUCCESS: fgas shows transferable signal but with some calibration drift"
+}
