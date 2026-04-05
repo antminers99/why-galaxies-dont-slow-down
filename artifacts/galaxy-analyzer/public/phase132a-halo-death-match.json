@@ -1,0 +1,275 @@
+{
+  "phase": "132A",
+  "title": "Halo Driver Death Match",
+  "verdict": "VFRESID_DOMINANT",
+  "vfresid_gap": 61.1,
+  "vflat_gap": 52.1,
+  "core_gap": 44.1,
+  "best_halo_single": {
+    "name": "dhl_mse",
+    "gap": 52.7,
+    "deficit": 8.5,
+    "r_vfresid": 0.226
+  },
+  "best_halo_bundle": {
+    "name": "dhl_mse + logSBeff",
+    "gap": 53.3
+  },
+  "ranked_correlations": [
+    {
+      "name": "haloK_linear",
+      "r": 0.598
+    },
+    {
+      "name": "mond_improve",
+      "r": -0.542
+    },
+    {
+      "name": "mond_mse_ratio",
+      "r": 0.529
+    },
+    {
+      "name": "mgh_k",
+      "r": 0.42
+    },
+    {
+      "name": "logMeanRun",
+      "r": 0.388
+    },
+    {
+      "name": "envCode",
+      "r": -0.384
+    },
+    {
+      "name": "mond_mse",
+      "r": 0.366
+    },
+    {
+      "name": "logVDM2",
+      "r": 0.366
+    },
+    {
+      "name": "newt_mse",
+      "r": 0.336
+    },
+    {
+      "name": "lh_improve",
+      "r": 0.319
+    },
+    {
+      "name": "lh_outerImprove",
+      "r": 0.318
+    },
+    {
+      "name": "logFdm",
+      "r": 0.298
+    },
+    {
+      "name": "logMhost",
+      "r": -0.297
+    },
+    {
+      "name": "concentration",
+      "r": -0.289
+    },
+    {
+      "name": "haloK_log",
+      "r": 0.288
+    },
+    {
+      "name": "dhf_improve",
+      "r": -0.251
+    },
+    {
+      "name": "fDM_flat",
+      "r": 0.229
+    },
+    {
+      "name": "dhl_mse",
+      "r": 0.226
+    },
+    {
+      "name": "logSBeff",
+      "r": 0.219
+    },
+    {
+      "name": "halo_baryon_ratio",
+      "r": -0.218
+    }
+  ],
+  "partial_correlations": [
+    {
+      "name": "haloK_linear",
+      "rRaw": 0.598,
+      "rPartial": 0.628
+    },
+    {
+      "name": "mgh_k",
+      "rRaw": 0.42,
+      "rPartial": 0.501
+    },
+    {
+      "name": "lh_outerImprove",
+      "rRaw": 0.318,
+      "rPartial": 0.438
+    },
+    {
+      "name": "lh_improve",
+      "rRaw": 0.319,
+      "rPartial": 0.428
+    },
+    {
+      "name": "concentration",
+      "rRaw": -0.289,
+      "rPartial": -0.379
+    },
+    {
+      "name": "mond_improve",
+      "rRaw": -0.542,
+      "rPartial": -0.376
+    },
+    {
+      "name": "mond_mse_ratio",
+      "rRaw": 0.529,
+      "rPartial": 0.364
+    },
+    {
+      "name": "mond_mse",
+      "rRaw": 0.366,
+      "rPartial": 0.36
+    },
+    {
+      "name": "newt_mse",
+      "rRaw": 0.336,
+      "rPartial": 0.348
+    },
+    {
+      "name": "logVDM2",
+      "rRaw": 0.366,
+      "rPartial": 0.236
+    },
+    {
+      "name": "haloK_log",
+      "rRaw": 0.288,
+      "rPartial": 0.148
+    },
+    {
+      "name": "logFdm",
+      "rRaw": 0.298,
+      "rPartial": 0.144
+    },
+    {
+      "name": "logMhost",
+      "rRaw": -0.297,
+      "rPartial": -0.049
+    },
+    {
+      "name": "envCode",
+      "rRaw": -0.384,
+      "rPartial": -0.002
+    },
+    {
+      "name": "logMeanRun",
+      "rRaw": 0.388,
+      "rPartial": 0
+    }
+  ],
+  "candidate_results": [
+    {
+      "name": "dhl_mse",
+      "gap": 52.7,
+      "nested": "23/45",
+      "flip": 0.8
+    },
+    {
+      "name": "logSBeff",
+      "gap": 51.6,
+      "nested": "23/45",
+      "flip": 0.8
+    },
+    {
+      "name": "haloK_linear",
+      "gap": 49.1,
+      "nested": "25/45",
+      "flip": 0.4
+    },
+    {
+      "name": "newt_mse",
+      "gap": 46.6,
+      "nested": "20/45",
+      "flip": 1.4
+    },
+    {
+      "name": "mond_mse",
+      "gap": 46.3,
+      "nested": "21/45",
+      "flip": 1.4
+    },
+    {
+      "name": "dhf_improve",
+      "gap": 45.7,
+      "nested": "27/45",
+      "flip": 0.6
+    },
+    {
+      "name": "mond_improve",
+      "gap": 44.4,
+      "nested": "25/45",
+      "flip": 4
+    },
+    {
+      "name": "mond_mse_ratio",
+      "gap": 44.3,
+      "nested": "26/45",
+      "flip": 5.2
+    },
+    {
+      "name": "mgh_k",
+      "gap": 42.3,
+      "nested": "20/45",
+      "flip": 31.6
+    },
+    {
+      "name": "logMeanRun",
+      "gap": null,
+      "nested": "0/45",
+      "flip": 100
+    },
+    {
+      "name": "concentration",
+      "gap": 43.6,
+      "nested": "22/45",
+      "flip": 8.6
+    },
+    {
+      "name": "lh_improve",
+      "gap": 42.2,
+      "nested": "25/45",
+      "flip": 23.6
+    },
+    {
+      "name": "lh_outerImprove",
+      "gap": 41.8,
+      "nested": "27/45",
+      "flip": 9.8
+    },
+    {
+      "name": "envCode",
+      "gap": 41.6,
+      "nested": "17/45",
+      "flip": 35.2
+    },
+    {
+      "name": "haloK_log",
+      "gap": 41.5,
+      "nested": "25/45",
+      "flip": 35
+    }
+  ],
+  "asymmetry": {
+    "vfresid_survives_after_best": true,
+    "best_survives_after_vfresid": false,
+    "vfresid_remaining_pct": 94.9,
+    "best_remaining_pct": 94.9
+  }
+}

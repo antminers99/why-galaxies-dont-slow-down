@@ -1,0 +1,255 @@
+{
+  "phase": "132C",
+  "title": "External Validation / Source-Robustness Test",
+  "verdict": "MOSTLY_ROBUST",
+  "fullSample": {
+    "label": "Full N=45",
+    "n": 45,
+    "sdY": 0.2579,
+    "coreGap": 44.1,
+    "vflatGap": 52.1,
+    "vfResidGap": 61.1,
+    "vfResidDelta": 17.1,
+    "rVfResidA0": 0.702,
+    "coreSigns": "--+",
+    "vflatSign": "+"
+  },
+  "leaveSourceOut": [],
+  "qualitySplits": [
+    {
+      "label": "High-Q (Q<=2, inc>=30)",
+      "n": 43,
+      "sdY": 0.2491,
+      "coreGap": 35.8,
+      "vflatGap": 45.6,
+      "vfResidGap": 55.9,
+      "vfResidDelta": 20,
+      "rVfResidA0": 0.729,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Many points (top half)",
+      "n": 22,
+      "sdY": 0.2469,
+      "coreGap": 53.4,
+      "vflatGap": 55,
+      "vfResidGap": 64.4,
+      "vfResidDelta": 11,
+      "rVfResidA0": 0.762,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Few points (bottom half)",
+      "n": 22,
+      "sdY": 0.2468,
+      "coreGap": 27,
+      "vflatGap": 32.5,
+      "vfResidGap": 35.7,
+      "vfResidDelta": 8.7,
+      "rVfResidA0": 0.499,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Low eVflat (top half)",
+      "n": 22,
+      "sdY": 0.243,
+      "coreGap": 17.1,
+      "vflatGap": 33.9,
+      "vfResidGap": 44.4,
+      "vfResidDelta": 27.3,
+      "rVfResidA0": 0.785,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "High eVflat (bottom half)",
+      "n": 22,
+      "sdY": 0.2799,
+      "coreGap": 52.2,
+      "vflatGap": 53.6,
+      "vfResidGap": 53.3,
+      "vfResidDelta": 1.1,
+      "rVfResidA0": 0.509,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    }
+  ],
+  "domainSplits": [
+    {
+      "label": "High Vflat",
+      "n": 23,
+      "sdY": 0.2399,
+      "coreGap": 39,
+      "vflatGap": 40.5,
+      "vfResidGap": 66.5,
+      "vfResidDelta": 27.6,
+      "rVfResidA0": 0.798,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Low Vflat",
+      "n": 22,
+      "sdY": 0.2811,
+      "coreGap": 51,
+      "vflatGap": 54.7,
+      "vfResidGap": 52.8,
+      "vfResidDelta": 1.7,
+      "rVfResidA0": 0.365,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "High Mbar",
+      "n": 23,
+      "sdY": 0.2486,
+      "coreGap": 36.5,
+      "vflatGap": 48.9,
+      "vfResidGap": 60.8,
+      "vfResidDelta": 24.3,
+      "rVfResidA0": 0.781,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Low Mbar",
+      "n": 22,
+      "sdY": 0.2614,
+      "coreGap": 36.5,
+      "vflatGap": 49.9,
+      "vfResidGap": 41.7,
+      "vfResidDelta": 5.2,
+      "rVfResidA0": 0.499,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "High MHI",
+      "n": 23,
+      "sdY": 0.2525,
+      "coreGap": 20.8,
+      "vflatGap": 51.2,
+      "vfResidGap": 51.5,
+      "vfResidDelta": 30.7,
+      "rVfResidA0": 0.779,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Low MHI",
+      "n": 22,
+      "sdY": 0.2534,
+      "coreGap": 43.8,
+      "vflatGap": 46.2,
+      "vfResidGap": 45,
+      "vfResidDelta": 1.2,
+      "rVfResidA0": 0.514,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Early type (T<=4)",
+      "n": 28,
+      "sdY": 0.2336,
+      "coreGap": 29.8,
+      "vflatGap": 33.7,
+      "vfResidGap": 44.6,
+      "vfResidDelta": 14.8,
+      "rVfResidA0": 0.71,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Late type (T>4)",
+      "n": 17,
+      "sdY": 0.2858,
+      "coreGap": 35.6,
+      "vflatGap": 55,
+      "vfResidGap": 41.9,
+      "vfResidDelta": 6.3,
+      "rVfResidA0": 0.472,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    },
+    {
+      "label": "Group (env<3)",
+      "n": 45,
+      "sdY": 0.2579,
+      "coreGap": 44.1,
+      "vflatGap": 52.1,
+      "vfResidGap": 61.1,
+      "vfResidDelta": 17.1,
+      "rVfResidA0": 0.702,
+      "coreSigns": "--+",
+      "vflatSign": "+"
+    }
+  ],
+  "bootstrap": {
+    "nBoot": 1000,
+    "p5": 5.6,
+    "p25": 11.5,
+    "p50": 16.2,
+    "p75": 23.6,
+    "p95": 35.3,
+    "pDeltaGt0": 99.9,
+    "signStability": 0.1
+  },
+  "transferTests": [
+    {
+      "label": "Train: low-Vflat → Test: high-Vflat",
+      "n_train": 22,
+      "n_test": 23,
+      "coreGap": 20.5,
+      "vfResidGap": 44.7,
+      "delta": 24.2
+    },
+    {
+      "label": "Train: high-Vflat → Test: low-Vflat",
+      "n_train": 23,
+      "n_test": 22,
+      "coreGap": 9.6,
+      "vfResidGap": -56.1,
+      "delta": -65.7
+    },
+    {
+      "label": "Train: low-Mbar → Test: high-Mbar",
+      "n_train": 22,
+      "n_test": 23,
+      "coreGap": 42.4,
+      "vfResidGap": 57.8,
+      "delta": 15.3
+    },
+    {
+      "label": "Train: high-Mbar → Test: low-Mbar",
+      "n_train": 23,
+      "n_test": 22,
+      "coreGap": 30.4,
+      "vfResidGap": -269.9,
+      "delta": -300.3
+    },
+    {
+      "label": "Train: odd-index → Test: even-index",
+      "n_train": 22,
+      "n_test": 23,
+      "coreGap": 35.7,
+      "vfResidGap": 35.3,
+      "delta": -0.4
+    },
+    {
+      "label": "Train: even-index → Test: odd-index",
+      "n_train": 23,
+      "n_test": 22,
+      "coreGap": 20.4,
+      "vfResidGap": 38.6,
+      "delta": 18.2
+    }
+  ],
+  "stability": {
+    "deltaPositivePct": 100,
+    "coreSignStablePct": 100,
+    "transferPositive": "3/6"
+  }
+}

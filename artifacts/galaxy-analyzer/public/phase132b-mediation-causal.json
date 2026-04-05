@@ -1,0 +1,122 @@
+{
+  "phase": "132B",
+  "title": "Mediation / Causal Ordering Test",
+  "verdict": "VFRESID_DOMINANT_CHANNEL",
+  "mediationTally": {
+    "fullMed": 5,
+    "partMed": 2,
+    "mutual": 1,
+    "indep": 4,
+    "total": 12
+  },
+  "mediationResults": [
+    {
+      "name": "haloK_linear",
+      "gapA": 49.1,
+      "gapB": 61.1,
+      "gapC": 56.3,
+      "absorbPctA": 100,
+      "absorbPctB": 58.2,
+      "verdict": "MUTUAL_PARTIAL"
+    },
+    {
+      "name": "dhl_mse",
+      "gapA": 52.7,
+      "gapB": 61.1,
+      "gapC": 63.3,
+      "absorbPctA": 75.4,
+      "absorbPctB": 38,
+      "verdict": "PARTIAL_MED"
+    },
+    {
+      "name": "mond_improve",
+      "gapA": 44.4,
+      "gapB": 61.1,
+      "gapC": 59.3,
+      "absorbPctA": 100,
+      "absorbPctB": 12.8,
+      "verdict": "FULL_MEDIATION"
+    },
+    {
+      "name": "mond_mse_ratio",
+      "gapA": 44.3,
+      "gapB": 61.1,
+      "gapC": 59.4,
+      "absorbPctA": 100,
+      "absorbPctB": 11.6,
+      "verdict": "FULL_MEDIATION"
+    },
+    {
+      "name": "mgh_k",
+      "gapA": 42.3,
+      "gapB": 61.1,
+      "gapC": 60.9,
+      "absorbPctA": 0,
+      "absorbPctB": -8.5,
+      "verdict": "INDEPENDENT"
+    },
+    {
+      "name": "lh_outerImprove",
+      "gapA": 41.8,
+      "gapB": 61.1,
+      "gapC": 65.4,
+      "absorbPctA": 0,
+      "absorbPctB": -38.3,
+      "verdict": "INDEPENDENT"
+    },
+    {
+      "name": "lh_improve",
+      "gapA": 42.2,
+      "gapB": 61.1,
+      "gapC": 64.4,
+      "absorbPctA": 0,
+      "absorbPctB": -29.9,
+      "verdict": "INDEPENDENT"
+    },
+    {
+      "name": "mond_mse",
+      "gapA": 46.3,
+      "gapB": 61.1,
+      "gapC": 59.2,
+      "absorbPctA": 100,
+      "absorbPctB": 24.6,
+      "verdict": "FULL_MEDIATION"
+    },
+    {
+      "name": "newt_mse",
+      "gapA": 46.6,
+      "gapB": 61.1,
+      "gapC": 59.2,
+      "absorbPctA": 100,
+      "absorbPctB": 25.7,
+      "verdict": "FULL_MEDIATION"
+    },
+    {
+      "name": "dhf_improve",
+      "gapA": 45.7,
+      "gapB": 61.1,
+      "gapC": 59.1,
+      "absorbPctA": 100,
+      "absorbPctB": 21.9,
+      "verdict": "FULL_MEDIATION"
+    },
+    {
+      "name": "logSBeff",
+      "gapA": 51.6,
+      "gapB": 61.1,
+      "gapC": 60.3,
+      "absorbPctA": 100,
+      "absorbPctB": 49.3,
+      "verdict": "PARTIAL_MED"
+    },
+    {
+      "name": "concentration",
+      "gapA": 43.6,
+      "gapB": 61.1,
+      "gapC": 60.6,
+      "absorbPctA": 0,
+      "absorbPctB": 0.6,
+      "verdict": "INDEPENDENT"
+    }
+  ]
+}
