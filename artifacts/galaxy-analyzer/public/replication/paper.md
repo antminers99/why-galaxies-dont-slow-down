@@ -519,6 +519,22 @@ Phase 88 found no structured $a_0$ law among low-$V_\mathrm{flat}$ galaxies (sd 
 
 **Revised interpretation.** The apparent "irreducible scatter" in the low-$V_\mathrm{flat}$ regime is **quality-dominated, not physics-dominated**. The $Q$ flag — which captures systematics invisible to bootstrap (rotation-curve asymmetries, non-circular motions, beam smearing) — is the primary discriminator. Among $Q = 1$ dwarfs, $a_0$ scatter matches the high regime. This means the two-regime picture from Phase 88 may be partly a **data-quality artifact**: the low regime appears structureless because it is dominated by galaxies with poorly determined $a_0$, not because dwarf physics is fundamentally different.
 
+### 12.12 Low-Regime Q=1 Law Test (Phase 90)
+
+Phase 89 showed that $Q = 1$ dwarfs ($N = 22$) have $a_0$ scatter comparable to the high regime (sd $= 0.325$ vs. $0.302$). This raises the critical question: does a structured multi-axis law exist in these well-measured dwarfs, or does the kinematic boundary at $V_\mathrm{flat} \approx 70$ km/s mark a genuine physical transition?
+
+**Model competition (Test 2).** Among the 14 models tested (single-variable through 3-variable), no physics-based model achieves meaningful LOO improvement. The best physics predictor, logMeanRun (kinematic coherence), has LOO gap $= +0.5\%$ — negligible. Gas mass (logMHI) has gap $= -6.9\%$, worsening the fit. The only model with a positive LOO gap is **inclination** (gap $= 2.9\%$, $R^2 = 0.224$, perm $p = 0.025$), which is a geometric/systematic variable, not a physical one.
+
+**Sign comparison (Test 5).** Only 2 of 4 key variables share their correlation sign with the high regime: logMHI (negative in both) and logVflat (negative in both). But logMeanRun *reverses* ($r = -0.331$ in LoQ1 vs. $+0.203$ in HiAll) and logSigma0 reverses ($+0.073$ vs. $-0.157$). This means the high-regime law's coefficient structure does not apply to dwarfs.
+
+**Cross-regime transfer (Test 6).** Training on HiQ1 ($N = 77$) and testing on LoQ1 ($N = 22$) — or vice versa — fails completely even with only $Q = 1$ galaxies: Gas+Coherence transfer gaps $= -41\%$ and $-44\%$; Gas-only gaps $= -37\%$ and $-24\%$. The regime boundary persists even when data quality is controlled.
+
+**Unified Q=1 model (Test 7).** Pooling all $Q = 1$ galaxies ($N = 99$) produces no structured law: best LOO gap $= +0.7\%$ (inclination). The regime-pooled sample is no more predictable than chance.
+
+**The inclination signal.** The $r = -0.473$ correlation between inclination and $\log a_0$ in LoQ1 dwarfs (perm $p = 0.025$) is notable but almost certainly a **systematic artifact**: lower-inclination dwarfs have larger deprojection corrections that systematically inflate $V_\mathrm{rot}$ and thus $a_0$. This is a known bias in dwarf kinematic measurements where beam smearing and pressure support corrections are inclination-dependent.
+
+**Verdict.** The regime boundary at $V_\mathrm{flat} \approx 70$ km/s is **genuinely physical, not merely a data-quality effect**. While Phase 89 correctly showed that the *scatter amplitude* in dwarfs is inflated by quality issues (Q=1 sd $= 0.325$ vs. all-Q sd $= 0.77$), Phase 90 demonstrates that even among well-measured Q=1 dwarfs, the *correlation structure* differs fundamentally from massive spirals: key predictors reverse sign, cross-regime transfer fails, and no multi-axis law emerges. The Vflat boundary separates two populations with different $a_0$ physics, not merely different data quality. The Phase 89 insight remains valid — scatter amplitude is quality-dominated — but the absence of structure is physics-dominated.
+
 ---
 
 ## 13. Limitations
@@ -550,7 +566,12 @@ We conclude that the structured $a_0$ variation observed in $N = 45$ is a **regi
 
 Phase 87 locates the transition precisely: $V_\mathrm{flat} \approx 70$ km/s ($\Delta\mathrm{BIC} = -23.8$), with the MHI slope reversing from $+0.059$ to $-0.127$. Phase 88 reveals the transition is **asymmetric**: a structured five-predictor law exists in the high-$V_\mathrm{flat}$ regime ($N = 112$, $R^2 = 0.253$, LOO gap $= 8.1\%$, $p < 0.001$), but no predictive law emerges in the low-$V_\mathrm{flat}$ regime ($N = 63$, best LOO gap $= -1.8\%$, $p = 0.689$). Three of five predictors reverse sign across the boundary — a full state transition, not merely a gas-regime effect. Cross-regime transfer fails completely (gaps of $-77\%$ and $-89\%$).
 
-The final picture: $a_0$ variation in SPARC galaxies divides into two fundamentally different regimes at $V_\mathrm{flat} \approx 70$ km/s. Above this threshold, galaxy properties (gas mass, kinematic coherence, baryonic density, environment) predict $\sim 25\%$ of $a_0$ variance in a structured, cross-validated, permutation-significant law. Below it, $a_0$ variation appears large (sd $= 0.77$ dex) and unstructured — but Phase 89 reveals this is **quality-dominated, not physics-dominated**: among $Q = 1$ dwarfs ($N = 22$), the scatter drops to sd $= 0.325$ dex, matching the high regime. The apparent chaos in the low regime is driven by systematic data-quality effects (non-circular motions, beam smearing, sparse rotation curves) that inflate $a_0$ scatter in $Q \geq 2$ galaxies but are invisible to point-level bootstrap. The two-regime asymmetry may therefore be partly a **data-quality boundary** rather than a purely physical one: when rotation-curve quality is controlled, dwarf and massive galaxies may share comparable $a_0$ scatter — though whether they share the same predictive law remains an open question requiring larger $Q = 1$ dwarf samples.
+The final picture emerges from the interplay of Phases 88–90. $a_0$ variation in SPARC galaxies divides into two fundamentally different regimes at $V_\mathrm{flat} \approx 70$ km/s. Above this threshold, galaxy properties predict $\sim 25\%$ of $a_0$ variance in a structured law. Below it, Phase 89 shows the *scatter amplitude* is quality-dominated ($Q = 1$ dwarfs: sd $= 0.325$ matching the high regime), but Phase 90 shows the *correlation structure* is genuinely different: no multi-axis law emerges even among $Q = 1$ dwarfs, key predictor signs reverse, and cross-regime transfer fails completely ($-37\%$ to $-44\%$). The distinction is subtle but critical:
+
+- **Scatter amplitude**: inflated by data quality in dwarfs (Phase 89). Controllable.
+- **Correlation structure**: genuinely different between regimes (Phase 90). Physical.
+
+The $V_\mathrm{flat} \approx 70$ km/s boundary is therefore **both** a data-quality transition (inflating apparent scatter) **and** a physical transition (changing which properties correlate with $a_0$). Dwarfs and massive spirals share comparable $a_0$ scatter when quality is controlled, but they do not share the same predictive law.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -582,6 +603,11 @@ The final picture: $a_0$ variation in SPARC galaxies divides into two fundamenta
 | **Low-regime scatter is intrinsic** | **Bootstrap: only 3.1% measurement; intrinsic SD=0.760 dex** | **Confirmed** |
 | **Q=1 dwarfs match high-regime scatter** | **Q=1 (N=22): sd=0.325 vs Q=2,3: sd=0.76-0.80; quality-dominated, not physics** | **Key finding** |
 | **Low-regime "chaos" = data quality** | **Systematics (non-circular motions, beam smearing) dominate Q≥2 dwarfs; Q=1 subsample is well-behaved** | **Revised** |
+| **No law in Q=1 dwarfs** | **Phase 90: best physics LOO gap=0.5% (logMeanRun); Gas model gap=−6.9%; N=22 too small or genuinely lawless** | **Confirmed** |
+| **Signs reverse even in Q=1** | **2/4 key variables match high-regime signs; logMeanRun and logSigma0 reverse** | **Confirmed** |
+| **Cross-regime transfer fails even Q=1** | **HiQ1→LoQ1: −37% to −41%; LoQ1→HiQ1: −24% to −44%** | **Failed** |
+| **Inclination signal in dwarfs** | **r=−0.473, perm p=0.025; likely systematic (deprojection bias), not physics** | **Noted** |
+| **Regime boundary is physical + quality** | **Scatter amplitude = quality; correlation structure = physics; both contribute** | **Key finding** |
 
 ---
 

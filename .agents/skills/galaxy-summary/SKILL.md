@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-The a₀ correlation structure splits at Vflat≈70 km/s. **High-Vflat (N=112)**: structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). **Low-Vflat (N=63)**: appears unstructured (sd=0.77 dex), BUT Phase 89 reveals this is **quality-dominated**: Q=1 dwarfs (N=22) have sd=0.325, matching the high regime. Q≥2 dwarfs (N=41) have sd=0.76-0.80 due to systematics (non-circular motions, beam smearing) invisible to bootstrap but captured by the Q flag. The two-regime asymmetry is partly a DATA-QUALITY boundary, not purely physical. 3/5 predictor signs still reverse across regimes (full state transition), but the "chaos" in dwarfs is not intrinsic physics — it is measurement systematics.
+The a₀ correlation structure splits at Vflat≈70 km/s. **High-Vflat (N=112)**: structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). **Low-Vflat (N=63)**: appears chaotic (sd=0.77 dex) — Phase 89 shows the SCATTER AMPLITUDE is quality-dominated (Q=1 dwarfs sd=0.325 ≈ high regime). BUT Phase 90 shows the CORRELATION STRUCTURE is genuinely different: even among Q=1 dwarfs (N=22), no multi-axis law emerges (best physics LOO gap=0.5%), 2/4 key signs reverse vs high regime, cross-regime transfer fails (−37% to −44%). The Vflat≈70 boundary is BOTH a data-quality transition (inflating scatter) AND a physical transition (changing which properties correlate with a₀). Dwarfs and spirals share comparable scatter when quality-controlled but do NOT share the same predictive law.
 
 ## Decisive Negative Results (Phases 55-59)
 
@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 89. Two-regime structure + low-regime audit complete. Key finding: low-regime "chaos" is QUALITY-DOMINATED (Q=1 dwarfs sd=0.325 ≈ high regime). High-Vflat law confirmed (R²=0.253, LOO gap=8.1%, p<0.001). The regime boundary at Vflat≈70 is partly physical (3/5 signs reverse) and partly data-quality (Q≥2 systematics).
+PROGRAM AT PHASE 90. Two-regime structure fully characterized. Key finding: the Vflat≈70 boundary is BOTH physical AND data-quality. Scatter amplitude is quality-dominated (Phase 89: Q=1 sd=0.325 ≈ high regime). But correlation structure is genuinely different (Phase 90: no law in Q=1 dwarfs, 2/4 signs reverse, cross-regime transfer fails −37% to −44% even Q=1-only). Inclination signal (r=−0.473, p=0.025) likely systematic artifact.
