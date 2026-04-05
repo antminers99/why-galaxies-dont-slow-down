@@ -1,0 +1,89 @@
+{
+  "phase": "132",
+  "title": "Is VfResid Reducible to Halo Coupling Observables?",
+  "verdict": "PARTIALLY_REDUCIBLE",
+  "vfresid_gap": 61.1,
+  "vfresid_fold_internal_gap": 53.4,
+  "core_gap": 44.1,
+  "best_bundle_gap": 44.4,
+  "deficit_vs_best_bundle": 16.7,
+  "fold_internal_delta_vs_core": 9.4,
+  "partial_correlations": {
+    "raw (no control)": {
+      "haloK": 0.598,
+      "mondImprove": -0.542,
+      "envCode": -0.384,
+      "logMeanRun": 0.388,
+      "concentration": -0.289,
+      "logSBeff": 0.219
+    },
+    "control: Core (MHI+Mhost+MR)": {
+      "haloK": 0.635,
+      "mondImprove": -0.47,
+      "envCode": -0.159,
+      "logMeanRun": 0,
+      "concentration": -0.415,
+      "logSBeff": 0.486
+    },
+    "control: Structure (Mbar+L36+Rdisk+T)": {
+      "haloK": 0.752,
+      "mondImprove": -0.584,
+      "envCode": -0.406,
+      "logMeanRun": 0.399,
+      "concentration": -0.361,
+      "logSBeff": 0.356
+    },
+    "control: envCode": {
+      "haloK": 0.654,
+      "mondImprove": -0.517,
+      "envCode": 0,
+      "logMeanRun": 0.284,
+      "concentration": -0.236,
+      "logSBeff": 0.291
+    },
+    "control: logMeanRun": {
+      "haloK": 0.605,
+      "mondImprove": -0.484,
+      "envCode": -0.277,
+      "logMeanRun": 0,
+      "concentration": -0.388,
+      "logSBeff": 0.293
+    },
+    "control: Core+Structure (all 7)": {
+      "haloK": 0.628,
+      "mondImprove": -0.376,
+      "envCode": -0.002,
+      "logMeanRun": 0,
+      "concentration": -0.379,
+      "logSBeff": 0.377
+    }
+  },
+  "replacement_models": {
+    "Core only (baseline)": 44.1,
+    "Core + VfResid": 61.1,
+    "Core + Vflat (Model C)": 52.1,
+    "Core + haloK": 49.1,
+    "Core + mondImprove": 44.4,
+    "Core + haloK + envCode": 47.3,
+    "Core + haloK + mondImprove": 49.5,
+    "Core + haloK + env + mondI": 48.4,
+    "Core + haloK + conc + SBeff": 48.2,
+    "Core + Sig0 (M4)": 47.4,
+    "Core + Sig0 + VfResid": 63.6,
+    "Core + logSBeff": 51.6
+  },
+  "bundle_r2_for_vfresid": {
+    "haloK alone": 0.358,
+    "haloK + envCode": 0.512,
+    "haloK + mondImprove": 0.361,
+    "haloK + envCode + mondImprove": 0.524,
+    "haloK + env + mondI + conc": 0.539,
+    "haloK + env + mondI + conc + SBeff": 0.594,
+    "all 6 probes + Vmax/Vf + rcWig": 0.607
+  },
+  "vfresid_after_bundle_removal": {
+    "fraction_remaining_pct": 40.6,
+    "r_with_logA0": 0.484,
+    "gap_with_core": 52.6
+  }
+}
