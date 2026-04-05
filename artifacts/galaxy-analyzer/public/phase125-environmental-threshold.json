@@ -1,0 +1,229 @@
+{
+  "phase": "125",
+  "title": "Environmental Threshold Law",
+  "threshold": 11.5,
+  "optimal_threshold": 12.3,
+  "models": {
+    "A": {
+      "name": "M3-linear (MHI + Mhost + MR)",
+      "gap": 44.1,
+      "loo_rms": 0.1929,
+      "r2adj": 0.4876,
+      "aic": -148.26,
+      "bic": -141.03,
+      "resid_sd": 0.1782,
+      "coefficients": {
+        "intercept": 5.1816,
+        "logMHI": -0.198,
+        "logMhost": -0.1552,
+        "logMR": 0.4591
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0,
+        "logMhost": 0.1,
+        "logMR": 0.1
+      }
+    },
+    "B": {
+      "name": "M3-broken (MHI + Mhost_low + Mhost_high + MR)",
+      "gap": 43.1,
+      "loo_rms": 0.1944,
+      "r2adj": 0.4983,
+      "aic": -148.32,
+      "bic": -139.28,
+      "resid_sd": 0.1742,
+      "coefficients": {
+        "intercept": 7.4068,
+        "logMHI": -0.1472,
+        "Mhost_low": -0.3531,
+        "Mhost_high": -0.0996,
+        "logMR": 0.4327
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0.9,
+        "Mhost_low": 2.5,
+        "Mhost_high": 4.4,
+        "logMR": 0.2
+      }
+    },
+    "C": {
+      "name": "M3-step (MHI + I(Mhost>=11.5) + MR)",
+      "gap": 41.9,
+      "loo_rms": 0.1966,
+      "r2adj": 0.4666,
+      "aic": -146.45,
+      "bic": -139.22,
+      "resid_sd": 0.1818,
+      "coefficients": {
+        "intercept": 3.5832,
+        "logMHI": -0.1489,
+        "I(Mhost>=11.5)": -0.306,
+        "logMR": 0.4492
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0.9,
+        "I(Mhost>=11.5)": 0.5,
+        "logMR": 0.3
+      }
+    },
+    "D": {
+      "name": "M3-hybrid (MHI + I(Mhost>=11.5) + slope_above + MR)",
+      "gap": 41.1,
+      "loo_rms": 0.1979,
+      "r2adj": 0.486,
+      "aic": -147.23,
+      "bic": -138.19,
+      "resid_sd": 0.1763,
+      "coefficients": {
+        "intercept": 3.5945,
+        "logMHI": -0.1694,
+        "I(Mhost>=11.5)": -0.2339,
+        "slope_above": -0.1018,
+        "logMR": 0.4326
+      },
+      "bootstrap_flip_rates": {
+        "logMHI": 0.9,
+        "I(Mhost>=11.5)": 3.2,
+        "slope_above": 4.5,
+        "logMR": 0.4
+      }
+    }
+  },
+  "threshold_scan": [
+    {
+      "threshold": 12.3,
+      "gap": 44.7,
+      "aic": -148.45,
+      "n_below": 34,
+      "n_above": 11
+    },
+    {
+      "threshold": 12.4,
+      "gap": 44.5,
+      "aic": -148.27,
+      "n_below": 36,
+      "n_above": 9
+    },
+    {
+      "threshold": 12.5,
+      "gap": 44.3,
+      "aic": -147.99,
+      "n_below": 36,
+      "n_above": 9
+    },
+    {
+      "threshold": 12.2,
+      "gap": 43.9,
+      "aic": -147.82,
+      "n_below": 33,
+      "n_above": 12
+    },
+    {
+      "threshold": 12.6,
+      "gap": 43.8,
+      "aic": -147.69,
+      "n_below": 38,
+      "n_above": 7
+    },
+    {
+      "threshold": 11.5,
+      "gap": 43.1,
+      "aic": -148.32,
+      "n_below": 5,
+      "n_above": 40
+    },
+    {
+      "threshold": 12.1,
+      "gap": 43.1,
+      "aic": -147.07,
+      "n_below": 31,
+      "n_above": 14
+    },
+    {
+      "threshold": 12.7,
+      "gap": 43,
+      "aic": -147.23,
+      "n_below": 38,
+      "n_above": 7
+    },
+    {
+      "threshold": 12,
+      "gap": 42.4,
+      "aic": -146.56,
+      "n_below": 26,
+      "n_above": 19
+    },
+    {
+      "threshold": 11.6,
+      "gap": 42.1,
+      "aic": -147.27,
+      "n_below": 9,
+      "n_above": 36
+    },
+    {
+      "threshold": 11.9,
+      "gap": 41.9,
+      "aic": -146.4,
+      "n_below": 22,
+      "n_above": 23
+    },
+    {
+      "threshold": 11.8,
+      "gap": 41.6,
+      "aic": -146.45,
+      "n_below": 17,
+      "n_above": 28
+    },
+    {
+      "threshold": 12.9,
+      "gap": 41.6,
+      "aic": -146.56,
+      "n_below": 40,
+      "n_above": 5
+    },
+    {
+      "threshold": 12.8,
+      "gap": 41.6,
+      "aic": -146.56,
+      "n_below": 38,
+      "n_above": 7
+    },
+    {
+      "threshold": 11.7,
+      "gap": 41.4,
+      "aic": -146.6,
+      "n_below": 13,
+      "n_above": 32
+    }
+  ],
+  "sigma0_test": {
+    "r_A": 0.304,
+    "r_B": 0.259,
+    "r_D": 0.268,
+    "r_best": 0.304,
+    "absorbed": false,
+    "still_present": true
+  },
+  "source_sensitivity": {
+    "kt2017_n": 39,
+    "non_kt_n": 6,
+    "b_beats_a_pct": 0,
+    "robust": false
+  },
+  "nested_cv": {
+    "gap": 36.7,
+    "selection": {
+      "A": 38,
+      "B": 6,
+      "C": 1,
+      "D": 0
+    },
+    "survives": true
+  },
+  "synthesis": {
+    "threshold_helps": false,
+    "sigma0_independent": true,
+    "source_robust": false,
+    "recommended_next": "Threshold does not help. Phase 126: M4 candidate with linear Mhost + Sigma0."
+  }
+}
