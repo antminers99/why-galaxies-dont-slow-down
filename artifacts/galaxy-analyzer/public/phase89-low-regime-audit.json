@@ -1,0 +1,145 @@
+{
+  "phase": "89",
+  "title": "Low-Regime Audit — Chaos or Noise?",
+  "nLo": 63,
+  "nHi": 112,
+  "dataQuality": {
+    "lo": {
+      "nPts": {
+        "mean": 11.857,
+        "sd": 8.662,
+        "median": 9
+      },
+      "logGbarRange": {
+        "mean": 0.511,
+        "sd": 0.329,
+        "median": 0.453
+      },
+      "logGobsRange": {
+        "mean": 0.506,
+        "sd": 0.344,
+        "median": 0.37
+      },
+      "medFracErr": {
+        "mean": 0.1,
+        "sd": 0.059,
+        "median": 0.092
+      },
+      "maxRad": {
+        "mean": 7.5,
+        "sd": 6.093,
+        "median": 5.82
+      },
+      "fitRMS": {
+        "mean": 0.13,
+        "sd": 0.089,
+        "median": 0.107
+      },
+      "D": {
+        "mean": 19.353,
+        "sd": 25.266,
+        "median": 8
+      },
+      "inc": {
+        "mean": 53.54,
+        "sd": 18.262,
+        "median": 58
+      },
+      "Q": {
+        "mean": 1.81,
+        "sd": 0.692,
+        "median": 2
+      },
+      "logA0_sd": 0.772
+    },
+    "hi": {
+      "nPts": {
+        "mean": 23.607,
+        "sd": 17.624,
+        "median": 18
+      },
+      "logGbarRange": {
+        "mean": 1.187,
+        "sd": 0.744,
+        "median": 1.048
+      },
+      "logGobsRange": {
+        "mean": 0.888,
+        "sd": 0.569,
+        "median": 0.765
+      },
+      "medFracErr": {
+        "mean": 0.047,
+        "sd": 0.03,
+        "median": 0.041
+      },
+      "maxRad": {
+        "mean": 24.971,
+        "sd": 19.72,
+        "median": 17.74
+      },
+      "fitRMS": {
+        "mean": 0.099,
+        "sd": 0.062,
+        "median": 0.079
+      },
+      "D": {
+        "mean": 28.323,
+        "sd": 27.164,
+        "median": 18
+      },
+      "inc": {
+        "mean": 62.241,
+        "sd": 18.352,
+        "median": 64
+      },
+      "Q": {
+        "mean": 1.33,
+        "sd": 0.509,
+        "median": 1
+      },
+      "logA0_sd": 0.302
+    }
+  },
+  "bootstrap": {
+    "lo": {
+      "N": 59,
+      "meanSD": 0.135,
+      "medianSD": 0.088
+    },
+    "hi": {
+      "N": 112,
+      "meanSD": 0.057,
+      "medianSD": 0.048
+    }
+  },
+  "varianceDecomposition": {
+    "lo": {
+      "observed": 0.772,
+      "measurement": 0.135,
+      "intrinsic": 0.76,
+      "measFrac": 3.1
+    },
+    "hi": {
+      "observed": 0.302,
+      "measurement": 0.057,
+      "intrinsic": 0.296,
+      "measFrac": 3.6
+    }
+  },
+  "dynamicRange": {
+    "rGbarRange_lo": -0.045,
+    "rGbarRange_hi": -0.042,
+    "rNpts_lo": -0.196,
+    "rNpts_hi": -0.047,
+    "wellConstrained": {
+      "N": 5,
+      "sd": 0.154
+    }
+  },
+  "distribution": {
+    "skewness": -1.255,
+    "excessKurtosis": 1.301
+  },
+  "verdict": "INTRINSIC"
+}

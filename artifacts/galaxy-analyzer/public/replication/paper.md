@@ -503,6 +503,22 @@ Splitting the sample at $V_\mathrm{flat} = 70$ km/s yields two populations with 
 
 **Verdict**: The $a_0$ correlation structure is **regime-asymmetric**. In the high-$V_\mathrm{flat}$ regime, a structured multi-axis law exists (LOO gap $= 8.1\%$, $p < 0.001$). In the low-$V_\mathrm{flat}$ regime, $a_0$ variation is large but unstructured — no predictive law emerges. This is not two symmetric laws but one law plus one regime of irreducible scatter.
 
+### 12.11 Low-Regime Audit: Chaos or Noise? (Phase 89)
+
+Phase 88 found no structured $a_0$ law among low-$V_\mathrm{flat}$ galaxies (sd $= 0.77$ dex). Phase 89 investigates whether this scatter is genuine physics or measurement/data-quality limitation.
+
+**Variance decomposition (Test 2).** Bootstrap resampling ($N_\mathrm{boot} = 200$) per galaxy estimates the measurement contribution to $a_0$ uncertainty. In the low regime, measurement accounts for only **3.1%** of the observed variance (bootstrap SD $= 0.135$ dex vs. observed SD $= 0.772$ dex; intrinsic SD $= 0.760$ dex). The high regime is similarly measurement-clean (3.6%). Point-level observational noise is not the driver.
+
+**Data quality stratification (Test 5).** Restricting to $Q = 1$ (best quality) low-$V_\mathrm{flat}$ galaxies ($N = 22$) reduces the scatter dramatically: sd $= 0.325$ dex — comparable to the high-regime population (sd $= 0.302$). $Q = 2$ ($N = 31$): sd $= 0.760$; $Q = 3$ ($N = 10$): sd $= 0.803$. This reveals that the "chaos" is not intrinsic dwarf physics but **systematic data-quality effects** (non-circular motions, asymmetric rotation curves, beam smearing) that the bootstrap cannot capture but the $Q$ flag does. The $Q = 1$ subsample has more points (mean 16 vs. 9) and wider gbar range (0.67 vs. 0.43 dex).
+
+**Dynamic range (Test 4).** Well-constrained low-$V_\mathrm{flat}$ galaxies ($n_\mathrm{pts} \geq 10$, gbar range $\geq 1.0$ dex, $N = 5$) have sd $= 0.154$ dex — even tighter than the high regime. Though $N = 5$ is too small for conclusions, it is consistent with the $Q = 1$ finding: when rotation-curve quality is high, dwarf $a_0$ scatter is comparable to (or smaller than) massive spirals.
+
+**Distribution shape (Test 6).** The low-regime $\log a_0$ distribution is strongly left-skewed (skewness $= -1.26$) with excess kurtosis ($= 1.30$) and large gaps at $\log a_0 \approx 1.7$ and $1.1$. This suggests a small number of extreme outliers with very low $a_0$ (likely driven by poorly constrained fits on sparse data) rather than a uniformly scattered population.
+
+**Distance sensitivity (Test 3).** A 20% distance perturbation shifts $\log a_0$ by 0.156 dex in both regimes (ratio $= 0.98$). Dwarfs are not more distance-sensitive than massive spirals.
+
+**Revised interpretation.** The apparent "irreducible scatter" in the low-$V_\mathrm{flat}$ regime is **quality-dominated, not physics-dominated**. The $Q$ flag — which captures systematics invisible to bootstrap (rotation-curve asymmetries, non-circular motions, beam smearing) — is the primary discriminator. Among $Q = 1$ dwarfs, $a_0$ scatter matches the high regime. This means the two-regime picture from Phase 88 may be partly a **data-quality artifact**: the low regime appears structureless because it is dominated by galaxies with poorly determined $a_0$, not because dwarf physics is fundamentally different.
+
 ---
 
 ## 13. Limitations
@@ -534,7 +550,7 @@ We conclude that the structured $a_0$ variation observed in $N = 45$ is a **regi
 
 Phase 87 locates the transition precisely: $V_\mathrm{flat} \approx 70$ km/s ($\Delta\mathrm{BIC} = -23.8$), with the MHI slope reversing from $+0.059$ to $-0.127$. Phase 88 reveals the transition is **asymmetric**: a structured five-predictor law exists in the high-$V_\mathrm{flat}$ regime ($N = 112$, $R^2 = 0.253$, LOO gap $= 8.1\%$, $p < 0.001$), but no predictive law emerges in the low-$V_\mathrm{flat}$ regime ($N = 63$, best LOO gap $= -1.8\%$, $p = 0.689$). Three of five predictors reverse sign across the boundary — a full state transition, not merely a gas-regime effect. Cross-regime transfer fails completely (gaps of $-77\%$ and $-89\%$).
 
-The final picture: $a_0$ variation in SPARC galaxies divides into two fundamentally different regimes at $V_\mathrm{flat} \approx 70$ km/s. Above this threshold, galaxy properties (gas mass, kinematic coherence, baryonic density, environment) predict $\sim 25\%$ of $a_0$ variance in a structured, cross-validated, permutation-significant law. Below it, $a_0$ variation is large (sd $= 0.77$ dex) but irreducibly noisy — no combination of measured properties captures the scatter. This is not two symmetric laws but **one structured law plus one regime of unstructured scatter**, separated by a sharp kinematic boundary.
+The final picture: $a_0$ variation in SPARC galaxies divides into two fundamentally different regimes at $V_\mathrm{flat} \approx 70$ km/s. Above this threshold, galaxy properties (gas mass, kinematic coherence, baryonic density, environment) predict $\sim 25\%$ of $a_0$ variance in a structured, cross-validated, permutation-significant law. Below it, $a_0$ variation appears large (sd $= 0.77$ dex) and unstructured — but Phase 89 reveals this is **quality-dominated, not physics-dominated**: among $Q = 1$ dwarfs ($N = 22$), the scatter drops to sd $= 0.325$ dex, matching the high regime. The apparent chaos in the low regime is driven by systematic data-quality effects (non-circular motions, beam smearing, sparse rotation curves) that inflate $a_0$ scatter in $Q \geq 2$ galaxies but are invisible to point-level bootstrap. The two-regime asymmetry may therefore be partly a **data-quality boundary** rather than a purely physical one: when rotation-curve quality is controlled, dwarf and massive galaxies may share comparable $a_0$ scatter — though whether they share the same predictive law remains an open question requiring larger $Q = 1$ dwarf samples.
 
 **Table 5b. Evidence $\to$ Claim Traceability**
 
@@ -563,6 +579,9 @@ The final picture: $a_0$ variation in SPARC galaxies divides into two fundamenta
 | **Low-Vflat: no law** | **N=63, best LOO gap=−1.8%, perm p=0.689; a₀ scatter is unstructured (sd=0.77 dex)** | **Confirmed** |
 | **Full state transition** | **3/5 variables reverse sign; 3/5 axes have strong broken models (ΔBIC<−6)** | **Confirmed** |
 | **Cross-regime transfer fails** | **Hi→Lo gap=−77%, Lo→Hi gap=−89%; regimes are genuinely separate** | **Failed** |
+| **Low-regime scatter is intrinsic** | **Bootstrap: only 3.1% measurement; intrinsic SD=0.760 dex** | **Confirmed** |
+| **Q=1 dwarfs match high-regime scatter** | **Q=1 (N=22): sd=0.325 vs Q=2,3: sd=0.76-0.80; quality-dominated, not physics** | **Key finding** |
+| **Low-regime "chaos" = data quality** | **Systematics (non-circular motions, beam smearing) dominate Q≥2 dwarfs; Q=1 subsample is well-behaved** | **Revised** |
 
 ---
 

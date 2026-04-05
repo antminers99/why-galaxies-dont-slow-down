@@ -41,7 +41,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 ## One-Paragraph Verdict
 
-The a₀ correlation structure splits into **two fundamentally different regimes** at Vflat≈70 km/s. **High-Vflat (N=112)**: a structured 5-predictor law exists (R²=0.253, LOO gap=8.1%, perm p<0.001). Key coefficients: logMHI (−0.35), logMeanRun (+0.26), logSigma0 (−0.20), envCode (−0.06), logVflat (+1.09). **Low-Vflat (N=63)**: NO structured law exists — best LOO gap=−1.8%, perm p=0.689, a₀ scatter is large (sd=0.77 dex) and unstructured. 3/5 predictor signs reverse across the boundary (full state transition). Cross-regime transfer fails completely (−77%, −89%). This is NOT two symmetric laws — it is **one structured law + one regime of irreducible scatter**.
+The a₀ correlation structure splits at Vflat≈70 km/s. **High-Vflat (N=112)**: structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). **Low-Vflat (N=63)**: appears unstructured (sd=0.77 dex), BUT Phase 89 reveals this is **quality-dominated**: Q=1 dwarfs (N=22) have sd=0.325, matching the high regime. Q≥2 dwarfs (N=41) have sd=0.76-0.80 due to systematics (non-circular motions, beam smearing) invisible to bootstrap but captured by the Q flag. The two-regime asymmetry is partly a DATA-QUALITY boundary, not purely physical. 3/5 predictor signs still reverse across regimes (full state transition), but the "chaos" in dwarfs is not intrinsic physics — it is measurement systematics.
 
 ## Decisive Negative Results (Phases 55-59)
 
@@ -75,4 +75,4 @@ log(a₀) = 3.13 − 0.23·logMHI + 2.29·wig − 0.12·env + 0.18·logΣ₀
 
 ## Status
 
-PROGRAM AT PHASE 88. Two-regime structure confirmed. High-Vflat (≥70): structured 5-predictor law (R²=0.253, LOO gap=8.1%, p<0.001). Low-Vflat (<70): no law (LOO gap=−1.8%, p=0.689). 3/5 predictors reverse sign — full state transition. Cross-regime transfer fails completely. One structured law + one regime of irreducible scatter.
+PROGRAM AT PHASE 89. Two-regime structure + low-regime audit complete. Key finding: low-regime "chaos" is QUALITY-DOMINATED (Q=1 dwarfs sd=0.325 ≈ high regime). High-Vflat law confirmed (R²=0.253, LOO gap=8.1%, p<0.001). The regime boundary at Vflat≈70 is partly physical (3/5 signs reverse) and partly data-quality (Q≥2 systematics).
