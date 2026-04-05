@@ -1,0 +1,77 @@
+{
+  "phase": 118,
+  "title": "Halo Anchoring: Does gas state connect to dark matter halo properties?",
+  "nHighV": 104,
+  "test1_gasVsHalo": {
+    "logRho0 (central DM density)": {
+      "fgas": {
+        "r": -0.001
+      },
+      "log(MHI/L36)": {
+        "r": -0.015
+      },
+      "logSigma0": {
+        "r": 0.003
+      }
+    },
+    "logRc (core radius)": {
+      "fgas": {
+        "r": -0.238
+      },
+      "log(MHI/L36)": {
+        "r": -0.235
+      },
+      "logSigma0": {
+        "r": 0.248
+      }
+    },
+    "logRho0*Rc (surface density)": {
+      "fgas": {
+        "r": -0.414
+      },
+      "log(MHI/L36)": {
+        "r": -0.442
+      },
+      "logSigma0": {
+        "r": 0.436
+      }
+    },
+    "innerDMfrac (DM frac at r<Rd)": {
+      "fgas": {
+        "r": 0.637
+      },
+      "log(MHI/L36)": {
+        "r": 0.626
+      },
+      "logSigma0": {
+        "r": -0.696
+      }
+    }
+  },
+  "test2_haloVsLogOMD": {
+    "logRho0 (central DM density)": {
+      "r": 0.196,
+      "loo": -0.004
+    },
+    "logRc (core radius)": {
+      "r": -0.336,
+      "loo": 0.069
+    },
+    "logRho0*Rc (surface density)": {
+      "r": -0.13,
+      "loo": -0.02
+    },
+    "innerDMfrac (DM frac at r<Rd)": {
+      "r": 0.614,
+      "loo": 0.35
+    }
+  },
+  "strongHaloLinks": [
+    "fgas → logRho0*Rc (surface density) (r=-0.414)",
+    "log(MHI/L36) → logRho0*Rc (surface density) (r=-0.442)",
+    "logSigma0 → logRho0*Rc (surface density) (r=0.436)",
+    "fgas → innerDMfrac (DM frac at r<Rd) (r=0.637)",
+    "log(MHI/L36) → innerDMfrac (DM frac at r<Rd) (r=0.626)",
+    "logSigma0 → innerDMfrac (DM frac at r<Rd) (r=-0.696)"
+  ]
+}

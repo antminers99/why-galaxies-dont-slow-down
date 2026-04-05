@@ -1,0 +1,36 @@
+{
+  "phase": 117,
+  "title": "Anti-Circularity Battery",
+  "nHighV": 104,
+  "testA": {
+    "r_fgas_starsOnly": 0.885,
+    "r_ratio_starsOnly": 0.868,
+    "loo_fgas_starsOnly": 0.774,
+    "pass": true
+  },
+  "testB": {
+    "r_fgas_gasOnly": -0.208,
+    "gasOnlyStronger": false
+  },
+  "testC": {
+    "r_fgas_pureVratio": -0.27,
+    "r_ratio_pureVratio": -0.248
+  },
+  "testD": {
+    "meanGasContribPercent": 28.6
+  },
+  "testE": {
+    "realR": 0.728,
+    "permMeanR": 0,
+    "pValue": 0,
+    "sigmaSNR": 7.5
+  },
+  "testF": {
+    "crossed_mhi_stars": -0.379,
+    "crossed_l36_gas": 0.211,
+    "same_mhi_gas": 0.074,
+    "same_l36_stars": -0.797
+  },
+  "passCount": 6,
+  "verdict": "STRONG PASS: The fgas → logOMD signal is NOT a circularity artifact. The signal survives removing gas from the target, survives with pure velocity targets, and survives permutation tests."
+}
