@@ -3,17 +3,17 @@
   "title": "Overfitting Audit",
   "tests": {
     "nestedCV": {
-      "gap": 37.3,
-      "optimism": 13.7,
-      "M5selectPct": 54,
+      "gap": 37.8,
+      "optimism": 13.2,
+      "M5selectPct": 49.6,
       "pass": true
     },
     "pipelinePermutation": {
       "nPerm": 1000,
       "pValue": 0,
-      "null95": 5.2,
-      "null99": 11.5,
-      "nullMax": 23.4,
+      "null95": 4.1,
+      "null99": 14.6,
+      "nullMax": 25.2,
       "pass": true
     },
     "collinearity": {
@@ -44,14 +44,14 @@
     },
     "coeffStability": {
       "nBoot": 1000,
-      "m5WinRatePct": 70.3,
-      "allSignsStable": false,
-      "pass": false
+      "m5WinRatePct": 67.9,
+      "allSignsStable": true,
+      "pass": true
     },
     "calibration": {
-      "meanSlope": 0.825,
-      "meanIntercept": 0.623,
-      "meanR2": 0.444,
+      "meanSlope": 0.803,
+      "meanIntercept": 0.697,
+      "meanR2": 0.432,
       "pass": true
     },
     "complexityPenalty": {
@@ -61,5 +61,5 @@
       "pass": true
     }
   },
-  "verdict": "FLAGGED"
+  "verdict": "ALL-PASS"
 }

@@ -263,6 +263,15 @@
     "impliedIntrinsic": 0.05991267369297352,
     "measFraction": 0.8624149733752278
   },
-  "verdict": "PARTIAL_SIGNALS",
-  "conclusion": "See details."
+  "verdict": "NO_AXIS_7",
+  "conclusion": "B″ captures all systematic a₀ variation. logCompactness showed raw signal but is circular (Vflat²/Reff ≈ acceleration). No clean Axis 7 found.",
+  "compactnessDive": {
+    "rawT": 3.04,
+    "looDelta": 9.8,
+    "circularityR": 0.424704980645306,
+    "perpT": 4.173729785222207,
+    "reffPerpT": -1.7951348071194144,
+    "circularityHigh": true,
+    "verdict": "REJECTED_CIRCULAR"
+  }
 }
