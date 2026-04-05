@@ -4,10 +4,10 @@
   "n": 45,
   "residualSource": "B″",
   "observed": {
-    "residSD": 0.15595531003391264,
-    "skewness": -0.06516562063738178,
-    "kurtosis": -0.907800002142698,
-    "runsZ": 1.0594486987788438
+    "residSD": 0.1615225323880254,
+    "skewness": 0.0810962269492729,
+    "kurtosis": -0.7944093720086611,
+    "runsZ": 1.3936485718390608
   },
   "measurementFloor": {
     "meanSigma": 0.11109050097089475,
@@ -21,46 +21,46 @@
     }
   },
   "intrinsicScatter": {
-    "tauInt": 0.1049481980630839,
+    "tauInt": 0.11305571200941242,
     "ci95": [
-      0.04069027118134479,
-      0.14333565622490382
+      0.048382120062202126,
+      0.15377044827960892
     ],
     "touchesZero": false,
-    "measFraction": 54.715493454051014
+    "measFraction": 51.00871971249865
   },
   "noiseSimulation": {
     "nMocks": 5000,
     "sdInside": false,
     "skInside": true,
-    "kuInside": false,
+    "kuInside": true,
     "rzInside": true,
-    "nInside": 2,
+    "nInside": 3,
     "mockMeans": {
-      "sd": 0.10634124893132517,
-      "skew": 0.001936094213107706,
-      "kurt": 0.2105212488979095,
-      "runsZ": 0.022650799886173096
+      "sd": 0.10648343835627543,
+      "skew": 0.0006738099290178496,
+      "kurt": 0.200262197730529,
+      "runsZ": -0.0006760880079332403
     }
   },
   "residVsUncertainty": {
-    "rAbsSig": -0.08989216828197995,
-    "tAbsSig": -0.5918585041828499,
-    "rSqSig": -0.10083337650949238,
-    "tSqSig": -0.664595895580296
+    "rAbsSig": -0.07144083432973014,
+    "tAbsSig": -0.4696689589682703,
+    "rSqSig": -0.03871159525253206,
+    "tSqSig": -0.2540393275076447
   },
   "qualitySplit": {
     "lowN": 23,
-    "lowSD": 0.15970596758083225,
+    "lowSD": 0.15720104817094327,
     "highN": 22,
-    "highSD": 0.15567297898204255
+    "highSD": 0.16962982528592355
   },
   "criteria": {
     "crit1": false,
-    "crit2": false,
+    "crit2": true,
     "crit3": true,
-    "crit4": false,
-    "nPass": 1
+    "crit4": true,
+    "nPass": 3
   },
-  "verdict": "FAIL"
+  "verdict": "PARTIAL"
 }

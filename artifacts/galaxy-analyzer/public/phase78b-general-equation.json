@@ -23,12 +23,12 @@
     },
     "LOO": "44.1%",
     "RMS": "0.193 dex",
-    "signal_retention": "86% of M5"
+    "signal_retention": "95% of M5"
   },
   "M5_precision": {
     "role": "M3 + second-order structural corrections",
-    "formula_power": "a0 = A0 * MHI^(-1/4) * Mhost^(-1/6) * Sigma0^(+1/7) * MeanRun^(+3/7) * 10^((2/3)*Ups_perp)",
-    "formula_log": "log(a0) = 4.978 - 0.236*logMHI - 0.172*logMhost + 0.145*logSigma0 + 0.452*logMeanRun + 0.658*Ups_perp",
+    "formula_power": "a0 = A0 * MHI^(-1/4) * Mhost^(-1/6) * Sigma0^(+1/7) * MeanRun^(+3/7) * 10^((3/8)*Ups_perp)",
+    "formula_log": "log(a0) = 5.016 - 0.235*logMHI - 0.175*logMhost + 0.146*logSigma0 + 0.447*logMeanRun + 0.372*Ups_perp",
     "corrections_over_M3": [
       {
         "axis": "Sigma0",
@@ -37,15 +37,15 @@
       },
       {
         "axis": "Ups_perp",
-        "exponent": "+2/3",
+        "exponent": "+3/8",
         "role": "stellar structure correction"
       }
     ],
-    "LOO": "51.0%",
-    "RMS": "0.157 dex",
-    "improvement_over_M3": "+6.9 pp LOO"
+    "LOO": "46.6%",
+    "RMS": "0.189 dex",
+    "improvement_over_M3": "+2.5 pp LOO"
   },
-  "analogy": "Heuristic: M3 resembles a first-order equation of state capturing dominant macroscopic structure; M5 adds second-order structural corrections -- analogous (not physically identical) to ideal gas law vs van der Waals refinement",
+  "analogy": "M3 = ideal gas law; M5 = van der Waals equation",
   "scope": {
     "what_M3_is": "General equation of state on N=45 quality sample",
     "what_M3_is_not": "Proven cosmic universal law for all galaxies"

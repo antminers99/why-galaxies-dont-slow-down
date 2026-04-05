@@ -5,37 +5,37 @@
     {
       "variable": "logMHI",
       "delta": 0.3,
-      "coeff": -0.23598354408671632,
-      "dlogA0": -0.07079506322601489,
-      "pctChange": -15.041871541759233
+      "coeff": -0.23507325818481523,
+      "dlogA0": -0.07052197745544457,
+      "pctChange": -14.988432797176987
     },
     {
       "variable": "logMhost",
       "delta": 0.3,
-      "coeff": -0.17184566288063852,
-      "dlogA0": -0.051553698864191554,
-      "pctChange": -11.193183672705342
+      "coeff": -0.1749204134720283,
+      "dlogA0": -0.052476124041608486,
+      "pctChange": -11.381605845390762
     },
     {
       "variable": "logΣ₀",
       "delta": 0.3,
-      "coeff": 0.14530702889811173,
-      "dlogA0": 0.04359210866943352,
-      "pctChange": 10.558492586937774
+      "coeff": 0.14625529563271691,
+      "dlogA0": 0.043876588689815074,
+      "pctChange": 10.630936485793118
     },
     {
       "variable": "logMeanRun",
       "delta": 0.2,
-      "coeff": 0.45226606415952036,
-      "dlogA0": 0.09045321283190408,
-      "pctChange": 23.15533015839111
+      "coeff": 0.4465326658410266,
+      "dlogA0": 0.08930653316820532,
+      "pctChange": 22.830588654012285
     },
     {
       "variable": "Υ★⊥",
       "delta": 0.15,
-      "coeff": 0.6581461040059463,
-      "dlogA0": 0.09872191560089194,
-      "pctChange": 25.52259688224554
+      "coeff": 0.37212049170528044,
+      "dlogA0": 0.055818073755792064,
+      "pctChange": 13.71508328051203
     }
   ],
   "matchedPairs": [
@@ -44,7 +44,7 @@
       "gal1": "NGC6674 (higher logMHI)",
       "gal2": "NGC1705 (lower logMHI)",
       "targetDelta": 2.364,
-      "confoundSim": 2.877271055752528,
+      "confoundSim": 3.095955258669681,
       "predictedSign": "-",
       "observedSign": "-",
       "signMatch": true,
@@ -55,7 +55,7 @@
       "gal1": "UGC08490 (higher logMhost)",
       "gal2": "UGC05721 (lower logMhost)",
       "targetDelta": 2.1956250358116645,
-      "confoundSim": 0.876400659351561,
+      "confoundSim": 0.8515402996958755,
       "predictedSign": "-",
       "observedSign": "-",
       "signMatch": true,
@@ -66,7 +66,7 @@
       "gal1": "NGC2903 (higher logΣ₀)",
       "gal2": "UGC01281 (lower logΣ₀)",
       "targetDelta": 2.0549999999999997,
-      "confoundSim": 2.3913439158127354,
+      "confoundSim": 2.7412133685944355,
       "predictedSign": "+",
       "observedSign": "+",
       "signMatch": true,
@@ -77,7 +77,7 @@
       "gal1": "NGC2841 (higher logMR)",
       "gal2": "NGC3893 (lower logMR)",
       "targetDelta": 0.9209999999999999,
-      "confoundSim": 2.7273195514564987,
+      "confoundSim": 2.883770632082381,
       "predictedSign": "+",
       "observedSign": "+",
       "signMatch": true,
@@ -87,7 +87,7 @@
       "axis": "Υ★⊥",
       "gal1": "NGC5033 (higher Υ★⊥)",
       "gal2": "NGC4559 (lower Υ★⊥)",
-      "targetDelta": 0.34536289980622326,
+      "targetDelta": 0.34258113048258876,
       "confoundSim": 0.9176196668262394,
       "predictedSign": "+",
       "observedSign": "+",
@@ -98,35 +98,35 @@
   "rankOrder": [
     {
       "axis": "logMHI",
-      "rho": -0.6312252964426877,
+      "rho": -0.6223978919631095,
       "expectedSign": "-",
       "observedSign": "-",
       "signMatch": true
     },
     {
       "axis": "logMhost",
-      "rho": -0.44295125164690385,
+      "rho": -0.46205533596837944,
       "expectedSign": "-",
       "observedSign": "-",
       "signMatch": true
     },
     {
       "axis": "logΣ₀",
-      "rho": 0.2299077733860343,
+      "rho": 0.22134387351778662,
       "expectedSign": "+",
       "observedSign": "+",
       "signMatch": true
     },
     {
       "axis": "logMR",
-      "rho": 0.5292490118577076,
+      "rho": 0.5050065876152833,
       "expectedSign": "+",
       "observedSign": "+",
       "signMatch": true
     },
     {
       "axis": "Υ★⊥",
-      "rho": 0.2446640316205534,
+      "rho": 0.1280632411067194,
       "expectedSign": "+",
       "observedSign": "+",
       "signMatch": true
@@ -163,9 +163,9 @@
     },
     {
       "axis": "Υ★⊥",
-      "lo": 3.56572,
-      "mid": 3.503813333333333,
-      "hi": 3.6690066666666667,
+      "lo": 3.588706666666667,
+      "mid": 3.4758066666666676,
+      "hi": 3.6740266666666677,
       "monotone": false
     }
   ],
@@ -194,14 +194,14 @@
     }
   },
   "hierarchy": {
-    "Fstat": 4.988452090262414,
-    "significant": true,
-    "looImprovement": 6.9769177309407056
+    "Fstat": 3.1158293779776587,
+    "significant": false,
+    "looImprovement": 2.537703323302658
   },
   "summary": {
-    "totalPass": 24,
+    "totalPass": 23,
     "totalTests": 26,
-    "passRate": 92.3076923076923,
+    "passRate": 88.46153846153845,
     "sharpPredictions": true
   }
 }

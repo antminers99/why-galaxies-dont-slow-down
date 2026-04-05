@@ -1,6 +1,8 @@
 # The Inferred MOND Acceleration Scale as an Emergent Galaxy State Variable: A Five-Axis Law from N=45 SPARC Galaxies
 
 > **SUPERSEDED (Phase 101+):** The ratio law described in this document ($V_\text{flat}/V_\text{max}^\text{inner}$ predicts outerSlope) was identified as a **geometric artifact** in Phase 101. Smooth monotonic curves with no physics reproduce $r = 0.83$, making the real signal indistinguishable from geometric coupling. The project pivoted to catalog-only predictors of outer mass discrepancy, where $f_\text{gas}$ emerged as the strongest transferable predictor (LOO $R^2 = 0.503$, locked external $R^2 = 0.474$). See `REPRODUCIBLE_RESULT.md` for the current claim. This document is preserved as a historical record of phases 1–100.
+>
+> **ERRATA (T||5 bug):** The M5 numbers in this document were computed with a JavaScript bug (`T || 5`) that treated morphological type T=0 as falsy for NGC4138 and UGC06786. Corrected M5: Ups_perp coefficient = 0.372 (not 0.658), LOO gap% = 46.6% (not 51.0%), R² = 0.588 (not ~0.73), M3 retains 95% of M5 (not 86%). The numbers below are the original uncorrected values, preserved for historical reference. See `variable_definitions.md` for corrected values.
 
 ---
 

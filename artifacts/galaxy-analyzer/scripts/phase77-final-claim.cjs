@@ -38,7 +38,7 @@ console.log();
 console.log('  LEVEL 4 — FRONTIER CLAIM (essential for honesty):');
 console.log('  ─────────────────────────────────────────────────');
 console.log('  Beyond M5, no additional clean scalar axis is extractable from');
-console.log('  the current data. The remaining 0.157 dex residual is a');
+console.log('  the current data. The remaining 0.189 dex residual is a');
 console.log('  featureless Gaussian frontier with no subpopulation bias, no');
 console.log('  heteroscedasticity, and no bimodality — representing the current');
 console.log('  irreducible limit of scalar-law modeling on this dataset.');
@@ -111,9 +111,9 @@ console.log('  │         - 0.236 * log(MHI)         [gas reservoir]           
 console.log('  │         - 0.172 * log(Mhost)        [environmental depth]    │');
 console.log('  │         + 0.145 * log(Sigma0)       [baryon concentration]   │');
 console.log('  │         + 0.452 * log(MeanRun)      [dynamical coherence]    │');
-console.log('  │         + 0.658 * Upsilon_perp      [stellar structure]      │');
+console.log('  │         + 0.372 * Upsilon_perp      [stellar structure]      │');
 console.log('  │                                                               │');
-console.log('  │ LOO gap% = 51.0%  |  RMS = 0.157 dex  |  N = 45             │');
+console.log('  │ LOO gap% = 46.6%  |  RMS = 0.189 dex  |  N = 45             │');
 console.log('  └────────────────────────────────────────────────────────────────┘');
 console.log();
 
@@ -125,7 +125,7 @@ console.log('  │         - 0.155 * log(Mhost)        [environmental depth]    
 console.log('  │         + 0.459 * log(MeanRun)      [dynamical coherence]    │');
 console.log('  │                                                               │');
 console.log('  │ LOO gap% = 44.1%  |  RMS = 0.193 dex  |  N = 45             │');
-console.log('  │ Retains 86% of M5 signal with only 3 axes.                   │');
+console.log('  │ Retains 95% of M5 signal with only 3 axes.                   │');
 console.log('  └────────────────────────────────────────────────────────────────┘');
 console.log();
 
@@ -144,10 +144,10 @@ console.log('  │ Not random scatter                       │ Structured model
 console.log('  │                                          │ null on all validation metrics              │');
 console.log('  ├──────────────────────────────────────────┼────────────────────────────────────────────┤');
 console.log('  │ Best predictive law = M5                 │ Phase 69 death match: M5 defeats all       │');
-console.log('  │                                          │ competitors, LOO=51.0%                     │');
+console.log('  │                                          │ competitors, LOO=46.6%                     │');
 console.log('  ├──────────────────────────────────────────┼────────────────────────────────────────────┤');
 console.log('  │ Best compressed state law = M3           │ Phase 68-69 compression: 3 axes retain     │');
-console.log('  │                                          │ 86% of M5 signal, LOO=44.1%                │');
+console.log('  │                                          │ 95% of M5 signal, LOO=44.1%                │');
 console.log('  ├──────────────────────────────────────────┼────────────────────────────────────────────┤');
 console.log('  │ Law is falsifiable                       │ Phase 71: 24/26 quantitative predictions   │');
 console.log('  │                                          │ passed (92%), including sign, rank, F-test │');
@@ -241,10 +241,10 @@ console.log('  Remaining: Phase 78 (Paper Package) for final publication assembl
 const output = {
   phase: '77', title: 'Final Claim Architecture',
   claims: {
-    level1_empirical: 'On the quality-controlled N=45 SPARC sample with published distances, galaxy-to-galaxy variation in inferred a0 is better described by a structured five-axis power law (M5) than by a strict universal constant, with 51% of inter-galaxy variance explained under leave-one-out cross-validation.',
+    level1_empirical: 'On the quality-controlled N=45 SPARC sample with published distances, galaxy-to-galaxy variation in inferred a0 is better described by a structured five-axis power law (M5) than by a strict universal constant, with 46.6% of inter-galaxy variance explained under leave-one-out cross-validation.',
     level2_predictive: 'M5 outperforms the universal-constant model and all simpler alternatives in prediction, produces quantitative falsifiable forecasts (24/26 passed), and succeeds in controlled matched-pair tests between individual galaxies (22/25 correct sign, median |error| = 0.165 dex).',
     level3_physical: 'The best framework-neutral physical interpretation is that a0 behaves as an emergent state variable of the galaxy, governed by gas content, host-system gravitational depth, and baryon/kinematic organization — not as a strict universal constant of nature.',
-    level4_frontier: 'Beyond M5, no additional clean scalar axis is extractable from the current data. The remaining 0.157 dex residual is a featureless Gaussian frontier with no subpopulation bias, no heteroscedasticity, and no bimodality.'
+    level4_frontier: 'Beyond M5, no additional clean scalar axis is extractable from the current data. The remaining 0.189 dex residual is a featureless Gaussian frontier with no subpopulation bias, no heteroscedasticity, and no bimodality.'
   },
   explicitClaims: [
     'a0 is not a strict universal constant on N=45',
@@ -270,14 +270,14 @@ const output = {
     physics: 'The data favor interpreting a0 as an emergent, state-dependent galaxy parameter rather than a strictly universal acceleration scale.'
   },
   finalLaws: {
-    M5: {formula:'log(a0) = 4.978 - 0.236*log(MHI) - 0.172*log(Mhost) + 0.145*log(Sigma0) + 0.452*log(MeanRun) + 0.658*Upsilon_perp', LOO:'51.0%', RMS:'0.157 dex', N:45, role:'Best predictive law'},
-    M3: {formula:'log(a0) = 5.182 - 0.198*log(MHI) - 0.155*log(Mhost) + 0.459*log(MeanRun)', LOO:'44.1%', RMS:'0.193 dex', N:45, role:'Best compressed state law', retention:'86% of M5 signal'}
+    M5: {formula:'log(a0) = 5.016 - 0.235*log(MHI) - 0.175*log(Mhost) + 0.146*log(Sigma0) + 0.447*log(MeanRun) + 0.372*Upsilon_perp', LOO:'46.6%', RMS:'0.189 dex', N:45, role:'Best predictive law'},
+    M3: {formula:'log(a0) = 5.182 - 0.198*log(MHI) - 0.155*log(Mhost) + 0.459*log(MeanRun)', LOO:'44.1%', RMS:'0.193 dex', N:45, role:'Best compressed state law', retention:'95% of M5 signal'}
   },
   evidenceTable: [
     {claim:'Not universal constant', evidence:'M0 loses to M5/M3 on LOO, AIC, BIC, k-fold, bootstrap (Phase 69)'},
     {claim:'Not random scatter', evidence:'Structured model repeatedly outperforms null on all validation metrics'},
-    {claim:'Best predictive law = M5', evidence:'Phase 69 death match: M5 defeats all competitors, LOO=51.0%'},
-    {claim:'Best compressed state law = M3', evidence:'Phase 68-69: 3 axes retain 86% of M5, LOO=44.1%'},
+    {claim:'Best predictive law = M5', evidence:'Phase 69 death match: M5 defeats all competitors, LOO=46.6%'},
+    {claim:'Best compressed state law = M3', evidence:'Phase 68-69: 3 axes retain 95% of M5, LOO=44.1%'},
     {claim:'Law is falsifiable', evidence:'Phase 71: 24/26 predictions passed (92%)'},
     {claim:'Law works pairwise', evidence:'Phase 72: 22/25 controlled pairs pass (88%), median |err|=0.165 dex'},
     {claim:'MHI and Mhost independent', evidence:'Phase 70: fgas collapse loses -36.5pp; exponents -1/4 vs -1/6'},

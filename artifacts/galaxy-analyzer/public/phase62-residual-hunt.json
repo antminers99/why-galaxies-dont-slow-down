@@ -2,215 +2,215 @@
   "phase": "62",
   "title": "Residual Hunt for Axis 7",
   "residualSource": "B″ on N=45",
-  "residualSD": 0.15595531003391264,
+  "residualSD": 0.1615225323880254,
   "nCandidatesTested": 29,
   "scanResults": [
     {
       "name": "HI_deficiency",
       "n": 45,
-      "r": -0.0253,
-      "t": -0.166,
-      "p": 3.096997333980259e+26,
+      "r": 0.0091,
+      "t": 0.06,
+      "p": 1.2526137691487106e+26,
       "desc": "HI deficiency parameter (obs-expected HI)"
     },
     {
       "name": "logVflat",
       "n": 45,
-      "r": 0.1378,
-      "t": 0.912,
-      "p": 3.404635181265091e+25,
+      "r": 0.1645,
+      "t": 1.094,
+      "p": 7.21756489502078e+24,
       "desc": "SPARC catalog"
     },
     {
       "name": "logL36",
       "n": 45,
-      "r": -0.0181,
-      "t": -0.118,
-      "p": 2.360948182817116e+26,
+      "r": 0.0063,
+      "t": 0.042,
+      "p": 8.792558826742803e+25,
       "desc": "SPARC catalog"
     },
     {
       "name": "logReff",
       "n": 45,
-      "r": -0.1615,
-      "t": -1.073,
-      "p": 8.725432750570677e+24,
+      "r": -0.1493,
+      "t": -0.99,
+      "p": 1.8196802491069294e+25,
       "desc": "SPARC catalog"
     },
     {
       "name": "logRdisk",
       "n": 45,
-      "r": -0.0234,
-      "t": -0.154,
-      "p": 2.9224848636706923e+26,
+      "r": 0.0082,
+      "t": 0.054,
+      "p": 1.1305372537181387e+26,
       "desc": "SPARC catalog"
     },
     {
       "name": "logSBdisk",
       "n": 45,
-      "r": -0.0926,
-      "t": -0.61,
-      "p": 2.10438395225906e+26,
+      "r": -0.1058,
+      "t": -0.697,
+      "p": 1.3807818210901268e+26,
       "desc": "SPARC catalog"
     },
     {
       "name": "logSBeff",
       "n": 45,
-      "r": 0.1767,
-      "t": 1.178,
-      "p": 3.1684419222694693e+24,
+      "r": 0.2054,
+      "t": 1.376,
+      "p": 3.4933340880148557e+23,
       "desc": "SPARC catalog"
     },
     {
       "name": "logRHI",
       "n": 44,
-      "r": -0.0175,
-      "t": -0.113,
-      "p": 7.2095307750888004e+25,
+      "r": -0.0038,
+      "t": -0.025,
+      "p": 1.6857254387112897e+25,
       "desc": "SPARC catalog"
     },
     {
       "name": "inclination",
       "n": 45,
-      "r": -0.1872,
-      "t": -1.25,
-      "p": 1.4835817269703516e+24,
+      "r": -0.1842,
+      "t": -1.229,
+      "p": 1.8517601639769546e+24,
       "desc": "SPARC catalog"
     },
     {
       "name": "eVflat_rel",
       "n": 45,
-      "r": 0.1303,
-      "t": 0.862,
-      "p": 4.9496794527016984e+25,
+      "r": 0.1142,
+      "t": 0.754,
+      "p": 1.0046542532471835e+26,
       "desc": "SPARC catalog"
     },
     {
       "name": "distance",
       "n": 45,
-      "r": 0.108,
-      "t": 0.713,
-      "p": 1.2720458097314498e+26,
+      "r": 0.1179,
+      "t": 0.779,
+      "p": 8.632547965363435e+25,
       "desc": "SPARC catalog"
     },
     {
       "name": "morphT",
       "n": 45,
-      "r": -0.0422,
-      "t": -0.277,
-      "p": 4.054678315611847e+26,
+      "r": -0.09,
+      "t": -0.593,
+      "p": 2.2617360079326163e+26,
       "desc": "SPARC catalog"
     },
     {
       "name": "Q_flag",
       "n": 45,
-      "r": 0.0105,
-      "t": 0.069,
-      "p": 1.4417089870750803e+26,
+      "r": -0.0167,
+      "t": -0.11,
+      "p": 2.2090082627255243e+26,
       "desc": "SPARC catalog"
     },
     {
       "name": "logGasFrac",
       "n": 45,
-      "r": 0.0282,
-      "t": 0.185,
-      "p": 3.340420472142923e+26,
+      "r": -0.01,
+      "t": -0.066,
+      "p": 1.3777514635311358e+26,
       "desc": "log(MHI/L36) — gas mass fraction proxy"
     },
     {
       "name": "logGasExtent",
       "n": 44,
-      "r": 0.0334,
-      "t": 0.217,
-      "p": 1.163293065794301e+26,
+      "r": -0.0005,
+      "t": -0.003,
+      "p": 2.0074654748498885e+24,
       "desc": "log(RHI/Rdisk) — gas extent ratio"
     },
     {
       "name": "logConcentration",
       "n": 45,
-      "r": -0.2313,
-      "t": -1.559,
-      "p": 3.4626990224192332e+22,
+      "r": -0.2681,
+      "t": -1.825,
+      "p": 774913978948824700000,
       "desc": "log(Reff/Rdisk) — light concentration"
     },
     {
       "name": "logCompactness",
       "n": 45,
-      "r": 0.4206,
-      "t": 3.04,
-      "p": 4975034053802.819,
+      "r": 0.4435,
+      "t": 3.245,
+      "p": 332516810269.7957,
       "desc": "log(Vflat²/Reff) — dynamical compactness"
     },
     {
       "name": "logMbar",
       "n": 45,
-      "r": -0.0134,
-      "t": -0.088,
-      "p": 1.8044274919363066e+26,
+      "r": 0.0134,
+      "t": 0.088,
+      "p": 1.8061463899268368e+26,
       "desc": "log(L36*Υ + MHI*1.33) — total baryonic mass"
     },
     {
       "name": "logSBratio",
       "n": 45,
-      "r": -0.2185,
-      "t": -1.468,
-      "p": 1.122812920445162e+23,
+      "r": -0.2523,
+      "t": -1.71,
+      "p": 4.249412572316159e+21,
       "desc": "log(SBdisk/SBeff) — disk vs effective SB"
     },
     {
       "name": "envCode",
       "n": 45,
-      "r": -0.0229,
-      "t": -0.15,
-      "p": 2.8676843282239663e+26,
+      "r": -0.0407,
+      "t": -0.267,
+      "p": 4.014402299251325e+26,
       "desc": "Binary environment code (field=0, group/cluster=1)"
     },
     {
       "name": "logDist_delta",
       "n": 7,
-      "r": 0.2465,
-      "t": 0.569,
-      "p": 23.626,
+      "r": 0.2211,
+      "t": 0.507,
+      "p": 33.8837,
       "desc": "Distance discrepancy (TRGB vs SPARC)"
     },
     {
       "name": "things_ncm_amp",
       "n": 7,
-      "r": 0.1444,
-      "t": 0.326,
-      "p": 122.202,
+      "r": 0.1424,
+      "t": 0.322,
+      "p": 126.5675,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_ncm_frac",
       "n": 7,
-      "r": -0.0553,
-      "t": -0.124,
-      "p": 313.4814,
+      "r": -0.0979,
+      "t": -0.22,
+      "p": 252.1323,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_c1",
       "n": 7,
-      "r": 0.161,
-      "t": 0.365,
-      "p": 91.1272,
+      "r": 0.1608,
+      "t": 0.364,
+      "p": 91.4421,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_s1",
       "n": 7,
-      "r": 0.0813,
-      "t": 0.182,
-      "p": 296.1574,
+      "r": 0.0735,
+      "t": 0.165,
+      "p": 310.2683,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_c3",
       "n": 7,
-      "r": 0.241,
-      "t": 0.555,
-      "p": 25.481,
+      "r": 0.2425,
+      "t": 0.559,
+      "p": 24.9376,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
@@ -218,55 +218,51 @@
       "n": 7,
       "r": 0.1598,
       "t": 0.362,
-      "p": 93.0367,
+      "p": 93.0518,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_lopsidedness",
       "n": 7,
-      "r": -0.0749,
-      "t": -0.168,
-      "p": 308.1413,
+      "r": -0.1173,
+      "t": -0.264,
+      "p": 192.9486,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     },
     {
       "name": "things_bisymFlow",
       "n": 7,
-      "r": -0.0007,
-      "t": -0.001,
-      "p": 5.6705,
+      "r": -0.0479,
+      "t": -0.107,
+      "p": 299.8827,
       "desc": "THINGS 2D kinematic (pilot N=7)"
     }
   ],
   "promising": [
     {
       "name": "logConcentration",
-      "t": -1.558754577249826,
-      "p": 3.4626990224192332e+22
+      "t": -1.8248603068658784,
+      "p": 774913978948824700000
     },
     {
       "name": "logCompactness",
-      "t": 3.0396344789587326,
-      "p": 4975034053802.819
+      "t": 3.245025918260661,
+      "p": 332516810269.79565
+    },
+    {
+      "name": "logSBratio",
+      "t": -1.709617321754031,
+      "p": 4.249412572316159e+21
     }
   ],
   "bonferroniThreshold": 0.0025,
   "survivesBonferroni": [],
   "residualDecomposition": {
-    "totalSD": 0.15595531003391264,
+    "totalSD": 0.1615225323880254,
     "estimatedMeasErr": 0.15,
-    "impliedIntrinsic": 0.04268557985753282,
-    "measFraction": 0.9250861636275399
+    "impliedIntrinsic": 0.05991267369297352,
+    "measFraction": 0.8624149733752278
   },
-  "verdict": "NO_AXIS_7",
-  "conclusion": "B″ captures all systematic a₀ variation. logCompactness showed raw signal but is circular (Vflat²/Reff ≈ acceleration). No clean Axis 7 found.",
-  "compactnessDive": {
-    "rawT": 3.04,
-    "looDelta": 9.8,
-    "circularityR": 0.424704980645306,
-    "perpT": 3.959958979173683,
-    "reffPerpT": -1.9434044899064478,
-    "circularityHigh": true,
-    "verdict": "REJECTED_CIRCULAR"
-  }
+  "verdict": "PARTIAL_SIGNALS",
+  "conclusion": "See details."
 }

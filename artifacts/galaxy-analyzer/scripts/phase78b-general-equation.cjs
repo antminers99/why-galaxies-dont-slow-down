@@ -34,7 +34,7 @@ console.log('    Family 3 — Dynamical state:     MeanRun^(+1/2) [amplification
 console.log();
 console.log('  Status:');
 console.log('    LOO gap% = 44.1%  |  RMS = 0.193 dex  |  N = 45');
-console.log('    Retains 86% of M5 signal');
+console.log('    Retains 95% of M5 signal');
 console.log('    3 axes only — closest to a general equation of state');
 console.log();
 console.log('  Interpretation:');
@@ -59,26 +59,26 @@ console.log();
 console.log('  Log-linear form:');
 console.log('  ┌────────────────────────────────────────────────────────────────────┐');
 console.log('  │                                                                    │');
-console.log('  │  log(a₀) = 4.978                                                  │');
+console.log('  │  log(a₀) = 5.016                                                  │');
 console.log('  │           − 0.236 · log(M_HI)      [≈ −1/4]  gas reservoir       │');
 console.log('  │           − 0.172 · log(M_host)     [≈ −1/6]  environmental depth │');
 console.log('  │           + 0.145 · log(Σ₀)         [≈ +1/7]  baryon concentration│');
 console.log('  │           + 0.452 · log(MeanRun)    [≈ +3/7]  dynamical coherence │');
-console.log('  │           + 0.658 · Υ★⊥             [≈ +2/3]  stellar structure   │');
+console.log('  │           + 0.372 · Υ★⊥             [≈ +3/8]  stellar structure   │');
 console.log('  │                                                                    │');
 console.log('  └────────────────────────────────────────────────────────────────────┘');
 console.log();
 console.log('  Status:');
-console.log('    LOO gap% = 51.0%  |  RMS = 0.157 dex  |  N = 45');
+console.log('    LOO gap% = 46.6%  |  RMS = 0.189 dex  |  N = 45');
 console.log('    5 axes — best available predictive precision');
 console.log();
 console.log('  Structure relative to M3:');
 console.log('    M5 = M3 + two structural corrections:');
 console.log('      + Σ₀^(+1/7)   baryon concentration correction');
-console.log('      + Υ★⊥^(+2/3)  stellar structure correction');
+console.log('      + Υ★⊥^(+3/8)  stellar structure correction');
 console.log();
-console.log('    These corrections add +6.9 pp LOO (from 44.1% to 51.0%)');
-console.log('    and reduce RMS from 0.193 to 0.157 dex.');
+console.log('    These corrections add +2.5 pp LOO (from 44.1% to 46.6%)');
+console.log('    and reduce RMS from 0.193 to 0.189 dex.');
 console.log();
 
 // ═══════ FORMAL RELATIONSHIP ═══════
@@ -113,11 +113,11 @@ console.log('  The M3 compressed law serves as a first-order equation of state')
 console.log('  for the inferred acceleration scale: given three macroscopic');
 console.log('  galaxy properties — gas reservoir (M_HI), gravitational depth');
 console.log('  (M_host), and dynamical coherence (MeanRun) — a0 is determined');
-console.log('  to 0.19 dex, capturing 86% of the structured signal. The full');
+console.log('  to 0.19 dex, capturing 95% of the structured signal. The full');
 console.log('  M5 law refines this by adding two second-order structural');
 console.log('  corrections: baryon concentration (Sigma_0) and independent');
 console.log('  stellar mass-to-light ratio (Upsilon_perp), improving precision');
-console.log('  to 0.16 dex. Both laws decompose into the same physical tension:');
+console.log('  to 0.189 dex. Both laws decompose into the same physical tension:');
 console.log('  mass-dominated axes suppress the effective acceleration scale,');
 console.log('  while organization-dominated axes amplify it. M3 is the general');
 console.log('  equation; M5 is its precision refinement.');
@@ -128,10 +128,10 @@ console.log('  ───────');
 console.log('  يقدّم قانون M3 المضغوط معادلة حالة من الرتبة الأولى لمقياس');
 console.log('  التسارع المستنتج: بمعرفة ثلاث خصائص ماكروسكوبية للمجرة — مخزون');
 console.log('  الغاز (M_HI)، والعمق الثقالي (M_host)، والتماسك الديناميكي');
-console.log('  (MeanRun) — يتحدد a₀ بدقة 0.19 dex، ملتقطًا 86% من الإشارة');
+console.log('  (MeanRun) — يتحدد a₀ بدقة 0.19 dex، ملتقطًا 95% من الإشارة');
 console.log('  المنظمة. يصقل قانون M5 الكامل هذا بإضافة تصحيحين بنيويين من');
 console.log('  الرتبة الثانية: تركيز الباريونات (Σ₀) ونسبة الكتلة إلى اللمعان');
-console.log('  النجمية المستقلة (Υ★⊥)، محسّنًا الدقة إلى 0.16 dex. كلا');
+console.log('  النجمية المستقلة (Υ★⊥)، محسّنًا الدقة إلى 0.189 dex. كلا');
 console.log('  القانونين يتحللان إلى نفس التوتر الفيزيائي: محاور الكتلة تكبح');
 console.log('  مقياس التسارع الفعّال، بينما محاور التنظيم تضخّمه. M3 هو');
 console.log('  المعادلة العامة؛ M5 هو صقلها الدقيق.');
@@ -168,9 +168,9 @@ console.log('  │              │ M3 (General Equation)          │ M5 (Preci
 console.log('  ├──────────────┼────────────────────────────────┼───────────────────────────────────┤');
 console.log('  │ Role         │ First-order equation of state  │ Full predictive law               │');
 console.log('  │ Axes         │ 3 (gas, depth, coherence)      │ 5 (+ concentration, stellar M/L)  │');
-console.log('  │ LOO gap%     │ 44.1%                          │ 51.0%                             │');
-console.log('  │ RMS          │ 0.193 dex                      │ 0.157 dex                         │');
-console.log('  │ Signal       │ 86% of M5                      │ 100% (reference)                  │');
+console.log('  │ LOO gap%     │ 44.1%                          │ 46.6%                             │');
+console.log('  │ RMS          │ 0.193 dex                      │ 0.189 dex                         │');
+console.log('  │ Signal       │ 95% of M5                      │ 100% (reference)                  │');
 console.log('  │ Physics      │ Dominant tension captured       │ + structural corrections          │');
 console.log('  │ Analogy      │ Ideal gas law                  │ van der Waals equation             │');
 console.log('  │ Generality   │ Higher (fewer assumptions)     │ Higher precision                   │');
@@ -187,17 +187,17 @@ const output = {
       environmental_depth: {axis:'Mhost', exponent:'-1/6', role:'suppression'},
       dynamical_state: {axis:'MeanRun', exponent:'+1/2', role:'amplification'}
     },
-    LOO: '44.1%', RMS: '0.193 dex', signal_retention: '86% of M5'
+    LOO: '44.1%', RMS: '0.193 dex', signal_retention: '95% of M5'
   },
   M5_precision: {
     role: 'M3 + second-order structural corrections',
-    formula_power: 'a0 = A0 * MHI^(-1/4) * Mhost^(-1/6) * Sigma0^(+1/7) * MeanRun^(+3/7) * 10^((2/3)*Ups_perp)',
-    formula_log: 'log(a0) = 4.978 - 0.236*logMHI - 0.172*logMhost + 0.145*logSigma0 + 0.452*logMeanRun + 0.658*Ups_perp',
+    formula_power: 'a0 = A0 * MHI^(-1/4) * Mhost^(-1/6) * Sigma0^(+1/7) * MeanRun^(+3/7) * 10^((3/8)*Ups_perp)',
+    formula_log: 'log(a0) = 5.016 - 0.235*logMHI - 0.175*logMhost + 0.146*logSigma0 + 0.447*logMeanRun + 0.372*Ups_perp',
     corrections_over_M3: [
       {axis:'Sigma0', exponent:'+1/7', role:'baryon concentration correction'},
-      {axis:'Ups_perp', exponent:'+2/3', role:'stellar structure correction'}
+      {axis:'Ups_perp', exponent:'+3/8', role:'stellar structure correction'}
     ],
-    LOO: '51.0%', RMS: '0.157 dex', improvement_over_M3: '+6.9 pp LOO'
+    LOO: '46.6%', RMS: '0.189 dex', improvement_over_M3: '+2.5 pp LOO'
   },
   analogy: 'M3 = ideal gas law; M5 = van der Waals equation',
   scope: {

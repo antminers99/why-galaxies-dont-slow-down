@@ -29,8 +29,8 @@
       },
       {
         "name": "Upsilon_perp",
-        "exponent": 0.658,
-        "rational": "+2/3",
+        "exponent": 0.372,
+        "rational": "+3/8",
         "role": "Stellar-structure residual"
       }
     ],
@@ -55,14 +55,14 @@
     ]
   },
   "evidenceInventory": {
-    "M5_LOO": "51.0%",
+    "M5_LOO": "46.6%",
     "M3_LOO": "44.1%",
     "falsifiable": "24/26 (92%)",
     "matchedPairs": "22/25 (88%)",
     "fgasCollapsePenalty": "-36.5pp",
     "meanRunBridge": "|r|=0.83",
     "residualStructure": "0/7 significant strats",
-    "residualFrontier": "0.157 dex Gaussian"
+    "residualFrontier": "0.189 dex Gaussian"
   },
   "conclusion": "a0 is an emergent state variable governed by a 5-axis power-law equation of state. Framework-neutral: constrains any theory to reproduce state-dependent effective acceleration rather than a universal constant.",
   "verdict": "CONFIRMED-BRIDGE"

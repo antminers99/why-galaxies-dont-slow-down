@@ -84,7 +84,7 @@ function looCV_M2() {
 
 const looM2 = looCV_M2();
 console.log('  M2 LOO on training set: gap% = ' + looM2.gap.toFixed(1) + '%, RMS = ' + looM2.rms.toFixed(4));
-console.log('  (For reference: M3 LOO = 44.1%, M5 LOO = 51.0%)');
+console.log('  (For reference: M3 LOO = 44.1%, M5 LOO = 46.6%)');
 console.log();
 
 const sparc = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'sparc-table.json'), 'utf-8'));

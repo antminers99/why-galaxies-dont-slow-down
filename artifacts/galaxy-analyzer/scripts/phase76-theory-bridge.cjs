@@ -36,8 +36,8 @@ console.log('  │ logMeanRun          │ +0.452    │ Dynamical coherence: de
 console.log('  │                     │ (~ +3/7)  │ ordered vs disturbed velocity    │');
 console.log('  │                     │           │ field (1D proxy for 2D dynamics) │');
 console.log('  ├─────────────────────┼───────────┼──────────────────────────────────┤');
-console.log('  │ Upsilon_perp        │ +0.658    │ Stellar-structure residual:      │');
-console.log('  │                     │ (~ +2/3)  │ disk M/L after confounders       │');
+console.log('  │ Upsilon_perp        │ +0.372    │ Stellar-structure residual:      │');
+console.log('  │                     │ (~ +3/8)  │ disk M/L after confounders       │');
 console.log('  │                     │           │ (intrinsic stellar physics)      │');
 console.log('  └─────────────────────┴───────────┴──────────────────────────────────┘');
 console.log();
@@ -45,7 +45,7 @@ console.log();
 console.log('  CAN M3 BE WRITTEN AS A STATE LAW?');
 console.log('  ──────────────────────────────────');
 console.log('  YES. M3 uses only three axes (MHI, Mhost, MeanRun) and retains');
-console.log('  86% of M5\'s signal. It reads as:');
+console.log('  95% of M5\'s signal. It reads as:');
 console.log();
 console.log('    log(a0) = f(gas_reservoir, environmental_depth, dynamical_coherence)');
 console.log();
@@ -224,9 +224,9 @@ console.log('══════════════════════�
 console.log('  ┌────────────────────────────────────────┬──────────────────────────┐');
 console.log('  │ Evidence                               │ Result                   │');
 console.log('  ├────────────────────────────────────────┼──────────────────────────┤');
-console.log('  │ M5 LOO variance explained              │ 51.0%                    │');
+console.log('  │ M5 LOO variance explained              │ 46.6%                    │');
 console.log('  │ M3 (state law) LOO                     │ 44.1%                    │');
-console.log('  │ M5 beats universal constant by         │ 51 pp (LOO gap%)         │');
+console.log('  │ M5 beats universal constant by         │ 46.6 pp (LOO gap%)       │');
 console.log('  │ Falsifiable predictions passed          │ 24/26 (92%)              │');
 console.log('  │ Matched-pair sign tests                 │ 22/25 (88%)              │');
 console.log('  │ Matched-pair median |error|             │ 0.165 dex               │');
@@ -235,7 +235,7 @@ console.log('  │ MeanRun ↔ 2D dynamics (|r|)            │ 0.83 (confirmed)
 console.log('  │ Residual structure (stratification)     │ 0/7 significant          │');
 console.log('  │ Residual heteroscedasticity             │ None (BP=4.63 < 11.1)    │');
 console.log('  │ Residual distribution                   │ Gaussian (JB=1.22)       │');
-console.log('  │ Residual frontier                       │ 0.157 dex (irreducible)  │');
+console.log('  │ Residual frontier                       │ 0.189 dex (irreducible)  │');
 console.log('  └────────────────────────────────────────┴──────────────────────────┘');
 console.log();
 
@@ -247,7 +247,7 @@ const output = {
       {name:'logMhost', exponent:-0.172, rational:'-1/6', role:'Environmental/gravitational depth'},
       {name:'logSigma0', exponent:0.145, rational:'+1/7', role:'Baryon concentration'},
       {name:'logMeanRun', exponent:0.452, rational:'+3/7', role:'Dynamical coherence (1D proxy for 2D)'},
-      {name:'Upsilon_perp', exponent:0.658, rational:'+2/3', role:'Stellar-structure residual'}
+      {name:'Upsilon_perp', exponent:0.372, rational:'+3/8', role:'Stellar-structure residual'}
     ],
     m3IsStateLaw: true,
     structuralInsight: 'Negative exponents (mass axes) suppress a0; positive exponents (organization axes) amplify it. a0 emerges from tension between gravitational depth and baryonic organization.',
@@ -270,14 +270,14 @@ const output = {
     ]
   },
   evidenceInventory: {
-    M5_LOO: '51.0%',
+    M5_LOO: '46.6%',
     M3_LOO: '44.1%',
     falsifiable: '24/26 (92%)',
     matchedPairs: '22/25 (88%)',
     fgasCollapsePenalty: '-36.5pp',
     meanRunBridge: '|r|=0.83',
     residualStructure: '0/7 significant strats',
-    residualFrontier: '0.157 dex Gaussian'
+    residualFrontier: '0.189 dex Gaussian'
   },
   conclusion: 'a0 is an emergent state variable governed by a 5-axis power-law equation of state. Framework-neutral: constrains any theory to reproduce state-dependent effective acceleration rather than a universal constant.',
   verdict: 'CONFIRMED-BRIDGE'

@@ -205,8 +205,8 @@ console.log('    M6 selected: ' + nestedM6wins + '/' + totalFolds + ' (' + (nest
 console.log();
 console.log('  Nested CV outer-fold RMS = ' + nestedRms.toFixed(4) + ' dex');
 console.log('  Nested CV gap% = ' + nestedGap.toFixed(1) + '%');
-console.log('  Standard LOO gap% = 51.0%');
-console.log('  Optimism = ' + (51.0 - nestedGap).toFixed(1) + ' pp');
+console.log('  Standard LOO gap% = 46.6%');
+console.log('  Optimism = ' + (46.6 - nestedGap).toFixed(1) + ' pp');
 console.log();
 const nestedPass = nestedGap > 30;
 console.log('  VERDICT: ' + (nestedPass ? 'PASS' : 'FAIL') + ' — nested gap% = ' + nestedGap.toFixed(1) + '%');
