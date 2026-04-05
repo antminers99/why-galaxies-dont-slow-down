@@ -1,41 +1,79 @@
 # Galaxy Rotation Curve Analyzer
 
-A data-driven investigation into whether the MOND acceleration scale $a_0$ varies systematically between galaxies, using the SPARC database (Lelli, McGaugh & Schombert 2016).
+A data-driven investigation into the physical drivers of outer support requirement in galaxy rotation curves, using the SPARC database (Lelli, McGaugh & Schombert 2016).
 
-## Main Result
+## Status: Robust High-Regime Result
 
-**A single-variable physical law governs rotation curve shape:**
+**Gas fraction is the strongest transferable catalog predictor of outer support requirement in high-$V_\text{flat}$ SPARC galaxies.**
 
-$$\text{outerSlope} \approx 1.92 \times \log_{10}\!\left(\frac{V_\text{flat}}{V_\text{max}^\text{inner}}\right) + 0.018$$
+### The Finding
 
-The ratio of asymptotic velocity to inner peak velocity predicts the outer rotation curve slope with $r = 0.85$, $p < 0.0001$, across 104 massive spiral galaxies. This survives all measurement controls (8/8 physical, 0/8 measurement artifact).
+Within the high-$V_\text{flat}$ ($\geq 70$ km/s) SPARC population, a single catalog variable — gas fraction $f_\text{gas} = M_\text{HI} / (M_\text{HI} + \Upsilon_\star L_{3.6})$ — predicts the outer mass discrepancy $\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer}$ with:
 
-**What it means:** Galaxies that build their rotation velocity quickly in the center have flat or declining outer curves. Those still rising internally have rising outer curves. This encodes halo concentration — the inside-to-outside mass distribution.
+- Pearson $|r| = 0.724$
+- Leave-one-out $R^2 = 0.503$
+- Permutation $p < 0.0001$
 
-**What happened to $a_0$:** The per-galaxy MOND acceleration scale is a noisy proxy for this ratio. Adding $a_0$ to the ratio model gives $\Delta R^2 = -0.009$ (negative). $a_0$ is not needed.
+### Locked External Validation (Phase 104)
+
+The model was locked on 70% training data and applied without refit to 30% held-out data across 200 random splits:
+
+| Metric | Value |
+|:---|:---|
+| External $r$ | 0.723 [0.584, 0.820] |
+| External $R^2$ | 0.474 [0.108, 0.640] |
+| Calibration slope | 1.012 (ideal = 1.0) |
+| Calibration offset | −0.004 (ideal = 0.0) |
+
+Near-perfect calibration confirms this is not overfit.
+
+### What This Means
+
+Galaxies with higher gas fractions (more gas-rich, less stellar-converted) show larger outer mass discrepancies — they require more "extra" support beyond their baryonic content in the outer disk. This suggests that the need for additional outer support is tied to the diffuse, gas-rich baryonic state, not to the abstract inner shape of the rotation curve.
+
+### What This Does NOT Claim
+
+- This is **not** a universal law for all disk galaxies
+- It **does not** transfer to low-$V_\text{flat}$ dwarfs (where all tested predictors fail equally under locked calibration)
+- It has **not** been fully replicated on an independent external survey (LITTLE THINGS lacks baryonic decomposition for target variable matching)
+
+## Evidence Chain
+
+| Phase | Finding | Result |
+|:---|:---|:---|
+| 1–100 | Original $V_\text{flat}/V_\text{max}^\text{inner}$ ratio law | $r = 0.85$, LOO $R^2 = 0.69$ |
+| **101** | **Null geometric coupling test** | **3/4 FAIL — ratio law is geometric artifact** |
+| 102 | Reframed: catalog-only predictors of outer mass discrepancy | $f_\text{gas}$ LOO $R^2 = 0.503$ vs old ratio LOO $R^2 = 0.038$ |
+| 103 | Robustness battery | 3/5 PASS (Collinearity FAIL due to $\Sigma_0$/$f_\text{gas}$ $r = -0.81$) |
+| **104** | **Locked external replication** | **ext $R^2 = 0.474$, cal slope = 1.01** |
+
+### The Critical Pivot (Phase 101)
+
+The original ratio law ($V_\text{flat}/V_\text{max}^\text{inner}$ predicts outerSlope) appeared strong ($r = 0.85$) but Phase 101 demonstrated it is a **geometric artifact**: smooth monotonic curves with no physics reproduce $r = 0.83$. Three of four null-coupling tests failed. The real signal was only 1.02× above the geometric floor.
+
+This led to a complete reframing:
+- **New target**: $\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer}$ (outer mass discrepancy — immune to geometric coupling)
+- **New predictors**: catalog-only variables (no quantities derived from the rotation curve shape itself)
+- $f_\text{gas}$ emerged as the backbone predictor
 
 ## Repository Structure
 
 ```
 artifacts/galaxy-analyzer/
 ├── public/replication/          # Key deliverables
-│   ├── REPRODUCIBLE_RESULT.md   # Concise replication guide (start here)
-│   ├── paper.md                 # Full 100-phase analysis paper
-│   ├── N45_final_dataset.csv    # Quality-controlled N=45 dataset
-│   ├── replicate_from_scratch.py # Self-contained Python replication script
-│   ├── variable_definitions.md  # Variable definitions
-│   ├── model_spec.md            # Model equations
-│   └── expected_outputs.md      # Expected numerical results
-├── scripts/                     # All 100 analysis phase scripts (Node.js)
-│   ├── phase96-direct-law.cjs         # Discovery of the ratio law
-│   ├── phase97-geometric-test.cjs     # Geometric artifact tests
-│   ├── phase98-external-replication.cjs # Cross-sample replication
-│   ├── phase99-calibration-law.cjs    # Distance calibration
-│   ├── phase100-physical-vs-measurement.cjs # Final physical vs artifact test
-│   └── ... (phases 1-95)              # Earlier investigation phases
+│   ├── REPRODUCIBLE_RESULT.md   # Current result summary and replication guide
+│   ├── paper.md                 # Historical phases 1–100 analysis (superseded by 101+)
+│   ├── N45_final_dataset.csv    # Quality-controlled N=45 dataset (phases 1–100)
+│   └── replicate_from_scratch.py # Python replication script (phases 1–100)
+├── scripts/                     # All analysis phase scripts (Node.js)
+│   ├── phase104-external-replication.cjs   # Locked external validation
+│   ├── phase103-robustness-battery.cjs     # Robustness tests
+│   ├── phase102-residual-physics.cjs       # fgas discovery
+│   ├── phase101-null-geometric-coupling.cjs # Artifact exposure
+│   └── ... (phases 1–100)                  # Earlier investigation
 ├── public/                      # JSON results for each phase
-│   ├── phase100-physical-vs-measurement.json
-│   ├── phase99-calibration-law.json
+│   ├── phase104-external-replication.json
+│   ├── phase103-robustness-battery.json
 │   └── ... (all phase results)
 ├── src/                         # React + Vite web application
 │   ├── pages/                   # Interactive analysis pages
@@ -45,47 +83,21 @@ artifacts/galaxy-analyzer/
 
 ## Quick Reproduction
 
-### Option 1: From SPARC raw data (recommended)
-
-See [`REPRODUCIBLE_RESULT.md`](artifacts/galaxy-analyzer/public/replication/REPRODUCIBLE_RESULT.md) for step-by-step instructions.
-
-Download SPARC data from CDS/VizieR:
-- [table1.dat](https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table1.dat) (galaxy properties)
-- [table2.dat](https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table2.dat) (rotation curves)
-
-### Option 2: Python script
+### Current Result (Phases 102–104)
 
 ```bash
-cd artifacts/galaxy-analyzer/public/replication/
-python replicate_from_scratch.py
-```
-
-### Option 3: Node.js scripts
-
-```bash
-# Download SPARC data first, then:
 cd artifacts/galaxy-analyzer/
-node scripts/phase100-physical-vs-measurement.cjs
+# Download SPARC data first:
+# curl -o /tmp/sparc_table1.dat https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table1.dat
+# curl -o /tmp/sparc_cds.dat https://cdsarc.cds.unistra.fr/ftp/J/AJ/152/157/table2.dat
+node scripts/phase102-residual-physics.cjs     # fgas discovery
+node scripts/phase103-robustness-battery.cjs   # robustness tests
+node scripts/phase104-external-replication.cjs # locked external validation
 ```
 
-## Key Evidence Chain
+### Historical Result (Phases 1–100, superseded)
 
-| Phase | Finding | Result |
-|:---|:---|:---|
-| 96 | $a_0$ superseded by $V_\text{flat}/V_\text{max}^\text{inner}$ | LOO $R^2 = 0.69$ vs $a_0$'s $-0.02$ |
-| 97 | Law is genuine, not geometric artifact | 4/4 genuine, 0/4 geometric |
-| 98 | Partially replicates on N=45 subset | $r = 0.63$, $p < 0.0001$ |
-| 99 | Calibration depends on distance | LOO $R^2 = 0.75$ with correction |
-| 100 | **Physical, not measurement artifact** | **8/8 physical, 0/8 measurement** |
-
-## Phase 100 Controls
-
-The law survives all of these:
-
-- **Every distance bin**: Near $r = 0.93$, Mid $r = 0.78$, Far $r = 0.83$ (all $p < 0.0001$)
-- **51 distance-matched pairs**: $r = 0.81$, $p < 0.0001$
-- **Partial correlation** after D, nPts, radial coverage: $r = 0.81$ (only 5% drop)
-- **Alternative proxies**: mean inner V ($r = 0.72$), baryon-only $V_\text{max}$ ($r = 0.53$)
+See [`paper.md`](artifacts/galaxy-analyzer/public/replication/paper.md) for the full 100-phase investigation that led to and was ultimately superseded by the geometric artifact discovery.
 
 ## Data
 
@@ -97,7 +109,7 @@ All analysis uses the publicly available [SPARC database](http://astroweb.cwru.e
 
 - **Analysis**: Node.js scripts (CommonJS)
 - **Web app**: React + TypeScript + Vite + Tailwind CSS + shadcn/ui
-- **Statistics**: OLS regression, LOO cross-validation, permutation tests, Theil-Sen robust regression, partial correlations — all implemented from scratch (no external stats libraries)
+- **Statistics**: OLS regression, LOO cross-validation, permutation tests, bootstrap stability, partial correlations — all implemented from scratch (no external stats libraries)
 
 ## License
 

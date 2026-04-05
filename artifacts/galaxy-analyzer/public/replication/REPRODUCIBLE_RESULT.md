@@ -1,21 +1,23 @@
-# A Single-Variable Law Governing Rotation Curve Shape in Disk Galaxies
+# Gas Fraction as a Robust High-Regime Predictor of Outer Support Requirement in SPARC Galaxies
 
-**Claim:** The ratio $V_\text{flat} / V_\text{max}^\text{inner}$ predicts the outer rotation curve slope of massive spiral galaxies with $r = 0.85$, $p < 0.0001$, surviving all measurement controls.
+**Status:** Robust high-regime result
 
-**Status:** Confirmed physical (not measurement artifact). Score: 8/8 physical, 0/8 measurement.
+**Claim:** $f_\text{gas}$ is the strongest transferable single catalog predictor of outer support requirement in high-$V_\text{flat}$ SPARC galaxies.
+
+**Qualification:** This result is regime-specific and does not transfer to low-$V_\text{flat}$ dwarfs, where all tested predictors fail under locked calibration. Fully independent cross-survey replication remains blocked by target incompatibility (LITTLE THINGS lacks baryonic decomposition).
 
 ---
 
-## 1. The Law (One Equation)
+## 1. The Result (One Equation)
 
-$$\text{outerSlope} \approx 1.92 \times \log_{10}\!\left(\frac{V_\text{flat}}{V_\text{max}^\text{inner}}\right) + 0.018$$
+$$\log_{10}\langle V_\text{obs}^2 / V_\text{bar}^2 \rangle_\text{outer} \approx 0.352 + 0.706 \times f_\text{gas}$$
 
 Where:
-- **$V_\text{flat}$**: asymptotic flat rotation velocity (Table 1 of Lelli+ 2016)
-- **$V_\text{max}^\text{inner}$**: maximum observed $V_\text{obs}$ in the inner half of the rotation curve
-- **outerSlope**: slope of $\log V_\text{obs}$ vs $\log R$ in the outer half of the rotation curve
+- **$f_\text{gas}$** = $M_\text{HI} / (M_\text{HI} + \Upsilon_\star L_{3.6})$ with $\Upsilon_\star = 0.5$
+- **Outer mass discrepancy** = mean of $V_\text{obs}^2 / V_\text{bar}^2$ across outer-half rotation curve points
+- **$V_\text{bar}^2$** = $0.5 \cdot V_\text{disk}|V_\text{disk}| + 0.7 \cdot V_\text{bul}|V_\text{bul}| + V_\text{gas}|V_\text{gas}|$
 
-**Interpretation:** Galaxies that reach their peak velocity early (high $V_\text{max}^\text{inner}$ relative to $V_\text{flat}$) have flatter or declining outer curves. Galaxies still rising internally have steeper outer curves. This encodes **halo concentration** — the inside-to-outside mass distribution.
+**Interpretation:** Galaxies with higher gas fractions (more gas-rich, less stellar-converted) show larger outer mass discrepancies. The need for additional outer support is tied to the diffuse, gas-rich baryonic state.
 
 ---
 
@@ -36,32 +38,32 @@ No preprocessing, filtering, or custom data needed. Use the raw published tables
 ## 3. How to Reproduce (Step by Step)
 
 ### Step 1: Load the data
-- Parse `table1.dat` for: galaxy name, $V_\text{flat}$, $R_\text{disk}$, distance $D$, quality flag $Q$
-- Parse `table2.dat` for: galaxy name, radius, $V_\text{obs}$
+- Parse `table1.dat` for: galaxy name, $V_\text{flat}$, $L_{3.6}$, $M_\text{HI}$, $R_\text{disk}$
+- Parse `table2.dat` for: galaxy name, radius, $V_\text{obs}$, $V_\text{gas}$, $V_\text{disk}$, $V_\text{bul}$
 
 ### Step 2: Select galaxies
-- Keep galaxies with $V_\text{flat} \geq 70$ km/s (high-regime spirals)
+- Keep galaxies with $V_\text{flat} \geq 70$ km/s
 - Keep galaxies with $\geq 8$ rotation curve data points
+- Require $M_\text{HI} > 0$ and $L_{3.6} > 0$
 - This gives $N \approx 104$ galaxies
 
-### Step 3: Split each rotation curve in half
-- Sort data points by radius
-- **Inner half**: first 50% of points
-- **Outer half**: last 50% of points
+### Step 3: Compute baryonic velocity at each point
+$$V_\text{bar}^2 = 0.5 \cdot V_\text{disk}|V_\text{disk}| + 0.7 \cdot V_\text{bul}|V_\text{bul}| + V_\text{gas}|V_\text{gas}|$$
 
-### Step 4: Compute two quantities
-- **$V_\text{max}^\text{inner}$** = maximum $V_\text{obs}$ among inner-half points
-- **outerSlope** = OLS slope of $\log_{10}(V_\text{obs})$ vs $\log_{10}(R)$ on outer-half points
+### Step 4: Compute outer mass discrepancy
+- Sort rotation curve points by radius
+- Take the outer half (last 50% of points)
+- Compute: $\text{logOMD} = \log_{10}\left(\text{mean}\left(\frac{V_\text{obs}^2}{V_\text{bar}^2}\right)_\text{outer}\right)$
 
-### Step 5: Compute the ratio
-$$x = \log_{10}\!\left(\frac{V_\text{flat}}{V_\text{max}^\text{inner}}\right)$$
+### Step 5: Compute gas fraction
+$$f_\text{gas} = \frac{M_\text{HI}}{M_\text{HI} + 0.5 \times L_{3.6}}$$
 
 ### Step 6: Correlate
-$$r(x, \text{outerSlope}) \approx 0.85, \quad p < 0.0001$$
+$$r(f_\text{gas}, \text{logOMD}) \approx 0.72, \quad p < 0.0001$$
 
 ### Step 7: Verify with LOO cross-validation
-- Fit $\text{outerSlope} = a + b \cdot x$ leaving one galaxy out each time
-- LOO $R^2 \approx 0.69$
+- Fit $\text{logOMD} = a + b \cdot f_\text{gas}$ leaving one galaxy out each time
+- LOO $R^2 \approx 0.50$
 
 ---
 
@@ -69,46 +71,42 @@ $$r(x, \text{outerSlope}) \approx 0.85, \quad p < 0.0001$$
 
 | Metric | Expected Value |
 |:---|:---|
-| Pearson $r$ | $0.84$–$0.85$ |
-| LOO $R^2$ (ratio only) | $0.68$–$0.70$ |
-| Slope $b$ | $1.8$–$2.0$ |
-| Intercept $a$ | $\approx 0.02$ |
-| Permutation $p$ (2000 trials) | $< 0.001$ |
+| Pearson $r$ | $0.72$–$0.73$ |
+| LOO $R^2$ | $0.49$–$0.51$ |
+| Slope $b$ | $\sim 0.71$ |
+| Intercept $a$ | $\sim 0.35$ |
+| Permutation $p$ (10000 trials) | $< 0.0001$ |
 
 ---
 
-## 5. Controls That Must Also Pass
+## 5. Locked External Validation (Must Also Pass)
 
-### 5a. Not a distance artifact
-Split into 3 distance bins (tertiles). Expected:
+### 5a. 70/30 random split (200 iterations, no refit)
 
-| Bin | $r$ |
+| Metric | Expected |
 |:---|:---|
-| Near ($D < 14$ Mpc) | $\sim 0.93$ |
-| Mid ($14$–$21$ Mpc) | $\sim 0.78$ |
-| Far ($> 21$ Mpc) | $\sim 0.83$ |
+| External $r$ | 0.72 [0.58, 0.82] |
+| External $R^2$ | 0.47 [0.11, 0.64] |
+| Calibration slope | $\sim 1.01$ |
+| Calibration offset | $\sim -0.004$ |
 
-All $p < 0.0001$. If the law were a measurement artifact, it would vanish or weaken dramatically in at least one bin.
+Near-perfect calibration (slope $\approx 1$, offset $\approx 0$) confirms model is not overfit.
 
-### 5b. Partial correlation after controlling D, nPts, radial coverage
-$$r_\text{partial}(\text{ratio}, \text{outerSlope} \mid D, N_\text{pts}, R_\text{max}/R_d) \approx 0.81$$
+### 5b. Leave-P%-out cross-validation
 
-Raw $r = 0.85$ drops by only $\sim 5\%$. Measurement properties explain almost nothing.
-
-### 5c. Distance-matched pairs
-Match galaxies within 20% distance. Among $\sim 51$ pairs:
-$$r(\Delta\text{ratio}, \Delta\text{slope}) \approx 0.81, \quad p < 0.0001$$
-
-### 5d. Alternative inner proxies
-Replace $V_\text{max}^\text{inner}$ with less resolution-sensitive proxies:
-
-| Proxy | Partial $r$ (after all controls) |
+| Holdout % | Expected ext $R^2$ |
 |:---|:---|
-| Mean inner $V$ | $\sim 0.72$ |
-| Deep inner Vmax (inner 25% of inner half) | $\sim 0.66$ |
-| Inner baryon $V_\text{max}$ (from mass model) | $\sim 0.53$ |
+| 10% | $\sim 0.38$ |
+| 20% | $\sim 0.45$ |
+| 30% | $\sim 0.48$ |
+| 40% | $\sim 0.48$ |
+| 50% | $\sim 0.48$ |
 
-All survive. The baryon-only proxy is independent of beam smearing.
+Stable across all holdout sizes.
+
+### 5c. Competitor knockout
+
+$f_\text{gas}$ wins best external $R^2$ in $\sim 55\%$ of 70/30 splits, beating logSigma0, logBaryonCompact, and logL36.
 
 ---
 
@@ -116,41 +114,49 @@ All survive. The baryon-only proxy is independent of beam smearing.
 
 | Test | Result | Why |
 |:---|:---|:---|
-| Dwarf galaxies ($V_\text{flat} < 70$ km/s) | $r \approx 0.13$ | $V_\text{flat}$ is ill-defined for rising RCs |
-| Per-galaxy $a_0$ as predictor | LOO $R^2 = -0.02$ | $a_0$ is a noisy proxy for this ratio |
-| Linear fraction instead of log | Slope instability 64% | Log is the correct functional form |
+| Low-$V_\text{flat}$ dwarfs (locked) | ext $R^2 < 0$ for ALL predictors | Regime boundary — dwarfs are a different system |
+| LITTLE THINGS external | Cannot compute target | No baryonic decomposition available |
+| 4-variable model ($\Sigma_0$ + $M_\text{HI}$ + $R_\text{disk}$ + $f_\text{gas}$) | LOO $R^2 = 0.519$ | Only +0.016 over $f_\text{gas}$ alone; severe collinearity (VIF 14–22) |
+| Old $V_\text{flat}/V_\text{max}^\text{inner}$ ratio law | LOO $R^2 = 0.038$ on new target | Geometric artifact (Phase 101) |
 
 ---
 
-## 7. Relationship to MOND $a_0$
+## 7. Historical Context: The Geometric Artifact
 
-The original investigation asked whether the MOND acceleration scale $a_0$ varies systematically between galaxies. The answer:
+### Phases 1–100: The Ratio Law (Superseded)
 
-1. Per-galaxy $a_0$ does correlate with galaxy structure ($R^2 \approx 0.5$)
-2. But $a_0$ is a **noisy proxy** for $V_\text{flat}/V_\text{max}^\text{inner}$
-3. Adding $a_0$ to the ratio model contributes $\Delta R^2 = -0.009$ (negative)
-4. Adding the ratio to the $a_0$ model contributes $\Delta R^2 = +0.39$
-5. **$a_0$ is not needed.** The ratio is the fundamental variable.
+The original investigation found that $\log(V_\text{flat}/V_\text{max}^\text{inner})$ predicts outerSlope with $r = 0.85$, LOO $R^2 = 0.69$. This appeared to be a strong physical law.
+
+### Phase 101: Null Geometric Coupling Test
+
+A null test using smooth monotonic curves with no physics reproduced $r = 0.83$. Three of four null-coupling criteria failed. The real signal was only 1.02$\times$ above the geometric floor. The ratio law is a **geometric artifact**: any monotonically rising curve will show this correlation by construction.
+
+### Phase 102: Reframing
+
+The target was changed to outer mass discrepancy (immune to geometric coupling) and predictors were restricted to catalog-only variables (not derived from rotation curve shape). $f_\text{gas}$ emerged as the backbone predictor.
 
 ---
 
 ## 8. Physical Interpretation
 
-The ratio $V_\text{flat}/V_\text{max}^\text{inner}$ encodes **halo concentration**: how the total (baryonic + dark) mass is distributed between the inner and outer galaxy.
+$f_\text{gas}$ encodes the baryonic state of the galaxy:
 
-- **Ratio $\approx 1$** (high $V_\text{max}^\text{inner}$): concentrated mass, flat/declining outer RC
-- **Ratio $> 1$** (low inner peak): extended halo dominates, rising outer RC
+- **High $f_\text{gas}$** (gas-dominant): large outer mass discrepancy, more "extra" support needed
+- **Low $f_\text{gas}$** (stellar-dominant): smaller outer mass discrepancy, baryons account for more of the observed rotation
 
-This is a **one-parameter family** of rotation curve shapes, governed by a single observable ratio. It predicts 69% of outer slope variance with zero overfitting (LOO), using one variable measured from the rotation curve itself.
+This suggests the outer support requirement correlates with the degree of baryonic conversion — galaxies that have converted less gas into stars require proportionally more dark matter (or modified gravity) support in their outer regions.
+
+**Open question:** Is $f_\text{gas}$ the causal driver, or a proxy for something deeper — low surface density state, recent evolutionary history, weak stellar feedback, or baryon-halo coupling efficiency?
 
 ---
 
 ## 9. Caveats
 
 1. **Regime-specific**: works for $V_\text{flat} \geq 70$ km/s spirals only
-2. **Calibration is distance-dependent**: the slope $b$ varies from $\sim 2.2$ (nearby) to $\sim 0.9$ (distant) due to resolution effects on $V_\text{max}^\text{inner}$
-3. **Cross-sample transfer**: qualitative relationship is universal, but quantitative calibration depends on sample composition
-4. **Not tested outside SPARC**: replication on independent datasets (e.g., THINGS, LITTLE THINGS) would strengthen the claim
+2. **Single survey**: all data from SPARC; cross-survey replication blocked by data incompatibility
+3. **Collinearity with $\Sigma_0$**: $r = -0.81$ between $f_\text{gas}$ and $\log\Sigma_0$, so causal attribution is ambiguous
+4. **Moderate effect size**: LOO $R^2 = 0.50$ means 50% of variance remains unexplained
+5. **No causal mechanism**: the *why* behind the correlation is not yet established
 
 ---
 
@@ -158,50 +164,63 @@ This is a **one-parameter family** of rotation curve shapes, governed by a singl
 
 | File | Contents |
 |:---|:---|
-| `paper.md` | Full 100-phase analysis (detailed) |
-| `N45_final_dataset.csv` | Quality-controlled N=45 subset |
-| `../phase100-physical-vs-measurement.json` | Phase 100 raw results |
-| `../phase99-calibration-law.json` | Calibration analysis |
-| `../phase98-external-replication.json` | Cross-sample replication |
-| `../phase97-geometric-test.json` | Geometric artifact tests |
-| `../scripts/phase100-physical-vs-measurement.cjs` | Phase 100 script (Node.js) |
+| `REPRODUCIBLE_RESULT.md` | This document — current claim and replication guide |
+| `paper.md` | Full phases 1–100 analysis (historical, superseded by 101+) |
+| `N45_final_dataset.csv` | Quality-controlled N=45 subset (phases 1–100) |
+| `../phase104-external-replication.json` | Phase 104 raw results |
+| `../phase103-robustness-battery.json` | Phase 103 raw results |
+| `../phase102-residual-physics.json` | Phase 102 raw results |
+| `../scripts/phase104-external-replication.cjs` | Locked external validation script |
+| `../scripts/phase102-residual-physics.cjs` | fgas discovery script |
 
 ---
 
 ## 11. Minimal Reproducibility Script (Pseudocode)
 
 ```python
-# Load SPARC tables
+import numpy as np
+
 table1 = load("table1.dat")  # galaxy properties
 table2 = load("table2.dat")  # rotation curves
+
+UPSILON_DISK = 0.5
+UPSILON_BULGE = 0.7
 
 results = []
 for galaxy in table1:
     if galaxy.Vflat < 70: continue
-    
-    rc = table2[galaxy.name]  # sorted by radius
-    rc = rc[rc.radius > 0 & rc.vobs > 0]
+    if galaxy.MHI <= 0 or galaxy.L36 <= 0: continue
+
+    rc = table2[galaxy.name]
+    rc = rc[(rc.radius > 0) & (rc.vobs > 0)]
     if len(rc) < 8: continue
-    
+
+    # Baryonic velocity
+    vbar_sq = (UPSILON_DISK * rc.vdisk * abs(rc.vdisk)
+             + UPSILON_BULGE * rc.vbul * abs(rc.vbul)
+             + rc.vgas * abs(rc.vgas))
+    vbar = np.sqrt(np.maximum(vbar_sq, 0.01))
+
+    # Outer half
     half = len(rc) // 2
-    inner = rc[:half]
     outer = rc[half:]
-    
-    inner_vmax = max(inner.vobs)
-    
-    log_r = log10(outer.radius)
-    log_v = log10(outer.vobs)
-    outer_slope = OLS_slope(log_r, log_v)
-    
-    log_ratio = log10(galaxy.Vflat / inner_vmax)
-    
-    results.append((log_ratio, outer_slope))
+    outer_vbar = vbar[half:]
+
+    # Outer mass discrepancy
+    mass_disc = (outer.vobs**2) / (outer_vbar**2)
+    logOMD = np.log10(np.mean(mass_disc))
+
+    # Gas fraction
+    fgas = galaxy.MHI / (galaxy.MHI + UPSILON_DISK * galaxy.L36)
+
+    results.append((fgas, logOMD))
 
 x, y = zip(*results)
-print(f"r = {pearson_r(x, y):.3f}")   # expect ~0.85
-print(f"N = {len(results)}")           # expect ~104
+print(f"r = {pearson_r(x, y):.3f}")     # expect ~0.72
+print(f"N = {len(results)}")             # expect ~104
+# LOO R^2 ~ 0.50
 ```
 
 ---
 
-**Contact / Citation:** This analysis uses publicly available SPARC data (Lelli, McGaugh & Schombert 2016). All scripts and intermediate results are included in this repository for full reproducibility.
+**Data:** SPARC (Lelli, McGaugh & Schombert 2016, AJ 152, 157). All scripts and intermediate results are included in this repository for full reproducibility.
