@@ -1,0 +1,111 @@
+{
+  "phase": 110,
+  "title": "Uncertainty Propagation (Monte Carlo)",
+  "n": 104,
+  "nMC": 2000,
+  "baseline": {
+    "r": 0.7237,
+    "loo": 0.5028,
+    "slope": 0.7062,
+    "intercept": 0.3515
+  },
+  "scenarios": [
+    {
+      "name": "Perturb Vobs only",
+      "r": {
+        "mean": 0.7224,
+        "ci025": 0.7104,
+        "ci975": 0.7339
+      },
+      "loo": {
+        "mean": 0.5012,
+        "ci025": 0.4853,
+        "ci975": 0.5196
+      },
+      "slope": {
+        "mean": 0.71,
+        "ci025": 0.6912,
+        "ci975": 0.7298
+      },
+      "intercept": {
+        "mean": 0.3517,
+        "ci025": 0.3469,
+        "ci975": 0.3566
+      },
+      "signFlipRate": 0
+    },
+    {
+      "name": "Perturb MHI only (20%)",
+      "r": {
+        "mean": 0.7136,
+        "ci025": 0.6909,
+        "ci975": 0.7361
+      },
+      "loo": {
+        "mean": 0.4883,
+        "ci025": 0.4634,
+        "ci975": 0.5155
+      },
+      "slope": {
+        "mean": 0.6936,
+        "ci025": 0.666,
+        "ci975": 0.7222
+      },
+      "intercept": {
+        "mean": 0.3573,
+        "ci025": 0.3486,
+        "ci975": 0.3662
+      },
+      "signFlipRate": 0
+    },
+    {
+      "name": "Perturb L36 only",
+      "r": {
+        "mean": 0.7236,
+        "ci025": 0.7205,
+        "ci975": 0.7267
+      },
+      "loo": {
+        "mean": 0.5026,
+        "ci025": 0.4978,
+        "ci975": 0.5081
+      },
+      "slope": {
+        "mean": 0.7056,
+        "ci025": 0.7003,
+        "ci975": 0.7108
+      },
+      "intercept": {
+        "mean": 0.3517,
+        "ci025": 0.3503,
+        "ci975": 0.353
+      },
+      "signFlipRate": 0
+    },
+    {
+      "name": "Perturb ALL simultaneously",
+      "r": {
+        "mean": 0.7113,
+        "ci025": 0.6843,
+        "ci975": 0.7363
+      },
+      "loo": {
+        "mean": 0.4905,
+        "ci025": 0.4549,
+        "ci975": 0.5277
+      },
+      "slope": {
+        "mean": 0.6957,
+        "ci025": 0.6619,
+        "ci975": 0.7308
+      },
+      "intercept": {
+        "mean": 0.3578,
+        "ci025": 0.348,
+        "ci975": 0.3679
+      },
+      "signFlipRate": 0
+    }
+  ],
+  "verdict": "STRONG PASS: Signal survives simultaneous perturbation of all measurement uncertainties. r 95% CI entirely above 0.4, zero slope sign-flips."
+}
