@@ -6,7 +6,14 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 # Galaxy Rotation Curve Analysis — Executive Summary
 
 ## STATUS: CARRIER VERIFIED — Halo Triaxiality (m=2 mode) — 95% confidence
-## Programs 1–8C + Program 9 + Program 9V (Red Team) COMPLETE
+## Programs 1–9V COMPLETE | Program 10.1 (Census) COMPLETE
+
+**Program 10.1 Critical Update:** MaNGA-SPARC overlap = ZERO (target-selection artefact,
+verified SDSS DR17). N=7 (THINGS) is the archival ceiling. Result remains robust
+(r=0.837, p=0.005, partial r|Vflat=0.863, bootstrap CI excludes zero).
+Expansion requires dedicated VLA/ASKAP/MeerKAT proposals, not archival mining.
+Top targets: ESO563-G021 (DQ=+2.27), UGC06787 (+1.98), UGC09037 (-1.78).
+Proposal memo: `public/replication/mnras/proposal-memo.tex`.
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN

@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+\newcommand{\vflat}{V_\mathrm{flat}}
+\newcommand{\azero}{a_0}
+\newcommand{\DQ}{\mathrm{DQ}}
+\newcommand{\mtwo}{m{=}2}
+\newcommand{\kms}{\,\mathrm{km\,s}^{-1}}
+\newcommand{\Msun}{\mathrm{M}_\odot}
+
+\title{Science Case Memo:\\Dedicated 2D Velocity-Field Follow-up\\of High-$|\DQ|$ SPARC Galaxies}
+\author{Galaxy Rotation Curve Analyzer --- Independent Analysis}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\section{Motivation}
+
+Analysis of 175 SPARC galaxy rotation curves reveals a hidden common-cause state $H$ that drives a bilateral coupling between flat-velocity residuals ($\mathrm{VfResid}$) and acceleration-scale residuals ($\mathrm{a0Resid}$) at $r = 0.77$ (LOO, $p < 0.001$, $N = 45$).
+Using THINGS HI velocity fields, we identified the outer-halo $\mtwo$ mode as the observational carrier of $H$, with $r(\DQ, \log P_2) = 0.85$ ($p = 0.005$, $N = 7$).
+
+The result is statistically robust (11/11 red team tests pass, bootstrap 95\% CI $= [0.30, 0.99]$, partial $r = 0.86$ after controlling for $\vflat$), but the sample of $N = 7$ is the maximum achievable with current public 2D kinematic data.
+
+\subsection{Why MaNGA Is Not a Viable Expansion Path}
+
+A systematic cross-match against the SDSS DR17 observed catalogue (mangaDrpAll; $N = 11{,}273$ galaxies) reveals that \textbf{zero} SPARC quality-sample galaxies appear in MaNGA's observed sample.
+The apparent overlap identified in earlier census work was a \emph{target-selection artefact}: the galaxies appeared in MaNGA's target catalogue but were never observed.
+The root cause is a redshift mismatch: MaNGA targets galaxies at $z > 0.01$ ($D > 40$~Mpc), while SPARC galaxies reside in the local volume ($z < 0.007$, $D < 30$~Mpc).
+
+Similarly, PHANGS and CALIFA overlap only galaxies already in our THINGS sample, and LITTLE THINGS galaxies lack quality RAR fits.
+The current sample ceiling of $N = 7$ is therefore \emph{archival, not scientific}: the constraint is the absence of matching survey data, not any limitation of the physical signal.
+
+\section{Science Case}
+
+The DQ--$\mtwo$ correlation makes a \textbf{quantitative, testable prediction}: galaxies with high $|\DQ|$ should show proportionally stronger (or weaker) $\mtwo$ power in their 2D velocity fields.
+Each new galaxy either confirms or falsifies this prediction, with the following statistical milestones:
+
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+Milestone & N required & Significance \\
+\midrule
+$\alpha = 0.01$ (strong evidence) & $\geq 11$ & 4 new galaxies \\
+$\alpha = 0.001$ (very strong) & $\geq 15$ & 8 new galaxies \\
+$N = 20$ target (definitive) & $\geq 20$ & 13 new galaxies \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Each new galaxy provides $\sim$0.4~dex improvement in the log-significance, making even small allocations scientifically productive.
+
+\section{Priority Target List}
+
+Targets are ranked by $|\DQ|$ (prediction power), selecting galaxies where the DQ--$\mtwo$ prediction is strongest and most discriminating.
+
+\begin{center}
+\begin{tabular}{llrrrrl}
+\toprule
+Priority & Galaxy & DQ & $\vflat$ & D (Mpc) & Dec & Facility \\
+\midrule
+A1 & ESO~563-G021 & $+2.27$ & 315 & 60.8 & $-21^\circ$ & VLA / MeerKAT \\
+A2 & UGC~06787 & $+1.98$ & 248 & 21.3 & $+66^\circ$ & VLA \\
+A3 & UGC~06786 & $+1.68$ & 219 & 29.3 & $+60^\circ$ & VLA \\
+A4 & NGC~7814 & $+1.21$ & 219 & 14.4 & $+16^\circ$ & VLA / MeerKAT \\
+A5 & NGC~5005 & $+1.21$ & 262 & 16.9 & $+37^\circ$ & VLA \\
+A6 & UGC~02953 & $+1.15$ & 265 & 16.5 & $+35^\circ$ & VLA \\
+A7 & UGC~02885 & $+1.14$ & 290 & 80.6 & $+35^\circ$ & VLA \\
+\midrule
+A8 & UGC~09037 & $-1.78$ & 152 & 83.6 & $+14^\circ$ & VLA / MeerKAT \\
+A9 & NGC~4559 & $-1.59$ & 121 & 9.0 & $+28^\circ$ & VLA \\
+A10 & NGC~0891 & $-0.89$ & 216 & 9.9 & $+42^\circ$ & VLA \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{High-H targets} (DQ $> +1$): predicted to show \emph{strong} outer-halo $\mtwo$ power.\\
+\textbf{Low-H targets} (DQ $< -1$): predicted to show \emph{weak} $\mtwo$ power despite similar baryonic mass.
+
+The strongest discriminating test is a \textbf{matched pair}: observe one high-DQ and one low-DQ galaxy with similar $M_\mathrm{bar}$ and $R_\mathrm{disk}$ but contrasting DQ.
+If the high-DQ galaxy shows $\sim$10$\times$ more $\mtwo$ power (as NGC~2841 vs NGC~5055 demonstrated), the signal is confirmed.
+
+\section{Observational Requirements}
+
+\begin{itemize}
+\item \textbf{Data product}: Moment-1 (velocity field) maps with $\geq$15 resolution elements across the disc
+\item \textbf{Angular resolution}: $\lesssim 15''$ (sufficient for m=2 Fourier decomposition at $R > R_{25}$)
+\item \textbf{Sensitivity}: $N_\mathrm{HI} \sim 10^{19}$~cm$^{-2}$ per beam (to detect extended HI in outer disc/halo)
+\item \textbf{Field of view}: $\geq 2 R_{25}$ diameter (the signal is in the \emph{outer} halo)
+\item \textbf{Key constraint}: Must extend to outer halo ($r > 0.5 R_{25}$); inner-disc-only IFU data (e.g., MaNGA-style) is insufficient
+\end{itemize}
+
+\section{Facility Options}
+
+\begin{description}
+\item[VLA (JVLA)] Primary choice for northern targets. C-configuration gives $\sim$15$''$ at 21~cm.
+  D-configuration for larger angular-size targets.
+  Typical integration: 4--8~h per target for THINGS-quality moment-1 maps at $D < 30$~Mpc.
+
+\item[MeerKAT] Optimal for southern targets (ESO~563-G021, Dec $= -21^\circ$).
+  L-band gives excellent surface brightness sensitivity over large FoV.
+  Can reach $N_\mathrm{HI} \sim 10^{19}$ in 2--4~h.
+
+\item[ASKAP / WALLABY] Wide-field HI survey (ongoing). Resolution $\sim 30''$ --- marginal for m=2 decomposition but usable for bright, extended sources.
+  \textbf{Watchlist}: Check each WALLABY data release for overlap with priority targets.
+
+\item[Optical IFU (VLT/MUSE, Gemini/GMOS)] Alternative for H$\alpha$ velocity fields.
+  Higher resolution but smaller FoV.
+  Suitable for inner-disc confirmation but may miss the outer-halo signal.
+\end{description}
+
+\section{Minimal Viable Program}
+
+The smallest allocation that crosses a statistical threshold:
+
+\begin{enumerate}
+\item Observe ESO~563-G021 (DQ $= +2.27$) and UGC~09037 (DQ $= -1.78$): maximum DQ spread, one high and one low. This single matched pair tests the prediction at its most extreme.
+\item Add UGC~06787 (DQ $= +1.98$) and NGC~4559 (DQ $= -1.59$): second pair, reaching $N = 11$ ($\alpha = 0.01$).
+\item Expand to 6 more targets: reaching $N = 15$ ($\alpha = 0.001$).
+\end{enumerate}
+
+Total time estimate: $\sim$20--40~h VLA + $\sim$4--8~h MeerKAT for Phase~1 (4 galaxies).
+
+\section{Expected Outcomes}
+
+\begin{description}
+\item[If confirmed] ($r > 0.5$ sustained at $N \geq 15$): The outer-halo $\mtwo$ mode is established as the observational carrier of RAR scatter, with direct implications for BTFR systematics, halo-shape demographics, and MOND tests.
+\item[If falsified] ($r \to 0$ as $N$ increases): The THINGS result was a statistical fluctuation, the carrier remains unidentified, and the 1D information ceiling stands as an empirical fact requiring alternative explanation.
+\end{description}
+
+Both outcomes are scientifically valuable.
+
+\end{document}

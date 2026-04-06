@@ -49,7 +49,7 @@ Cosmological Monte Carlo simulations indicate that models without halo triaxiali
 
 Red team verification (11/11 tests pass, 8/8 critical) confirms the signal survives independent pipeline reimplementation ($r = 0.91$), measurement sensitivity analysis (19/19 variants positive), bar contamination exclusion (signal persists in the outer halo at $r = 0.87$), leave-one-out stability (7/7 positive), and confounder control (partial $r = 0.66$ after removing inclination, $\log\vflat$, $\log M_\mathrm{bar}$).
 
-We do not claim final identification of the fundamental physics, but we do claim a robust identification of the hidden state's direct observational carrier --- the outer-halo $\mtwo$ velocity-field mode ($\sim$95~per~cent confidence) --- and a strong narrowing of its physical interpretation toward a triaxial or closely related halo-shape state ($\sim$90~per~cent confidence), pending confirmation with larger multi-survey 2D samples.
+We do not claim final identification of the fundamental physics, but we do claim a robust identification of the hidden state's direct observational carrier --- the outer-halo $\mtwo$ velocity-field mode ($\sim$95~per~cent confidence) --- and a strong narrowing of its physical interpretation toward a triaxial or closely related halo-shape state ($\sim$90~per~cent confidence), pending confirmation with dedicated 2D follow-up observations beyond the current $N = 7$ THINGS sample.
 The information ceiling of 1D rotation curves arises because azimuthal averaging destroys $\mtwo$ structure by construction, preserving only integral mass shifts that produce the bilateral coupling.
 
 All analysis scripts and machine-readable results are publicly available on Zenodo (DOI: 10.5281/zenodo.19444465).
@@ -446,7 +446,9 @@ Definitive confirmation requires $N \geq 20$.
 
 \item \textbf{Single-survey dependence.}
 All 2D data come from THINGS.
-Cross-survey replication with MaNGA, CALIFA, or PHANGS is essential before the carrier identification can be considered definitive.
+Cross-survey replication is essential before the carrier identification can be considered definitive.
+We verified that the apparent MaNGA overlap reported in our census was a target-selection artefact: none of the SPARC quality-sample galaxies appear in the MaNGA observed catalogue (SDSS DR17 mangaDrpAll; $N_\mathrm{MaNGA} = 11{,}273$), because MaNGA targets lie predominantly at $z > 0.01$ while SPARC galaxies reside in the local volume ($z < 0.007$).
+Immediate expansion from existing public IFU surveys is therefore unavailable; dedicated HI/IFU follow-up observations are required.
 
 \item \textbf{Triaxiality--assembly degeneracy.}
 Triaxiality and assembly history score 100~per~cent versus 96~per~cent in our hypothesis tests.
@@ -478,7 +480,8 @@ We do claim the following:
 The information was not in the rotation curve itself.
 It was in the angular structure of the velocity field that the rotation curve averages over.
 
-Definitive confirmation requires an expanded 2D sample ($N \geq 20$) spanning multiple surveys (THINGS, MaNGA, CALIFA, PHANGS) to break the single-survey dependence and eliminate small-$N$ concerns.
+The current 2D confirmation is strong but sample-limited ($N = 7$, THINGS only), and immediate public-survey expansion is unavailable because the apparent MaNGA overlap was a target-selection artefact rather than an observed-sample overlap.
+Definitive confirmation therefore requires dedicated HI or IFU follow-up of high-$|\DQ|$ SPARC galaxies --- specifically ESO~563-G021 ($\DQ = +2.27$), UGC~06787 ($+1.98$), and UGC~09037 ($-1.78$) --- to reach $N \geq 20$ across independent facilities.
 
 
 \section*{Acknowledgements}

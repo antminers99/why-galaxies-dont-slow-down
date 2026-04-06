@@ -240,6 +240,22 @@ Four-stage summary. Refined claim with two confidence levels:
 Updated abstract with full Program 9/9V results.
 Path to definitive: Program 10 (N>=20 multi-survey) → 99%.
 
+**Program 10.1 — Definitive Multi-Survey Census (COMPLETE):**
+KEY FINDING: MaNGA-SPARC overlap = ZERO. Verified against SDSS DR17 mangaDrpAll
+(N=11,273). Previous census used MaNGA target-selection catalog, not observed catalog.
+Redshift mismatch: MaNGA z>0.01, SPARC z<0.007.
+- N=7 is the MAXIMUM with current public 2D kinematic data
+- THINGS: 7 processed (exhausted). PHANGS/CALIFA: overlap only existing THINGS galaxies.
+- LITTLE THINGS: galaxies lack quality a0 fits.
+- Result remains robust: r=0.837, p=0.005, bootstrap 95% CI [0.30,0.99] excludes zero
+- Partial r(DQ,m2|Vflat) = 0.863 (not mass-driven)
+- Power analysis: N=11 for alpha=0.01, N=15 for alpha=0.001
+- CONSEQUENCE: Program 10 is now proposal-driven, not archival
+- Top proposal targets: ESO563-G021 (DQ=+2.27), UGC06787 (+1.98), UGC09037 (-1.78)
+- Proposal memo written: `public/replication/mnras/proposal-memo.tex`
+Scripts: `scripts/program10-definitive-census.cjs`, `scripts/program10-manga-lookup.cjs`
+Output: `public/program10-multi-survey.json`
+
 **MNRAS Submission:**
 LaTeX paper prepared in `public/replication/mnras/paper.tex`.
 8 sections: Intro, Data, Bilateral coupling, External validation, 1D ceiling,
@@ -247,6 +263,7 @@ LaTeX paper prepared in `public/replication/mnras/paper.tex`.
 BibTeX: 8 references (McGaugh+16, Lelli+16, Walter+08, Allgood+06, etc.).
 Tables: Cosmological MC models, Red team scorecard.
 Two-level claim structure preserved.
+Paper updated with MaNGA correction in caveats and conclusions.
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
