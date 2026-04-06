@@ -1493,4 +1493,99 @@ Only 3/10 proxies strengthen at high-V (dmFrac_resid, gasFrac_resid, envCode). N
 
 ---
 
+## 24. Phase 415: The Dark Quarter
+
+**Question**: Is the 25% of L_sum invisible to all observables real? What is it?
+
+### 24.1 — The Dark Quarter is REAL (415A) — CONFIRMED
+
+**Definition**: Dark Quarter = L_sum residual after removing logK_halo + dmFrac_Rmax + envCode (R2 = 0.682, leaving 32% unexplained).
+
+| Test | Result | Status |
+|------|--------|--------|
+| r(DQ, VfResid) | **0.538** | Bilateral |
+| r(DQ, a0_resid) | **0.533** | Bilateral |
+| Bootstrap 95% CI (VfR) | [0.317, 0.709] | Excludes zero |
+| Bootstrap 95% CI (a0R) | [0.336, 0.694] | Excludes zero |
+| LOO-CV stability | mean=0.564, shrinkage=0.000 | Zero overfitting |
+| Mbar recipe r=0.5/1.33 | r(DQ_alt, DQ_orig) = 1.000 | Construction-independent |
+| Mbar recipe r=0.7/1.33 | 1.000 | Construction-independent |
+| Mbar recipe r=0.3/1.33 | 0.999 | Construction-independent |
+| Field environment | r = 0.600 | Survives |
+| Group environment | r = 0.759 | Survives (strongest!) |
+| Unclassified | r = 0.617 | Survives |
+
+**The Dark Quarter is real, bilateral, bootstrap-confirmed, construction-independent, and environment-global.** It is NOT an artefact.
+
+### 24.2 — Kinematic Structure (415B) — WEAK SIGNALS
+
+| Variable | r(DQ) | Interpretation |
+|----------|-------|---------------|
+| rcBumpiness | +0.262 | RC non-smoothness |
+| outerGradient | +0.257 | Outer RC rising/falling |
+| rcSkewness | +0.234 | RC velocity asymmetry |
+| innerOuterMM | -0.232 | DM inner-outer mismatch |
+
+All |r| < 0.3 — weak kinematic traces. The Dark Quarter is NOT primarily a 2D/IFU-style kinematic effect, though RC non-smoothness and outer gradient show marginal correlations.
+
+### 24.3 — Higher-Order Halo State (415C)
+
+| Variable | r(DQ) | Meaning |
+|----------|-------|---------|
+| haloResponse | **+0.328** | Quality of halo fit improvement |
+| dmFrac - f(Mbar) | +0.315 | DM excess at fixed mass |
+| haloResp x logK | **+0.334** | Response-concentration interaction |
+| dmFrac_2Rd | +0.253 | Inner DM fraction |
+
+- logK_halo and dmFrac_Rmax have r(DQ) = 0.000 exactly (by construction — removed)
+- **haloResponse** is the best DQ predictor: galaxies where the halo model improves more have higher DQ
+- All quadratic/interaction terms: r < 0.04 — no nonlinear halo term explains DQ
+
+### 24.4 — Galaxy Census
+
+**Top Dark Quarter carriers** (high DQ = unexplained L_sum excess):
+
+| Galaxy | DQ | L_sum | logK | dmFrac | Vflat | T |
+|--------|-----|-------|------|--------|-------|---|
+| NGC2841 | +2.63 | +4.28 | 3.22 | 0.91 | 285 | 3 |
+| NGC5005 | +2.54 | +2.30 | 3.83 | 0.50 | 262 | 4 |
+| NGC3741 | +2.15 | +1.08 | 2.65 | 0.94 | 50 | 10 |
+| ESO563-G021 | +1.88 | +4.31 | 3.59 | 0.81 | 315 | 4 |
+
+**Bottom carriers** (low DQ = unexplained deficit):
+
+| Galaxy | DQ | L_sum | logK | dmFrac | Vflat | T |
+|--------|-----|-------|------|--------|-------|---|
+| UGC03580 | -1.79 | -1.50 | 3.04 | 0.88 | 126 | 1 |
+| NGC3521 | -1.65 | +0.98 | 3.77 | 0.75 | 214 | 4 |
+
+Notable: NGC3741 (dwarf, Vflat=50) and ESO563-G021 (massive, Vflat=315) both carry strong DQ — the signal spans the full mass range.
+
+### 24.5 — Phase 415 Verdict
+
+**The Dark Quarter is a genuinely hidden property of the galaxy+halo system.** It is:
+
+1. **Real**: Bootstrap-confirmed, LOO-stable, zero shrinkage
+2. **Bilateral**: Correlates equally with VfResid (0.538) and a0_resid (0.533)
+3. **Construction-independent**: Survives all Mbar recipes (r > 0.999)
+4. **Global**: Present in all environments
+5. **Unexplained**: No observable variable captures more than r = 0.33 of it
+6. **Mass-spanning**: From dwarfs (50 km/s) to giants (315 km/s)
+
+**What the Dark Quarter is NOT:**
+- Not structural (removed by construction)
+- Not halo slope or DM fraction (removed by construction)
+- Not environment (controlled)
+- Not RC kinematic shape (r < 0.27)
+- Not any interaction or quadratic term (r < 0.04)
+
+**What the Dark Quarter might be:**
+- 3D halo geometry invisible to 1D RC (triaxiality, flattening)
+- Halo response quality (r = 0.33 with haloResponse) — how well the linear halo model fits
+- Non-equilibrium or time-dependent halo state
+- Measurement systematics below our detection threshold
+- Or genuinely new physics
+
+---
+
 ## References

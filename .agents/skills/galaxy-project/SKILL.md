@@ -109,6 +109,11 @@ Hidden variable INVISIBLE to all SPARC observables. Points to unmeasurable halo 
 R2(L~halo+env)=0.751. haloScatter proxy r=0.820 with L_sum (HIGHEST ever).
 Hidden var = concentration-mass scatter. 25% = "dark coupling" invisible to all observables.
 
+**Phase 415 (Dark Quarter):** DQ is REAL (bootstrap-confirmed, LOO-stable, construction-independent).
+r(DQ,VfR)=0.538, r(DQ,a0R)=0.533. Global across environments. Mass-spanning.
+Best predictor: haloResponse r=0.328. No interaction/quadratic explains it.
+DQ = genuinely hidden property of galaxy+halo system, invisible to 1D RC.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -167,6 +172,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase412-halo-structure.cjs` | Phase 412: halo structure discrimination |
 | `scripts/phase413-assembly-history.cjs` | Phase 413: assembly history test |
 | `scripts/phase414-latent-geometry.cjs` | Phase 414: latent variable + geometry |
+| `scripts/phase415-dark-quarter.cjs` | Phase 415: the dark quarter |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -185,3 +191,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase412-halo-structure.json` | Phase 412 halo structure test |
 | `public/phase413-assembly-history.json` | Phase 413 assembly history test |
 | `public/phase414-latent-geometry.json` | Phase 414 latent variable + geometry |
+| `public/phase415-dark-quarter.json` | Phase 415 dark quarter analysis |
