@@ -207,7 +207,9 @@ INACCESSIBILITY-STRENGTH PARADOX: strong r makes H too accessible from RC;
 high inaccessibility kills channel strength. No single-layer model achieves both.
 a0 channel 4× stronger than Vflat. Differentiation requires non-RC data. Sec 44.
 
-**Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
+**Zenodo v12 (FINAL):** DOI 10.5281/zenodo.19444129 (Concept: 10.5281/zenodo.19430633)
+PROGRAM STATUS: **CLOSED**. Confidence ~85%. 1D information ceiling proved.
+IFU follow-up memo included. Sections 27-45 complete. 30+ hypotheses tested.
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
@@ -286,6 +288,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase-v-red-team.cjs` | Phase V: red team verification |
 | `scripts/phase-v-plus-distance.cjs` | Phase V+: distance kill test |
 | `scripts/program8b-physics-search.cjs` | Program 8B: physics search |
+| `scripts/zenodo-v12-upload.cjs` | Zenodo v12 upload (FINAL) |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |

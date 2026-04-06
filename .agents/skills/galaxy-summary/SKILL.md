@@ -5,7 +5,8 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: PUBLICATION-READY — COMPLETE SCIENTIFIC NARRATIVE (Phases 134 + 200–204 + 300–303 + V/V+)
+## STATUS: PROGRAM CLOSED — Zenodo v12 (DOI: 10.5281/zenodo.19444129)
+## Complete Scientific Narrative (Phases 134 + 200–204 + 300–303 + Programs 1–8C + V/V+)
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN
@@ -239,7 +240,8 @@ logOMD = 1.749 + 0.203×log(MHI/L3.6) − 0.101×log(Mbar)
 ## Zenodo
 
 - Concept DOI: 10.5281/zenodo.19430633 (all versions)
-- v11 (current): DOI 10.5281/zenodo.19440400 (PUBLISHED — Phases 126-134 + 200-204 + 300-303, Complete Scientific Narrative with Physical Interpretation)
+- v12 (current, FINAL): DOI 10.5281/zenodo.19444129 (PUBLISHED — Program Closure, 1D Information Ceiling, IFU Follow-up Memo)
+- v11 (previous): DOI 10.5281/zenodo.19440400 (Phases 126-134 + 200-204 + 300-303, Physical Interpretation)
 - v10 (previous): DOI 10.5281/zenodo.19434177 (Phases 126-134 + 200-204, Comprehensively Validated Coupling Law)
 - v9 (previous): DOI 10.5281/zenodo.19433840 (Phases 126-134 + 200-201, Externally Validated)
 - v8 (previous): DOI 10.5281/zenodo.19433329 (Phases 126-134, Hierarchical Coupling Law)
