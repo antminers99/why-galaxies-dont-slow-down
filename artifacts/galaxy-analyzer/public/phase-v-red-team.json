@@ -1,0 +1,78 @@
+{
+  "phase": "V",
+  "title": "Red Team Verification",
+  "timestamp": "2026-04-06T19:15:35.837Z",
+  "N": 55,
+  "audit": {
+    "v3": {
+      "loo_leakage": {
+        "clean": false,
+        "global_r": 0.8042985384878967,
+        "loo_r": 0.7730258566007928,
+        "diff": 0.03127268188710386
+      },
+      "permutation": {
+        "clean": true,
+        "pValue": 0,
+        "observed_r": 0.8042985384878967
+      },
+      "cross_split": {
+        "clean": false,
+        "r_oddTrain": 0.8805132882500843,
+        "r_evenTrain": -0.3087660512850655
+      },
+      "dq_selection": "clean — pre-registered by construction"
+    },
+    "v4": {
+      "cross_contamination": {
+        "clean": false,
+        "r_VfR_a0": 0.7174930214897184,
+        "r_a0R_Vf": 0.23542320036846
+      },
+      "identity_trap": {
+        "clean": true,
+        "common6_r": 0.8497425906205914,
+        "original_r": 0.8042985384878967
+      },
+      "minimum_predictor": {
+        "r_Mbar_only": 0.8150296559004641
+      }
+    },
+    "v2": {
+      "r_match": {
+        "clean": true,
+        "clean_r": 0.8042985384878967,
+        "frozen_r": 0.8042985384878967
+      },
+      "ci": {
+        "pass": 55,
+        "total": 55
+      },
+      "partial": {
+        "r": 0.575495233670486,
+        "persists": true
+      },
+      "dark_quarter": {
+        "Q1": 18,
+        "Q2": 7,
+        "Q3": 23,
+        "Q4": 7,
+        "minQ": 7,
+        "depletion": 0.49090909090909096
+      },
+      "pc1_variance": 90.21492692439483
+    },
+    "scorecard": {
+      "v3_loo_leakage": false,
+      "v3_permutation": true,
+      "v3_cross_split": false,
+      "v4_cross_contam": false,
+      "v4_identity_trap": true,
+      "v2_r_match": true,
+      "v2_ci_match": true,
+      "v2_partial_persists": true
+    },
+    "total_pass": 5,
+    "total_tests": 8
+  }
+}
