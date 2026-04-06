@@ -221,7 +221,8 @@ $+0.4\,\pp$ above the core, while the 7.8 per cent kinematic residual
 ($\vfresid = \log \vflat - \text{structural prediction}$) adds
 $+17.1\,\pp$.
 
-$\vfresid$ is identified as a baryon--halo coupling proxy:
+$\vfresid$ is identified as a baryon--halo coupling proxy
+(Fig.~\ref{fig:vfresid}):
 \begin{itemize}
 \item Correlates strongly with dark halo strength ($\haloK$, $r = +0.60$)
 \item Anti-correlates with MOND improvement ($r = -0.54$)
@@ -233,6 +234,18 @@ In head-to-head competition, $\vfresid$ dominates every tested halo proxy
 by at least $7\,\pp$. Mediation analysis shows $\vfresid$ absorbs
 100 per cent of $\haloK$'s signal (Sobel-like mediation $= 107$ per cent),
 while $\lhOuter$ contributes independently.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig4_vfresid.pdf}
+\caption{Correlations of observable galaxy properties with $\vfresid$.
+  The dark halo amplitude ($\haloK$, $r = +0.60$) is the strongest
+  predictor, followed by the MOND improvement metric ($r = -0.54$). Pure
+  structural properties (not shown) fail entirely to predict $\vfresid$
+  ($\loo\;R^2 < 0$), confirming that $\vfresid$ carries genuine
+  halo information beyond baryonic structure.}
+\label{fig:vfresid}
+\end{figure}
 
 \subsection{The fifth axis: $\lhOuter$}
 \label{sec:lhouter}
@@ -255,14 +268,38 @@ Core + $\vfresid$ + $\lhOuter$ (5-axis) & 65.4 per cent \\
 \end{tabular}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig1_hierarchy.pdf}
+\caption{Model hierarchy progression showing LOO cross-validation performance
+  for the three tiers of the coupling law. The structural core (3-axis)
+  explains 44.1 per cent of per-galaxy $\azero$ variance; adding $\vfresid$
+  raises this to 61.1 per cent ($+17.1\,\pp$); adding $\lhOuter$ reaches
+  65.4 per cent ($+4.3\,\pp$). All gaps are computed via leave-one-out
+  cross-validation on the $N=45$ published-quality training sample.}
+\label{fig:hierarchy}
+\end{figure}
+
 \subsection{Regime dependence}
 \label{sec:regime}
 
 The $\vfresid$ coupling signal is strongly regime-dependent
-(Table~\ref{tab:regime}). A gradual transition occurs above
-$\vflat \sim 120~\kms$, reaching full strength above $\sim$180~$\kms$.
-In the low-$\vflat$ regime ($N=10$), the signal is completely unstable
-($P(\Delta > 0) = 18.6$ per cent).
+(Fig.~\ref{fig:regime}, Table~\ref{tab:regime}). A gradual transition
+occurs above $\vflat \sim 120~\kms$, reaching full strength above
+$\sim$180~$\kms$. In the low-$\vflat$ regime ($N=10$), the signal is
+completely unstable ($P(\Delta > 0) = 18.6$ per cent).
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig3_regime.pdf}
+\caption{Regime dependence of the $\vfresid$--$\azero$ coupling.
+  Correlation strength $r(\vfresid, \log \azero)$ is plotted as a function
+  of the minimum $\vflat$ threshold applied to the sample. The coupling
+  strengthens monotonically from $r \sim 0.70$ (all galaxies) to
+  $r \sim 0.83$ (above 180~$\kms$), with a marked transition near
+  120~$\kms$ (dashed line).}
+\label{fig:regime}
+\end{figure}
 
 \begin{table}
 \centering
@@ -316,6 +353,19 @@ $\vflat < 120~\kms$ & 43 & $-3.9$ per cent & --- \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig2_external.pdf}
+\caption{External validation using frozen training coefficients.
+  Gold bars show the Core-only transfer gap (with improved $\mhost$
+  estimation); blue bars show Core$+\vfresid$. The Core alone fails in the
+  full sample and very-high-$\vflat$ regime, while $\vfresid$ provides
+  the dominant transferable signal in every subsample. The strongest
+  performance (59.0 per cent) is achieved for Q$=1$ galaxies with
+  $\vflat \geq 120~\kms$.}
+\label{fig:external}
+\end{figure}
 
 \subsection{Hierarchy replication and environmental decomposition}
 \label{sec:hierarchy}
@@ -439,6 +489,19 @@ coherence) is the only proxy that \emph{regime-strengthens} in hkResid
 \emph{fades} at high-V ($r = 0.597 \to 0.077$) --- opposite the
 activation pattern.
 
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5_hypothesis.pdf}
+\caption{Physical interpretation: evidence scores for four candidate
+  hypotheses. H4 (dynamical integration) leads with score~10, driven by
+  regime-strengthening of dynamical coherence ($\log$MR: $r = 0.11 \to
+  0.51$ from low to high $\vflat$). H1 and H3 tie at score~7; H2 is
+  weakest. The key discriminant is that H4 proxies \emph{strengthen} with
+  $\vflat$ while feedback proxies \emph{fade} --- matching the activation
+  pattern of the coupling law itself.}
+\label{fig:hypothesis}
+\end{figure}
+
 The full model (all proxies) explains 34.8 per cent of hkResid
 ($\loo\;R^2 = 0.046$), reducing $r(\text{remaining}, \azero)$ from
 0.651 to 0.288. Even after removing all hypothesis-specific content, the
@@ -451,9 +514,21 @@ remaining signal still predicts $\azero$.
 \subsection{The coupling law}
 \label{sec:law}
 
-The empirical law can be stated as follows. Per-galaxy $\azero$ is governed
-by a hierarchical, regime-dependent baryon--halo coupling law with three
-tiers:
+The empirical law can be stated as follows (Fig.~\ref{fig:synthesis}).
+Per-galaxy $\azero$ is governed by a hierarchical, regime-dependent
+baryon--halo coupling law with three tiers:
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig6_synthesis.pdf}
+\caption{Synthesis: the hierarchical coupling law. The structural core
+  sets the $\azero$ baseline; the $\vfresid$ channel carries the dominant
+  halo coupling signal (36--69 per cent irreducible, mediating all halo
+  proxies); the $\lhOuter$ channel adds secondary outer-halo information;
+  and a $\vflat$-dependent regime gate controls activation. The best-supported
+  physical interpretation is dynamical integration (H4, score~10).}
+\label{fig:synthesis}
+\end{figure}
 
 \begin{enumerate}
 \item \textbf{Structural core} ($\mhi$, $\mhost$, MeanRun): sets the
