@@ -2,7 +2,7 @@
   "program": 9,
   "phase": 903,
   "title": "Decisive Matched IFU Test",
-  "timestamp": "2026-04-06T22:08:30.528Z",
+  "timestamp": "2026-04-06T22:26:44.037Z",
   "N": 7,
   "correlations": {
     "DQ_m2": 0.8466761816318997,
@@ -18,8 +18,8 @@
   },
   "permutation": {
     "nPerm": 10000,
-    "pVal_m2": 0.0066,
-    "pVal_logM2": 0.0047
+    "pVal_m2": 0.0053,
+    "pVal_logM2": 0.0038
   },
   "loo": {
     "mean_m2": 0.8320429941881484,

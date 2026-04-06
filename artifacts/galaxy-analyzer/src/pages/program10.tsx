@@ -81,13 +81,13 @@ export default function Program10Page() {
   ];
 
   return (
-    <Layout title="Program 10 — Multi-Survey Census">
+    <Layout title="Program 10 — Survey Census & Expansion Path">
       <div className="space-y-6">
 
         <GlassCard>
           <div className="flex items-center gap-3 mb-4">
             <Telescope className="w-6 h-6 text-violet-400" />
-            <h2 className="text-xl font-display font-bold text-white">Program 10.1: Definitive Multi-Survey Census</h2>
+            <h2 className="text-xl font-display font-bold text-white">Program 10.1: Definitive Survey Census & Expansion Path</h2>
           </div>
           <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4 mb-4">
             <div className="flex items-start gap-2">

@@ -78,7 +78,7 @@ fs.mkdirSync(multiDir, { recursive: true });
 
 
 console.log('='.repeat(72));
-console.log('PROGRAM 10 — MULTI-SURVEY 2D CARRIER VERIFICATION');
+console.log('PROGRAM 10 — SURVEY CENSUS & EXPANSION PATH FOR 2D CARRIER VERIFICATION');
 console.log('From observational carrier to physical identification');
 console.log('='.repeat(72));
 
@@ -464,7 +464,7 @@ if (valid.length >= 4) {
   const result = {
     program: 10,
     phase: '10.1',
-    title: 'Multi-Survey 2D Carrier Verification',
+    title: 'Survey Census and Expansion Path for 2D Carrier Verification',
     timestamp: new Date().toISOString(),
     N_total: valid.length,
     N_program9: valid.filter(r => r.source === 'Program9').length,

@@ -1,14 +1,14 @@
 {
   "program": 10,
   "phase": "10.1",
-  "title": "Multi-Survey 2D Carrier Verification",
-  "timestamp": "2026-04-06T22:13:09.599Z",
+  "title": "Survey Census and Expansion Path for 2D Carrier Verification",
+  "timestamp": "2026-04-06T22:27:18.561Z",
   "N_total": 7,
   "N_program9": 7,
   "N_new": 0,
   "correlation": {
     "r_DQ_logM2": 0.8372879522563232,
-    "pValue": 0.0041,
+    "pValue": 0.0042,
     "r_program9": 0.847,
     "delta_r": -0.009712047743676733
   },

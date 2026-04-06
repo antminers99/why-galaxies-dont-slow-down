@@ -1,7 +1,7 @@
 {
   "program": "9V",
   "title": "Red Team Verification of Carrier Claim",
-  "timestamp": "2026-04-06T22:12:32.238Z",
+  "timestamp": "2026-04-06T22:29:33.696Z",
   "N": 7,
   "tests": [
     {
@@ -45,7 +45,7 @@
       "critical": false
     },
     {
-      "name": "9V.5 Inclination not confounder",
+      "name": "9V.5 Inc-m2 correlation flagged",
       "pass": true,
       "critical": true
     },

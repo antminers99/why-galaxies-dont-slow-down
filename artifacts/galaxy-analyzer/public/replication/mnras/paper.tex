@@ -240,10 +240,11 @@ r(\DQ, P_2) = 0.847 \quad (N = 7, \; p = 0.005),
 \end{equation}
 established by permutation test (10\,000 resamples).
 LOO cross-validation yields 7/7 positive correlations (minimum $r = 0.62$).
-The partial correlation controlling for $\log\vflat$ remains strong:
+Controlling for $\log\vflat$ alone:
 \begin{equation}
 r(\DQ, P_2 \mid \log\vflat) = 0.750.
 \end{equation}
+Adding $\log M_\mathrm{bar}$ as a second control reduces the partial to $r = 0.35$, reflecting the strong covariance between $\vflat$, $M_\mathrm{bar}$, and $\mtwo$ power in this small sample.
 
 \begin{figure}
 \centering
@@ -327,12 +328,14 @@ Without both gold-pair galaxies, $r = 0.74$ ($N = 5$).
 
 \subsection{Confounder control (9V.5)}
 
-Inclination shows moderate correlation with both $\mtwo$ power ($r = 0.60$) and $\DQ$ ($r = 0.68$) in this $N = 7$ sample, warranting confounder control.
-After partialling out inclination, $\log\vflat$, and $\log M_\mathrm{bar}$:
+Inclination is a serious potential confounder in this $N = 7$ sample: $r(i, P_2) = 0.60$ and $r(i, \DQ) = 0.68$.
+Using the independent pipeline from test 9V.1, we partial out inclination, $\log\vflat$, and $\log M_\mathrm{bar}$ simultaneously:
 \begin{equation}
-r(\DQ, P_2 \mid i, \log\vflat, \log M_\mathrm{bar}) = 0.708.
+r(\DQ, P_2 \mid i, \log\vflat, \log M_\mathrm{bar}) = 0.708 \quad \text{(9V pipeline)}.
 \end{equation}
-The signal survives confounder removal, confirming that the $\DQ$--$\mtwo$ correlation is not driven by inclination, velocity scale, or baryonic mass.
+For comparison, the primary pipeline (Section~\ref{sec:2D}) yields $r(\DQ, P_2 \mid \log\vflat, \log M_\mathrm{bar}) = 0.35$ when controlling for the same variables without inclination, reflecting the sensitivity of partial correlations at $N = 7$.
+The signal survives confounder control in both pipelines (partial $r > 0$), but we caution that $N = 7$ leaves limited degrees of freedom for multi-variable partial correlations.
+Definitive confounder separation requires the larger samples proposed in Section~\ref{sec:caveats}.
 
 \subsection{Program 8B reconciliation (9V.6)}
 
