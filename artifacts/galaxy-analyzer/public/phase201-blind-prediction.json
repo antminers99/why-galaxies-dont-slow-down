@@ -1,0 +1,67 @@
+{
+  "phase": "201",
+  "title": "Blind Prediction — Frozen Coefficients",
+  "verdict": "MODERATE_TRANSFER",
+  "fullSample": {
+    "N": 59,
+    "naiveRMSE": 0.4142,
+    "core": {
+      "rmse": 0.5123,
+      "gap": -53,
+      "r": -0.233
+    },
+    "coreVfResid": {
+      "rmse": 0.3968,
+      "gap": 8.2,
+      "r": 0.415
+    },
+    "fiveAxis": {
+      "rmse": 0.3937,
+      "gap": 9.7,
+      "r": 0.456
+    }
+  },
+  "highVflat": {
+    "N": 16,
+    "naiveRMSE": 0.4479,
+    "core": {
+      "rmse": 0.4626,
+      "gap": -6.7,
+      "r": 0.033
+    },
+    "coreVfResid": {
+      "rmse": 0.363,
+      "gap": 34.3,
+      "r": 0.641
+    },
+    "fiveAxis": {
+      "rmse": 0.3604,
+      "gap": 35.3,
+      "r": 0.649
+    }
+  },
+  "lowVflat": {
+    "N": 43,
+    "core": {
+      "rmse": 0.5296,
+      "gap": -74.4,
+      "r": -0.422
+    },
+    "coreVfResid": {
+      "rmse": 0.4087,
+      "gap": -3.9,
+      "r": 0.34
+    }
+  },
+  "hierarchyPreserved": true,
+  "signsPreserved": false,
+  "rVfResidFull": 0.713,
+  "rVfResidHighV": 0.841,
+  "phase134Reference": {
+    "coreGap": -11.5,
+    "vfResidGap": 56.9,
+    "fiveAxisGap": 66,
+    "rVfResid": 0.801,
+    "N": 10
+  }
+}
