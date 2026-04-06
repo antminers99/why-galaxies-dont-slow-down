@@ -200,7 +200,12 @@ expected physics. Distance errors = unresolved risk. Confidence ~80%. Section 42
 **Phase V+ (Distance Kill):** 4/5 PASS. Distance hypothesis KILLED. Neither
 VfResid (r=0.04) nor a0Resid (r=0.07) correlates with distance. Partial r|logD =
 0.804 unchanged. Null cannot create r=0.77 (0/1000). Near/far both strong.
-Distance control absorbs 1.4%. Confidence ~85%. Section 43. READY FOR 8B.
+Distance control absorbs 1.4%. Confidence ~85%. Section 43.
+
+**Program 8B (Physics Search):** 12 models, 3 families, 6 criteria. Best = 5/6.
+INACCESSIBILITY-STRENGTH PARADOX: strong r makes H too accessible from RC;
+high inaccessibility kills channel strength. No single-layer model achieves both.
+a0 channel 4× stronger than Vflat. Differentiation requires non-RC data. Sec 44.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
@@ -280,6 +285,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program8c-map-reconstruction.cjs` | Program 8C: matched map reconstruction |
 | `scripts/phase-v-red-team.cjs` | Phase V: red team verification |
 | `scripts/phase-v-plus-distance.cjs` | Phase V+: distance kill test |
+| `scripts/program8b-physics-search.cjs` | Program 8B: physics search |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -318,3 +324,4 @@ POSSIBLE FUTURE WORK:
 | `public/program8c-map-reconstruction.json` | Program 8C map reconstruction |
 | `public/phase-v-red-team.json` | Phase V red team audit |
 | `public/phase-v-plus-distance.json` | Phase V+ distance kill test |
+| `public/program8b-physics-search.json` | Program 8B physics search |

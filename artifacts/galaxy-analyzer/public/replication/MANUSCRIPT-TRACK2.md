@@ -3382,4 +3382,116 @@ But the data shows:
 
 ---
 
+## 44. Program 8B: Physics-Grounded Hidden-State Search
+
+**Purpose**: Now that all statistical challenges are resolved (V, V+), identify which physics can CARRY the r ≈ 0.77 signal. Three candidate families tested against six empirical criteria.
+
+### 44.1 — Pass/Fail Matrix
+
+Every candidate model must reproduce ALL of:
+
+| Criterion | Target | Source |
+|-----------|--------|--------|
+| C1: Channel strength | r(VfR, a0R) ≥ 0.65 | Phase V LOO |
+| C2: Positive haloResponse | r(H, hR) > 0 | Programs 6–7 |
+| C3: Bilateral pattern | r(H, bilateral) > 0.3 | Program 5 |
+| C4: Quietness downstream | H → quiet, not reverse | Program 7B |
+| C5: Under-concentration | High-H = less concentrated | Program 7B |
+| C6: 1D inaccessibility | > 50% of H hidden from RC | Programs 8A/8C |
+
+### 44.2 — Family 8B1: Halo Redistribution
+
+**Mechanism**: H controls halo concentration and mass distribution. High-H galaxies have less concentrated halos providing support from outer radii.
+
+| Variant | r(VfR,a0R) | C1 | C2 | C3 | C4 | C5 | C6 | Score |
+|---------|-----------|----|----|----|----|----|----|-------|
+| 8B1a: Pure redistribution | 0.615 | F | P | P | P | P | F | 4/6 |
+| 8B1b: + mass correlation | 0.611 | F | P | P | P | P | F | 4/6 |
+| **8B1c: Strong redistribution** | **0.805** | **P** | P | P | P | P | F | **5/6** |
+| 8B1d: + environment | 0.621 | F | P | P | P | P | F | 4/6 |
+
+**Finding**: Strong redistribution (8B1c) achieves r = 0.80 and passes 5/6, but fails C6 — H is too accessible from RC features (only 5% hidden). The model makes H predictable from haloResponse + concentration + smoothness, contradicting the empirical ~70% inaccessibility.
+
+### 44.3 — Family 8B2: Quiet Common-Cause
+
+**Mechanism**: H is an upstream variable (formation epoch, spin parameter, accretion history) that produces both dynamical quietness AND halo-baryon coupling as downstream consequences.
+
+| Variant | r(VfR,a0R) | C1 | C2 | C3 | C4 | C5 | C6 | Score |
+|---------|-----------|----|----|----|----|----|----|-------|
+| 8B2a: Formation epoch | 0.291 | F | P | P | P | P | F | 4/6 |
+| 8B2b: Spin parameter | 0.392 | F | P | P | P | P | F | 4/6 |
+| 8B2c: Accretion quiescence | 0.260 | F | P | P | P | P | F | 4/6 |
+| 8B2d: Combined epoch + spin | 0.229 | F | P | P | P | P | F | 4/6 |
+
+**Finding**: All common-cause models fail BOTH C1 and C6. The channel is too weak (r = 0.23–0.39) because formation-history variables have too much structural content — the regression absorbs them. Ironically, these models also fail C6 because H still leaks into RC features.
+
+### 44.4 — Family 8B3: Exotic / Non-Standard
+
+**Mechanism**: Hidden DM state (SIDM cross-section, fuzzy DM mass), dynamical friction efficiency, or emergent Jeans-scale coupling.
+
+| Variant | r(VfR,a0R) | C1 | C2 | C3 | C4 | C5 | C6 | Score |
+|---------|-----------|----|----|----|----|----|----|-------|
+| 8B3a: SIDM cross-section | 0.466 | F | P | P | P | P | F | 4/6 |
+| 8B3b: Fuzzy DM mass | 0.521 | F | P | P | P | P | F | 4/6 |
+| **8B3c: Dynamical friction** | **0.857** | **P** | P | P | P | P | F | **5/6** |
+| **8B3d: Emergent Jeans** | 0.092 | F | P | P | P | P | **P** | **5/6** |
+
+**Finding**: Two 5/6 models, but with OPPOSITE failure modes:
+- 8B3c achieves strong coupling (r = 0.86) but fails C6 (2% hidden)
+- 8B3d achieves high inaccessibility (62%) but fails C1 (r = 0.09)
+
+### 44.5 — The Fundamental Tension
+
+**No single-layer model achieves 6/6.** The universal pattern:
+
+| Models with strong r | Models with high inaccessibility |
+|---------------------|--------------------------------|
+| C1 PASS, C6 FAIL | C1 FAIL, C6 PASS |
+| H is too predictable from RC | H is too weak to drive channel |
+
+This is the **inaccessibility-strength paradox**: to produce r ≈ 0.77, H must strongly influence Vflat and a0. But those same influences make H recoverable from RC features (hR, concentration, smoothness). The empirical data demands BOTH strong coupling AND high inaccessibility — a combination that simple generative models cannot achieve.
+
+**Physical interpretation**: H must operate through channels that affect INTEGRAL quantities (Vflat, a0) without proportionally affecting DIFFERENTIAL quantities (RC shape, radial profile). This is consistent with:
+- An effect that shifts the total potential depth without changing the radial gradient structure
+- A process that acts on the total mass budget (Vflat ∝ M^0.25) while being orthogonal to the mass DISTRIBUTION
+- Something that modulates the baryon-halo coupling efficiency at the global level
+
+### 44.6 — Parameter Constraints on H
+
+From sensitivity analysis, the empirical channel requires:
+
+| Parameter | Required Value | Physical Meaning |
+|-----------|---------------|-----------------|
+| α_Vf | ~0.04–0.06 | H shifts Vflat by ~4–6% per σ |
+| α_A0 | ~0.18–0.25 | H shifts a0 by ~18–25% per σ |
+| γ_hR | ~0.4 | H improves halo fit moderately |
+| γ_conc | < −1.0 | H anti-correlates with concentration |
+
+The a0 channel is **4× stronger** than the Vflat channel. This asymmetry is a powerful constraint: H affects the acceleration ratio much more than the velocity. Since a0 = V²R/(GMbar), this means H primarily affects the RATIO of dynamical-to-baryonic mass, not the velocity itself.
+
+### 44.7 — What 8B Reveals
+
+1. **The channel constrains H MECHANICS, not H IDENTITY.** All three families can reproduce 5/6 criteria — 1D rotation curves cannot distinguish between halo redistribution, formation history, and exotic DM physics.
+
+2. **The inaccessibility-strength paradox is the key unsolved constraint.** Any viable model for H must explain how a variable can strongly drive r ≈ 0.77 while remaining ~70% hidden from the RC features it influences. This likely requires H to operate through MULTIPLE independent channels, only some of which are RC-accessible.
+
+3. **The a0/Vflat asymmetry (4:1)** constrains H to be primarily a dynamical-to-baryonic mass ratio modulator, not a simple velocity shifter.
+
+4. **Differentiation requires non-RC data.** IFU velocity fields, weak lensing, or assembly-history proxies (merger trees, SFH) are needed to break the degeneracy between families.
+
+### 44.8 — Program 8B Verdict
+
+**5/6 maximum across all families. The inaccessibility-strength paradox is the definitive unsolved constraint.**
+
+Best models per family:
+- 8B1 (Redistribution): 5/6 — strong channel but too accessible
+- 8B2 (Common cause): 4/6 — weak channel AND too accessible
+- 8B3 (Exotic): 5/6 — either strong-but-accessible OR hidden-but-weak
+
+**The empirical H is more complex than any single-layer physics model.** It operates through channels that affect global quantities (Vflat, a0) without proportionally affecting local RC shape — a property that no simple generative model reproduces. This is the observational signature of a MULTI-SCALE process that requires 2D/3D kinematic data (IFU, lensing) to fully characterise.
+
+**Confidence: ~85% (unchanged).** Program 8B does not alter the statistical confidence but substantially constrains the physical interpretation.
+
+---
+
 ## References

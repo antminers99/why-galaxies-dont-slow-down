@@ -1,0 +1,197 @@
+{
+  "program": "8B",
+  "title": "Physics-Grounded Hidden-State Search",
+  "timestamp": "2026-04-06T19:32:05.076Z",
+  "N_empirical": 55,
+  "r_empirical": 0.8042985384878967,
+  "criteria": [
+    "r>=0.65",
+    "r(H,hR)>0",
+    "r(H,bilateral)>0.3",
+    "quiet_downstream>50%",
+    "under_conc>50%",
+    "inaccessible>50%"
+  ],
+  "families": {
+    "8B1_redistribution": [
+      {
+        "name": "8B1a: Pure redistribution (H independent)",
+        "total": 4,
+        "meanR": 0.6150422746951547,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B1b: Redistribution + mass correlation",
+        "total": 4,
+        "meanR": 0.6181652358049321,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B1c: Strong redistribution",
+        "total": 5,
+        "meanR": 0.8042819818906624,
+        "criteria": {
+          "c1": true,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B1d: Redistribution + environment",
+        "total": 4,
+        "meanR": 0.6230063622992857,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      }
+    ],
+    "8B2_common_cause": [
+      {
+        "name": "8B2a: Formation epoch → quiet + coupling",
+        "total": 4,
+        "meanR": 0.29060835131421886,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B2b: Spin parameter → stable disk → H",
+        "total": 4,
+        "meanR": 0.4036846354402565,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B2c: Accretion quiescence → settled halo",
+        "total": 4,
+        "meanR": 0.2632765668060019,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B2d: Combined epoch + spin",
+        "total": 4,
+        "meanR": 0.21860032549030237,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      }
+    ],
+    "8B3_exotic": [
+      {
+        "name": "8B3a: SIDM cross-section variation",
+        "total": 4,
+        "meanR": 0.4697186781077676,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B3b: Fuzzy DM mass variation",
+        "total": 4,
+        "meanR": 0.5307982434837791,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B3c: Dynamical friction efficiency",
+        "total": 5,
+        "meanR": 0.8573901599521884,
+        "criteria": {
+          "c1": true,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": false
+        }
+      },
+      {
+        "name": "8B3d: Emergent Jeans-scale coupling",
+        "total": 5,
+        "meanR": 0.0768303618923953,
+        "criteria": {
+          "c1": false,
+          "c2": true,
+          "c3": true,
+          "c4": true,
+          "c5": true,
+          "c6": true
+        }
+      }
+    ]
+  },
+  "bestPerFamily": {
+    "8B1": {
+      "name": "8B1c: Strong redistribution",
+      "score": 5
+    },
+    "8B2": {
+      "name": "8B2a: Formation epoch → quiet + coupling",
+      "score": 4
+    },
+    "8B3": {
+      "name": "8B3c: Dynamical friction efficiency",
+      "score": 5
+    }
+  },
+  "overallBest": {
+    "name": "8B3c: Dynamical friction efficiency",
+    "score": 5
+  }
+}
