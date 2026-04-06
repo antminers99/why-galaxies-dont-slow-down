@@ -1159,6 +1159,72 @@ The environment correlation likely arises because the true hidden variable (halo
 
 ---
 
+## 20. Phase 411: MOND-like Functional Form Discrimination
+
+**Question**: Does the channel follow an acceleration-based functional form (MOND-like law)?
+
+### 20.1 — Competing Functional Forms (411C)
+
+We fit VfResid = f(a₀_resid) with 6 candidate functions:
+
+| Model | R² | BIC | ΔBIC | k |
+|-------|-----|-----|------|---|
+| **Linear** | 0.647 | −376.2 | **0.0** | 2 |
+| Quadratic | 0.651 | −372.8 | 3.4 | 3 |
+| Sqrt + linear | 0.649 | −372.5 | 3.7 | 3 |
+| MOND ν + linear | 0.647 | −372.2 | 4.0 | 3 |
+| Tanh (saturating) | 0.647 | −372.2 | 4.0 | 3 |
+| Cubic | 0.651 | −368.8 | 7.4 | 4 |
+
+**Linear wins by BIC.** No non-linear model improves over linear (ΔR² = 0.000). The MOND interpolation function adds zero predictive power.
+
+### 20.2 — Non-Linearity Diagnostic (411D)
+
+- r(linear residual, a₀_resid²) = 0.098 — **no curvature signal**
+- LOO cross-validation R² = 0.622 (in-sample 0.647) — shrinkage only 0.025
+- Quintile analysis shows monotonic relationship with no transition or break
+
+### 20.3 — MOND-Specific Tests (411E)
+
+| MOND Prediction | Observation | Status |
+|-----------------|------------|--------|
+| ν-function shapes channel | r(log ν, L_sum) = 0.000 | **FAIL** |
+| a₀ is universal | σ(logA0) = 0.263 dex (factor 3.4) | **FAIL** |
+| Curvature at transition scale | No curvature detected | **FAIL** |
+
+The fitted a₀ varies by a factor of 3.4 across galaxies — **directly contradicting** the foundational MOND prediction of a universal acceleration scale.
+
+### 20.4 — Mass Discrepancy Connection (411B)
+
+The mass discrepancy D = log(g_obs/g_bar) shows:
+- r(D, log g_bar) = −0.830 — strong RAR at galaxy level
+- After structural control: r(D_resid, VfResid) = **0.947** — near-perfect alignment
+- This means VfResid is essentially the structural residual of the mass discrepancy
+
+### 20.5 — Interpretation: Linear = Common Cause
+
+The pure linearity of the VfResid–a₀_resid coupling is itself a powerful constraint:
+
+- **MOND predicts curvature**: the interpolation function ν(x) is nonlinear by construction. A MOND-like law should produce a curved, not linear, residual relationship. **Not observed.**
+- **Linear coupling → common cause**: when two residuals are linearly coupled, the simplest explanation is a third variable driving both proportionally. The hidden variable imprints on Vflat and a₀ with the same proportionality.
+- **Not one causing the other**: if a₀ caused VfResid (or vice versa), we would expect a specific functional form with saturation or threshold behavior. Linear proportionality suggests shared origin.
+
+### 20.6 — Phase 411 Verdict
+
+**MOND-like acceleration law is ELIMINATED.**
+
+- No curvature, no interpolation function, no transition scale
+- a₀ varies by factor 3.4 (contradicts universal a₀)
+- Pure linear coupling → common cause, not acceleration law
+
+**Two candidates remain:**
+1. ~~External field (EFE)~~ — eliminated (Phase 410)
+2. ~~MOND-like acceleration law~~ — eliminated (Phase 411)
+3. **Dark matter halo structure** — strongest remaining
+4. **Assembly/formation history** — consistent with linearity
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)
