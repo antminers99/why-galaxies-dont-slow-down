@@ -1,7 +1,7 @@
 {
   "phase": "303",
   "title": "Physical Interpretation — What is the hidden dynamical channel?",
-  "timestamp": "2026-04-06T13:36:16.890Z",
+  "timestamp": "2026-04-06T13:42:04.002Z",
   "verdict": "STRONG_SUPPORT: H4_dynIntegration",
   "observabilityVerdict": "PHYSICS_CHANGES: both slope and r strengthen → real physics amplifies",
   "hypothesisScores": [
@@ -33,21 +33,23 @@
       ]
     },
     {
+      "name": "H3_feedbackImprint",
+      "score": 7,
+      "evidence": [
+        "logFgas consistent sign",
+        "logMHI int-HV r=0.252",
+        "logMHI pool-HV r=0.323",
+        "int LOO=0.044",
+        "pool LOO=0.01"
+      ]
+    },
+    {
       "name": "H2_assemblyHistory",
       "score": 4,
       "evidence": [
         "morphT consistent sign",
         "logSBeff consistent sign",
         "int LOO=0.037"
-      ]
-    },
-    {
-      "name": "H3_feedbackImprint",
-      "score": 4,
-      "evidence": [
-        "logMHI int-HV r=0.252",
-        "logMHI pool-HV r=0.323",
-        "int LOO=0.044"
       ]
     }
   ],
@@ -121,10 +123,10 @@
       {
         "hypothesis": "H3_feedbackImprint",
         "proxy": "logFgas",
-        "rFull": 0,
-        "rLow": 0,
-        "rHigh": 0,
-        "rVHigh": 0,
+        "rFull": -0.196,
+        "rLow": 0.279,
+        "rHigh": -0.281,
+        "rVHigh": -0.296,
         "nFull": 45,
         "nLow": 10,
         "nHigh": 35,
@@ -266,15 +268,15 @@
       {
         "hypothesis": "H3_feedbackImprint",
         "proxy": "logFgas",
-        "rFull": 0,
-        "rLow": 0,
-        "rHigh": 0,
-        "rVHigh": 0,
+        "rFull": -0.228,
+        "rLow": 0.085,
+        "rHigh": -0.198,
+        "rVHigh": -0.368,
         "nFull": 139,
         "nLow": 83,
         "nHigh": 56,
         "nVHigh": 29,
-        "regimeStrengthens": false
+        "regimeStrengthens": true
       },
       {
         "hypothesis": "H3_feedbackImprint",
@@ -411,10 +413,10 @@
       {
         "hypothesis": "H3_feedbackImprint",
         "proxy": "logFgas",
-        "rFull": 0,
-        "rLow": 0,
-        "rHigh": 0,
-        "rVHigh": 0,
+        "rFull": 0.307,
+        "rLow": 0.597,
+        "rHigh": 0.077,
+        "rVHigh": 0.099,
         "nFull": 45,
         "nLow": 10,
         "nHigh": 35,
@@ -556,10 +558,10 @@
       {
         "hypothesis": "H3_feedbackImprint",
         "proxy": "logFgas",
-        "rFull": 0,
-        "rLow": 0,
-        "rHigh": 0,
-        "rVHigh": 0,
+        "rFull": 0.201,
+        "rLow": 0.345,
+        "rHigh": 0.138,
+        "rVHigh": 0.051,
         "nFull": 139,
         "nLow": 83,
         "nHigh": 56,
@@ -644,8 +646,8 @@
         "r2": 0.054,
         "loo": -0.054,
         "signStability": [
-          96.2,
-          96.4
+          94.6,
+          94
         ],
         "rResidA0AfterHyp": 0.626
       },
@@ -659,9 +661,9 @@
         "r2": 0.176,
         "loo": -0.027,
         "signStability": [
-          87,
-          80.8,
-          93.2
+          83.8,
+          78,
+          95.6
         ],
         "rResidA0AfterHyp": 0.611
       },
@@ -674,8 +676,8 @@
         "r2": 0.131,
         "loo": 0.037,
         "signStability": [
-          97.2,
-          97.2
+          98.2,
+          98.2
         ],
         "rResidA0AfterHyp": 0.559
       },
@@ -688,8 +690,8 @@
         "r2": 0.032,
         "loo": -0.086,
         "signStability": [
-          80.8,
-          83
+          83.6,
+          85.6
         ],
         "rResidA0AfterHyp": 0.617
       },
@@ -704,8 +706,8 @@
         "loo": 0.011,
         "signStability": [
           88.6,
-          98.2,
-          76
+          99.2,
+          77.8
         ],
         "rResidA0AfterHyp": 0.542
       },
@@ -715,13 +717,13 @@
           "logFgas"
         ],
         "n": 45,
-        "r2": null,
-        "loo": null,
+        "r2": 0.094,
+        "loo": -0.017,
         "signStability": [
-          85.6,
-          85.6
+          94,
+          97.2
         ],
-        "rResidA0AfterHyp": 0
+        "rResidA0AfterHyp": 0.6
       },
       {
         "label": "H3b: Fgas + mondImprove",
@@ -730,14 +732,14 @@
           "mondImprove"
         ],
         "n": 45,
-        "r2": null,
-        "loo": null,
+        "r2": 0.096,
+        "loo": -0.05,
         "signStability": [
-          56.4,
-          51.4,
-          68.2
+          92.2,
+          97.4,
+          58.8
         ],
-        "rResidA0AfterHyp": 0
+        "rResidA0AfterHyp": 0.584
       },
       {
         "label": "H3c: mondImprove",
@@ -748,8 +750,8 @@
         "r2": 0.004,
         "loo": -0.084,
         "signStability": [
-          71.4,
-          67.4
+          71.6,
+          65
         ],
         "rResidA0AfterHyp": 0.633
       },
@@ -762,8 +764,8 @@
         "r2": 0.041,
         "loo": -0.091,
         "signStability": [
-          80.2,
-          80.8
+          86,
+          86.4
         ],
         "rResidA0AfterHyp": 0.52
       },
@@ -776,8 +778,8 @@
         "r2": 0.146,
         "loo": 0.059,
         "signStability": [
-          99.4,
-          99.4
+          98.6,
+          98.6
         ],
         "rResidA0AfterHyp": 0.503
       },
@@ -791,9 +793,9 @@
         "r2": 0.185,
         "loo": 0.003,
         "signStability": [
-          74.4,
-          83,
-          99.6
+          80,
+          84.4,
+          97.6
         ],
         "rResidA0AfterHyp": 0.406
       },
@@ -807,9 +809,9 @@
         "r2": 0.208,
         "loo": 0.066,
         "signStability": [
-          75.2,
-          69,
-          96.8
+          74.8,
+          67.6,
+          97.2
         ],
         "rResidA0AfterHyp": 0.598
       },
@@ -823,9 +825,9 @@
         "r2": 0.182,
         "loo": 0.044,
         "signStability": [
-          99.6,
-          89.8,
-          100
+          99.8,
+          92.8,
+          99.4
         ],
         "rResidA0AfterHyp": 0.562
       },
@@ -842,8 +844,8 @@
         "signStability": [
           99.8,
           99.8,
-          98.6,
-          63.6
+          98.4,
+          63.4
         ],
         "rResidA0AfterHyp": 0.451
       },
@@ -857,15 +859,15 @@
         ],
         "n": 45,
         "r2": 0.348,
-        "loo": 0.194,
+        "loo": 0.046,
         "signStability": [
-          50,
-          94,
-          62.4,
-          89.2,
-          97.4
+          99.2,
+          98,
+          52.8,
+          97.8,
+          99
         ],
-        "rResidA0AfterHyp": 0.294
+        "rResidA0AfterHyp": 0.288
       }
     ],
     "pooled": [
@@ -878,8 +880,8 @@
         "r2": 0.01,
         "loo": -0.029,
         "signStability": [
-          86.4,
-          86.4
+          82.2,
+          82.8
         ],
         "rResidA0AfterHyp": 0.576
       },
@@ -893,9 +895,9 @@
         "r2": 0.085,
         "loo": 0.03,
         "signStability": [
-          74.8,
-          83.2,
-          99.8
+          70.6,
+          79,
+          99.4
         ],
         "rResidA0AfterHyp": 0.6
       },
@@ -908,8 +910,8 @@
         "r2": 0.009,
         "loo": -0.025,
         "signStability": [
-          86.6,
-          83.4
+          83.8,
+          83.8
         ],
         "rResidA0AfterHyp": 0.58
       },
@@ -919,13 +921,13 @@
           "logFgas"
         ],
         "n": 139,
-        "r2": null,
-        "loo": null,
+        "r2": 0.04,
+        "loo": 0.01,
         "signStability": [
-          65.8,
-          65.8
+          93.2,
+          97.8
         ],
-        "rResidA0AfterHyp": 0
+        "rResidA0AfterHyp": 0.587
       },
       {
         "label": "H3b: Fgas + mondImprove",
@@ -934,14 +936,14 @@
           "mondImprove"
         ],
         "n": 139,
-        "r2": 0.001,
-        "loo": -0.021,
+        "r2": 0.046,
+        "loo": -0.001,
         "signStability": [
-          51,
-          55.4,
-          65.6
+          89.2,
+          99,
+          81
         ],
-        "rResidA0AfterHyp": 0.572
+        "rResidA0AfterHyp": 0.563
       },
       {
         "label": "H3c: mondImprove",
@@ -952,8 +954,8 @@
         "r2": 0.001,
         "loo": -0.028,
         "signStability": [
-          70.8,
-          70.6
+          67,
+          68.8
         ],
         "rResidA0AfterHyp": 0.572
       },
@@ -966,8 +968,8 @@
         "r2": 0.002,
         "loo": -0.034,
         "signStability": [
-          62.6,
-          62.4
+          66.2,
+          66.8
         ],
         "rResidA0AfterHyp": 0.55
       },
@@ -980,8 +982,8 @@
         "r2": 0.023,
         "loo": -0.007,
         "signStability": [
-          88.6,
-          93.6
+          91.8,
+          97.2
         ],
         "rResidA0AfterHyp": 0.53
       },
@@ -995,9 +997,9 @@
         "r2": 0.023,
         "loo": -0.027,
         "signStability": [
-          54.2,
-          50,
-          94.4
+          53,
+          50.6,
+          96.2
         ],
         "rResidA0AfterHyp": 0.529
       },
@@ -1011,9 +1013,9 @@
         "r2": 0.029,
         "loo": -0.016,
         "signStability": [
-          91.8,
-          84.2,
-          96.6
+          93.4,
+          83,
+          97
         ],
         "rResidA0AfterHyp": 0.552
       },
@@ -1028,10 +1030,10 @@
         "r2": 0.032,
         "loo": -0.041,
         "signStability": [
-          96.2,
-          94.6,
-          93.2,
-          51
+          96.4,
+          94.4,
+          94,
+          50.8
         ],
         "rResidA0AfterHyp": 0.55
       }
@@ -1097,22 +1099,22 @@
       ],
       "regimes": [
         {
-          "r2": null,
-          "loo": null,
+          "r2": 0.357,
+          "loo": -0.043,
           "n": 10,
-          "rResidA0": 0
+          "rResidA0": 0.354
         },
         {
-          "r2": null,
-          "loo": null,
+          "r2": 0.006,
+          "loo": -0.114,
           "n": 35,
-          "rResidA0": 0
+          "rResidA0": 0.725
         },
         {
-          "r2": null,
-          "loo": null,
+          "r2": 0.01,
+          "loo": -0.204,
           "n": 20,
-          "rResidA0": 0
+          "rResidA0": 0.801
         }
       ]
     },

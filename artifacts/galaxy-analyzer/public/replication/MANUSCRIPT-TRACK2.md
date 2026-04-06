@@ -1,7 +1,7 @@
 # Hierarchical Coupling Law for Per-Galaxy a₀ Variation: Evidence from SPARC Rotation Curves
 
 *Non-peer-reviewed computational analysis report*
-*Analysis: Phases 123–134 (internal), Phases 200–204 (external validation)*
+*Analysis: Phases 123–134 (internal), Phases 200–204 (external validation), Phases 300–303 (physical interpretation)*
 *Zenodo v10: DOI 10.5281/zenodo.19434177 (Concept DOI: 10.5281/zenodo.19430633)*
 
 ---
@@ -11,6 +11,8 @@
 Using per-galaxy fits to 175 SPARC rotation curves, we find that the MOND acceleration scale a₀ varies systematically across galaxies and is well-described by a hierarchical, regime-dependent empirical law. Within a published-quality subset of N=45 galaxies, a three-axis structural core (gas mass MHI, host halo mass Mhost, and dynamical coherence MeanRun) explains 44% of a₀ variance (LOO). Adding a kinematic coupling channel — the residual flat velocity after removing baryonic structural predictions (VfResid) — raises predictive power to 61%, with a further independent contribution from outer halo fitting quality (lh_outerImprove, 5-axis LOO = 65%). The coupling signal is regime-dependent, strongest in galaxies with Vflat >= 120 km/s and activating sharply near Vflat ~ 181 km/s. The dominant channel (VfResid) mediates essentially all halo proxy signals and contains ~36% irreducible variance beyond any available catalog observable.
 
 A comprehensive external validation program (Phases 200–204) tests the coupling law on N=59 independent SPARC galaxies using frozen N=45 coefficients. The complete hierarchy replicates externally: Core alone fails in all regimes, VfResid dominates (bootstrap P > 99.6% in all subsamples), and lhOuter provides genuine secondary improvement. Crucially, we decompose the role of environmental estimation quality by replacing the crude host-mass formula (r = 0.232 vs. tidal values) with a trained estimator (r = 0.542). Core gap improves substantially (full: -53% to -8.1%; high-V: -6.7% to +16.7%), proving the environmental axis carries real signal. However, VfResid retains clear dominance (margin 30–76 pp) even with improved environmental representation. This establishes that the dominant transferable channel is VfResid — the velocity residual from structural expectation — independent of environmental proxy quality.
+
+Phases 300–303 probe the physical nature of VfResid itself. Sample salvage recovered 35 additional galaxies from unused SPARC data (N=59 to N=94 external). Driver analysis confirms haloK (dark halo amplitude) as the only shared top predictor across both samples (r = 0.598 internal, 0.511 external), but pure structural models fail (LOO R² = -0.144 internal). A large irreducible fraction (35.8% internal, 68.5% external) persists beyond all catalog observables and still predicts a₀. Regime analysis reveals that this hidden residual genuinely activates with Vflat — the unexplained VfResid after removing haloK predicts a₀ at r = 0.299 (low-V) versus r = 0.749 (high-V) internally and r = 0.479 versus r = 0.889 externally. Critically, both slope and correlation strengthen with Vflat (slope ratio 2.6:1, r ratio 3.5:1), ruling out a pure observability explanation. Hypothesis testing favors dynamical integration (H4, score 10) over halo response (H1, score 7), feedback imprint (H3, score 7), and assembly history (H2, score 4). The hidden channel is best explained as an accumulated dynamical baryon-halo processing effect that genuinely amplifies in deeper potential wells.
 
 We do not claim a₀ is definitively non-universal; we report structured empirical variation that is well-predicted by observable galaxy properties and whose hierarchical structure reproduces itself outside the training sample with a robustness that is independent of environmental estimation quality.
 
@@ -180,6 +182,88 @@ This proves two things simultaneously: (1) the environmental axis carries real s
 
 The lhOuter signal persists in the high-mass regimes where it matters most, confirming it as a genuine — though secondary and smaller than initially estimated — independent channel.
 
+### 3.9 Sample Salvage (Phase 300)
+
+To maximize statistical power for the physical interpretation program, we recovered 35 additional galaxies from the 60 unused SPARC galaxies via two strategies: (a) estimating Vflat from the maximum observed rotation curve velocity for 22 galaxies lacking catalog Vflat, and (b) lowering the minimum RAR data point threshold from 5 to 3 for 13 galaxies with sufficient but sparse data. Three known high-velocity targets (NGC3953, NGC3949, NGC4051) were captured by the lowered threshold.
+
+| Metric | Original | Augmented |
+|--------|----------|-----------|
+| External sample N | 59 | 94 |
+| Vflat >= 120 km/s | 16 | 21 |
+| Vflat >= 180 km/s | 8 | 9 |
+| r(VfResid, a₀) full | 0.713 | 0.691 |
+| r(VfResid, a₀) high-V | 0.841 | 0.859 |
+
+The augmented sample preserves all previously established correlations. Original and augmented results are consistent at every Vflat threshold (all within +/- 0.02 in r), confirming that the salvaged galaxies do not distort the coupling signal.
+
+### 3.10 VfResid Driver Analysis (Phase 301)
+
+We systematically modeled VfResid itself — asking what determines the dominant coupling channel — at three levels: internal-only (N=45), external-only (N=94), and pooled with source controls (N=139).
+
+**Single-predictor rankings.** haloK (dark halo linear amplitude) is the strongest predictor of VfResid in both samples (internal r = 0.598, external r = 0.511). MOND improvement (mondImprove) is second internally (r = -0.542) and fourth externally (r = -0.358), with consistent sign. Only 2 of the top-5 predictors overlap between internal and external rankings (haloK, mondImprove); secondary drivers diverge, likely because VfResid is constructed by residualizing Vflat on structural variables (logMbar, logL36, logRdisk, T), which are orthogonal to VfResid internally by construction but retain residual correlations externally.
+
+**Multi-predictor models.**
+
+| Model | N | LOO R² | Key finding |
+|-------|---|--------|-------------|
+| Internal: haloK alone | 45 | 0.287 | Strong but leaves 64% unexplained |
+| Internal: haloK + lhOuter | 45 | 0.355 | lhOuter adds genuine signal |
+| Internal: best-5 (haloK + lhOuter + envCode + MR + concentration) | 45 | 0.493 | Best internal model |
+| Internal: pure structure (no halo) | 45 | -0.144 | Fails — VfResid is not structural |
+| External: haloK alone | 94 | 0.225 | Transfers but weaker |
+| External: haloK + baryonic | 94 | 0.341 | Best external model |
+| External: pure structure (no halo) | 94 | 0.077 | Also fails |
+
+**Irreducible fraction.** After the best internal model (LOO R² = 0.493), 35.8% of VfResid variance remains unexplained. This irreducible component still correlates with a₀ at r = 0.438. Externally, 68.5% remains unexplained with r(residual, a₀) = 0.556. This demonstrates that VfResid encodes genuine physical information beyond any available catalog observable.
+
+**Cross-sample transfer.** A haloK-only model trained on N=45 internal galaxies predicts external VfResid with r = 0.511. The reverse transfer (external-trained, internal-tested) yields r = 0.598. Pure structure models do not transfer (R² < 0).
+
+### 3.11 Regime Law (Phase 302)
+
+Three tests address the central question: does the hidden physics inside VfResid genuinely activate with Vflat, or does only its observability improve?
+
+**Test 1: Activation shape.** Cumulative threshold analysis shows the VfResid-a₀ correlation strengthening gradually with Vflat (GRADUAL_STRENGTHENING in external and pooled samples). There is no single sharp threshold — rather a smooth ramp. The internal sample (N=45) shows high variability in small bins (classified NOISY by the automated classifier), but the monotonic trend is preserved.
+
+**Test 2: Driver regime split.** haloK strengthens with regime: r(haloK, VfResid) = 0.452 at low-V (N=10) versus 0.688 at high-V (N=35) internally, and 0.459 versus 0.579 in the pooled sample. mondImprove also strengthens (-0.454 to -0.578 internally). This confirms that halo-related drivers gain power in the high-mass regime.
+
+**Test 3: Residual regime law.** After removing haloK from VfResid, the unexplained remainder still predicts a₀ — and this predictive power rises sharply with Vflat:
+
+| Sample | Low-V r(residual, a₀) | High-V r(residual, a₀) | Very-high-V r(residual, a₀) |
+|--------|----------------------|----------------------|---------------------------|
+| Internal (N=45) | 0.299 | 0.749 | 0.832 |
+| External (N=59) | 0.479 | 0.889 | 0.854 |
+| Pooled (N=104) | 0.467 | 0.815 | 0.852 |
+
+In the pooled sample above Vflat ~ 100, the unexplained residual surpasses haloK itself in a₀-predictive power: r(haloK, a₀) weakens while r(residual, a₀) climbs to 0.847. The hidden physics activates faster than any known observable halo proxy.
+
+**Robustness.** The regime pattern is consistent between the original external sample and the augmented sample at every threshold (all differences < 0.02 in r).
+
+### 3.12 Physical Interpretation (Phase 303)
+
+We test four candidate hypotheses for the hidden physics inside VfResid, using hypothesis-specific proxy observables and evaluating each on the haloK-residual (hkResid = VfResid after removing haloK):
+
+| Hypothesis | Physical mechanism | Key proxies |
+|------------|-------------------|-------------|
+| H1: Halo response | Adiabatic contraction / baryon-halo coupling | Baryonic surface density (SigmaBar), disk dominance |
+| H2: Assembly history | Formation time / halo age | Morphological type, surface brightness |
+| H3: Feedback imprint | SN/AGN reshaping of inner halo | Gas fraction, MOND improvement |
+| H4: Dynamical integration | Accumulated baryon-halo processing | Dynamical time, RC extent, RAR mean run |
+
+**Observability versus physics.** Both the slope and correlation of the hkResid-a₀ relationship strengthen with Vflat (internal: slope 1.57 at low-V to 4.13 at high-V; r from 0.201 to 0.713; pooled: slope ratio 1.86, r ratio 1.70). This rules out a pure observability explanation: the physics itself amplifies, not just its measurement precision.
+
+**Hypothesis scorecard.** Scoring each hypothesis by the number of supporting lines of evidence (proxy correlations in the correct direction, regime strengthening, cross-sample sign consistency, positive LOO R²):
+
+| Hypothesis | Score | Key evidence |
+|------------|-------|-------------|
+| H4: Dynamical integration | 10 | logMeanRun is the only proxy that strengthens with regime in hkResid (low-V r = 0.11, high-V r = 0.508); cross-sample consistent; best LOO = 0.066 |
+| H1: Halo response | 7 | SigmaBar correlates at high-V (r = -0.426) but sign is unstable across regimes |
+| H3: Feedback imprint | 7 | Gas fraction correlates at low-V (r = 0.597) but fades at high-V (r = 0.077) — opposite of regime activation |
+| H2: Assembly history | 4 | morphT strong at low-V (r = 0.733) but vanishes at high-V (r = -0.049) |
+
+The FULL model (all proxies combined) explains 34.8% of hkResid (internal), reducing r(remaining, a₀) from 0.651 to 0.288. Even after removing all hypothesis-specific content, the remaining signal still predicts a₀ — indicating genuine dynamical physics beyond any single proxy.
+
+**Physical narrative.** The hidden channel inside VfResid is best explained as an accumulated dynamical integration effect: the long-term product of baryon-halo interaction that deepens with potential well depth. haloK captures the halo-amplitude component of this effect, while logMeanRun (dynamical coherence of the RAR) provides a partial handle on the integration depth. Gas fraction and morphology are relevant at low Vflat but become irrelevant in the regime where the coupling law is strongest — consistent with a transition from feedback-dominated (low mass) to integration-dominated (high mass) physics.
+
 ---
 
 ## 4. The Coupling Law (Summary)
@@ -190,11 +274,15 @@ The empirical law can be stated as:
 
 1. **Structural core** (MHI, Mhost, MeanRun): Sets the baseline a₀ based on gas content, halo environment, and dynamical regularity. Carries real signal (confirmed by environmental decomposition) but fails to transfer alone and remains secondary to VfResid externally.
 
-2. **Dominant kinematic coupling channel** (VfResid): The residual flat velocity beyond baryonic structural prediction. Carries the bulk of the halo-to-a₀ coupling signal. Mediates all tested halo proxy effects. Activates sharply at Vflat ~ 181 km/s. **Confirmed as the primary transferable channel**: dominates by 30–76 pp even after improving Core environmental estimates, with bootstrap P > 99.6% in all subsamples.
+2. **Dominant kinematic coupling channel** (VfResid): The residual flat velocity beyond baryonic structural prediction. Carries the bulk of the halo-to-a₀ coupling signal. Mediates all tested halo proxy effects. Activates gradually above Vflat ~ 120 km/s, reaching full strength above ~180 km/s. **Confirmed as the primary transferable channel**: dominates by 30–76 pp even after improving Core environmental estimates, with bootstrap P > 99.6% in all subsamples.
 
 3. **Secondary outer-halo channel** (lh_outerImprove): Independent contribution from outer rotation curve halo fitting quality. Adds ~4pp internally. Externally: +8.3 pp in very-high-Vflat, +4.9 pp in Q=1+HV (after environmental correction; initial crude estimates were inflated by logMhost error absorption).
 
-The law is strongest — and most reliably transferable — in the high-Vflat (massive galaxy) regime. The external validation program (Phases 200–204) establishes that this hierarchy is not sample-specific: it replicates in N=59 independent galaxies with the same structure, the same channel ordering, and the same regime dependence.
+The law is strongest — and most reliably transferable — in the high-Vflat (massive galaxy) regime. The external validation program (Phases 200–204) establishes that this hierarchy is not sample-specific: it replicates in N=59 independent galaxies (augmented to N=94 via sample salvage) with the same structure, the same channel ordering, and the same regime dependence.
+
+**Physical interpretation (Phases 300–303).** The dominant channel VfResid is not reducible to any single catalog observable. haloK (dark halo amplitude) is its strongest shared driver (r ~ 0.5–0.6 in both samples), but pure structural models fail entirely (LOO R² < 0). After removing haloK, a large irreducible fraction persists (35.8% internal, 68.5% external) that still predicts a₀. This hidden residual activates with Vflat — its a₀-predictive power rises from r ~ 0.3 at low-V to r ~ 0.8 at high-V — and the activation reflects genuine physical amplification, not merely improved observability (both slope and correlation strengthen, slope ratio ~ 2:1).
+
+Hypothesis testing identifies dynamical integration (H4) as the best-supported explanation: an accumulated product of baryon-halo dynamical interaction that deepens in more massive systems. Gas fraction and morphology are relevant at low Vflat but fade in the high-Vflat regime where the coupling law is strongest, consistent with a transition from feedback-dominated to integration-dominated physics. The coupling law thus encodes something deeper than simple halo strength — it reflects a regime-dependent dynamical integration effect with haloK as the best partial observable handle.
 
 ---
 
@@ -206,7 +294,7 @@ The law is strongest — and most reliably transferable — in the high-Vflat (m
 
 3. **logMhost estimation**: The external sample lacks group membership data. Even the improved estimator (Model C, r = 0.542) explains only ~29% of real logMhost variance. True group catalog data would provide a definitive test of Core's external weight. The environmental decomposition (Phase 203) partially addresses this by showing that better estimation does improve Core, but room for improvement remains.
 
-4. **Regime dependence**: The coupling law works well only in the high-Vflat regime. Whether this reflects genuine physics (mass-dependent coupling) or insufficient data quality in low-mass galaxies remains unresolved.
+4. **Regime dependence**: The coupling law works well only in the high-Vflat regime. Phase 302 provides evidence that this reflects genuine physical amplification (both slope and r strengthen, not merely reduced noise), but the low-Vflat failure could also partly reflect data quality limitations.
 
 5. **VfResid construction**: The structural model used to compute VfResid is trained on the N=45 published sample. Applying it to external galaxies assumes the same structural relationship holds — a mild circularity concern.
 
@@ -220,11 +308,17 @@ The law is strongest — and most reliably transferable — in the high-Vflat (m
 
 10. **Not peer-reviewed**: This analysis has not undergone formal peer review.
 
+11. **Salvaged galaxy quality**: The 35 recovered galaxies (Phase 300) have either estimated Vflat (from maximum rotation curve velocity) or fewer RAR data points (3–4 instead of 5+). Regime-law results are robust to their inclusion (original vs. augmented differences < 0.02 in r), but individual measurements are less reliable.
+
+12. **Hypothesis testing limitations**: The Phase 303 hypothesis scoring uses proxy observables (gas fraction, dynamical time, morphological type) that are indirect handles on the underlying physical processes. The hypotheses are not mutually exclusive — dynamical integration, halo response, and feedback may all contribute simultaneously. The scoring is heuristic, not a formal Bayesian model comparison.
+
+13. **logFgas circularity risk**: Gas fraction (logFgas) and dynamical time (logDynTime) are constructed from the same catalog variables used to define VfResid. While hkResid (VfResid after removing haloK) is analyzed rather than VfResid directly, partial circularity through shared structural variables cannot be fully excluded.
+
 ---
 
 ## 6. Conclusions
 
-Within the SPARC galaxy sample, per-galaxy a₀ variation is well-described by a hierarchical coupling law in which baryonic structure sets the baseline and a kinematic residual channel (VfResid) carries the dominant halo coupling signal. A comprehensive external validation program (Phases 200–204) establishes that this hierarchy is not sample-specific: it replicates in N=59 independent galaxies with the same structure, the same channel ordering, and the same regime dependence.
+Within the SPARC galaxy sample, per-galaxy a₀ variation is well-described by a hierarchical coupling law in which baryonic structure sets the baseline and a kinematic residual channel (VfResid) carries the dominant halo coupling signal. A comprehensive external validation program (Phases 200–204) establishes that this hierarchy is not sample-specific: it replicates in N=59 independent galaxies (augmented to N=94 via sample salvage) with the same structure, the same channel ordering, and the same regime dependence.
 
 The most important findings from the external program are:
 
@@ -234,13 +328,23 @@ The most important findings from the external program are:
 
 3. **Core is real but secondary**: Improving the environmental proxy (logMhost r: 0.232 to 0.542) raises Core gap from -53% to -8.1% (full) and -6.7% to +16.7% (high-V). This proves the environmental axis carries real physical signal. But VfResid still dominates by 30–76 pp in every regime.
 
-4. **VfResid dominance is independent of environmental proxy quality**: This is the central result. The dominant transferable channel is not an artifact of poor Core estimation — it persists with the same margin after improving the environmental representation.
+4. **VfResid dominance is independent of environmental proxy quality**: The dominant transferable channel is not an artifact of poor Core estimation — it persists with the same margin after improving the environmental representation.
 
 5. **The signal is regime-dependent**: It concentrates in Vflat >= 120 km/s and is strongest in very-high-Vflat galaxies. The low-Vflat regime fails, exactly as predicted.
 
-This suggests that the physical driver of a₀ variation is not baryonic structure per se, but the efficiency of baryon-halo coupling as encoded in the kinematic excess — and this picture survives outside the training sample with a robustness that is independent of environmental estimation quality.
+The most important findings from the physical interpretation program (Phases 300–303) are:
 
-The natural next step is testing whether this picture survives in an entirely independent survey with higher-quality data, particularly for the mass estimation variables.
+6. **VfResid is not a structural artifact**: Pure structural models (surface brightness, disk size, baryonic mass, morphology) fail entirely to predict VfResid (LOO R² = -0.144 internal, 0.077 external). haloK is the only shared driver across both samples (r = 0.598 internal, 0.511 external), confirming genuine halo information content.
+
+7. **A large irreducible fraction persists and still predicts a₀**: After the best available model, 35.8% of VfResid variance remains unexplained internally (68.5% externally). This irreducible part still correlates with a₀ (r = 0.438 internal, 0.556 external), indicating physics beyond any available catalog observable.
+
+8. **The hidden physics genuinely activates with Vflat**: After removing haloK, the unexplained VfResid predicts a₀ at r = 0.299 (low-V) versus r = 0.749 (high-V) internally, and r = 0.479 versus r = 0.889 externally. Both slope and correlation strengthen (slope ratio 2.6:1), ruling out a pure observability explanation.
+
+9. **Dynamical integration is the best-supported physical interpretation**: Hypothesis testing favors accumulated baryon-halo dynamical processing (score 10) over halo response (7), feedback imprint (7), and assembly history (4). Gas fraction and morphology are relevant at low Vflat but fade in the high-mass regime where the coupling law is strongest, consistent with a transition from feedback-dominated to integration-dominated physics.
+
+Taken together, these results suggest that the physical driver of a₀ variation is not baryonic structure per se, nor simple halo amplitude, but a regime-dependent dynamical integration effect — the accumulated product of baryon-halo interaction that genuinely amplifies in deeper potential wells. haloK provides the best partial observable handle on this process, but the deeper signal goes beyond any single catalog variable.
+
+The natural next step is testing whether this picture survives in an entirely independent survey with higher-quality data, particularly for spatially resolved kinematics that could directly probe the dynamical integration hypothesis.
 
 ---
 

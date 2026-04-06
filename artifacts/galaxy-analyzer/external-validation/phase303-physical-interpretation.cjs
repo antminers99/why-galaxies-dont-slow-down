@@ -130,7 +130,7 @@ const internal = stageA.galaxies.filter(g => pubNames.has(g.name)).map(g => {
   const haloK = r && r.models && r.models.dark_halo_linear ? Math.log10(Math.max(r.models.dark_halo_linear.k, 1)) : null;
   const lhOuter = r && r.models && r.models.log_halo ? r.models.log_halo.outerImprovement : null;
   const mondImprove = r && r.models && r.models.mond ? r.models.mond.improvementVsNewton : null;
-  const logMgas = Math.log10(Math.pow(10, g.logMHI) * 1.33);
+  const logMgas = Math.log10(Math.pow(10, g.logMHI) * 1.33 * 1e9);
   const fGas = Math.pow(10, logMgas) / Math.pow(10, logMbar);
   const logFgas = Math.log10(Math.max(fGas, 0.001));
   const logSigmaBar = logMbar - 2 * logRdisk;
@@ -158,7 +158,7 @@ const internal = stageA.galaxies.filter(g => pubNames.has(g.name)).map(g => {
 
 const extAll = [...extDataset.galaxies, ...(salvageData.salvagedGalaxies || [])].map(g => {
   const s = sparcMap[g.name]; const r = resMap[g.name];
-  const logMgas = g.logMHI ? Math.log10(Math.pow(10, g.logMHI) * 1.33) : null;
+  const logMgas = g.logMHI ? Math.log10(Math.pow(10, g.logMHI) * 1.33 * 1e9) : null;
   const logMbar = g.logMbar;
   const logRdisk = g.logRdisk;
   const fGas = logMgas && logMbar ? Math.pow(10, logMgas) / Math.pow(10, logMbar) : null;
