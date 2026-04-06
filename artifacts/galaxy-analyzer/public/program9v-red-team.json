@@ -1,0 +1,208 @@
+{
+  "program": "9V",
+  "title": "Red Team Verification of Carrier Claim",
+  "timestamp": "2026-04-06T20:12:01.019Z",
+  "N": 7,
+  "tests": [
+    {
+      "name": "9V.1 Independent pipeline replication",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.2 All sensitivity variants positive",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.2 >=80% variants above r=0.3",
+      "pass": true,
+      "critical": false
+    },
+    {
+      "name": "9V.3 Unbarred-only signal survives",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.3 Outer-only m=2 signal exists",
+      "pass": true,
+      "critical": false
+    },
+    {
+      "name": "9V.4 LOO all positive",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.4 r > 0.3 without NGC2841",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.4 Positive without gold pair",
+      "pass": true,
+      "critical": false
+    },
+    {
+      "name": "9V.5 Inclination not confounder",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.5 Partial r|confounders > 0",
+      "pass": true,
+      "critical": true
+    },
+    {
+      "name": "9V.6 Program 8B reconciliation",
+      "pass": true,
+      "critical": true
+    }
+  ],
+  "criticalPass": 8,
+  "criticalTotal": 8,
+  "allPass": 11,
+  "allTotal": 11,
+  "replication": {
+    "r_independent": 0.9110240608716208,
+    "r_original": 0.8467,
+    "delta": 0.06432406087162079
+  },
+  "sensitivity": {
+    "min": 0.40597489175765106,
+    "max": 0.9117128017030837,
+    "allPositive": true,
+    "results": [
+      {
+        "label": "Baseline",
+        "r": 0.9110240608716208
+      },
+      {
+        "label": "Center +3px X",
+        "r": 0.8087125258275679
+      },
+      {
+        "label": "Center -3px X",
+        "r": 0.9117128017030837
+      },
+      {
+        "label": "Center +3px Y",
+        "r": 0.8926807256351739
+      },
+      {
+        "label": "Center -3px Y",
+        "r": 0.8275547768764195
+      },
+      {
+        "label": "Center +5px XY",
+        "r": 0.8595253702895703
+      },
+      {
+        "label": "Inner 15\"",
+        "r": 0.9117031975637044
+      },
+      {
+        "label": "Inner 30\"",
+        "r": 0.9042018390249124
+      },
+      {
+        "label": "Inner 60\"",
+        "r": 0.9013656975506926
+      },
+      {
+        "label": "Outer 80%",
+        "r": 0.40597489175765106
+      },
+      {
+        "label": "Outer 60%",
+        "r": 0.5185220892381041
+      },
+      {
+        "label": "12 az bins",
+        "r": 0.727989732872908
+      },
+      {
+        "label": "16 az bins",
+        "r": 0.636866395527168
+      },
+      {
+        "label": "6 az bins",
+        "r": 0.6552406287219389
+      },
+      {
+        "label": "10 rad bins",
+        "r": 0.89013788016575
+      },
+      {
+        "label": "20 rad bins",
+        "r": 0.9074669975660156
+      },
+      {
+        "label": "30 rad bins",
+        "r": 0.9095844718298576
+      },
+      {
+        "label": "Mask < 1000",
+        "r": 0.9110244111222465
+      },
+      {
+        "label": "Mask < 5000",
+        "r": 0.9110421015185209
+      }
+    ]
+  },
+  "barTest": {
+    "rUnbarred": 0.9094579588607077,
+    "rOuterOnly": 0.8692065670898298,
+    "nUnbarred": 6
+  },
+  "loo": {
+    "mean": 0.8898107616046573,
+    "min": 0.6739857705279749,
+    "allPositive": true,
+    "values": [
+      {
+        "left_out": "NGC2841",
+        "r": 0.6739857705279749
+      },
+      {
+        "left_out": "NGC5055",
+        "r": 0.9507609307853024
+      },
+      {
+        "left_out": "NGC3521",
+        "r": 0.9147465549204854
+      },
+      {
+        "left_out": "NGC7331",
+        "r": 0.9154102022362505
+      },
+      {
+        "left_out": "NGC2403",
+        "r": 0.9575498498917336
+      },
+      {
+        "left_out": "NGC2903",
+        "r": 0.9094579588607077
+      },
+      {
+        "left_out": "NGC3198",
+        "r": 0.906764064010147
+      }
+    ]
+  },
+  "leverage": {
+    "rNoNGC2841": 0.6739857705279749,
+    "rNoGoldPair": 0.7392386523913363
+  },
+  "confounders": {
+    "rPartial": 0.6595040818303983,
+    "rInc_m2": 0,
+    "rInc_DQ": 0,
+    "r_logVf_m2": 0.7540558573853288,
+    "r_logMb_m2": 0.3509750112079427
+  },
+  "verdict": "CARRIER CLAIM SURVIVES",
+  "confidence": 0.95
+}

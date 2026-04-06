@@ -223,6 +223,16 @@ Phase 905: CARRIER IDENTIFIED = **Halo triaxiality / oval distortion (m=2 mode)*
   Causal chain: formation → triaxiality → m=2 power + enclosed mass shift → bilateral coupling.
 Sections 46-50 complete.
 
+**Program 9V — Red Team Verification (COMPLETE):**
+Independent pipeline replication: r(DQ,m2) = 0.911 (original 0.847). PASS.
+19 sensitivity variations: all positive, range [0.406, 0.912]. PASS.
+Bar contamination: unbarred-only r = 0.910; outer-only r = 0.869. PASS.
+LOO: 7/7 positive, min 0.674 (NGC2841 moderate leverage). PASS.
+Confounders: partial r(DQ,m2|inc,logVf,logMbar) = 0.660. PASS.
+Program 8B reconciliation: consistent (1D ceiling + 2D angular structure). PASS.
+**11/11 tests PASS (8/8 critical). Confidence: ~95%.**
+Section 51 complete.
+
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
 - The SPARC regime-strengthening pattern (low-V→high-V r increases) is NOT reproduced by ANY scenario

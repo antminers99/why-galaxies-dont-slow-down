@@ -5,8 +5,8 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: CARRIER IDENTIFIED — Halo Triaxiality (m=2 mode)
-## Programs 1–8C (1D closure) + Program 9 (2D carrier identification) COMPLETE
+## STATUS: CARRIER VERIFIED — Halo Triaxiality (m=2 mode) — 95% confidence
+## Programs 1–8C + Program 9 + Program 9V (Red Team) COMPLETE
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN

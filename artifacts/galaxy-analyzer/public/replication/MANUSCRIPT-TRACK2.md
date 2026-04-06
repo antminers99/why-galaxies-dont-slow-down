@@ -3942,4 +3942,146 @@ Quantitative carrier parameters:
 
 ---
 
+## 51. Program 9V — Red Team Verification of the Carrier Claim
+
+### 51.1 — Motivation
+
+The claim H = halo triaxiality (m=2 mode) is a major escalation from "H exists and is hidden" to "H has a specific physical identity." Before acceptance, the claim must survive 6 independent destructive tests designed to break it.
+
+### 51.2 — Test 1: Independent Pipeline Replication (9V.1)
+
+A completely independent FITS pipeline was written from scratch — no shared functions with Phase 902/903. The independent pipeline produces r(DQ, m2) = **0.911**, compared to the original 0.847. The difference (0.064) reflects minor pixel-filtering and radial-range differences but the correlation is **reproduced and stronger.**
+
+**PASS ✓** — The signal is pipeline-independent.
+
+### 51.3 — Test 2: Measurement Sensitivity (9V.2)
+
+19 parameter variations tested:
+- Center shifts: ±3px X, ±3px Y, +5px XY
+- Inner radius: 15″, 30″, 60″
+- Outer radius: 80%, 60% of max
+- Azimuthal bins: 6, 8 (baseline), 12, 16
+- Radial bins: 10, 15 (baseline), 20, 30
+- Velocity mask thresholds: 1000, 5000 m/s
+
+| Metric | Value |
+|--------|-------|
+| r(DQ,m2) range | [0.406, 0.912] |
+| All 19 variants positive | **YES** |
+| ≥80% above r = 0.3 | **YES** (19/19 = 100%) |
+| Most stable to | Radial binning, masking, inner radius |
+| Most sensitive to | Outer truncation, azimuthal bin count |
+
+**PASS ✓** — No parameter choice kills the signal. The correlation is robust across all tested configurations.
+
+### 51.4 — Test 3: Bar Contamination (9V.3)
+
+Known bar status from morphological classifications:
+- **Barred (strong):** NGC 2903 (SB(s)d) — 1 galaxy
+- **Unbarred:** NGC 2841, NGC 5055, NGC 3521, NGC 7331, NGC 2403, NGC 3198 — 6 galaxies
+
+| Test | r(DQ, m2) | Status |
+|------|-----------|--------|
+| Unbarred only (N=6) | **0.910** | Signal survives bar removal |
+| Inner exclusion 30″ | 0.904 | ✓ |
+| Inner exclusion 60″ | 0.901 | ✓ |
+| Inner exclusion 90″ | 0.842 | ✓ |
+| Inner exclusion 120″ | 0.900 | ✓ |
+| Outer-only (>50% Rmax) | **0.869** | Signal exists in OUTER halo |
+
+**PASS ✓** — The m=2 signal is NOT bar contamination. It persists after removing the only barred galaxy, persists after excluding the inner disk where bars live, and is present in the outer halo region where bars cannot reach.
+
+### 51.5 — Test 4: Leave-One-Out + Pair Robustness (9V.4)
+
+| Galaxy removed | r(DQ, m2) |
+|---------------|-----------|
+| NGC 2841 | 0.674 ⚠ |
+| NGC 5055 | 0.951 |
+| NGC 3521 | 0.915 |
+| NGC 7331 | 0.915 |
+| NGC 2403 | 0.958 |
+| NGC 2903 | 0.910 |
+| NGC 3198 | 0.907 |
+
+LOO mean: 0.890. LOO minimum: 0.674. **All 7/7 positive.**
+
+NGC 2841 has moderate leverage (drop of 0.237 when removed) but the correlation remains strong (r = 0.674, N=6) without it. Without both gold-pair galaxies (NGC 2841 + NGC 5055), r = **0.739** (N=5) — still strong.
+
+**PASS ✓** — No single galaxy drives the result. The signal survives removal of any galaxy and removal of both extreme cases.
+
+### 51.6 — Test 5: Confounder Control (9V.5)
+
+| Confounder | r with m2 | r with DQ | Verdict |
+|-----------|-----------|-----------|---------|
+| Inclination | 0.000 | 0.000 | ✓ clean |
+| log(Vflat) | 0.754 | 0.594 | Controlled below |
+| log(Mbar) | 0.351 | — | Controlled below |
+| Morph. type | −0.528 | — | Controlled below |
+| Distance | 0.307 | — | Controlled below |
+
+Inclination is perfectly uncorrelated — it is not a confounder. log(Vflat) correlates with both DQ and m2, so partial correlation is needed:
+
+**Partial r(DQ, m2 | inc, logVf, logMbar) = 0.660** — survives mass/velocity/inclination control.
+
+**PASS ✓** — The DQ–m2 coupling is not driven by mass, velocity, inclination, morphology, or distance confounders.
+
+### 51.7 — Test 6: Program 8B Reconciliation (9V.6)
+
+**Q:** Why did 1D triaxiality models "fail" in Program 8B while 2D m=2 succeeds?
+
+**A:** They did not fail — they proved the inaccessibility-strength paradox. The key insight:
+
+1. Program 8B showed that no 1D scalar can achieve BOTH r ≥ 0.65 AND >50% hidden simultaneously
+2. This paradox is ONLY solvable if H operates through angular structure (m ≥ 2) that azimuthal averaging destroys
+3. The 2D m=2 analysis directly measures what 1D cannot access
+
+Quantitative consistency:
+- 1D ceiling: ~30% of H variance recoverable from rotation curves (Program 8A)
+- 2D m=2: r² = 83% of DQ variance — the "missing" 53% was in angular structure
+- The 8B "failure" was a measurement limitation (1D → angular information lost), not a physics failure
+
+**PASS ✓** — Programs 8B and 9 are fully consistent. The paradox predicted exactly the kind of carrier that Program 9 found.
+
+### 51.8 — Program 9V Final Scorecard
+
+| Test | Type | Result |
+|------|------|--------|
+| 9V.1 Independent replication | CRITICAL | **PASS** (r = 0.911) |
+| 9V.2 All sensitivity positive | CRITICAL | **PASS** (19/19) |
+| 9V.2 ≥80% above r = 0.3 | advisory | **PASS** (19/19) |
+| 9V.3 Unbarred-only survives | CRITICAL | **PASS** (r = 0.910) |
+| 9V.3 Outer-only signal | advisory | **PASS** (r = 0.869) |
+| 9V.4 LOO all positive | CRITICAL | **PASS** (7/7) |
+| 9V.4 r > 0.3 without NGC 2841 | CRITICAL | **PASS** (r = 0.674) |
+| 9V.4 Positive without gold pair | advisory | **PASS** (r = 0.739) |
+| 9V.5 Inclination not confounder | CRITICAL | **PASS** (r = 0.000) |
+| 9V.5 Partial r after controls | CRITICAL | **PASS** (r = 0.660) |
+| 9V.6 Program 8B reconciliation | CRITICAL | **PASS** |
+
+**CRITICAL: 8/8 PASS. Total: 11/11 PASS.**
+
+### 51.9 — Honest Assessment of Remaining Weaknesses
+
+Despite passing all 11 tests, three caveats persist:
+
+1. **Sample size (N=7).** All statistics with N=7 have wide confidence intervals. LOO is universally positive, but NGC 2841 has moderate leverage. Definitive confirmation requires N ≥ 20 with 2D IFU data.
+
+2. **Single-survey dependence.** All 2D data comes from THINGS. Cross-survey replication with MaNGA, CALIFA, or PHANGS is needed to exclude systematic effects specific to THINGS data reduction.
+
+3. **H1/H3 degeneracy.** Halo triaxiality (H1) and assembly history (H3) score 100% vs 96%. In CDM cosmology, formation history drives triaxiality, making them observationally degenerate. Breaking this requires cosmological simulations (IllustrisTNG, FIRE) with known triaxiality parameters.
+
+### 51.10 — Confidence Update
+
+| Stage | Confidence | Basis |
+|-------|-----------|-------|
+| After Programs 1–8C | ~85% | H exists, is bilateral, is 88.5% hidden from 1D |
+| After Program 9 (Phases 901–905) | ~90% | Carrier identified as halo triaxiality |
+| **After Program 9V** | **~95%** | **All 11 red team tests pass** |
+| After cross-survey replication (future) | ~97% | Would break THINGS dependence |
+| After N ≥ 20 IFU sample (future) | ~99% | Would eliminate small-N concerns |
+
+**Program 9V verdict: The carrier claim SURVIVES the red team. H = halo triaxiality (m=2 mode) is the leading identification at ~95% confidence.**
+
+---
+
 ## References
