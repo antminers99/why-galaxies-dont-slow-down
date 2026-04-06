@@ -1,0 +1,1291 @@
+{
+  "phase": "303",
+  "title": "Physical Interpretation — What is the hidden dynamical channel?",
+  "timestamp": "2026-04-06T13:36:16.890Z",
+  "verdict": "STRONG_SUPPORT: H4_dynIntegration",
+  "observabilityVerdict": "PHYSICS_CHANGES: both slope and r strengthen → real physics amplifies",
+  "hypothesisScores": [
+    {
+      "name": "H4_dynIntegration",
+      "score": 10,
+      "evidence": [
+        "logDynTime int-HV r=0.256",
+        "logDynTime pool-HV r=0.3",
+        "logDynTime consistent sign",
+        "rcExtent consistent sign",
+        "logMeanRun int-HV r=0.508",
+        "logMeanRun pool-HV r=0.363",
+        "logMeanRun regime-strengthens",
+        "logMeanRun consistent sign",
+        "int LOO=0.066"
+      ]
+    },
+    {
+      "name": "H1_haloResponse",
+      "score": 7,
+      "evidence": [
+        "logSigmaBar int-HV r=-0.426",
+        "logSigmaBar pool-HV r=-0.373",
+        "logSigmaBar consistent sign",
+        "diskDominance pool-HV r=-0.255",
+        "diskDominance consistent sign",
+        "pool LOO=0.03"
+      ]
+    },
+    {
+      "name": "H2_assemblyHistory",
+      "score": 4,
+      "evidence": [
+        "morphT consistent sign",
+        "logSBeff consistent sign",
+        "int LOO=0.037"
+      ]
+    },
+    {
+      "name": "H3_feedbackImprint",
+      "score": 4,
+      "evidence": [
+        "logMHI int-HV r=0.252",
+        "logMHI pool-HV r=0.323",
+        "int LOO=0.044"
+      ]
+    }
+  ],
+  "proxyCorrelations": {
+    "internal_VfResid": [
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "logSigmaBar",
+        "rFull": 0,
+        "rLow": 0.579,
+        "rHigh": -0.223,
+        "rVHigh": -0.293,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "diskDominance",
+        "rFull": 0.099,
+        "rLow": -0.324,
+        "rHigh": 0.261,
+        "rVHigh": 0.226,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "haloK",
+        "rFull": 0.598,
+        "rLow": 0.452,
+        "rHigh": 0.688,
+        "rVHigh": 0.555,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "morphT",
+        "rFull": 0,
+        "rLow": 0.686,
+        "rHigh": -0.201,
+        "rVHigh": -0.254,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "logSBeff",
+        "rFull": 0.219,
+        "rLow": -0.008,
+        "rHigh": 0.34,
+        "rVHigh": 0.39,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logFgas",
+        "rFull": 0,
+        "rLow": 0,
+        "rHigh": 0,
+        "rVHigh": 0,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logMHI",
+        "rFull": -0.137,
+        "rLow": -0.657,
+        "rHigh": -0.081,
+        "rVHigh": -0.342,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "mondImprove",
+        "rFull": -0.542,
+        "rLow": -0.454,
+        "rHigh": -0.578,
+        "rVHigh": -0.422,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logDynTime",
+        "rFull": -0.22,
+        "rLow": -0.891,
+        "rHigh": -0.023,
+        "rVHigh": -0.155,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "rcExtent",
+        "rFull": 0.014,
+        "rLow": 0.576,
+        "rHigh": -0.239,
+        "rVHigh": -0.044,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logMeanRun",
+        "rFull": 0.388,
+        "rLow": 0.592,
+        "rHigh": 0.353,
+        "rVHigh": 0.225,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      }
+    ],
+    "pooled_VfResid": [
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "logSigmaBar",
+        "rFull": 0.212,
+        "rLow": 0.19,
+        "rHigh": -0.244,
+        "rVHigh": -0.142,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "diskDominance",
+        "rFull": 0.166,
+        "rLow": -0.104,
+        "rHigh": 0.067,
+        "rVHigh": 0.253,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "haloK",
+        "rFull": 0.534,
+        "rLow": 0.501,
+        "rHigh": 0.518,
+        "rVHigh": 0.531,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "morphT",
+        "rFull": -0.252,
+        "rLow": -0.042,
+        "rHigh": -0.186,
+        "rVHigh": -0.138,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "logSBeff",
+        "rFull": 0.252,
+        "rLow": 0.13,
+        "rHigh": 0.041,
+        "rVHigh": 0.058,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logFgas",
+        "rFull": 0,
+        "rLow": 0,
+        "rHigh": 0,
+        "rVHigh": 0,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logMHI",
+        "rFull": 0.316,
+        "rLow": 0.282,
+        "rHigh": 0.03,
+        "rVHigh": -0.282,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "mondImprove",
+        "rFull": -0.401,
+        "rLow": -0.291,
+        "rHigh": -0.437,
+        "rVHigh": -0.323,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logDynTime",
+        "rFull": -0.199,
+        "rLow": -0.276,
+        "rHigh": 0.08,
+        "rVHigh": -0.191,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "rcExtent",
+        "rFull": 0.128,
+        "rLow": 0.219,
+        "rHigh": -0.243,
+        "rVHigh": -0.218,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logMeanRun",
+        "rFull": 0.327,
+        "rLow": 0.225,
+        "rHigh": 0.284,
+        "rVHigh": 0.248,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      }
+    ],
+    "internal_hkResid": [
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "logSigmaBar",
+        "rFull": -0.233,
+        "rLow": 0.574,
+        "rHigh": -0.426,
+        "rVHigh": -0.292,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "diskDominance",
+        "rFull": -0.409,
+        "rLow": -0.665,
+        "rHigh": -0.093,
+        "rVHigh": -0.19,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "haloK",
+        "rFull": -0.12,
+        "rLow": -0.272,
+        "rHigh": 0.106,
+        "rVHigh": -0.045,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "morphT",
+        "rFull": 0.362,
+        "rLow": 0.733,
+        "rHigh": -0.049,
+        "rVHigh": -0.147,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "logSBeff",
+        "rFull": -0.179,
+        "rLow": -0.173,
+        "rHigh": 0.111,
+        "rVHigh": 0.2,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logFgas",
+        "rFull": 0,
+        "rLow": 0,
+        "rHigh": 0,
+        "rVHigh": 0,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logMHI",
+        "rFull": -0.186,
+        "rLow": -0.49,
+        "rHigh": 0.252,
+        "rVHigh": 0.134,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "mondImprove",
+        "rFull": 0.066,
+        "rLow": 0.198,
+        "rHigh": -0.093,
+        "rVHigh": 0.109,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logDynTime",
+        "rFull": -0.202,
+        "rLow": -0.758,
+        "rHigh": 0.256,
+        "rVHigh": 0.069,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "rcExtent",
+        "rFull": 0.451,
+        "rLow": 0.883,
+        "rHigh": 0.09,
+        "rVHigh": 0.277,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logMeanRun",
+        "rFull": 0.382,
+        "rLow": 0.11,
+        "rHigh": 0.508,
+        "rVHigh": 0.445,
+        "nFull": 45,
+        "nLow": 10,
+        "nHigh": 35,
+        "nVHigh": 20,
+        "regimeStrengthens": true
+      }
+    ],
+    "pooled_hkResid": [
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "logSigmaBar",
+        "rFull": -0.102,
+        "rLow": 0.077,
+        "rHigh": -0.373,
+        "rVHigh": -0.208,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "diskDominance",
+        "rFull": -0.275,
+        "rLow": -0.364,
+        "rHigh": -0.255,
+        "rVHigh": -0.143,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H1_haloResponse",
+        "proxy": "haloK",
+        "rFull": 0,
+        "rLow": 0.136,
+        "rHigh": -0.04,
+        "rVHigh": -0.078,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "morphT",
+        "rFull": 0.097,
+        "rLow": 0.123,
+        "rHigh": -0.139,
+        "rVHigh": -0.144,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H2_assemblyHistory",
+        "proxy": "logSBeff",
+        "rFull": -0.134,
+        "rLow": -0.086,
+        "rHigh": -0.121,
+        "rVHigh": -0.144,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logFgas",
+        "rFull": 0,
+        "rLow": 0,
+        "rHigh": 0,
+        "rVHigh": 0,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "logMHI",
+        "rFull": 0.153,
+        "rLow": 0.272,
+        "rHigh": 0.323,
+        "rVHigh": 0.194,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H3_feedbackImprint",
+        "proxy": "mondImprove",
+        "rFull": 0.036,
+        "rLow": 0.012,
+        "rHigh": -0.031,
+        "rVHigh": 0.089,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logDynTime",
+        "rFull": -0.043,
+        "rLow": -0.171,
+        "rHigh": 0.3,
+        "rVHigh": 0.067,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "rcExtent",
+        "rFull": 0.199,
+        "rLow": 0.29,
+        "rHigh": 0.057,
+        "rVHigh": 0.117,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": false
+      },
+      {
+        "hypothesis": "H4_dynIntegration",
+        "proxy": "logMeanRun",
+        "rFull": 0.152,
+        "rLow": 0.167,
+        "rHigh": 0.363,
+        "rVHigh": 0.265,
+        "nFull": 139,
+        "nLow": 83,
+        "nHigh": 56,
+        "nVHigh": 29,
+        "regimeStrengthens": true
+      }
+    ]
+  },
+  "hypothesisModels": {
+    "internal": [
+      {
+        "label": "H1a: SigmaBar",
+        "features": [
+          "logSigmaBar"
+        ],
+        "n": 45,
+        "r2": 0.054,
+        "loo": -0.054,
+        "signStability": [
+          96.2,
+          96.4
+        ],
+        "rResidA0AfterHyp": 0.626
+      },
+      {
+        "label": "H1b: SigmaBar + diskDom",
+        "features": [
+          "logSigmaBar",
+          "diskDominance"
+        ],
+        "n": 45,
+        "r2": 0.176,
+        "loo": -0.027,
+        "signStability": [
+          87,
+          80.8,
+          93.2
+        ],
+        "rResidA0AfterHyp": 0.611
+      },
+      {
+        "label": "H2a: morphT",
+        "features": [
+          "morphT"
+        ],
+        "n": 45,
+        "r2": 0.131,
+        "loo": 0.037,
+        "signStability": [
+          97.2,
+          97.2
+        ],
+        "rResidA0AfterHyp": 0.559
+      },
+      {
+        "label": "H2b: SBeff",
+        "features": [
+          "logSBeff"
+        ],
+        "n": 45,
+        "r2": 0.032,
+        "loo": -0.086,
+        "signStability": [
+          80.8,
+          83
+        ],
+        "rResidA0AfterHyp": 0.617
+      },
+      {
+        "label": "H2c: morphT + SBeff",
+        "features": [
+          "morphT",
+          "logSBeff"
+        ],
+        "n": 45,
+        "r2": 0.138,
+        "loo": 0.011,
+        "signStability": [
+          88.6,
+          98.2,
+          76
+        ],
+        "rResidA0AfterHyp": 0.542
+      },
+      {
+        "label": "H3a: Fgas",
+        "features": [
+          "logFgas"
+        ],
+        "n": 45,
+        "r2": null,
+        "loo": null,
+        "signStability": [
+          85.6,
+          85.6
+        ],
+        "rResidA0AfterHyp": 0
+      },
+      {
+        "label": "H3b: Fgas + mondImprove",
+        "features": [
+          "logFgas",
+          "mondImprove"
+        ],
+        "n": 45,
+        "r2": null,
+        "loo": null,
+        "signStability": [
+          56.4,
+          51.4,
+          68.2
+        ],
+        "rResidA0AfterHyp": 0
+      },
+      {
+        "label": "H3c: mondImprove",
+        "features": [
+          "mondImprove"
+        ],
+        "n": 45,
+        "r2": 0.004,
+        "loo": -0.084,
+        "signStability": [
+          71.4,
+          67.4
+        ],
+        "rResidA0AfterHyp": 0.633
+      },
+      {
+        "label": "H4a: dynTime",
+        "features": [
+          "logDynTime"
+        ],
+        "n": 45,
+        "r2": 0.041,
+        "loo": -0.091,
+        "signStability": [
+          80.2,
+          80.8
+        ],
+        "rResidA0AfterHyp": 0.52
+      },
+      {
+        "label": "H4b: MeanRun",
+        "features": [
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.146,
+        "loo": 0.059,
+        "signStability": [
+          99.4,
+          99.4
+        ],
+        "rResidA0AfterHyp": 0.503
+      },
+      {
+        "label": "H4c: dynTime + MeanRun",
+        "features": [
+          "logDynTime",
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.185,
+        "loo": 0.003,
+        "signStability": [
+          74.4,
+          83,
+          99.6
+        ],
+        "rResidA0AfterHyp": 0.406
+      },
+      {
+        "label": "H4d: dynTime + rcExtent",
+        "features": [
+          "logDynTime",
+          "rcExtent"
+        ],
+        "n": 45,
+        "r2": 0.208,
+        "loo": 0.066,
+        "signStability": [
+          75.2,
+          69,
+          96.8
+        ],
+        "rResidA0AfterHyp": 0.598
+      },
+      {
+        "label": "H3+H4: mondImprove + MR",
+        "features": [
+          "mondImprove",
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.182,
+        "loo": 0.044,
+        "signStability": [
+          99.6,
+          89.8,
+          100
+        ],
+        "rResidA0AfterHyp": 0.562
+      },
+      {
+        "label": "H1+H3+H4: mixed",
+        "features": [
+          "logSigmaBar",
+          "logDynTime",
+          "mondImprove"
+        ],
+        "n": 45,
+        "r2": 0.203,
+        "loo": -0.032,
+        "signStability": [
+          99.8,
+          99.8,
+          98.6,
+          63.6
+        ],
+        "rResidA0AfterHyp": 0.451
+      },
+      {
+        "label": "FULL: all proxy",
+        "features": [
+          "logSigmaBar",
+          "logFgas",
+          "logDynTime",
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.348,
+        "loo": 0.194,
+        "signStability": [
+          50,
+          94,
+          62.4,
+          89.2,
+          97.4
+        ],
+        "rResidA0AfterHyp": 0.294
+      }
+    ],
+    "pooled": [
+      {
+        "label": "H1a: SigmaBar",
+        "features": [
+          "logSigmaBar"
+        ],
+        "n": 139,
+        "r2": 0.01,
+        "loo": -0.029,
+        "signStability": [
+          86.4,
+          86.4
+        ],
+        "rResidA0AfterHyp": 0.576
+      },
+      {
+        "label": "H1b: SigmaBar + diskDom",
+        "features": [
+          "logSigmaBar",
+          "diskDominance"
+        ],
+        "n": 139,
+        "r2": 0.085,
+        "loo": 0.03,
+        "signStability": [
+          74.8,
+          83.2,
+          99.8
+        ],
+        "rResidA0AfterHyp": 0.6
+      },
+      {
+        "label": "H2a: morphT",
+        "features": [
+          "morphT"
+        ],
+        "n": 139,
+        "r2": 0.009,
+        "loo": -0.025,
+        "signStability": [
+          86.6,
+          83.4
+        ],
+        "rResidA0AfterHyp": 0.58
+      },
+      {
+        "label": "H3a: Fgas",
+        "features": [
+          "logFgas"
+        ],
+        "n": 139,
+        "r2": null,
+        "loo": null,
+        "signStability": [
+          65.8,
+          65.8
+        ],
+        "rResidA0AfterHyp": 0
+      },
+      {
+        "label": "H3b: Fgas + mondImprove",
+        "features": [
+          "logFgas",
+          "mondImprove"
+        ],
+        "n": 139,
+        "r2": 0.001,
+        "loo": -0.021,
+        "signStability": [
+          51,
+          55.4,
+          65.6
+        ],
+        "rResidA0AfterHyp": 0.572
+      },
+      {
+        "label": "H3c: mondImprove",
+        "features": [
+          "mondImprove"
+        ],
+        "n": 139,
+        "r2": 0.001,
+        "loo": -0.028,
+        "signStability": [
+          70.8,
+          70.6
+        ],
+        "rResidA0AfterHyp": 0.572
+      },
+      {
+        "label": "H4a: dynTime",
+        "features": [
+          "logDynTime"
+        ],
+        "n": 139,
+        "r2": 0.002,
+        "loo": -0.034,
+        "signStability": [
+          62.6,
+          62.4
+        ],
+        "rResidA0AfterHyp": 0.55
+      },
+      {
+        "label": "H4b: MeanRun",
+        "features": [
+          "logMeanRun"
+        ],
+        "n": 139,
+        "r2": 0.023,
+        "loo": -0.007,
+        "signStability": [
+          88.6,
+          93.6
+        ],
+        "rResidA0AfterHyp": 0.53
+      },
+      {
+        "label": "H4c: dynTime + MeanRun",
+        "features": [
+          "logDynTime",
+          "logMeanRun"
+        ],
+        "n": 139,
+        "r2": 0.023,
+        "loo": -0.027,
+        "signStability": [
+          54.2,
+          50,
+          94.4
+        ],
+        "rResidA0AfterHyp": 0.529
+      },
+      {
+        "label": "H3+H4: mondImprove + MR",
+        "features": [
+          "mondImprove",
+          "logMeanRun"
+        ],
+        "n": 139,
+        "r2": 0.029,
+        "loo": -0.016,
+        "signStability": [
+          91.8,
+          84.2,
+          96.6
+        ],
+        "rResidA0AfterHyp": 0.552
+      },
+      {
+        "label": "H1+H3+H4: mixed",
+        "features": [
+          "logSigmaBar",
+          "logDynTime",
+          "mondImprove"
+        ],
+        "n": 139,
+        "r2": 0.032,
+        "loo": -0.041,
+        "signStability": [
+          96.2,
+          94.6,
+          93.2,
+          51
+        ],
+        "rResidA0AfterHyp": 0.55
+      }
+    ]
+  },
+  "regimeHypothesis": [
+    {
+      "label": "H1: SigmaBar",
+      "features": [
+        "logSigmaBar"
+      ],
+      "regimes": [
+        {
+          "r2": 0.329,
+          "loo": -0.497,
+          "n": 10,
+          "rResidA0": -0.024
+        },
+        {
+          "r2": 0.182,
+          "loo": 0.095,
+          "n": 35,
+          "rResidA0": 0.795
+        },
+        {
+          "r2": 0.085,
+          "loo": -0.1,
+          "n": 20,
+          "rResidA0": 0.826
+        }
+      ]
+    },
+    {
+      "label": "H2: morphT",
+      "features": [
+        "morphT"
+      ],
+      "regimes": [
+        {
+          "r2": 0.537,
+          "loo": 0.283,
+          "n": 10,
+          "rResidA0": -0.192
+        },
+        {
+          "r2": 0.002,
+          "loo": -0.108,
+          "n": 35,
+          "rResidA0": 0.7
+        },
+        {
+          "r2": 0.022,
+          "loo": -0.138,
+          "n": 20,
+          "rResidA0": 0.756
+        }
+      ]
+    },
+    {
+      "label": "H3a: Fgas",
+      "features": [
+        "logFgas"
+      ],
+      "regimes": [
+        {
+          "r2": null,
+          "loo": null,
+          "n": 10,
+          "rResidA0": 0
+        },
+        {
+          "r2": null,
+          "loo": null,
+          "n": 35,
+          "rResidA0": 0
+        },
+        {
+          "r2": null,
+          "loo": null,
+          "n": 20,
+          "rResidA0": 0
+        }
+      ]
+    },
+    {
+      "label": "H3c: mondImprove",
+      "features": [
+        "mondImprove"
+      ],
+      "regimes": [
+        {
+          "r2": 0.039,
+          "loo": -0.475,
+          "n": 10,
+          "rResidA0": 0.352
+        },
+        {
+          "r2": 0.009,
+          "loo": -0.109,
+          "n": 35,
+          "rResidA0": 0.679
+        },
+        {
+          "r2": 0.012,
+          "loo": -0.206,
+          "n": 20,
+          "rResidA0": 0.844
+        }
+      ]
+    },
+    {
+      "label": "H4a: dynTime",
+      "features": [
+        "logDynTime"
+      ],
+      "regimes": [
+        {
+          "r2": 0.575,
+          "loo": 0.289,
+          "n": 10,
+          "rResidA0": -0.454
+        },
+        {
+          "r2": 0.065,
+          "loo": -0.057,
+          "n": 35,
+          "rResidA0": 0.807
+        },
+        {
+          "r2": 0.005,
+          "loo": -0.255,
+          "n": 20,
+          "rResidA0": 0.83
+        }
+      ]
+    },
+    {
+      "label": "H4b: MeanRun",
+      "features": [
+        "logMeanRun"
+      ],
+      "regimes": [
+        {
+          "r2": 0.012,
+          "loo": -0.724,
+          "n": 10,
+          "rResidA0": 0.125
+        },
+        {
+          "r2": 0.258,
+          "loo": 0.137,
+          "n": 35,
+          "rResidA0": 0.602
+        },
+        {
+          "r2": 0.198,
+          "loo": -0.079,
+          "n": 20,
+          "rResidA0": 0.703
+        }
+      ]
+    },
+    {
+      "label": "H3+H4: mond+MR",
+      "features": [
+        "mondImprove",
+        "logMeanRun"
+      ],
+      "regimes": [
+        {
+          "r2": 0.189,
+          "loo": -0.611,
+          "n": 10,
+          "rResidA0": 0.274
+        },
+        {
+          "r2": 0.258,
+          "loo": 0.071,
+          "n": 35,
+          "rResidA0": 0.606
+        },
+        {
+          "r2": 0.204,
+          "loo": -0.217,
+          "n": 20,
+          "rResidA0": 0.735
+        }
+      ]
+    }
+  ],
+  "observabilityAnalysis": {
+    "internal": {
+      "label": "Internal",
+      "lowN": 10,
+      "highN": 35,
+      "sdVfRLow": 0.043967934595787544,
+      "sdVfRHigh": 0.05245500143013421,
+      "sdHkRLow": 0.040752640908198065,
+      "sdHkRHigh": 0.03827260455601724,
+      "sdA0Low": 0.3177184786358305,
+      "sdA0High": 0.22175705371858995,
+      "rHkRA0Low": 0.20196495076339677,
+      "rHkRA0High": 0.7130612786328634,
+      "slopeLow": 1.5745727261910634,
+      "slopeHigh": 4.1315810644398265,
+      "slopeRatio": 2.6239379075453946,
+      "interpretation": "PHYSICS_CHANGES: both slope and r strengthen → real physics amplifies"
+    },
+    "external": {
+      "label": "External",
+      "lowN": 73,
+      "highN": 21,
+      "sdVfRLow": 0.07710478203380756,
+      "sdVfRHigh": 0.05934935110167993,
+      "sdHkRLow": 0.0672738054012455,
+      "sdHkRHigh": 0.0606503002729217,
+      "sdA0Low": 0.3888774396379413,
+      "sdA0High": 0.43149073758198747,
+      "rHkRA0Low": 0.48403998629888323,
+      "rHkRA0High": 0.8678464310217181,
+      "slopeLow": 2.798001828967575,
+      "slopeHigh": 6.174210101918382,
+      "slopeRatio": 2.2066497734194055,
+      "interpretation": "PHYSICS_CHANGES: both slope and r strengthen → real physics amplifies"
+    },
+    "pooled": {
+      "label": "Pooled",
+      "lowN": 83,
+      "highN": 56,
+      "sdVfRLow": 0.07419842519106223,
+      "sdVfRHigh": 0.055438161593540085,
+      "sdHkRLow": 0.06481147112098962,
+      "sdHkRHigh": 0.047457677931553775,
+      "sdA0Low": 0.39043943279183874,
+      "sdA0High": 0.31322735272243785,
+      "rHkRA0Low": 0.47512738212664457,
+      "rHkRA0High": 0.8066781914342852,
+      "slopeLow": 2.8622782722381475,
+      "slopeHigh": 5.324189581426762,
+      "slopeRatio": 1.8601229772336332,
+      "interpretation": "PHYSICS_CHANGES: both slope and r strengthen → real physics amplifies"
+    }
+  },
+  "physicalNarrative": {
+    "haloK_role": "Best partial observable handle — captures halo amplitude",
+    "hidden_channel": "Regime-dependent dynamical integration effect",
+    "regime_dependence": "Physics amplifies in deeper potential wells (high Vflat)",
+    "irreducible_nature": "Beyond any single catalog observable — likely accumulated dynamical processing"
+  },
+  "caveats": [
+    "Hypothesis proxies are crude — true assembly history or feedback strength not directly observable",
+    "N=45 internal sample limits regime-split model power",
+    "logDynTime and logFgas are constructed from same catalog variables used for VfResid — partial circularity risk",
+    "Scoring system is heuristic — not a formal Bayesian model comparison",
+    "Multiple hypotheses may be simultaneously active (not mutually exclusive)"
+  ]
+}
