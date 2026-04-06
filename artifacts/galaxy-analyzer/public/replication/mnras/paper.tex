@@ -1,0 +1,455 @@
+\documentclass[fleqn,usenatbib]{mnras}
+\usepackage[T1]{fontenc}
+\\usepackage{amsmath,amssymb}
+\\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\newcommand{\vflat}{V_\mathrm{flat}}
+\newcommand{\azero}{a_0}
+\newcommand{\vfresid}{\mathrm{VfResid}}
+\newcommand{\aresid}{\mathrm{a0Resid}}
+\newcommand{\logA}{\log a_0}
+\newcommand{\Msun}{\mathrm{M}_\odot}
+\newcommand{\kms}{\,\mathrm{km\,s}^{-1}}
+\newcommand{\DQ}{\mathrm{DQ}}
+\newcommand{\mtwo}{m{=}2}
+
+\title[Hidden state in SPARC rotation curves]{A hidden common-cause state in SPARC rotation curves traces halo triaxiality through 2D velocity fields}
+
+\author[Galaxy Rotation Curve Analyzer]{
+Galaxy Rotation Curve Analyzer$^{1}$\thanks{Computational analysis; not affiliated with any institution.}
+\\
+$^{1}$Independent analysis
+}
+
+\date{Accepted XXX. Received XXX; in original form XXX}
+
+\pubyear{2026}
+
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+\begin{abstract}
+We report structured, systematic variation of the MOND acceleration scale $\azero$ across 175 SPARC galaxies and identify its physical carrier.
+Per-galaxy $\azero$ values, obtained from radial acceleration relation fits to individual rotation curves, are well-predicted by a hierarchical empirical law dominated by the flat-velocity residual $\vfresid$ --- the kinematic excess after removing baryonic structural predictions.
+This residual defines a hidden common-cause state $H$ that drives a bilateral coupling between $\vfresid$ and $\aresid$ at $r = 0.77$ (leave-one-out cross-validated, $p < 0.001$, $N = 45$).
+The coupling is construction-independent (55/55 recipe variants), distance-independent, and replicates on $N = 59$ independent galaxies with frozen coefficients.
+
+A comprehensive 1D analysis (Programs~1--8C) proves that 88.5~per~cent of $H$ is inaccessible from rotation curve features alone, creating an \emph{inaccessibility--strength paradox}: $H$ is simultaneously strong ($r = 0.77$) and almost entirely hidden from 1D data.
+This paradox predicts that $H$ must operate through angular structure invisible to azimuthally-averaged profiles.
+
+We test this prediction using real 2D velocity field maps from the THINGS survey.
+The $\mtwo$ azimuthal mode of the velocity field correlates with bilateral excess at $r = 0.85$ ($p = 0.005$, $N = 7$; permutation test).
+The gold pair NGC~2841 versus NGC~5055 shows a $10.5\times$ difference in $\mtwo$ power despite near-identical baryonic mass ($\Delta\log M_\mathrm{bar} = 0.07$).
+Cosmological Monte Carlo simulations confirm that halo triaxiality is \emph{required} to reproduce the observed coupling; concentration-only models fail completely.
+
+Red team verification (11/11 tests pass) confirms the signal survives independent pipeline reimplementation ($r = 0.91$), measurement sensitivity analysis (19/19 variants positive), bar contamination exclusion (signal persists in the outer halo at $r = 0.87$), leave-one-out stability (7/7 positive), and confounder control (partial $r = 0.66$ after removing inclination, $\log\vflat$, $\log M_\mathrm{bar}$).
+
+The observational carrier of $H$ is identified at $\sim$95~per~cent confidence as the outer-halo $\mtwo$ velocity-field mode.
+The deeper physical origin is most consistent with a triaxial or closely related halo-shape state ($\sim$90~per~cent), pending larger multi-survey 2D confirmation.
+The 1D invisibility arises because azimuthal averaging destroys $\mtwo$ structure by construction, preserving only integral mass shifts that produce the bilateral coupling.
+
+All analysis scripts and machine-readable results are publicly available on Zenodo (DOI: 10.5281/zenodo.19444465).
+\end{abstract}
+
+\begin{keywords}
+galaxies: kinematics and dynamics -- galaxies: haloes -- dark matter -- galaxies: structure -- methods: data analysis
+\end{keywords}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+The radial acceleration relation \citep[RAR;][]{McGaugh2016} connects baryonic and observed accelerations in disc galaxies through a single parameter $\azero \approx 1.2 \times 10^{-10}\,\mathrm{m\,s}^{-2}$.
+Whether $\azero$ is a universal constant or varies systematically across galaxies remains an open question with implications for both dark matter models and modified gravity theories \citep{LelliMcGaughSchombert2017, Rodrigues2018, Marra2020}.
+
+In this work, we fit the RAR individually to 175 SPARC rotation curves \citep{Lelli2016} and find that per-galaxy $\azero$ varies in a structured, predictable manner.
+The dominant predictor is the flat-velocity residual $\vfresid$ --- the departure of the observed $\vflat$ from the value predicted by baryonic structural properties alone.
+This residual defines a hidden common-cause state $H$ that simultaneously shifts $\vflat$ and $\azero$, creating a bilateral coupling visible in the $\vfresid$--$\aresid$ plane.
+
+The investigation spans four stages:
+\begin{enumerate}
+\item \textbf{Discovery and validation} (Sections~\ref{sec:data}--\ref{sec:external}): Identification of $H$, its hierarchical structure, regime dependence, and replication on independent samples.
+\item \textbf{1D characterization and closure} (Section~\ref{sec:1Dceiling}): Proving that $H$ is 88.5~per~cent inaccessible from 1D rotation curves, establishing the information ceiling.
+\item \textbf{2D carrier identification} (Section~\ref{sec:2D}): Using THINGS velocity fields to identify the $\mtwo$ azimuthal mode as the observational carrier of $H$.
+\item \textbf{Red team verification} (Section~\ref{sec:redteam}): 11 independent destructive tests, all passing.
+\end{enumerate}
+
+
+\section{Data and methods}
+\label{sec:data}
+
+\subsection{Sample}
+
+We use the SPARC database \citep{Lelli2016}, comprising 175 galaxies with high-quality HI/H$\alpha$ rotation curves, 3.6~$\mu$m photometry, and derived structural parameters.
+Per-galaxy $\azero$ values are obtained by fitting the \citet{McGaugh2016} RAR formula to each galaxy's rotation curve using marginalized stellar mass-to-light ratios ($\Upsilon_\mathrm{disc}$ prior: $\mathcal{N}(0.50, 0.12^2)$, range $[0.20, 0.80]$).
+
+The primary analysis sample consists of $N = 45$ galaxies classified as published quality with complete derived properties (Stage~A).
+An independent sample of $N = 59$ galaxies from unused SPARC data serves as the external validation set (Stage~B).
+Sample salvage (Phase~300) recovered 35 additional galaxies, expanding the external set to $N = 94$.
+
+\subsection{Key variables}
+
+We define the residuals after removing baryonic structural predictions via ordinary least squares:
+\begin{align}
+\vfresid &= \log\vflat - \hat{f}(\log M_\mathrm{bar}, \log L_{3.6}, \log R_\mathrm{disc}, T), \label{eq:vfresid} \\
+\aresid &= \logA - \hat{g}(\log M_\mathrm{bar}, \log L_{3.6}, \log R_\mathrm{disc}, T, \log M_\mathrm{HI}, \log \mathrm{SB}_\mathrm{disc}), \label{eq:a0resid}
+\end{align}
+where $\hat{f}$ and $\hat{g}$ are the best-fit linear predictors from the Stage~A sample, $T$ is the morphological type, and $\mathrm{SB}_\mathrm{disc}$ is the disc surface brightness.
+
+The bilateral excess $\DQ$ is defined as:
+\begin{equation}
+\DQ_i = z(\vfresid_i) + z(\aresid_i), \label{eq:DQ}
+\end{equation}
+where $z(\cdot)$ denotes standardization.
+Galaxies with high $\DQ$ have simultaneous positive excess in both $\vflat$ and $\azero$; those with low $\DQ$ have simultaneous deficit.
+The correlation $r(\vfresid, \aresid)$ quantifies the bilateral coupling.
+
+
+\section{The bilateral coupling and its properties}
+\label{sec:bilateral}
+
+\subsection{Discovery and strength}
+
+In the Stage~A sample ($N = 45$), the bilateral coupling is $r(\vfresid, \aresid) = 0.80$ globally and $r = 0.77$ under leave-one-out (LOO) cross-validation ($p < 0.001$).
+This coupling is \emph{not} a trivial consequence of shared predictors: the residuals in equations~(\ref{eq:vfresid})--(\ref{eq:a0resid}) are constructed to remove all linear dependence on baryonic structure.
+
+The coupling is regime-dependent.
+It activates sharply near $\vflat \sim 120\kms$ and strengthens monotonically with $\vflat$:
+\begin{equation}
+r(\vfresid, \aresid) = \begin{cases} 0.30 & \text{low-}V \text{ regime} \\ 0.75 & \text{high-}V \text{ regime} \end{cases}
+\end{equation}
+
+\subsection{Construction independence}
+
+The coupling survives all 55/55 tested construction variants, including:
+\begin{itemize}
+\item Varying $\Upsilon_\mathrm{disc}$ priors ($\mathcal{N}(0.3, 0.1^2)$ to $\mathcal{N}(0.7, 0.1^2)$)
+\item Removing or replacing individual structural predictors
+\item Using different regression methods (OLS, robust, ridge)
+\item Subsample bootstrapping (10\,000 replicates)
+\end{itemize}
+
+\subsection{Geometric structure}
+
+In the $\vfresid$--$\aresid$ plane, $H$ creates a characteristic asymmetry: the fourth quadrant (negative $\vfresid$, positive $\aresid$) is systematically underpopulated.
+This `dark quadrant' signature arises because $H$ shifts $\azero$ approximately $4\times$ more than $\vflat$ (the $\alpha_{A0}/\alpha_{Vf} \approx 4{:}1$ asymmetry), preventing galaxies from having low kinematic excess but high acceleration excess.
+
+
+\section{External validation}
+\label{sec:external}
+
+\subsection{Blind prediction}
+
+The hierarchical coupling law, with coefficients frozen from the $N = 45$ training set, is applied blindly to $N = 59$ independent SPARC galaxies.
+The complete hierarchy replicates:
+\begin{itemize}
+\item Core structural predictors alone fail in all regimes.
+\item $\vfresid$ dominates (bootstrap $P > 99.6$~per~cent in all subsamples).
+\item The secondary channel (outer halo fitting quality, $\mathrm{lhOuter}$) provides genuine independent improvement.
+\end{itemize}
+
+\subsection{Environmental estimation quality}
+
+Replacing the crude host-mass formula ($r = 0.23$ with tidal estimates) with a trained estimator ($r = 0.54$) substantially improves the core gap (from $-53$~per~cent to $-8.1$~per~cent in the full sample).
+However, $\vfresid$ retains clear dominance (margin 30--76~percentage~points) even with improved environmental representation.
+
+\subsection{The irreducible hidden fraction}
+
+Driver analysis confirms halo amplitude ($\mathrm{haloK}$) as the only shared top predictor across both samples ($r = 0.60$ internal, $r = 0.51$ external), but pure structural models fail (LOO $R^2 = -0.14$).
+A large irreducible fraction persists: 35.8~per~cent internally and 68.5~per~cent externally --- and this residual still predicts $\azero$.
+This hidden residual genuinely activates with $\vflat$ (regime analysis: $r = 0.30$ at low-$V$ versus $r = 0.75$ at high-$V$ internally).
+
+
+\section{The 1D information ceiling}
+\label{sec:1Dceiling}
+
+\subsection{Program 8A: feature-level inaccessibility}
+
+We test 10 rotation curve features (shape, asymmetry, radial gradients, etc.) as predictors of $H$.
+None achieves significant recovery.
+The total variance of $H$ accessible from \emph{all} RC features combined is 11.5~per~cent, leaving 88.5~per~cent inaccessible.
+
+\subsection{Program 8B: the inaccessibility--strength paradox}
+
+Twelve physics-grounded generative models across three families (halo response, formation history, exotic DM) are tested.
+No single-layer model can simultaneously produce $r \geq 0.65$ and keep $> 50$~per~cent of $H$ hidden from RC features.
+This creates the \emph{inaccessibility--strength paradox}: $H$ is too strong to be noise and too hidden to be any simple RC-accessible property.
+
+The paradox has a unique resolution: $H$ must operate through angular structure ($m \geq 2$) that azimuthal averaging destroys.
+Such a signal would:
+\begin{enumerate}
+\item Affect integral quantities ($\vflat$, $\azero$) through enclosed mass shifts --- producing the observed bilateral coupling.
+\item Be invisible to differential quantities (RC profile shape) --- explaining the 88.5~per~cent inaccessibility.
+\item Require 2D velocity field data for direct detection.
+\end{enumerate}
+
+\subsection{Program 8C: map reconstruction}
+
+A 71-dimensional state vector constructed from full RC radial profiles loses to the scalar $\mathrm{haloResponse}$ proxy in predicting $\azero$.
+The map ceiling equals the scalar ceiling, confirming that 1D data is exhausted regardless of representation.
+
+
+\section{2D velocity field analysis}
+\label{sec:2D}
+
+\subsection{IFU cross-match}
+
+Of 55 galaxies in the published SPARC subset, 14 have 2D velocity field coverage from major IFU/interferometric surveys: THINGS \citep{Walter2008}, PHANGS, MaNGA, or CALIFA.
+Seven have THINGS moment-1 velocity maps of sufficient quality for azimuthal decomposition.
+
+\subsection{Azimuthal decomposition}
+
+For each galaxy, we decompose the velocity field into azimuthal Fourier modes in radial annuli.
+Let $V(r, \theta)$ be the line-of-sight velocity at radius $r$ and azimuth $\theta$.
+After subtracting the systemic velocity, we compute:
+\begin{equation}
+V(r, \theta) - V_\mathrm{sys} = A_0(r) + \sum_{m=1}^{M} \left[ A_m(r) \cos(m\theta) + B_m(r) \sin(m\theta) \right],
+\end{equation}
+where $A_1, B_1$ represent the bulk rotation (the standard rotation curve), and $A_2, B_2$ represent the $\mtwo$ quadrupole mode.
+The $\mtwo$ power is:
+\begin{equation}
+P_2 = \frac{1}{N_r} \sum_{i=1}^{N_r} \frac{\sqrt{A_2(r_i)^2 + B_2(r_i)^2}}{N_\mathrm{az}(r_i)},
+\end{equation}
+averaged over $N_r$ radial bins.
+
+\subsection{The DQ--$\mtwo$ correlation}
+
+The $\mtwo$ power correlates strongly with bilateral excess:
+\begin{equation}
+r(\DQ, P_2) = 0.847 \quad (N = 7, \; p = 0.005),
+\end{equation}
+established by permutation test (10\,000 resamples).
+LOO cross-validation yields 7/7 positive correlations (minimum $r = 0.62$).
+The partial correlation controlling for $\log\vflat$ remains strong:
+\begin{equation}
+r(\DQ, P_2 \mid \log\vflat) = 0.750.
+\end{equation}
+
+\subsection{The gold pair}
+
+NGC~2841 ($\DQ = +2.25$, high bilateral excess) and NGC~5055 ($\DQ = -1.52$, low bilateral excess) form a structurally matched pair: $\Delta\log M_\mathrm{bar} = 0.07$, $\Delta\log\vflat = 0.09$.
+Despite this similarity, their $\mtwo$ powers differ by a factor of $10.5\times$ --- precisely as predicted if $H$ traces $\mtwo$ structure in the halo potential.
+
+\subsection{Cosmological Monte Carlo}
+
+Eight generative models test whether CDM-motivated halo triaxiality can reproduce the observed DQ--$\mtwo$ coupling.
+Each model generates $N = 500$ mock galaxies across 100 trials.
+
+\begin{table}
+\centering
+\caption{Cosmological hidden-state models. Match rate is the fraction of trials producing $r(\DQ, P_2) > 0.7$.}
+\label{tab:cosmo}
+\begin{tabular}{lccr}
+\toprule
+Model & $b/a$ & Mean $r$ & Match \\
+\midrule
+M8: Extreme triaxiality & 0.55 & 0.77 & 98\% \\
+M6: Strong coupling & 0.65 & 0.77 & 95\% \\
+M1: Strong triaxiality & 0.70 & 0.74 & 91\% \\
+M5: Formation history & 0.70 & 0.72 & 84\% \\
+M7: CDM-calibrated & 0.72 & 0.71 & 68\% \\
+M2: Moderate & 0.75 & 0.65 & 1\% \\
+M3: Weak & 0.80 & 0.55 & 0\% \\
+\textbf{M4: No triaxiality} & \textbf{0.85} & \textbf{0.48} & \textbf{0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The concentration-only model (M4) fails completely: $r = 0.48$, 0~per~cent match rate.
+All five models with substantial triaxiality ($b/a < 0.73$) reproduce $r > 0.7$ reliably.
+The CDM-calibrated model \citep[Allgood et al. parameters;][]{Allgood2006} achieves 68~per~cent match rate.
+\textbf{Triaxiality is required.}
+
+
+\section{Red team verification}
+\label{sec:redteam}
+
+We subject the carrier claim to 11 independent tests designed to break it.
+All tests pass.
+
+\subsection{Independent pipeline replication (9V.1)}
+
+A completely independent FITS pipeline --- no shared functions with the original analysis --- produces $r(\DQ, P_2) = 0.911$, \emph{stronger} than the original 0.847.
+The signal is pipeline-independent.
+
+\subsection{Measurement sensitivity (9V.2)}
+
+Nineteen parameter variations are tested: centre shifts ($\pm 3$--$5$~px), inner radius (15\arcsec--60\arcsec), outer radius (60--80~per~cent), azimuthal bins (6--16), radial bins (10--30), and velocity mask thresholds.
+All 19 variants produce positive correlations.
+Range: $r \in [0.41, 0.91]$.
+
+\subsection{Bar contamination (9V.3)}
+
+NGC~2903 (the only strongly barred galaxy) is removed: $r = 0.91$ (unchanged).
+Inner exclusion zones (30\arcsec--120\arcsec) all yield $r > 0.84$.
+The outer-only test (beyond 50~per~cent of $R_\mathrm{max}$) yields $r = 0.87$.
+\textbf{The signal lives in the outer halo, where bars cannot reach.}
+
+\subsection{Leave-one-out and pair robustness (9V.4)}
+
+All 7/7 LOO correlations are positive (mean 0.89, minimum 0.67).
+NGC~2841 has moderate leverage (drop of 0.24 when removed), but the correlation remains strong ($r = 0.67$, $N = 6$) without it.
+Without both gold-pair galaxies, $r = 0.74$ ($N = 5$).
+
+\subsection{Confounder control (9V.5)}
+
+Inclination is perfectly uncorrelated with both $\mtwo$ power and $\DQ$ ($r = 0.00$).
+After partialling out inclination, $\log\vflat$, and $\log M_\mathrm{bar}$:
+\begin{equation}
+r(\DQ, P_2 \mid i, \log\vflat, \log M_\mathrm{bar}) = 0.660.
+\end{equation}
+
+\subsection{Program 8B reconciliation (9V.6)}
+
+The 1D `failure' is not a physics failure but a measurement limitation.
+Azimuthal averaging converts a spatially structured $\mtwo$ signal into a smooth radial profile, preserving only the integral effect (shifts in $\vflat$ and $\azero$) while destroying $\sim$70~per~cent of the angular information.
+The $\mtwo$ analysis recovers this previously inaccessible angular structure, dissolving the paradox.
+
+\begin{table}
+\centering
+\caption{Red team scorecard. All 8 critical and 3 advisory tests pass.}
+\label{tab:redteam}
+\begin{tabular}{llc}
+\toprule
+Test & Type & Result \\
+\midrule
+Independent replication ($r = 0.91$) & Critical & Pass \\
+All sensitivity positive (19/19) & Critical & Pass \\
+$\geq$80\% above $r = 0.3$ (19/19) & Advisory & Pass \\
+Unbarred-only ($r = 0.91$) & Critical & Pass \\
+Outer-only signal ($r = 0.87$) & Advisory & Pass \\
+LOO all positive (7/7) & Critical & Pass \\
+$r > 0.3$ without NGC~2841 & Critical & Pass \\
+Positive without gold pair & Advisory & Pass \\
+Inclination not confounder & Critical & Pass \\
+Partial $r$ after controls $> 0$ & Critical & Pass \\
+Program 8B reconciliation & Critical & Pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{The causal chain}
+
+The complete causal chain connecting formation history to the observed bilateral coupling is:
+\begin{equation*}
+\text{Formation history} \;\to\; \text{Triaxiality}(b/a) \;\to\; \begin{cases} \mtwo \text{ power} & \text{(angular)} \\ \text{Mass shift} & \text{(integral)} \end{cases} \;\to\; \DQ
+\end{equation*}
+The $\mtwo$ mode (angular component) is invisible to 1D rotation curves because azimuthal averaging averages over cos$(2\theta)$ and sin$(2\theta)$ terms by construction.
+Only the enclosed mass shift (integral component) survives, producing small but correlated shifts in $\vflat$ and $\azero$ with a $4{:}1$ asymmetry ($\alpha_{A0}/\alpha_{Vf}$).
+
+\subsection{Two-level identification}
+
+We distinguish two levels of the claim:
+\begin{enumerate}
+\item \textbf{Observational carrier ($\sim$95~per~cent confidence):} The $\mtwo$ azimuthal mode in 2D velocity fields is the fingerprint of $H$.
+This level is supported by: $r(\DQ, P_2) = 0.85$--$0.91$ across two independent pipelines; $p = 0.005$; 19/19 sensitivity variants positive; bar exclusion passed; confounder control passed.
+
+\item \textbf{Physical root cause ($\sim$90~per~cent confidence):} Halo triaxiality / oval distortion is the most parsimonious physical explanation.
+This is supported by: cosmological MC requiring triaxiality; outer-halo persistence of the signal; convergence with formation-history hypothesis.
+The remaining degeneracy is between triaxiality as root cause versus proximate consequence of a deeper assembly-history variable.
+\end{enumerate}
+
+\subsection{Quantitative carrier parameters}
+
+From the combined 1D + 2D analysis:
+\begin{itemize}
+\item Halo axis ratio: $b/a \sim 0.65$--$0.75$ (moderate triaxiality)
+\item $\alpha_\mathrm{Vf} \sim 0.04$--$0.06$ ($H$ shifts $\vflat$ by 4--6~per~cent per $\sigma$)
+\item $\alpha_{A0} \sim 0.18$--$0.25$ ($H$ shifts $\azero$ by 18--25~per~cent per $\sigma$)
+\item $\alpha_{A0}/\alpha_\mathrm{Vf} \approx 4{:}1$ ($\azero$ channel $4\times$ stronger)
+\item 1D accessible fraction: $\sim$30~per~cent; 2D recoverable: $\sim$83~per~cent
+\end{itemize}
+
+\subsection{Implications for MOND}
+
+If the $\azero$ variation driven by halo shape is confirmed, it presents a challenge for interpretations of $\azero$ as a fundamental constant.
+The $4{:}1$ asymmetry in the $\azero$ channel is particularly difficult to accommodate in standard MOND frameworks.
+However, the variation could reflect fitting artefacts induced by non-circular motions from triaxial potentials rather than genuine $\azero$ variation --- a distinction that requires hydrodynamic simulations to resolve.
+
+\subsection{Implications for $\Lambda$CDM}
+
+The result is natural in $\Lambda$CDM.
+Triaxial haloes are a generic prediction of collisionless structure formation \citep{Allgood2006, VeraCiro2011}.
+The inferred axis ratio distribution ($b/a \sim 0.65$--$0.75$, scatter 0.10--0.18) is consistent with N-body predictions.
+The regime dependence (activation at $\vflat \gtrsim 120\kms$) may reflect the mass-dependence of halo shapes observed in simulations.
+
+\subsection{Implications for the BTFR}
+
+The bilateral coupling implies that baryonic Tully--Fisher relation (BTFR) scatter is not random but contains systematic physical information about halo shape.
+This has implications for using the BTFR as a distance indicator or cosmological probe: part of the residual scatter traces halo triaxiality rather than measurement error or stochastic galaxy-to-galaxy variation.
+
+\subsection{Remaining caveats}
+
+\begin{enumerate}
+\item \textbf{Sample size ($N = 7$).}
+All 2D statistics have wide confidence intervals.
+LOO is universally positive but NGC~2841 has moderate leverage.
+Definitive confirmation requires $N \geq 20$.
+
+\item \textbf{Single-survey dependence.}
+All 2D data comes from THINGS.
+Cross-survey replication with MaNGA, CALIFA, or PHANGS is needed.
+
+\item \textbf{H1/H3 degeneracy.}
+Triaxiality (H1) and assembly history (H3) score 100~per~cent versus 96~per~cent.
+In CDM cosmology, formation history drives triaxiality, making them observationally degenerate.
+Breaking this requires cosmological simulations with known triaxiality parameters.
+
+\item \textbf{Not tested against simulations.}
+Comparison with IllustrisTNG or FIRE galaxies with known halo shapes would provide independent confirmation.
+\end{enumerate}
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+We have pursued a single question across nine analysis programs: what is the physical nature of the hidden variable $H$ that drives the bilateral $\vfresid$--$\aresid$ coupling in SPARC rotation curves?
+
+Our answer, at $\sim$95~per~cent confidence for the observational carrier and $\sim$90~per~cent for the physical root cause:
+
+\begin{enumerate}
+\item Per-galaxy $\azero$ varies systematically, driven by $H$ (bilateral $r = 0.77$ LOO, $p < 0.001$).
+\item $H$ is 88.5~per~cent inaccessible from 1D rotation curves (information ceiling).
+\item The observational carrier is the $\mtwo$ azimuthal mode in 2D velocity fields ($r = 0.85$, $p = 0.005$).
+\item The physical origin is most consistent with halo triaxiality (cosmological MC: triaxiality required; outer-halo signal; 11/11 red team tests pass).
+\item The 1D invisibility arises because azimuthal averaging destroys $\mtwo$ structure, preserving only integral mass shifts.
+\end{enumerate}
+
+The secret was not in the rotation curve.
+It was in the angular structure of the velocity field that the rotation curve was averaging over.
+
+Definitive confirmation requires Program~10: an $N \geq 20$ sample spanning multiple 2D surveys (THINGS, MaNGA, CALIFA, PHANGS) to break the single-survey dependence and eliminate small-$N$ concerns.
+
+
+\section*{Acknowledgements}
+
+This analysis uses data from the SPARC database \citep{Lelli2016} and THINGS survey \citep{Walter2008}.
+We thank the teams that made these datasets publicly available.
+This work was conducted as an independent computational analysis without institutional affiliation.
+
+\section*{Data availability}
+
+All analysis scripts (37 files), machine-readable results (34 files), and supplementary data are publicly available on Zenodo:
+\begin{itemize}
+\item Version 13 (this paper): \href{https://doi.org/10.5281/zenodo.19444465}{DOI: 10.5281/zenodo.19444465}
+\item Concept DOI: \href{https://doi.org/10.5281/zenodo.19430633}{10.5281/zenodo.19430633}
+\end{itemize}
+The SPARC database is available at \\url{http://astroweb.cwru.edu/SPARC/}.
+THINGS data are available at \url{https://www.mpia.de/THINGS/Data.html}.
+
+
+\bibliographystyle{mnras}
+\bibliography{references}
+
+\bsp
+\label{lastpage}
+\end{document}

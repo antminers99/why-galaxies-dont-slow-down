@@ -240,6 +240,14 @@ Four-stage summary. Refined claim with two confidence levels:
 Updated abstract with full Program 9/9V results.
 Path to definitive: Program 10 (N>=20 multi-survey) → 99%.
 
+**MNRAS Submission:**
+LaTeX paper prepared in `public/replication/mnras/paper.tex`.
+8 sections: Intro, Data, Bilateral coupling, External validation, 1D ceiling,
+  2D velocity fields, Red team, Discussion + Conclusions.
+BibTeX: 8 references (McGaugh+16, Lelli+16, Walter+08, Allgood+06, etc.).
+Tables: Cosmological MC models, Red team scorecard.
+Two-level claim structure preserved.
+
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
 - The SPARC regime-strengthening pattern (low-V→high-V r increases) is NOT reproduced by ANY scenario
