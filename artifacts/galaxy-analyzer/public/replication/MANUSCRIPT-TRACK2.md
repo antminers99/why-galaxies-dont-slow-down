@@ -1077,6 +1077,88 @@ The latent variable must satisfy ALL of the following:
 
 ---
 
+## 19. Phase 410: External-Field Discrimination
+
+**Question**: Is the hidden variable an external gravitational field (EFE)?
+
+### 19.1 — Environment Stratification (410A)
+
+| Environment | N | r(VfResid, a₀_resid) | Mean a₀_resid | Mean L_sum |
+|-------------|---|---------------------|--------------|-----------|
+| Field (0) | 36 | **0.839** | +0.065 | +0.50 |
+| Group (1) | 9 | 0.672 | −0.037 | −0.17 |
+| Cluster (2) | 10 | 0.138 | −0.201 | −1.63 |
+
+**Critical finding**: The channel is **strongest in field galaxies** (r = 0.839, even exceeding the full-sample 0.804) and nearly **absent in cluster galaxies** (r = 0.138). The environment dramatically modulates the channel's expression.
+
+### 19.2 — EFE Sign and Functional Tests (410B)
+
+- Field galaxies have **higher** a₀_resid than non-field (Δ = +0.188)
+- MOND-EFE predicts cluster galaxies should have boosted effective a₀ — **opposite to observation** in standard formulation
+- But phantom-regime EFE can lower a₀ — sign alone is **inconclusive**
+
+### 19.3 — Environment Does NOT Absorb the Channel (410C/D)
+
+| Control set | r(VfResid, a₀_resid) | Δr |
+|------------|---------------------|-----|
+| None (baseline) | 0.804 | — |
+| envCode dummies | 0.771 | −0.033 |
+| envCode + logK_halo | 0.743 | −0.061 |
+| All env (dummies + interactions + haloK) | 0.769 | −0.036 |
+
+**Six different EFE-like proxy constructions tested** — NONE absorb more than Δr = 0.035.
+
+After removing ALL environmental information: **r = 0.769** — channel survives strongly.
+
+### 19.4 — Acceleration-Dependence Test (410E)
+
+EFE predicts the environment effect should be **stronger at low acceleration** (where g_ext/a_int ratio is larger).
+
+| Regime | r(envCode, L_sum) |
+|--------|------------------|
+| Low a₀ (N=32) | −0.198 |
+| High a₀ (N=23) | −0.544 |
+
+**FAIL**: The environment effect is stronger at HIGH acceleration — **opposite to EFE prediction**.
+
+### 19.5 — Slope Modulation (410F)
+
+| Environment | N | slope(VfResid ~ a₀_resid) | r |
+|-------------|---|--------------------------|---|
+| Field | 36 | 0.193 | 0.839 |
+| Group | 9 | 0.158 | 0.672 |
+| Cluster | 10 | 0.024 | 0.138 |
+
+The coupling slope **monotonically decreases** with environmental density. Denser environments **suppress** the channel but do not create it.
+
+### 19.6 — EFE Scorecard
+
+| Test | Result |
+|------|--------|
+| Sign: field gals have higher a₀_resid | PASS |
+| envCode absorbs >0.10 of channel | **FAIL** |
+| Channel persists within field-only (r>0.5) | PASS |
+| Channel persists within non-field (r>0.3) | PASS |
+| EFE stronger at low acceleration | **FAIL** |
+| Channel survives after ALL env removal (r>0.65) | PASS |
+
+Score: **4/6** — partial consistency only.
+
+### 19.7 — Phase 410 Verdict
+
+**The hidden variable is NOT primarily an external field.**
+
+- Environment is a **correlate** (r = −0.42) but not the **driver**
+- Channel **survives strongly** (r = 0.769) after complete environmental decontamination
+- Acceleration-dependence is **wrong** for simple EFE
+- But environment **modulates** the channel expression: it is suppressed in clusters
+
+The environment correlation likely arises because the true hidden variable (halo structure? assembly history?) itself correlates with environment, not because the hidden variable IS the external field.
+
+**EFE is ELIMINATED as the primary explanation.** Environment matters, but as a modulator, not the source.
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)
