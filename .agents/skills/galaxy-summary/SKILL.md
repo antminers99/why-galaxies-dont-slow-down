@@ -273,6 +273,14 @@ Phase 202 key findings:
 - VfResid-only gap unchanged: 47.5% full, 75.4% very-high-V
 - Confirms VfResid is the primary transfer channel, not an artifact of bad Core
 
+**Phase 204:** Final external synthesis — EXTERNAL_VALIDATION_COMPLETE
+- Consolidated evidence from Phases 201-203 into unified claim
+- lhOuter after Mhost improvement: genuine but reduced (very-high-V: +18.1pp → +8.3pp, Q1+HV: +12.1pp → +4.9pp)
+- Part of crude lhOuter was absorbing Mhost error; real residual persists
+- Bootstrap P(VfResid > improved Core) = 100% (full), 100% (high-V)
+- Paper-ready scientific summary generated
+- Program conclusion: VfResid is the primary transfer channel, independent of Mhost quality
+
 ## Key Files
 
 - Phase 201: `external-validation/phase201-blind-prediction.cjs`, `public/phase201-blind-prediction.json`

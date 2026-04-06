@@ -181,3 +181,36 @@ Bootstrap stability, outlier sensitivity, point-count effects.
 
 **Hierarchy scores:** Model A: 8/8 | Model B: 7/8 | Model C: 6/8 | Model D1: 6/8 | Model D2: 7/8
 Note: Better logMhost actually *reduces* hierarchy score because Core no longer fully "fails" in high-V — it just becomes less dominant. This is expected and healthy.
+
+### Phase 204: Final External Synthesis — EXTERNAL_VALIDATION_COMPLETE
+
+**Unified claim from Phases 201–203 with lhOuter confirmation after Mhost improvement.**
+
+**Consolidated evidence (gap% progression crude → improved Mhost):**
+
+| Regime | Core (crude → imp) | C+VfResid (crude → imp) | 5-axis (crude → imp) | VfOnly |
+|--------|-------------------|------------------------|---------------------|--------|
+| Full (N=59) | -53% → -8.1% | 8.2% → 32.2% | 9.7% → 33.3% | 47.5% |
+| High-V (N=16) | -6.7% → 16.7% | 34.3% → 46.7% | 35.3% → 45.4% | 48.5% |
+| Very-High-V (N=8) | -49.4% → -16.7% | 48.7% → 59.6% | 66.9% → 67.9% | 75.4% |
+| Q1+HV (N=11) | 1.9% → 25.4% | 59.0% → 68.4% | 71.1% → 73.3% | 63.8% |
+
+**lhOuter after Mhost improvement:**
+
+| Regime | Delta (crude) | Delta (improved) | Status |
+|--------|--------------|-----------------|--------|
+| Full | +1.4pp | +1.2pp | STABLE |
+| High-V | +1.0pp | -1.2pp | CHANGED (lost) |
+| Very-High-V | +18.1pp | +8.3pp | REDUCED but genuine |
+| Q1+HV | +12.1pp | +4.9pp | REDUCED but genuine |
+
+lhOuter remains genuine in very-high-V and Q1+HV after improvement. Part of its crude contribution was absorbing Mhost error, but a real residual signal persists.
+
+**Bootstrap P(VfResid > Core) with improved Mhost:** 100% (full), 100% (high-V), 99.6% (Q1+HV)
+
+**Final verdict:** EXTERNAL_VALIDATION_COMPLETE
+- Hierarchy replicates externally
+- VfResid is the primary transfer channel (independent of Mhost quality)
+- Core is real but secondary
+- lhOuter is genuine but reduced after Mhost improvement
+- Regime dependence confirmed (Vflat >= 120 km/s)
