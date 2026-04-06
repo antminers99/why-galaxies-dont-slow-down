@@ -1,0 +1,235 @@
+{
+  "phase": "402b",
+  "title": "Focused Sign-Flip: Cored Haloes + Genuine Physics",
+  "timestamp": "2026-04-06T15:10:31.821Z",
+  "NGAL": 800,
+  "sparcReference": {
+    "rAll": 0.7,
+    "rLow": 0.3,
+    "rHigh": 0.75,
+    "delta": 0.45
+  },
+  "experiments": [
+    {
+      "label": "T0_nfw_baseline",
+      "N": 800,
+      "rAll": 0.6578,
+      "rLow": 0.6903,
+      "rHigh": 0.6638,
+      "rVHigh": 0.6321,
+      "delta": -0.0264,
+      "strengthens": false
+    },
+    {
+      "label": "T1_fbCore_0.2",
+      "N": 800,
+      "rAll": 0.6266,
+      "rLow": 0.6468,
+      "rHigh": 0.6519,
+      "rVHigh": 0.6008,
+      "delta": 0.0051,
+      "strengthens": false
+    },
+    {
+      "label": "T1_fbCore_0.4",
+      "N": 800,
+      "rAll": 0.6689,
+      "rLow": 0.7464,
+      "rHigh": 0.6016,
+      "rVHigh": 0.5798,
+      "delta": -0.1448,
+      "strengthens": false
+    },
+    {
+      "label": "T1_fbCore_0.6",
+      "N": 800,
+      "rAll": 0.6416,
+      "rLow": 0.6989,
+      "rHigh": 0.6258,
+      "rVHigh": 0.5975,
+      "delta": -0.0731,
+      "strengthens": false
+    },
+    {
+      "label": "T2_burkTrans_css0.2",
+      "N": 800,
+      "rAll": 0.7808,
+      "rLow": 0.8487,
+      "rHigh": 0.6218,
+      "rVHigh": 0.5862,
+      "delta": -0.227,
+      "strengthens": false
+    },
+    {
+      "label": "T2_burkTrans_css0.4",
+      "N": 798,
+      "rAll": 0.8536,
+      "rLow": 0.8967,
+      "rHigh": 0.7148,
+      "rVHigh": 0.6147,
+      "delta": -0.182,
+      "strengthens": false
+    },
+    {
+      "label": "T2_burkTrans_css0.6",
+      "N": 797,
+      "rAll": 0.8462,
+      "rLow": 0.9021,
+      "rHigh": 0.6989,
+      "rVHigh": 0.6472,
+      "delta": -0.2031,
+      "strengthens": false
+    },
+    {
+      "label": "T2_burkTrans_css0.8",
+      "N": 791,
+      "rAll": 0.8981,
+      "rLow": 0.9283,
+      "rHigh": 0.7825,
+      "rVHigh": 0.6813,
+      "delta": -0.1459,
+      "strengthens": false
+    },
+    {
+      "label": "T3_coreScatter_0.3",
+      "N": 800,
+      "rAll": 0.6477,
+      "rLow": 0.6871,
+      "rHigh": 0.6113,
+      "rVHigh": 0.5681,
+      "delta": -0.0758,
+      "strengthens": false
+    },
+    {
+      "label": "T3_coreScatter_0.5",
+      "N": 800,
+      "rAll": 0.6535,
+      "rLow": 0.6871,
+      "rHigh": 0.6109,
+      "rVHigh": 0.6162,
+      "delta": -0.0763,
+      "strengthens": false
+    },
+    {
+      "label": "T3_coreScatter_0.8",
+      "N": 800,
+      "rAll": 0.6128,
+      "rLow": 0.6303,
+      "rHigh": 0.5805,
+      "rVHigh": 0.5338,
+      "delta": -0.0498,
+      "strengthens": false
+    },
+    {
+      "label": "T3_coreScatter_1.2",
+      "N": 800,
+      "rAll": 0.6159,
+      "rLow": 0.6566,
+      "rHigh": 0.5645,
+      "rVHigh": 0.5033,
+      "delta": -0.0921,
+      "strengthens": false
+    },
+    {
+      "label": "T4a_fbCore+a0",
+      "N": 800,
+      "rAll": 0.647,
+      "rLow": 0.6876,
+      "rHigh": 0.5885,
+      "rVHigh": 0.5515,
+      "delta": -0.0991,
+      "strengthens": false
+    },
+    {
+      "label": "T4b_fbCore+a0_strong",
+      "N": 800,
+      "rAll": 0.6983,
+      "rLow": 0.72,
+      "rHigh": 0.6646,
+      "rVHigh": 0.6882,
+      "delta": -0.0554,
+      "strengthens": false
+    },
+    {
+      "label": "T4c_burkTrans+a0",
+      "N": 797,
+      "rAll": 0.8219,
+      "rLow": 0.885,
+      "rHigh": 0.6606,
+      "rVHigh": 0.6046,
+      "delta": -0.2244,
+      "strengthens": false
+    },
+    {
+      "label": "T4d_coreScatter+a0",
+      "N": 800,
+      "rAll": 0.5758,
+      "rLow": 0.6759,
+      "rHigh": 0.4884,
+      "rVHigh": 0.5359,
+      "delta": -0.1875,
+      "strengthens": false
+    },
+    {
+      "label": "T5a_triple_mild",
+      "N": 800,
+      "rAll": 0.6154,
+      "rLow": 0.6353,
+      "rHigh": 0.5882,
+      "rVHigh": 0.5684,
+      "delta": -0.0471,
+      "strengthens": false
+    },
+    {
+      "label": "T5b_triple_mod",
+      "N": 800,
+      "rAll": 0.6826,
+      "rLow": 0.7232,
+      "rHigh": 0.6318,
+      "rVHigh": 0.5791,
+      "delta": -0.0914,
+      "strengthens": false
+    },
+    {
+      "label": "T5c_triple_strong",
+      "N": 800,
+      "rAll": 0.679,
+      "rLow": 0.7216,
+      "rHigh": 0.6502,
+      "rVHigh": 0.644,
+      "delta": -0.0714,
+      "strengthens": false
+    },
+    {
+      "label": "T5d_burkTrans_full",
+      "N": 796,
+      "rAll": 0.8151,
+      "rLow": 0.9071,
+      "rHigh": 0.5804,
+      "rVHigh": 0.5551,
+      "delta": -0.3267,
+      "strengthens": false
+    },
+    {
+      "label": "T5e_coreScatter_full",
+      "N": 799,
+      "rAll": 0.5306,
+      "rLow": 0.6005,
+      "rHigh": 0.5121,
+      "rVHigh": 0.512,
+      "delta": -0.0884,
+      "strengthens": false
+    },
+    {
+      "label": "T5f_massDep_a0",
+      "N": 800,
+      "rAll": 0.6777,
+      "rLow": 0.7224,
+      "rHigh": 0.6034,
+      "rVHigh": 0.5594,
+      "delta": -0.1191,
+      "strengthens": false
+    }
+  ],
+  "nStrengthened": 0
+}

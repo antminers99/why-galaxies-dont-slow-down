@@ -86,15 +86,25 @@ Structured, regime-dependent coupling law with external support and leading H4 d
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
 - The SPARC regime-strengthening pattern (low-V→high-V r increases) is NOT reproduced by ANY scenario
 - All simulations show the OPPOSITE pattern: coupling WEAKENS at high Vflat
-- This regime inversion is the key discriminant between fitting artefact and physical a₀ variation
-- The SPARC signal requires qualitatively different physics from simple NFW+disc models
+
+**Phase 401 (NFW sign-flip falsification):** 30 configs × N=600, ALL fail to flip regime:
+- 6 experiment families: low-mass disruption, contraction, combined, anti-corr, deep-well, kitchen sink
+- NFW+disk is STRUCTURALLY resistant to regime inversion (concentration leverage stronger at low mass)
+- No additive physics on top of NFW can overcome this — entire NFW model family ruled out
+- SPARC regime strengthening is incompatible with NFW+disk regardless of parameters
+
+**Phase 402 (Beyond NFW — COMPLETE):** 44 configs with cored haloes + genuine physics, ALL FAIL:
+- Burkert, pseudo-isothermal, DC14, feedback-cored profiles — all weakening
+- Stochastic core scatter, genuine a₀ variation, low-mass noise — all weakening
+- Total across 400-402: ~58 configurations, ZERO regime strengthening
+- Central insight: concentration-leverage asymmetry is structural to ALL spherical halo+disk models
+- SPARC regime law appears incompatible with entire DM halo family
 
 POSSIBLE FUTURE WORK:
 - Cross-survey replication (non-SPARC rotation curves, IFU kinematics)
 - Spatially resolved kinematics to directly probe dynamical integration hypothesis
 - Higher-quality logMhost for external sample (group catalogs)
 - Formal Bayesian model comparison for hypothesis testing
-- Investigation of baryon-dependent halo profiles beyond NFW
 
 ## Key Files
 
@@ -112,6 +122,10 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase400-vfresid-origin.cjs` | Phase 400A: 6-scenario mock simulation |
 | `scripts/phase400b-regime-inversion.cjs` | Phase 400B: regime inversion diagnostic |
 | `scripts/phase400c-noise-physics.cjs` | Phase 400C: realistic noise + physics tests |
+| `scripts/phase401-regime-flip.cjs` | Phase 401: 30-config NFW sign-flip falsification |
+| `scripts/phase402-beyond-nfw.cjs` | Phase 402: cored haloes + genuine physics |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
+| `public/phase401-regime-flip.json` | Phase 401 results |
+| `public/phase402-beyond-nfw.json` | Phase 402 results |

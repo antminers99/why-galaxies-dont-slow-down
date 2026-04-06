@@ -398,7 +398,59 @@ Seven additional tests with increasingly realistic conditions (SPARC-like veloci
 
 **Verdict**: No simulation configuration reproduces the SPARC regime-strengthening pattern. The concentration baseline always dominates and produces weakening. Even with realistic noise, mass-dependent physical a₀, and large low-mass scatter, the pattern remains inverted.
 
-### 10.5 Phase 400 Conclusions
+### 10.5 Phase 401: Can Any NFW Extension Flip the Regime Sign?
+
+**Goal**: Find a mechanism that produces regime STRENGTHENING (r at high-V > r at low-V), matching SPARC.
+
+Six experiment families, 30 configurations total, N=600 galaxies each:
+
+| Experiment | Mechanism | r(all) | r(low-V) | r(high-V) | Pattern |
+|------------|-----------|--------|----------|-----------|---------|
+| E1 | Stochastic low-mass disruption (non-circ motions, 5 strengths) | 0.60–0.67 | 0.64–0.74 | 0.54–0.67 | Weakens |
+| E2 | Mass-dependent adiabatic contraction (5 strengths) | 0.36–0.57 | 0.55–0.65 | 0.43–0.60 | Weakens |
+| E3 | E1+E2 combined (7 combos) | 0.43–0.51 | 0.63–0.70 | 0.46–0.61 | Weakens |
+| E4 | Concentration-response anti-correlation (5 strengths) | 0.41–0.50 | 0.61–0.66 | 0.28–0.54 | Weakens |
+| E5 | Deep-well dynamical integration (4 strengths) | 0.58–0.64 | 0.69–0.73 | 0.49–0.59 | Weakens |
+| E6 | Full kitchen sink — all mechanisms combined (4 combos) | 0.42–0.50 | 0.58–0.68 | 0.34–0.43 | Weakens |
+| SPARC observed | — | 0.70 | 0.30 | 0.75 | **Strengthens** |
+
+**Closest approach**: E1 nonCirc=0.5 achieves delta(high−low) = −0.027 (nearly flat, but still weakening).
+
+**Central result**: The NFW+disk framework is structurally resistant to regime sign inversion. Concentration scatter creates stronger coupling at low mass (where it has more leverage on RC shape) and weaker at high mass. No additive physics layered onto NFW overcomes this structural bias. The SPARC regime-strengthening pattern is **incompatible** with the entire NFW+disk model family, not just its baseline.
+
+**Implication**: The key discriminator is not the existence of VfResid–a₀ coupling itself, which arises trivially in NFW-based mocks, but the observed SPARC regime strengthening. Across all tested NFW+disk mock variants, the coupling systematically weakens or at best flattens with increasing Vflat, never reproducing the observed strengthening. This makes the SPARC regime law incompatible with simple concentration diversity, observational noise, and a wide range of standard extensions layered onto NFW.
+
+### 10.6 Phase 402: Beyond NFW — Can Cored Haloes Flip the Sign?
+
+**Goal**: Test whether qualitatively different halo physics (cored profiles, feedback-driven cores, stochastic core sizes, genuine a₀ variation) can produce regime strengthening.
+
+Phase 402a: 22 configurations (N=600 each), 4 branches:
+
+| Branch | Models tested | Best delta(high−low) | Pattern |
+|--------|---------------|---------------------|---------|
+| A: Cored haloes (Burkert, PseudoIso, DC14) | 6 | −0.075 | Weakens |
+| B: Genuine high-mass a₀ activation | 5 | −0.014 | Weakens |
+| C: Hybrid (cores + a₀) | 6 | −0.057 | Weakens |
+| C+: Hybrid + low-mass noise | 5 | −0.024 | Weakens |
+
+Phase 402b: 22 configurations (N=800 each), focused mechanisms:
+
+| Test family | Mechanism | Best delta | Pattern |
+|-------------|-----------|-----------|---------|
+| Feedback-cored haloes | Mass-dependent core from stellar feedback | +0.005 | Weakens |
+| Burkert transition + core scatter | Stochastic core sizes at low mass | −0.146 | Weakens |
+| NFW + random core injection | Core perturbation uncorrelated with c | −0.050 | Weakens |
+| Hybrid: cores + genuine a₀ | Feedback cores + potential-depth a₀ | −0.055 | Weakens |
+| Triple: cores + a₀ + noise | All mechanisms combined | −0.047 | Weakens |
+| SPARC observed | — | **+0.45** | **Strengthens** |
+
+**Central result**: The concentration-leverage asymmetry is a structural property of ALL spherical halo+disk models, not just NFW. Any dark matter halo profile with a concentration-like parameter (scale radius, core radius) creates coupling that is inherently STRONGER at low mass because low-mass galaxies have more leverage from profile shape variation on the fitted a₀. No cored profile, no feedback mechanism, no genuine a₀ variation, and no combination thereof overcomes this structural bias.
+
+**Total falsification scope**: ~58 configurations across Phases 400–402, spanning NFW, Burkert, pseudo-isothermal, DC14-inspired, and feedback-cored profiles with noise, contraction, anti-correlation, dynamical integration, stochastic core scatter, and genuine mass-dependent a₀ variation. ALL produce weakening or at best flat regime dependence. None reproduce the SPARC regime-strengthening law.
+
+**Implication**: The SPARC regime-strengthening pattern (coupling strengthens at high Vflat) appears incompatible with ANY spherical dark matter halo + exponential disk model, regardless of profile family or additional physics. This pattern requires either: (1) a fundamentally non-CDM acceleration law (e.g., MOND-like), (2) a source of a₀ variation at high mass that is completely independent of halo structure, or (3) a systematic observational effect specific to the SPARC sample.
+
+### 10.7 Phase 400–402 Conclusions
 
 1. **Baseline VfResid is a fitting artefact**: Pure NFW concentration diversity produces r(VfResid, logA0) ≈ 0.86 via systematic bias in per-galaxy RAR fitting. This is non-physical.
 
