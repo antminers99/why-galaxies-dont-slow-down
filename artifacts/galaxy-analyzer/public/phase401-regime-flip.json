@@ -1,0 +1,294 @@
+{
+  "phase": "401",
+  "title": "What Physics Flips the Regime Sign?",
+  "timestamp": "2026-04-06T14:59:49.757Z",
+  "NGAL": 600,
+  "successCriterion": "r(VfResid,a0) at high-V > r at low-V (regime strengthening)",
+  "sparcReference": {
+    "rAll": 0.7,
+    "rLow": 0.3,
+    "rHigh": 0.75,
+    "rVHigh": 0.83
+  },
+  "experiments": [
+    {
+      "label": "E1_nonCirc_0.1",
+      "N": 600,
+      "rAll": 0.636,
+      "rLow": 0.7112,
+      "rHigh": 0.6105,
+      "rVHigh": 0.5286,
+      "strengthens": false
+    },
+    {
+      "label": "E1_nonCirc_0.2",
+      "N": 600,
+      "rAll": 0.6566,
+      "rLow": 0.7359,
+      "rHigh": 0.5443,
+      "rVHigh": 0.5038,
+      "strengthens": false
+    },
+    {
+      "label": "E1_nonCirc_0.3",
+      "N": 600,
+      "rAll": 0.6363,
+      "rLow": 0.7158,
+      "rHigh": 0.6332,
+      "rVHigh": 0.6138,
+      "strengthens": false
+    },
+    {
+      "label": "E1_nonCirc_0.5",
+      "N": 600,
+      "rAll": 0.6042,
+      "rLow": 0.6435,
+      "rHigh": 0.6165,
+      "rVHigh": 0.5866,
+      "strengthens": false
+    },
+    {
+      "label": "E1_nonCirc_0.8",
+      "N": 600,
+      "rAll": 0.6737,
+      "rLow": 0.7161,
+      "rHigh": 0.6658,
+      "rVHigh": 0.5754,
+      "strengthens": false
+    },
+    {
+      "label": "E2_contract_0.2",
+      "N": 600,
+      "rAll": 0.5661,
+      "rLow": 0.6489,
+      "rHigh": 0.6035,
+      "rVHigh": 0.6308,
+      "strengthens": false
+    },
+    {
+      "label": "E2_contract_0.4",
+      "N": 600,
+      "rAll": 0.4685,
+      "rLow": 0.6519,
+      "rHigh": 0.5258,
+      "rVHigh": 0.4173,
+      "strengthens": false
+    },
+    {
+      "label": "E2_contract_0.6",
+      "N": 600,
+      "rAll": 0.4649,
+      "rLow": 0.6688,
+      "rHigh": 0.5565,
+      "rVHigh": 0.4174,
+      "strengthens": false
+    },
+    {
+      "label": "E2_contract_0.8",
+      "N": 600,
+      "rAll": 0.423,
+      "rLow": 0.6043,
+      "rHigh": 0.5226,
+      "rVHigh": 0.2952,
+      "strengthens": false
+    },
+    {
+      "label": "E2_contract_1",
+      "N": 600,
+      "rAll": 0.3562,
+      "rLow": 0.5481,
+      "rHigh": 0.4303,
+      "rVHigh": 0.2257,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.2_ct0.3",
+      "N": 600,
+      "rAll": 0.5022,
+      "rLow": 0.6673,
+      "rHigh": 0.486,
+      "rVHigh": 0.389,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.3_ct0.4",
+      "N": 600,
+      "rAll": 0.5109,
+      "rLow": 0.6794,
+      "rHigh": 0.5678,
+      "rVHigh": 0.4792,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.5_ct0.5",
+      "N": 600,
+      "rAll": 0.5009,
+      "rLow": 0.6986,
+      "rHigh": 0.4968,
+      "rVHigh": 0.3233,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.5_ct0.8",
+      "N": 600,
+      "rAll": 0.4538,
+      "rLow": 0.6632,
+      "rHigh": 0.5601,
+      "rVHigh": 0.5487,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.8_ct0.6",
+      "N": 600,
+      "rAll": 0.4305,
+      "rLow": 0.6305,
+      "rHigh": 0.513,
+      "rVHigh": 0.4199,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc0.8_ct1",
+      "N": 600,
+      "rAll": 0.4307,
+      "rLow": 0.6811,
+      "rHigh": 0.4566,
+      "rVHigh": 0.1893,
+      "strengthens": false
+    },
+    {
+      "label": "E3_nc1_ct0.8",
+      "N": 600,
+      "rAll": 0.4685,
+      "rLow": 0.6867,
+      "rHigh": 0.6141,
+      "rVHigh": 0.4357,
+      "strengthens": false
+    },
+    {
+      "label": "E4_antiCorr_0.2",
+      "N": 600,
+      "rAll": 0.5027,
+      "rLow": 0.6427,
+      "rHigh": 0.5419,
+      "rVHigh": 0.4483,
+      "strengthens": false
+    },
+    {
+      "label": "E4_antiCorr_0.4",
+      "N": 600,
+      "rAll": 0.5007,
+      "rLow": 0.659,
+      "rHigh": 0.4941,
+      "rVHigh": 0.4588,
+      "strengthens": false
+    },
+    {
+      "label": "E4_antiCorr_0.6",
+      "N": 600,
+      "rAll": 0.4048,
+      "rLow": 0.606,
+      "rHigh": 0.284,
+      "rVHigh": 0.046,
+      "strengthens": false
+    },
+    {
+      "label": "E4_antiCorr_0.8",
+      "N": 600,
+      "rAll": 0.4786,
+      "rLow": 0.6728,
+      "rHigh": 0.4452,
+      "rVHigh": 0.3026,
+      "strengthens": false
+    },
+    {
+      "label": "E4_antiCorr_1",
+      "N": 600,
+      "rAll": 0.4387,
+      "rLow": 0.6319,
+      "rHigh": 0.3819,
+      "rVHigh": 0.1489,
+      "strengthens": false
+    },
+    {
+      "label": "E5_dynInt_0.15",
+      "N": 600,
+      "rAll": 0.5833,
+      "rLow": 0.7245,
+      "rHigh": 0.562,
+      "rVHigh": 0.5501,
+      "strengthens": false
+    },
+    {
+      "label": "E5_dynInt_0.25",
+      "N": 600,
+      "rAll": 0.5877,
+      "rLow": 0.7089,
+      "rHigh": 0.5771,
+      "rVHigh": 0.539,
+      "strengthens": false
+    },
+    {
+      "label": "E5_dynInt_0.35",
+      "N": 600,
+      "rAll": 0.6194,
+      "rLow": 0.6911,
+      "rHigh": 0.5903,
+      "rVHigh": 0.4881,
+      "strengthens": false
+    },
+    {
+      "label": "E5_dynInt_0.5",
+      "N": 600,
+      "rAll": 0.6382,
+      "rLow": 0.688,
+      "rHigh": 0.5925,
+      "rVHigh": 0.5174,
+      "strengthens": false
+    },
+    {
+      "label": "E6_full_nc0.5_ct0.5_di0.25",
+      "N": 600,
+      "rAll": 0.5037,
+      "rLow": 0.6772,
+      "rHigh": 0.4251,
+      "rVHigh": 0.273,
+      "strengthens": false
+    },
+    {
+      "label": "E6_full_nc0.5_ct0.6_di0.3",
+      "N": 600,
+      "rAll": 0.4385,
+      "rLow": 0.5983,
+      "rHigh": 0.3909,
+      "rVHigh": 0.3373,
+      "strengthens": false
+    },
+    {
+      "label": "E6_full_nc0.8_ct0.8_di0.35",
+      "N": 600,
+      "rAll": 0.4196,
+      "rLow": 0.5754,
+      "rHigh": 0.3614,
+      "rVHigh": 0.2786,
+      "strengthens": false
+    },
+    {
+      "label": "E6_full_nc1_ct1_di0.5",
+      "N": 600,
+      "rAll": 0.4714,
+      "rLow": 0.611,
+      "rHigh": 0.3399,
+      "rVHigh": 0.3387,
+      "strengthens": false
+    }
+  ],
+  "nStrengthened": 0,
+  "bestMatch": {
+    "label": "E1_nonCirc_0.1",
+    "score": 2,
+    "rAll": 0.636,
+    "rLow": 0.7112,
+    "rHigh": 0.6105,
+    "rVHigh": 0.5286
+  }
+}
