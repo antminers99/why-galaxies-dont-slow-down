@@ -1,0 +1,59 @@
+{
+  "phase": "V+",
+  "title": "Distance-Systematics Kill Test",
+  "timestamp": "2026-04-06T19:23:39.292Z",
+  "N": 55,
+  "primarySubsample": {
+    "N": 11,
+    "r": 0.24348249757523907,
+    "names": [
+      "NGC1003",
+      "NGC1705",
+      "NGC2403",
+      "NGC2841",
+      "NGC3198",
+      "NGC3521",
+      "NGC3741",
+      "NGC4559",
+      "NGC5055",
+      "NGC7331",
+      "UGC08490"
+    ]
+  },
+  "distanceControl": {
+    "r": 0.792890464994293,
+    "absorption": 0.014183879427471189
+  },
+  "partialDist": {
+    "r": 0.8042303223650479
+  },
+  "nearFar": {
+    "near": {
+      "N": 34,
+      "r": 0.6742060635235008
+    },
+    "far": {
+      "N": 21,
+      "r": 0.8356717183919969
+    }
+  },
+  "residualDistCorr": {
+    "vfR_logD": 0.03917878667016434,
+    "a0R_logD": 0.07449518709595512
+  },
+  "nullSim": {
+    "above77": 0,
+    "trials": 1000
+  },
+  "angularOnly": {
+    "r": 0.06222549813322303
+  },
+  "tests": {
+    "t1": false,
+    "t2": true,
+    "t3": true,
+    "t4": true,
+    "t5": true,
+    "totalPass": 4
+  }
+}

@@ -5,7 +5,7 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: PUBLICATION-READY — COMPLETE SCIENTIFIC NARRATIVE (Phases 134 + 200–204 + 300–303)
+## STATUS: PUBLICATION-READY — COMPLETE SCIENTIFIC NARRATIVE (Phases 134 + 200–204 + 300–303 + V/V+)
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN
