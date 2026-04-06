@@ -353,14 +353,24 @@ log10(m/s^2) = logA0 - 13.489. Values range [3.1, 4.1] in CSV units.
 
 ---
 
-## Track 2: Hierarchical Coupling Law for Per-Galaxy a₀ Variation (Phases 123–134, 200–201)
+## Track 2: Hierarchical Coupling Law for Per-Galaxy a₀ Variation (Phases 123–134, 200–204)
 
 A separate investigation (Track 2) directly addresses per-galaxy a₀ variation and identifies a transferable, regime-dependent, hierarchical baryon-halo coupling law. See **MANUSCRIPT-TRACK2.md** for the full analysis report.
 
 **Key result:** Within N=45 published SPARC galaxies, a₀ variation is predicted by a 5-axis model (LOO gap = 65.4%) consisting of a structural core (MHI, Mhost, MeanRun), a dominant kinematic coupling channel (VfResid = residual flat velocity beyond baryonic prediction), and a secondary outer-halo channel (lh_outerImprove). The VfResid channel transfers to N=10 crude-quality holdout galaxies with r = 0.801 and 57% gap closure. The law is strongest in high-Vflat galaxies (Vflat >= 120 km/s) and activates sharply near Vflat ~ 181 km/s.
 
-**External validation (Phases 200–201):** The coupling law was tested on N=59 SPARC galaxies outside the training sample using frozen N=45 coefficients. The full hierarchy reproduces externally: Core alone fails, VfResid is the dominant transferable channel, the signal strengthens with Vflat (gap = +34.3% for Vflat >= 120, +59.0% for Q=1 + Vflat >= 120), and the low-Vflat regime fails as predicted. The coupling-law picture now has external support consistent with a regime-dependent law rather than a universal one.
+**Comprehensive external validation (Phases 200–204):** The coupling law was tested on N=59 independent SPARC galaxies using frozen N=45 coefficients. The complete program establishes:
 
-**Status:** Externally supported regime-dependent coupling law. The hierarchical structure (Core fails → VfResid dominates → regime-dependent) reproduces outside the training sample. Cross-survey replication with higher-quality external data needed for definitive validation.
+1. **Hierarchy replicates externally** (Phase 202): 8/8 checks pass. Core alone fails in every regime. VfResid dominates in every regime. Bootstrap P(VfResid > Core) > 99.6% in all subsamples.
 
-**Zenodo v9:** DOI 10.5281/zenodo.19433840 (Concept DOI: 10.5281/zenodo.19430633)
+2. **VfResid is the primary transferable channel** (Phases 201–202): VfResid alone achieves 47.5% gap (full), 75.4% (very-high-Vflat). Channel dominance margin: +35 to +71 pp over best alternative. Partial r(VfResid, a₀ | Core) = 0.844 (high-V), 0.869 (Q=1+HV).
+
+3. **Core is real but secondary** (Phase 203): Improving logMhost (r: 0.232 to 0.542 vs. real tidal values) raises Core gap from -53% to -8.1% (full), -6.7% to +16.7% (high-V). Proves the environmental axis carries real signal. But VfResid still dominates by 30–76 pp in every regime.
+
+4. **VfResid dominance is independent of environmental proxy quality** (Phase 203): Even with improved Core, bootstrap P(VfResid > Core) = 100% in all subsamples.
+
+5. **lhOuter genuine but reduced** (Phase 204): After Mhost improvement, lhOuter delta reduces from +18.1 pp to +8.3 pp (very-high-V) and +12.1 pp to +4.9 pp (Q1+HV). Part of crude estimate was absorbing Mhost error, but real residual signal persists.
+
+**Status:** Comprehensive external validation complete. The dominant transferable channel is VfResid, independent of environmental proxy quality. Cross-survey replication with higher-quality external data needed for definitive validation.
+
+**Zenodo v10:** DOI 10.5281/zenodo.19434177 (Concept DOI: 10.5281/zenodo.19430633)

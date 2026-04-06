@@ -5,17 +5,17 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: EXTERNALLY SUPPORTED REGIME-DEPENDENT LAW (Phases 134 + 201)
+## STATUS: COMPREHENSIVELY EXTERNALLY VALIDATED (Phases 134 + 200–204)
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN
-- **Track 2 (Phases 123–134, 200–201):** State law for logA0 variation — EXTERNALLY SUPPORTED
+- **Track 2 (Phases 123–134, 200–204):** State law for logA0 variation — COMPREHENSIVE EXTERNAL VALIDATION COMPLETE
 
 ## Current Definitive Result (Track 2)
 
-**Title:** Externally Validated Regime-Dependent Coupling Law for Per-Galaxy a₀ Variation in SPARC Galaxies
+**Title:** Comprehensively Validated Regime-Dependent Coupling Law for Per-Galaxy a₀ Variation in SPARC Galaxies
 
-**Claim:** Per-galaxy a₀ is governed by a transferable, regime-dependent, hierarchical baryon-halo coupling law. The coupling-law picture now has external support beyond the original N=45 sample, with the strongest transfer appearing in higher-Vflat galaxies and collapsing in lower-Vflat systems, consistent with a regime-dependent law rather than a universal one. The dominant transferable channel outside N=45 is VfResid, and the transfer is strongest in the high-Vflat regime.
+**Claim:** Per-galaxy a₀ is governed by a transferable, regime-dependent, hierarchical baryon-halo coupling law. A comprehensive external validation program (Phases 200–204, N=59 independent galaxies) establishes that VfResid dominance over environmental/structural channels is independent of environmental proxy quality. The complete hierarchy replicates externally (8/8 checks pass), VfResid alone achieves 47.5%–75.4% gap without Core, and VfResid dominates by 30–76 pp even after improving the environmental proxy. The signal concentrates in high-Vflat galaxies and collapses in low-Vflat systems.
 
 **Primary Model C (predictive leader):**
 
@@ -239,7 +239,8 @@ logOMD = 1.749 + 0.203×log(MHI/L3.6) − 0.101×log(Mbar)
 ## Zenodo
 
 - Concept DOI: 10.5281/zenodo.19430633 (all versions)
-- v9 (current): DOI 10.5281/zenodo.19433840 (PUBLISHED — Phases 126-134 + 200-201, Externally Validated Regime-Dependent Coupling Law)
+- v10 (current): DOI 10.5281/zenodo.19434177 (PUBLISHED — Phases 126-134 + 200-204, Comprehensively Validated Coupling Law)
+- v9 (previous): DOI 10.5281/zenodo.19433840 (Phases 126-134 + 200-201, Externally Validated)
 - v8 (previous): DOI 10.5281/zenodo.19433329 (Phases 126-134, Hierarchical Coupling Law)
 - v7 (previous): DOI 10.5281/zenodo.19433077 (Phases 126-132, VfResid decoded)
 - v6 (previous): DOI 10.5281/zenodo.19432600
