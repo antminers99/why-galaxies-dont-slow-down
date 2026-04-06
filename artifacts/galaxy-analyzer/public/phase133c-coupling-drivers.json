@@ -1,0 +1,226 @@
+{
+  "phase": "133C",
+  "title": "What Drives VfResid? — Coupling Law Derivation",
+  "verdict": "PARTIAL_COUPLING_LAW",
+  "singlePredictors": [
+    {
+      "name": "haloK_linear",
+      "r2Fit": 0.358,
+      "r2LOO": 0.287,
+      "r": 0.598
+    },
+    {
+      "name": "mond_improve",
+      "r2Fit": 0.294,
+      "r2LOO": 0.228,
+      "r": -0.542
+    },
+    {
+      "name": "mond_mse_ratio",
+      "r2Fit": 0.279,
+      "r2LOO": 0.21,
+      "r": 0.529
+    },
+    {
+      "name": "mgh_k",
+      "r2Fit": 0.177,
+      "r2LOO": 0.11,
+      "r": 0.42
+    },
+    {
+      "name": "envCode",
+      "r2Fit": 0.147,
+      "r2LOO": 0.081,
+      "r": -0.384
+    },
+    {
+      "name": "logMeanRun",
+      "r2Fit": 0.151,
+      "r2LOO": 0.058,
+      "r": 0.388
+    },
+    {
+      "name": "lh_outerImprove",
+      "r2Fit": 0.101,
+      "r2LOO": 0.042,
+      "r": 0.318
+    },
+    {
+      "name": "lh_improve",
+      "r2Fit": 0.102,
+      "r2LOO": 0.036,
+      "r": 0.319
+    },
+    {
+      "name": "logMhost",
+      "r2Fit": 0.088,
+      "r2LOO": 0.031,
+      "r": -0.297
+    },
+    {
+      "name": "newt_mse",
+      "r2Fit": 0.113,
+      "r2LOO": 0.014,
+      "r": 0.336
+    },
+    {
+      "name": "dhf_improve",
+      "r2Fit": 0.063,
+      "r2LOO": -0.028,
+      "r": -0.251
+    },
+    {
+      "name": "concentration",
+      "r2Fit": 0.083,
+      "r2LOO": -0.029,
+      "r": -0.289
+    },
+    {
+      "name": "logSBeff",
+      "r2Fit": 0.048,
+      "r2LOO": -0.037,
+      "r": 0.219
+    },
+    {
+      "name": "haloK_log",
+      "r2Fit": 0.083,
+      "r2LOO": -0.06,
+      "r": 0.288
+    },
+    {
+      "name": "dhl_mse",
+      "r2Fit": 0.051,
+      "r2LOO": -0.068,
+      "r": 0.226
+    },
+    {
+      "name": "lh_innerImprove",
+      "r2Fit": 0.036,
+      "r2LOO": -0.079,
+      "r": 0.189
+    },
+    {
+      "name": "fDM_flat",
+      "r2Fit": 0.052,
+      "r2LOO": -0.332,
+      "r": 0.229
+    }
+  ],
+  "multiModels": [
+    {
+      "name": "ALL top 5",
+      "vars": [
+        "haloK_linear",
+        "mond_improve",
+        "mgh_k",
+        "envCode",
+        "logMeanRun"
+      ],
+      "r2Fit": 0.644,
+      "r2LOO": 0.517,
+      "p": 5
+    },
+    {
+      "name": "haloK + env + MR",
+      "vars": [
+        "haloK_linear",
+        "envCode",
+        "logMeanRun"
+      ],
+      "r2Fit": 0.546,
+      "r2LOO": 0.431,
+      "p": 3
+    },
+    {
+      "name": "haloK + mondImprove + env",
+      "vars": [
+        "haloK_linear",
+        "mond_improve",
+        "envCode"
+      ],
+      "r2Fit": 0.524,
+      "r2LOO": 0.418,
+      "p": 3
+    },
+    {
+      "name": "haloK + lhOuter",
+      "vars": [
+        "haloK_linear",
+        "lh_outerImprove"
+      ],
+      "r2Fit": 0.427,
+      "r2LOO": 0.355,
+      "p": 2
+    },
+    {
+      "name": "haloK + mondImprove + lhOuter",
+      "vars": [
+        "haloK_linear",
+        "mond_improve",
+        "lh_outerImprove"
+      ],
+      "r2Fit": 0.429,
+      "r2LOO": 0.335,
+      "p": 3
+    },
+    {
+      "name": "haloK + mghK",
+      "vars": [
+        "haloK_linear",
+        "mgh_k"
+      ],
+      "r2Fit": 0.392,
+      "r2LOO": 0.3,
+      "p": 2
+    },
+    {
+      "name": "haloK only",
+      "vars": [
+        "haloK_linear"
+      ],
+      "r2Fit": 0.358,
+      "r2LOO": 0.287,
+      "p": 1
+    },
+    {
+      "name": "haloK + mondImprove",
+      "vars": [
+        "haloK_linear",
+        "mond_improve"
+      ],
+      "r2Fit": 0.361,
+      "r2LOO": 0.267,
+      "p": 2
+    },
+    {
+      "name": "haloK + mondMSEratio",
+      "vars": [
+        "haloK_linear",
+        "mond_mse_ratio"
+      ],
+      "r2Fit": 0.36,
+      "r2LOO": 0.267,
+      "p": 2
+    }
+  ],
+  "bestModel": {
+    "name": "ALL top 5",
+    "vars": [
+      "haloK_linear",
+      "mond_improve",
+      "mgh_k",
+      "envCode",
+      "logMeanRun"
+    ],
+    "r2Fit": 0.644,
+    "r2LOO": 0.517,
+    "p": 5
+  },
+  "unexplainedAnalysis": {
+    "fractionExplained": 0.644,
+    "coreGap": 44.1,
+    "coreVfResidGap": 61.1,
+    "coreUnexplainedGap": 50.9,
+    "unexplainedStillPredicts": true
+  }
+}

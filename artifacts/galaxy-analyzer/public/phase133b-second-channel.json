@@ -1,0 +1,93 @@
+{
+  "phase": "133B",
+  "title": "Second Halo Channel — 5th Axis Test",
+  "verdict": "GENUINE_5TH_AXIS",
+  "candidates": [
+    {
+      "name": "lh_outerImprove",
+      "gap5": 65.4,
+      "delta": 4.3,
+      "nested": "26/45",
+      "flipRate": 5.4,
+      "rCandVfR": 0.318
+    },
+    {
+      "name": "lh_improve",
+      "gap5": 64.4,
+      "delta": 3.2,
+      "nested": "24/45",
+      "flipRate": 5.2,
+      "rCandVfR": 0.319
+    },
+    {
+      "name": "logSig0",
+      "gap5": 63.6,
+      "delta": 2.5,
+      "nested": "19/45",
+      "flipRate": 10.2,
+      "rCandVfR": 0
+    },
+    {
+      "name": "dhl_mse",
+      "gap5": 63.3,
+      "delta": 2.1,
+      "nested": "25/45",
+      "flipRate": 8,
+      "rCandVfR": 0.226
+    },
+    {
+      "name": "concentration",
+      "gap5": 60.6,
+      "delta": -0.5,
+      "nested": "23/45",
+      "flipRate": 24.2,
+      "rCandVfR": -0.289
+    },
+    {
+      "name": "mond_improve",
+      "gap5": 59.3,
+      "delta": -1.8,
+      "nested": "26/45",
+      "flipRate": 27.2,
+      "rCandVfR": -0.542
+    },
+    {
+      "name": "morphT",
+      "gap5": 58.9,
+      "delta": -2.3,
+      "nested": "22/45",
+      "flipRate": 27.8,
+      "rCandVfR": 0
+    },
+    {
+      "name": "envCode",
+      "gap5": 58.8,
+      "delta": -2.4,
+      "nested": "25/45",
+      "flipRate": 42.6,
+      "rCandVfR": -0.384
+    },
+    {
+      "name": "lh_innerImprove",
+      "gap5": 58.7,
+      "delta": -2.5,
+      "nested": "24/45",
+      "flipRate": 26.2,
+      "rCandVfR": 0.189
+    },
+    {
+      "name": "logVflat",
+      "gap5": 56.7,
+      "delta": -4.4,
+      "nested": "17/45",
+      "flipRate": 50.2,
+      "rCandVfR": 0.28
+    }
+  ],
+  "foldInternal": {
+    "gap4": 53.4,
+    "gap5": 56.4,
+    "delta": 3
+  },
+  "systematicsClean": true
+}
