@@ -1,0 +1,98 @@
+---
+name: galaxy-project
+description: Project context, goals, current status, and strategic direction for the Galaxy Rotation Curve Analyzer. Use when planning work, understanding project history, or making decisions about what to do next.
+---
+
+# Galaxy Rotation Curve Analyzer — Project Context
+
+## What This Project Is
+
+A data analysis tool studying the Radial Acceleration Relation (RAR) across
+197 galaxies (175 SPARC + 22 LITTLE THINGS). Built with React + Vite.
+
+## Single Defensible Claim (Phase 60 Final)
+
+> "a₀ is NOT universal — it shows structured, galaxy-dependent variation
+> (τ=0.264 dex). About 43% of the variation can be predicted from 6 observable
+> properties (gas mass, RC texture, environment, baryon density, RAR coherence,
+> baryon dominance). The variables act additively and independently. The remaining
+> ~57% is irreducible with SPARC data alone, representing either true physical
+> variation or an unmeasured deep state variable. Resolution requires external data."
+
+NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
+
+## Final Model Hierarchy (Phase 60)
+
+| Model | k | LOO Gap-Closed | AIC rank | Verdict |
+|-------|---|----------------|----------|---------|
+| M0: Universal a₀ | 0 | 0.0% | worst | REJECTED |
+| M1a: Conservative | 4 | 27.8% | 4th | Publication-grade |
+| M1b: Extended | 5 | 38.1% | 3rd | Internal analysis |
+| M1c: Maximal | 6 | 42.9% | 2nd | WINNER |
+| M2: Per-galaxy | 56 | 100.0% | 1st | Overfitting |
+
+## Confirmed Variables
+
+| Variable | b | beta | partial r | Circ | Domain |
+|----------|---|------|-----------|------|--------|
+| log(MHI) | -0.231 | -0.515 | -0.541 | ZERO | Gas content |
+| rcWiggliness | +2.289 | +0.313 | +0.345 | MED | RC texture |
+| envCode | -0.121 | -0.359 | -0.385 | ZERO | Environment |
+| Sigma0_bar | +0.183 | +0.322 | +0.351 | ZERO | Baryon density |
+| meanRun | +0.367 | +0.301 | +0.368 | MED | RAR coherence |
+| innBarF | (in maximal) | | | MED | Baryon dominance |
+
+## Project History (Condensed)
+
+1-15. Built analyzer, detected RAR, ran stress tests, explored models,
+      established M3 (per-galaxy a₀) wins decisively over M0 (universal)
+16-52. Sequential Door Investigation: 6 doors, 37 phases, ~138 proxies
+       5 confirmed variables, 95% rejection rate
+53. Final comprehensive review — discovery map
+54. Freeze baselines + filter partials (tBst/Rd REVOKED)
+55. Interaction terms — ALL 10 FAIL (additive model)
+56. Frozen baselines — definitive reference point
+57. 2D kinematics — ALL 14 proxies FAIL (rcWig+meanRun optimal)
+58. Environmental processing — ALL 12 proxies FAIL (envCode irreducible)
+59. Stellar Y* — barGravD + innBarF SURVIVE (don't absorb Σ₀)
+60. FINAL DEATH MATCH — M1c wins, a₀ structured but incompletely explained
+
+## Current Phase
+
+**Track 1 (OMD law):** FROZEN at Phase 122. No further work planned.
+
+**Track 2 (a₀ State Law):** EXTERNALLY SUPPORTED REGIME-DEPENDENT LAW (Phases 134 + 201).
+- Phases 123–128: Variable search, 3-axis core established
+- Phases 129–132: Vflat decomposed, VfResid identified as coupling proxy
+- Phase 132A-C: VfResid dominance, mediation, robustness confirmed
+- Phase 133A-C: Regime law, 5th axis, coupling drivers decoded
+- Phase 134: Initial external validation (STRONG_TRANSFER, r=0.801, N=10)
+- Phase 200: External data assembly (N=59 SPARC galaxies outside training sample)
+- Phase 201: Broader external validation (MODERATE_TRANSFER full sample, STRONG in high-Vflat)
+
+**Status:** Internal analysis COMPLETE + External validation CONFIRMED hierarchy.
+The coupling-law picture has external support: Core fails → VfResid dominates → regime-dependent.
+High-Vflat transfer: gap=+34.3% (N=16), +59.0% (Q=1+Vflat>=120, N=11).
+Low-Vflat fails as predicted. Not universal — regime-dependent.
+
+**Zenodo v9:** DOI 10.5281/zenodo.19433840
+
+POSSIBLE FUTURE WORK:
+- Cross-survey replication (non-SPARC rotation curves, IFU kinematics)
+- Higher-quality logMhost for external sample (group catalogs)
+- Higher-quality logA0 for external sample (full profile fits)
+- Non-linear coupling models
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `diagnostic-report.txt` | PRIMARY report (82 sections, 5814 lines) |
+| `experiment-log.txt` | Experiment log (93 sections, 2285 lines) |
+| `scripts/phase56-frozen-baselines.cjs` | Definitive reference |
+| `scripts/phase60-death-match.cjs` | Final model comparison |
+| `public/phase56-frozen-baselines.json` | Frozen baseline data |
+| `public/phase60-death-match.json` | Death match results |
+| `public/sparc-table.json` | SPARC master table (175 galaxies) |
+| `public/phase11-sensitivity-lab.json` | Per-galaxy RAR profiles |
+| `public/phase25-group-membership.json` | Environment assignments |
