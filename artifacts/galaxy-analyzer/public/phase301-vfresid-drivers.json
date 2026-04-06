@@ -1,0 +1,956 @@
+{
+  "phase": "301",
+  "title": "What Determines VfResid?",
+  "timestamp": "2026-04-06T13:17:00.919Z",
+  "verdict": "INCONCLUSIVE",
+  "internalSample": {
+    "N": 45,
+    "highV": 35
+  },
+  "externalSample": {
+    "N": 94,
+    "highV": 21,
+    "original": 59,
+    "salvaged": 35
+  },
+  "pooledSample": {
+    "N": 139,
+    "highV": 56
+  },
+  "singlePredictorRankings": {
+    "internal": [
+      {
+        "name": "haloK",
+        "r": 0.598,
+        "loo": 0.287,
+        "n": 45
+      },
+      {
+        "name": "mondImprove",
+        "r": -0.542,
+        "loo": 0.228,
+        "n": 45
+      },
+      {
+        "name": "logMeanRun",
+        "r": 0.388,
+        "loo": 0.058,
+        "n": 45
+      },
+      {
+        "name": "envCode",
+        "r": -0.384,
+        "loo": 0.081,
+        "n": 45
+      },
+      {
+        "name": "lhOuter",
+        "r": 0.318,
+        "loo": 0.042,
+        "n": 45
+      },
+      {
+        "name": "logMhost",
+        "r": -0.297,
+        "loo": 0.031,
+        "n": 45
+      },
+      {
+        "name": "dhlMSE",
+        "r": 0.289,
+        "loo": -0.012,
+        "n": 45
+      },
+      {
+        "name": "logSBeff",
+        "r": 0.219,
+        "loo": -0.037,
+        "n": 45
+      },
+      {
+        "name": "logSBdisk",
+        "r": -0.164,
+        "loo": -0.087,
+        "n": 45
+      },
+      {
+        "name": "logMHI",
+        "r": -0.137,
+        "loo": -0.061,
+        "n": 45
+      },
+      {
+        "name": "inc",
+        "r": 0.065,
+        "loo": -0.08,
+        "n": 45
+      },
+      {
+        "name": "rcWiggliness",
+        "r": -0.057,
+        "loo": -0.085,
+        "n": 45
+      },
+      {
+        "name": "concentration",
+        "r": 0.014,
+        "loo": -0.128,
+        "n": 45
+      },
+      {
+        "name": "logSigma0",
+        "r": 0,
+        "loo": -0.111,
+        "n": 45
+      },
+      {
+        "name": "morphT",
+        "r": 0,
+        "loo": -0.096,
+        "n": 45
+      },
+      {
+        "name": "logL36",
+        "r": 0,
+        "loo": -0.093,
+        "n": 45
+      },
+      {
+        "name": "logMbar",
+        "r": 0,
+        "loo": -0.088,
+        "n": 45
+      },
+      {
+        "name": "logRdisk",
+        "r": 0,
+        "loo": -0.099,
+        "n": 45
+      }
+    ],
+    "external": [
+      {
+        "name": "logMhost",
+        "r": 0.554,
+        "loo": 0.271,
+        "n": 94
+      },
+      {
+        "name": "haloK",
+        "r": 0.511,
+        "loo": 0.225,
+        "n": 94
+      },
+      {
+        "name": "logMHI",
+        "r": 0.422,
+        "loo": 0.132,
+        "n": 94
+      },
+      {
+        "name": "logMbar",
+        "r": 0.405,
+        "loo": 0.119,
+        "n": 94
+      },
+      {
+        "name": "mondImprove",
+        "r": -0.358,
+        "loo": 0.088,
+        "n": 94
+      },
+      {
+        "name": "logRdisk",
+        "r": 0.348,
+        "loo": 0.079,
+        "n": 94
+      },
+      {
+        "name": "logL36",
+        "r": 0.333,
+        "loo": 0.065,
+        "n": 94
+      },
+      {
+        "name": "logMeanRun",
+        "r": 0.319,
+        "loo": 0.059,
+        "n": 94
+      },
+      {
+        "name": "morphT",
+        "r": -0.301,
+        "loo": 0.047,
+        "n": 94
+      },
+      {
+        "name": "lhOuter",
+        "r": -0.28,
+        "loo": 0.046,
+        "n": 94
+      },
+      {
+        "name": "dhlMSE",
+        "r": 0.236,
+        "loo": -0.034,
+        "n": 94
+      },
+      {
+        "name": "logSBeff",
+        "r": 0.231,
+        "loo": 0.012,
+        "n": 94
+      },
+      {
+        "name": "logSBdisk",
+        "r": 0.208,
+        "loo": -0.004,
+        "n": 94
+      },
+      {
+        "name": "inc",
+        "r": -0.169,
+        "loo": -0.015,
+        "n": 94
+      },
+      {
+        "name": "concentration",
+        "r": 0.117,
+        "loo": -0.027,
+        "n": 94
+      }
+    ],
+    "pooled": [
+      {
+        "name": "haloK",
+        "r": 0.534,
+        "loo": 0.262,
+        "n": 139
+      },
+      {
+        "name": "mondImprove",
+        "r": -0.401,
+        "loo": 0.135,
+        "n": 139
+      },
+      {
+        "name": "logMhost",
+        "r": 0.365,
+        "loo": 0.1,
+        "n": 139
+      },
+      {
+        "name": "logMbar",
+        "r": 0.332,
+        "loo": 0.076,
+        "n": 139
+      },
+      {
+        "name": "logMeanRun",
+        "r": 0.327,
+        "loo": 0.079,
+        "n": 139
+      },
+      {
+        "name": "logMHI",
+        "r": 0.316,
+        "loo": 0.064,
+        "n": 139
+      },
+      {
+        "name": "logL36",
+        "r": 0.285,
+        "loo": 0.047,
+        "n": 139
+      },
+      {
+        "name": "logRdisk",
+        "r": 0.263,
+        "loo": 0.035,
+        "n": 139
+      },
+      {
+        "name": "morphT",
+        "r": -0.252,
+        "loo": 0.031,
+        "n": 139
+      },
+      {
+        "name": "logSBeff",
+        "r": 0.252,
+        "loo": 0.033,
+        "n": 139
+      },
+      {
+        "name": "dhlMSE",
+        "r": 0.25,
+        "loo": 0.032,
+        "n": 139
+      },
+      {
+        "name": "logSBdisk",
+        "r": 0.17,
+        "loo": -0.006,
+        "n": 139
+      },
+      {
+        "name": "concentration",
+        "r": 0.128,
+        "loo": -0.01,
+        "n": 139
+      },
+      {
+        "name": "lhOuter",
+        "r": -0.107,
+        "loo": -0.031,
+        "n": 139
+      },
+      {
+        "name": "inc",
+        "r": -0.095,
+        "loo": -0.022,
+        "n": 139
+      }
+    ]
+  },
+  "multiPredictorModels": {
+    "internal": [
+      {
+        "label": "M1: haloK",
+        "features": [
+          "haloK"
+        ],
+        "n": 45,
+        "r2": 0.358,
+        "loo": 0.287,
+        "signStability": [
+          100,
+          100
+        ]
+      },
+      {
+        "label": "M2: haloK + lhOuter",
+        "features": [
+          "haloK",
+          "lhOuter"
+        ],
+        "n": 45,
+        "r2": 0.427,
+        "loo": 0.355,
+        "signStability": [
+          99.8,
+          100,
+          98.3
+        ]
+      },
+      {
+        "label": "M3: haloK + env + MR",
+        "features": [
+          "haloK",
+          "envCode",
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.546,
+        "loo": 0.431,
+        "signStability": [
+          100,
+          100,
+          100,
+          93.6
+        ]
+      },
+      {
+        "label": "M4: top-5",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "envCode",
+          "logMeanRun",
+          "concentration"
+        ],
+        "n": 45,
+        "r2": 0.642,
+        "loo": 0.493,
+        "signStability": [
+          99.8,
+          100,
+          98.2,
+          99.1,
+          85.6,
+          90.8
+        ]
+      },
+      {
+        "label": "M5: haloK + baryonic",
+        "features": [
+          "haloK",
+          "logMHI",
+          "logMbar"
+        ],
+        "n": 45,
+        "r2": 0.428,
+        "loo": 0.292,
+        "signStability": [
+          72.4,
+          100,
+          89.7,
+          97.8
+        ]
+      },
+      {
+        "label": "M6: haloK + structure",
+        "features": [
+          "haloK",
+          "logSBeff",
+          "logRdisk"
+        ],
+        "n": 45,
+        "r2": 0.382,
+        "loo": 0.223,
+        "signStability": [
+          100,
+          100,
+          66,
+          74.3
+        ]
+      },
+      {
+        "label": "M7: haloK + MOND",
+        "features": [
+          "haloK",
+          "mondImprove"
+        ],
+        "n": 45,
+        "r2": 0.361,
+        "loo": 0.267,
+        "signStability": [
+          93.8,
+          98.6,
+          71.1
+        ]
+      },
+      {
+        "label": "M8: haloK + lhOI + SBeff + MR",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "logSBeff",
+          "logMeanRun"
+        ],
+        "n": 45,
+        "r2": 0.516,
+        "loo": 0.382,
+        "signStability": [
+          100,
+          100,
+          99.8,
+          51.8,
+          98.7
+        ]
+      },
+      {
+        "label": "M9: pure structure (no halo)",
+        "features": [
+          "logSBeff",
+          "logRdisk",
+          "logMbar",
+          "morphT"
+        ],
+        "n": 45,
+        "r2": 0.11,
+        "loo": -0.144,
+        "signStability": [
+          68.9,
+          99.2,
+          72,
+          82.8,
+          70.3
+        ]
+      },
+      {
+        "label": "M10: haloK + conc + Rdisk",
+        "features": [
+          "haloK",
+          "concentration",
+          "logRdisk"
+        ],
+        "n": 45,
+        "r2": 0.496,
+        "loo": 0.367,
+        "signStability": [
+          100,
+          100,
+          99.1,
+          74.6
+        ]
+      }
+    ],
+    "external": [
+      {
+        "label": "E1: haloK",
+        "features": [
+          "haloK"
+        ],
+        "n": 94,
+        "r2": 0.261,
+        "loo": 0.225,
+        "signStability": [
+          100,
+          100
+        ]
+      },
+      {
+        "label": "E2: haloK + lhOuter",
+        "features": [
+          "haloK",
+          "lhOuter"
+        ],
+        "n": 94,
+        "r2": 0.267,
+        "loo": 0.214,
+        "signStability": [
+          52.3,
+          100,
+          80.2
+        ]
+      },
+      {
+        "label": "E3: haloK + MR",
+        "features": [
+          "haloK",
+          "logMeanRun"
+        ],
+        "n": 94,
+        "r2": 0.284,
+        "loo": 0.235,
+        "signStability": [
+          100,
+          100,
+          95.5
+        ]
+      },
+      {
+        "label": "E4: haloK + baryonic",
+        "features": [
+          "haloK",
+          "logMHI",
+          "logMbar"
+        ],
+        "n": 94,
+        "r2": 0.434,
+        "loo": 0.341,
+        "signStability": [
+          97.7,
+          100,
+          100,
+          100
+        ]
+      },
+      {
+        "label": "E5: haloK + structure",
+        "features": [
+          "haloK",
+          "logSBeff",
+          "logRdisk"
+        ],
+        "n": 94,
+        "r2": 0.372,
+        "loo": 0.305,
+        "signStability": [
+          100,
+          100,
+          99.9,
+          99.6
+        ]
+      },
+      {
+        "label": "E6: pure structure (no halo)",
+        "features": [
+          "logSBeff",
+          "logRdisk",
+          "logMbar",
+          "morphT"
+        ],
+        "n": 94,
+        "r2": 0.178,
+        "loo": 0.077,
+        "signStability": [
+          96.1,
+          86.7,
+          66.9,
+          95.4,
+          69.9
+        ]
+      },
+      {
+        "label": "E7: top-4 external",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "logMeanRun",
+          "concentration"
+        ],
+        "n": 94,
+        "r2": 0.315,
+        "loo": 0.24,
+        "signStability": [
+          70.5,
+          100,
+          67.4,
+          88,
+          97.4
+        ]
+      },
+      {
+        "label": "E8: haloK + MOND",
+        "features": [
+          "haloK",
+          "mondImprove"
+        ],
+        "n": 94,
+        "r2": 0.269,
+        "loo": 0.182,
+        "signStability": [
+          98.9,
+          99.7,
+          72.5
+        ]
+      }
+    ],
+    "pooled": [
+      {
+        "label": "P1: haloK + source",
+        "features": [
+          "haloK",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.286,
+        "loo": 0.255,
+        "signStability": [
+          100,
+          100,
+          63.8
+        ]
+      },
+      {
+        "label": "P2: haloK + lhOI + source",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.286,
+        "loo": 0.239,
+        "signStability": [
+          90.6,
+          100,
+          58.4,
+          61.8
+        ]
+      },
+      {
+        "label": "P3: haloK + MR + source",
+        "features": [
+          "haloK",
+          "logMeanRun",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.324,
+        "loo": 0.285,
+        "signStability": [
+          100,
+          100,
+          99.5,
+          99.3
+        ]
+      },
+      {
+        "label": "P4: haloK + lhOI + MR + source",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "logMeanRun",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.325,
+        "loo": 0.276,
+        "signStability": [
+          96.8,
+          100,
+          75.6,
+          99.6,
+          98.6
+        ]
+      },
+      {
+        "label": "P5: top-4 + source",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "logMeanRun",
+          "concentration",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.362,
+        "loo": 0.307,
+        "signStability": [
+          98.6,
+          100,
+          79.5,
+          96.6,
+          99.3,
+          100
+        ]
+      },
+      {
+        "label": "P6: haloK + source + quality",
+        "features": [
+          "haloK",
+          "sourceFlag",
+          "qualityFlag"
+        ],
+        "n": 139,
+        "r2": 0.317,
+        "loo": 0.275,
+        "signStability": [
+          100,
+          100,
+          67.7,
+          98.8
+        ]
+      },
+      {
+        "label": "P7: structure + source",
+        "features": [
+          "logSBeff",
+          "logRdisk",
+          "logMbar",
+          "morphT",
+          "sourceFlag"
+        ],
+        "n": 139,
+        "r2": 0.113,
+        "loo": 0.023,
+        "signStability": [
+          93.1,
+          55.1,
+          54,
+          87.2,
+          66.5,
+          68.9
+        ]
+      },
+      {
+        "label": "P1-HV: haloK + source",
+        "features": [
+          "haloK",
+          "sourceFlag"
+        ],
+        "n": 56,
+        "r2": 0.272,
+        "loo": 0.188,
+        "signStability": [
+          99.9,
+          99.9,
+          70
+        ]
+      },
+      {
+        "label": "P2-HV: haloK + lhOI + source",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "sourceFlag"
+        ],
+        "n": 56,
+        "r2": 0.275,
+        "loo": 0.124,
+        "signStability": [
+          75.7,
+          100,
+          60,
+          63.4
+        ]
+      },
+      {
+        "label": "P3-HV: haloK+lhOI+MR+source",
+        "features": [
+          "haloK",
+          "lhOuter",
+          "logMeanRun",
+          "sourceFlag"
+        ],
+        "n": 56,
+        "r2": 0.426,
+        "loo": 0.289,
+        "signStability": [
+          88,
+          100,
+          51.1,
+          99.8,
+          98.3
+        ]
+      }
+    ]
+  },
+  "crossSampleTransfer": [
+    {
+      "label": "haloK only",
+      "trainN": 45,
+      "testN": 94,
+      "r": 0.511,
+      "r2": 0.25
+    },
+    {
+      "label": "haloK + lhOuter",
+      "trainN": 45,
+      "testN": 94,
+      "r": 0.455,
+      "r2": 0.196
+    },
+    {
+      "label": "SBeff + Rdisk",
+      "trainN": 45,
+      "testN": 94,
+      "r": 0.108,
+      "r2": -0.026
+    },
+    {
+      "label": "Mbar + Rdisk + T",
+      "trainN": 45,
+      "testN": 94,
+      "r": 0.224,
+      "r2": -0.06
+    },
+    {
+      "label": "HV haloK",
+      "trainN": 35,
+      "testN": 21,
+      "r": 0.176,
+      "r2": -0.085
+    },
+    {
+      "label": "HV haloK + lhOuter",
+      "trainN": 35,
+      "testN": 21,
+      "r": -0.034,
+      "r2": -0.27
+    },
+    {
+      "label": "REV haloK",
+      "trainN": 94,
+      "testN": 45,
+      "r": 0.598,
+      "r2": 0.326
+    },
+    {
+      "label": "REV haloK + lhOuter",
+      "trainN": 94,
+      "testN": 45,
+      "r": 0.515,
+      "r2": 0.223
+    }
+  ],
+  "irreducible": [
+    {
+      "label": "INTERNAL best-5",
+      "r2": 0.642,
+      "unexplainedPct": 35.8,
+      "rResidA0": 0.438,
+      "n": 45
+    },
+    {
+      "label": "INTERNAL haloK only",
+      "r2": 0.358,
+      "unexplainedPct": 64.2,
+      "rResidA0": 0.651,
+      "n": 45
+    },
+    {
+      "label": "EXTERNAL best-4",
+      "r2": 0.315,
+      "unexplainedPct": 68.5,
+      "rResidA0": 0.556,
+      "n": 94
+    },
+    {
+      "label": "EXTERNAL haloK only",
+      "r2": 0.261,
+      "unexplainedPct": 73.9,
+      "rResidA0": 0.543,
+      "n": 94
+    },
+    {
+      "label": "POOLED best-4",
+      "r2": 0.318,
+      "unexplainedPct": 68.2,
+      "rResidA0": 0.537,
+      "n": 139
+    }
+  ],
+  "metaComparison": {
+    "topInternal": [
+      {
+        "name": "haloK",
+        "r": 0.598
+      },
+      {
+        "name": "mondImprove",
+        "r": -0.542
+      },
+      {
+        "name": "logMeanRun",
+        "r": 0.388
+      },
+      {
+        "name": "lhOuter",
+        "r": 0.318
+      },
+      {
+        "name": "logSBeff",
+        "r": 0.219
+      }
+    ],
+    "topExternal": [
+      {
+        "name": "haloK",
+        "r": 0.511
+      },
+      {
+        "name": "logMHI",
+        "r": 0.422
+      },
+      {
+        "name": "logMbar",
+        "r": 0.405
+      },
+      {
+        "name": "mondImprove",
+        "r": -0.358
+      },
+      {
+        "name": "logRdisk",
+        "r": 0.348
+      }
+    ],
+    "overlap": 2,
+    "overlapNames": [
+      "haloK",
+      "mondImprove"
+    ]
+  },
+  "caveats": [
+    "External logMhost uses crude Vflat formula — environmental variables may be noisy",
+    "Salvaged galaxies have fewer RAR points or estimated Vflat — lower quality by construction",
+    "envCode and rcWiggliness not available for external sample — internal-only variables",
+    "N=45 internal sample: LOO is the gold standard (small sample risk)",
+    "External haloK/lhOuter from rotation curve fits — same fitting pipeline as internal",
+    "Pooled models should include source flag to avoid blending artifacts"
+  ]
+}
