@@ -2846,4 +2846,105 @@ The combined 7A + 7B finding: gamma_hR = under-concentrated + outer-heavy + smoo
 
 ---
 
+## 39. Program 7C: Halo-Shape Decisive Index (Phase 700C)
+
+**Question**: Can we build a single halo-shape index from 7B's findings (under-concentration, outer excess, disk deficit, quietness) that captures H better than haloResponse and absorbs more of the VfResid–a0Resid channel?
+
+### 39.1 — Index Construction
+
+Two indices built from z-scored 7B components:
+- **S1 (shape-only)** = -z(concResid) + z(outerExcess) + z(diskDeficit)
+- **S2 (shape × quiet)** = S1 × (1 + 0.5 × z(rcSmooth))
+
+**SPARC baseline confirmed: r(VfR, a0R) = 0.804.**
+
+### 39.2 — Test Results
+
+| Test | Description | Result | Score |
+|------|------------|--------|-------|
+| T1: S1/S2 beats haloResponse | r(DQ, S2)=0.284 vs r(DQ, hR)=0.328 | **FAIL** | S2 < hR |
+| T2: Channel absorption | S2 absorbs 0.3% vs hR -4.1% | **PASS** | S2 > hR |
+| T3: Matched-pair validation | 2/3 pairs correct direction | **PASS** | 2/3 |
+| T4: Split-half stability | S1: 0.326/0.225, S2: 0.391/0.181 | **PASS** | stable |
+
+**Overall: 3/4. But the story requires careful interpretation.**
+
+### 39.3 — The Honest Assessment
+
+**T1 is the most informative failure.** haloResponse (r = +0.328) remains the best single proxy for H. S1/S2 (r ≈ 0.28) captures something real and stable but does not displace haloResponse. The halo-shape components are PART of what haloResponse measures, not a replacement.
+
+**T2 reveals a critical truth about absorption.** The incremental absorption ladder shows:
+
+| Step | partial r(VfR, a0R) | Channel absorbed |
+|------|-------------------|-----------------|
+| raw | +0.804 | 0% |
+| + logK + dmFrac + env | +0.575 | 28.4% |
+| + hR | +0.663 | 17.5% |
+| + S1 (on top of logK+dmFrac+env) | +0.550 | 31.6% |
+| + S2 (on top of logK+dmFrac+env) | +0.542 | **32.7%** |
+| + S2 + hR (on top of logK+dmFrac+env) | +0.643 | 20.1% |
+
+**S2 on its own adds 4.3% beyond logK+dmFrac+env (from 28.4% to 32.7%)** — modest but real. However, combining S2 with hR actually REDUCES absorption (to 20.1%), suggesting S2 and hR share variance and their combination introduces multicollinearity noise.
+
+**The channel is 67-72% unabsorbable** by any combination of observables tested. This confirms Program 5C's finding: H is genuinely hidden — 61% of its variance is unrecoverable from all 5 observable dimensions.
+
+### 39.4 — Matched Pairs
+
+| Pair | Target | S1 | S2 | Control | S1 | S2 | Direction |
+|------|--------|-----|-----|---------|-----|-----|-----------|
+| 1 | NGC 2841 | -0.49 | -0.73 | UGC 02953 | -0.38 | -0.62 | wrong |
+| 2 | NGC 3741 | +4.26 | +4.33 | NGC 1705 | +0.45 | +0.29 | **correct** (+3.80) |
+| 3 | ESO563-G021 | +1.58 | +1.90 | NGC 5371 | -1.17 | -1.42 | **correct** (+2.75) |
+
+NGC 2841 (Pair 1) fails — its S1/S2 is negative despite being the highest-DQ galaxy. This is a genuine anomaly: NGC 2841's halo is concentrated but it still has the strongest bilateral residual excess. This suggests H operates through a different mechanism in massive spirals.
+
+### 39.5 — Quintile Profile
+
+| Metric | Q1 (high-H) | Q5 (low-H) | Diff |
+|--------|-------------|------------|------|
+| S1 | +1.205 | -0.909 | **+2.115** |
+| S2 | +1.034 | -1.342 | **+2.376** |
+| concResid | -0.790 | +0.168 | **-0.958** |
+| outerFrac | 66.0% | 48.0% | **+18.0%** |
+| diskFrac | 22.4% | 36.8% | **-14.4%** |
+| haloResponse | 1.078 | 0.868 | **+0.211** |
+
+The quintile split is clean and large for S1/S2. High-H galaxies consistently show: lower concentration, more outer support, less disk support.
+
+### 39.6 — What 7C Actually Tells Us
+
+**The halo-shape index works but doesn't break through.** Three key conclusions:
+
+1. **S1/S2 is a valid, stable proxy for H** (T3, T4 pass; quintile split clean; r = 0.28, p < 0.05). The physical components (under-concentration + outer excess + disk deficit) genuinely track the hidden variable.
+
+2. **But S1/S2 is NOT better than haloResponse** (T1 fails; r = 0.28 < 0.33). The halo-shape components are a subset of what haloResponse captures. haloResponse integrates additional information (perhaps fit-quality aspects beyond simple shape metrics).
+
+3. **The channel is fundamentally resistant to absorption** (~70% remains after all controls). This is the most important finding: H is not reducible to any combination of rotation-curve-derived observables. No matter how we decompose haloResponse or build composite indices, the majority of the bilateral coupling is inaccessible from 1D rotation curves alone.
+
+### 39.7 — Physical Interpretation Update
+
+The picture after Programs 7A + 7B + 7C:
+
+> H is a hidden common-cause state that produces:
+> - **Bilateral residual excess** (VfResid + a0Resid, direct)
+> - **Halo under-concentration** (less concentrated than mass-matched expectations)
+> - **Outward support redistribution** (more outer, less disk halo support)
+> - **Kinematic smoothness** (as a consequence, not a cause)
+>
+> But ~70% of H is invisible in rotation curves. The remaining variance likely requires:
+> - **2D kinematic maps** (IFU data: velocity fields, dispersion maps)
+> - **Halo structure from lensing or X-ray** (physical density profiles, not RC-derived)
+> - **Assembly history from cosmological simulations** (formation epoch, merger history)
+
+### 39.8 — Program 7C Verdict
+
+**3/4 PASS.** The halo-shape index is real, stable, and physically interpretable. But it does not break through the ~70% absorption barrier. The hidden variable H requires non-RC observables to be fully characterised.
+
+**Revised confidence**: ~82%. We now know:
+- What H is NOT (kinematic quietness, inner halo amplitude, core/cusp family)
+- What H partly IS (under-concentration + outward redistribution + smooth coupling)
+- What H mostly IS (genuinely hidden — inaccessible from 1D RCs)
+
+---
+
 ## References

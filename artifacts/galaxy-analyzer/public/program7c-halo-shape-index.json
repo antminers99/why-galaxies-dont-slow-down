@@ -1,0 +1,135 @@
+{
+  "program": "7C",
+  "title": "Halo-Shape Decisive Index",
+  "timestamp": "2026-04-06T18:51:38.032Z",
+  "N": 55,
+  "indices": {
+    "S1_formula": "-z(concResid) + z(outerExcess) + z(diskDeficit)",
+    "S2_formula": "S1 * (1 + 0.5 * z(rcSmooth))"
+  },
+  "correlations": {
+    "concResid": {
+      "r": -0.1827145758581152,
+      "t": -1.3529578834843865,
+      "sig": false
+    },
+    "outerExcess": {
+      "r": 0.16018003909151476,
+      "t": 1.1813825159246392,
+      "sig": false
+    },
+    "diskDeficit": {
+      "r": 0.2549807102940093,
+      "t": 1.9197424903811655,
+      "sig": false
+    },
+    "rcSmooth": {
+      "r": 0.05402639663963593,
+      "t": 0.3938933827052701,
+      "sig": false
+    },
+    "haloResponse": {
+      "r": 0.3284877776801515,
+      "t": 2.531928325365178,
+      "sig": true
+    },
+    "S1 (shape-only)": {
+      "r": 0.28130833682577083,
+      "t": 2.1341375555576563,
+      "sig": true
+    },
+    "S2 (shape x quiet)": {
+      "r": 0.28406950574409007,
+      "t": 2.156914120833525,
+      "sig": true
+    }
+  },
+  "absorption": [
+    {
+      "name": "raw (no controls)",
+      "r": 0.8042985384878967,
+      "reduction": 0
+    },
+    {
+      "name": "ctrl: logK+dmFrac",
+      "r": 0.5892430897782774,
+      "reduction": 0.2673826177950409
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env",
+      "r": 0.575495233670486,
+      "reduction": 0.2844755944074785
+    },
+    {
+      "name": "ctrl: haloResponse",
+      "r": 0.8374695007181084,
+      "reduction": -0.04124210183518939
+    },
+    {
+      "name": "ctrl: S1",
+      "r": 0.8029061253369497,
+      "reduction": 0.001731214324428243
+    },
+    {
+      "name": "ctrl: S2",
+      "r": 0.8019271934170921,
+      "reduction": 0.0029483394005200836
+    },
+    {
+      "name": "ctrl: S1+hR",
+      "r": 0.8427391141448854,
+      "reduction": -0.0477939145945212
+    },
+    {
+      "name": "ctrl: S2+hR",
+      "r": 0.8434671215249409,
+      "reduction": -0.048699060314945086
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env+hR",
+      "r": 0.6634236774615105,
+      "reduction": 0.17515245183863537
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env+S1",
+      "r": 0.5498310325334926,
+      "reduction": 0.31638439432304566
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env+S2",
+      "r": 0.5416005604869971,
+      "reduction": 0.3266175001322009
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env+S2+hR",
+      "r": 0.6429820951819823,
+      "reduction": 0.20056786825597583
+    }
+  ],
+  "matchedPairs": {
+    "S1pass": 2,
+    "S2pass": 2
+  },
+  "stability": {
+    "S1": {
+      "h1": 0.32571634658481136,
+      "h2": 0.224720002401559,
+      "shrink": 0.10099634418325235,
+      "stable": true
+    },
+    "S2": {
+      "h1": 0.3912110421925298,
+      "h2": 0.18106472554682207,
+      "shrink": 0.2101463166457077,
+      "stable": true
+    }
+  },
+  "tests": {
+    "t1": false,
+    "t2": true,
+    "t3": true,
+    "t4": true,
+    "totalPass": 3
+  },
+  "verdict": "HALO-SHAPE INDEX IS THE KEY"
+}

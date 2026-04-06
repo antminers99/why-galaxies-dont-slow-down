@@ -178,6 +178,10 @@ haloResponse coupling real (r=+0.328) but mechanism ≠ inner halo density. Sect
 redistribution, NOT amplitude. r(DQ,concResid) = -0.292, p<0.05. Q1 outer support
 66% vs Q5 48%. Core/cusp family fails (both 91% NFW). Section 38 written.
 
+**Program 7C (Shape Index):** 3/4 PASS. S1/S2 is real/stable but does NOT beat
+haloResponse (r=0.284 vs 0.328). Channel ~70% unabsorbable. r(VfR,a0R) = 0.804
+confirmed. H genuinely hidden from 1D RCs. Section 39 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -251,6 +255,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program6b-decisive-model.cjs` | Program 6B: decisive generative model |
 | `scripts/program7a-halo-profile-test.cjs` | Program 7A: falsify M2 halo profile |
 | `scripts/program7b-halo-shape.cjs` | Program 7B: halo shape not strength |
+| `scripts/program7c-halo-shape-index.cjs` | Program 7C: halo shape decisive index |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -284,3 +289,4 @@ POSSIBLE FUTURE WORK:
 | `public/program6b-decisive-model.json` | Program 6B decisive model |
 | `public/program7a-halo-profile.json` | Program 7A halo profile test |
 | `public/program7b-halo-shape.json` | Program 7B halo shape test |
+| `public/program7c-halo-shape-index.json` | Program 7C halo shape index |
