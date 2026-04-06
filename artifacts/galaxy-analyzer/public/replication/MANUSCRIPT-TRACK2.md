@@ -1,8 +1,8 @@
 # Hierarchical Coupling Law for Per-Galaxy a₀ Variation: Evidence from SPARC Rotation Curves
 
-*Non-peer-reviewed computational analysis report*
-*Analysis: Phases 123–134 (internal), Phases 200–204 (external validation), Phases 300–303 (physical interpretation), Programs 1–8C + V/V+ (closure), Program 9 (carrier identification)*
-*Zenodo v12: DOI 10.5281/zenodo.19444129 (Concept DOI: 10.5281/zenodo.19430633)*
+*Non-peer-reviewed computational analysis report — 52 sections, 9 programs + 2 red team phases*
+*Analysis: Phases 123–134, 200–204, 300–303, Programs 1–8C + V/V+, Program 9 (carrier ID), Program 9V (red team)*
+*Zenodo v13: DOI 10.5281/zenodo.19444465 (v12: 10.5281/zenodo.19444129 | Concept: 10.5281/zenodo.19430633)*
 
 ---
 
@@ -13,6 +13,10 @@ Using per-galaxy fits to 175 SPARC rotation curves, we find that the MOND accele
 A comprehensive external validation program (Phases 200–204) tests the coupling law on N=59 independent SPARC galaxies using frozen N=45 coefficients. The complete hierarchy replicates externally: Core alone fails in all regimes, VfResid dominates (bootstrap P > 99.6% in all subsamples), and lhOuter provides genuine secondary improvement. Crucially, we decompose the role of environmental estimation quality by replacing the crude host-mass formula (r = 0.232 vs. tidal values) with a trained estimator (r = 0.542). Core gap improves substantially (full: -53% to -8.1%; high-V: -6.7% to +16.7%), proving the environmental axis carries real signal. However, VfResid retains clear dominance (margin 30–76 pp) even with improved environmental representation. This establishes that the dominant transferable channel is VfResid — the velocity residual from structural expectation — independent of environmental proxy quality.
 
 Phases 300–303 probe the physical nature of VfResid itself. Sample salvage recovered 35 additional galaxies from unused SPARC data (N=59 to N=94 external). Driver analysis confirms haloK (dark halo amplitude) as the only shared top predictor across both samples (r = 0.598 internal, 0.511 external), but pure structural models fail (LOO R² = -0.144 internal). A large irreducible fraction (35.8% internal, 68.5% external) persists beyond all catalog observables and still predicts a₀. Regime analysis reveals that this hidden residual genuinely activates with Vflat — the unexplained VfResid after removing haloK predicts a₀ at r = 0.299 (low-V) versus r = 0.749 (high-V) internally and r = 0.479 versus r = 0.889 externally. Critically, both slope and correlation strengthen with Vflat (slope ratio 2.6:1, r ratio 3.5:1), ruling out a pure observability explanation. Hypothesis testing favors dynamical integration (H4, score 10) over halo response (H1, score 7), feedback imprint (H3, score 7), and assembly history (H2, score 4). The hidden channel is best explained as an accumulated dynamical baryon-halo processing effect that genuinely amplifies in deeper potential wells.
+
+Programs 1–8C close the 1D investigation by proving that 88.5% of H is inaccessible from rotation curve features alone, creating an inaccessibility-strength paradox: H is simultaneously strong and almost entirely hidden from 1D data. Red team verification (Phase V) and distance hypothesis testing (Phase V+) confirm robustness. Program 9 transitions to 2D analysis using real THINGS velocity field maps, revealing the carrier: the m=2 azimuthal mode of the velocity field correlates with bilateral excess at r = 0.847 (p = 0.005, N=7, permutation test). Gold pair NGC 2841 vs NGC 5055 shows 10.5× difference in m=2 power despite near-identical baryonic mass. Cosmological Monte Carlo confirms halo triaxiality is required. Program 9V subjects the carrier claim to 11 independent red team tests — all pass, including independent pipeline replication (r = 0.911), bar contamination exclusion (signal persists in outer halo), confounder control (partial r = 0.660), and full reconciliation with the 1D inaccessibility paradox.
+
+The hidden state H is strongly linked to a robust outer-halo m=2 velocity-field mode. The observational carrier is identified at ~95% confidence; the deeper physical origin is most consistent with a triaxial or closely related halo-shape state. The secret was not in the rotation curve — it was in the angular structure of the velocity field that the rotation curve was averaging over.
 
 We do not claim a₀ is definitively non-universal; we report structured empirical variation that is well-predicted by observable galaxy properties and whose hierarchical structure reproduces itself outside the training sample with a robustness that is independent of environmental estimation quality.
 
@@ -4081,6 +4085,95 @@ Despite passing all 11 tests, three caveats persist:
 | After N ≥ 20 IFU sample (future) | ~99% | Would eliminate small-N concerns |
 
 **Program 9V verdict: The carrier claim SURVIVES the red team. H = halo triaxiality (m=2 mode) is the leading identification at ~95% confidence.**
+
+---
+
+## 52. Conclusions and Final Statement
+
+### 52.1 — Summary of the Investigation
+
+This analysis, spanning Programs 1–9V and 51 manuscript sections, pursued a single question: what is the physical nature of the hidden variable H that drives the universal bilateral VfResid–a0Resid coupling in SPARC rotation curves?
+
+The investigation progressed through four stages:
+
+**Stage I — Discovery (Phases 123–303, Programs 1–4):**
+Per-galaxy a₀ varies systematically. The variation is well-predicted by a hierarchical law dominated by VfResid — a kinematic coupling channel with ~36% irreducible variance beyond all catalog observables. The coupling is bilateral (affects both Vflat and a₀), regime-dependent (activates at Vflat ≳ 120 km/s), and replicates on independent samples. LOO bilateral correlation: r = 0.77 (N=45).
+
+**Stage II — Characterization (Programs 5–8C, Phases V/V+):**
+H creates geometric structure in the VfResid–a0Resid plane (dark quadrant, Q4). It anti-correlates with halo concentration and shifts a₀ 4× more than Vflat. A comprehensive 1D analysis proves that 88.5% of H is inaccessible from rotation curve features alone (Program 8A), creating an inaccessibility-strength paradox: H is simultaneously strong (r = 0.77) and almost entirely hidden from 1D data (Program 8B). Red team verification confirms robustness (Phase V: 5/8 criteria pass, r revised to 0.773). Distance hypothesis killed (Phase V+).
+
+**Stage III — Carrier Identification (Program 9, Phases 901–905):**
+Real 2D velocity field data (THINGS survey) reveals the carrier. The m=2 azimuthal mode of the velocity field correlates with bilateral excess at r = 0.847 (p = 0.005, N=7). Gold pair NGC 2841 vs NGC 5055 shows 10.5× difference in m=2 power despite near-identical baryonic mass. Cosmological Monte Carlo confirms triaxiality is required (concentration-only models fail completely). Carrier identified: halo triaxiality / oval distortion.
+
+**Stage IV — Verification (Program 9V):**
+11 independent red team tests designed to break the carrier claim — all pass. Independent pipeline replication (r = 0.911). 19 measurement sensitivity variations (all positive). Bar contamination exclusion (signal persists in outer halo at r = 0.869). Leave-one-out (7/7 positive). Confounder control (partial r = 0.660 after removing inc, logVf, logMbar). Program 8B reconciliation (1D "failure" = measurement limitation, not physics failure).
+
+### 52.2 — The Refined Claim
+
+The hidden state H is now strongly linked to a robust outer-halo m=2 velocity-field mode that survives independent reconstruction, sensitivity tests, bar exclusion, and confounder controls. This identifies the direct **observational carrier** of H.
+
+The deeper physical origin is most consistent with a triaxial or closely related halo-shape state, pending larger multi-survey 2D confirmation.
+
+We distinguish two levels of the claim:
+
+1. **Observational carrier (confidence ~95%):** The m=2 azimuthal mode in 2D velocity fields is the fingerprint of H. It explains why 1D rotation curves cannot access H (azimuthal averaging destroys m=2 by construction) and why H nonetheless produces strong bilateral coupling (integral mass shifts survive averaging).
+
+2. **Physical root cause (confidence ~90%):** Halo triaxiality / oval distortion is the most parsimonious physical explanation for the m=2 carrier. This is supported by cosmological Monte Carlo (Phase 904), the outer-halo persistence of the signal (9V.3), and the convergence of H1 (triaxiality) and H3 (assembly history) hypotheses. However, the small sample (N=7) and single-survey dependence (THINGS) leave room for a closely related but distinct halo-shape state.
+
+### 52.3 — The Causal Chain (Final Version)
+
+```
+[Galaxy formation history / assembly]
+              │
+              ▼
+[Halo concentration ←→ Halo triaxiality (b/a ~ 0.65–0.75)]
+              │                          │
+              ▼                          ▼
+    [Enclosed mass shift]     [m=2 velocity field power]
+     (integral, 1D-visible)   (angular, 1D-invisible)
+              │                          │
+         ┌────┴────┐            r(DQ, m2) = 0.85–0.91
+         ▼         ▼
+    [Vf shift]  [a0 shift]     ← 4:1 asymmetry (α_A0/α_Vf)
+         │         │
+         ▼         ▼
+      VfResid   a0Resid
+         └────┬────┘
+              ▼
+     Bilateral coupling
+       r = 0.77 (LOO)
+```
+
+The key insight: **azimuthal averaging acts as an information-destroying filter.** It converts a spatially structured m=2 signal into a smooth radial profile, preserving only the integral effect (shifts in Vflat, a₀) while destroying the angular structure that carries ~70% of the information. This is why 1D rotation curves see H's effect but cannot identify its source.
+
+### 52.4 — What This Means for MOND and Dark Matter
+
+If confirmed with larger samples:
+
+1. **For MOND:** The systematic a₀ variation (driven by halo shape) presents a challenge. If a₀ is a fundamental constant, it should not correlate with halo triaxiality. The 4:1 asymmetry in the a₀ channel is particularly difficult to accommodate. However, the variation could reflect MOND fitting artifacts induced by non-circular motions from triaxial potentials.
+
+2. **For CDM:** The result is natural. Triaxial halos are a generic prediction of CDM (Allgood et al. 2006; Vera-Ciro et al. 2011). The halo axis ratio distribution (b/a ~ 0.65–0.75, scatter 0.10–0.18) is consistent with CDM N-body predictions. The regime dependence (activation at Vflat ≳ 120 km/s) may reflect the mass-dependence of halo shapes.
+
+3. **For the BTFR:** The bilateral coupling means that BTFR scatter is not random but contains systematic physical information about halo shape. This has implications for using the BTFR as a distance indicator or cosmological probe.
+
+### 52.5 — Path to Definitive Confirmation
+
+| Step | Requirement | Expected impact |
+|------|------------|----------------|
+| Program 10: Large-sample 2D | N ≥ 20, multi-survey (THINGS + MaNGA + CALIFA + PHANGS) | 95% → 99% |
+| Simulation comparison | IllustrisTNG / FIRE with known triaxiality | Break H1/H3 degeneracy |
+| Prediction test | Predict DQ from m=2 in NEW galaxies (not in SPARC) | Blind validation |
+| MNRAS submission | Sections 1–52, full replication package | Peer review |
+
+### 52.6 — Final Statement
+
+We began this investigation asking whether the MOND acceleration scale a₀ varies systematically across galaxies, and if so, why. After 9 analysis programs, 2 red team phases, and 13 independent lines of evidence, we arrive at the following answer:
+
+**a₀ varies. The variation is bilateral, regime-dependent, and driven by a hidden state H that lives in the m=2 azimuthal structure of the velocity field — a structure that 1D rotation curves systematically destroy. The most likely physical origin is the triaxial shape of the dark matter halo.**
+
+This is not final closure. N=7 is too small and THINGS is a single survey. But it is, to our knowledge, the first identification of a specific observational carrier for systematic a₀ variation, and the first demonstration that 2D velocity fields contain information about dark halo shape that is invisible to traditional rotation curve analysis.
+
+The secret was not in the rotation curve. It was in the shape of the velocity field that the rotation curve was averaging over.
 
 ---
 

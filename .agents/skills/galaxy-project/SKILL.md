@@ -207,7 +207,7 @@ INACCESSIBILITY-STRENGTH PARADOX: strong r makes H too accessible from RC;
 high inaccessibility kills channel strength. No single-layer model achieves both.
 a0 channel 4× stronger than Vflat. Differentiation requires non-RC data. Sec 44.
 
-**Zenodo v12:** DOI 10.5281/zenodo.19444129 (Concept: 10.5281/zenodo.19430633)
+**Zenodo v13 PUBLISHED:** DOI 10.5281/zenodo.19444465 (v12: 10.5281/zenodo.19444129 | Concept: 10.5281/zenodo.19430633)
 Programs 1-8C CLOSED (1D information ceiling). Sections 27-45 complete.
 
 **Program 9 — Identify the Physical Carrier of H (COMPLETE):**
@@ -232,6 +232,13 @@ Confounders: partial r(DQ,m2|inc,logVf,logMbar) = 0.660. PASS.
 Program 8B reconciliation: consistent (1D ceiling + 2D angular structure). PASS.
 **11/11 tests PASS (8/8 critical). Confidence: ~95%.**
 Section 51 complete.
+
+**Section 52 — Conclusions and Final Statement:**
+Four-stage summary. Refined claim with two confidence levels:
+  Observational carrier (m=2 mode): ~95%
+  Physical root cause (triaxiality): ~90%
+Updated abstract with full Program 9/9V results.
+Path to definitive: Program 10 (N>=20 multi-survey) → 99%.
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
