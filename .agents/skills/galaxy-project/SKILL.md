@@ -77,9 +77,10 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
 - Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** Phase 405b VERIFIED (3/4 checks pass). Universal coupling r≈0.80 CONFIRMED.
-LOO, cross-sample, bootstrap all pass. Sensitivity: 10/15 control sets give flat regime.
-Phase 406 (RC-shape missing variables) is CLEARED to proceed. Sections 11-14 written.
+**Status:** Phase 406 COMPLETE. RC-shape variables DO NOT absorb the channel.
+9 RC-shape proxies tested — none reduce partial r (max Δ=-0.018, threshold -0.10).
+Channel strengthens after RC-shape control (0.717→0.794→0.915). Sections 11-15 written.
+Next: search beyond RC morphology — mass distribution, environment, or acceleration physics.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
@@ -130,6 +131,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase404-scenario-discrimination.cjs` | Phase 404: 4-scenario discrimination |
 | `scripts/phase405-composite-channel.cjs` | Phase 405: tautology test + composite |
 | `scripts/phase405b-verification-freeze.cjs` | Phase 405b: 4-check verification |
+| `scripts/phase406-rc-shape-hunt.cjs` | Phase 406: RC-shape variable hunt |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -139,3 +141,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase404-scenario-discrimination.json` | Phase 404 results |
 | `public/phase405-composite-channel.json` | Phase 405 results |
 | `public/phase405b-verification-freeze.json` | Phase 405b verification |
+| `public/phase406-rc-shape-hunt.json` | Phase 406 RC-shape hunt results |

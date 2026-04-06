@@ -763,6 +763,78 @@ Adding neutral controls (inc, Q, gasFrac, logSig0) does not change the flatness.
 
 ---
 
+## 15. Phase 406: Rotation-Curve Shape Variable Hunt
+
+**Question**: Does any RC-shape variable absorb the universal r ≈ 0.80 channel?
+
+### 15.1 — Variables Derived from Rotation Curves
+
+Nine RC-shape proxies extracted directly from the {R, V} data of each galaxy:
+
+| Variable | Definition | r(.,Vflat) | Taut risk |
+|----------|-----------|------------|-----------|
+| V_Rd_norm | V(Rdisk)/Vflat — inner RC shape | +0.651 | MED |
+| V_2Rd_norm | V(2.2Rd)/Vflat — rise completeness | +0.601 | MED |
+| innerGradNorm | Normalized inner velocity gradient | +0.153 | LOW |
+| concIdx | V(2.2Rd)/V(Rlast) — RC concentration | +0.595 | MED |
+| R70_norm | R(0.7Vflat)/Rdisk — rise radius | −0.602 | MED |
+| R90_norm | R(0.9Vflat)/Rdisk — flat onset radius | −0.608 | MED |
+| outerSlope | Outer RC slope (km/s/kpc) | −0.220 | LOW |
+| outerSlopeNorm | Outer slope / (Vflat/Rmax) | −0.092 | LOW |
+| Rmax_norm | RC extent / Rdisk | −0.475 | MED |
+
+### 15.2 — Absorption Test Results
+
+**Single-variable partial correlations**: No RC-shape variable reduces the channel.
+
+| Variable | raw r | partial r(VfResid, a₀ \| var) | Δ |
+|----------|-------|-------------------------------|------|
+| V_Rd_norm | 0.717 | 0.715 | −0.003 |
+| V_2Rd_norm | 0.717 | 0.709 | −0.008 |
+| innerGradNorm | 0.717 | 0.714 | −0.003 |
+| outerSlopeNorm | 0.717 | 0.700 | −0.018 |
+
+**Clean residual-vs-residual test**: Also no absorption.
+
+| Variable | resid r | partial r(VfResid, a₀_resid \| var) | Δ |
+|----------|---------|-------------------------------------|------|
+| innerGradNorm | 0.804 | 0.795 | −0.009 |
+| outerSlopeNorm | 0.804 | 0.796 | −0.008 |
+| V_2Rd_norm | 0.804 | 0.824 | +0.020 |
+
+Maximum single-variable absorption: Δ = −0.018 (outerSlopeNorm). Threshold for "absorbs": Δ < −0.10. **None qualify.**
+
+### 15.3 — Multi-Variable Combined Test
+
+| Model | partial r(VfResid, a₀) |
+|-------|----------------------|
+| Raw (no controls) | 0.717 |
+| 4 low-tautology RC vars | 0.725 (+0.008) |
+| All 9 RC vars | 0.794 (+0.077) |
+| 6 structural + 9 RC vars | 0.915 (+0.198) |
+
+The channel **strengthens** when controlled for RC-shape, exactly as expected for a genuine irreducible coupling. Adding controls removes noise, making the signal clearer — they do not absorb it.
+
+### 15.4 — What RC-Shape Does Explain
+
+| Model | R²(VfResid) |
+|-------|-------------|
+| 6 structural vars | 0.104 |
+| 9 RC-shape vars | 0.270 |
+| Both combined | 0.391 |
+
+RC-shape variables explain 27% of VfResid variance — they carry real information about velocity residuals. But this information is **orthogonal to the a₀ channel**: removing it does not touch the coupling.
+
+### 15.5 — Phase 406 Verdict
+
+**No rotation-curve shape variable — individually or collectively — absorbs the VfResid–a₀ coupling.**
+
+The hidden channel operates at a level below what RC morphology can capture. Inner shape, rise rate, outer slope, and concentration all carry information about VfResid (R² = 0.27) but none of that information overlaps with the a₀ coupling (partial r unchanged or increased after control).
+
+This eliminates "missing RC shape" as an explanation and narrows the search to variables not derivable from the rotation curve itself — likely requiring information about the mass distribution, environment, or acceleration-scale physics that the RC shape alone cannot encode.
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)

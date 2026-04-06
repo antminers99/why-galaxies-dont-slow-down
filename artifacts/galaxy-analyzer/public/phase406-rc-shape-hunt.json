@@ -1,0 +1,216 @@
+{
+  "phase": "406",
+  "title": "RC-Shape Variable Hunt",
+  "timestamp": "2026-04-06T16:06:03.684Z",
+  "N": 55,
+  "rawR": 0.7174930214897184,
+  "residResidR": 0.8042985384878967,
+  "singleCorrelations": [
+    {
+      "name": "V_Rd_norm",
+      "rVfResid": -0.08919608719171801,
+      "rA0": -0.13872306294024433,
+      "rA0resid": 0.027178814018144842,
+      "rVflat": 0.6508175288509811,
+      "tautRisk": "MED"
+    },
+    {
+      "name": "V_2Rd_norm",
+      "rVfResid": -0.2450400276789645,
+      "rA0": -0.15522542732027692,
+      "rA0resid": -0.02204123864192983,
+      "rVflat": 0.601236429188049,
+      "tautRisk": "MED"
+    },
+    {
+      "name": "innerGradNorm",
+      "rVfResid": 0.28852244428100693,
+      "rA0": 0.1395012256933872,
+      "rA0resid": 0.2029294793760938,
+      "rVflat": 0.15287378421419787,
+      "tautRisk": "LOW"
+    },
+    {
+      "name": "concIdx",
+      "rVfResid": -0.2723934318670823,
+      "rA0": -0.1852997451419013,
+      "rA0resid": -0.05769312815725903,
+      "rVflat": 0.5945376389066116,
+      "tautRisk": "MED"
+    },
+    {
+      "name": "R70_norm",
+      "rVfResid": 0.06764152589460225,
+      "rA0": 0.04623212282899882,
+      "rA0resid": -0.04969801651601235,
+      "rVflat": -0.6018263910866192,
+      "tautRisk": "MED"
+    },
+    {
+      "name": "R90_norm",
+      "rVfResid": 0.08843215188345728,
+      "rA0": 0.04163142616436506,
+      "rA0resid": -0.04358232316376155,
+      "rVflat": -0.6084401716131627,
+      "tautRisk": "MED"
+    },
+    {
+      "name": "outerSlope",
+      "rVfResid": 0.19633241622955497,
+      "rA0": 0.25245578289490606,
+      "rA0resid": 0.15827728121953158,
+      "rVflat": -0.2199124479168752,
+      "tautRisk": "LOW"
+    },
+    {
+      "name": "outerSlopeNorm",
+      "rVfResid": 0.24237117153497165,
+      "rA0": 0.24424952396455435,
+      "rA0resid": 0.19005836023720882,
+      "rVflat": -0.09199300520658618,
+      "tautRisk": "LOW"
+    },
+    {
+      "name": "Rmax_norm",
+      "rVfResid": 0.006332353039602335,
+      "rA0": 0.24713679666585603,
+      "rA0resid": 0.14203023713538723,
+      "rVflat": -0.47508174585699053,
+      "tautRisk": "MED"
+    }
+  ],
+  "absorptionRaw": [
+    {
+      "name": "V_Rd_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7148530220544558,
+      "change": -0.0026399994352626077,
+      "absorbs": false
+    },
+    {
+      "name": "V_2Rd_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7094214266504576,
+      "change": -0.008071594839260787,
+      "absorbs": false
+    },
+    {
+      "name": "innerGradNorm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7143086462573991,
+      "change": -0.003184375232319292,
+      "absorbs": false
+    },
+    {
+      "name": "concIdx",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7054494519230892,
+      "change": -0.01204356956662922,
+      "absorbs": false
+    },
+    {
+      "name": "R70_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7167721131017215,
+      "change": -0.000720908387996877,
+      "absorbs": false
+    },
+    {
+      "name": "R90_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7172408547474965,
+      "change": -0.00025216674222183766,
+      "absorbs": false
+    },
+    {
+      "name": "outerSlope",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7039887085688123,
+      "change": -0.013504312920906036,
+      "absorbs": false
+    },
+    {
+      "name": "outerSlopeNorm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.6997179217973182,
+      "change": -0.01777509969240021,
+      "absorbs": false
+    },
+    {
+      "name": "Rmax_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7388614572406196,
+      "change": 0.021368435750901194,
+      "absorbs": false
+    }
+  ],
+  "absorptionClean": [
+    {
+      "name": "V_Rd_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8102504951140284,
+      "change": 0.0059519566261316825,
+      "absorbs": false
+    },
+    {
+      "name": "V_2Rd_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8242196988912561,
+      "change": 0.01992116040335945,
+      "absorbs": false
+    },
+    {
+      "name": "innerGradNorm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7954218678199714,
+      "change": -0.008876670667925302,
+      "absorbs": false
+    },
+    {
+      "name": "concIdx",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8209421333641026,
+      "change": 0.016643594876205925,
+      "absorbs": false
+    },
+    {
+      "name": "R70_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8105157897112507,
+      "change": 0.006217251223354037,
+      "absorbs": false
+    },
+    {
+      "name": "R90_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8121028768521737,
+      "change": 0.007804338364277075,
+      "absorbs": false
+    },
+    {
+      "name": "outerSlope",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7986382998794578,
+      "change": -0.0056602386084388945,
+      "absorbs": false
+    },
+    {
+      "name": "outerSlopeNorm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7960461735763508,
+      "change": -0.008252364911545906,
+      "absorbs": false
+    },
+    {
+      "name": "Rmax_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8116434428295572,
+      "change": 0.007344904341660574,
+      "absorbs": false
+    }
+  ],
+  "rcModelR2": 0.26991270553615887,
+  "structModelR2": 0.10409948500450139,
+  "bothModelR2": 0.39149170451200566,
+  "partialR_everything": 0.9152969635379056
+}
