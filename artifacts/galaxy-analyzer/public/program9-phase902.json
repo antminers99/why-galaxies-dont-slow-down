@@ -1,0 +1,151 @@
+{
+  "program": 9,
+  "phase": 902,
+  "title": "Map-Level State Test — THINGS Velocity Fields",
+  "timestamp": "2026-04-06T19:53:20.666Z",
+  "galaxiesAnalyzed": 6,
+  "results": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.25,
+      "role": "HIGH-H",
+      "Vflat": 285,
+      "dist": 14.1,
+      "validPixels": 380843,
+      "asymmetry180": 14.1930345287326,
+      "m1_mean": 108831.94736161438,
+      "m2_mean": 15396.481829343878,
+      "m1m0_ratio": 18.724673182089212,
+      "m2m0_ratio": 1.8493521628442535,
+      "quadrantBalance": 46859.51833234038,
+      "halfFluxAsymmetry": 0.06643375602205037,
+      "paTwist_deg": 2.429038942937051,
+      "coherenceInner": 0.5880924106660909,
+      "coherenceOuter": 0.7389949668450907,
+      "coherenceRatio": 0.7958002923575631
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.52,
+      "role": "LOW-H",
+      "Vflat": 179,
+      "dist": 9.9,
+      "validPixels": 859256,
+      "asymmetry180": 12.996094033925178,
+      "m1_mean": 63900.29422259524,
+      "m2_mean": 1668.8275130733841,
+      "m1m0_ratio": 205.03522840788236,
+      "m2m0_ratio": 4.753194070475659,
+      "quadrantBalance": 14759.34182454519,
+      "halfFluxAsymmetry": 0.04726793526718749,
+      "paTwist_deg": 17.196492222851152,
+      "coherenceInner": 0.1124230810752456,
+      "coherenceOuter": 0.02141927974061454,
+      "coherenceRatio": 5.24868634411047
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.52,
+      "role": "MID-HIGH",
+      "Vflat": 214,
+      "dist": 7.7,
+      "validPixels": 185365,
+      "asymmetry180": 26.76442784617849,
+      "m1_mean": 78366.40775591478,
+      "m2_mean": 10235.121628641333,
+      "m1m0_ratio": 11.115461506478823,
+      "m2m0_ratio": 1.7605352354583237,
+      "quadrantBalance": 128864.13469862644,
+      "halfFluxAsymmetry": 0.35002086670348115,
+      "paTwist_deg": 2.1160074429967732,
+      "coherenceInner": 0.8953625235404896,
+      "coherenceOuter": 1,
+      "coherenceRatio": 0.8953625235404896
+    },
+    {
+      "name": "NGC6946",
+      "DQ": -1.07,
+      "role": "LOW-H",
+      "Vflat": 158,
+      "dist": 5.9,
+      "validPixels": 784887,
+      "asymmetry180": 29.190190968653628,
+      "m1_mean": 44907.02214383822,
+      "m2_mean": 2507.203208472143,
+      "m1m0_ratio": 29.373518906662746,
+      "m2m0_ratio": 1.1371887127956732,
+      "quadrantBalance": 19317.045584589956,
+      "halfFluxAsymmetry": 0.04287593021384158,
+      "paTwist_deg": 2.8843231669873584,
+      "coherenceInner": 0.88856186207269,
+      "coherenceOuter": 0.8555168390597123,
+      "coherenceRatio": 1.0386258008074942
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.14,
+      "role": "NEUTRAL",
+      "Vflat": 239,
+      "dist": 14.7,
+      "validPixels": 103012,
+      "asymmetry180": 79.7310017183253,
+      "m1_mean": 102198.70964084621,
+      "m2_mean": 3254.538682342056,
+      "m1m0_ratio": 1.9668918128735953,
+      "m2m0_ratio": 0.06677034742972683,
+      "quadrantBalance": 166161.25817646814,
+      "halfFluxAsymmetry": 0.4017993354689256,
+      "paTwist_deg": 4.082616417333469,
+      "coherenceInner": 0.16578419191436491,
+      "coherenceOuter": 0.004096385542168675,
+      "coherenceRatio": 40.4708468496832
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.14,
+      "role": "NEUTRAL",
+      "Vflat": 131,
+      "dist": 3.2,
+      "validPixels": 2349946,
+      "asymmetry180": 14.263688558971024,
+      "m1_mean": 46204.9397417745,
+      "m2_mean": 2375.09192039625,
+      "m1m0_ratio": 20.68050098244333,
+      "m2m0_ratio": 1.022830978228302,
+      "quadrantBalance": 13299.975878305062,
+      "halfFluxAsymmetry": 0.012795659243675834,
+      "paTwist_deg": 9.013318789617456,
+      "coherenceInner": 0.38559081892887503,
+      "coherenceOuter": 0.3647542122238471,
+      "coherenceRatio": 1.057125061224079
+    }
+  ],
+  "strongCorrelations": [
+    {
+      "metric": "m1_mean",
+      "r": 0.6558882463933535
+    },
+    {
+      "metric": "m2_mean",
+      "r": 0.8993950970487203
+    },
+    {
+      "metric": "m1m0_ratio",
+      "r": -0.5845264365082435
+    },
+    {
+      "metric": "paTwist_deg",
+      "r": -0.5876403855450535
+    }
+  ],
+  "moderateCorrelations": [
+    {
+      "metric": "m2m0_ratio",
+      "r": -0.3344277599829184
+    },
+    {
+      "metric": "coherenceOuter",
+      "r": 0.41818977574958066
+    }
+  ]
+}

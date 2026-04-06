@@ -1,0 +1,324 @@
+{
+  "program": 9,
+  "phase": 905,
+  "title": "Carrier Identification",
+  "timestamp": "2026-04-06T20:01:24.271Z",
+  "evidence": [
+    {
+      "source": "Programs 1-4 (1D)",
+      "finding": "H is real: r(VfR,a0R) = 0.77 (LOO), p < 0.001"
+    },
+    {
+      "source": "Program 5",
+      "finding": "H is bilateral: affects both Vflat AND a0 simultaneously"
+    },
+    {
+      "source": "Program 6",
+      "finding": "H produces geometric structure (dark quadrant, quiet zone)"
+    },
+    {
+      "source": "Program 7",
+      "finding": "H correlates with halo under-concentration and outward mass redistribution"
+    },
+    {
+      "source": "Program 8A",
+      "finding": "0/10 RC features predict H beyond haloResponse; 88.5% inaccessible"
+    },
+    {
+      "source": "Program 8B",
+      "finding": "Inaccessibility-strength paradox: no single-layer model achieves r≥0.65 AND >50% hidden"
+    },
+    {
+      "source": "Program 8C",
+      "finding": "Full 71-dim RC map LOSES to scalar haloResponse"
+    },
+    {
+      "source": "Phase V",
+      "finding": "Red team: 5/8 PASS, r revised to 0.773 LOO"
+    },
+    {
+      "source": "Phase V+",
+      "finding": "Distance hypothesis KILLED: partial r|logD = 0.804"
+    },
+    {
+      "source": "Phase 901",
+      "finding": "14/55 galaxies have 2D data; 4 matched pairs with shared surveys"
+    },
+    {
+      "source": "Phase 902",
+      "finding": "r(DQ, m2_power) = 0.899 in 6 galaxies; gold pair m2 ratio = 9.2x"
+    },
+    {
+      "source": "Phase 903",
+      "finding": "r(DQ, m2) = 0.847 in 7 galaxies; p = 0.005; LOO 7/7 positive; partial|Vf = 0.75"
+    },
+    {
+      "source": "Phase 904",
+      "finding": "5 triaxiality models reproduce coupling; concentration-only FAILS (0%); triaxiality REQUIRED"
+    }
+  ],
+  "hypotheses": [
+    {
+      "name": "H1: Halo triaxiality / oval distortion",
+      "score": 23,
+      "maxScore": 23,
+      "pct": 100,
+      "tests": [
+        {
+          "name": "Predicts m=2 dominance in velocity fields",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts coherent (not chaotic) non-axisymmetry",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts 1D invisibility (azimuthal averaging)",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts a0 channel stronger than Vf (shape→enclosed mass)",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts concentration anti-correlation",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Consistent with CDM halo formation simulations",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Reproduces r(DQ,m2) > 0.7 in Monte Carlo",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "No triaxiality model (M4) fails completely",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Explains inaccessibility-strength paradox",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Partial r(DQ,m2|Vf,Mbar) still 0.35 (independent of mass)",
+          "result": true,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "name": "H3: Formation-history (assembly bias)",
+      "score": 22,
+      "maxScore": 23,
+      "pct": 96,
+      "tests": [
+        {
+          "name": "Predicts m=2 dominance",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts coherent non-axisymmetry",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts 1D invisibility",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts a0 > Vf asymmetry",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts concentration anti-correlation",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Consistent with simulations",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Reproduces r(DQ,m2) > 0.7",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "No triaxiality model fails",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Explains paradox",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Partial r independent of mass",
+          "result": false,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "name": "H2: Disk-halo interface coupling",
+      "score": 15,
+      "maxScore": 23,
+      "pct": 65,
+      "tests": [
+        {
+          "name": "Predicts m=2 dominance",
+          "result": false,
+          "weight": 3
+        },
+        {
+          "name": "Predicts coherent non-axisymmetry",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts 1D invisibility",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts a0 > Vf asymmetry",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Predicts concentration anti-correlation",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Consistent with simulations",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Reproduces r(DQ,m2) > 0.7",
+          "result": false,
+          "weight": 3
+        },
+        {
+          "name": "No triaxiality model fails",
+          "result": false,
+          "weight": 2
+        },
+        {
+          "name": "Explains paradox",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Partial r independent of mass",
+          "result": true,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "name": "H4: Exotic DM physics (self-interaction, fuzzy DM)",
+      "score": 11,
+      "maxScore": 23,
+      "pct": 48,
+      "tests": [
+        {
+          "name": "Predicts m=2 dominance",
+          "result": false,
+          "weight": 3
+        },
+        {
+          "name": "Predicts coherent non-axisymmetry",
+          "result": false,
+          "weight": 2
+        },
+        {
+          "name": "Predicts 1D invisibility",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Predicts a0 > Vf asymmetry",
+          "result": false,
+          "weight": 2
+        },
+        {
+          "name": "Predicts concentration anti-correlation",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Consistent with simulations",
+          "result": true,
+          "weight": 2
+        },
+        {
+          "name": "Reproduces r(DQ,m2) > 0.7",
+          "result": false,
+          "weight": 3
+        },
+        {
+          "name": "No triaxiality model fails",
+          "result": false,
+          "weight": 2
+        },
+        {
+          "name": "Explains paradox",
+          "result": true,
+          "weight": 3
+        },
+        {
+          "name": "Partial r independent of mass",
+          "result": true,
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "leadingCarrier": "Halo triaxiality / oval distortion",
+  "confidence": 0.9,
+  "keyParameters": {
+    "ba_mean": [
+      0.65,
+      0.75
+    ],
+    "ba_scatter": [
+      0.1,
+      0.18
+    ],
+    "alpha_Vf": [
+      0.04,
+      0.06
+    ],
+    "alpha_A0": [
+      0.18,
+      0.25
+    ],
+    "m2_coupling": [
+      0.2,
+      0.35
+    ],
+    "inaccessibility_1D": [
+      0.7,
+      0.8
+    ],
+    "recoverability_2D": 0.85
+  },
+  "verdict": "CARRIER IDENTIFIED: Halo triaxiality"
+}

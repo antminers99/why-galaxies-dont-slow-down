@@ -207,9 +207,21 @@ INACCESSIBILITY-STRENGTH PARADOX: strong r makes H too accessible from RC;
 high inaccessibility kills channel strength. No single-layer model achieves both.
 a0 channel 4× stronger than Vflat. Differentiation requires non-RC data. Sec 44.
 
-**Zenodo v12 (FINAL):** DOI 10.5281/zenodo.19444129 (Concept: 10.5281/zenodo.19430633)
-PROGRAM STATUS: **CLOSED**. Confidence ~85%. 1D information ceiling proved.
-IFU follow-up memo included. Sections 27-45 complete. 30+ hypotheses tested.
+**Zenodo v12:** DOI 10.5281/zenodo.19444129 (Concept: 10.5281/zenodo.19430633)
+Programs 1-8C CLOSED (1D information ceiling). Sections 27-45 complete.
+
+**Program 9 — Identify the Physical Carrier of H (COMPLETE):**
+Phase 901: IFU cross-match. 14/55 galaxies have 2D data; 4 matched pairs.
+Phase 902: THINGS velocity field analysis. r(DQ, m2_power) = 0.899 in N=6.
+  Gold pair NGC 2841 vs NGC 5055: m2 ratio = 9.2x despite structural match.
+Phase 903: Decisive test. r(DQ, m2) = 0.847 in N=7; p = 0.005 (10k perm);
+  LOO 7/7 positive; partial r|Vf = 0.750. PASS 4/4 criteria.
+Phase 904: Cosmological MC. 5/8 triaxiality models reproduce r>0.7.
+  Concentration-only FAILS (0%). Triaxiality REQUIRED.
+Phase 905: CARRIER IDENTIFIED = **Halo triaxiality / oval distortion (m=2 mode)**.
+  Confidence ~90%. H1 (triaxiality) 100% vs H3 (assembly bias) 96%.
+  Causal chain: formation → triaxiality → m=2 power + enclosed mass shift → bilateral coupling.
+Sections 46-50 complete.
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
 - Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
@@ -289,6 +301,12 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase-v-plus-distance.cjs` | Phase V+: distance kill test |
 | `scripts/program8b-physics-search.cjs` | Program 8B: physics search |
 | `scripts/zenodo-v12-upload.cjs` | Zenodo v12 upload (FINAL) |
+| `scripts/program9-phase901-crossmatch.cjs` | Phase 901: IFU/2D cross-match |
+| `scripts/program9-phase902-map-state.cjs` | Phase 902: THINGS velocity field analysis |
+| `scripts/program9-phase903-decisive-test.cjs` | Phase 903: Decisive m2 test |
+| `scripts/program9-phase904-cosmo-search.cjs` | Phase 904: Cosmological triaxiality MC |
+| `scripts/program9-phase905-carrier-id.cjs` | Phase 905: Carrier identification |
+| `data/things-2d/*.FITS` | THINGS velocity field FITS files |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |

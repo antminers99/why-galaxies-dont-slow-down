@@ -1,0 +1,72 @@
+{
+  "program": 9,
+  "phase": 904,
+  "title": "Cosmological Hidden-State Search",
+  "timestamp": "2026-04-06T20:00:04.096Z",
+  "observed": {
+    "r_DQ_m2": 0.8466761816318997,
+    "r_DQ_m2_partial_Vf": 0.7501770159708642,
+    "r_DQ_m2_partial_VfMb": 0.3494822679264935,
+    "m2_ratio_gold": 10.5,
+    "loo_all_positive": true,
+    "loo_min": 0.617657700795773,
+    "perm_p": 0.0049
+  },
+  "models": [
+    {
+      "name": "M1: Strong triaxiality coupling",
+      "mean_r": 0.7377660657416921,
+      "std_r": 0.028960959070639804,
+      "matchRate": 0.91
+    },
+    {
+      "name": "M2: Moderate triaxiality",
+      "mean_r": 0.6517014644686037,
+      "std_r": 0.026710507524712296,
+      "matchRate": 0.01
+    },
+    {
+      "name": "M3: Weak triaxiality",
+      "mean_r": 0.5515015017095106,
+      "std_r": 0.026794643455677152,
+      "matchRate": 0
+    },
+    {
+      "name": "M4: Concentration-driven (no triaxiality)",
+      "mean_r": 0.4760883746494136,
+      "std_r": 0.03128518367595081,
+      "matchRate": 0
+    },
+    {
+      "name": "M5: Formation-history (assembly bias)",
+      "mean_r": 0.7241441104986441,
+      "std_r": 0.025970207219352875,
+      "matchRate": 0.84
+    },
+    {
+      "name": "M6: Strong coupling, high noise",
+      "mean_r": 0.772673985171475,
+      "std_r": 0.03394641587331565,
+      "matchRate": 0.95
+    },
+    {
+      "name": "M7: CDM-calibrated (Allgood+2006)",
+      "mean_r": 0.7122627708681335,
+      "std_r": 0.02576020979611962,
+      "matchRate": 0.68
+    },
+    {
+      "name": "M8: Extreme triaxiality",
+      "mean_r": 0.7687779608785035,
+      "std_r": 0.030685225575650298,
+      "matchRate": 0.98
+    }
+  ],
+  "bestModel": {
+    "name": "M8: Extreme triaxiality",
+    "mean_r": 0.7687779608785035,
+    "matchRate": 0.98
+  },
+  "criteriaPass": 5,
+  "verdict": "PASS"
+}

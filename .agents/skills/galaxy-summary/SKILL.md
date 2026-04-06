@@ -5,8 +5,8 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: PROGRAM CLOSED — Zenodo v12 (DOI: 10.5281/zenodo.19444129)
-## Complete Scientific Narrative (Phases 134 + 200–204 + 300–303 + Programs 1–8C + V/V+)
+## STATUS: CARRIER IDENTIFIED — Halo Triaxiality (m=2 mode)
+## Programs 1–8C (1D closure) + Program 9 (2D carrier identification) COMPLETE
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN
