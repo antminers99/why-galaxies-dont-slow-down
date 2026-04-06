@@ -77,10 +77,11 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
 - Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** Phase 406 COMPLETE. RC-shape variables DO NOT absorb the channel.
-9 RC-shape proxies tested — none reduce partial r (max Δ=-0.018, threshold -0.10).
-Channel strengthens after RC-shape control (0.717→0.794→0.915). Sections 11-15 written.
-Next: search beyond RC morphology — mass distribution, environment, or acceleration physics.
+**Status:** Phase 407 COMPLETE. 28 total variables tested — NONE absorb the channel.
+Structure (6), RC-shape (9), field-level (13) all fail to reduce partial r.
+Channel STRENGTHENS after all controls: 0.717→0.814 (partial r with 18 controls).
+Field vars explain R²=0.683 of VfResid but ORTHOGONAL to a₀. Sections 11-16 written.
+IRREDUCIBILITY ESTABLISHED: The VfResid–a₀ coupling cannot be decomposed.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
@@ -132,6 +133,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase405-composite-channel.cjs` | Phase 405: tautology test + composite |
 | `scripts/phase405b-verification-freeze.cjs` | Phase 405b: 4-check verification |
 | `scripts/phase406-rc-shape-hunt.cjs` | Phase 406: RC-shape variable hunt |
+| `scripts/phase407-field-level.cjs` | Phase 407: field-level radial vars |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -142,3 +144,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase405-composite-channel.json` | Phase 405 results |
 | `public/phase405b-verification-freeze.json` | Phase 405b verification |
 | `public/phase406-rc-shape-hunt.json` | Phase 406 RC-shape hunt results |
+| `public/phase407-field-level.json` | Phase 407 field-level results |

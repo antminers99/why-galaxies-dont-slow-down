@@ -1,0 +1,314 @@
+{
+  "phase": "407",
+  "title": "Field-Level / Radial Coupling Variables",
+  "timestamp": "2026-04-06T16:12:55.540Z",
+  "N": 55,
+  "rawR": 0.7174930214897184,
+  "residResidR": 0.8042985384878967,
+  "singleCorrelations": [
+    {
+      "name": "logMeanAccRatio",
+      "rVfResid": 0.23333705895719736,
+      "rA0": 0.2681120912042102,
+      "rA0resid": 0.3241036993821564,
+      "rVflat": -0.08990854269438008,
+      "tautRisk": "LOW",
+      "desc": "log mean g_obs/g_bar across RC"
+    },
+    {
+      "name": "accGradient",
+      "rVfResid": 0.1667304179801078,
+      "rA0": 0.21008146841690098,
+      "rA0resid": 0.26245150676022083,
+      "rVflat": -0.062194571075871334,
+      "tautRisk": "LOW",
+      "desc": "outer - inner acceleration ratio"
+    },
+    {
+      "name": "normMismatch",
+      "rVfResid": 0.11162930505441238,
+      "rA0": 0.21308013989283325,
+      "rA0resid": 0.3142203250204299,
+      "rVflat": 0.17933302130820078,
+      "tautRisk": "LOW",
+      "desc": "integrated V² mismatch / (Vfl²·Rext)"
+    },
+    {
+      "name": "R_trans_norm",
+      "rVfResid": -0.19537135920411747,
+      "rA0": -0.030188775810407676,
+      "rA0resid": -0.16677082201999827,
+      "rVflat": -0.42112947563169406,
+      "tautRisk": "MED",
+      "desc": "transition R (accRatio>1.5) / Rdisk"
+    },
+    {
+      "name": "transWidth",
+      "rVfResid": -0.08655017065511587,
+      "rA0": -0.03522248954123171,
+      "rA0resid": -0.12750452586302727,
+      "rVflat": -0.21024479006858576,
+      "tautRisk": "LOW",
+      "desc": "transition zone width / Rdisk"
+    },
+    {
+      "name": "radialCoherence",
+      "rVfResid": 0.20642106918557945,
+      "rA0": 0.2582531511265158,
+      "rA0resid": 0.35027156916219415,
+      "rVflat": 0.0433043314228143,
+      "tautRisk": "LOW",
+      "desc": "autocorr of V_excess profile"
+    },
+    {
+      "name": "slopeAccMismatch",
+      "rVfResid": 0.0988336444392246,
+      "rA0": 0.11418247449362479,
+      "rA0resid": 0.01340883938940404,
+      "rVflat": -0.5110421204761271,
+      "tautRisk": "MED",
+      "desc": "d(logAccRatio)/d(logR) slope"
+    },
+    {
+      "name": "darkDom_norm",
+      "rVfResid": -0.297344816188716,
+      "rA0": -0.07170220951238208,
+      "rA0resid": -0.12632737568606933,
+      "rVflat": 0.022674562254326125,
+      "tautRisk": "LOW",
+      "desc": "dark dominance radius / Rdisk"
+    },
+    {
+      "name": "haloStrength",
+      "rVfResid": 0.5640653516311754,
+      "rA0": 0.2793558674875102,
+      "rA0resid": 0.3323383128046181,
+      "rVflat": 0.5894101342489533,
+      "tautRisk": "MED",
+      "desc": "log(k_halo) from linear model"
+    },
+    {
+      "name": "barFrac_Rd",
+      "rVfResid": -0.03443873676028588,
+      "rA0": 0.022514206730564777,
+      "rA0resid": -0.07783873801776442,
+      "rVflat": -0.5084158513409014,
+      "tautRisk": "MED",
+      "desc": "g_bar/g_obs at R=Rdisk"
+    },
+    {
+      "name": "barFrac_2Rd",
+      "rVfResid": 0.028321617753864034,
+      "rA0": 0.11871540827209462,
+      "rA0resid": -0.018952377860696184,
+      "rVflat": -0.5198990428713501,
+      "tautRisk": "MED",
+      "desc": "g_bar/g_obs at R=2Rdisk"
+    },
+    {
+      "name": "innerAccRatio",
+      "rVfResid": 0.25818067432477043,
+      "rA0": 0.3491789601205606,
+      "rA0resid": 0.41125298499089963,
+      "rVflat": 0.06731970611544191,
+      "tautRisk": "LOW",
+      "desc": "log mean accRatio inner half"
+    },
+    {
+      "name": "outerAccRatio",
+      "rVfResid": 0.23653863365354558,
+      "rA0": 0.2589792589998995,
+      "rA0resid": 0.3156503223688698,
+      "rVflat": -0.09646026137273722,
+      "tautRisk": "LOW",
+      "desc": "log mean accRatio outer half"
+    }
+  ],
+  "absorptionRaw": [
+    {
+      "name": "logMeanAccRatio",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.6991209735852897,
+      "change": -0.0183720479044287,
+      "absorbs": false
+    },
+    {
+      "name": "accGradient",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7079532360847505,
+      "change": -0.009539785404967915,
+      "absorbs": false
+    },
+    {
+      "name": "normMismatch",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7144782176244963,
+      "change": -0.0030148038652221265,
+      "absorbs": false
+    },
+    {
+      "name": "R_trans_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7259082142533138,
+      "change": 0.00841519276359537,
+      "absorbs": false
+    },
+    {
+      "name": "transWidth",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.741831063860337,
+      "change": 0.02433804237061865,
+      "absorbs": false
+    },
+    {
+      "name": "radialCoherence",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7026387625262351,
+      "change": -0.014854258963483247,
+      "absorbs": false
+    },
+    {
+      "name": "slopeAccMismatch",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7143546049296929,
+      "change": -0.0031384165600254477,
+      "absorbs": false
+    },
+    {
+      "name": "darkDom_norm",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7310337963080756,
+      "change": 0.013540774818357248,
+      "absorbs": false
+    },
+    {
+      "name": "haloStrength",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7062040772081463,
+      "change": -0.011288944281572122,
+      "absorbs": false
+    },
+    {
+      "name": "barFrac_Rd",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7188769229658619,
+      "change": 0.0013839014761435342,
+      "absorbs": false
+    },
+    {
+      "name": "barFrac_2Rd",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.7195055001631459,
+      "change": 0.0020124786734274647,
+      "absorbs": false
+    },
+    {
+      "name": "innerAccRatio",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.692975771378437,
+      "change": -0.024517250111281363,
+      "absorbs": false
+    },
+    {
+      "name": "outerAccRatio",
+      "rawR": 0.7174930214897184,
+      "partialR": 0.6992575424204011,
+      "change": -0.01823547906931733,
+      "absorbs": false
+    }
+  ],
+  "absorptionClean": [
+    {
+      "name": "logMeanAccRatio",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7921156567978189,
+      "change": -0.012182881690077751,
+      "absorbs": false
+    },
+    {
+      "name": "accGradient",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7993580077122219,
+      "change": -0.004940530775674801,
+      "absorbs": false
+    },
+    {
+      "name": "normMismatch",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8153580996663062,
+      "change": 0.01105956117840956,
+      "absorbs": false
+    },
+    {
+      "name": "R_trans_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7980562256416628,
+      "change": -0.006242312846233888,
+      "absorbs": false
+    },
+    {
+      "name": "transWidth",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8260306631810955,
+      "change": 0.02173212469319885,
+      "absorbs": false
+    },
+    {
+      "name": "radialCoherence",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7987063910011503,
+      "change": -0.005592147486746413,
+      "absorbs": false
+    },
+    {
+      "name": "slopeAccMismatch",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8069965694120698,
+      "change": 0.0026980309241730893,
+      "absorbs": false
+    },
+    {
+      "name": "darkDom_norm",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8095435011068023,
+      "change": 0.005244962618905613,
+      "absorbs": false
+    },
+    {
+      "name": "haloStrength",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7920407024645427,
+      "change": -0.012257836023353952,
+      "absorbs": false
+    },
+    {
+      "name": "barFrac_Rd",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8045346521145228,
+      "change": 0.00023611362662612212,
+      "absorbs": false
+    },
+    {
+      "name": "barFrac_2Rd",
+      "residR": 0.8042985384878967,
+      "partialR": 0.8053029220715098,
+      "change": 0.0010043835836130999,
+      "absorbs": false
+    },
+    {
+      "name": "innerAccRatio",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7927628824449742,
+      "change": -0.011535656042922504,
+      "absorbs": false
+    },
+    {
+      "name": "outerAccRatio",
+      "residR": 0.8042985384878967,
+      "partialR": 0.7914054462777829,
+      "change": -0.01289309221011381,
+      "absorbs": false
+    }
+  ],
+  "partialR_everything": 0.8142272287387131
+}
