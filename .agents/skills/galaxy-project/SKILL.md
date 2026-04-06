@@ -165,6 +165,10 @@ Quietness tests ALL FAIL (smoothness 1/3, s1/Vf 1/3, asymmetry 0/3, coherence 1/
 Total 3/7 inconclusive, but the split confirms 5B: bilateral drive is real,
 quietness is not the mechanism. Section 35 written.
 
+**Program 6B (Decisive Model):** M2 (Common-Cause + Halo Coupling) = 6/6 LEAD MODEL.
+M1 fails T2 (needs gamma_hR). M3 = M2 (delta_dq unnecessary). All tuning variants 6/6.
+At x1.5 amplitude: r=0.803 matches SPARC. 5 seeds all 6/6. Section 36 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -235,6 +239,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program5b-necessity-test.cjs` | Program 5B: necessity test |
 | `scripts/program5c-causal-topology.cjs` | Program 5C: causal topology |
 | `scripts/program6a-matched-ifu.cjs` | Program 6A: matched IFU measurement |
+| `scripts/program6b-decisive-model.cjs` | Program 6B: decisive generative model |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -265,3 +270,4 @@ POSSIBLE FUTURE WORK:
 | `public/program5b-necessity-test.json` | Program 5B necessity test |
 | `public/program5c-causal-topology.json` | Program 5C causal topology |
 | `public/program6a-matched-ifu.json` | Program 6A matched IFU |
+| `public/program6b-decisive-model.json` | Program 6B decisive model |

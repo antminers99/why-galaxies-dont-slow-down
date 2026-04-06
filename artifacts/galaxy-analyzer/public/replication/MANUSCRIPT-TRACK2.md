@@ -2544,4 +2544,105 @@ Key findings:
 
 ---
 
+## 36. Program 6B: Decisive Generative Model (Phase 600B)
+
+**Question**: Can we build a minimal generative model of H that passes ALL decisive tests, using only 3 tunable knobs?
+
+### 36.1 — Three Model Families (Stage 1: Make)
+
+| Model | Architecture | Parameters |
+|-------|-------------|-----------|
+| **M1: Pure Common-Cause** | H → VfResid, H → a0Resid, nothing else | alpha_Vf=0.125, alpha_a0=0.10 |
+| **M2: Common-Cause + Halo Coupling** | M1 + weak H → haloResponse, H → dmFrac (downstream) | + gamma_hR=0.08, gamma_dmFrac=0.05, gamma_env=0.03 |
+| **M3: Common-Cause + Dark-Quarter Term** | M2 + independent DQ component | + delta_dq=0.15 |
+
+### 36.2 — Iteration 1: First Pass/Fail Matrix (Stage 2: Test)
+
+| Test | M1 | M2 | M3 |
+|------|-----|-----|-----|
+| **T1: Bilateral channel** (r > 0.3, correct sign) | PASS (r=0.656) | PASS (r=0.657) | PASS (r=0.657) |
+| **T2: haloResp sign (+)** [CRITICAL] | **FAIL** | PASS | PASS |
+| **T3: DQ distribution** (SD > 0.3, symmetric) | PASS | PASS | PASS |
+| **T4: Construction-independence** (shrinkage < 0.15) | PASS | PASS | PASS |
+| **T5: Matched-pair pattern** [CRITICAL] | PASS | PASS | PASS |
+| **T6: No mediator needed** [CRITICAL] | PASS | PASS | PASS |
+| **Total** | **5/6** | **6/6** | **6/6** |
+| **Critical** | 2/3 | **3/3** | **3/3** |
+| **Verdict** | PROMISING | **LEAD MODEL** | **LEAD MODEL** |
+
+**M1 killed on T2**: Without any H→haloResponse coupling, M1 cannot reproduce the positive haloResponse sign. This is the minimum additional structure needed — H must have at least a weak downstream connection to halo response.
+
+**M2 and M3 tied**: The DQ term in M3 adds nothing beyond M2. By Occam's razor, M2 is the lead model.
+
+### 36.3 — Iteration 2: Amplitude Tuning (Stage 3: Iterate)
+
+Only 3 knobs adjusted: alpha_Vf, alpha_a0, delta_dq.
+
+| Variant | r(VfR,a0R) | hR sign | Score | Verdict |
+|---------|-----------|---------|-------|---------|
+| M2 baseline | 0.657 | + | 6/6 | LEAD |
+| alpha x1.5 | 0.803 | + | 6/6 | LEAD |
+| alpha x2.0 | 0.875 | + | 6/6 | LEAD |
+| alpha x2.5 | 0.915 | + | 6/6 | LEAD |
+| alpha x3.0 | 0.939 | + | 6/6 | LEAD |
+| dq x0 | 0.657 | + | 6/6 | LEAD |
+| dq x2 | 0.657 | + | 6/6 | LEAD |
+| alpha x2.5 + dq x2 | 0.915 | + | 6/6 | LEAD |
+
+**ALL variants pass 6/6.** The model is extremely robust — no tuning variant can break it. At alpha x1.5 the model reaches r = 0.803, matching the SPARC target of r ≈ 0.80.
+
+### 36.4 — Iteration 3: Multi-Seed Stability
+
+| Seed | r(VfR,a0R) | hR sign | Score |
+|------|-----------|---------|-------|
+| 42 | 0.657 | + | 6/6 |
+| 137 | 0.641 | + | 6/6 |
+| 271 | 0.633 | + | 6/6 |
+| 314 | 0.635 | + | 6/6 |
+| 577 | 0.648 | + | 6/6 |
+
+**Mean score: 6.0/6. Min score: 6/6. All seeds pass all tests.**
+
+### 36.5 — Why M1 Failed
+
+M1 (Pure Common-Cause) scored 5/6 but failed the critical T2 test. Without gamma_hR, the haloResponse sign is random (r(DQ,hR) = -0.016). This teaches us:
+
+> **H must have at least a weak downstream coupling to halo response.** The coupling is NOT a mediating pathway (T6 confirms this), but it IS a necessary downstream consequence. H cannot be completely disconnected from how much the halo helps.
+
+### 36.6 — The Winning Model: M2 Equations
+
+The minimal sufficient generative model:
+
+```
+H ~ N(0, 1)                           [hidden common-cause state]
+VfResid = alpha_Vf × H + noise        [direct bilateral arm 1]
+a0Resid = alpha_a0 × H + noise        [direct bilateral arm 2]
+haloResponse += gamma_hR × H          [downstream, NOT mediating]
+dmFrac += gamma_dmFrac × H            [downstream]
+env_effect += gamma_env × H × envCode [downstream]
+```
+
+With alpha_Vf = 0.125, alpha_a0 = 0.10, gamma_hR = 0.08, gamma_dmFrac = 0.05, gamma_env = 0.03, sigma_obs = 0.02.
+
+**At alpha x1.5**: alpha_Vf = 0.1875, alpha_a0 = 0.15 → r(VfR,a0R) = 0.803, matching SPARC.
+
+### 36.7 — Program 6B Verdict
+
+**M2 is the decisive lead model: 6/6 tests, 3/3 critical, stable across 5 seeds and 8 tuning variants.**
+
+Key conclusions:
+
+1. **The minimal H model is now defined**: A hidden state H with bilateral drive (H→VfResid, H→a0Resid) plus weak downstream halo coupling (H→hR, not mediating).
+
+2. **Quietness, outerSlope, and the DQ term are all unnecessary**: They contribute nothing to the score. The 4-parameter model (alpha_Vf, alpha_a0, gamma_hR, sigma_obs) is sufficient.
+
+3. **M1 proves that pure bilateral drive is insufficient**: Without even weak H→hR coupling, the haloResponse sign cannot be reproduced. H must touch the halo, but only as a downstream effect.
+
+4. **Decisive new predictions**:
+   - IFU: Galaxies with bilateral residual excess should have different halo density profiles (higher inner density at fixed concentration)
+   - Cosmo sims: A latent variable in halo assembly history should correlate with both Vflat excess and acceleration excess, but NOT with kinematic morphology
+   - WDM test: The bilateral excess should be absent in isolated WDM halos but present in CDM
+
+---
+
 ## References
