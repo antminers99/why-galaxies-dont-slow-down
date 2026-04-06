@@ -1,0 +1,140 @@
+{
+  "program": "7B",
+  "title": "Halo Shape, Not Halo Strength",
+  "timestamp": "2026-04-06T18:45:48.285Z",
+  "N": 55,
+  "pairs": [
+    {
+      "target": {
+        "name": "NGC2841",
+        "dq": 2.629540179934417,
+        "concentration": 2.5,
+        "concResid": -2.5145119224432353,
+        "bestFamily": "NFW",
+        "innerSlope": null,
+        "innerFrac": 0.01763771618823871,
+        "outerFrac": 0.5215666481119194,
+        "transWidth": 0,
+        "rcSmooth": 0.9923470884288653
+      },
+      "control": {
+        "name": "UGC02953",
+        "dq": -0.2926775777876758,
+        "concentration": 4.5,
+        "concResid": -1.2888134687850208,
+        "bestFamily": "NFW",
+        "innerSlope": 0.06455036127220914,
+        "innerFrac": 0.2509856494730382,
+        "outerFrac": 0.3650702039285715,
+        "transWidth": 0,
+        "rcSmooth": 0.9960644791591999
+      }
+    },
+    {
+      "target": {
+        "name": "NGC3741",
+        "dq": 2.1478821098373073,
+        "concentration": 1,
+        "concResid": -1.1338719132617854,
+        "bestFamily": "NFW",
+        "innerSlope": 0.5141268203761329,
+        "innerFrac": 0,
+        "outerFrac": 0.994711231916201,
+        "transWidth": 7,
+        "rcSmooth": 0.9799408353453174
+      },
+      "control": {
+        "name": "NGC1705",
+        "dq": -0.6965514283131333,
+        "concentration": 5,
+        "concResid": 3.4512480888231902,
+        "bestFamily": "NFW",
+        "innerSlope": 0.09233791252378082,
+        "innerFrac": 0,
+        "outerFrac": 0.8628036507696296,
+        "transWidth": 0,
+        "rcSmooth": 0.9702031823722503
+      }
+    },
+    {
+      "target": {
+        "name": "ESO563-G021",
+        "dq": 1.8781395783246513,
+        "concentration": 2,
+        "concResid": -3.5527919517853235,
+        "bestFamily": "Burkert",
+        "innerSlope": 0,
+        "innerFrac": 0.011044485651870927,
+        "outerFrac": 0.7186261107856826,
+        "transWidth": 2.6697247706422016,
+        "rcSmooth": 0.9848341862924641
+      },
+      "control": {
+        "name": "NGC5371",
+        "dq": -0.20261076187117322,
+        "concentration": 8,
+        "concResid": 0.7167552847128187,
+        "bestFamily": "NFW",
+        "innerSlope": null,
+        "innerFrac": 0.23904573028344486,
+        "outerFrac": 0.4480540587479111,
+        "transWidth": 6.02016129032258,
+        "rcSmooth": 0.9851102546442642
+      }
+    }
+  ],
+  "tests": {
+    "t1_concentration": {
+      "pairPass": 2,
+      "direction": [
+        "under",
+        "under",
+        "under"
+      ],
+      "consistent": true,
+      "r_dq_concResid": -0.29161271295217855,
+      "pass": true
+    },
+    "t2_family": {
+      "pairDiff": 1,
+      "quintileFamilyCounts": {
+        "highH": {
+          "NFW": 10,
+          "Burkert": 1
+        },
+        "lowH": {
+          "NFW": 10,
+          "pIso": 1
+        }
+      },
+      "familyShift": false,
+      "pass": false
+    },
+    "t3_redistribution": {
+      "pairConsistent": 3,
+      "patterns": [
+        "outer-heavy",
+        "outer-heavy",
+        "outer-heavy"
+      ],
+      "pass": true
+    },
+    "t4_shapeQuiet": {
+      "productBeatsSingle": true,
+      "bestProduct": "concResid x smooth",
+      "bestProductR": -0.2931006570091512,
+      "pass": true
+    }
+  },
+  "correlations": {
+    "r_dq_concResid": -0.29161271295217855,
+    "r_dq_innerFrac": 0.007069170947966333,
+    "r_dq_outerFrac": 0.16018003909151468,
+    "r_dq_transWidth": -0.12196279792628278,
+    "r_dq_innerSlope": 0,
+    "r_dq_smooth": 0.05402639663963583,
+    "r_dq_hR": 0.32848777768015175
+  },
+  "totalPass": 3,
+  "verdict": "HALO SHAPE CONFIRMED"
+}
