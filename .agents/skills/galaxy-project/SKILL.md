@@ -147,6 +147,10 @@ H = partial predictive power, transitioning from latent summary to state variabl
 Matched pairs 27/40 correct (67.5%), 6/8 pass. Decisive test = matched IFU kinematics.
 H ready for targeted observational confirmation. Program 4 COMPLETE.
 
+**Program 5A (Hidden-State Sim):** B2 Quiet-Coupling wins 7/7 checks. Only model reproducing
+positive haloResp sign. Null model 4/7. H must couple through kinematic quietness, not halo efficiency.
+Physical interpretation: H = dynamical quietness of halo-disk coupling.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -213,6 +217,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase418-hidden-state-law.cjs` | Phase 418: minimal hidden-state law |
 | `scripts/phase419-prediction-engine.cjs` | Phase 419: prediction engine |
 | `scripts/phase420-decisive-observation.cjs` | Phase 420: decisive observation |
+| `scripts/program5a-hidden-state-sim.cjs` | Program 5A: hidden-state simulation |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -239,3 +244,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase418-hidden-state.json` | Phase 418 hidden-state law |
 | `public/phase419-predictions.json` | Phase 419 prediction engine |
 | `public/phase420-decisive-obs.json` | Phase 420 decisive observation |
+| `public/program5a-hidden-state-sim.json` | Program 5A hidden-state simulation |

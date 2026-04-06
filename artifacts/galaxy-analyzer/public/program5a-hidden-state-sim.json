@@ -1,0 +1,306 @@
+{
+  "program": "5A",
+  "title": "Hidden-State Simulation",
+  "timestamp": "2026-04-06T18:05:03.303Z",
+  "Nsim": 3000,
+  "realFingerprint": {
+    "r_VfA0": 0.8042985384878967,
+    "r_DQ_haloResp": -0.007933672406280765,
+    "sdDQ": 1.6757599318583287,
+    "signHaloResp": "+"
+  },
+  "models": [
+    {
+      "name": "A1: Halo-Efficiency (weak)",
+      "couplingMode": "A",
+      "r_VfA0": 0.17167024175697546,
+      "r_DQ_haloResp": -6.204166640487187e-16,
+      "r_DQ_H": 0.529539847443941,
+      "r_DQ_quiet": -0.014070246246835979,
+      "sdDQ": 1.5111840997380857,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 5,
+      "totalChecks": 7,
+      "checks": {
+        "channel": false,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "A1: Halo-Efficiency (weak)",
+        "couplingMode": "A",
+        "alpha_Vf": 0.03,
+        "alpha_a0": 0.02,
+        "beta_halo": 0.15,
+        "beta_quiet": 0,
+        "gamma_outer": 0,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "A2: Halo-Efficiency (strong)",
+      "couplingMode": "A",
+      "r_VfA0": 0.4275657950039452,
+      "r_DQ_haloResp": -1.2087228405614963e-15,
+      "r_DQ_H": 0.5592283372718688,
+      "r_DQ_quiet": -0.028026639731333073,
+      "sdDQ": 1.5051972123109079,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 6,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "A2: Halo-Efficiency (strong)",
+        "couplingMode": "A",
+        "alpha_Vf": 0.05,
+        "alpha_a0": 0.04,
+        "beta_halo": 0.3,
+        "beta_quiet": 0,
+        "gamma_outer": 0,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "B1: Quiet-Coupling (weak)",
+      "couplingMode": "B",
+      "r_VfA0": 0.22787756032794673,
+      "r_DQ_haloResp": -1.1110780579680953e-17,
+      "r_DQ_H": 0.5852382307421116,
+      "r_DQ_quiet": 0.4611466803552831,
+      "sdDQ": 1.562261161591438,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 5,
+      "totalChecks": 7,
+      "checks": {
+        "channel": false,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "B1: Quiet-Coupling (weak)",
+        "couplingMode": "B",
+        "alpha_Vf": 0.03,
+        "alpha_a0": 0.02,
+        "beta_halo": 0,
+        "beta_quiet": 0.1,
+        "gamma_outer": 0.05,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "B2: Quiet-Coupling (strong)",
+      "couplingMode": "B",
+      "r_VfA0": 0.46084131653379545,
+      "r_DQ_haloResp": 5.122371322142223e-17,
+      "r_DQ_H": 0.7774508970736017,
+      "r_DQ_quiet": 0.7168759460576893,
+      "sdDQ": 1.7041618396107456,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 7,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "B2: Quiet-Coupling (strong)",
+        "couplingMode": "B",
+        "alpha_Vf": 0.05,
+        "alpha_a0": 0.04,
+        "beta_halo": 0,
+        "beta_quiet": 0.2,
+        "gamma_outer": 0.1,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "C1: Mixed (balanced)",
+      "couplingMode": "C",
+      "r_VfA0": 0.3044340792275709,
+      "r_DQ_haloResp": -1.9593086778889314e-16,
+      "r_DQ_H": 0.6437407011047874,
+      "r_DQ_quiet": 0.4496415151074595,
+      "sdDQ": 1.581245390797335,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 6,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "C1: Mixed (balanced)",
+        "couplingMode": "C",
+        "alpha_Vf": 0.04,
+        "alpha_a0": 0.03,
+        "beta_halo": 0.15,
+        "beta_quiet": 0.1,
+        "gamma_outer": 0.05,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "C2: Mixed (halo-heavy)",
+      "couplingMode": "C",
+      "r_VfA0": 0.4275657950039452,
+      "r_DQ_haloResp": -1.704017494761861e-15,
+      "r_DQ_H": 0.615741624132346,
+      "r_DQ_quiet": 0.3714961632963094,
+      "sdDQ": 1.5535974756647,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 6,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "C2: Mixed (halo-heavy)",
+        "couplingMode": "C",
+        "alpha_Vf": 0.05,
+        "alpha_a0": 0.04,
+        "beta_halo": 0.25,
+        "beta_quiet": 0.08,
+        "gamma_outer": 0.04,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "C3: Mixed (quiet-heavy)",
+      "couplingMode": "C",
+      "r_VfA0": 0.3044340792275709,
+      "r_DQ_haloResp": -4.0648858870518637e-16,
+      "r_DQ_H": 0.6790976187580817,
+      "r_DQ_quiet": 0.5910648515888488,
+      "sdDQ": 1.6034015962264694,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 6,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "C3: Mixed (quiet-heavy)",
+        "couplingMode": "C",
+        "alpha_Vf": 0.04,
+        "alpha_a0": 0.03,
+        "beta_halo": 0.1,
+        "beta_quiet": 0.18,
+        "gamma_outer": 0.08,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "C4: Mixed (strong)",
+      "couplingMode": "C",
+      "r_VfA0": 0.5317969678245605,
+      "r_DQ_haloResp": -6.07023679500918e-16,
+      "r_DQ_H": 0.6654762643834831,
+      "r_DQ_quiet": 0.5433300286849329,
+      "sdDQ": 1.5846259250347965,
+      "quietnessInverted": true,
+      "haloRespCorrect": true,
+      "score": 6,
+      "totalChecks": 7,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      },
+      "params": {
+        "name": "C4: Mixed (strong)",
+        "couplingMode": "C",
+        "alpha_Vf": 0.06,
+        "alpha_a0": 0.05,
+        "beta_halo": 0.25,
+        "beta_quiet": 0.15,
+        "gamma_outer": 0.08,
+        "sigma_obs": 0.02
+      }
+    },
+    {
+      "name": "N0: Null (no hidden state)",
+      "couplingMode": "C",
+      "r_VfA0": -0.009528673597601083,
+      "r_DQ_haloResp": 1.5753276924450373e-17,
+      "r_DQ_H": -0.03091281142686461,
+      "r_DQ_quiet": 0.0010993244481416857,
+      "sdDQ": 1.4052486597729485,
+      "quietnessInverted": true,
+      "haloRespCorrect": false,
+      "score": 4,
+      "totalChecks": 7,
+      "checks": {
+        "channel": false,
+        "channelSign": false,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": false,
+        "linear": true
+      },
+      "params": {
+        "name": "N0: Null (no hidden state)",
+        "couplingMode": "C",
+        "alpha_Vf": 0,
+        "alpha_a0": 0,
+        "beta_halo": 0,
+        "beta_quiet": 0,
+        "gamma_outer": 0,
+        "sigma_obs": 0.02
+      }
+    }
+  ],
+  "bestModel": "B2: Quiet-Coupling (strong)",
+  "bestScore": 7,
+  "nullScore": 4,
+  "verdict": "SUCCESS"
+}
