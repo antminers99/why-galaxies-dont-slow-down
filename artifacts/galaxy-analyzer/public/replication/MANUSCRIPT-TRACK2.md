@@ -450,7 +450,46 @@ Phase 402b: 22 configurations (N=800 each), focused mechanisms:
 
 **Implication**: The SPARC regime-strengthening pattern (coupling strengthens at high Vflat) appears incompatible with ANY spherical dark matter halo + exponential disk model, regardless of profile family or additional physics. This pattern requires either: (1) a fundamentally non-CDM acceleration law (e.g., MOND-like), (2) a source of a₀ variation at high mass that is completely independent of halo structure, or (3) a systematic observational effect specific to the SPARC sample.
 
-### 10.7 Phase 400–402 Conclusions
+### 10.7 Phase 403: Anatomy of VfResid
+
+**Goal**: (A) Is regime strengthening real or a SPARC artifact? (B) What generates VfResid? (C) Why does coupling activate at high-V?
+
+**A. Cross-sample replication — CONFIRMED:**
+
+| Sample | N | delta(high−low) | Pattern |
+|--------|---|----------------|---------|
+| Internal (training) | 55 | +0.066 | Strengthens |
+| External (validation) | 94 | +0.186 | Strengthens |
+| Pooled | 149 | +0.114 | Strengthens |
+| Q=1 only | 39 | +0.100 | Strengthens |
+| Moderate inclination | 42 | +0.103 | Strengthens |
+
+External sample shows STRONGER regime strengthening than internal (delta=+0.186 vs +0.066). High-V external: r=0.859 (N=21). Not an artifact of SPARC sample construction or data quality.
+
+**B. What generates VfResid:**
+- Top single predictor: logA0 (r=0.711, circular)
+- Next: envCode (r=-0.365), logMeanRun (r=0.289)
+- All 5 known structural variables together: R²=0.217 (only 21.7% of VfResid explained)
+- After removing structural effects: r(VfResid_residual, logA0) = 0.538
+- No single control variable absorbs the VfResid-a₀ coupling (all partial r ≥ 0.67)
+- Controlling for Vflat INCREASES coupling: partial r = 0.788 (raw: 0.711)
+
+**C. Why high-V only (activation anatomy):**
+
+| Vflat bin | N | r(VfResid, a₀) |
+|-----------|---|----------------|
+| <80 | 5 | 0.44 |
+| 80-120 | 5 | 0.93 |
+| 120-160 | 11 | 0.74 |
+| 160-200 | 14 | 0.83 |
+| 200-250 | 14 | 0.88 |
+| >250 | 6 | 0.83 |
+
+Activation is **gradual**, not a sharp threshold. Coupling strength ramps from r≈0.4 at V<80 to r≈0.84 at V>160. High-V galaxies have more gas (logMHI: −0.12→+0.85), higher surface brightness (logSBdisk: 2.63→3.20), and higher central density (logΣ₀: 2.42→3.00).
+
+**Phase 403 verdict**: Regime strengthening is real, replicated across samples, and robust to quality cuts. VfResid is NOT primarily driven by any known structural or observational variable. The coupling's gradual activation with Vflat, and its strengthening after Vflat control, points to a genuine physical signal that operates in deep potential wells.
+
+### 10.8 Phase 400–403 Conclusions
 
 1. **Baseline VfResid is a fitting artefact**: Pure NFW concentration diversity produces r(VfResid, logA0) ≈ 0.86 via systematic bias in per-galaxy RAR fitting. This is non-physical.
 
