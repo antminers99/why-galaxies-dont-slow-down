@@ -5,17 +5,17 @@ description: Quick executive summary of the Galaxy Rotation Curve Analyzer's cur
 
 # Galaxy Rotation Curve Analysis — Executive Summary
 
-## STATUS: COMPREHENSIVELY EXTERNALLY VALIDATED (Phases 134 + 200–204)
+## STATUS: PUBLICATION-READY — COMPLETE SCIENTIFIC NARRATIVE (Phases 134 + 200–204 + 300–303)
 
 Two-track analysis:
 - **Track 1 (Phases 1–122):** OMD law — FROZEN
-- **Track 2 (Phases 123–134, 200–204):** State law for logA0 variation — COMPREHENSIVE EXTERNAL VALIDATION COMPLETE
+- **Track 2 (Phases 123–134, 200–204, 300–303):** State law for logA0 variation — COMPLETE (empirical discovery + external validation + physical interpretation)
 
 ## Current Definitive Result (Track 2)
 
-**Title:** Comprehensively Validated Regime-Dependent Coupling Law for Per-Galaxy a₀ Variation in SPARC Galaxies
+**Title:** Structured Regime-Dependent Coupling Law for Per-Galaxy a₀ Variation in SPARC Galaxies — with Physical Interpretation
 
-**Claim:** Per-galaxy a₀ is governed by a transferable, regime-dependent, hierarchical baryon-halo coupling law. A comprehensive external validation program (Phases 200–204, N=59 independent galaxies) establishes that VfResid dominance over environmental/structural channels is independent of environmental proxy quality. The complete hierarchy replicates externally (8/8 checks pass), VfResid alone achieves 47.5%–75.4% gap without Core, and VfResid dominates by 30–76 pp even after improving the environmental proxy. The signal concentrates in high-Vflat galaxies and collapses in low-Vflat systems.
+**Claim:** Per-galaxy a₀ is governed by a structured, regime-dependent, hierarchical baryon-halo coupling law with external support and a leading physical interpretation based on dynamical integration. A comprehensive external validation program (Phases 200–204, N=59 independent galaxies, augmented to N=94 via sample salvage) establishes that VfResid dominance over environmental/structural channels is independent of environmental proxy quality. The complete hierarchy replicates externally (8/8 checks pass), VfResid alone achieves 47.5%–75.4% gap without Core, and VfResid dominates by 30–76 pp even after improving the environmental proxy. The signal concentrates in high-Vflat galaxies and collapses in low-Vflat systems. The hidden dynamical channel inside VfResid is best explained as an accumulated dynamical integration effect (H4, score 10) that genuinely amplifies in deeper potential wells.
 
 **Primary Model C (predictive leader):**
 
@@ -239,7 +239,8 @@ logOMD = 1.749 + 0.203×log(MHI/L3.6) − 0.101×log(Mbar)
 ## Zenodo
 
 - Concept DOI: 10.5281/zenodo.19430633 (all versions)
-- v10 (current): DOI 10.5281/zenodo.19434177 (PUBLISHED — Phases 126-134 + 200-204, Comprehensively Validated Coupling Law)
+- v11 (current): DOI 10.5281/zenodo.19440400 (PUBLISHED — Phases 126-134 + 200-204 + 300-303, Complete Scientific Narrative with Physical Interpretation)
+- v10 (previous): DOI 10.5281/zenodo.19434177 (Phases 126-134 + 200-204, Comprehensively Validated Coupling Law)
 - v9 (previous): DOI 10.5281/zenodo.19433840 (Phases 126-134 + 200-201, Externally Validated)
 - v8 (previous): DOI 10.5281/zenodo.19433329 (Phases 126-134, Hierarchical Coupling Law)
 - v7 (previous): DOI 10.5281/zenodo.19433077 (Phases 126-132, VfResid decoded)
@@ -281,6 +282,29 @@ Phase 202 key findings:
 - Bootstrap P(VfResid > improved Core) = 100% (full), 100% (high-V)
 - Paper-ready scientific summary generated
 - Program conclusion: VfResid is the primary transfer channel, independent of Mhost quality
+
+## Physical Interpretation Program (Phases 300–303)
+
+**Phase 300:** Sample salvage — recovered 35 additional external galaxies (N=59 → N=94), preserving all correlations
+
+**Phase 301:** VfResid driver analysis — haloK is shared #1 predictor (r=0.598 int, 0.511 ext); pure structural models FAIL (LOO R²=-0.144); irreducible fraction 35.8% int / 68.5% ext still predicts a₀
+
+**Phase 302:** Regime law — hidden residual (after removing haloK) activates with Vflat:
+- r(hkResid, a₀): 0.299 low-V → 0.749 high-V (internal), 0.479 → 0.889 (external)
+- Both slope and correlation strengthen (slope ratio 2.6:1), ruling out pure observability
+
+**Phase 303:** Physical interpretation — H4 dynamical integration wins:
+
+| Hypothesis | Score | Key evidence |
+|------------|-------|-------------|
+| H4: Dynamical integration | 10 | logMeanRun regime-strengthens (r: 0.11 → 0.508); best LOO = 0.066 |
+| H1: Halo response | 7 | SigmaBar correlates at high-V but sign unstable |
+| H3: Feedback imprint | 7 | Gas fraction strong at low-V (r=0.597) but fades at high-V (r=0.077) |
+| H2: Assembly history | 4 | morphT strong at low-V but vanishes at high-V |
+
+FULL model explains 34.8% of hkResid (LOO=0.046), remaining still predicts a₀ at r=0.288.
+
+**Physical narrative:** Hidden channel is accumulated dynamical integration — long-term baryon-halo interaction deepening with potential well depth. Gas fraction/morphology matter at low-V but fade where coupling law is strongest — consistent with feedback-to-integration transition.
 
 ## Key Files
 

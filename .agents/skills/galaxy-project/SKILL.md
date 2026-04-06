@@ -61,7 +61,7 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 
 **Track 1 (OMD law):** FROZEN at Phase 122. No further work planned.
 
-**Track 2 (a₀ State Law):** EXTERNALLY SUPPORTED REGIME-DEPENDENT LAW (Phases 134 + 201).
+**Track 2 (a₀ State Law):** COMPLETE SCIENTIFIC NARRATIVE (Phases 126-134, 200-204, 300-303).
 - Phases 123–128: Variable search, 3-axis core established
 - Phases 129–132: Vflat decomposed, VfResid identified as coupling proxy
 - Phase 132A-C: VfResid dominance, mediation, robustness confirmed
@@ -69,19 +69,24 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 134: Initial external validation (STRONG_TRANSFER, r=0.801, N=10)
 - Phase 200: External data assembly (N=59 SPARC galaxies outside training sample)
 - Phase 201: Broader external validation (MODERATE_TRANSFER full sample, STRONG in high-Vflat)
+- Phase 202: Complete hierarchy replication (8/8 checks pass)
+- Phase 203: Environmental decomposition (improved logMhost, VfResid still dominates by 30-76pp)
+- Phase 204: Final external synthesis (lhOuter genuine but reduced)
+- Phase 300: Sample salvage (N=59 to N=94 external)
+- Phase 301: VfResid driver analysis (haloK shared #1, 35.8%/68.5% irreducible)
+- Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
+- Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** Internal analysis COMPLETE + External validation CONFIRMED hierarchy.
-The coupling-law picture has external support: Core fails → VfResid dominates → regime-dependent.
-High-Vflat transfer: gap=+34.3% (N=16), +59.0% (Q=1+Vflat>=120, N=11).
-Low-Vflat fails as predicted. Not universal — regime-dependent.
+**Status:** PUBLICATION-READY. Internal analysis FROZEN. Manuscript complete.
+Structured, regime-dependent coupling law with external support and leading H4 dynamical integration interpretation.
 
-**Zenodo v9:** DOI 10.5281/zenodo.19433840
+**Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 POSSIBLE FUTURE WORK:
 - Cross-survey replication (non-SPARC rotation curves, IFU kinematics)
+- Spatially resolved kinematics to directly probe dynamical integration hypothesis
 - Higher-quality logMhost for external sample (group catalogs)
-- Higher-quality logA0 for external sample (full profile fits)
-- Non-linear coupling models
+- Formal Bayesian model comparison for hypothesis testing
 
 ## Key Files
 

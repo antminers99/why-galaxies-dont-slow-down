@@ -2,7 +2,7 @@
 
 *Non-peer-reviewed computational analysis report*
 *Analysis: Phases 123–134 (internal), Phases 200–204 (external validation), Phases 300–303 (physical interpretation)*
-*Zenodo v10: DOI 10.5281/zenodo.19434177 (Concept DOI: 10.5281/zenodo.19430633)*
+*Zenodo v11: DOI 10.5281/zenodo.19440400 (Concept DOI: 10.5281/zenodo.19430633)*
 
 ---
 
