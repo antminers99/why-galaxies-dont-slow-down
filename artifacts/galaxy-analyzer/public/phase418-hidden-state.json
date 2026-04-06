@@ -1,0 +1,293 @@
+{
+  "phase": "418",
+  "title": "Minimal Hidden-State Reconstruction",
+  "timestamp": "2026-04-06T17:41:16.179Z",
+  "N": 55,
+  "constraints": [
+    {
+      "id": "C1",
+      "name": "Bilateral coupling",
+      "desc": "H drives both VfResid AND a0Resid in same direction",
+      "quantitative": "corr(H, VfResid) > 0 AND corr(H, a0Resid) > 0 simultaneously"
+    },
+    {
+      "id": "C2",
+      "name": "Universality",
+      "desc": "H operates across all mass scales, morphologies, environments",
+      "quantitative": "No subpopulation where channel vanishes"
+    },
+    {
+      "id": "C3",
+      "name": "Structure-independence",
+      "desc": "H is not reducible to logMbar, logL36, logRdisk, morphT, logMHI, SBdisk",
+      "quantitative": "By construction: partial r after structure = same"
+    },
+    {
+      "id": "C4",
+      "name": "Halo concentration partial",
+      "desc": "~50% of H absorbed by logK_halo",
+      "quantitative": "logK_halo is primary known predictor"
+    },
+    {
+      "id": "C5",
+      "name": "Dark Quarter reality",
+      "desc": "25% of H survives all known controls",
+      "quantitative": "DQ variance = 25% of L_sum variance"
+    },
+    {
+      "id": "C6",
+      "name": "Positive haloResponse",
+      "desc": "H increases with DM dominance",
+      "quantitative": "Must be POSITIVE, not negative"
+    },
+    {
+      "id": "C7",
+      "name": "Kinematic cleanliness",
+      "desc": "High-H galaxies are kinematically CLEAN, not disturbed",
+      "quantitative": "Inverted 2D pattern"
+    },
+    {
+      "id": "C8",
+      "name": "Fast-rotator association",
+      "desc": "H correlates with Vflat residual",
+      "quantitative": "Positive r with Vflat at fixed mass"
+    },
+    {
+      "id": "C9",
+      "name": "Rising outer RC",
+      "desc": "H correlates with positive outer slope",
+      "quantitative": "Positive r"
+    },
+    {
+      "id": "C10",
+      "name": "Model impossibility",
+      "desc": "No standard halo model reproduces positive haloResponse sign",
+      "quantitative": "Structural: more halo should absorb, not amplify"
+    },
+    {
+      "id": "C11",
+      "name": "Not triaxiality",
+      "desc": "Simple 3D halo shape produces wrong sign",
+      "quantitative": "Eliminated"
+    },
+    {
+      "id": "C12",
+      "name": "Not disequilibrium",
+      "desc": "Perturbation destroys bilateral structure",
+      "quantitative": "Eliminated"
+    },
+    {
+      "id": "C13",
+      "name": "Not 2D kinematic",
+      "desc": "Not non-circular motions, warps, or bars",
+      "quantitative": "Eliminated"
+    },
+    {
+      "id": "C14",
+      "name": "Recipe independence",
+      "desc": "H survives changes in structural model recipe",
+      "quantitative": "Max Δr < 0.05 across recipes"
+    },
+    {
+      "id": "C15",
+      "name": "Single latent factor",
+      "desc": "H is one-dimensional (PC1 explains 90%)",
+      "quantitative": "1 factor, not 2+"
+    }
+  ],
+  "candidateLaws": [
+    {
+      "label": "Law 2: H = alpha * haloResponse + beta * logVflat + gamma * outerSlope",
+      "R2": 0.27165082962535003,
+      "nParams": 3,
+      "rPred_DQ": 0.5212013331001278,
+      "residChannel": 0.3473878781276505
+    },
+    {
+      "label": "Law 6: H = alpha * log(haloResponse * Vflat / a0_scale) [dimensionless coupling]",
+      "R2": 0.22238997612345823,
+      "nParams": 1,
+      "rPred_DQ": 0.4715824171059166,
+      "residChannel": 0.39764981815487166
+    },
+    {
+      "label": "Law 4: H = alpha * dmFrac + beta * haloResponse + gamma * outerSlope",
+      "R2": 0.1152559638691516,
+      "nParams": 3,
+      "rPred_DQ": 0.339493687524749,
+      "residChannel": 0.5049732207315468
+    },
+    {
+      "label": "Law 1: H = alpha * haloResponse + beta * outerSlope",
+      "R2": 0.11449251392647475,
+      "nParams": 2,
+      "rPred_DQ": 0.33836742444637735,
+      "residChannel": 0.5003103708147087
+    },
+    {
+      "label": "Law 5: H = alpha * haloResponse^2 + beta * haloResponse [nonlinear]",
+      "R2": 0.11059331514436044,
+      "nParams": 2,
+      "rPred_DQ": 0.3325557323883636,
+      "residChannel": 0.5251608049743134
+    },
+    {
+      "label": "Law 3: H = alpha * (haloResponse - outerSlope*k) [ratio proxy] (k=20)",
+      "R2": 0.06467579885149866,
+      "nParams": 2,
+      "rPred_DQ": 0.2543143701238665,
+      "residChannel": 0.4770598420387742
+    }
+  ],
+  "bestLaw": {
+    "label": "Law 2: H = alpha * haloResponse + beta * logVflat + gamma * outerSlope",
+    "R2": 0.27165082962535003,
+    "beta": [
+      1.3797890268659134,
+      2.7228153355403815,
+      0.15354339000795095
+    ],
+    "nParams": 3
+  },
+  "dqAbsorption": 0.2716508296253505,
+  "totalExplainedFraction": 0.7669282654801121,
+  "propStats": {
+    "logVflat": {
+      "hMean": 2.236473528270758,
+      "lMean": 2.206690244914448,
+      "allMean": 2.2175539227892287,
+      "allSd": 0.17483126784144387,
+      "hZ": 0.10821637179161588,
+      "lZ": -0.06213807180437078
+    },
+    "logMbar": {
+      "hMean": 10.374492655619525,
+      "lMean": 10.525476701620624,
+      "allMean": 10.490728017151659,
+      "allSd": 0.711092115222405,
+      "hZ": -0.16346034366557313,
+      "lZ": 0.04886664290757509
+    },
+    "morphT": {
+      "hMean": 5.8,
+      "lMean": 3.8,
+      "allMean": 4.327272727272727,
+      "allSd": 2.4125018734202457,
+      "hZ": 0.6104564265640804,
+      "lZ": -0.2185584737081276
+    },
+    "haloResponse": {
+      "hMean": 1.1813651379765677,
+      "lMean": 0.7664319568166988,
+      "allMean": 0.8920643802874437,
+      "allSd": 0.3200964152103657,
+      "hZ": 0.9037925573111997,
+      "lZ": -0.39248306916583214
+    },
+    "dmFrac_Rmax": {
+      "hMean": 0.8165684040054323,
+      "lMean": 0.7855247140336459,
+      "allMean": 0.7924720268881882,
+      "allSd": 0.10797943202597962,
+      "hZ": 0.22315710191406238,
+      "lZ": -0.0643392239076679
+    },
+    "outerSlope": {
+      "hMean": 0.8175397814953203,
+      "lMean": -0.19950103843822795,
+      "allMean": -0.2713979008222035,
+      "allSd": 1.2666607553900437,
+      "hZ": 0.8596916559416151,
+      "lZ": 0.056760945721284546
+    },
+    "rcBumpiness": {
+      "hMean": 0.21883291247533493,
+      "lMean": 0.15812340327066834,
+      "allMean": 0.19351245761933214,
+      "allSd": 0.13480968926067152,
+      "hZ": 0.18782370165576526,
+      "lZ": -0.2625112077829554
+    },
+    "logK_halo": {
+      "hMean": 3.1980069684365584,
+      "lMean": 3.2471095019993887,
+      "allMean": 3.2046204837966688,
+      "allSd": 0.2733918220005898,
+      "hZ": -0.024190611524934628,
+      "lZ": 0.1554143715484962
+    },
+    "envCode": {
+      "hMean": 0.2,
+      "lMean": 0.6,
+      "allMean": 0.5272727272727272,
+      "allSd": 0.7828745506040354,
+      "hZ": -0.41803980857497075,
+      "lZ": 0.09289773523888244
+    }
+  },
+  "topGalaxies": [
+    {
+      "name": "NGC2841",
+      "dq": 2.629540179934417,
+      "Vflat": 284.8,
+      "haloResponse": 0.7669798337501476
+    },
+    {
+      "name": "NGC5005",
+      "dq": 2.5431829445205363,
+      "Vflat": 262.2,
+      "haloResponse": 0.8891421876825938
+    },
+    {
+      "name": "NGC3741",
+      "dq": 2.1478821098373073,
+      "Vflat": 50.1,
+      "haloResponse": 2.010597292966363
+    },
+    {
+      "name": "ESO563-G021",
+      "dq": 1.8781395783246513,
+      "Vflat": 314.6,
+      "haloResponse": 1.1699426897487815
+    },
+    {
+      "name": "UGC00128",
+      "dq": 1.6158935848633516,
+      "Vflat": 129.3,
+      "haloResponse": 1.0701636857349526
+    }
+  ],
+  "bottomGalaxies": [
+    {
+      "name": "NGC4559",
+      "dq": -1.2378114774324855,
+      "Vflat": 121.2,
+      "haloResponse": 1.1254639631604773
+    },
+    {
+      "name": "NGC5055",
+      "dq": -1.414621677994924,
+      "Vflat": 179,
+      "haloResponse": 0.5538444578291046
+    },
+    {
+      "name": "NGC2903",
+      "dq": -1.4401335342203159,
+      "Vflat": 184.6,
+      "haloResponse": 0.5800032450926148
+    },
+    {
+      "name": "NGC3521",
+      "dq": -1.6533959094378674,
+      "Vflat": 213.7,
+      "haloResponse": 0.6222733344308535
+    },
+    {
+      "name": "UGC03580",
+      "dq": -1.7868129976390192,
+      "Vflat": 126.2,
+      "haloResponse": 0.950574783570444
+    }
+  ],
+  "minimalStatement": "There exists a single, universal, quiet halo property H that amplifies the bilateral VfResid-a0Resid coupling in proportion to the halo dominance over baryonic matter, without kinematic disturbance, and that no current galaxy formation model reproduces."
+}

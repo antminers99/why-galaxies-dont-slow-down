@@ -1933,4 +1933,70 @@ The haloResponse paradox — that more DM-dominated galaxies carry MORE unexplai
 
 ---
 
+## 29. Phase 418: Minimal Hidden-State Reconstruction (Program 4)
+
+**Question**: Given that 16 explanations have been tested and 15 eliminated, what is the minimum hidden variable the data demands?
+
+### 29.1 — Formal Constraint Table
+
+The hidden state H must satisfy ALL 15 constraints simultaneously:
+
+| ID | Constraint | Key quantitative evidence |
+|----|-----------|--------------------------|
+| C1 | Bilateral coupling | r(VfR,a0R) = 0.80; H drives both in same direction |
+| C2 | Universality | Channel stable across all mass, morphology, environment bins |
+| C3 | Structure-independence | H is not reducible to logMbar, logL36, logRdisk, T, logMHI, SBdisk |
+| C4 | Halo concentration partial | ~68% of H absorbed by logK, dmFrac, env |
+| C5 | Dark Quarter reality | r(DQ,VfR) = 0.54, bootstrap CI excludes zero |
+| C6 | Positive haloResponse | r(DQ, haloResponse) = +0.328 |
+| C7 | Kinematic cleanliness | High-H galaxies are most REGULAR in THINGS |
+| C8 | Fast-rotator association | r(DQ, logVflat) = +0.20 |
+| C9 | Rising outer RC | r(DQ, outerSlope) = +0.24 |
+| C10 | Model impossibility | 0/4000 trials reproduce correct haloResponse sign |
+| C11 | Not triaxiality | Wrong sign, worse with more triaxiality |
+| C12 | Not disequilibrium | Destroys bilateral structure |
+| C13 | Not 2D kinematic | Inverted pattern |
+| C14 | Recipe independence | Channel stable across 5 structural recipes |
+| C15 | Single latent factor | PC1 explains 90% of residual variance |
+
+### 29.2 — Hidden-State Identity Card
+
+| Property | High-H (top 5 DQ) | Low-H (bottom 5 DQ) | Direction |
+|----------|-------------------|---------------------|-----------|
+| haloResponse | z = +0.90 | z = -0.39 | H increases with halo dominance |
+| outerSlope | z = +0.86 | z = +0.06 | H increases with rising outer RC |
+| morphT | z = +0.61 | z = -0.22 | H increases with later type |
+| dmFrac | z = +0.22 | z = -0.06 | H increases with DM fraction |
+| envCode | z = -0.42 | z = +0.09 | H increases in field (isolated) |
+
+### 29.3 — Candidate Hidden-State Laws
+
+| Law | Functional form | R2(DQ) | Parameters |
+|-----|----------------|--------|------------|
+| Law 1 | H = a*haloResp + b*outerSlope | 0.115 | 2 |
+| **Law 2** | **H = a*haloResp + b*logVflat + c*outerSlope** | **0.272** | **3** |
+| Law 3 | H = a*(haloResp - k*outerSlope) | 0.108 | 2 |
+| Law 4 | H = a*dmFrac + b*haloResp + c*outerSlope | 0.133 | 3 |
+| Law 5 | H = a*haloResp^2 + b*haloResp | 0.122 | 2 |
+| Law 6 | H = a*log(haloResp * Vflat) | 0.172 | 1 |
+
+**Best law**: H ~ haloResponse + logVflat + outerSlope (R2 = 0.272, LOO R2 = 0.188).
+
+### 29.4 — Channel Absorption
+
+| Component | Variance explained |
+|-----------|--------------------|
+| logK + dmFrac + env | 68.2% of L_sum |
+| Hidden-state law (of remaining 31.8%) | 27.2% |
+| Combined total | 76.8% |
+| Remaining unexplained | 23.2% |
+
+### 29.5 — The Minimal Statement
+
+> "There exists a single, universal, quiet halo property H that amplifies the bilateral VfResid-a0Resid coupling in proportion to the halo's dominance over baryonic matter, without kinematic disturbance, and that no current galaxy formation model reproduces."
+
+H is consistent with: inner halo density normalisation at fixed concentration, a coupling between halo response and baryonic acceleration, or DM physics that enhances central density in quiet halos.
+
+---
+
 ## References

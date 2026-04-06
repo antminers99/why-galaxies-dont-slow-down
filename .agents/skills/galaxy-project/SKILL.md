@@ -135,6 +135,10 @@ LCDM, FIRE, TNG, SIDM, fuzzy DM, assembly-correlated ALL produce r(DQ,haloResp)�
 haloResponse paradox: structural impossibility for any model where halo absorbs variance.
 16 hypotheses tested total, 15 eliminated, 1 at 1.4%. DQ genuinely unexplained.
 
+**Phase 418 (Hidden-State Law):** 15 constraints. Best law: H ~ haloResp + logVflat + outerSlope
+(R2=0.272). Combined explanation: 76.8%. Remaining unexplained: 23.2%.
+Minimal statement: single universal quiet halo property amplifying bilateral coupling.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -198,6 +202,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase417-resolve-dq.cjs` | Phase 417: 3D halo resolution attempt |
 | `scripts/program3a-ifu-design.cjs` | Program 3A: IFU/2D track |
 | `scripts/program3b-cosmo-sims.cjs` | Program 3B: cosmo sim comparison |
+| `scripts/phase418-hidden-state-law.cjs` | Phase 418: minimal hidden-state law |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -221,3 +226,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase417-resolve-dq.json` | Phase 417 3D halo resolution |
 | `public/program3a-ifu-design.json` | Program 3A IFU/2D track |
 | `public/program3b-cosmo-sims.json` | Program 3B cosmo sim comparison |
+| `public/phase418-hidden-state.json` | Phase 418 hidden-state law |
