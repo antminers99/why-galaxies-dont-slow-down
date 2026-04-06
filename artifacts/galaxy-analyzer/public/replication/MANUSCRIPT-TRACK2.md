@@ -1671,4 +1671,77 @@ All |r| < 0.3. **No data quality metric explains the Dark Quarter.**
 
 ---
 
+## 26. Phase 417: Resolve the Dark Quarter
+
+**Question**: Can 3D halo physics (triaxiality, disequilibrium) reproduce the DQ fingerprint?
+
+### 26.1 — 3D NFW Triaxial Halo Models (417B.1)
+
+**Method**: Full 3D NFW halos with axis ratios (b/a, c/a), random orientation angles, concentration scatter. 200 realizations each. 7 models from spherical control to strongly triaxial with concentration-correlated axis ratios.
+
+**True DQ fingerprint** (target to reproduce):
+
+| Property | True r(DQ) |
+|----------|-----------|
+| VfResid | +0.538 |
+| a0_resid | +0.533 |
+| haloResponse | **+0.328** |
+| outerSlope | +0.239 |
+| Vflat | +0.323 |
+
+**Results**:
+
+| Model | r(DQ,VfR) | r(DQ,a0R) | r(DQ,HR) | Match score |
+|-------|-----------|-----------|----------|-------------|
+| Spherical control | 0.442 | 0.703 | **-0.135** | **0.423** |
+| Mildly triaxial | 0.438 | 0.716 | -0.140 | 0.392 |
+| Moderately triaxial | 0.432 | 0.708 | -0.138 | 0.391 |
+| Strongly triaxial | 0.427 | 0.716 | -0.138 | 0.373 |
+| Conc-correlated mild | 0.421 | 0.720 | -0.142 | 0.370 |
+| Conc-correlated moderate | 0.391 | 0.722 | -0.129 | 0.345 |
+| Conc-correlated strong | 0.394 | 0.731 | -0.136 | 0.315 |
+
+**Critical finding**: The haloResponse correlation is WRONG SIGN in all models. True DQ has r(DQ, haloResponse) = **+0.328**, but all triaxial models produce r = **-0.14**. More triaxiality makes the match WORSE (score decreases monotonically from 0.42 to 0.31).
+
+The **spherical control scores highest** — triaxiality does not help explain the DQ.
+
+Additionally, the mock channel r is ~-0.04 (should be +0.80) — the phenomenological NFW mocks do not reproduce the original VfResid-a0 coupling at all.
+
+### 26.2 — Disequilibrium + Triaxiality Combined (417B.2)
+
+| Model | r(DQ,VfR) | r(DQ,a0R) | Bilateral | Match |
+|-------|-----------|-----------|-----------|-------|
+| Mild triax + mild diseq | 0.111 | 0.835 | **0%** | 0.081 |
+| Mod triax + outer-boosted | 0.111 | 0.830 | 1% | 0.047 |
+| Strong triax + mass-dep | 0.098 | 0.836 | 1% | 0.042 |
+| DQ-optimized (tuned) | 0.099 | 0.834 | 1% | 0.046 |
+
+**Disequilibrium DESTROYS the bilateral structure** — the DQ collapses to one-sided (a0 only). Match scores < 0.1. Even deliberately tuned models fail completely.
+
+### 26.3 — IFU Observational Targets (417A)
+
+Target-control pairs for IFU follow-up:
+
+| Target (high DQ) | DQ | Control (matched) | DQ |
+|------------------|-----|-------------------|-----|
+| NGC2841 | +2.63 | UGC02953 | -0.29 |
+| NGC5005 | +2.54 | UGC02953 | -0.29 |
+| UGC00128 | +1.62 | NGC4138 | +0.03 |
+
+Available 2D surveys: THINGS HI (NGC2841, NGC5005 included), HERACLES CO (NGC2841, NGC5005 included).
+
+**Key prediction**: If DQ = 3D halo projection, high-DQ galaxies should show non-circular motions, kinematic PA twists, lopsided velocity fields, and outer warps that low-DQ controls do not.
+
+### 26.4 — Phase 417 Verdict
+
+1. **Triaxiality FAILS**: All triaxial NFW models produce the WRONG SIGN for the haloResponse-DQ correlation. More triaxiality makes the match worse. Best score = 0.42 (partial match only).
+2. **Disequilibrium FAILS WORSE**: Destroys bilateral structure. Match scores < 0.1.
+3. **The DQ fingerprint is NOT the projection of simple 3D halo geometry.**
+4. **What the DQ IS**: A property that correlates POSITIVELY with haloResponse (+0.33), Vflat (+0.32), and outerSlope (+0.24) — galaxies where dark matter dominates more, rotates faster, and has rising outer RCs carry MORE DQ signal. Simple triaxiality produces the opposite pattern.
+5. **Resolution path**: IFU/2D kinematic data or full cosmological simulations (not phenomenological mocks) are needed. The DQ may encode a deeper property of the dark matter distribution that simple axis-ratio models cannot capture.
+
+**The Dark Quarter remains genuinely unresolved.** It is not measurement error (416A), not simple 3D halo shape (417B), and not disequilibrium (417B.2). It is a real, bilateral, construction-independent signal that correlates with halo dominance but resists all conventional explanations tested so far.
+
+---
+
 ## References

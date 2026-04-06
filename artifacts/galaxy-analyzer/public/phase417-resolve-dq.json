@@ -1,0 +1,171 @@
+{
+  "phase": "417",
+  "title": "Resolve the Dark Quarter",
+  "timestamp": "2026-04-06T17:19:55.122Z",
+  "N": 55,
+  "trueFingerprint": {
+    "rVf": 0.5384341756018414,
+    "rA0": 0.5334209229686587,
+    "rHaloResp": 0.3284877776801515,
+    "rOuterSlope": 0.23864912599563096,
+    "rVflat": 0.3232660882100442
+  },
+  "triaxModels": {
+    "Spherical control": {
+      "rChannel_med": -0.034107857176183025,
+      "rDQ_VfR_med": 0.4421773559234749,
+      "rDQ_a0R_med": 0.7032476762026559,
+      "rDQ_haloResp_med": -0.13523209934274896,
+      "rDQ_outerSlope_med": -0.031367945343513656,
+      "rDQ_Vflat_med": 0.1860269779735472,
+      "bilateralRate": 0.985,
+      "fmatch_med": 0.4232017552391418,
+      "fmatch_p95": 0.5428977461971347,
+      "fmatch_max": 0.6290878025476961
+    },
+    "Mildly triaxial": {
+      "rChannel_med": -0.017334573046521317,
+      "rDQ_VfR_med": 0.4381440958102401,
+      "rDQ_a0R_med": 0.715599647999576,
+      "rDQ_haloResp_med": -0.13992476211592095,
+      "rDQ_outerSlope_med": -0.041710375985567455,
+      "rDQ_Vflat_med": 0.1772382445716901,
+      "bilateralRate": 0.99,
+      "fmatch_med": 0.39216087833075175,
+      "fmatch_p95": 0.5392267508461098,
+      "fmatch_max": 0.56881601813978
+    },
+    "Moderately triaxial": {
+      "rChannel_med": -0.04060023839269386,
+      "rDQ_VfR_med": 0.43179153309763696,
+      "rDQ_a0R_med": 0.7075945540670817,
+      "rDQ_haloResp_med": -0.13778774026995727,
+      "rDQ_outerSlope_med": -0.039907019698946014,
+      "rDQ_Vflat_med": 0.17330056809868885,
+      "bilateralRate": 0.98,
+      "fmatch_med": 0.3907498335316016,
+      "fmatch_p95": 0.5447453189953343,
+      "fmatch_max": 0.597141440337318
+    },
+    "Strongly triaxial": {
+      "rChannel_med": -0.0450053004284283,
+      "rDQ_VfR_med": 0.42686940000040074,
+      "rDQ_a0R_med": 0.7158980560756762,
+      "rDQ_haloResp_med": -0.13797484234409005,
+      "rDQ_outerSlope_med": -0.04729109263203362,
+      "rDQ_Vflat_med": 0.1762019387723167,
+      "bilateralRate": 0.965,
+      "fmatch_med": 0.37296678348710016,
+      "fmatch_p95": 0.5427970054462835,
+      "fmatch_max": 0.609309755655611
+    },
+    "Conc-correlated mild": {
+      "rChannel_med": -0.040509362237171914,
+      "rDQ_VfR_med": 0.4213881064669961,
+      "rDQ_a0R_med": 0.7195367989536486,
+      "rDQ_haloResp_med": -0.14158309656263116,
+      "rDQ_outerSlope_med": -0.038074476399557876,
+      "rDQ_Vflat_med": 0.16455588602739282,
+      "bilateralRate": 0.945,
+      "fmatch_med": 0.3700451661110152,
+      "fmatch_p95": 0.5438679067583457,
+      "fmatch_max": 0.5919929300014424
+    },
+    "Conc-correlated moderate": {
+      "rChannel_med": -0.03476785617722524,
+      "rDQ_VfR_med": 0.39100597908728607,
+      "rDQ_a0R_med": 0.7215381479879562,
+      "rDQ_haloResp_med": -0.1291919231704279,
+      "rDQ_outerSlope_med": -0.04441174394402859,
+      "rDQ_Vflat_med": 0.18744796461538174,
+      "bilateralRate": 0.92,
+      "fmatch_med": 0.34487530627935437,
+      "fmatch_p95": 0.5239392262712804,
+      "fmatch_max": 0.5780798269290212
+    },
+    "Conc-correlated strong": {
+      "rChannel_med": -0.017497044780919555,
+      "rDQ_VfR_med": 0.3940849903969275,
+      "rDQ_a0R_med": 0.7313627577657075,
+      "rDQ_haloResp_med": -0.1359138697707987,
+      "rDQ_outerSlope_med": -0.05426311935376032,
+      "rDQ_Vflat_med": 0.16161775594525318,
+      "bilateralRate": 0.905,
+      "fmatch_med": 0.31484045088077844,
+      "fmatch_p95": 0.4910944576455414,
+      "fmatch_max": 0.5852778833837522
+    }
+  },
+  "diseqModels": {
+    "Mild triax + mild diseq": {
+      "rChannel_med": -0.019822294252897964,
+      "rDQ_VfR_med": 0.11085298701421988,
+      "rDQ_a0R_med": 0.8348191059909964,
+      "rDQ_haloResp_med": -0.041026564380502666,
+      "rDQ_outerSlope_med": -0.08088524840150439,
+      "rDQ_Vflat_med": 0.16022418970262245,
+      "bilateralRate": 0,
+      "fmatch_med": 0.08051855976458298,
+      "fmatch_p95": 0.1503646388891231,
+      "fmatch_max": 0.23641815816168885
+    },
+    "Mod triax + outer-boosted diseq": {
+      "rChannel_med": 0.002639658589648216,
+      "rDQ_VfR_med": 0.11092651307320006,
+      "rDQ_a0R_med": 0.8296826052934481,
+      "rDQ_haloResp_med": -0.06371029958057685,
+      "rDQ_outerSlope_med": -0.03715399697355313,
+      "rDQ_Vflat_med": 0.002318440919243643,
+      "bilateralRate": 0.01,
+      "fmatch_med": 0.04664507448094192,
+      "fmatch_p95": 0.13907869734349174,
+      "fmatch_max": 0.2000082994408385
+    },
+    "Strong triax + mass-dep diseq": {
+      "rChannel_med": -0.014125796250795191,
+      "rDQ_VfR_med": 0.09788838010304086,
+      "rDQ_a0R_med": 0.8355798177230391,
+      "rDQ_haloResp_med": -0.04536972886312757,
+      "rDQ_outerSlope_med": -0.04128036996148684,
+      "rDQ_Vflat_med": -0.022096946944110553,
+      "bilateralRate": 0.005,
+      "fmatch_med": 0.04214339665053019,
+      "fmatch_p95": 0.11486710432236658,
+      "fmatch_max": 0.16214522927963068
+    },
+    "DQ-optimized (tuned to fingerprint)": {
+      "rChannel_med": -0.006800351004594752,
+      "rDQ_VfR_med": 0.09921836274288348,
+      "rDQ_a0R_med": 0.8340582478356519,
+      "rDQ_haloResp_med": -0.04943631579491743,
+      "rDQ_outerSlope_med": -0.043807893021697325,
+      "rDQ_Vflat_med": -0.0026548750754636697,
+      "bilateralRate": 0.005,
+      "fmatch_med": 0.04638948401643445,
+      "fmatch_p95": 0.11953642161240498,
+      "fmatch_max": 0.18317852538539134
+    }
+  },
+  "bestModel": "Spherical control",
+  "bestScore": 0.4232017552391418,
+  "ifuTargets": [
+    {
+      "target": "NGC2841",
+      "control": "UGC02953",
+      "targetDQ": 2.629540179934417,
+      "controlDQ": -0.2926775777876758
+    },
+    {
+      "target": "NGC5005",
+      "control": "UGC02953",
+      "targetDQ": 2.5431829445205363,
+      "controlDQ": -0.2926775777876758
+    },
+    {
+      "target": "UGC00128",
+      "control": "NGC4138",
+      "targetDQ": 1.6158935848633516,
+      "controlDQ": 0.03362939335221293
+    }
+  ]
+}

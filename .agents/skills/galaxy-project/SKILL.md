@@ -119,6 +119,11 @@ Triaxiality/disequilibrium CONSISTENT but unresolvable with 1D data.
 Fingerprint: top DQ = fast rotators, strong haloResponse, rising outer RCs.
 DQ is PHYSICAL, most likely 3D halo projection. Consistent with LCDM.
 
+**Phase 417 (Resolve DQ):** Triaxial NFW FAILS — wrong sign for haloResponse (true=+0.33, mocks=-0.14).
+More triaxiality makes match worse. Disequilibrium destroys bilateral structure (bilateral=0-1%).
+DQ genuinely unresolved. IFU targets: NGC2841, NGC5005 vs UGC02953 control.
+Full cosmo sims or IFU/2D data needed for resolution.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -179,6 +184,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase414-latent-geometry.cjs` | Phase 414: latent variable + geometry |
 | `scripts/phase415-dark-quarter.cjs` | Phase 415: the dark quarter |
 | `scripts/phase416-falsification.cjs` | Phase 416: DQ falsification tests |
+| `scripts/phase417-resolve-dq.cjs` | Phase 417: 3D halo resolution attempt |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -199,3 +205,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase414-latent-geometry.json` | Phase 414 latent variable + geometry |
 | `public/phase415-dark-quarter.json` | Phase 415 dark quarter analysis |
 | `public/phase416-falsification.json` | Phase 416 falsification tests |
+| `public/phase417-resolve-dq.json` | Phase 417 3D halo resolution |
