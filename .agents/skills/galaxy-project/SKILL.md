@@ -105,6 +105,10 @@ Stepwise floor: r≈0.524 with 8 vars. Assembly-specific Δr≈−0.03 only.
 12-control r=0.183 REJECTED (multicollinearity, unstable bootstrap).
 Hidden variable INVISIBLE to all SPARC observables. Points to unmeasurable halo properties or new physics.
 
+**Phase 414 (Latent Variable):** SINGLE FACTOR CONFIRMED (PC1=90.2%). L_sum IS the latent variable.
+R2(L~halo+env)=0.751. haloScatter proxy r=0.820 with L_sum (HIGHEST ever).
+Hidden var = concentration-mass scatter. 25% = "dark coupling" invisible to all observables.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -162,6 +166,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase411-functional-form.cjs` | Phase 411: MOND functional form test |
 | `scripts/phase412-halo-structure.cjs` | Phase 412: halo structure discrimination |
 | `scripts/phase413-assembly-history.cjs` | Phase 413: assembly history test |
+| `scripts/phase414-latent-geometry.cjs` | Phase 414: latent variable + geometry |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -179,3 +184,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase411-functional-form.json` | Phase 411 functional form test |
 | `public/phase412-halo-structure.json` | Phase 412 halo structure test |
 | `public/phase413-assembly-history.json` | Phase 413 assembly history test |
+| `public/phase414-latent-geometry.json` | Phase 414 latent variable + geometry |

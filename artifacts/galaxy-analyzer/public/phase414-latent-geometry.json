@@ -1,0 +1,24 @@
+{
+  "phase": "414",
+  "title": "Hidden Halo Geometry / Latent-Variable Program",
+  "timestamp": "2026-04-06T16:58:48.139Z",
+  "N": 55,
+  "baselineR": 0.8042985384878967,
+  "PCA": {
+    "lambda1": 1.8042985384878965,
+    "lambda2": 0.1957014615121031,
+    "PC1pct": 90.21492692439485,
+    "oneFactor": true
+  },
+  "Lsum_R2_struct": 0.028847633244701965,
+  "Lsum_R2_haloEnv": 0.7505146698480523,
+  "inclEffect": 0,
+  "rcAsymmetry_r": -0.01866508176480974,
+  "innerOuterMismatch_r": -0.18687570449225363,
+  "haloScatter_r": 0.8202110348412696,
+  "nonlinear_partialR": 0.5984015876757033,
+  "cMscatter": {
+    "logK_r": 0.5109470629441714,
+    "dmFrac_r": 0.4443047392100056
+  }
+}
