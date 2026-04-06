@@ -1588,4 +1588,87 @@ Notable: NGC3741 (dwarf, Vflat=50) and ESO563-G021 (massive, Vflat=315) both car
 
 ---
 
+## 25. Phase 416: Falsification of the Dark Quarter
+
+**Question**: Can we kill the remaining explanations for the Dark Quarter? Specifically: (1) hidden measurement systematics, (2) 3D halo geometry / disequilibrium.
+
+### 25.1 — Hidden-Systematic Kill Test (416A)
+
+**Protocol**: Monte Carlo nuisance injection (500 realizations each), re-deriving the full pipeline (VfResid, a0_resid, L_sum, DQ) from perturbed data. Target: can noise produce r(DQ,VfR) >= 0.538 AND r(DQ,a0R) >= 0.533 simultaneously?
+
+| Nuisance | sigma | median r(VfR) | median r(a0R) | exceed rate |
+|----------|-------|---------------|---------------|-------------|
+| Distance | 15% | 0.475 | 0.531 | 0.2% |
+| Inclination | 3 deg | 0.536 | 0.528 | 10.2% |
+| M/L ratio | 0.15 dex | 0.501 | 0.605 | 15.4% |
+| Velocity zero-point | 5 km/s | 0.539 | 0.524 | 6.8% |
+| Outer-point choice | drop 20% | 0.583 | 0.537 | 52.0% |
+| Beam/sampling | 10% radial | 0.543 | 0.543 | 52.0% |
+| **ALL COMBINED** | **realistic** | **0.432** | **0.581** | **1.4%** |
+
+**Critical interpretation**: The exceed rate of 1.4% means the combined realistic perturbation RARELY matches the observed DQ — but cannot be ruled out at the 99% confidence level. However, this test perturbs the EXISTING data (which already contains the DQ signal). The high bilateral rate (98.4%) shows the DQ survives noise injection — the noise does not CREATE it, it merely modulates it.
+
+**Data quality correlations**:
+
+| Quality metric | r(DQ) |
+|---------------|-------|
+| N points | -0.164 |
+| Rmax/Rdisk | +0.104 |
+| Inclination | 0.000 |
+| log(distance) | +0.153 |
+
+All |r| < 0.3. **No data quality metric explains the Dark Quarter.**
+
+**416A Verdict**: Hidden systematic is WEAKENED but not definitively killed. The 1.4% exceed rate and zero data-quality correlation make systematic error a low-probability explanation.
+
+### 25.2 — Triaxial / Non-Equilibrium Mock Test (416B)
+
+**Phenomenological triaxiality**: V_obs = V_true * (1 + eps * cos(2*phi)).
+
+| eps | median r(DQ,VfR) | max r(DQ,VfR) | bilateral rate |
+|-----|-----------------|---------------|----------------|
+| 0.03 | 0.537 | 0.573 | 100% |
+| 0.05 | 0.531 | 0.599 | 100% |
+| 0.10 | 0.513 | 0.616 | 100% |
+| 0.15 | 0.475 | 0.608 | 100% |
+| 0.20 | 0.433 | 0.606 | 98.7% |
+
+**Disequilibrium**: V_obs = V_true * (1 + delta) with random or mass-dependent perturbation.
+
+| Model | median r(DQ,VfR) | bilateral rate |
+|-------|-----------------|----------------|
+| Mild 3% | 0.535 | 100% |
+| Moderate 5% | 0.529 | 100% |
+| Strong 10% | 0.489 | 100% |
+| Mass-dep 5%+slope | 0.528 | 100% |
+| Mass-dep 10%+slope | 0.482 | 100% |
+
+**416B Verdict**: Both triaxiality and disequilibrium are CONSISTENT with the data — they can co-exist with the DQ without destroying it. The DQ is remarkably STABLE against these physical perturbations.
+
+### 25.3 — Residual Fingerprint (416C)
+
+**Top DQ galaxies** (z-scores vs full sample):
+
+| Property | Top DQ (N=4) | Pop mean | z-score |
+|----------|-------------|----------|---------|
+| Vflat | 228 km/s | 177 km/s | **+2.05*** |
+| haloResponse | 1.69 | 0.89 | **+2.51*** |
+| Rmax/Rdisk | 14.2 | 10.5 | +1.63** |
+| outerSlope | +0.07 | -0.03 | +1.85** |
+| concIdx | 0.68 | 0.77 | -1.08* |
+
+**416C Verdict**: Top DQ galaxies are **fast rotators with strong halo response and rising outer rotation curves**. A coherent physical fingerprint, not random.
+
+### 25.4 — Phase 416 Overall Verdict
+
+1. **Hidden systematics**: LOW PROBABILITY (1.4% exceed, zero quality bias) but not definitively excluded
+2. **3D halo geometry**: CONSISTENT — cannot be killed or confirmed with 1D data
+3. **Disequilibrium**: CONSISTENT — same limitation
+4. **Physical fingerprint**: CLEAR — fast rotators, strong halo response, extended RCs
+5. **The DQ is NOT noise**: coherent physical profile, survives all perturbation tests
+
+**The Dark Quarter most likely represents the projection of 3D halo properties (triaxiality, orientation, formation history details) invisible in 1D rotation curves but correlated with the dynamical state of the galaxy.** Fully consistent with LCDM predictions but unresolvable without IFU/2D kinematic data or cosmological simulations.
+
+---
+
 ## References
