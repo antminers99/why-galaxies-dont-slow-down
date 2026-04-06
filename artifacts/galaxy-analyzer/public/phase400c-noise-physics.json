@@ -1,0 +1,294 @@
+{
+  "phase": "400C",
+  "title": "Realistic Mock with Noise and Physical Signal",
+  "timestamp": "2026-04-06T14:51:11.073Z",
+  "tests": [
+    {
+      "label": "A: Clean mock (no noise, no physics)",
+      "N": 500,
+      "rAll": 0.8743,
+      "rLow": 0.9463,
+      "rHigh": 0.8795,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 461,
+          "r": 0.8850670910980416
+        },
+        {
+          "threshold": 80,
+          "N": 340,
+          "r": 0.8887802005127625
+        },
+        {
+          "threshold": 100,
+          "N": 286,
+          "r": 0.8895834718645744
+        },
+        {
+          "threshold": 120,
+          "N": 236,
+          "r": 0.8795369089504066
+        },
+        {
+          "threshold": 150,
+          "N": 186,
+          "r": 0.8654862599051643
+        },
+        {
+          "threshold": 180,
+          "N": 139,
+          "r": 0.8430549187699672
+        }
+      ]
+    },
+    {
+      "label": "B: Realistic noise only (SPARC-like errors)",
+      "N": 500,
+      "rAll": 0.5772,
+      "rLow": 0.6302,
+      "rHigh": 0.5787,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 480,
+          "r": 0.5814548571208957
+        },
+        {
+          "threshold": 80,
+          "N": 386,
+          "r": 0.595407334916841
+        },
+        {
+          "threshold": 100,
+          "N": 331,
+          "r": 0.5919922414373037
+        },
+        {
+          "threshold": 120,
+          "N": 286,
+          "r": 0.5787159507318254
+        },
+        {
+          "threshold": 150,
+          "N": 217,
+          "r": 0.5167961785580956
+        },
+        {
+          "threshold": 180,
+          "N": 177,
+          "r": 0.4409194817111364
+        }
+      ]
+    },
+    {
+      "label": "C: Noise + low-mass a₀ scatter",
+      "N": 500,
+      "rAll": 0.693,
+      "rLow": 0.7765,
+      "rHigh": 0.6448,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 477,
+          "r": 0.6848116525327226
+        },
+        {
+          "threshold": 80,
+          "N": 400,
+          "r": 0.6996025693551401
+        },
+        {
+          "threshold": 100,
+          "N": 338,
+          "r": 0.6550706973439078
+        },
+        {
+          "threshold": 120,
+          "N": 299,
+          "r": 0.6447658096775417
+        },
+        {
+          "threshold": 150,
+          "N": 235,
+          "r": 0.5934272840886893
+        },
+        {
+          "threshold": 180,
+          "N": 180,
+          "r": 0.5449072341520027
+        }
+      ]
+    },
+    {
+      "label": "D: Noise + dynamical integration (weak)",
+      "N": 500,
+      "rAll": 0.6349,
+      "rLow": 0.6902,
+      "rHigh": 0.5988,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 479,
+          "r": 0.6397172148911184
+        },
+        {
+          "threshold": 80,
+          "N": 383,
+          "r": 0.6404518453627774
+        },
+        {
+          "threshold": 100,
+          "N": 319,
+          "r": 0.6100112186130318
+        },
+        {
+          "threshold": 120,
+          "N": 273,
+          "r": 0.5988019272015317
+        },
+        {
+          "threshold": 150,
+          "N": 218,
+          "r": 0.5853133080960399
+        },
+        {
+          "threshold": 180,
+          "N": 178,
+          "r": 0.6231100443980578
+        }
+      ]
+    },
+    {
+      "label": "E: Noise + dynamical integration (strong)",
+      "N": 500,
+      "rAll": 0.7074,
+      "rLow": 0.7499,
+      "rHigh": 0.6243,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 474,
+          "r": 0.668290954689079
+        },
+        {
+          "threshold": 80,
+          "N": 393,
+          "r": 0.6587119625090504
+        },
+        {
+          "threshold": 100,
+          "N": 346,
+          "r": 0.6471817038149014
+        },
+        {
+          "threshold": 120,
+          "N": 306,
+          "r": 0.6242502083892058
+        },
+        {
+          "threshold": 150,
+          "N": 249,
+          "r": 0.5872103432425805
+        },
+        {
+          "threshold": 180,
+          "N": 191,
+          "r": 0.5381640012617394
+        }
+      ]
+    },
+    {
+      "label": "F: Noise + strong dynInt + heavy low-mass scatter",
+      "N": 498,
+      "rAll": 0.7362,
+      "rLow": 0.8082,
+      "rHigh": 0.5879,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 460,
+          "r": 0.6918342570144181
+        },
+        {
+          "threshold": 80,
+          "N": 398,
+          "r": 0.6671258853309582
+        },
+        {
+          "threshold": 100,
+          "N": 335,
+          "r": 0.6234332082367431
+        },
+        {
+          "threshold": 120,
+          "N": 294,
+          "r": 0.5878881851770402
+        },
+        {
+          "threshold": 150,
+          "N": 242,
+          "r": 0.5696546976879424
+        },
+        {
+          "threshold": 180,
+          "N": 195,
+          "r": 0.5353595738353786
+        }
+      ]
+    },
+    {
+      "label": "G: SPARC-calibrated (tuned to match observed pattern)",
+      "N": 485,
+      "rAll": 0.7095,
+      "rLow": 0.7663,
+      "rHigh": 0.5954,
+      "strengthens": false,
+      "regimeData": [
+        {
+          "threshold": 50,
+          "N": 465,
+          "r": 0.6775120599268117
+        },
+        {
+          "threshold": 80,
+          "N": 398,
+          "r": 0.6421184775638602
+        },
+        {
+          "threshold": 100,
+          "N": 352,
+          "r": 0.6159296204690886
+        },
+        {
+          "threshold": 120,
+          "N": 319,
+          "r": 0.595425684937261
+        },
+        {
+          "threshold": 150,
+          "N": 269,
+          "r": 0.5505916179475177
+        },
+        {
+          "threshold": 180,
+          "N": 226,
+          "r": 0.5295656578745203
+        }
+      ]
+    }
+  ],
+  "sparcComparison": {
+    "rAll": 0.7,
+    "rLow": 0.3,
+    "rHigh": 0.75,
+    "pattern": "strengthens"
+  },
+  "anyStrengthens": false
+}

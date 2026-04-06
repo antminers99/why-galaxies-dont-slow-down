@@ -1,0 +1,20 @@
+{
+  "phase": "400B",
+  "title": "Regime Inversion Diagnostic",
+  "timestamp": "2026-04-06T14:51:09.472Z",
+  "keyFinding": "Baseline NFW produces VfResid-A0 coupling but with INVERTED regime pattern vs SPARC",
+  "implication": "SPARC regime strengthening requires mass-dependent physical a₀ variation + low-mass noise",
+  "sparcPattern": {
+    "lowV": 0.3,
+    "highV": 0.75,
+    "vHighV": 0.83,
+    "direction": "strengthens"
+  },
+  "baselinePattern": {
+    "lowV": 0.94,
+    "highV": 0.78,
+    "vHighV": 0.71,
+    "direction": "weakens"
+  },
+  "conclusion": "Regime strengthening is the key discriminant between fitting artifact and physical signal"
+}

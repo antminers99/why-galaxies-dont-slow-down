@@ -1,0 +1,172 @@
+{
+  "phase": "400",
+  "title": "Origin of VfResid — Mock Galaxy Simulation Program",
+  "timestamp": "2026-04-06T14:51:03.179Z",
+  "NGAL": 300,
+  "scenarios": [
+    {
+      "name": "baseline",
+      "desc": "Pure NFW + exponential disk, universal a₀",
+      "N": 300,
+      "rVfResidA0": 0.8809,
+      "rVflatA0": -0.1433,
+      "rHaloK_VfResid": 0.279,
+      "rLogM200_VfResid": 0.038,
+      "rConc_VfResid": 0.7258,
+      "structA0R2": 0.1787,
+      "structPlusVfR_A0R2": 0.9547,
+      "vfResidLift": 0.776,
+      "rHaloK_A0": 0.6603,
+      "rLogM200_A0": -0.251,
+      "regime": {
+        "lowV": 0.9327,
+        "highV": 0.8731,
+        "vHighV": 0.862
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0,
+        "feedbackStrength": 0,
+        "assemblyProxy": 0,
+        "contractionStrength": 0
+      }
+    },
+    {
+      "name": "halo_response",
+      "desc": "Adiabatic contraction (mass-dependent)",
+      "N": 300,
+      "rVfResidA0": 0.8497,
+      "rVflatA0": -0.1987,
+      "rHaloK_VfResid": 0.2529,
+      "rLogM200_VfResid": 0.042,
+      "rConc_VfResid": 0.7084,
+      "structA0R2": 0.2237,
+      "structPlusVfR_A0R2": 0.9457,
+      "vfResidLift": 0.722,
+      "rHaloK_A0": 0.6888,
+      "rLogM200_A0": -0.3098,
+      "regime": {
+        "lowV": 0.9283,
+        "highV": 0.8138,
+        "vHighV": 0.7517
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0,
+        "feedbackStrength": 0,
+        "assemblyProxy": 0,
+        "contractionStrength": 0.042
+      }
+    },
+    {
+      "name": "assembly_history",
+      "desc": "Assembly-dependent a₀ scatter",
+      "N": 300,
+      "rVfResidA0": 0.8424,
+      "rVflatA0": -0.1161,
+      "rHaloK_VfResid": 0.1826,
+      "rLogM200_VfResid": 0.0317,
+      "rConc_VfResid": 0.6049,
+      "structA0R2": 0.1713,
+      "structPlusVfR_A0R2": 0.881,
+      "vfResidLift": 0.7097,
+      "rHaloK_A0": 0.6142,
+      "rLogM200_A0": -0.2482,
+      "regime": {
+        "lowV": 0.9681,
+        "highV": 0.6979,
+        "vHighV": 0.635
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0,
+        "feedbackStrength": 0,
+        "assemblyProxy": 0.1287,
+        "contractionStrength": 0
+      }
+    },
+    {
+      "name": "feedback",
+      "desc": "SN feedback core formation (Di Cintio)",
+      "N": 300,
+      "rVfResidA0": 0.8367,
+      "rVflatA0": -0.1031,
+      "rHaloK_VfResid": 0.2368,
+      "rLogM200_VfResid": 0.0425,
+      "rConc_VfResid": 0.6992,
+      "structA0R2": 0.2384,
+      "structPlusVfR_A0R2": 0.9384,
+      "vfResidLift": 0.7,
+      "rHaloK_A0": 0.647,
+      "rLogM200_A0": -0.2054,
+      "regime": {
+        "lowV": 0.905,
+        "highV": 0.7865,
+        "vHighV": 0.7514
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0,
+        "feedbackStrength": 0.1535,
+        "assemblyProxy": 0,
+        "contractionStrength": 0
+      }
+    },
+    {
+      "name": "dynamical_integration",
+      "desc": "Accumulated baryon-halo processing",
+      "N": 300,
+      "rVfResidA0": 0.9119,
+      "rVflatA0": 0.1551,
+      "rHaloK_VfResid": 0.2532,
+      "rLogM200_VfResid": 0.0325,
+      "rConc_VfResid": 0.7117,
+      "structA0R2": 0.122,
+      "structPlusVfR_A0R2": 0.9536,
+      "vfResidLift": 0.8315,
+      "rHaloK_A0": 0.4234,
+      "rLogM200_A0": 0.0411,
+      "regime": {
+        "lowV": 0.9229,
+        "highV": 0.8959,
+        "vHighV": 0.8906
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0.0325,
+        "feedbackStrength": 0,
+        "assemblyProxy": 0,
+        "contractionStrength": 0
+      }
+    },
+    {
+      "name": "combined",
+      "desc": "All mechanisms active simultaneously",
+      "N": 300,
+      "rVfResidA0": 0.8645,
+      "rVflatA0": 0.036,
+      "rHaloK_VfResid": 0.2192,
+      "rLogM200_VfResid": 0.0362,
+      "rConc_VfResid": 0.6843,
+      "structA0R2": 0.1819,
+      "structPlusVfR_A0R2": 0.9292,
+      "vfResidLift": 0.7473,
+      "rHaloK_A0": 0.5405,
+      "rLogM200_A0": -0.0665,
+      "regime": {
+        "lowV": 0.8737,
+        "highV": 0.8643,
+        "vHighV": 0.8104
+      },
+      "mechanismCorrs": {
+        "dynTimeProxy": 0.0362,
+        "feedbackStrength": 0.0922,
+        "assemblyProxy": 0.0281,
+        "contractionStrength": 0.0362
+      }
+    }
+  ],
+  "sparcComparison": {
+    "rVfResidA0": 0.7,
+    "rHaloK": 0.6,
+    "vfResidLift": 0.171,
+    "regimeLow": 0.3,
+    "regimeHigh": 0.75,
+    "regimeVHigh": 0.83
+  }
+}

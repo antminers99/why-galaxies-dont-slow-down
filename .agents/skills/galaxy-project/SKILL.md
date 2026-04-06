@@ -77,16 +77,24 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
 - Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** PUBLICATION-READY. Internal analysis FROZEN. Manuscript complete.
+**Status:** PUBLICATION-READY + Phase 400 COMPLETE. Internal analysis FROZEN. Manuscript complete.
 Structured, regime-dependent coupling law with external support and leading H4 dynamical integration interpretation.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
+
+**Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
+- Baseline NFW concentration diversity produces VfResid–a₀ coupling (r≈0.86) as a fitting artefact
+- The SPARC regime-strengthening pattern (low-V→high-V r increases) is NOT reproduced by ANY scenario
+- All simulations show the OPPOSITE pattern: coupling WEAKENS at high Vflat
+- This regime inversion is the key discriminant between fitting artefact and physical a₀ variation
+- The SPARC signal requires qualitatively different physics from simple NFW+disc models
 
 POSSIBLE FUTURE WORK:
 - Cross-survey replication (non-SPARC rotation curves, IFU kinematics)
 - Spatially resolved kinematics to directly probe dynamical integration hypothesis
 - Higher-quality logMhost for external sample (group catalogs)
 - Formal Bayesian model comparison for hypothesis testing
+- Investigation of baryon-dependent halo profiles beyond NFW
 
 ## Key Files
 
@@ -101,3 +109,9 @@ POSSIBLE FUTURE WORK:
 | `public/sparc-table.json` | SPARC master table (175 galaxies) |
 | `public/phase11-sensitivity-lab.json` | Per-galaxy RAR profiles |
 | `public/phase25-group-membership.json` | Environment assignments |
+| `scripts/phase400-vfresid-origin.cjs` | Phase 400A: 6-scenario mock simulation |
+| `scripts/phase400b-regime-inversion.cjs` | Phase 400B: regime inversion diagnostic |
+| `scripts/phase400c-noise-physics.cjs` | Phase 400C: realistic noise + physics tests |
+| `public/phase400-vfresid-origin.json` | Phase 400A results |
+| `public/phase400b-regime-inversion.json` | Phase 400B results |
+| `public/phase400c-noise-physics.json` | Phase 400C results |

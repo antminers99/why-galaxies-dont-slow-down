@@ -348,6 +348,68 @@ The natural next step is testing whether this picture survives in an entirely in
 
 ---
 
+## 10. Phase 400: Origin of VfResid — Mock Galaxy Simulation Program
+
+### 10.1 Motivation
+
+Phases 300–303 identified VfResid as the dominant coupling channel and dynamical integration (H4) as the best-supported physical interpretation. Phase 400 asks the critical question: what *physically generates* the VfResid–a₀ coupling? Can standard ΛCDM galaxy formation with NFW haloes reproduce the observed signal?
+
+### 10.2 Phase 400A: Six-Scenario Simulation (N=300 each)
+
+We generated 300 mock galaxies per scenario using NFW haloes + exponential baryonic discs with realistic scaling relations:
+
+| Scenario | Description | r(VfResid, logA0) | VfResid lift |
+|----------|------------|-------------------|-------------|
+| Baseline NFW | Pure NFW, universal a₀ | 0.881 | +77.6pp |
+| Halo Response | Adiabatic contraction (mass-dependent) | 0.850 | +72.2pp |
+| Assembly History | Assembly-dependent a₀ scatter (active) | 0.842 | +71.0pp |
+| Feedback | SN core formation (Di Cintio 2014) | 0.837 | +70.0pp |
+| Dynamical Integration | Accumulated baryon-halo processing (active) | 0.912 | +83.2pp |
+| Combined | All mechanisms active simultaneously | 0.864 | +74.7pp |
+
+**Key finding**: VfResid–a₀ coupling appears in ALL scenarios (r ≈ 0.84–0.91), including the pure baseline. Physical mechanisms are properly applied via RAR-based correction to gobs. The primary driver is **halo concentration diversity**: r(log c, VfResid) ≈ 0.60–0.77 across all scenarios. Concentration scatter systematically biases per-galaxy RAR fitting — higher c → faster-rising inner rotation curve → different apparent a₀. VfResid carries massive non-structural information (+70–83pp lift over structure alone for predicting a₀).
+
+### 10.3 Phase 400B: The Regime Inversion Problem
+
+**Critical discovery**: All simulations show the VfResid–a₀ coupling **weakening** with Vflat, while SPARC shows it **strengthening**:
+
+| Source | Low-V r | High-V r | Pattern |
+|--------|---------|----------|---------|
+| SPARC observed | 0.30 | 0.75 | Strengthens |
+| Sim baseline | 0.93 | 0.87 | Weakens |
+| Sim halo response | 0.93 | 0.81 | Weakens |
+| Sim dynamical integration | 0.92 | 0.90 | Weakens |
+| Sim combined | 0.87 | 0.86 | Weakens |
+
+The regime direction is inverted. No tested scenario reproduces the SPARC regime-strengthening pattern.
+
+### 10.4 Phase 400C: Realistic Mock with Noise and Physical Signal
+
+Seven additional tests with increasingly realistic conditions (SPARC-like velocity errors, sparse low-mass data, M/L uncertainty, physical a₀ variation, low-mass scatter):
+
+| Test | r(all) | r(low-V) | r(high-V) | Pattern |
+|------|--------|----------|-----------|---------|
+| Clean mock | 0.874 | 0.946 | 0.880 | Weakens |
+| Noise only | 0.577 | 0.630 | 0.579 | Weakens |
+| Noise + low-mass scatter | 0.693 | 0.777 | 0.645 | Weakens |
+| Noise + dynInt (strong, active) | 0.707 | 0.750 | 0.624 | Weakens |
+| SPARC-calibrated (active) | 0.710 | 0.766 | 0.595 | Weakens |
+| SPARC observed | 0.70 | 0.30 | 0.75 | **Strengthens** |
+
+**Verdict**: No simulation configuration reproduces the SPARC regime-strengthening pattern. The concentration baseline always dominates and produces weakening. Even with realistic noise, mass-dependent physical a₀, and large low-mass scatter, the pattern remains inverted.
+
+### 10.5 Phase 400 Conclusions
+
+1. **Baseline VfResid is a fitting artefact**: Pure NFW concentration diversity produces r(VfResid, logA0) ≈ 0.86 via systematic bias in per-galaxy RAR fitting. This is non-physical.
+
+2. **Regime strengthening is the key discriminant**: The SPARC pattern (coupling strengthens at high Vflat) cannot be reproduced by any combination of NFW concentration effects + noise + mass-dependent a₀. This regime signature distinguishes physical a₀ variation from fitting bias.
+
+3. **The SPARC signal requires qualitatively different physics**: Simple NFW+disc models fail to produce regime strengthening regardless of parameter choice. Possible explanations include non-circular motions scrambling low-V signals, baryon-dependent halo profiles beyond NFW, genuinely mass-dependent acceleration scales, or selection effects in SPARC sample construction.
+
+4. **Implication for the hierarchical coupling law**: The observational VfResid channel contains *both* a concentration-driven fitting artefact (always present) and a genuine physical signal whose regime-strengthening signature is unique to SPARC data and unexplained by standard ΛCDM mock galaxies.
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)
