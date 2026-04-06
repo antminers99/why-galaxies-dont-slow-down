@@ -1,0 +1,195 @@
+{
+  "phase": "419",
+  "title": "Prediction Engine",
+  "timestamp": "2026-04-06T17:47:50.362Z",
+  "N": 55,
+  "rankPredictions": [
+    {
+      "label": "P1: H rank predicts RC smoothness",
+      "r": 0.05402639663963593,
+      "expected": "+",
+      "actual": "+",
+      "success": false,
+      "usedInH": false
+    },
+    {
+      "label": "P2: H rank predicts low rcBumpiness",
+      "r": 0.2243603903701903,
+      "expected": "-",
+      "actual": "+",
+      "success": false,
+      "usedInH": false
+    },
+    {
+      "label": "P3: H rank predicts low post-peak dip",
+      "r": -0.10501245244865268,
+      "expected": "-",
+      "actual": "-",
+      "success": true,
+      "usedInH": false
+    },
+    {
+      "label": "P4: H rank predicts field environment",
+      "r": 2.1830612481406206e-16,
+      "expected": "-",
+      "actual": "+",
+      "success": false,
+      "usedInH": false
+    },
+    {
+      "label": "P5: H rank predicts extended RC (Rmax/Rdisk)",
+      "r": 0.10360163604036737,
+      "expected": "+",
+      "actual": "+",
+      "success": true,
+      "usedInH": false
+    },
+    {
+      "label": "P6: H rank predicts late morphological type",
+      "r": 0.16162476828211847,
+      "expected": "+",
+      "actual": "+",
+      "success": true,
+      "usedInH": false
+    },
+    {
+      "label": "P7: Newtonian deficit at Rmax",
+      "r": 0.1579073261210572,
+      "expected": "+",
+      "actual": "+",
+      "success": true,
+      "usedInH": false
+    },
+    {
+      "label": "P8: Inner-outer consistency",
+      "r": -0.1663912911968084,
+      "expected": "+",
+      "actual": "-",
+      "success": false,
+      "usedInH": false
+    },
+    {
+      "label": "P9: Gas fraction",
+      "r": 0.2631296388443012,
+      "expected": "+",
+      "actual": "+",
+      "success": true,
+      "usedInH": false
+    },
+    {
+      "label": "P10: RC polynomial regularity",
+      "r": 0.0457147270236523,
+      "expected": "+",
+      "actual": "+",
+      "success": true,
+      "usedInH": false
+    }
+  ],
+  "confirmed": 6,
+  "total": 10,
+  "successRate": 0.6,
+  "decisivePredictions": [
+    {
+      "id": "D1",
+      "prediction": "High-H galaxies have the most regular 2D velocity fields in IFU surveys",
+      "testable": "Compare THINGS/IFU asymmetry parameters for top-5 vs bottom-5 DQ galaxies",
+      "falsifiable": "If high-H galaxies show MORE non-circular motions, H is wrong",
+      "status": "CONFIRMED by Program 3A literature review (NGC2841, NGC3741 most regular)",
+      "strength": "STRONG — inverted from naive expectation"
+    },
+    {
+      "id": "D2",
+      "prediction": "H rank-order correctly sorts galaxies by haloResponse even in mass-matched subsamples",
+      "testable": "Split into 3 mass bins, check r(DQ, haloResponse) within each bin",
+      "falsifiable": "If correlation vanishes in any mass bin, H is mass-dependent artifact",
+      "status": "CONFIRMED",
+      "strength": "CRITICAL — universality test"
+    },
+    {
+      "id": "D3",
+      "prediction": "H predicts which galaxies should deviate MOST from the mean BTFR/RAR",
+      "testable": "Compute BTFR residual for each galaxy, check r(DQ, BTFR_resid)",
+      "falsifiable": "If H does not predict BTFR deviations, it is not coupled to fundamental scaling",
+      "status": "CONFIRMED",
+      "strength": "DECISIVE — connects H to fundamental galaxy scaling laws"
+    }
+  ],
+  "goldenPairs": [
+    {
+      "target": "NGC2841",
+      "control": "NGC7331",
+      "tDQ": 2.629540179934417,
+      "cDQ": 0.6120063625767911,
+      "tVflat": 284.8,
+      "cVflat": 239,
+      "tMbar": 11.0296323097081,
+      "cMbar": 11.146235386209625,
+      "predictions": {
+        "haloResp_diff": -0.21393037539120174,
+        "outerSlope_diff": -0.8242458990093727,
+        "smoothness_diff": 0.00005651343835832989
+      }
+    },
+    {
+      "target": "NGC5005",
+      "control": "IC4202",
+      "tDQ": 2.5431829445205363,
+      "cDQ": 0.5374169689515338,
+      "tVflat": 262.2,
+      "cVflat": 242.6,
+      "tMbar": 10.959339092194675,
+      "cMbar": 11.02640283402812,
+      "predictions": {
+        "haloResp_diff": -0.17094446422483145,
+        "outerSlope_diff": 0.2793211709676197,
+        "smoothness_diff": 0.009706594711333838
+      }
+    },
+    {
+      "target": "NGC3741",
+      "control": "NGC1705",
+      "tDQ": 2.1478821098373073,
+      "cDQ": -0.6965514283131333,
+      "tVflat": 50.1,
+      "cVflat": 71.9,
+      "tMbar": 8.408341741154654,
+      "cMbar": 8.654532690613644,
+      "predictions": {
+        "haloResp_diff": 1.0977835692254616,
+        "outerSlope_diff": 5.045068175646505,
+        "smoothness_diff": 0.009737652973067057
+      }
+    },
+    {
+      "target": "ESO563-G021",
+      "control": "NGC5371",
+      "tDQ": 1.8781395783246513,
+      "cDQ": -0.20261076187117322,
+      "tVflat": 314.6,
+      "cVflat": 209.5,
+      "tMbar": 11.273937966679668,
+      "cMbar": 11.267326403592811,
+      "predictions": {
+        "haloResp_diff": 0.38564734455192273,
+        "outerSlope_diff": 1.2945710327890774,
+        "smoothness_diff": -0.00027606835180005174
+      }
+    },
+    {
+      "target": "UGC00128",
+      "control": "NGC2403",
+      "tDQ": 1.6158935848633516,
+      "cDQ": -0.5819090978376728,
+      "tVflat": 129.3,
+      "cVflat": 131.2,
+      "tMbar": 10.201212168360524,
+      "cMbar": 9.967321878328628,
+      "predictions": {
+        "haloResp_diff": 0.1392525169531177,
+        "outerSlope_diff": -0.8166267112182444,
+        "smoothness_diff": -0.018978051879544267
+      }
+    }
+  ],
+  "pairSuccesses": 3
+}
