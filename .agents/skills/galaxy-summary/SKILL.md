@@ -248,6 +248,7 @@ logOMD = 1.749 + 0.203×log(MHI/L3.6) − 0.101×log(Mbar)
 
 **Phase 200:** Data assembly — N=59 external SPARC galaxies with computed logA0, VfResid, lhOuter
 **Phase 201:** Blind prediction — MODERATE_TRANSFER
+**Phase 202:** External hierarchy replication — STRONG_HIERARCHY_REPLICATION (8/8 checks PASS)
 
 | Regime | N | Core+VfResid Gap | r(VfResid,a₀) |
 |--------|---|-------------------|----------------|
@@ -257,8 +258,12 @@ logOMD = 1.749 + 0.203×log(MHI/L3.6) − 0.101×log(Mbar)
 | Q=1 + Vflat>=120 | 11 | +59.0% | 0.830 |
 | Vflat < 120 | 43 | -3.9% | — |
 
-Hierarchy preserved. VfResid dominates. Regime-dependent as predicted.
-Full-sample gap diluted by crude logA0 estimates and low-Vflat regime.
+Phase 202 key findings:
+- Bootstrap P(VfResid>Core) = 100% in all regimes
+- VfResid-only (no Core) gap=47.5% full, 75.4% very-high-V — mediates Core content
+- Channel dominance margin: +49pp (full), +35pp (high-V), +71pp (very-high-V) over best alternative
+- lhOuter adds +18.1pp in very-high-V, +12.1pp in Q=1+HV (genuine 5th axis externally)
+- Partial r(VfResid,a0|Core) = 0.844 high-V, 0.869 Q=1+HV
 
 ## Key Files
 

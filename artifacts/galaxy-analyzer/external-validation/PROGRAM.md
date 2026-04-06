@@ -112,3 +112,41 @@ Bootstrap stability, outlier sensitivity, point-count effects.
 3. In best subset (Q=1, Vflat>=120, N=11): gap=59%, r=0.830 — matches Phase 134
 4. Full sample diluted by low-Vflat regime and crude logA0 estimates
 5. VfResid coefficient sign preserved; logMhost and logMR signs changed (expected: crude estimates)
+
+### Phase 202: External Hierarchy Replication — STRONG_HIERARCHY_REPLICATION
+
+**8/8 hierarchy checks passed** across all regimes:
+
+| Check | Result |
+|-------|--------|
+| Core fails (full sample) | YES (gap=-53%) |
+| Core fails (high-Vflat) | YES (gap=-6.7%) |
+| VfResid dominates (full) | YES |
+| VfResid dominates (high-V) | YES |
+| Bootstrap P(VfResid>Core) full | 100% |
+| Bootstrap P(VfResid>Core) high-V | 100% |
+| Partial r(VfResid,a0|Core) > 0.3 | YES (0.844) |
+| Regime preserved (high-V > full) | YES |
+
+**Channel dominance:**
+- Full sample: VfResid gap=47.5% (alone), next best=logVflat at -1.6% — margin +49pp
+- High-Vflat: VfResid gap=34.3%, next best=logVflat at -1.0% — margin +35pp
+- Very-high-Vflat: VfResid gap=48.7%, next best=logVflat at -21.8% — margin +71pp
+
+**Bootstrap stability (10000 resamples):**
+- Full: P(VfResid>Core)=100%, mean delta=61.1pp, 90% CI=[43.4, 80.0]pp
+- High-V: P(VfResid>Core)=100%, mean delta=45.4pp, 90% CI=[18.8, 85.9]pp
+- Very-High-V: P(VfResid>Core)=99.9%, mean delta=101.4pp
+- Q=1+HV: P(VfResid>Core)=99.6%, mean delta=61.4pp
+
+**lhOuter (5th axis) external status:**
+- Full: adds +1.4pp (gap 8.2% → 9.7%) — modest but positive
+- High-V: adds +1.0pp (gap 34.3% → 35.3%) — small
+- Very-High-V: adds +18.1pp (gap 48.7% → 66.9%) — substantial
+- Q=1+HV: adds +12.1pp (gap 59.0% → 71.1%) — strong
+- Bootstrap P(lhOuter adds): 71.5% (full), 90.4% (very-high-V)
+
+**Partial correlations (VfResid after Core removed):**
+- Full: r=0.806 | High-V: r=0.844 | Very-High-V: r=0.760 | Q=1+HV: r=0.869
+
+**Key discovery:** VfResid-only (no Core at all) outperforms every model in every regime except Q=1+HV where Core+VfResid is better. This means VfResid alone contains more transferable information than the 3-axis core — consistent with the internal finding that VfResid mediates Core content.

@@ -1,0 +1,379 @@
+{
+  "phase": "202",
+  "title": "External Hierarchy Replication",
+  "verdict": "STRONG_HIERARCHY_REPLICATION",
+  "hierarchyChecks": {
+    "coreFails_full": true,
+    "coreFails_hv": true,
+    "vfrDominates_full": true,
+    "vfrDominates_hv": true,
+    "bootVfrBeats_full": true,
+    "bootVfrBeats_hv": true,
+    "partialSignificant": true,
+    "regimePreserved": true
+  },
+  "passed": 8,
+  "total": 8,
+  "regimes": {
+    "full": {
+      "label": "FULL SAMPLE",
+      "N": 59,
+      "naive": 0.41424576912736777,
+      "coreFails": true,
+      "vfrDominates": true,
+      "lhAdds": true,
+      "core": {
+        "gap": -53,
+        "r": -0.233
+      },
+      "vfOnly": {
+        "gap": 47.5,
+        "r": 0.713
+      },
+      "coreLh": {
+        "gap": -53.9,
+        "r": -0.232
+      },
+      "vfResid": {
+        "gap": 8.2,
+        "r": 0.415
+      },
+      "fiveAxis": {
+        "gap": 9.7,
+        "r": 0.456
+      }
+    },
+    "highVflat": {
+      "label": "HIGH-VFLAT (>=120)",
+      "N": 16,
+      "naive": 0.4478845521944737,
+      "coreFails": true,
+      "vfrDominates": true,
+      "lhAdds": true,
+      "core": {
+        "gap": -6.7,
+        "r": 0.033
+      },
+      "vfOnly": {
+        "gap": 48.5,
+        "r": 0.841
+      },
+      "coreLh": {
+        "gap": -1.1,
+        "r": 0.128
+      },
+      "vfResid": {
+        "gap": 34.3,
+        "r": 0.641
+      },
+      "fiveAxis": {
+        "gap": 35.3,
+        "r": 0.649
+      }
+    },
+    "veryHighVflat": {
+      "label": "VERY-HIGH-VFLAT (>=180)",
+      "N": 8,
+      "naive": 0.37382813187048713,
+      "coreFails": true,
+      "vfrDominates": true,
+      "lhAdds": true,
+      "core": {
+        "gap": -49.4,
+        "r": 0.533
+      },
+      "vfOnly": {
+        "gap": 75.4,
+        "r": 0.858
+      },
+      "coreLh": {
+        "gap": -26.3,
+        "r": 0.604
+      },
+      "vfResid": {
+        "gap": 48.7,
+        "r": 0.77
+      },
+      "fiveAxis": {
+        "gap": 66.9,
+        "r": 0.769
+      }
+    },
+    "lowVflat": {
+      "label": "LOW-VFLAT (<120)",
+      "N": 43,
+      "naive": 0.401009329000236,
+      "coreFails": true,
+      "vfrDominates": true,
+      "lhAdds": true,
+      "core": {
+        "gap": -74.4,
+        "r": -0.422
+      },
+      "vfOnly": {
+        "gap": 47.1,
+        "r": 0.704
+      },
+      "coreLh": {
+        "gap": -78.4,
+        "r": -0.44
+      },
+      "vfResid": {
+        "gap": -3.9,
+        "r": 0.34
+      },
+      "fiveAxis": {
+        "gap": -2.2,
+        "r": 0.35
+      }
+    },
+    "q1HighVflat": {
+      "label": "Q=1 + VFLAT>=120",
+      "N": 11,
+      "naive": 0.38873408999370296,
+      "coreFails": true,
+      "vfrDominates": true,
+      "lhAdds": true,
+      "core": {
+        "gap": 1.9,
+        "r": 0.432
+      },
+      "vfOnly": {
+        "gap": 63.8,
+        "r": 0.875
+      },
+      "coreLh": {
+        "gap": 19.2,
+        "r": 0.57
+      },
+      "vfResid": {
+        "gap": 59,
+        "r": 0.83
+      },
+      "fiveAxis": {
+        "gap": 71.1,
+        "r": 0.859
+      }
+    }
+  },
+  "channelDominance": {
+    "Full sample": {
+      "results": [
+        {
+          "name": "VfResid",
+          "r": 0.713,
+          "gap": 8.2
+        },
+        {
+          "name": "logVflat",
+          "r": 0.336,
+          "gap": -29.4
+        },
+        {
+          "name": "logMHI",
+          "r": 0.152,
+          "gap": null
+        },
+        {
+          "name": "logMbar",
+          "r": 0.147,
+          "gap": -51.6
+        },
+        {
+          "name": "logMhost",
+          "r": 0.336,
+          "gap": null
+        },
+        {
+          "name": "logMeanRun",
+          "r": 0.055,
+          "gap": null
+        }
+      ],
+      "vfrGap": 8.2,
+      "bestAlt": "logVflat",
+      "bestAltGap": -29.4,
+      "margin": 37.6
+    },
+    "High-Vflat": {
+      "results": [
+        {
+          "name": "VfResid",
+          "r": 0.841,
+          "gap": 34.3
+        },
+        {
+          "name": "logVflat",
+          "r": 0.618,
+          "gap": -1
+        },
+        {
+          "name": "logMHI",
+          "r": 0.263,
+          "gap": null
+        },
+        {
+          "name": "logMbar",
+          "r": 0.398,
+          "gap": -9.2
+        },
+        {
+          "name": "logMhost",
+          "r": 0.618,
+          "gap": null
+        },
+        {
+          "name": "logMeanRun",
+          "r": 0.686,
+          "gap": null
+        }
+      ],
+      "vfrGap": 34.3,
+      "bestAlt": "logVflat",
+      "bestAltGap": -1,
+      "margin": 35.3
+    },
+    "Very-high-Vflat": {
+      "results": [
+        {
+          "name": "VfResid",
+          "r": 0.858,
+          "gap": 48.7
+        },
+        {
+          "name": "logVflat",
+          "r": 0.62,
+          "gap": -21.8
+        },
+        {
+          "name": "logMHI",
+          "r": -0.353,
+          "gap": null
+        },
+        {
+          "name": "logMbar",
+          "r": -0.097,
+          "gap": -47
+        },
+        {
+          "name": "logMhost",
+          "r": 0.62,
+          "gap": null
+        },
+        {
+          "name": "logMeanRun",
+          "r": 0.696,
+          "gap": null
+        }
+      ],
+      "vfrGap": 48.7,
+      "bestAlt": "logVflat",
+      "bestAltGap": -21.8,
+      "margin": 70.5
+    }
+  },
+  "bootstrap": {
+    "full": {
+      "label": "Full sample",
+      "N": 59,
+      "pVfrBeatsCore": 100,
+      "pCoreFails": 100,
+      "meanVfrDelta": 61.1,
+      "vfrDeltaCI": [
+        43.4,
+        80
+      ],
+      "pLhAdds": 71.5,
+      "meanLhDelta": 1.5,
+      "pVfrDominatesLh": 100
+    },
+    "highVflat": {
+      "label": "High-Vflat",
+      "N": 16,
+      "pVfrBeatsCore": 100,
+      "pCoreFails": 75.5,
+      "meanVfrDelta": 45.4,
+      "vfrDeltaCI": [
+        18.8,
+        85.9
+      ],
+      "pLhAdds": 55,
+      "meanLhDelta": 1.9,
+      "pVfrDominatesLh": 100
+    },
+    "veryHighVflat": {
+      "label": "Very-high-Vflat",
+      "N": 8,
+      "pVfrBeatsCore": 99.9,
+      "pCoreFails": 92.6,
+      "meanVfrDelta": 101.4,
+      "vfrDeltaCI": [
+        55.3,
+        159.8
+      ],
+      "pLhAdds": 90.4,
+      "meanLhDelta": 18.6,
+      "pVfrDominatesLh": 99.8
+    },
+    "q1HighVflat": {
+      "label": "Q=1+Vflat>=120",
+      "N": 11,
+      "pVfrBeatsCore": 99.6,
+      "pCoreFails": 53.1,
+      "meanVfrDelta": 61.4,
+      "vfrDeltaCI": [
+        19.9,
+        116.3
+      ],
+      "pLhAdds": 88.4,
+      "meanLhDelta": 12.1,
+      "pVfrDominatesLh": 99.4
+    }
+  },
+  "partialCorrelations": {
+    "full": {
+      "label": "Full sample",
+      "N": 59,
+      "rVfResidRaw": 0.713,
+      "rVfResidPartial": 0.806,
+      "rLogMHIPartial": 0.486,
+      "rLhPartial": -0.056
+    },
+    "highVflat": {
+      "label": "High-Vflat",
+      "N": 16,
+      "rVfResidRaw": 0.841,
+      "rVfResidPartial": 0.844,
+      "rLogMHIPartial": 0.517,
+      "rLhPartial": -0.227
+    },
+    "veryHighVflat": {
+      "label": "Very-high-Vflat",
+      "N": 8,
+      "rVfResidRaw": 0.858,
+      "rVfResidPartial": 0.76,
+      "rLogMHIPartial": 0.077,
+      "rLhPartial": -0.217
+    },
+    "q1HighVflat": {
+      "label": "Q=1+Vflat>=120",
+      "N": 11,
+      "rVfResidRaw": 0.875,
+      "rVfResidPartial": 0.869,
+      "rLogMHIPartial": 0.194,
+      "rLhPartial": -0.535
+    }
+  },
+  "lhOuterVerdict": "LH_OUTER_ADDS",
+  "lhOuterVerdictHV": "LH_OUTER_ADDS_HV",
+  "internalReference": {
+    "coreLOO": 44.1,
+    "vfResidLOO": 61.1,
+    "fiveAxisLOO": 65.4,
+    "coreTransfer": -11.5,
+    "vfResidTransfer": 56.9,
+    "fiveAxisTransfer": 66,
+    "rVfResidHoldout": 0.801,
+    "bootPVfrBeats": 99.9
+  }
+}
