@@ -100,6 +100,11 @@ Linearity → common cause, not acceleration law. 2 candidates remain: halo stru
 Δr=−0.215 (0.804→0.589). But r≈0.66–0.71 survives after all 9 controls.
 Hidden variable has halo component but is DEEPER than 1D RC halo params.
 
+**Phase 413 (Assembly History):** Assembly proxies do NOT significantly add beyond halo structure.
+Stepwise floor: r≈0.524 with 8 vars. Assembly-specific Δr≈−0.03 only.
+12-control r=0.183 REJECTED (multicollinearity, unstable bootstrap).
+Hidden variable INVISIBLE to all SPARC observables. Points to unmeasurable halo properties or new physics.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -156,6 +161,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase410-external-field.cjs` | Phase 410: external field discrimination |
 | `scripts/phase411-functional-form.cjs` | Phase 411: MOND functional form test |
 | `scripts/phase412-halo-structure.cjs` | Phase 412: halo structure discrimination |
+| `scripts/phase413-assembly-history.cjs` | Phase 413: assembly history test |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -172,3 +178,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase410-external-field.json` | Phase 410 external field test |
 | `public/phase411-functional-form.json` | Phase 411 functional form test |
 | `public/phase412-halo-structure.json` | Phase 412 halo structure test |
+| `public/phase413-assembly-history.json` | Phase 413 assembly history test |

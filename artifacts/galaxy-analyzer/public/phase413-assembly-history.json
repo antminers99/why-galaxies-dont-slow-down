@@ -1,0 +1,233 @@
+{
+  "phase": "413",
+  "title": "Assembly History / Formation Time",
+  "timestamp": "2026-04-06T16:49:56.585Z",
+  "N": 55,
+  "baselineR": 0.8042985384878967,
+  "rHaloBase": 0.5892430897782774,
+  "proxyCorrelations": [
+    {
+      "name": "logK_resid",
+      "rVfResid": 0.6330714740540021,
+      "rA0resid": 0.44317620167260974,
+      "rLsum": 0.5665562437392554
+    },
+    {
+      "name": "dmFrac_resid",
+      "rVfResid": 0.427040398422018,
+      "rA0resid": 0.6320748803294337,
+      "rLsum": 0.5575374400796392
+    },
+    {
+      "name": "logGasFrac",
+      "rVfResid": -0.12064527397808895,
+      "rA0resid": -0.00004721415056469719,
+      "rLsum": -0.06353470884436486
+    },
+    {
+      "name": "gasFrac_resid",
+      "rVfResid": -0.11086165887183484,
+      "rA0resid": -0.08861396248687681,
+      "rLsum": -0.10500757521101815
+    },
+    {
+      "name": "baryonCompact",
+      "rVfResid": 4.4997569811161174e-18,
+      "rA0resid": -9.339216791676858e-17,
+      "rLsum": -8.043241855981358e-17
+    },
+    {
+      "name": "compact_resid",
+      "rVfResid": -0.17941154295467865,
+      "rA0resid": 0.002562295855920358,
+      "rLsum": -0.09309664253327439
+    },
+    {
+      "name": "stellarHaloRatio",
+      "rVfResid": 0.26824162766628523,
+      "rA0resid": 0.21110351549137688,
+      "rLsum": 0.25233595378378904
+    },
+    {
+      "name": "SHR_resid",
+      "rVfResid": 0.34734181105269923,
+      "rA0resid": 0.22585584129046588,
+      "rLsum": 0.30174161222922435
+    },
+    {
+      "name": "morphT_resid",
+      "rVfResid": -1.3924441001750154e-15,
+      "rA0resid": 1.414849743997288e-15,
+      "rLsum": 4.5965446861489264e-17
+    },
+    {
+      "name": "envCode",
+      "rVfResid": -0.3593967962323061,
+      "rA0resid": -0.43374390393515194,
+      "rLsum": -0.417523610947843
+    }
+  ],
+  "synergyResults": [
+    {
+      "name": "logK + dmFrac + gasFrac_resid",
+      "partialR": 0.5873329653566497,
+      "deltaFromHalo": -0.0019101244216277458,
+      "deltaFromBase": -0.21696557313124698,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + compact_resid",
+      "partialR": 0.5965752309641987,
+      "deltaFromHalo": 0.007332141185921293,
+      "deltaFromBase": -0.20772330752369794,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + SHR_resid",
+      "partialR": 0.5927617200486132,
+      "deltaFromHalo": 0.003518630270335721,
+      "deltaFromBase": -0.2115368184392835,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + morphT_resid",
+      "partialR": 0.5729188687132724,
+      "deltaFromHalo": -0.016324221065005085,
+      "deltaFromBase": -0.23137966977462432,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + envCode",
+      "partialR": 0.575495233670486,
+      "deltaFromHalo": -0.01374785610779139,
+      "deltaFromBase": -0.22880330481741062,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + logGasFrac",
+      "partialR": 0.600161924822516,
+      "deltaFromHalo": 0.010918835044238517,
+      "deltaFromBase": -0.20413661366538072,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + logK_resid",
+      "partialR": 0.5827209730961257,
+      "deltaFromHalo": -0.006522116682151746,
+      "deltaFromBase": -0.22157756539177098,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK + dmFrac + dmFrac_resid",
+      "partialR": 0.5670373104762271,
+      "deltaFromHalo": -0.022205779302050366,
+      "deltaFromBase": -0.2372612280116696,
+      "status": "WEAK"
+    },
+    {
+      "name": "logK+dmF+gasF+compact+SHR",
+      "partialR": 0.49694227965503696,
+      "deltaFromHalo": -0.09230081012324048,
+      "deltaFromBase": -0.3073562588328597,
+      "status": "MODERATE"
+    },
+    {
+      "name": "logK+dmF+gasF+env+morphT",
+      "partialR": 0.5593190514799299,
+      "deltaFromHalo": -0.029924038298347555,
+      "deltaFromBase": -0.2449794870079668,
+      "status": "WEAK"
+    },
+    {
+      "name": "ALL halo(7) + ALL assembly(5)",
+      "partialR": 0.18341797136923832,
+      "deltaFromHalo": -0.4058251184090391,
+      "deltaFromBase": -0.6208805671186584,
+      "status": "STRONG"
+    }
+  ],
+  "regimeResults": [
+    {
+      "name": "logK_resid",
+      "rLow": 0.5429825809026892,
+      "rHigh": 0.4853611712504831,
+      "strengthens": "no"
+    },
+    {
+      "name": "dmFrac_resid",
+      "rLow": 0.44862126594647483,
+      "rHigh": 0.6091209884768087,
+      "strengthens": "YES"
+    },
+    {
+      "name": "logGasFrac",
+      "rLow": 0.381648528718116,
+      "rHigh": -0.06236227009785695,
+      "strengthens": "no"
+    },
+    {
+      "name": "gasFrac_resid",
+      "rLow": -0.04008022940096305,
+      "rHigh": -0.12262332688922202,
+      "strengthens": "YES"
+    },
+    {
+      "name": "baryonCompact",
+      "rLow": -0.07879668439669768,
+      "rHigh": -0.07085265514411766,
+      "strengthens": "no"
+    },
+    {
+      "name": "compact_resid",
+      "rLow": 0.029213878565163047,
+      "rHigh": 0.00479219015150419,
+      "strengthens": "no"
+    },
+    {
+      "name": "stellarHaloRatio",
+      "rLow": 0.303043142169778,
+      "rHigh": 0.2660661545171477,
+      "strengthens": "no"
+    },
+    {
+      "name": "SHR_resid",
+      "rLow": 0.3060618704533336,
+      "rHigh": 0.27256235816944724,
+      "strengthens": "no"
+    },
+    {
+      "name": "morphT_resid",
+      "rLow": 0.22642647474431535,
+      "rHigh": -0.1937502900240398,
+      "strengthens": "no"
+    },
+    {
+      "name": "envCode",
+      "rLow": -0.2982609274518117,
+      "rHigh": -0.5228409383026402,
+      "strengthens": "YES"
+    }
+  ],
+  "maxAbsorption": {
+    "partial_r": 0.18341797136923832,
+    "residual_r": 0.18341797136923832,
+    "LOO_r": 0.15720509876967528,
+    "R2vfr": -0.5158023321476091,
+    "R2a0r": 0.6797568381898733
+  },
+  "assemblyAdds": true,
+  "environmentSplit": {
+    "field": {
+      "N": 9,
+      "r": 0.6716633243888346
+    },
+    "group": {
+      "N": 10,
+      "r": 0.13759981374075164
+    },
+    "cluster": {
+      "N": 0,
+      "r": null
+    }
+  }
+}
