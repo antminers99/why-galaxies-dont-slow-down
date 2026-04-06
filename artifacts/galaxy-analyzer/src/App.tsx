@@ -26,6 +26,7 @@ import ClusterTestPage from "@/pages/cluster-test";
 import BreakTestPage from "@/pages/break-test";
 import PipelinePage from "@/pages/pipeline";
 import WhyA0Page from "@/pages/why-a0";
+import Program10Page from "@/pages/program10";
 import { GalaxyProvider } from "@/hooks/use-galaxy";
 
 const queryClient = new QueryClient();
@@ -56,6 +57,7 @@ function Router() {
       <Route path="/break-test" component={BreakTestPage} />
       <Route path="/pipeline" component={PipelinePage} />
       <Route path="/why-a0" component={WhyA0Page} />
+      <Route path="/program10" component={Program10Page} />
       <Route component={NotFound} />
     </Switch>
   );
