@@ -353,12 +353,14 @@ log10(m/s^2) = logA0 - 13.489. Values range [3.1, 4.1] in CSV units.
 
 ---
 
-## Track 2: Hierarchical Coupling Law for Per-Galaxy a₀ Variation (Phases 123–134)
+## Track 2: Hierarchical Coupling Law for Per-Galaxy a₀ Variation (Phases 123–134, 200–201)
 
 A separate investigation (Track 2) directly addresses per-galaxy a₀ variation and identifies a transferable, regime-dependent, hierarchical baryon-halo coupling law. See **MANUSCRIPT-TRACK2.md** for the full analysis report.
 
 **Key result:** Within N=45 published SPARC galaxies, a₀ variation is predicted by a 5-axis model (LOO gap = 65.4%) consisting of a structural core (MHI, Mhost, MeanRun), a dominant kinematic coupling channel (VfResid = residual flat velocity beyond baryonic prediction), and a secondary outer-halo channel (lh_outerImprove). The VfResid channel transfers to N=10 crude-quality holdout galaxies with r = 0.801 and 57% gap closure. The law is strongest in high-Vflat galaxies (Vflat >= 120 km/s) and activates sharply near Vflat ~ 181 km/s.
 
-**Status:** Externally supported but preliminary. Larger independent samples needed.
+**External validation (Phases 200–201):** The coupling law was tested on N=59 SPARC galaxies outside the training sample using frozen N=45 coefficients. The full hierarchy reproduces externally: Core alone fails, VfResid is the dominant transferable channel, the signal strengthens with Vflat (gap = +34.3% for Vflat >= 120, +59.0% for Q=1 + Vflat >= 120), and the low-Vflat regime fails as predicted. The coupling-law picture now has external support consistent with a regime-dependent law rather than a universal one.
 
-**Zenodo v8:** DOI 10.5281/zenodo.19433329 (Concept DOI: 10.5281/zenodo.19430633)
+**Status:** Externally supported regime-dependent coupling law. The hierarchical structure (Core fails → VfResid dominates → regime-dependent) reproduces outside the training sample. Cross-survey replication with higher-quality external data needed for definitive validation.
+
+**Zenodo v9:** DOI 10.5281/zenodo.19433840 (Concept DOI: 10.5281/zenodo.19430633)
