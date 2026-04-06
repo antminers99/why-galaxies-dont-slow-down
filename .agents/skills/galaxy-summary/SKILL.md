@@ -265,6 +265,14 @@ Phase 202 key findings:
 - lhOuter adds +18.1pp in very-high-V, +12.1pp in Q=1+HV (genuine 5th axis externally)
 - Partial r(VfResid,a0|Core) = 0.844 high-V, 0.869 Q=1+HV
 
+**Phase 203:** logMhost improvement — CORE_IMPROVES_VfResid_STILL_DOMINATES
+- Trained 4 estimators from N=45 real logMhost (tidal analysis)
+- Best: Model C (logVflat+logMbar+logRdisk+T), r=0.542 vs formula's 0.232
+- Core gap improved: -53% → -8.1% (full), -6.7% → +16.7% (high-V)
+- VfResid STILL dominates in every regime (margin 30-76pp over improved Core)
+- VfResid-only gap unchanged: 47.5% full, 75.4% very-high-V
+- Confirms VfResid is the primary transfer channel, not an artifact of bad Core
+
 ## Key Files
 
 - Phase 201: `external-validation/phase201-blind-prediction.cjs`, `public/phase201-blind-prediction.json`

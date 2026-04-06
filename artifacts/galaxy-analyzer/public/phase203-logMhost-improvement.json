@@ -1,0 +1,1017 @@
+{
+  "phase": "203",
+  "title": "logMhost Improvement for External Sample",
+  "verdict": "CORE_IMPROVES_VfResid_STILL_DOMINATES",
+  "estimatorTraining": {
+    "B": {
+      "features": [
+        "logVflat"
+      ],
+      "beta": [
+        10.191041086965274,
+        0.7898850684322661
+      ],
+      "rmse": 0.5874,
+      "looRMSE": 0.6258,
+      "r": 0.232
+    },
+    "C": {
+      "features": [
+        "logVflat",
+        "logMbar",
+        "logRdisk",
+        "T"
+      ],
+      "beta": [
+        6.953464643591046,
+        -3.792259190437366,
+        1.3497278333065577,
+        -0.9632223980136164,
+        -0.08406680869578982
+      ],
+      "rmse": 0.5073,
+      "looRMSE": 0.5766,
+      "r": 0.542
+    },
+    "D1": {
+      "features": [
+        "logVflat",
+        "logMbar"
+      ],
+      "beta": [
+        8.363016538304397,
+        -2.8583375716617403,
+        0.9467491241582239
+      ],
+      "rmse": 0.5482,
+      "looRMSE": 0.594,
+      "r": 0.419
+    },
+    "D2": {
+      "features": [
+        "logVflat",
+        "T"
+      ],
+      "beta": [
+        13.209492728879287,
+        -0.37915944312244654,
+        -0.10610004391641295
+      ],
+      "rmse": 0.5607,
+      "looRMSE": 0.6133,
+      "r": 0.371
+    },
+    "formulaA": {
+      "rmse": 0.8299,
+      "r": 0.232
+    }
+  },
+  "hierarchyByEstimator": {
+    "A_formula": {
+      "Full": {
+        "regime": "Full",
+        "N": 59,
+        "core": {
+          "rmse": 0.5123,
+          "gap": -53,
+          "r": -0.233
+        },
+        "vfResid": {
+          "rmse": 0.3968,
+          "gap": 8.2,
+          "r": 0.415
+        },
+        "fiveAxis": {
+          "rmse": 0.3937,
+          "gap": 9.7,
+          "r": 0.456
+        },
+        "vfOnly": {
+          "rmse": 0.3,
+          "gap": 47.5,
+          "r": 0.713
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "High-V (>=120)": {
+        "regime": "High-V (>=120)",
+        "N": 16,
+        "core": {
+          "rmse": 0.4626,
+          "gap": -6.7,
+          "r": 0.033
+        },
+        "vfResid": {
+          "rmse": 0.363,
+          "gap": 34.3,
+          "r": 0.64
+        },
+        "fiveAxis": {
+          "rmse": 0.3604,
+          "gap": 35.3,
+          "r": 0.649
+        },
+        "vfOnly": {
+          "rmse": 0.3215,
+          "gap": 48.5,
+          "r": 0.841
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Very-High-V (>=180)": {
+        "regime": "Very-High-V (>=180)",
+        "N": 8,
+        "core": {
+          "rmse": 0.457,
+          "gap": -49.4,
+          "r": 0.533
+        },
+        "vfResid": {
+          "rmse": 0.2677,
+          "gap": 48.7,
+          "r": 0.77
+        },
+        "fiveAxis": {
+          "rmse": 0.2152,
+          "gap": 66.9,
+          "r": 0.769
+        },
+        "vfOnly": {
+          "rmse": 0.1854,
+          "gap": 75.4,
+          "r": 0.858
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Q1+HV": {
+        "regime": "Q1+HV",
+        "N": 11,
+        "core": {
+          "rmse": 0.385,
+          "gap": 1.9,
+          "r": 0.432
+        },
+        "vfResid": {
+          "rmse": 0.2489,
+          "gap": 59,
+          "r": 0.83
+        },
+        "fiveAxis": {
+          "rmse": 0.2089,
+          "gap": 71.1,
+          "r": 0.859
+        },
+        "vfOnly": {
+          "rmse": 0.2337,
+          "gap": 63.8,
+          "r": 0.875
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      }
+    },
+    "B_logVflat": {
+      "Full": {
+        "regime": "Full",
+        "N": 59,
+        "core": {
+          "rmse": 0.4548,
+          "gap": -20.5,
+          "r": -0.146
+        },
+        "vfResid": {
+          "rmse": 0.3507,
+          "gap": 28.3,
+          "r": 0.547
+        },
+        "fiveAxis": {
+          "rmse": 0.3465,
+          "gap": 30,
+          "r": 0.545
+        },
+        "vfOnly": {
+          "rmse": 0.3,
+          "gap": 47.5,
+          "r": 0.713
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "High-V (>=120)": {
+        "regime": "High-V (>=120)",
+        "N": 16,
+        "core": {
+          "rmse": 0.4367,
+          "gap": 4.9,
+          "r": 0.249
+        },
+        "vfResid": {
+          "rmse": 0.3406,
+          "gap": 42.2,
+          "r": 0.703
+        },
+        "fiveAxis": {
+          "rmse": 0.3368,
+          "gap": 43.5,
+          "r": 0.685
+        },
+        "vfOnly": {
+          "rmse": 0.3215,
+          "gap": 48.5,
+          "r": 0.841
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Very-High-V (>=180)": {
+        "regime": "Very-High-V (>=180)",
+        "N": 8,
+        "core": {
+          "rmse": 0.446,
+          "gap": -42.4,
+          "r": 0.594
+        },
+        "vfResid": {
+          "rmse": 0.2618,
+          "gap": 51,
+          "r": 0.778
+        },
+        "fiveAxis": {
+          "rmse": 0.2191,
+          "gap": 65.6,
+          "r": 0.767
+        },
+        "vfOnly": {
+          "rmse": 0.1854,
+          "gap": 75.4,
+          "r": 0.858
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Q1+HV": {
+        "regime": "Q1+HV",
+        "N": 11,
+        "core": {
+          "rmse": 0.3712,
+          "gap": 8.8,
+          "r": 0.597
+        },
+        "vfResid": {
+          "rmse": 0.2373,
+          "gap": 62.7,
+          "r": 0.851
+        },
+        "fiveAxis": {
+          "rmse": 0.2027,
+          "gap": 72.8,
+          "r": 0.856
+        },
+        "vfOnly": {
+          "rmse": 0.2337,
+          "gap": 63.8,
+          "r": 0.875
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      }
+    },
+    "C_multivar": {
+      "Full": {
+        "regime": "Full",
+        "N": 59,
+        "core": {
+          "rmse": 0.4307,
+          "gap": -8.1,
+          "r": 0.061
+        },
+        "vfResid": {
+          "rmse": 0.3412,
+          "gap": 32.2,
+          "r": 0.589
+        },
+        "fiveAxis": {
+          "rmse": 0.3382,
+          "gap": 33.3,
+          "r": 0.589
+        },
+        "vfOnly": {
+          "rmse": 0.3,
+          "gap": 47.5,
+          "r": 0.713
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "High-V (>=120)": {
+        "regime": "High-V (>=120)",
+        "N": 16,
+        "core": {
+          "rmse": 0.4089,
+          "gap": 16.7,
+          "r": 0.407
+        },
+        "vfResid": {
+          "rmse": 0.327,
+          "gap": 46.7,
+          "r": 0.728
+        },
+        "fiveAxis": {
+          "rmse": 0.3308,
+          "gap": 45.4,
+          "r": 0.712
+        },
+        "vfOnly": {
+          "rmse": 0.3215,
+          "gap": 48.5,
+          "r": 0.841
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": false,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Very-High-V (>=180)": {
+        "regime": "Very-High-V (>=180)",
+        "N": 8,
+        "core": {
+          "rmse": 0.4038,
+          "gap": -16.7,
+          "r": 0.659
+        },
+        "vfResid": {
+          "rmse": 0.2376,
+          "gap": 59.6,
+          "r": 0.79
+        },
+        "fiveAxis": {
+          "rmse": 0.212,
+          "gap": 67.9,
+          "r": 0.785
+        },
+        "vfOnly": {
+          "rmse": 0.1854,
+          "gap": 75.4,
+          "r": 0.858
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Q1+HV": {
+        "regime": "Q1+HV",
+        "N": 11,
+        "core": {
+          "rmse": 0.3358,
+          "gap": 25.4,
+          "r": 0.681
+        },
+        "vfResid": {
+          "rmse": 0.2186,
+          "gap": 68.4,
+          "r": 0.858
+        },
+        "fiveAxis": {
+          "rmse": 0.201,
+          "gap": 73.3,
+          "r": 0.865
+        },
+        "vfOnly": {
+          "rmse": 0.2337,
+          "gap": 63.8,
+          "r": 0.875
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      }
+    },
+    "D1_VfMbar": {
+      "Full": {
+        "regime": "Full",
+        "N": 59,
+        "core": {
+          "rmse": 0.4344,
+          "gap": -10,
+          "r": 0.026
+        },
+        "vfResid": {
+          "rmse": 0.3391,
+          "gap": 33,
+          "r": 0.583
+        },
+        "fiveAxis": {
+          "rmse": 0.3368,
+          "gap": 33.9,
+          "r": 0.576
+        },
+        "vfOnly": {
+          "rmse": 0.3,
+          "gap": 47.5,
+          "r": 0.713
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "High-V (>=120)": {
+        "regime": "High-V (>=120)",
+        "N": 16,
+        "core": {
+          "rmse": 0.4224,
+          "gap": 11.1,
+          "r": 0.345
+        },
+        "vfResid": {
+          "rmse": 0.3332,
+          "gap": 44.6,
+          "r": 0.704
+        },
+        "fiveAxis": {
+          "rmse": 0.3351,
+          "gap": 44,
+          "r": 0.688
+        },
+        "vfOnly": {
+          "rmse": 0.3215,
+          "gap": 48.5,
+          "r": 0.841
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": false,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Very-High-V (>=180)": {
+        "regime": "Very-High-V (>=180)",
+        "N": 8,
+        "core": {
+          "rmse": 0.4269,
+          "gap": -30.4,
+          "r": 0.644
+        },
+        "vfResid": {
+          "rmse": 0.2517,
+          "gap": 54.7,
+          "r": 0.782
+        },
+        "fiveAxis": {
+          "rmse": 0.2243,
+          "gap": 64,
+          "r": 0.771
+        },
+        "vfOnly": {
+          "rmse": 0.1854,
+          "gap": 75.4,
+          "r": 0.858
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Q1+HV": {
+        "regime": "Q1+HV",
+        "N": 11,
+        "core": {
+          "rmse": 0.347,
+          "gap": 20.3,
+          "r": 0.67
+        },
+        "vfResid": {
+          "rmse": 0.2227,
+          "gap": 67.2,
+          "r": 0.857
+        },
+        "fiveAxis": {
+          "rmse": 0.2004,
+          "gap": 73.4,
+          "r": 0.862
+        },
+        "vfOnly": {
+          "rmse": 0.2337,
+          "gap": 63.8,
+          "r": 0.875
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      }
+    },
+    "D2_VfT": {
+      "Full": {
+        "regime": "Full",
+        "N": 59,
+        "core": {
+          "rmse": 0.4487,
+          "gap": -17.4,
+          "r": -0.12
+        },
+        "vfResid": {
+          "rmse": 0.3495,
+          "gap": 28.8,
+          "r": 0.554
+        },
+        "fiveAxis": {
+          "rmse": 0.3456,
+          "gap": 30.4,
+          "r": 0.552
+        },
+        "vfOnly": {
+          "rmse": 0.3,
+          "gap": 47.5,
+          "r": 0.713
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "High-V (>=120)": {
+        "regime": "High-V (>=120)",
+        "N": 16,
+        "core": {
+          "rmse": 0.4322,
+          "gap": 6.9,
+          "r": 0.267
+        },
+        "vfResid": {
+          "rmse": 0.3406,
+          "gap": 42.2,
+          "r": 0.701
+        },
+        "fiveAxis": {
+          "rmse": 0.3388,
+          "gap": 42.8,
+          "r": 0.688
+        },
+        "vfOnly": {
+          "rmse": 0.3215,
+          "gap": 48.5,
+          "r": 0.841
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Very-High-V (>=180)": {
+        "regime": "Very-High-V (>=180)",
+        "N": 8,
+        "core": {
+          "rmse": 0.4325,
+          "gap": -33.8,
+          "r": 0.584
+        },
+        "vfResid": {
+          "rmse": 0.2567,
+          "gap": 52.8,
+          "r": 0.762
+        },
+        "fiveAxis": {
+          "rmse": 0.2188,
+          "gap": 65.7,
+          "r": 0.763
+        },
+        "vfOnly": {
+          "rmse": 0.1854,
+          "gap": 75.4,
+          "r": 0.858
+        },
+        "coreFails": true,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      },
+      "Q1+HV": {
+        "regime": "Q1+HV",
+        "N": 11,
+        "core": {
+          "rmse": 0.3685,
+          "gap": 10.2,
+          "r": 0.571
+        },
+        "vfResid": {
+          "rmse": 0.2398,
+          "gap": 62,
+          "r": 0.835
+        },
+        "fiveAxis": {
+          "rmse": 0.2105,
+          "gap": 70.7,
+          "r": 0.846
+        },
+        "vfOnly": {
+          "rmse": 0.2337,
+          "gap": 63.8,
+          "r": 0.875
+        },
+        "coreFails": false,
+        "vfrDominates": true,
+        "vfOnlyBetter": true,
+        "lhAdds": true,
+        "coreCoeffs": {
+          "intercept": 5.1816,
+          "logMHI": -0.198,
+          "logMhost": -0.1552,
+          "logMR": 0.4591
+        },
+        "vfrCoeffs": {
+          "intercept": 4.8833,
+          "logMHI": -0.1527,
+          "logMhost": -0.1179,
+          "logMR": 0.2399,
+          "VfResid": 2.5139
+        }
+      }
+    }
+  },
+  "hierScores": {
+    "A_formula": {
+      "checks": {
+        "coreFails_full": true,
+        "coreFails_hv": true,
+        "vfrDominates_full": true,
+        "vfrDominates_hv": true,
+        "vfOnlyBeatsCore_full": true,
+        "vfOnlyBeatsCore_hv": true,
+        "regimePreserved": true,
+        "lhAdds_hv": true
+      },
+      "passed": 8,
+      "total": 8
+    },
+    "B_logVflat": {
+      "checks": {
+        "coreFails_full": true,
+        "coreFails_hv": true,
+        "vfrDominates_full": true,
+        "vfrDominates_hv": true,
+        "vfOnlyBeatsCore_full": true,
+        "vfOnlyBeatsCore_hv": true,
+        "regimePreserved": true,
+        "lhAdds_hv": true
+      },
+      "passed": 8,
+      "total": 8
+    },
+    "C_multivar": {
+      "checks": {
+        "coreFails_full": true,
+        "coreFails_hv": false,
+        "vfrDominates_full": true,
+        "vfrDominates_hv": true,
+        "vfOnlyBeatsCore_full": true,
+        "vfOnlyBeatsCore_hv": true,
+        "regimePreserved": true,
+        "lhAdds_hv": false
+      },
+      "passed": 6,
+      "total": 8
+    },
+    "D1_VfMbar": {
+      "checks": {
+        "coreFails_full": true,
+        "coreFails_hv": false,
+        "vfrDominates_full": true,
+        "vfrDominates_hv": true,
+        "vfOnlyBeatsCore_full": true,
+        "vfOnlyBeatsCore_hv": true,
+        "regimePreserved": true,
+        "lhAdds_hv": false
+      },
+      "passed": 6,
+      "total": 8
+    },
+    "D2_VfT": {
+      "checks": {
+        "coreFails_full": true,
+        "coreFails_hv": false,
+        "vfrDominates_full": true,
+        "vfrDominates_hv": true,
+        "vfOnlyBeatsCore_full": true,
+        "vfOnlyBeatsCore_hv": true,
+        "regimePreserved": true,
+        "lhAdds_hv": true
+      },
+      "passed": 7,
+      "total": 8
+    }
+  },
+  "signConsistency": {
+    "A_formula": {
+      "mhiSign": true,
+      "mhostSign": true,
+      "mrSign": true,
+      "matchCount": 3
+    },
+    "B_logVflat": {
+      "mhiSign": true,
+      "mhostSign": true,
+      "mrSign": true,
+      "matchCount": 3
+    },
+    "C_multivar": {
+      "mhiSign": true,
+      "mhostSign": true,
+      "mrSign": true,
+      "matchCount": 3
+    },
+    "D1_VfMbar": {
+      "mhiSign": true,
+      "mhostSign": true,
+      "mrSign": true,
+      "matchCount": 3
+    },
+    "D2_VfT": {
+      "mhiSign": true,
+      "mhostSign": true,
+      "mrSign": true,
+      "matchCount": 3
+    }
+  },
+  "bestEstimatorFull": "C_multivar",
+  "bestEstimatorHV": "C_multivar",
+  "coreImproved": true,
+  "coreDelta": 44.9,
+  "vfrStillDominates": true,
+  "vfrStillDominatesHV": true,
+  "internalCoreCoeffs": {
+    "intercept": 5.1816,
+    "logMHI": -0.198,
+    "logMhost": -0.1552,
+    "logMR": 0.4591
+  }
+}

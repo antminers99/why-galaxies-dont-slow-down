@@ -150,3 +150,34 @@ Bootstrap stability, outlier sensitivity, point-count effects.
 - Full: r=0.806 | High-V: r=0.844 | Very-High-V: r=0.760 | Q=1+HV: r=0.869
 
 **Key discovery:** VfResid-only (no Core at all) outperforms every model in every regime except Q=1+HV where Core+VfResid is better. This means VfResid alone contains more transferable information than the 3-axis core — consistent with the internal finding that VfResid mediates Core content.
+
+### Phase 203: logMhost Improvement — CORE_IMPROVES_VfResid_STILL_DOMINATES
+
+**Central question answered:** Does better logMhost restore Core's external weight?
+**Answer:** Core improves dramatically, but VfResid **still dominates in every regime.**
+
+**Estimator training on N=45 (real logMhost from tidal analysis):**
+
+| Model | Features | RMSE (train) | LOO RMSE | r |
+|-------|----------|-------------|----------|---|
+| A (current formula) | fixed: 11.5+3×(logV-2.2) | 0.8299 | — | 0.232 |
+| B (logVflat trained) | logVflat | 0.5874 | 0.6258 | 0.232 |
+| C (4-variable) | logVflat+logMbar+logRdisk+T | 0.5073 | 0.5766 | 0.542 |
+| D1 (logVflat+logMbar) | logVflat+logMbar | 0.5482 | 0.5940 | 0.419 |
+| D2 (logVflat+T) | logVflat+T | 0.5607 | 0.6133 | 0.371 |
+
+**Core gap improvement with Model C (best):**
+
+| Regime | Core (Model A) | Core (Model C) | Delta | VfResid still dominates? |
+|--------|---------------|----------------|-------|------------------------|
+| Full (N=59) | -53.0% | -8.1% | +44.9pp | YES (margin 40.3pp) |
+| High-V (N=16) | -6.7% | +16.7% | +23.4pp | YES (margin 30.0pp) |
+| Very-High-V (N=8) | -49.4% | -16.7% | +32.7pp | YES (margin 76.3pp) |
+| Q=1+HV (N=11) | +1.9% | +25.4% | +23.5pp | YES (margin 43.0pp) |
+
+**VfResid-only gap unchanged** at 47.5% (full), 75.4% (very-high-V), 63.8% (Q1+HV)
+
+**Interpretation:** The current formula (r=0.232 vs real) was severely degrading Core. Model C (r=0.542) recovers ~45pp of Core gap in the full sample. Yet even with this improvement, VfResid dominates by 30-76pp in every regime. This confirms: **VfResid is the primary transfer channel, not an artifact of bad Core estimates.**
+
+**Hierarchy scores:** Model A: 8/8 | Model B: 7/8 | Model C: 6/8 | Model D1: 6/8 | Model D2: 7/8
+Note: Better logMhost actually *reduces* hierarchy score because Core no longer fully "fails" in high-V — it just becomes less dominant. This is expected and healthy.
