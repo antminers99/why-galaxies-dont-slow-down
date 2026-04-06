@@ -1,0 +1,92 @@
+{
+  "program": "5C",
+  "title": "Causal Topology of H",
+  "timestamp": "2026-04-06T18:18:12.529Z",
+  "N": 55,
+  "graphScores": {
+    "A": 8,
+    "B": 4,
+    "C": 8,
+    "D": 4
+  },
+  "winningTopology": "A/C (Direct Common Cause / Interface State)",
+  "mediationResults": {
+    "dq_vf_zero": 0.5384341756018414,
+    "dq_a0_zero": 0.5334209229686587,
+    "vf_after_all": 0.5511187324653378,
+    "a0_after_all": 0.6296304740703346,
+    "reduction_vf": -0.023558231327567736,
+    "reduction_a0": -0.18036328715086536,
+    "directPathSurvives": true,
+    "mediators": [
+      {
+        "name": "haloResponse",
+        "partial": 0.526980863655371,
+        "reduction": 0.021271517421174613
+      },
+      {
+        "name": "outerSlope",
+        "partial": 0.5002025390255048,
+        "reduction": 0.07100521903833956
+      },
+      {
+        "name": "rcSmoothness",
+        "partial": 0.5515979112823407,
+        "reduction": -0.02444818006915228
+      },
+      {
+        "name": "gasFraction",
+        "partial": 0.5310552124911297,
+        "reduction": 0.013704485051424742
+      }
+    ]
+  },
+  "proxies": {
+    "bestSingle": {
+      "name": "haloResponse",
+      "r": 0.3284877776801515,
+      "r2": 0.10790422008524465
+    },
+    "bestComposite": {
+      "name": "ALL 5 observables",
+      "R2": 0.4502425076191129,
+      "adjR2": 0.3941448043149407,
+      "nParams": 5
+    },
+    "looResults": [
+      {
+        "name": "haloResp + logVflat + outerSlope",
+        "looR2": 0.13288979803835843
+      },
+      {
+        "name": "haloResp + logVflat",
+        "looR2": 0.13028599675838293
+      },
+      {
+        "name": "log(haloResp * Vflat)",
+        "looR2": 0.16952110848889534
+      },
+      {
+        "name": "haloResp + btfrResid",
+        "looR2": 0.07487639017266123
+      },
+      {
+        "name": "haloResp + gasFrac",
+        "looR2": -0.11040747021055464
+      },
+      {
+        "name": "haloResp + newtDeficit",
+        "looR2": 0.010051944494929743
+      },
+      {
+        "name": "btfrResid + gasFrac + newtDeficit",
+        "looR2": 0.04087936795388214
+      },
+      {
+        "name": "ALL 5 observables",
+        "looR2": -1.310954235866192
+      }
+    ]
+  },
+  "goldenSentence": "H is not a quietness variable. H is a hidden common-cause state that jointly drives both the rotation-velocity residual and the acceleration residual; kinematic calmness emerges as a consequence, not as the mechanism."
+}

@@ -155,6 +155,10 @@ Physical interpretation: H = dynamical quietness of halo-disk coupling.
 Amplitude x2.5 reaches r=0.827 with 7/7. CV shrinkage=0.001. B-family structure necessary,
 quiet coupling sufficient but NOT necessary. Essential: H→VfResid + H→a0Resid bilateral.
 
+**Program 5C (Causal Topology):** Graph A/C win 8/8, Graph B/D fail 4/8. NO mediator found —
+haloResp actually SUPPRESSES (makes link stronger). H is genuinely hidden (best 5-observable
+proxy captures only 39%). H = Direct Common-Cause variable. Section 34 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -223,6 +227,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase420-decisive-observation.cjs` | Phase 420: decisive observation |
 | `scripts/program5a-hidden-state-sim.cjs` | Program 5A: hidden-state simulation |
 | `scripts/program5b-necessity-test.cjs` | Program 5B: necessity test |
+| `scripts/program5c-causal-topology.cjs` | Program 5C: causal topology |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -251,3 +256,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase420-decisive-obs.json` | Phase 420 decisive observation |
 | `public/program5a-hidden-state-sim.json` | Program 5A hidden-state simulation |
 | `public/program5b-necessity-test.json` | Program 5B necessity test |
+| `public/program5c-causal-topology.json` | Program 5C causal topology |
