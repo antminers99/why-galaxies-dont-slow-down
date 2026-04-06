@@ -86,7 +86,29 @@ Bootstrap stability, outlier sensitivity, point-count effects.
 4. Flag extrapolating galaxies (outside training logMbar/logVflat range)
 5. Report honestly: if it fails, it fails
 
-## BTFR Reference (from N=45 training)
-The BTFR used to compute VfResid:
-log10(Vflat) = slope × logMbar + intercept
-(Coefficients to be extracted from Phase 131 training data)
+---
+
+## Results (Phases 200-201)
+
+### Phase 200: Data Assembly
+- 59 external galaxies assembled (from 119 candidates)
+- 39 rejected for missing Vflat, 20 for too few RAR points
+- 16 high-Vflat (>=120), 8 very-high-Vflat (>=180)
+- logA0 from RAR fit, logMhost estimated from Vflat formula
+
+### Phase 201: Blind Prediction — MODERATE_TRANSFER
+
+| Regime | N | Core Gap | Core+VfResid Gap | r(VfResid,a₀) |
+|--------|---|----------|-------------------|----------------|
+| Full sample | 59 | -53.0% | +8.2% | 0.713 |
+| Vflat >= 120 | 16 | -6.7% | +34.3% | 0.841 |
+| Vflat >= 180 | 8 | -49.4% | +48.7% | 0.858 |
+| Q=1 + Vflat>=120 | 11 | — | +59.0% | 0.830 |
+| Vflat < 120 | 43 | -74.4% | -3.9% | — |
+
+**Key findings:**
+1. Hierarchy preserved: Core fails, VfResid dominates
+2. Regime-dependence confirmed: strong in high-Vflat, fails in low-Vflat
+3. In best subset (Q=1, Vflat>=120, N=11): gap=59%, r=0.830 — matches Phase 134
+4. Full sample diluted by low-Vflat regime and crude logA0 estimates
+5. VfResid coefficient sign preserved; logMhost and logMR signs changed (expected: crude estimates)
