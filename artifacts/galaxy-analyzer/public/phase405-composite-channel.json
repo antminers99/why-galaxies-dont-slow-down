@@ -1,0 +1,105 @@
+{
+  "phase": "405",
+  "title": "Composite Channel Test",
+  "timestamp": "2026-04-06T15:54:10.579Z",
+  "N": 55,
+  "rawR": 0.7174930214897184,
+  "a405a": {
+    "tautological": true,
+    "accScaleR2": 1,
+    "residVsResidR": 0.8042985384878967,
+    "residVsResidPartialVflat": 0.7913136938004965,
+    "rResidLow": 0.809561361767407,
+    "rResidHigh": 0.8082528752782535,
+    "regimeInResiduals": false,
+    "altProxies": [
+      {
+        "name": "logSBdisk",
+        "rVfResid": -0.0963715998056596,
+        "rA0": -0.020113249523323277,
+        "partialR": 0.7190463107294046
+      },
+      {
+        "name": "logSBeff",
+        "rVfResid": 0.12549601678622893,
+        "rA0": -0.02446587550439643,
+        "partialR": 0.7265229460844809
+      },
+      {
+        "name": "logSurfDens",
+        "rVfResid": -1.5727974106936452e-16,
+        "rA0": 0.047535870828485025,
+        "partialR": 0.718305042704701
+      },
+      {
+        "name": "logCompact",
+        "rVfResid": 0.06983054584091142,
+        "rA0": -0.26620262859040367,
+        "partialR": 0.765505014026396
+      },
+      {
+        "name": "logGasFrac",
+        "rVfResid": -0.17744377821879917,
+        "rA0": 0.09551070259779793,
+        "partialR": 0.7497109980307073
+      },
+      {
+        "name": "logRHI/Rdisk",
+        "rVfResid": -0.03345888610691429,
+        "rA0": 0.08243685678240051,
+        "partialR": 0.7231160428206264
+      },
+      {
+        "name": "logMbar/Rdisk²",
+        "rVfResid": -1.5727974106936452e-16,
+        "rA0": 0.047535870828485025,
+        "partialR": 0.718305042704701
+      }
+    ]
+  },
+  "a405c": {
+    "feasibleMissing": [
+      "Inner rotation curve shape (V_inner/V_flat)",
+      "Outer RC slope (dV/dR at Rlast)",
+      "RC rise rate (V at R=2.2Rdisk / Vflat)",
+      "Baryonic dominance radius (Rbar/Rdisk)"
+    ],
+    "allMissing": [
+      {
+        "name": "Inner rotation curve shape (V_inner/V_flat)",
+        "priority": "HIGH",
+        "feasible": true
+      },
+      {
+        "name": "Bar strength / bar fraction",
+        "priority": "HIGH",
+        "feasible": false
+      },
+      {
+        "name": "Outer RC slope (dV/dR at Rlast)",
+        "priority": "HIGH",
+        "feasible": true
+      },
+      {
+        "name": "HI velocity dispersion profile",
+        "priority": "MEDIUM",
+        "feasible": false
+      },
+      {
+        "name": "Stellar velocity dispersion (σ_star)",
+        "priority": "MEDIUM",
+        "feasible": false
+      },
+      {
+        "name": "RC rise rate (V at R=2.2Rdisk / Vflat)",
+        "priority": "HIGH",
+        "feasible": true
+      },
+      {
+        "name": "Baryonic dominance radius (Rbar/Rdisk)",
+        "priority": "HIGH",
+        "feasible": true
+      }
+    ]
+  }
+}

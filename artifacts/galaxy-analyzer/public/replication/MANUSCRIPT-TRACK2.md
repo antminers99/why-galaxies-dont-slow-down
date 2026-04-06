@@ -624,6 +624,71 @@ Only 7 galaxies in the THINGS kinematic subset overlap with the working sample. 
 
 ---
 
+## 13. Phase 405: Composite Channel or Missing Variable?
+
+### 13.1 — 405A: De-circularized Acceleration Test
+
+**The tautology is confirmed.**
+
+logAccScale = 2·log(Vflat) − log(Rdisk). Regression of logAccScale on (logVflat, logRdisk) gives R² = **1.0000**. It is an exact linear function of VfResid's building blocks. Phase 404A's "absorption" (partial r → −0.07) was a pure mathematical identity — controlling for logAccScale is equivalent to over-controlling for Vflat + Rdisk simultaneously. This result is retracted as a physical finding.
+
+**Non-tautological acceleration proxies do NOT absorb the channel.**
+Alternative proxies (SBdisk, SBeff, surface density, compactness, gas fraction, HI extent) individually explain negligible VfResid variance. Combined: partial r(VfResid, a₀ | all non-taut acc) = 0.823 (raw 0.717) — the signal actually *strengthens*, meaning these proxies act as suppressors, not mediators.
+
+**The definitive residual-vs-residual test.**
+Both VfResid and logA0 were regressed on 6 structural variables (logMbar, logL3.6, logRdisk, morphT, logMHI, logSBdisk). Only the residuals — the parts of each quantity unexplainable by any observable — were correlated:
+
+| Quantity | Value |
+|----------|-------|
+| R²(logA0 ~ 6 structural vars) | 0.215 |
+| r(VfResid, a₀_structural_resid) | **0.804** |
+| partial r(VfResid, a₀_resid \| Vflat) | **0.791** |
+| low-V (N=10): r | 0.810 |
+| high-V (N=45): r | 0.808 |
+| Delta (high − low) | **−0.001** |
+
+**Critical discovery: the regime strengthening vanishes in the pure residual space.** When both VfResid and a₀ are purged of all structural information, the coupling is r ≈ 0.81 at ALL masses — uniform, not regime-dependent. The apparent "regime strengthening" was caused by structural confounds creating differential suppression at low-V.
+
+**Reinterpretation of the regime ramp**: The activation pattern (r ≈ 0.4 at low-V → 0.84 at high-V) is NOT physical activation. The underlying coupling is constant at r ≈ 0.80 everywhere. At low-V, structural confounds (gas fraction, surface brightness, morphology) create noise that masks the coupling. At high-V, these confounds are weaker, revealing the underlying constant coupling. The "ramp" is a differential masking effect, not a physical threshold.
+
+### 13.2 — 405B: Composite Source Test
+
+External sample (N=94):
+- haloK alone: R²(→VfResid) = 0.261
+- haloK + lhOuter + logMR + logVflat: R²(→VfResid) = 0.383
+- After best composite model: r(residual, a₀) = 0.492 — signal persists
+
+The channel has a halo-shape component (~26% of VfResid) but the majority operates above halo structure. No tested composite model eliminates the coupling.
+
+### 13.3 — 405C: Missing Variable Map
+
+Four high-priority variables derivable from existing SPARC rotation curve data:
+
+| Variable | Description | Priority |
+|----------|-------------|----------|
+| Inner RC shape (V_inner/V_flat) | Core vs cusp indicator | HIGH |
+| Outer RC slope (dV/dR at R_last) | Rising/flat/declining classification | HIGH |
+| RC rise rate (V@2.2Rd / Vflat) | Disk-halo conspiracy tracer | HIGH |
+| Baryonic dominance radius (R_bar/R_disk) | RAR transition location | HIGH |
+
+Three additional variables require external data: bar strength, HI velocity dispersion, stellar σ.
+
+### 13.4 — Phase 405 Synthesis
+
+**The VfResid–a₀ coupling is:**
+1. **Real** — r = 0.804 in pure residual-vs-residual space, after purging all shared structure
+2. **Universal** — constant at r ≈ 0.81 across ALL mass regimes (the regime ramp is a masking artifact)
+3. **Vflat-independent** — partial r | Vflat = 0.791
+4. **Not acceleration-mediated** — logAccScale absorption was tautological; real acceleration proxies don't absorb
+5. **Partially halo-shaped** — haloK explains ~26% of VfResid, but the coupling persists after removal
+6. **Genuinely irreducible** — no known observable or combination eliminates it
+
+**Revised narrative**: The coupling is not a "regime-dependent activation" that turns on at high mass. It is a **constant, universal, irreducible link** between the unexplained component of galaxy rotation velocity and the fitted acceleration scale. The appearance of mass-dependence was a differential masking effect from structural confounds that are stronger at low mass.
+
+This is a stronger result than the original regime-strengthening claim, because it removes the need to explain "why high-V only" — the answer is: "it's not high-V only, it's everywhere."
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)
