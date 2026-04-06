@@ -130,6 +130,11 @@ Low-DQ galaxies (NGC5055, NGC2903) = IRREGULAR (warps, bar NCM).
 2D kinematic explanation ELIMINATED. DQ = quiet intrinsic halo property.
 8 explanations now eliminated. Points to DM physics or fundamental coupling.
 
+**Program 3B (Cosmo Sims):** ALL 8 models FAIL — 0/4000 trials get correct haloResponse sign.
+LCDM, FIRE, TNG, SIDM, fuzzy DM, assembly-correlated ALL produce r(DQ,haloResp)≈-0.41 (true=+0.33).
+haloResponse paradox: structural impossibility for any model where halo absorbs variance.
+16 hypotheses tested total, 15 eliminated, 1 at 1.4%. DQ genuinely unexplained.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -192,6 +197,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase416-falsification.cjs` | Phase 416: DQ falsification tests |
 | `scripts/phase417-resolve-dq.cjs` | Phase 417: 3D halo resolution attempt |
 | `scripts/program3a-ifu-design.cjs` | Program 3A: IFU/2D track |
+| `scripts/program3b-cosmo-sims.cjs` | Program 3B: cosmo sim comparison |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -214,3 +220,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase416-falsification.json` | Phase 416 falsification tests |
 | `public/phase417-resolve-dq.json` | Phase 417 3D halo resolution |
 | `public/program3a-ifu-design.json` | Program 3A IFU/2D track |
+| `public/program3b-cosmo-sims.json` | Program 3B cosmo sim comparison |

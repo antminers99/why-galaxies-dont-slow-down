@@ -1,0 +1,396 @@
+{
+  "program": "3B",
+  "title": "Cosmological Simulation Comparison",
+  "timestamp": "2026-04-06T17:33:33.693Z",
+  "N": 55,
+  "Ntrials": 500,
+  "trueFingerprintTarget": {
+    "channelR": 0.8042985384878967,
+    "dq_haloResp": 0.3284877776801515,
+    "dq_Vflat": 0.20204512247266543,
+    "dq_outerSlope": 0.2566151172542466,
+    "bilateral": 0.5642439116710621
+  },
+  "results": {
+    "LCDM_standard": {
+      "label": "Standard LCDM (Dutton+14 c-M, sigma=0.11)",
+      "desc": "Baseline NFW with cosmological c-M scatter only",
+      "channelR": {
+        "median": 0.39031455354941985,
+        "lo": 0.31356361141252426,
+        "hi": 0.4638866152010134
+      },
+      "dq_haloResp": {
+        "median": -0.41039192700563437,
+        "lo": -0.44347078817396607,
+        "hi": -0.37370777641934033
+      },
+      "dq_Vflat": {
+        "median": 0.3137262989535615,
+        "lo": 0.28768362254898605,
+        "hi": 0.3403717469811182
+      },
+      "dq_outerSlope": {
+        "median": -0.020325861860468527,
+        "lo": -0.06775071429683874,
+        "hi": 0.028285634152339603
+      },
+      "bilateral": {
+        "median": 0.8328181976628009,
+        "lo": 0.8068757185835264,
+        "hi": 0.8559891790899092
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.44558570041040557,
+        "lo": 0.41695791913362135,
+        "hi": 0.47302777252578365
+      }
+    },
+    "LCDM_large_scatter": {
+      "label": "LCDM with large c-M scatter (sigma=0.20, TNG-like)",
+      "desc": "Enhanced scatter as seen in Illustris-TNG (Lovell+18)",
+      "channelR": {
+        "median": 0.39422592329347006,
+        "lo": 0.3133345175541404,
+        "hi": 0.4701142562231547
+      },
+      "dq_haloResp": {
+        "median": -0.4096582193921871,
+        "lo": -0.44355825661594,
+        "hi": -0.36889569869424177
+      },
+      "dq_Vflat": {
+        "median": 0.3110412838874925,
+        "lo": 0.278435887538494,
+        "hi": 0.34038148985468036
+      },
+      "dq_outerSlope": {
+        "median": -0.024777670607034712,
+        "lo": -0.0702058851507873,
+        "hi": 0.025141778647037982
+      },
+      "bilateral": {
+        "median": 0.8311070196455759,
+        "lo": 0.8034634972382078,
+        "hi": 0.8535280312878758
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.44704462500999653,
+        "lo": 0.41687246808003076,
+        "hi": 0.47535065665056997
+      }
+    },
+    "FIRE_feedback": {
+      "label": "FIRE-like baryonic feedback (core creation in dwarfs)",
+      "desc": "Baryonic feedback creates cores below Mstar~1e10, contracts above (Chan+15, Lazar+20)",
+      "channelR": {
+        "median": 0.3938764799496495,
+        "lo": 0.3147579935601861,
+        "hi": 0.4768378520260697
+      },
+      "dq_haloResp": {
+        "median": -0.4099125523014844,
+        "lo": -0.4405179886744923,
+        "hi": -0.3734395953644324
+      },
+      "dq_Vflat": {
+        "median": 0.3110512398827098,
+        "lo": 0.28336603641337005,
+        "hi": 0.3361281167195091
+      },
+      "dq_outerSlope": {
+        "median": -0.022400999753380963,
+        "lo": -0.0719089600004571,
+        "hi": 0.02482172668071859
+      },
+      "bilateral": {
+        "median": 0.8328110099799619,
+        "lo": 0.8064401433982455,
+        "hi": 0.8564165703205726
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.44691428410033474,
+        "lo": 0.417403418692743,
+        "hi": 0.4778585298398793
+      }
+    },
+    "TNG_response": {
+      "label": "TNG-like halo response (contraction in massive, expansion in dwarfs)",
+      "desc": "Halo response to baryons follows mass-dependent pattern (Lovell+18, Dutton+16)",
+      "channelR": {
+        "median": 0.396280172755605,
+        "lo": 0.31201459146171706,
+        "hi": 0.478407648021218
+      },
+      "dq_haloResp": {
+        "median": -0.4118976849485095,
+        "lo": -0.4494915514015194,
+        "hi": -0.37071877125429087
+      },
+      "dq_Vflat": {
+        "median": 0.31094010202423544,
+        "lo": 0.2840739245444287,
+        "hi": 0.33790054423134863
+      },
+      "dq_outerSlope": {
+        "median": -0.023458595784165825,
+        "lo": -0.06793499290881334,
+        "hi": 0.02401634892124577
+      },
+      "bilateral": {
+        "median": 0.8316688477008187,
+        "lo": 0.8055098725546772,
+        "hi": 0.8588655686172944
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.4478108514907745,
+        "lo": 0.4163801411531767,
+        "hi": 0.47844405719820304
+      }
+    },
+    "SIDM_light": {
+      "label": "Self-interacting DM (sigma/m = 1 cm2/g)",
+      "desc": "SIDM creates diversity in inner profiles (Kamada+17, Ren+19)",
+      "channelR": {
+        "median": 0.39836222207877614,
+        "lo": 0.31246405297901936,
+        "hi": 0.4681842560537934
+      },
+      "dq_haloResp": {
+        "median": -0.41019944307707223,
+        "lo": -0.4411725606512523,
+        "hi": -0.37521495489538237
+      },
+      "dq_Vflat": {
+        "median": 0.314561230101106,
+        "lo": 0.28850735714007647,
+        "hi": 0.3384695706200546
+      },
+      "dq_outerSlope": {
+        "median": -0.022253035612872524,
+        "lo": -0.07637805493017498,
+        "hi": 0.02382898084122428
+      },
+      "bilateral": {
+        "median": 0.8320346777025006,
+        "lo": 0.8059498141146205,
+        "hi": 0.8565236812723902
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.4485874472037614,
+        "lo": 0.4165477884243556,
+        "hi": 0.4746307746377332
+      }
+    },
+    "SIDM_strong": {
+      "label": "Strong SIDM (sigma/m = 10 cm2/g)",
+      "desc": "Strong SIDM creates large cores + mass-dependent diversity (Robles+17)",
+      "channelR": {
+        "median": 0.3990508673846236,
+        "lo": 0.3141257635766769,
+        "hi": 0.48204828032961117
+      },
+      "dq_haloResp": {
+        "median": -0.40980115443783527,
+        "lo": -0.44574689633718934,
+        "hi": -0.3760222308062232
+      },
+      "dq_Vflat": {
+        "median": 0.31978879363332174,
+        "lo": 0.28732704730041525,
+        "hi": 0.3460075433348157
+      },
+      "dq_outerSlope": {
+        "median": -0.01925936011477462,
+        "lo": -0.06957489917522809,
+        "hi": 0.026448001845290704
+      },
+      "bilateral": {
+        "median": 0.8324453543140535,
+        "lo": 0.8050406733587028,
+        "hi": 0.8574803677910645
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.4488443090303944,
+        "lo": 0.417167599546025,
+        "hi": 0.47980199786358246
+      }
+    },
+    "fuzzyDM": {
+      "label": "Fuzzy/ultralight DM (m_a ~ 1e-22 eV)",
+      "desc": "Soliton cores + wave interference (Schive+14, Mocz+17)",
+      "channelR": {
+        "median": 0.39661533948010147,
+        "lo": 0.30920123785136727,
+        "hi": 0.47262619373571907
+      },
+      "dq_haloResp": {
+        "median": -0.4111381121387828,
+        "lo": -0.44540633796141454,
+        "hi": -0.37522461981978183
+      },
+      "dq_Vflat": {
+        "median": 0.3161052717783339,
+        "lo": 0.2872413975086301,
+        "hi": 0.342055642771051
+      },
+      "dq_outerSlope": {
+        "median": -0.02083717877788091,
+        "lo": -0.06678066464791907,
+        "hi": 0.029677974886602114
+      },
+      "bilateral": {
+        "median": 0.8311241795193027,
+        "lo": 0.8043716964905528,
+        "hi": 0.8568441569426558
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.44793586728097845,
+        "lo": 0.4153307719914576,
+        "hi": 0.4762875988650691
+      }
+    },
+    "assembly_corr": {
+      "label": "Assembly-correlated c-M (halo age drives scatter)",
+      "desc": "c-M scatter correlated with formation time (Wechsler+02, Ludlow+14)",
+      "channelR": {
+        "median": 0.380554306303772,
+        "lo": 0.2812196291114579,
+        "hi": 0.4761849353809129
+      },
+      "dq_haloResp": {
+        "median": -0.39962896607682336,
+        "lo": -0.44516548420211555,
+        "hi": -0.3427770444775425
+      },
+      "dq_Vflat": {
+        "median": 0.3126034128834376,
+        "lo": 0.2595456924133193,
+        "hi": 0.35171552050875166
+      },
+      "dq_outerSlope": {
+        "median": -0.02286986521336912,
+        "lo": -0.08086511981730855,
+        "hi": 0.046192726810786504
+      },
+      "bilateral": {
+        "median": 0.8204240496668862,
+        "lo": 0.7708316758110602,
+        "hi": 0.8522680063335729
+      },
+      "hrPositiveRate": 0,
+      "matchScore": {
+        "median": 0.4419451688993087,
+        "lo": 0.4048937486471722,
+        "hi": 0.47761499465465407
+      }
+    }
+  },
+  "ranking": [
+    {
+      "name": "SIDM_strong",
+      "label": "Strong SIDM (sigma/m = 10 cm2/g)",
+      "matchScore": 0.4488443090303944,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "SIDM_light",
+      "label": "Self-interacting DM (sigma/m = 1 cm2/g)",
+      "matchScore": 0.4485874472037614,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "fuzzyDM",
+      "label": "Fuzzy/ultralight DM (m_a ~ 1e-22 eV)",
+      "matchScore": 0.44793586728097845,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "TNG_response",
+      "label": "TNG-like halo response (contraction in massive, expansion in dwarfs)",
+      "matchScore": 0.4478108514907745,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "LCDM_large_scatter",
+      "label": "LCDM with large c-M scatter (sigma=0.20, TNG-like)",
+      "matchScore": 0.44704462500999653,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "FIRE_feedback",
+      "label": "FIRE-like baryonic feedback (core creation in dwarfs)",
+      "matchScore": 0.44691428410033474,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "LCDM_standard",
+      "label": "Standard LCDM (Dutton+14 c-M, sigma=0.11)",
+      "matchScore": 0.44558570041040557,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    },
+    {
+      "name": "assembly_corr",
+      "label": "Assembly-correlated c-M (halo age drives scatter)",
+      "matchScore": 0.4419451688993087,
+      "hrSign": "wrong",
+      "hrPositiveRate": 0
+    }
+  ],
+  "elimList": [
+    [
+      "Structural variables",
+      "406-408",
+      "ELIMINATED"
+    ],
+    [
+      "EFE",
+      "410",
+      "ELIMINATED"
+    ],
+    [
+      "MOND functional law",
+      "411",
+      "ELIMINATED"
+    ],
+    [
+      "Assembly history",
+      "413",
+      "ELIMINATED"
+    ],
+    [
+      "Hidden systematic",
+      "416A",
+      "LOW PROB (1.4%)"
+    ],
+    [
+      "Triaxiality",
+      "417B",
+      "ELIMINATED (wrong sign)"
+    ],
+    [
+      "Disequilibrium",
+      "417B",
+      "ELIMINATED (destroys bilat.)"
+    ],
+    [
+      "2D kinematic effects",
+      "3A",
+      "ELIMINATED (inverted)"
+    ]
+  ]
+}
