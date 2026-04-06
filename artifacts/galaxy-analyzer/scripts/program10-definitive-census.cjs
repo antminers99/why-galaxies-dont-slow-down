@@ -182,7 +182,7 @@ for (const g of d56.perGalaxy) {
     logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)),
     logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T,
     logMHI: g.logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)),
-    logA0: g.logA0, dist: sp.D, inc: sp.Inc || 0,
+    logA0: g.logA0, dist: sp.D, inc: sp.inc || 0,
   });
 }
 const vfR = ols(allGals.map(g => [g.logMbar, g.logL36, g.logRdisk, g.morphT]), allGals.map(g => g.logVflat));
@@ -199,7 +199,7 @@ console.log('  ' + '-'.repeat(70));
 for (let i = 0; i < Math.min(20, noData.length); i++) {
   const g = noData[i];
   const sp = sparcMap[normalize(g.name)];
-  const dec = sp?.Dec || 0;
+  const dec = 0;
   const observable = dec > -30 ? 'VLA/GBT' : 'ASKAP/MeerKAT';
   console.log('  ' + (i + 1 + '.').padEnd(6) + g.name.padEnd(16) + g.DQ.toFixed(2).padEnd(8) + Math.round(g.Vflat).toString().padEnd(8) + g.dist.toFixed(1).padEnd(10) + (typeof dec === 'number' ? dec.toFixed(1) : '?').padEnd(8) + observable);
 }

@@ -1,111 +1,28 @@
 {
   "program": 10,
-  "phase": "10.1-definitive",
-  "title": "Definitive Multi-Survey Census",
-  "timestamp": "2026-04-06T20:51:49.173Z",
-  "keyFinding": "MaNGA overlap with SPARC is ZERO (verified against SDSS DR17). N=7 is maximum with current public data.",
-  "currentSample": {
-    "N": 7,
-    "survey": "THINGS",
-    "r": 0.8372879522563232,
-    "pValue": 0.00454,
-    "spearmanRho": 0.6785714285714286,
-    "partialR_givenVflat": 0.8632452423247384,
-    "bootstrap95CI": [
-      0.29733847377633404,
-      0.9867904679708704
-    ]
+  "phase": "10.1",
+  "title": "Multi-Survey 2D Carrier Verification",
+  "timestamp": "2026-04-06T22:13:09.599Z",
+  "N_total": 7,
+  "N_program9": 7,
+  "N_new": 0,
+  "correlation": {
+    "r_DQ_logM2": 0.8372879522563232,
+    "pValue": 0.0041,
+    "r_program9": 0.847,
+    "delta_r": -0.009712047743676733
   },
-  "surveyOverlaps": {
-    "MaNGA": {
-      "confirmed": 0,
-      "reason": "Redshift mismatch: MaNGA z>0.01, SPARC z<0.007"
-    },
-    "THINGS": {
-      "confirmed": 7,
-      "processed": 7
-    },
-    "PHANGS": {
-      "confirmed": 2,
-      "allAlreadyInTHINGS": true
-    },
-    "CALIFA": {
-      "confirmed": "0-1 new",
-      "needsVerification": true
-    },
-    "LITTLE_THINGS": {
-      "confirmed": 2,
-      "lacksQualityFits": true
-    }
+  "loo": {
+    "mean": 0.8302369662726197,
+    "min": 0.6908753545504467,
+    "max": 0.9128212369794805,
+    "allPositive": true,
+    "n": 7
   },
-  "expansionPath": {
-    "maxCurrentPublic": 7,
-    "nearTerm": [
-      "WALLABY (ASKAP)",
-      "PHANGS-MUSE expansion"
-    ],
-    "proposalTargets": [
-      {
-        "name": "ESO563-G021",
-        "DQ": 2.2677787149166857,
-        "Vflat": 314.6,
-        "dist": 60.8
-      },
-      {
-        "name": "UGC06787",
-        "DQ": 1.9809698015156891,
-        "Vflat": 248.1,
-        "dist": 21.3
-      },
-      {
-        "name": "UGC09037",
-        "DQ": -1.776444061617939,
-        "Vflat": 152.3,
-        "dist": 83.6
-      },
-      {
-        "name": "UGC06786",
-        "DQ": 1.6753482031998173,
-        "Vflat": 219.4,
-        "dist": 29.3
-      },
-      {
-        "name": "NGC4559",
-        "DQ": -1.5855833628062028,
-        "Vflat": 121.2,
-        "dist": 9
-      },
-      {
-        "name": "NGC5371",
-        "DQ": -1.4300912419999456,
-        "Vflat": 209.5,
-        "dist": 39.7
-      },
-      {
-        "name": "NGC3769",
-        "DQ": -1.3025381582443998,
-        "Vflat": 118.6,
-        "dist": 18
-      },
-      {
-        "name": "NGC2683",
-        "DQ": -1.2473288010125136,
-        "Vflat": 154,
-        "dist": 9.81
-      },
-      {
-        "name": "NGC7814",
-        "DQ": 1.212215179501533,
-        "Vflat": 218.9,
-        "dist": 14.4
-      },
-      {
-        "name": "NGC5005",
-        "DQ": 1.2105031831199795,
-        "Vflat": 262.2,
-        "dist": 16.9
-      }
-    ]
+  "surveys": {
+    "THINGS": 7,
+    "nonTHINGS": 0,
+    "r_THINGS": 0.8372879522563232
   },
   "results": [
     {
@@ -113,105 +30,125 @@
       "DQ": 2.254370061790992,
       "Vflat": 284.8,
       "dist": 14.1,
-      "inc": 0,
       "logMbar": 11.0296323097081,
+      "inc": 76,
       "m2Power": 18058.992760857764,
       "m1Power": 112250.43747361074,
       "m0Power": 8175.600877498459,
       "m2m0": 2.2088887448702597,
       "paTwist": 2.4285954505131215,
       "coherenceOuter": 0.9996604617719901,
-      "nValid": 380843
+      "nValid": 380843,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC3521",
       "DQ": 0.517836254332268,
       "Vflat": 213.7,
       "dist": 7.7,
-      "inc": 0,
       "logMbar": 10.680723575680519,
+      "inc": 75,
       "m2Power": 14827.869914953797,
       "m1Power": 79606.46355522452,
       "m0Power": 29278.529077863786,
       "m2m0": 0.5064417640490178,
       "paTwist": 2.1159229576905507,
       "coherenceOuter": 1,
-      "nValid": 185365
+      "nValid": 185365,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC2403",
       "DQ": 0.1415876076276942,
       "Vflat": 131.2,
       "dist": 3.16,
-      "inc": 0,
       "logMbar": 9.967321878328628,
+      "inc": 63,
       "m2Power": 2324.0314714949045,
       "m1Power": 46236.22069112254,
       "m0Power": 4157.231215737318,
       "m2m0": 0.5590334890917822,
       "paTwist": 9.013348670751443,
       "coherenceOuter": 0.9993016459938727,
-      "nValid": 2349946
+      "nValid": 2349946,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC7331",
       "DQ": -0.13516027460720484,
       "Vflat": 239,
       "dist": 14.7,
-      "inc": 0,
       "logMbar": 11.146235386209625,
+      "inc": 75,
       "m2Power": 3418.3609467002707,
       "m1Power": 95159.91306124521,
       "m0Power": 49752.93522774114,
       "m2m0": 0.06870671913230696,
       "paTwist": 4.082612812485426,
       "coherenceOuter": 0.9959036144578314,
-      "nValid": 103012
+      "nValid": 103012,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC2903",
       "DQ": -0.26106056273318207,
       "Vflat": 184.6,
       "dist": 6.6,
-      "inc": 0,
       "logMbar": 10.646655210876995,
+      "inc": 66,
       "m2Power": 2580.598327805286,
       "m1Power": 84915.28638437299,
       "m0Power": 14082.651494244734,
       "m2m0": 0.18324662290051835,
       "paTwist": 11.789453444260506,
       "coherenceOuter": 0.9997143139689482,
-      "nValid": 361188
+      "nValid": 361188,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC3198",
       "DQ": -0.4715816459282169,
       "Vflat": 150.1,
       "dist": 13.8,
-      "inc": 0,
       "logMbar": 10.526278135797503,
+      "inc": 73,
       "m2Power": 4151.387699692789,
       "m1Power": 75330.88100674558,
       "m0Power": 20857.115312687372,
       "m2m0": 0.1990393991429631,
       "paTwist": 0.6197218889870207,
       "coherenceOuter": 0.9975460122699387,
-      "nValid": 210894
+      "nValid": 210894,
+      "survey": "THINGS",
+      "source": "Program9"
     },
     {
       "name": "NGC5055",
       "DQ": -1.5228476025571591,
       "Vflat": 179,
       "dist": 9.9,
-      "inc": 0,
       "logMbar": 10.96402973751469,
+      "inc": 55,
       "m2Power": 1721.7986768566332,
       "m1Power": 63590.48049097877,
       "m0Power": 2930.7513985489695,
       "m2m0": 0.5874939367798664,
       "paTwist": 17.19654453757794,
       "coherenceOuter": 0.9726520338868946,
-      "nValid": 859256
+      "nValid": 859256,
+      "survey": "THINGS",
+      "source": "Program9"
     }
+  ],
+  "newTargetsIdentified": 6,
+  "surveysNeeded": [
+    "MaNGA",
+    "CALIFA",
+    "PHANGS"
   ]
 }

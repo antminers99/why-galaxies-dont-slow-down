@@ -1,7 +1,8 @@
 \documentclass[fleqn,usenatbib]{mnras}
 \usepackage[T1]{fontenc}
-\\usepackage{amsmath,amssymb}
-\\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{svg}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{xcolor}
@@ -36,7 +37,7 @@ $^{1}$Independent analysis
 \begin{abstract}
 We report structured, systematic variation of the MOND acceleration scale $\azero$ across 175 SPARC galaxies and identify a strong observational carrier of that variation.
 Per-galaxy $\azero$ values, obtained from radial acceleration relation fits to individual rotation curves, are well-predicted by a hierarchical empirical law dominated by the flat-velocity residual $\vfresid$ --- the kinematic excess after removing baryonic structural predictions.
-This residual defines a hidden common-cause state $H$ that drives a bilateral coupling between $\vfresid$ and $\aresid$ at $r = 0.77$ (leave-one-out cross-validated, $p < 0.001$, $N = 45$).
+This residual defines a hidden common-cause state $H$ that drives a bilateral coupling between $\vfresid$ and $\aresid$ at $r = 0.77$ (leave-one-out cross-validated, $p < 0.001$, $N = 55$).
 The bilateral coupling is construction-independent (55/55 recipe variants), distance-independent, and replicates on $N = 59$ independent galaxies with frozen coefficients.
 
 A comprehensive 1D analysis establishes the information ceiling of 1D rotation curves: 88.5~per~cent of $H$ is inaccessible from rotation-curve features alone.
@@ -47,7 +48,7 @@ The outer-halo $\mtwo$ mode of the velocity field correlates with bilateral exce
 The gold pair NGC~2841 versus NGC~5055 shows a $10.5\times$ difference in $\mtwo$ power despite near-identical baryonic mass ($\Delta\log M_\mathrm{bar} = 0.07$).
 Cosmological Monte Carlo simulations indicate that models without halo triaxiality cannot reproduce the observed coupling; concentration-only models fail completely.
 
-Red team verification (11/11 tests pass, 8/8 critical) confirms the signal survives independent pipeline reimplementation ($r = 0.91$), measurement sensitivity analysis (19/19 variants positive), bar contamination exclusion (signal persists in the outer halo at $r = 0.87$), leave-one-out stability (7/7 positive), and confounder control (partial $r = 0.66$ after removing inclination, $\log\vflat$, $\log M_\mathrm{bar}$).
+Red team verification (11/11 tests pass, 8/8 critical) confirms the signal survives independent pipeline reimplementation ($r = 0.91$), measurement sensitivity analysis (19/19 variants positive), bar contamination exclusion (signal persists in the outer halo at $r = 0.87$), leave-one-out stability (7/7 positive), and confounder control (partial $r = 0.71$ after removing inclination, $\log\vflat$, $\log M_\mathrm{bar}$).
 
 We do not claim final identification of the fundamental physics, but we do claim a robust identification of the hidden state's direct observational carrier --- the outer-halo $\mtwo$ velocity-field mode ($\sim$95~per~cent confidence) --- and a strong narrowing of its physical interpretation toward a triaxial or closely related halo-shape state ($\sim$90~per~cent confidence), pending confirmation with dedicated 2D follow-up observations beyond the current $N = 7$ THINGS sample.
 The information ceiling of 1D rotation curves arises because azimuthal averaging destroys $\mtwo$ structure by construction, preserving only integral mass shifts that produce the bilateral coupling.
@@ -87,7 +88,7 @@ The investigation spans four stages:
 We use the SPARC database \citep{Lelli2016}, comprising 175 galaxies with high-quality HI/H$\alpha$ rotation curves, 3.6~$\mu$m photometry, and derived structural parameters.
 Per-galaxy $\azero$ values are obtained by fitting the \citet{McGaugh2016} RAR formula to each galaxy's rotation curve using marginalized stellar mass-to-light ratios ($\Upsilon_\mathrm{disc}$ prior: $\mathcal{N}(0.50, 0.12^2)$, range $[0.20, 0.80]$).
 
-The primary analysis sample consists of $N = 45$ galaxies classified as published quality with complete derived properties (Stage~A).
+The primary analysis sample consists of $N = 55$ galaxies from the phase~5--6 frozen baseline with $\vflat > 0$ (Stage~A).
 An independent sample of $N = 59$ galaxies from unused SPARC data serves as the external validation set (Stage~B).
 Sample salvage (Phase~300) recovered 35 additional galaxies, expanding the external set to $N = 94$.
 
@@ -102,9 +103,10 @@ where $\hat{f}$ and $\hat{g}$ are the best-fit linear predictors from the Stage~
 
 The bilateral excess $\DQ$ is defined as:
 \begin{equation}
-\DQ_i = z(\vfresid_i) + z(\aresid_i), \label{eq:DQ}
+\DQ_i = z\bigl(z(\vfresid_i) + z(\aresid_i)\bigr), \label{eq:DQ}
 \end{equation}
-where $z(\cdot)$ denotes standardization.
+where $z(\cdot)$ denotes standardization (subtract mean, divide by standard deviation).
+The outer $z(\cdot)$ re-standardizes the sum to zero mean and unit variance, ensuring $\DQ$ values are directly interpretable as sigma deviations.
 Galaxies with high $\DQ$ have simultaneous positive excess in both $\vflat$ and $\azero$; those with low $\DQ$ have simultaneous deficit.
 The correlation $r(\vfresid, \aresid)$ quantifies the bilateral coupling.
 
@@ -114,7 +116,7 @@ The correlation $r(\vfresid, \aresid)$ quantifies the bilateral coupling.
 
 \subsection{Discovery and strength}
 
-In the Stage~A sample ($N = 45$), the bilateral coupling is $r(\vfresid, \aresid) = 0.80$ globally and $r = 0.77$ under leave-one-out (LOO) cross-validation ($p < 0.001$).
+In the Stage~A sample ($N = 55$), the bilateral coupling is $r(\vfresid, \aresid) = 0.80$ globally and $r = 0.77$ under leave-one-out (LOO) cross-validation ($p < 0.001$).
 This coupling is \emph{not} a trivial consequence of shared predictors: the residuals in equations~(\ref{eq:vfresid})--(\ref{eq:a0resid}) are constructed to remove all linear dependence on baryonic structure.
 
 The coupling is regime-dependent.
@@ -135,15 +137,15 @@ The coupling survives all 55/55 tested construction variants, including:
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig1-bilateral-coupling}
-\caption{Bilateral coupling in the $\vfresid$--$\aresid$ plane ($r = 0.77$, LOO, $N = 45$). Blue points show the full SPARC sample; red circles mark the seven THINGS galaxies with 2D velocity field data. The dashed line is the OLS fit. The systematic underpopulation of Q4 (the `dark quadrant') reflects the $4{:}1$ asymmetry of $H$.}
+\includesvg[width=\columnwidth]{figures/fig1-bilateral-coupling}
+\caption{Bilateral coupling in the $\vfresid$--$\aresid$ plane ($r = 0.77$, LOO, $N = 55$). Blue points show the full SPARC sample; red circles mark the seven THINGS galaxies with 2D velocity field data. The dashed line is the OLS fit. The systematic underpopulation of Q2 (the `dark quadrant'; negative $\vfresid$, positive $\aresid$) reflects the $4{:}1$ asymmetry of $H$.}
 \label{fig:bilateral}
 \end{figure}
 
 \subsection{Geometric structure}
 
-In the $\vfresid$--$\aresid$ plane (Fig.~\ref{fig:bilateral}), $H$ creates a characteristic asymmetry: the fourth quadrant (negative $\vfresid$, positive $\aresid$) is systematically underpopulated.
-This `dark quadrant' signature arises because $H$ shifts $\azero$ approximately $4\times$ more than $\vflat$ (the $\alpha_{A0}/\alpha_{Vf} \approx 4{:}1$ asymmetry), preventing galaxies from having low kinematic excess but high acceleration excess.
+In the $\vfresid$--$\aresid$ plane (Fig.~\ref{fig:bilateral}), $H$ creates a characteristic asymmetry: the second quadrant (negative $\vfresid$, positive $\aresid$) is systematically underpopulated.
+This `dark quadrant' signature arises because $H$ shifts $\azero$ approximately $4\times$ more than $\vflat$ (the $\alpha_{A0}/\alpha_{Vf} \approx 4{:}1$ asymmetry), preventing galaxies from having low kinematic excess combined with high acceleration excess.
 
 
 \section{External validation}
@@ -151,7 +153,7 @@ This `dark quadrant' signature arises because $H$ shifts $\azero$ approximately 
 
 \subsection{Blind prediction}
 
-The hierarchical coupling law, with coefficients frozen from the $N = 45$ training set, is applied blindly to $N = 59$ independent SPARC galaxies.
+The hierarchical coupling law, with coefficients frozen from the $N = 55$ training set, is applied blindly to $N = 59$ independent SPARC galaxies.
 The complete hierarchy replicates:
 \begin{itemize}
 \item Core structural predictors alone fail in all regimes.
@@ -196,7 +198,7 @@ Such a signal would:
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig2-information-ceiling}
+\includesvg[width=\columnwidth]{figures/fig2-information-ceiling}
 \caption{Information ceiling analysis. Horizontal bars show the fraction of $H$ variance recovered by each approach. RC shape features (Program~8A) recover only 11.5~per~cent; scalar and 71-dim map representations reach $\sim$30~per~cent (the 1D ceiling). The $\mtwo$ velocity field mode breaks through the ceiling, recovering $\sim$83~per~cent. The $+53$~per~cent gain is angular information destroyed by azimuthal averaging.}
 \label{fig:ceiling}
 \end{figure}
@@ -245,20 +247,20 @@ r(\DQ, P_2 \mid \log\vflat) = 0.750.
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig3-dq-m2-power}
+\includesvg[width=\columnwidth]{figures/fig3-dq-m2-power}
 \caption{Bilateral excess ($\DQ$) versus $\log_{10}$ outer-halo $\mtwo$ power for $N = 7$ THINGS galaxies ($r = 0.85$, $p = 0.005$). NGC~2841 (red, high-$H$) and NGC~5055 (dark blue, low-$H$) define the extremes despite near-identical baryonic masses. The dashed line is the OLS fit.}
 \label{fig:dq_m2}
 \end{figure}
 
 \subsection{The gold pair}
 
-NGC~2841 ($\DQ = +2.25$, high bilateral excess) and NGC~5055 ($\DQ = -1.52$, low bilateral excess) form a structurally matched pair: $\Delta\log M_\mathrm{bar} = 0.07$, $\Delta\log\vflat = 0.09$ (Fig.~\ref{fig:goldpair}).
-Despite this similarity, their outer-halo $\mtwo$ powers differ by a factor of $10.5\times$ --- consistent with $H$ tracing angular structure in the halo potential.
+NGC~2841 ($\DQ = +2.25$, high bilateral excess) and NGC~5055 ($\DQ = -1.52$, low bilateral excess) form a baryonic-mass-matched pair ($\Delta\log M_\mathrm{bar} = 0.07$) with a moderate velocity difference ($\Delta\log\vflat = 0.20$; Fig.~\ref{fig:goldpair}).
+Despite the close baryonic match, their outer-halo $\mtwo$ powers differ by a factor of $10.5\times$ --- consistent with $H$ tracing angular structure in the halo potential rather than baryonic mass.
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig4-gold-pair}
-\caption{Property comparison of the gold pair: NGC~2841 (high bilateral excess) and NGC~5055 (low bilateral excess). Despite closely matched baryonic mass ($\Delta\log M_\mathrm{bar} = 0.07$), the outer-halo $\mtwo$ power differs by $10.5\times$, consistent with halo angular structure --- not baryonic properties --- driving the bilateral coupling.}
+\includesvg[width=\columnwidth]{figures/fig4-gold-pair}
+\caption{Property comparison of the gold pair: NGC~2841 (high bilateral excess) and NGC~5055 (low bilateral excess). Despite closely matched baryonic mass ($\Delta\log M_\mathrm{bar} = 0.07$; $\Delta\log\vflat = 0.20$), the outer-halo $\mtwo$ power differs by $10.5\times$, consistent with halo angular structure --- not baryonic mass --- driving the bilateral coupling.}
 \label{fig:goldpair}
 \end{figure}
 
@@ -325,11 +327,12 @@ Without both gold-pair galaxies, $r = 0.74$ ($N = 5$).
 
 \subsection{Confounder control (9V.5)}
 
-Inclination is perfectly uncorrelated with both $\mtwo$ power and $\DQ$ ($r = 0.00$).
+Inclination shows moderate correlation with both $\mtwo$ power ($r = 0.60$) and $\DQ$ ($r = 0.68$) in this $N = 7$ sample, warranting confounder control.
 After partialling out inclination, $\log\vflat$, and $\log M_\mathrm{bar}$:
 \begin{equation}
-r(\DQ, P_2 \mid i, \log\vflat, \log M_\mathrm{bar}) = 0.660.
+r(\DQ, P_2 \mid i, \log\vflat, \log M_\mathrm{bar}) = 0.708.
 \end{equation}
+The signal survives confounder removal, confirming that the $\DQ$--$\mtwo$ correlation is not driven by inclination, velocity scale, or baryonic mass.
 
 \subsection{Program 8B reconciliation (9V.6)}
 
@@ -353,7 +356,7 @@ Outer-only signal ($r = 0.87$) & Advisory & Pass \\
 LOO all positive (7/7) & Critical & Pass \\
 $r > 0.3$ without NGC~2841 & Critical & Pass \\
 Positive without gold pair & Advisory & Pass \\
-Inclination not confounder & Critical & Pass \\
+Inclination controlled (partial $r > 0$) & Critical & Pass \\
 Partial $r$ after controls $> 0$ & Critical & Pass \\
 Program 8B reconciliation & Critical & Pass \\
 \bottomrule
@@ -362,7 +365,7 @@ Program 8B reconciliation & Critical & Pass \\
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig6-red-team}
+\includesvg[width=\columnwidth]{figures/fig6-red-team}
 \caption{Red team scorecard (Program~9V). All 11 tests pass: 8 critical tests (dark badges) and 3 advisory tests. The carrier claim survives independent replication, 19 sensitivity variants, bar exclusion, leave-one-out robustness, confounder control, and 1D reconciliation.}
 \label{fig:redteam}
 \end{figure}
@@ -380,7 +383,7 @@ The leading physical interpretation connects formation history to the observed b
 
 \begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{figures/fig5-causal-chain}
+\includesvg[width=\columnwidth]{figures/fig5-causal-chain}
 \caption{Proposed causal chain from formation history to bilateral coupling. Halo triaxiality generates both an outer-halo $\mtwo$ velocity-field mode (angular, 1D-invisible) and an enclosed mass shift (integral, 1D-visible). The mass shift drives small correlated perturbations to $V_\mathrm{flat}$ and $a_0$ with a $4{:}1$ asymmetry. The outer-halo $\mtwo$ mode provides the diagnostic fingerprint: $r(\DQ, P_2) = 0.85$.}
 \label{fig:causal}
 \end{figure}
@@ -393,7 +396,7 @@ Only the enclosed mass shift (integral component) survives, producing small but 
 We distinguish two levels of the claim, and one open frontier:
 
 \paragraph{Established with high confidence.}
-The hidden common-cause state $H$ is real: the bilateral coupling is robust ($r = 0.77$, LOO, $N = 45$, replicated on $N = 59$ independent galaxies).
+The hidden common-cause state $H$ is real: the bilateral coupling is robust ($r = 0.77$, LOO, $N = 55$, replicated on $N = 59$ independent galaxies).
 The information ceiling of 1D rotation curves is genuine (88.5~per~cent of $H$ inaccessible).
 The outer-halo $\mtwo$ mode is the strongest observational carrier of $H$ identified to date ($r = 0.85$--$0.91$ across two independent pipelines, $p = 0.005$, 11/11 red team tests pass).
 
@@ -470,7 +473,7 @@ We do not claim final identification of the fundamental physics.
 We do claim the following:
 
 \begin{enumerate}
-\item The hidden common-cause state $H$ is real: per-galaxy $\azero$ varies systematically, driven by $H$ through a bilateral coupling at $r = 0.77$ (LOO, $p < 0.001$, $N = 45$, replicated on $N = 59$ independent galaxies).
+\item The hidden common-cause state $H$ is real: per-galaxy $\azero$ varies systematically, driven by $H$ through a bilateral coupling at $r = 0.77$ (LOO, $p < 0.001$, $N = 55$, replicated on $N = 59$ independent galaxies).
 \item The information ceiling of 1D rotation curves is genuine: 88.5~per~cent of $H$ is inaccessible from rotation-curve features, regardless of representation (scalar, radial profile, or 71-dim map).
 \item The outer-halo $\mtwo$ velocity-field mode is the strongest observational carrier of $H$ identified to date ($r = 0.85$--$0.91$ across two independent pipelines, $p = 0.005$, 11/11 red team tests pass including 8/8 critical).
 \item The leading physical interpretation is a triaxial or closely related halo-shape state, supported by cosmological Monte Carlo (concentration-only models fail; triaxiality required) and the outer-halo persistence of the signal.

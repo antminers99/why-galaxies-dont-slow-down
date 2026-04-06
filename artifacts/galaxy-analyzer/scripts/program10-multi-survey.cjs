@@ -61,7 +61,7 @@ for (const g of d56.perGalaxy) {
     logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)),
     logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T,
     logMHI: g.logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)),
-    logA0: g.logA0, dist: sp.D, inc: sp.Inc || 0,
+    logA0: g.logA0, dist: sp.D, inc: sp.inc || 0,
   });
 }
 const vfR = ols(gals.map(g => [g.logMbar, g.logL36, g.logRdisk, g.morphT]), gals.map(g => g.logVflat));

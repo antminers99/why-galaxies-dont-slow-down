@@ -168,7 +168,7 @@ for (const g of d56.perGalaxy) {
     return dmV_out > 0 ? dmV_in / dmV_out : 0;
   })();
 
-  const incl = sp.Inc || 0;
+  const incl = sp.inc || 0;
 
   gals.push({
     name: g.name, logA0: g.logA0,

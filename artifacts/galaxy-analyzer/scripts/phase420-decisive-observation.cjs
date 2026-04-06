@@ -106,7 +106,7 @@ for (const g of d56.perGalaxy) {
     haloResponse, outerSlope,
     gasFrac, newtDeficit, btfrResid,
     Npts: rc.length,
-    inc: sp.Inc || 60,
+    inc: sp.inc || 60,
     dist: sp.D || 10,
   });
 }

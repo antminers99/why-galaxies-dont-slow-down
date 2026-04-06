@@ -95,7 +95,7 @@ for (const g of d56.perGalaxy) {
     logK_halo, dmFrac_Rmax,
     haloResponse,
     Npts: rc.length,
-    inc: sp.Inc || 60,
+    inc: sp.inc || 60,
     dist: sp.D || 10,
   });
 }

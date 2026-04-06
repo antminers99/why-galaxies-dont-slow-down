@@ -38,7 +38,7 @@ for (const g of d56.perGalaxy) {
   const sp = spMap[norm(g.name)]; if (!sp || sp.Vflat <= 0) continue;
   const sr = srMap[norm(g.name)]; if (!sr) continue;
   const Mbar = (sp.L36 * 0.5 + sp.MHI * 1.33) * 1e9;
-  gals.push({ name: g.name, logVflat: Math.log10(sp.Vflat), Vflat: sp.Vflat, logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)), logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T, logMHI: g.logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)), logA0: g.logA0, dist: sp.D, inc: sp.Inc || 0 });
+  gals.push({ name: g.name, logVflat: Math.log10(sp.Vflat), Vflat: sp.Vflat, logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)), logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T, logMHI: g.logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)), logA0: g.logA0, dist: sp.D, inc: sp.inc || 0 });
 }
 const NN = gals.length;
 const vfR = olsResid(gals.map(g => [g.logMbar, g.logL36, g.logRdisk, g.morphT]), gals.map(g => g.logVflat));

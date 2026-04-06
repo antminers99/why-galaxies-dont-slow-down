@@ -1,7 +1,7 @@
 {
   "program": "9V",
   "title": "Red Team Verification of Carrier Claim",
-  "timestamp": "2026-04-06T20:12:01.019Z",
+  "timestamp": "2026-04-06T22:12:32.238Z",
   "N": 7,
   "tests": [
     {
@@ -197,9 +197,9 @@
     "rNoGoldPair": 0.7392386523913363
   },
   "confounders": {
-    "rPartial": 0.6595040818303983,
-    "rInc_m2": 0,
-    "rInc_DQ": 0,
+    "rPartial": 0.7083190278465568,
+    "rInc_m2": 0.5994754419998934,
+    "rInc_DQ": 0.6826542322195298,
     "r_logVf_m2": 0.7540558573853288,
     "r_logMb_m2": 0.3509750112079427
   },

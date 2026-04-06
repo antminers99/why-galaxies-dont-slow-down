@@ -111,7 +111,7 @@ for (const g of d56.perGalaxy) {
   gals.push({
     name: g.name, logA0: g.logA0,
     Vflat, Rdisk, Rmax, Vmax, Mbar, rc,
-    L36: sp.L36, MHI: sp.MHI, dist: sp.D || 10, inc: sp.Inc || 60,
+    L36: sp.L36, MHI: sp.MHI, dist: sp.D || 10, inc: sp.inc || 60,
     logVflat: Math.log10(Vflat),
     logL36, logRdisk, logMbar,
     logMHI: g.logMHI,

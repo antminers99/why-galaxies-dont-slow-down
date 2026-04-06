@@ -72,7 +72,7 @@ for (const g of d56.perGalaxy) {
     hR,
     dist: sp.D,
     envCode: g.envCode,
-    inc: sp.Inc || 0,
+    inc: sp.inc || 0,
     Q: sp.Q || 0,
   });
 }

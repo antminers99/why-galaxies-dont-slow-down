@@ -81,7 +81,7 @@ for (const f of fitsFiles) {
 
   console.log('\n  ' + rawName.padEnd(12));
   if (sp) {
-    console.log('    SPARC: YES  Vflat=' + sp.Vflat + '  D=' + sp.D + '  T=' + sp.T + '  Q=' + sp.Q + '  Inc=' + sp.Inc);
+    console.log('    SPARC: YES  Vflat=' + sp.Vflat + '  D=' + sp.D + '  T=' + sp.T + '  Q=' + sp.Q + '  Inc=' + sp.inc);
     if (sr) {
       console.log('    Results: YES  a0=' + (sr.a0 || 'N/A'));
     } else {
@@ -116,7 +116,7 @@ for (const g of d56.perGalaxy) {
     logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)),
     logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T,
     logMHI: g.logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)),
-    logA0: g.logA0, dist: sp.D, inc: sp.Inc || 0,
+    logA0: g.logA0, dist: sp.D, inc: sp.inc || 0,
     inD56: true,
   });
 }
@@ -139,7 +139,7 @@ for (const fg of fitsGalaxies) {
     logMbar: Math.log10(Math.max(Mbar, 1)), logL36: Math.log10(Math.max(sp.L36, 0.001)),
     logRdisk: Math.log10(Math.max(sp.Rdisk, 0.01)), morphT: sp.T,
     logMHI: logMHI, logSBdisk: Math.log10(Math.max(sp.SBdisk, 0.01)),
-    logA0: logA0, dist: sp.D, inc: sp.Inc || 0,
+    logA0: logA0, dist: sp.D, inc: sp.inc || 0,
     inD56: false,
   });
   console.log('\n  ADDED: ' + fg.name + '  Vflat=' + sp.Vflat + '  logA0=' + logA0.toFixed(4) + '  D=' + sp.D);
