@@ -77,11 +77,11 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
 - Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** Phase 407 COMPLETE. 28 total variables tested — NONE absorb the channel.
-Structure (6), RC-shape (9), field-level (13) all fail to reduce partial r.
-Channel STRENGTHENS after all controls: 0.717→0.814 (partial r with 18 controls).
-Field vars explain R²=0.683 of VfResid but ORTHOGONAL to a₀. Sections 11-16 written.
-IRREDUCIBILITY ESTABLISHED: The VfResid–a₀ coupling cannot be decomposed.
+**Status:** Phase 408 COMPLETE. Channel PROVEN: universal + irreducible + construction-independent.
+28 vars tested (struct/RC/field), NONE absorb. 56/56 recipe combos give r>0.7 (mean 0.794±0.034).
+M/L 0.3–1.0 stable. All a₀ and VfResid recipes stable. Sections 11-17 written.
+THREE PILLARS: (1) Universal r≈0.80 across masses, (2) Irreducible to 28 observables,
+(3) Independent of how both sides are constructed. This is a genuine hidden coupling.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
@@ -134,6 +134,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase405b-verification-freeze.cjs` | Phase 405b: 4-check verification |
 | `scripts/phase406-rc-shape-hunt.cjs` | Phase 406: RC-shape variable hunt |
 | `scripts/phase407-field-level.cjs` | Phase 407: field-level radial vars |
+| `scripts/phase408-construction-independence.cjs` | Phase 408: construction independence |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -145,3 +146,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase405b-verification-freeze.json` | Phase 405b verification |
 | `public/phase406-rc-shape-hunt.json` | Phase 406 RC-shape hunt results |
 | `public/phase407-field-level.json` | Phase 407 field-level results |
+| `public/phase408-construction-independence.json` | Phase 408 construction test |
