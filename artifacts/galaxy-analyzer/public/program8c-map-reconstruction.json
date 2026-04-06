@@ -1,0 +1,64 @@
+{
+  "program": "8C",
+  "title": "Matched 2D Map Reconstruction",
+  "timestamp": "2026-04-06T19:09:19.269Z",
+  "N": 53,
+  "stateDimension": 71,
+  "r_VfR_a0R": 0.8053990317208488,
+  "classification": {
+    "loo1nn": {
+      "fullState": 0.5471698113207547,
+      "scalar": 0.6792452830188679
+    },
+    "loo3nn": {
+      "fullState": 0.6037735849056604,
+      "scalar": 0.6792452830188679
+    }
+  },
+  "absorption": [
+    {
+      "name": "raw",
+      "r": 0.8053990317208488
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env",
+      "r": 0.6224852275137128
+    },
+    {
+      "name": "ctrl: haloResponse only",
+      "r": 0.8278376327473813
+    },
+    {
+      "name": "ctrl: top-8 profile bins",
+      "r": 0.8359110328110871
+    },
+    {
+      "name": "ctrl: full+hR",
+      "r": 0.6994968570853907
+    },
+    {
+      "name": "ctrl: full+top8",
+      "r": 0.7384810081848476
+    },
+    {
+      "name": "ctrl: full+hR+top8",
+      "r": 0.7583407474986412
+    }
+  ],
+  "significantBins": {
+    "V": 3,
+    "H": 0
+  },
+  "quintileSeparation": {
+    "vProfile": 0.07617778452917551,
+    "haloProfile": 0.038090411324072856
+  },
+  "tests": {
+    "t1": true,
+    "t2": false,
+    "t3": false,
+    "t4": true,
+    "totalPass": 2
+  },
+  "verdict": "PARTIAL"
+}

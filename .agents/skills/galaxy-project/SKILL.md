@@ -187,6 +187,11 @@ features extracted; NONE significant. Info ceiling: 19.8% of DQ variance, 88.5%
 of channel inaccessible. haloResponse remains sole significant predictor. H is
 structurally inaccessible from azimuthally-averaged RCs. Section 40 written.
 
+**Program 8C (Map Reconstruction):** 2/4 PARTIAL. 71-dim full state vector
+OUTPERFORMED by scalar haloResponse (54.7% vs 67.9% LOO). Profile bins absorb
+-3.8%. MAP CEILING = SCALAR CEILING. Barrier is fundamental: azimuthal averaging
+destroys the dimensions where H lives. Section 41 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -262,6 +267,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program7b-halo-shape.cjs` | Program 7B: halo shape not strength |
 | `scripts/program7c-halo-shape-index.cjs` | Program 7C: halo shape decisive index |
 | `scripts/program8a-2d-state-recovery.cjs` | Program 8A: 2D state recovery |
+| `scripts/program8c-map-reconstruction.cjs` | Program 8C: matched map reconstruction |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -297,3 +303,4 @@ POSSIBLE FUTURE WORK:
 | `public/program7b-halo-shape.json` | Program 7B halo shape test |
 | `public/program7c-halo-shape-index.json` | Program 7C halo shape index |
 | `public/program8a-2d-state.json` | Program 8A 2D state recovery |
+| `public/program8c-map-reconstruction.json` | Program 8C map reconstruction |
