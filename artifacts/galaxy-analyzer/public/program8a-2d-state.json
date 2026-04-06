@@ -1,0 +1,148 @@
+{
+  "program": "8A",
+  "title": "2D State Recovery",
+  "timestamp": "2026-04-06T18:57:39.229Z",
+  "N": 54,
+  "r_VfR_a0R": 0.8036605145392991,
+  "features": [
+    {
+      "name": "innerOuter_vNorm",
+      "r": -0.06563643052043104,
+      "t": -0.4743338830231367,
+      "sig": false,
+      "desc": "inner-outer velocity gradient (normalised)"
+    },
+    {
+      "name": "innerOuter_frac",
+      "r": -0.012022851272155863,
+      "t": -0.08670428021099152,
+      "sig": false,
+      "desc": "outer-inner halo fraction gradient"
+    },
+    {
+      "name": "spatialCoherence",
+      "r": 0.13473121321864096,
+      "t": 0.9805006207580204,
+      "sig": false,
+      "desc": "residual sign persistence across bins"
+    },
+    {
+      "name": "residSymmetry",
+      "r": -0.062229414604539235,
+      "t": -0.44961410016034414,
+      "sig": false,
+      "desc": "symmetry of residual profile"
+    },
+    {
+      "name": "gradientSmooth",
+      "r": 0.1341145241812564,
+      "t": 0.9759302987165722,
+      "sig": false,
+      "desc": "smoothness of velocity gradient"
+    },
+    {
+      "name": "innerCurvature",
+      "r": -0.08715461479756104,
+      "t": -0.6308814974010042,
+      "sig": false,
+      "desc": "inner RC curvature (log-log slope)"
+    },
+    {
+      "name": "outerFlatness",
+      "r": -0.13256131403815394,
+      "t": -0.9644244618298221,
+      "sig": false,
+      "desc": "outer RC flatness (1 - rms/mean)"
+    },
+    {
+      "name": "meanHaloGrad",
+      "r": 0.01808816685830297,
+      "t": 0.13045696949121338,
+      "sig": false,
+      "desc": "mean radial halo fraction gradient"
+    },
+    {
+      "name": "haloGradSmooth",
+      "r": -0.04600593775370211,
+      "t": -0.3321051792555126,
+      "sig": false,
+      "desc": "smoothness of halo gradient"
+    },
+    {
+      "name": "innerOuterCoupling",
+      "r": -0.0644208924637161,
+      "t": -0.4655126168897508,
+      "sig": false,
+      "desc": "inner-outer residual coupling sign"
+    },
+    {
+      "name": "haloResponse",
+      "r": 0.3271043865427938,
+      "t": 2.4960980961929353,
+      "sig": true,
+      "desc": "haloResponse (scalar baseline)"
+    },
+    {
+      "name": "rcSmooth",
+      "r": 0.054997200118967256,
+      "t": 0.39719159611221366,
+      "sig": false,
+      "desc": "RC smoothness (scalar baseline)"
+    }
+  ],
+  "stateVector": {
+    "topFeatures": [
+      "spatialCoherence",
+      "gradientSmooth",
+      "outerFlatness",
+      "innerCurvature",
+      "innerOuter_vNorm"
+    ],
+    "R2": 0.05493380155191485,
+    "R2_hR": 0.10699727969553752
+  },
+  "absorption": [
+    {
+      "name": "raw",
+      "r": 0.8036605145392991
+    },
+    {
+      "name": "ctrl: logK+dmFrac+env",
+      "r": 0.603946484416957
+    },
+    {
+      "name": "ctrl: haloResponse",
+      "r": 0.8367105703014208
+    },
+    {
+      "name": "ctrl: 2D state vector",
+      "r": 0.8525506751879258
+    },
+    {
+      "name": "ctrl: full + hR",
+      "r": 0.679055533438042
+    },
+    {
+      "name": "ctrl: full + 2D state",
+      "r": 0.7135681410480278
+    },
+    {
+      "name": "ctrl: full + hR + 2D state",
+      "r": 0.6974024059311019
+    }
+  ],
+  "infoCeiling": {
+    "R2_all": 0.1983900348433827,
+    "channelAbsorbed": 11.514868331842498,
+    "channelHidden": 88.4851316681575
+  },
+  "profileSeparation": 0.04377436343695321,
+  "tests": {
+    "t1": false,
+    "t2": false,
+    "t3": false,
+    "t4": false,
+    "totalPass": 0
+  },
+  "verdict": "1D CEILING CONFIRMED"
+}
