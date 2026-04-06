@@ -159,6 +159,12 @@ quiet coupling sufficient but NOT necessary. Essential: H→VfResid + H→a0Resi
 haloResp actually SUPPRESSES (makes link stronger). H is genuinely hidden (best 5-observable
 proxy captures only 39%). H = Direct Common-Cause variable. Section 34 written.
 
+**Program 6A (Matched IFU):** 3 high-DQ targets vs 3 matched low-DQ controls.
+Bilateral tests ALL PASS (VfResid 3/3, a0Resid 2/3, haloResponse 3/3).
+Quietness tests ALL FAIL (smoothness 1/3, s1/Vf 1/3, asymmetry 0/3, coherence 1/3).
+Total 3/7 inconclusive, but the split confirms 5B: bilateral drive is real,
+quietness is not the mechanism. Section 35 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -228,6 +234,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program5a-hidden-state-sim.cjs` | Program 5A: hidden-state simulation |
 | `scripts/program5b-necessity-test.cjs` | Program 5B: necessity test |
 | `scripts/program5c-causal-topology.cjs` | Program 5C: causal topology |
+| `scripts/program6a-matched-ifu.cjs` | Program 6A: matched IFU measurement |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -257,3 +264,4 @@ POSSIBLE FUTURE WORK:
 | `public/program5a-hidden-state-sim.json` | Program 5A hidden-state simulation |
 | `public/program5b-necessity-test.json` | Program 5B necessity test |
 | `public/program5c-causal-topology.json` | Program 5C causal topology |
+| `public/program6a-matched-ifu.json` | Program 6A matched IFU |

@@ -1,0 +1,149 @@
+{
+  "program": "6A",
+  "title": "Matched IFU Decisive Measurement",
+  "timestamp": "2026-04-06T18:26:05.836Z",
+  "N": 55,
+  "targets": [
+    {
+      "name": "NGC2841",
+      "dq": 2.629540179934417,
+      "Vflat": 284.8,
+      "logMbar": 11.0296323097081,
+      "morphT": 3,
+      "haloResponse": 0.7669798337501476,
+      "VfResid": 0.10617384476883629,
+      "a0Resid": 0.5137323527533457,
+      "rcSmoothness": 0.9923470884288653,
+      "s1_Vflat": 0.016180335879050524,
+      "D": 14.1
+    },
+    {
+      "name": "NGC3741",
+      "dq": 2.1478821098373073,
+      "Vflat": 50.1,
+      "logMbar": 8.408341741154654,
+      "morphT": 10,
+      "haloResponse": 2.010597292966363,
+      "VfResid": 0.05548505665298786,
+      "a0Resid": -0.0017205958169141944,
+      "rcSmoothness": 0.9799408353453174,
+      "s1_Vflat": 0.14218402541201902,
+      "D": 3.21
+    },
+    {
+      "name": "ESO563-G021",
+      "dq": 1.8781395783246513,
+      "Vflat": 314.6,
+      "logMbar": 11.273937966679668,
+      "morphT": 4,
+      "haloResponse": 1.1699426897487815,
+      "VfResid": 0.10917650785512434,
+      "a0Resid": 0.5060058726198697,
+      "rcSmoothness": 0.9848341862924641,
+      "s1_Vflat": 0.03658597887092283,
+      "D": 60.8
+    }
+  ],
+  "controls": [
+    {
+      "name": "UGC02953",
+      "dq": -0.2926775777876758,
+      "Vflat": 264.9,
+      "logMbar": 11.14603725864499,
+      "morphT": 2,
+      "haloResponse": 0.44236668356403736,
+      "VfResid": 0.044350482184445816,
+      "a0Resid": 0.3059863269313676,
+      "rcSmoothness": 0.9960644791591999,
+      "s1_Vflat": 0.02650127034366125,
+      "D": 16.5
+    },
+    {
+      "name": "NGC1705",
+      "dq": -0.6965514283131333,
+      "Vflat": 71.9,
+      "logMbar": 8.654532690613644,
+      "morphT": 11,
+      "haloResponse": 0.9128137237409012,
+      "VfResid": 0.018920000092345512,
+      "a0Resid": 0.08077820029771843,
+      "rcSmoothness": 0.9702031823722503,
+      "s1_Vflat": 0.06379187185863126,
+      "D": 5.73
+    },
+    {
+      "name": "NGC5371",
+      "dq": -0.20261076187117322,
+      "Vflat": 209.5,
+      "logMbar": 11.267326403592811,
+      "morphT": 4,
+      "haloResponse": 0.7842953451968587,
+      "VfResid": -0.06791678984082017,
+      "a0Resid": -0.32332905492762487,
+      "rcSmoothness": 0.9851102546442642,
+      "s1_Vflat": 0.0077157971239384645,
+      "D": 39.7
+    }
+  ],
+  "pairs": [
+    {
+      "target": "NGC2841",
+      "control": "UGC02953"
+    },
+    {
+      "target": "NGC3741",
+      "control": "NGC1705"
+    },
+    {
+      "target": "ESO563-G021",
+      "control": "NGC5371"
+    }
+  ],
+  "decisiveTests": [
+    {
+      "name": "T1: VfResid(H+) > VfResid(H-)",
+      "passCount": 3,
+      "total": 3,
+      "allPass": true
+    },
+    {
+      "name": "T2: a0Resid(H+) > a0Resid(H-)",
+      "passCount": 2,
+      "total": 3,
+      "allPass": true
+    },
+    {
+      "name": "T3: haloResponse(H+) > haloResponse(H-)",
+      "passCount": 3,
+      "total": 3,
+      "allPass": true
+    },
+    {
+      "name": "T4: rcSmoothness(H+) > rcSmoothness(H-)",
+      "passCount": 1,
+      "total": 3,
+      "allPass": false
+    },
+    {
+      "name": "T5: s1/Vflat(H+) < s1/Vflat(H-)",
+      "passCount": 1,
+      "total": 3,
+      "allPass": false
+    },
+    {
+      "name": "T6: asymmetry(H+) < asymmetry(H-)",
+      "passCount": 0,
+      "total": 3,
+      "allPass": false
+    },
+    {
+      "name": "T7: innerOuterCoherence(H+) > innerOuterCoherence(H-)",
+      "passCount": 1,
+      "total": 3,
+      "allPass": false
+    }
+  ],
+  "totalPass": 3,
+  "verdict": "INCONCLUSIVE",
+  "goldenSentence": "H is not a quietness variable. H is a hidden common-cause state that jointly drives both the rotation-velocity residual and the acceleration residual; kinematic calmness emerges as a consequence, not as the mechanism."
+}
