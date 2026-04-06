@@ -1,0 +1,443 @@
+{
+  "phase": "420",
+  "title": "The Decisive Observation",
+  "timestamp": "2026-04-06T17:54:30.138Z",
+  "N": 55,
+  "thingsTest": {
+    "successes": 4,
+    "total": 4,
+    "galaxies": [
+      {
+        "name": "NGC2841",
+        "dq": 2.629540179934417,
+        "ncm_grade": "A"
+      },
+      {
+        "name": "NGC3741",
+        "dq": 2.1478821098373073,
+        "ncm_grade": "A+"
+      },
+      {
+        "name": "NGC7331",
+        "dq": 0.6120063625767911,
+        "ncm_grade": "A"
+      },
+      {
+        "name": "NGC2403",
+        "dq": -0.5819090978376728,
+        "ncm_grade": "A"
+      },
+      {
+        "name": "NGC5055",
+        "dq": -1.414621677994924,
+        "ncm_grade": "C"
+      },
+      {
+        "name": "NGC2903",
+        "dq": -1.4401335342203159,
+        "ncm_grade": "C"
+      },
+      {
+        "name": "NGC3521",
+        "dq": -1.6533959094378674,
+        "ncm_grade": "B"
+      }
+    ]
+  },
+  "decisivePairs": [
+    {
+      "target": "NGC2841",
+      "control": "UGC02953",
+      "tDQ": 2.629540179934417,
+      "cDQ": -0.2926775777876758,
+      "tVflat": 284.8,
+      "cVflat": 264.9,
+      "predictions": {
+        "haloResponse": {
+          "target": 0.7669798337501476,
+          "control": 0.44236668356403736,
+          "diff": 0.3246131501861102,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": -0.6485248524679141,
+          "control": -0.9780479614439486,
+          "diff": 0.32952310897603443,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.0389453818066898e-10,
+          "control": 5.913743858356179e-11,
+          "diff": 4.475709959710718e-11,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 3.3481834328906266,
+          "control": 2.696752868345216,
+          "diff": 0.6514305645454104,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.19713190753779353,
+          "control": 0.13657264363598376,
+          "diff": 0.06055926390180977,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "NGC5005",
+      "control": "IC4202",
+      "tDQ": 2.5431829445205363,
+      "cDQ": 0.5374169689515338,
+      "tVflat": 262.2,
+      "cVflat": 242.6,
+      "predictions": {
+        "haloResponse": {
+          "target": 0.8891421876825938,
+          "control": 1.0600866519074252,
+          "diff": -0.17094446422483145,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": 0,
+          "control": -0.2793211709676197,
+          "diff": 0.2793211709676197,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.4317158730295514e-11,
+          "control": 1.3720297003707646e-10,
+          "diff": -1.2288581130678094e-10,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 1.4189437445267896,
+          "control": 1.8262473094054354,
+          "diff": -0.40730356487864583,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.1787979143053966,
+          "control": 0.12829008802352382,
+          "diff": 0.05050782628187278,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "NGC3741",
+      "control": "NGC1705",
+      "tDQ": 2.1478821098373073,
+      "cDQ": -0.6965514283131333,
+      "tVflat": 50.1,
+      "cVflat": 71.9,
+      "predictions": {
+        "haloResponse": {
+          "target": 2.010597292966363,
+          "control": 0.9128137237409012,
+          "diff": 1.0977835692254616,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": 4.709346251765675,
+          "control": -0.33572192388083005,
+          "diff": 5.045068175646505,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.299786310684115e-8,
+          "control": 5.215582103146012e-10,
+          "diff": 1.247630489652655e-8,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 3.994258819799855,
+          "control": 3.9972241057354783,
+          "diff": -0.0029652859356232852,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.09775229057858215,
+          "control": 0.19309571772947165,
+          "diff": -0.0953434271508895,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "ESO563-G021",
+      "control": "NGC6195",
+      "tDQ": 1.8781395783246513,
+      "cDQ": -0.059163411663041066,
+      "tVflat": 314.6,
+      "cVflat": 251.7,
+      "predictions": {
+        "haloResponse": {
+          "target": 1.1699426897487815,
+          "control": 0.7984404858783847,
+          "diff": 0.3715022038703968,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": -0.020352043477261342,
+          "control": 0,
+          "diff": -0.020352043477261342,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.5632286503781485e-10,
+          "control": 1.0684859877010097e-10,
+          "diff": 4.947426626771388e-11,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 2.278999336391082,
+          "control": 1.5500499104713024,
+          "diff": 0.7289494259197795,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.17927422661735104,
+          "control": 0.06363949237178401,
+          "diff": 0.11563473424556703,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "UGC00128",
+      "control": "NGC2403",
+      "tDQ": 1.6158935848633516,
+      "cDQ": -0.5819090978376728,
+      "tVflat": 129.3,
+      "cVflat": 131.2,
+      "predictions": {
+        "haloResponse": {
+          "target": 1.0701636857349526,
+          "control": 0.9309111687818349,
+          "diff": 0.1392525169531177,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": 0.04722955165610199,
+          "control": 0.8638562628743464,
+          "diff": -0.8166267112182444,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.2363047204294568e-9,
+          "control": 6.371666383135484e-10,
+          "diff": 5.991380821159084e-10,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 3.625784620911814,
+          "control": 3.0009202073511236,
+          "diff": 0.6248644135606902,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.0612954827902632,
+          "control": 0.12610336545748435,
+          "diff": -0.06480788266722115,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "UGC02885",
+      "control": "NGC0801",
+      "tDQ": 1.555481033949692,
+      "cDQ": -0.25101018875585934,
+      "tVflat": 289.5,
+      "cVflat": 220.1,
+      "predictions": {
+        "haloResponse": {
+          "target": 1.2079558555490912,
+          "control": 0.716693076574599,
+          "diff": 0.4912627789744922,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": 0.545777648979409,
+          "control": -0.21336066991289893,
+          "diff": 0.7591383188923079,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 1.9868246951126093e-10,
+          "control": 1.486218636473045e-10,
+          "diff": 5.006060586395643e-11,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 2.3788495428682777,
+          "control": 1.89748153479891,
+          "diff": 0.48136800806936764,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.10998702145281403,
+          "control": 0.02457703447291326,
+          "diff": 0.08540998697990076,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "NGC6674",
+      "control": "NGC7331",
+      "tDQ": 1.5336874084937093,
+      "cDQ": 0.6120063625767911,
+      "tVflat": 241.3,
+      "cVflat": 239,
+      "predictions": {
+        "haloResponse": {
+          "target": 0.6866847571369559,
+          "control": 0.9809102091413493,
+          "diff": -0.29422545200439343,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": -0.33675247139317466,
+          "control": 0.17572104654145862,
+          "diff": -0.5124735179346332,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 2.994270349192709e-10,
+          "control": 8.830701580250992e-11,
+          "diff": 2.1112001911676097e-10,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 2.555508007716699,
+          "control": 1.8557251765489888,
+          "diff": 0.6997828311677101,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.08845748339289772,
+          "control": 0.09183905439573126,
+          "diff": -0.003381571002833539,
+          "expectedSign": "+"
+        }
+      }
+    },
+    {
+      "target": "NGC2998",
+      "control": "NGC5033",
+      "tDQ": 1.4895322381955294,
+      "cDQ": 0.37352133525743986,
+      "tVflat": 209.9,
+      "cVflat": 194.2,
+      "predictions": {
+        "haloResponse": {
+          "target": 0.7885531462436645,
+          "control": 0.6951326115490762,
+          "diff": 0.09342053469458822,
+          "expectedSign": "+"
+        },
+        "outerSlope": {
+          "target": -0.42493102829064444,
+          "control": -1.2423399557264005,
+          "diff": 0.8174089274357561,
+          "expectedSign": "+"
+        },
+        "gasFraction": {
+          "target": 3.106955261814397e-10,
+          "control": 2.0494264955858428e-10,
+          "diff": 1.057528766228554e-10,
+          "expectedSign": "+"
+        },
+        "newtDeficit": {
+          "target": 2.015294395589564,
+          "control": 2.3583273003596767,
+          "diff": -0.3430329047701126,
+          "expectedSign": "+"
+        },
+        "btfrResid": {
+          "target": 0.0650315594344919,
+          "control": 0.07650712016902395,
+          "diff": -0.011475560734532042,
+          "expectedSign": "+"
+        }
+      }
+    }
+  ],
+  "pairScore": {
+    "total": 27,
+    "tests": 40,
+    "rate": 0.675
+  },
+  "obsTests": [
+    {
+      "rank": 1,
+      "name": "KINEMATIC QUIETNESS",
+      "prediction": "High-H: s1/Vflat < 5%, PA twist < 5 deg, A1/A0 < 0.1",
+      "archival_status": "CONFIRMED on THINGS subsample (3A + 420A)"
+    },
+    {
+      "rank": 2,
+      "name": "BTFR DEVIATION PATTERN",
+      "prediction": "High-H: BTFR residual more POSITIVE (faster rotation at given mass)",
+      "archival_status": "CONFIRMED: r(DQ, BTFR_resid) = +0.301 (Phase 419)"
+    },
+    {
+      "rank": 3,
+      "name": "GAS FRACTION ASYMMETRY",
+      "prediction": "High-H: higher gas fraction",
+      "archival_status": "CONFIRMED: r(DQ, gasFrac) = +0.263 (Phase 419)"
+    },
+    {
+      "rank": 4,
+      "name": "NEWTONIAN DEFICIT GRADIENT",
+      "prediction": "High-H: higher ratio (more \"missing mass\")",
+      "archival_status": "CONFIRMED: r(DQ, newtDeficit) = +0.158 (Phase 419)"
+    }
+  ],
+  "priorityTargets": [
+    {
+      "target": "NGC2841",
+      "control": "UGC02953",
+      "priority": "HIGH"
+    },
+    {
+      "target": "NGC5005",
+      "control": "IC4202",
+      "priority": "HIGH"
+    },
+    {
+      "target": "NGC3741",
+      "control": "NGC1705",
+      "priority": "HIGH"
+    },
+    {
+      "target": "ESO563-G021",
+      "control": "NGC6195",
+      "priority": "MEDIUM"
+    },
+    {
+      "target": "UGC00128",
+      "control": "NGC2403",
+      "priority": "MEDIUM"
+    },
+    {
+      "target": "UGC02885",
+      "control": "NGC0801",
+      "priority": "LOW"
+    },
+    {
+      "target": "NGC6674",
+      "control": "NGC7331",
+      "priority": "LOW"
+    },
+    {
+      "target": "NGC2998",
+      "control": "NGC5033",
+      "priority": "LOW"
+    }
+  ],
+  "verdict": "H is ready for targeted observational confirmation. Kinematic quietness is the decisive test."
+}

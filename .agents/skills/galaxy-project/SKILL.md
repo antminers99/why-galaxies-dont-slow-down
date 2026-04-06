@@ -143,6 +143,10 @@ Minimal statement: single universal quiet halo property amplifying bilateral cou
 D3: predicts BTFR deviations (r=+0.301). D1: confirmed by THINGS. Golden pairs identified.
 H = partial predictive power, transitioning from latent summary to state variable.
 
+**Phase 420 (Decisive Obs):** THINGS 4/4 correct sign; r(DQ,s1/Vflat)=-0.831 strongest validation.
+Matched pairs 27/40 correct (67.5%), 6/8 pass. Decisive test = matched IFU kinematics.
+H ready for targeted observational confirmation. Program 4 COMPLETE.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -208,6 +212,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program3b-cosmo-sims.cjs` | Program 3B: cosmo sim comparison |
 | `scripts/phase418-hidden-state-law.cjs` | Phase 418: minimal hidden-state law |
 | `scripts/phase419-prediction-engine.cjs` | Phase 419: prediction engine |
+| `scripts/phase420-decisive-observation.cjs` | Phase 420: decisive observation |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -233,3 +238,4 @@ POSSIBLE FUTURE WORK:
 | `public/program3b-cosmo-sims.json` | Program 3B cosmo sim comparison |
 | `public/phase418-hidden-state.json` | Phase 418 hidden-state law |
 | `public/phase419-predictions.json` | Phase 419 prediction engine |
+| `public/phase420-decisive-obs.json` | Phase 420 decisive observation |
