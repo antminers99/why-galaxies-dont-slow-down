@@ -1000,6 +1000,83 @@ This constitutes strong evidence for a genuine hidden coupling between galaxy ro
 
 ---
 
+## 18. Phase 409: Latent Variable Fingerprint
+
+**Question**: What can we deduce about the hidden variable from the data alone?
+
+### 18.1 — Reconstructing the Latent Variable (409A)
+
+We define the latent variable as L = VfResid_z + a₀_resid_z (the shared-direction component of the two standardized residuals). Properties:
+
+- r(L, logA0) = 0.844 — strongly aligned with acceleration scale
+- r(L, logVflat) = 0.278 — weakly aligned with rotation velocity
+- Distribution: approximately Gaussian (skewness = 0.353, excess kurtosis = −0.639)
+
+### 18.2 — Correlation Landscape (409B)
+
+| Variable | r(L_sum) | Interpretation |
+|----------|---------|---------------|
+| logA0 | +0.844 | Strong (definitional) |
+| logK_halo | +0.472 | Halo structure partially captures it |
+| envCode | −0.418 | Field galaxies carry channel more |
+| Vflat | +0.406 | Weak velocity alignment |
+| logVflat | +0.278 | Weak (after structural removal) |
+| Q | −0.168 | Near zero |
+| inc | +0.090 | Negligible |
+| logMbar | 0.000 | Zero (by construction) |
+| logL36 | 0.000 | Zero (by construction) |
+| logRdisk | 0.000 | Zero (by construction) |
+| morphT | 0.000 | Zero (by construction) |
+| gasFrac | −0.062 | Negligible |
+
+**Key finding**: The environment correlation (r = −0.418) is the strongest non-constructed correlation. Field galaxies systematically carry the channel more than cluster/group galaxies.
+
+### 18.3 — Extreme Galaxy Carriers (409C)
+
+**Top carriers** (strongest L_sum): ESO563-G021, NGC2841, UGC06787, UGC06786, NGC7814 — massive early-type disk galaxies, mostly in field environments.
+
+**Weakest/reversed**: NGC4217, NGC4138 — in denser environments (envCode = 2).
+
+The channel is carried by galaxies with unusually high a₀ for their structure, not by any single morphological class.
+
+### 18.4 — Information Budget (409E)
+
+- R²(L_sum ~ 6 structural variables) = **0.029**
+- **97% of the latent variable is novel information** not in SPARC tables
+- This is not a subtle correction — it is an almost entirely independent quantity
+
+### 18.5 — Variance Decomposition (409F)
+
+- Channel amplitude: **~17 km/s** (~12% of mean Vflat = 145 km/s)
+- 65% of VfResid variance shared with a₀_resid
+- 35% of VfResid variance independent (other physics / measurement noise)
+
+### 18.6 — Constraints on the Hidden Variable
+
+The latent variable must satisfy ALL of the following:
+
+1. **Affects both** velocity residual and acceleration scale simultaneously
+2. **~17 km/s amplitude** — significant but not dominant
+3. **97% novel** — not captured by mass, luminosity, size, morphology, gas, or surface brightness
+4. **Environment-correlated** (r = −0.42) — stronger in field galaxies
+5. **Halo-structure-correlated** (r = 0.47 with log k_halo) — partially reflected in halo fit
+6. **Gaussian-distributed** — not driven by outliers
+7. **Universal** — present at all masses
+8. **Not radially localized** — not a feature of inner or outer RC specifically
+
+### 18.7 — Candidate Classes
+
+| Candidate | Consistent? | Would explain | Testable by |
+|-----------|------------|--------------|-------------|
+| DM halo concentration/profile | Partial — matches halo k correlation | Why some galaxies have "extra" acceleration | Lensing, IFU kinematics |
+| Assembly history (formation time) | Yes — matches environment correlation | Why field galaxies differ from cluster | Cosmological simulations |
+| External gravitational field (EFE) | Yes — matches environment | MOND-predicted effect | Group catalogs, tidal field |
+| Intrinsic acceleration physics | Yes — matches universality | Fundamental modification | Functional form tests |
+
+**No single candidate can be ruled out from SPARC data alone.** External data (IFU surveys, lensing, simulations, group catalogs) are required to discriminate.
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)

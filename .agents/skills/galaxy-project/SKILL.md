@@ -83,6 +83,11 @@ M/L 0.3–1.0 stable. All a₀ and VfResid recipes stable. Sections 11-17 writte
 THREE PILLARS: (1) Universal r≈0.80 across masses, (2) Irreducible to 28 observables,
 (3) Independent of how both sides are constructed. This is a genuine hidden coupling.
 
+**Phase 409 (Latent Fingerprint):** 97% of latent variable is novel information.
+Channel amplitude ~17 km/s (12% of Vflat). Strongest clues: envCode (r=−0.42),
+logK_halo (r=+0.47). Field galaxies carry channel more than cluster galaxies.
+**Program 2 launched**: Identify the hidden variable itself.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -135,6 +140,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase406-rc-shape-hunt.cjs` | Phase 406: RC-shape variable hunt |
 | `scripts/phase407-field-level.cjs` | Phase 407: field-level radial vars |
 | `scripts/phase408-construction-independence.cjs` | Phase 408: construction independence |
+| `scripts/phase409-latent-fingerprint.cjs` | Phase 409: latent variable fingerprint |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -147,3 +153,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase406-rc-shape-hunt.json` | Phase 406 RC-shape hunt results |
 | `public/phase407-field-level.json` | Phase 407 field-level results |
 | `public/phase408-construction-independence.json` | Phase 408 construction test |
+| `public/phase409-latent-fingerprint.json` | Phase 409 latent fingerprint |
