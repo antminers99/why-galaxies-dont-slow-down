@@ -560,6 +560,70 @@ The requirement profile — gradual activation in deep potential wells, independ
 
 ---
 
+## 12. Phase 404: Scenario Discrimination
+
+**Goal**: Test which of four candidate physical origins can explain the irreducible VfResid–a₀ channel. Each scenario must account for three empirical signatures: (S1) gradual activation ramp, (S2) Vflat-independence (partial r=0.788), (S3) irreducible residual (r=0.538 after structural control).
+
+### 12.1 — 404B: Dynamical Coherence (H4)
+
+**Prediction**: If VfResid encodes dynamical maturity, RC regularity/coherence metrics should correlate with VfResid and absorb the coupling. High-V galaxies should have higher coherence, explaining the activation ramp.
+
+**Results**:
+- logMeanRun vs VfResid: r=+0.270 (weak)
+- logSigma0 vs VfResid: r=−0.000 (zero)
+- rcWiggliness vs VfResid: r=+0.005 (zero)
+- Partial r(VfResid, a₀ | ALL 4 coherence metrics) = **0.751** (raw 0.717) — signal *increases*
+- Adding coherence + Vflat: partial r = **0.800**
+- Coherence bins (high vs low logMR): delta = +0.057 (not significant)
+
+**Verdict**: **ELIMINATED.** Coherence metrics do not absorb the channel, do not explain the activation ramp, and controlling for them actually *strengthens* the signal. H4 as sole explanation is ruled out.
+
+### 12.2 — 404C: Non-circular Motions / Asymmetry
+
+Only 7 galaxies in the THINGS kinematic subset overlap with the working sample. **Insufficient data** to test this hypothesis. Remains open.
+
+### 12.3 — 404A: Emergent Acceleration Scale
+
+**Prediction**: If VfResid reflects an acceleration-dependent phenomenon, acceleration-scale proxies (V²/R, surface density) should correlate with VfResid and absorb the coupling.
+
+**Results**:
+- logAccScale (2logV − logR) vs VfResid: r=+0.456, vs a₀: r=+0.458
+- Partial r(VfResid, a₀ | logAccScale) = 0.643 (moderate reduction)
+- Partial r(VfResid, a₀ | ALL 3 acc proxies) = **−0.072** — signal FULLY absorbed
+- BUT: acceleration tertiles show NO activation ramp (r≈0.64–0.67 in all bins)
+
+**Caution**: logAccScale = 2logV − logR shares substantial structural overlap with both VfResid (derived from logV) and logA0 (fitted from acceleration data). The "absorption" may be partly tautological — logAccScale is a noisy proxy for the acceleration scale itself, and its correlation with both sides of the VfResid–a₀ relation is expected on dimensional grounds.
+
+**Verdict**: Acceleration-scale proxies absorb the channel numerically, but this may reflect definitional overlap rather than physical explanation. The absence of a ramp across acceleration tertiles argues against a simple emergent-a₀ picture.
+
+### 12.4 — 404D: Structural Halo Transition
+
+**Results** (external sample, N=94):
+- haloK DOES change with mass: low-V = 2.92±0.22, high-V = 3.36±0.21
+- r(haloK, VfResid) = +0.511 (moderate)
+- But partial r(VfResid, a₀ | haloK + lhOuter) = **0.624** (from raw 0.691) — signal persists
+
+**Verdict**: There IS a qualitative halo shape transition with mass, but it does NOT absorb the channel. Halo structure contributes to VfResid but is not the dominant driver.
+
+### 12.5 — Phase 404 Scorecard
+
+| Scenario | Absorbs channel? | Explains ramp? | Tautology risk |
+|----------|:---:|:---:|:---:|
+| B: Dynamical coherence | NO (r↑ to 0.751) | NO | — |
+| C: Non-circular motions | UNTESTABLE (N=7) | ? | — |
+| A: Emergent acceleration | YES (r → −0.07) | NO | HIGH |
+| D: Halo transition | NO (r = 0.624) | PARTIAL | LOW |
+
+### 12.6 — Phase 404 Interpretation
+
+**The channel is acceleration-mediated but not acceleration-explained.** The VfResid–a₀ coupling operates through acceleration-scale variables (V²/R), which is expected dimensionally — both VfResid and a₀ encode dynamics in acceleration units. The deeper question — *why* does the coupling strengthen gradually with Vflat and survive Vflat control — is not answered by any single scenario.
+
+**H4 is weakened but not dead.** Dynamical coherence does not *directly* absorb the channel, but the high-scatter subsample (logΣ₀ ≥ 2.96) shows r=0.817 vs r=0.650 for low-scatter. This means galaxies with higher point density in their RC show *tighter* VfResid–a₀ coupling. Coherence may contribute as a modulator, not as a generator.
+
+**The strongest surviving interpretation**: VfResid encodes a component of gravitational dynamics that is genuinely independent of baryonic structure and halo shape. The coupling to a₀ operates at the acceleration scale (as expected physically) and strengthens in systems with deeper potential wells, but the strengthening mechanism is not reducible to any single known observable.
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)

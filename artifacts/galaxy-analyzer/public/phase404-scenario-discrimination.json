@@ -1,0 +1,97 @@
+{
+  "phase": "404",
+  "title": "Scenario Discrimination",
+  "timestamp": "2026-04-06T15:47:46.686Z",
+  "sample": {
+    "N": 55,
+    "rawR": 0.7174930214897184
+  },
+  "partialR_Vflat": 0.7829169483188688,
+  "structResidR": 0.5387892454878878,
+  "B_coherence": {
+    "metrics": [
+      {
+        "name": "logMeanRun",
+        "rVfResid": 0.2700368800704451,
+        "rA0": 0.3581814619704529,
+        "rVflat": 0.08401889165891778
+      },
+      {
+        "name": "logSigma0",
+        "rVfResid": -0.00000291259209282429,
+        "rA0": -0.006623821110508949,
+        "rVflat": 0.5600289689693071
+      },
+      {
+        "name": "rcWiggliness",
+        "rVfResid": 0.005480142202396207,
+        "rA0": 0.2863910102676118,
+        "rVflat": -0.13503194545256458
+      },
+      {
+        "name": "logDynTime",
+        "rVfResid": -0.20863657928832624,
+        "rA0": -0.4873143944488158,
+        "rVflat": 0.4699904904597368
+      },
+      {
+        "name": "logAccScale",
+        "rVfResid": 0.45580952680421244,
+        "rA0": 0.4584769788944525,
+        "rVflat": 0.2652171365323254
+      },
+      {
+        "name": "logSurfDens",
+        "rVfResid": -1.5727974106936452e-16,
+        "rA0": 0.047535870828485025,
+        "rVflat": 0.2559377600518619
+      }
+    ],
+    "partialR_allCoherence": 0.7506982706329214,
+    "partialR_VflatMRSig": 0.8003994473180677,
+    "rLowCoh": 0.7194711171709323,
+    "rHighCoh": 0.7768396408518088,
+    "verdict": "DOES_NOT_ABSORB"
+  },
+  "A_acceleration": {
+    "metrics": [
+      {
+        "name": "logAccScale",
+        "rVfResid": 0.45580952680421244,
+        "rA0": 0.4584769788944525,
+        "partialR": 0.6428618298418958
+      },
+      {
+        "name": "logGbarEff",
+        "rVfResid": 0.4558095268042126,
+        "rA0": 0.4584769788944524,
+        "partialR": 0.6428618298418958
+      },
+      {
+        "name": "logSurfDens",
+        "rVfResid": -1.5727974106936452e-16,
+        "rA0": 0.047535870828485025,
+        "partialR": 0.718305042704701
+      },
+      {
+        "name": "logSBdisk",
+        "rVfResid": -0.0963715998056596,
+        "rA0": -0.020113249523323277,
+        "partialR": 0.7190463107294046
+      },
+      {
+        "name": "logSBeff",
+        "rVfResid": 0.12549601678622893,
+        "rA0": -0.02446587550439643,
+        "partialR": 0.7265229460844809
+      }
+    ],
+    "partialR_allAcc": -0.0722464097967723,
+    "rByTertile": {
+      "low": 0.6713715728313333,
+      "mid": 0.6358047742926652,
+      "high": 0.6450882330158064
+    },
+    "verdict": "ABSORBS"
+  }
+}
