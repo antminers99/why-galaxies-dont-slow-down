@@ -1,0 +1,184 @@
+{
+  "phase": "412",
+  "title": "Halo Structure Discrimination",
+  "timestamp": "2026-04-06T16:43:45.137Z",
+  "N": 55,
+  "baselineR": 0.8042985384878967,
+  "haloCorrelations": [
+    {
+      "name": "logK_halo",
+      "rVfResid": 0.5640653516311754,
+      "rA0resid": 0.3323383128046181,
+      "rLsum": 0.4718831031657946
+    },
+    {
+      "name": "logM_halo",
+      "rVfResid": -0.20019365644409695,
+      "rA0resid": -0.157550433249677,
+      "rLsum": -0.1883229597127688
+    },
+    {
+      "name": "haloResponse",
+      "rVfResid": 0.13849165999922075,
+      "rA0resid": -0.1302367928074551,
+      "rLsum": 0.004345511404311055
+    },
+    {
+      "name": "dmFrac_Rmax",
+      "rVfResid": 0.2372675653966163,
+      "rA0resid": 0.4913475933884274,
+      "rLsum": 0.3835561988220219
+    },
+    {
+      "name": "dmFrac_2Rd",
+      "rVfResid": 0.4322912830843934,
+      "rA0resid": 0.3482338508942735,
+      "rLsum": 0.4108825487148954
+    },
+    {
+      "name": "innerSlope",
+      "rVfResid": 0.035137799449826965,
+      "rA0resid": 0.09229715752195539,
+      "rLsum": 0.0670840664015954
+    },
+    {
+      "name": "outerSlope",
+      "rVfResid": 0.3575536448603886,
+      "rA0resid": 0.13578753339945715,
+      "rLsum": 0.2597037198227564
+    },
+    {
+      "name": "concIdx",
+      "rVfResid": 0.1122988107443737,
+      "rA0resid": 0.01488336809671759,
+      "rLsum": 0.06695099942133252
+    },
+    {
+      "name": "logK_halo_resid",
+      "rVfResid": 0.5611556882959566,
+      "rA0resid": 0.33062398555360095,
+      "rLsum": 0.4694489508821622
+    },
+    {
+      "name": "V_out/V_in",
+      "rVfResid": 0.0019349548800174383,
+      "rA0resid": 0.06271510139653882,
+      "rLsum": 0.034032959018330464
+    },
+    {
+      "name": "Rmax/Rdisk",
+      "rVfResid": 0.006332353039602335,
+      "rA0resid": 0.14203023713538723,
+      "rLsum": 0.07810075106013092
+    },
+    {
+      "name": "log(Mbar/Mhalo)",
+      "rVfResid": 0.26824162766628523,
+      "rA0resid": 0.21110351549137688,
+      "rLsum": 0.25233595378378904
+    }
+  ],
+  "haloResidResults": [
+    {
+      "name": "logK_halo",
+      "R2struct": 0.4376483683872503,
+      "rVfResid": 0.6330714740540021,
+      "rA0resid": 0.44317620167260974,
+      "rLsum": 0.5665562437392554
+    },
+    {
+      "name": "haloResponse",
+      "R2struct": 0.38337490294838494,
+      "rVfResid": 0.14394946056153493,
+      "rA0resid": -0.16585290942035114,
+      "rLsum": -0.011530371670264132
+    },
+    {
+      "name": "dmFrac_Rmax",
+      "R2struct": 0.3957166833039867,
+      "rVfResid": 0.427040398422018,
+      "rA0resid": 0.6320748803294337,
+      "rLsum": 0.5575374400796392
+    },
+    {
+      "name": "dmFrac_2Rd",
+      "R2struct": 0.5112522415325887,
+      "rVfResid": 0.45729651335097665,
+      "rA0resid": 0.49811382561340845,
+      "rLsum": 0.5029452839541461
+    },
+    {
+      "name": "innerSlope",
+      "R2struct": 0.331038819841893,
+      "rVfResid": 0.17303699475506693,
+      "rA0resid": 0.11284644136477137,
+      "rLsum": 0.15049421185135284
+    },
+    {
+      "name": "concIdx",
+      "R2struct": 0.4090229761704427,
+      "rVfResid": -0.006978576653396962,
+      "rA0resid": 0.019360471268391792,
+      "rLsum": 0.006518053289834693
+    }
+  ],
+  "absorptionResults": [
+    {
+      "name": "logK_halo only",
+      "partialR": 0.7920407024645427,
+      "delta": -0.012257836023353952,
+      "absorbed": "NONE"
+    },
+    {
+      "name": "haloResponse only",
+      "partialR": 0.8374695007181084,
+      "delta": 0.033170962230211765,
+      "absorbed": "NONE"
+    },
+    {
+      "name": "dmFrac_Rmax only",
+      "partialR": 0.8128160755914688,
+      "delta": 0.00851753710357217,
+      "absorbed": "NONE"
+    },
+    {
+      "name": "logK + haloResp",
+      "partialR": 0.8612981836627139,
+      "delta": 0.05699964517481726,
+      "absorbed": "NONE"
+    },
+    {
+      "name": "logK + dmFrac_Rmax",
+      "partialR": 0.5892430897782774,
+      "delta": -0.21505544870961923,
+      "absorbed": "SIGNIFICANT"
+    },
+    {
+      "name": "logK + dmFrac + innerSlope",
+      "partialR": 0.588477318039515,
+      "delta": -0.2158212204483817,
+      "absorbed": "SIGNIFICANT"
+    },
+    {
+      "name": "ALL halo (6 vars)",
+      "partialR": 0.667473950250132,
+      "delta": -0.13682458823776467,
+      "absorbed": "SIGNIFICANT"
+    },
+    {
+      "name": "ALL halo + envCode",
+      "partialR": 0.6598463774003266,
+      "delta": -0.14445216108757009,
+      "absorbed": "SIGNIFICANT"
+    }
+  ],
+  "rAfterAllHalo": 0.7167765591701022,
+  "rAfterHaloEnv": 0.7090897584478009,
+  "logK_anatomy": {
+    "R2struct": 0.4376483683872503,
+    "rResid_VfR": 0.6330714740540021,
+    "rResid_a0R": 0.44317620167260974,
+    "rResid_L": 0.5665562437392554
+  },
+  "haloAbsorbs": true
+}

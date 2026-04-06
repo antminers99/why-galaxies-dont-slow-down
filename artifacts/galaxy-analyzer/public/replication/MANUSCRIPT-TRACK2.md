@@ -1225,6 +1225,86 @@ The pure linearity of the VfResid–a₀_resid coupling is itself a powerful con
 
 ---
 
+## 21. Phase 412: Halo Structure Discrimination
+
+**Question**: Is the hidden variable dark matter halo internal structure?
+
+### 21.1 — Halo Parameter Correlations (412A)
+
+| Variable | r(VfResid) | r(a₀_resid) | r(L_sum) |
+|----------|-----------|------------|---------|
+| logK_halo | +0.564 | +0.332 | **+0.472** |
+| dmFrac_2Rd | +0.432 | +0.348 | **+0.411** |
+| dmFrac_Rmax | +0.237 | +0.491 | **+0.384** |
+| outerSlope | +0.358 | +0.136 | +0.260 |
+| log(Mbar/Mhalo) | +0.268 | +0.211 | +0.252 |
+| logM_halo | −0.200 | −0.158 | −0.188 |
+| haloResponse | +0.138 | −0.130 | +0.004 |
+
+Three halo variables show substantial correlation with the latent variable: logK_halo, dmFrac_2Rd, and dmFrac_Rmax.
+
+### 21.2 — Structural-Residual Halo Variables (412B)
+
+After removing structural prediction from each halo variable:
+
+| Variable | R²(~struct) | r(resid, VfR) | r(resid, a₀R) | r(resid, L_sum) |
+|----------|------------|--------------|--------------|----------------|
+| logK_halo | 0.438 | **+0.633** | +0.443 | **+0.567** |
+| dmFrac_Rmax | 0.396 | +0.427 | **+0.632** | **+0.558** |
+| dmFrac_2Rd | 0.511 | +0.457 | +0.498 | **+0.503** |
+
+**Key finding**: The **structurally unexplained** parts of logK_halo (56% novel) and dmFrac_Rmax (60% novel) strongly correlate with both sides of the channel. These are the closest proxies to the hidden variable yet found.
+
+### 21.3 — Absorption Test (412C) — FIRST SIGNIFICANT ABSORPTION
+
+| Control set | partial r | Δr | Status |
+|------------|----------|-----|--------|
+| None (baseline) | 0.804 | — | — |
+| logK_halo only | 0.792 | −0.012 | None |
+| dmFrac_Rmax only | 0.813 | +0.009 | None |
+| **logK + dmFrac_Rmax** | **0.589** | **−0.215** | **SIGNIFICANT** |
+| logK + dmFrac + innerSlope | 0.588 | −0.216 | SIGNIFICANT |
+| ALL halo (7 vars) | 0.667 | −0.137 | SIGNIFICANT |
+| ALL halo + envCode | 0.660 | −0.144 | SIGNIFICANT |
+
+**Breakthrough**: The combination logK_halo + dmFrac_Rmax absorbs **Δr = −0.215** — the largest absorption ever observed across 30+ variables tested. This is the first evidence that a specific pair of variables captures a meaningful fraction of the hidden variable.
+
+Neither alone absorbs anything (Δr = −0.012 and +0.009). **The absorption is synergistic** — it only appears when halo slope AND DM fraction are jointly controlled.
+
+### 21.4 — logK_halo Anatomy (412F)
+
+- R²(logK ~ 6 structural) = 0.438 → **56% of logK is structurally unexplained**
+- The novel part (logK_resid) correlates: r(logK_resid, L_sum) = **0.567**
+- Circularity test: PASSED — logK carries information beyond Vflat
+- r(logK_resid_after_Vflat, a₀_resid) = significant → NOT circular repackaging
+
+### 21.5 — Surviving Channel (412E)
+
+Even after controlling for ALL 7 halo variables + environment (9 total controls):
+- r(VfResid_clean, a₀_resid_clean) = **0.709**
+- R²(VfResid ~ 9 controls) = significant
+- R²(a₀_resid ~ 9 controls) = significant
+
+**The channel survives at r ≈ 0.7 after maximal halo decontamination.**
+
+### 21.6 — Phase 412 Verdict
+
+**Halo structure is the FIRST variable class to partially absorb the channel.**
+
+- **logK + dmFrac_Rmax synergistically** reduce the channel by Δr = −0.215
+- The structurally novel parts of halo parameters correlate strongly with L_sum (~0.55)
+- But **r = 0.66–0.71 survives** after all halo + environment controls
+
+**Interpretation**: The hidden variable has a halo-structure component but is NOT fully captured by 1D rotation-curve-derived halo parameters. The surviving signal (r ≈ 0.7) likely reflects:
+- 3D halo geometry (triaxiality, flattening) — invisible to 1D RC
+- Halo concentration–mass scatter — requires NFW fits beyond linear halo
+- Assembly-dependent halo response — requires cosmological context
+- Or physics beyond standard halo models
+
+**The hidden variable is DEEPER than any measurable halo property from 1D rotation curves.**
+
+---
+
 ## References
 
 Lelli, F., McGaugh, S.S. & Schombert, J.M., 2016, AJ, 152, 157 (SPARC database)

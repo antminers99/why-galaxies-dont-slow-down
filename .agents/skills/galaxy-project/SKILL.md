@@ -96,6 +96,10 @@ Accel-dependence wrong for EFE. 3 candidates remain: MOND functional form, halo 
 ν-function r=0.000, a₀ varies factor 3.4 (anti-MOND). D_resid~VfResid r=0.947.
 Linearity → common cause, not acceleration law. 2 candidates remain: halo structure, assembly.
 
+**Phase 412 (Halo Structure):** FIRST SIGNIFICANT ABSORPTION! logK+dmFrac_Rmax synergistic
+Δr=−0.215 (0.804→0.589). But r≈0.66–0.71 survives after all 9 controls.
+Hidden variable has halo component but is DEEPER than 1D RC halo params.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -151,6 +155,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase409-latent-fingerprint.cjs` | Phase 409: latent variable fingerprint |
 | `scripts/phase410-external-field.cjs` | Phase 410: external field discrimination |
 | `scripts/phase411-functional-form.cjs` | Phase 411: MOND functional form test |
+| `scripts/phase412-halo-structure.cjs` | Phase 412: halo structure discrimination |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -166,3 +171,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase409-latent-fingerprint.json` | Phase 409 latent fingerprint |
 | `public/phase410-external-field.json` | Phase 410 external field test |
 | `public/phase411-functional-form.json` | Phase 411 functional form test |
+| `public/phase412-halo-structure.json` | Phase 412 halo structure test |
