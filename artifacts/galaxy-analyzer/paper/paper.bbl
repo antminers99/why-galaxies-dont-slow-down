@@ -1,0 +1,114 @@
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@}
+  {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href
+  {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi
+  \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml}
+  {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc
+  {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx
+  \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined
+  {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname
+  mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
+
+\bibitem[\protect\citeauthoryear{Blumenthal, Faber, Flores  \&
+  Primack}{Blumenthal et~al.}{1986}]{Blumenthal1986}
+Blumenthal G.~R.,  Faber S.~M.,  Flores R.,   Primack J.~R.,  1986, \mn@doi
+  [ApJ] {10.1086/163867}, 301, 27
+
+\bibitem[\protect\citeauthoryear{Desmond}{Desmond}{2017}]{Desmond2017}
+Desmond H.,  2017, \mn@doi [MNRAS] {10.1093/mnras/stw2571}, 464, 4160
+
+\bibitem[\protect\citeauthoryear{Di~Cintio, Brook, Macci{\`o}, Stinson, Knebe,
+  Dutton  \& Wadsley}{Di~Cintio et~al.}{2014}]{DiCintio2014}
+Di~Cintio A.,  Brook C.~B.,  Macci{\`o} A.~V.,  Stinson G.~S.,  Knebe A.,
+  Dutton A.~A.,   Wadsley J.,  2014, \mn@doi [MNRAS] {10.1093/mnras/stt1891},
+  437, 415
+
+\bibitem[\protect\citeauthoryear{Efron}{Efron}{1979}]{Efron1979}
+Efron B.,  1979, \mn@doi [Annals of Statistics] {10.1214/aos/1176344552}, 7, 1
+
+\bibitem[\protect\citeauthoryear{Famaey \& McGaugh}{Famaey \&
+  McGaugh}{2012}]{Famaey2012}
+Famaey B.,  McGaugh S.~S.,  2012, \mn@doi [Living Reviews in Relativity]
+  {10.12942/lrr-2012-10}, 15, 10
+
+\bibitem[\protect\citeauthoryear{Katz, Lelli, McGaugh, Di~Cintio, Brook  \&
+  Schombert}{Katz et~al.}{2017}]{Katz2017}
+Katz H.,  Lelli F.,  McGaugh S.~S.,  Di~Cintio A.,  Brook C.~B.,   Schombert
+  J.~M.,  2017, \mn@doi [MNRAS] {10.1093/mnras/stw3101}, 466, 1648
+
+\bibitem[\protect\citeauthoryear{Lelli, McGaugh  \& Schombert}{Lelli
+  et~al.}{2016}]{Lelli2016a}
+Lelli F.,  McGaugh S.~S.,   Schombert J.~M.,  2016, \mn@doi [AJ]
+  {10.3847/0004-6256/152/6/157}, 152, 157
+
+\bibitem[\protect\citeauthoryear{Lelli, McGaugh, Schombert  \& Pawlowski}{Lelli
+  et~al.}{2017}]{Lelli2017}
+Lelli F.,  McGaugh S.~S.,  Schombert J.~M.,   Pawlowski M.~S.,  2017, \mn@doi
+  [ApJ] {10.3847/1538-4357/836/2/152}, 836, 152
+
+\bibitem[\protect\citeauthoryear{Li, Lelli, McGaugh  \& Schombert}{Li
+  et~al.}{2018}]{Li2018}
+Li P.,  Lelli F.,  McGaugh S.~S.,   Schombert J.~M.,  2018, \mn@doi [A\&A]
+  {10.1051/0004-6361/201732547}, 615, A3
+
+\bibitem[\protect\citeauthoryear{Ludlow et~al.,}{Ludlow
+  et~al.}{2017}]{Ludlow2017}
+Ludlow A.~D.,  et~al., 2017, \mn@doi [Physical Review Letters]
+  {10.1103/PhysRevLett.118.161103}, 118, 161103
+
+\bibitem[\protect\citeauthoryear{Marra, Rodrigues  \& de Almeida}{Marra
+  et~al.}{2020}]{Marra2020}
+Marra V.,  Rodrigues D.~C.,   de Almeida {\'{A}}.,  2020, \mn@doi [MNRAS]
+  {10.1093/mnras/staa890}, 494, 2875
+
+\bibitem[\protect\citeauthoryear{McGaugh, Lelli  \& Schombert}{McGaugh
+  et~al.}{2016}]{McGaugh2016}
+McGaugh S.~S.,  Lelli F.,   Schombert J.~M.,  2016, \mn@doi [Physical Review
+  Letters] {10.1103/PhysRevLett.117.201101}, 117, 201101
+
+\bibitem[\protect\citeauthoryear{Milgrom}{Milgrom}{1983}]{Milgrom1983}
+Milgrom M.,  1983, \mn@doi [ApJ] {10.1086/161130}, 270, 365
+
+\bibitem[\protect\citeauthoryear{Navarro, Frenk  \& White}{Navarro
+  et~al.}{1996}]{NFW1996}
+Navarro J.~F.,  Frenk C.~S.,   White S. D.~M.,  1996, \mn@doi [ApJ]
+  {10.1086/177173}, 462, 563
+
+\bibitem[\protect\citeauthoryear{Navarro, Frenk  \& White}{Navarro
+  et~al.}{1997}]{NFW1997}
+Navarro J.~F.,  Frenk C.~S.,   White S. D.~M.,  1997, \mn@doi [ApJ]
+  {10.1086/304888}, 490, 493
+
+\bibitem[\protect\citeauthoryear{Navarro, Ben{\'\i}tez-Llambay, Fattahi, Frenk,
+  Ludlow, Oman, Schaller  \& Theuns}{Navarro et~al.}{2017}]{Navarro2017}
+Navarro J.~F.,  Ben{\'\i}tez-Llambay A.,  Fattahi A.,  Frenk C.~S.,  Ludlow
+  A.~D.,  Oman K.~A.,  Schaller M.,   Theuns T.,  2017, \mn@doi [MNRAS]
+  {10.1093/mnras/stx1705}, 471, 1841
+
+\bibitem[\protect\citeauthoryear{Oman et~al.,}{Oman et~al.}{2015}]{Oman2015}
+Oman K.~A.,  et~al., 2015, \mn@doi [MNRAS] {10.1093/mnras/stv1504}, 452, 3650
+
+\bibitem[\protect\citeauthoryear{Rodrigues, Marra, del Popolo  \&
+  Davari}{Rodrigues et~al.}{2018}]{Rodrigues2018}
+Rodrigues D.~C.,  Marra V.,  del Popolo A.,   Davari Z.,  2018, \mn@doi [Nature
+  Astronomy] {10.1038/s41550-018-0498-9}, 2, 668
+
+\bibitem[\protect\citeauthoryear{Santos-Santos et~al.,}{Santos-Santos
+  et~al.}{2020}]{Santos-Santos2020}
+Santos-Santos I. M.~E.,  et~al., 2020, \mn@doi [MNRAS]
+  {10.1093/mnras/staa1072}, 495, 58
+
+\bibitem[\protect\citeauthoryear{Stone}{Stone}{1974}]{Stone1974}
+Stone M.,  1974, \mn@doi [Journal of the Royal Statistical Society: Series B]
+  {10.1111/j.2517-6161.1974.tb00994.x}, 36, 111
+
+\makeatother
+\end{thebibliography}
