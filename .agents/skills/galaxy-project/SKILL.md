@@ -169,6 +169,11 @@ quietness is not the mechanism. Section 35 written.
 M1 fails T2 (needs gamma_hR). M3 = M2 (delta_dq unnecessary). All tuning variants 6/6.
 At x1.5 amplitude: r=0.803 matches SPARC. 5 seeds all 6/6. Section 36 written.
 
+**Program 7A (Falsify M2):** Halo profile prediction test. 1/4 matched-pair tests pass.
+M2 FALSIFIED on specific halo-profile predictions (inner amplitude, efficiency, transition).
+BUT: bilateral core (H→VfR, H→a0R) intact. Kinematic quietness PASS 3/3.
+haloResponse coupling real (r=+0.328) but mechanism ≠ inner halo density. Section 37 written.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -240,6 +245,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/program5c-causal-topology.cjs` | Program 5C: causal topology |
 | `scripts/program6a-matched-ifu.cjs` | Program 6A: matched IFU measurement |
 | `scripts/program6b-decisive-model.cjs` | Program 6B: decisive generative model |
+| `scripts/program7a-halo-profile-test.cjs` | Program 7A: falsify M2 halo profile |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -271,3 +277,4 @@ POSSIBLE FUTURE WORK:
 | `public/program5c-causal-topology.json` | Program 5C causal topology |
 | `public/program6a-matched-ifu.json` | Program 6A matched IFU |
 | `public/program6b-decisive-model.json` | Program 6B decisive model |
+| `public/program7a-halo-profile.json` | Program 7A halo profile test |

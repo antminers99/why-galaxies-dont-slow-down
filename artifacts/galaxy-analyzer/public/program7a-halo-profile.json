@@ -1,0 +1,134 @@
+{
+  "program": "7A",
+  "title": "Falsify M2 — Halo Profile Prediction Test",
+  "timestamp": "2026-04-06T18:38:24.310Z",
+  "N": 55,
+  "pairs": [
+    {
+      "target": {
+        "name": "NGC2841",
+        "dq": 2.629540179934417,
+        "innerHaloNorm": 1.0372258063218063,
+        "meanHaloEff": 0.9589511808071249,
+        "transNorm": 0.945054945054945,
+        "rcSmooth": 0.9923470884288653,
+        "haloProfileSlope": -0.048570908188816556
+      },
+      "control": {
+        "name": "UGC02953",
+        "dq": -0.2926775777876758,
+        "innerHaloNorm": 0.9317388319463998,
+        "meanHaloEff": 0.9311082081152487,
+        "transNorm": 0.14366197183098592,
+        "rcSmooth": 0.9960644791591999,
+        "haloProfileSlope": 0.032973948664158696
+      }
+    },
+    {
+      "target": {
+        "name": "NGC3741",
+        "dq": 2.1478821098373073,
+        "innerHaloNorm": 0.07543504922519081,
+        "meanHaloEff": 0.8897762226575856,
+        "transNorm": 3.4999999999999996,
+        "rcSmooth": 0.9799408353453174,
+        "haloProfileSlope": 0.43643675767347123
+      },
+      "control": {
+        "name": "NGC1705",
+        "dq": -0.6965514283131333,
+        "innerHaloNorm": 0.7399796426090716,
+        "meanHaloEff": 0.9649352362866147,
+        "transNorm": 1.6923076923076923,
+        "rcSmooth": 0.9702031823722503,
+        "haloProfileSlope": 0.033588955278681686
+      }
+    },
+    {
+      "target": {
+        "name": "ESO563-G021",
+        "dq": 1.8781395783246513,
+        "innerHaloNorm": 0.37080558785573087,
+        "meanHaloEff": 0.7404896761448978,
+        "transNorm": 1.0623853211009173,
+        "rcSmooth": 0.9848341862924641,
+        "haloProfileSlope": 0.4293407291422674
+      },
+      "control": {
+        "name": "NGC5371",
+        "dq": -0.20261076187117322,
+        "innerHaloNorm": 0.8468964594339383,
+        "meanHaloEff": 0.8031896034180285,
+        "transNorm": 0.19489247311827956,
+        "rcSmooth": 0.9851102546442642,
+        "haloProfileSlope": -0.0023303114245493495
+      }
+    }
+  ],
+  "matchedPairTests": {
+    "test1": 1,
+    "test2": 1,
+    "test3": 0,
+    "test4": 3,
+    "total": 1
+  },
+  "correlations": [
+    {
+      "name": "innerHaloNorm",
+      "r": -0.03702545804614902,
+      "predict": "+",
+      "match": false,
+      "sig": false
+    },
+    {
+      "name": "meanHaloEff",
+      "r": 0.04454673308671051,
+      "predict": "+",
+      "match": true,
+      "sig": false
+    },
+    {
+      "name": "transNorm",
+      "r": 0.2013860610317865,
+      "predict": "-",
+      "match": false,
+      "sig": false
+    },
+    {
+      "name": "innerOuterRatio",
+      "r": -0.13756260374825707,
+      "predict": "+",
+      "match": false,
+      "sig": false
+    },
+    {
+      "name": "haloProfileSlope",
+      "r": -0.06407633632857374,
+      "predict": "-",
+      "match": true,
+      "sig": false
+    },
+    {
+      "name": "haloResponse",
+      "r": 0.32848777768015175,
+      "predict": "+",
+      "match": true,
+      "sig": true
+    },
+    {
+      "name": "rcSmoothness",
+      "r": 0.05402639663963583,
+      "predict": "0",
+      "match": true,
+      "sig": false
+    },
+    {
+      "name": "outerSlope",
+      "r": 0.25661511725424657,
+      "predict": "0",
+      "match": true,
+      "sig": false
+    }
+  ],
+  "verdict": "M2 FALSIFIED — halo profile prediction fails"
+}

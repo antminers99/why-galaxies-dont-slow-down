@@ -2645,4 +2645,98 @@ Key conclusions:
 
 ---
 
+## 37. Program 7A: Falsify M2 — Halo Profile Prediction Test (Phase 700A)
+
+**Question**: M2 predicts that high-H galaxies should exhibit distinct halo profiles (higher inner amplitude, higher efficiency, earlier baryon–halo transition) while remaining kinematically smooth. Does this hold in matched pairs?
+
+### 37.1 — Matched Pairs
+
+| Pair | Target (H+) | DQ | Control (H-) | DQ | Match quality |
+|------|-------------|-----|-------------|-----|---------------|
+| 1 | NGC 2841 | +2.630 | UGC 02953 | -0.293 | dVf=19.9 km/s, dlogMbar=0.12, dT=1 |
+| 2 | NGC 3741 | +2.148 | NGC 1705 | -0.697 | dVf=21.8 km/s, dlogMbar=0.25, dT=1 |
+| 3 | ESO563-G021 | +1.878 | NGC 5371 | -0.203 | dVf=105.1 km/s, dlogMbar=0.01, dT=0 |
+
+### 37.2 — Test Results
+
+| Test | Description | Prediction | Result | Score |
+|------|------------|-----------|--------|-------|
+| **T1: Inner halo amplitude** | V_halo_inner / Vflat higher in H+ | H+ > H- | **FAIL** | 1/3 |
+| **T2: Halo efficiency** | Mean V_halo/V_obs higher in H+ | H+ > H- | **FAIL** | 1/3 |
+| **T3: Transition radius** | R_trans/Rdisk lower in H+ (halo dominates earlier) | H+ < H- | **FAIL** | 0/3 |
+| **T4: Kinematic quietness** | H+ remains smooth despite different halo | smooth > 0.9 | **PASS** | 3/3 |
+
+**Overall: 1/4 FAIL. M2 is FALSIFIED on halo-profile predictions.**
+
+### 37.3 — Detailed Pair-by-Pair Breakdown
+
+**T1 — Inner halo amplitude:**
+
+| Pair | Target | innerHaloN | Control | innerHaloN | H+ > H-? |
+|------|--------|-----------|---------|-----------|----------|
+| 1 | NGC 2841 | 1.037 | UGC 02953 | 0.932 | YES |
+| 2 | NGC 3741 | 0.075 | NGC 1705 | 0.740 | **no** |
+| 3 | ESO563-G021 | 0.371 | NGC 5371 | 0.847 | **no** |
+
+Only NGC 2841 (the most massive target) shows the predicted pattern. For NGC 3741 (dwarf) and ESO563-G021, the controls have HIGHER inner halo amplitude.
+
+**T3 — Transition radius (most damaging):**
+
+All three high-H galaxies show LATER transitions (higher R_trans/Rdisk), the exact opposite of the M2 prediction. This is a clear directional falsification.
+
+### 37.4 — Full-Sample Correlations
+
+| Metric | r(DQ, metric) | M2 predicts | Correct sign? | p < 0.05? |
+|--------|--------------|------------|---------------|-----------|
+| innerHaloNorm | -0.037 | + | NO | no |
+| meanHaloEff | +0.045 | + | YES | no |
+| transNorm | +0.201 | - | NO | no |
+| innerOuterRatio | -0.138 | + | NO | no |
+| haloProfileSlope | -0.064 | - | YES | no |
+| **haloResponse** | **+0.328** | + | **YES** | **yes** |
+| rcSmoothness | +0.054 | 0 | YES | no |
+| outerSlope | +0.257 | 0 | YES | no |
+
+**Only haloResponse itself reaches significance (r = +0.328, p < 0.05).** None of the new halo-profile metrics are significant or consistently in the predicted direction. Correct-sign significant: 1/6.
+
+### 37.5 — Quintile Analysis
+
+| Metric | Q1 (high-H, n=11) | Q5 (low-H, n=11) | Diff | Expected |
+|--------|-------------------|-------------------|------|----------|
+| DQ | +1.736 | -1.291 | +3.027 | correct |
+| VfResid | +0.044 | -0.032 | +0.075 | correct |
+| a0Resid | +0.214 | -0.192 | +0.406 | correct |
+| haloResponse | 1.078 | 0.868 | +0.211 | correct |
+| innerHaloNorm | 0.654 | 0.673 | **-0.019** | WRONG sign |
+| transNorm (R/Rdisk) | 1.039 | 0.599 | **+0.440** | WRONG sign |
+| innerOuterRatio | 0.645 | 0.756 | **-0.110** | WRONG sign |
+
+The quintile analysis confirms: VfResid, a0Resid, and haloResponse all split correctly (Q1 > Q5). But the halo profile metrics (innerHaloNorm, transNorm, innerOuterRatio) split in the WRONG direction or show no meaningful difference.
+
+### 37.6 — What This Means for M2
+
+**M2's gamma_hR parameter is real** — haloResponse correlates with DQ at r = +0.328 (p < 0.05), and the Q1/Q5 split confirms high-H galaxies have higher haloResponse. But the specific mechanism is NOT inner halo density or transition radius.
+
+Three possible interpretations:
+
+1. **haloResponse captures something different than inner halo amplitude.** The log(MSE_Newton/MSE_halo) ratio measures how much a halo model IMPROVES the fit, which is not the same as the halo's physical inner density. A galaxy could have a low inner halo amplitude but still benefit greatly from a halo model if the shape of the RC is better captured.
+
+2. **The coupling is through halo SHAPE, not AMPLITUDE.** High-H galaxies may have halos with different concentration or profile shape (e.g., cored vs. cuspy) that don't manifest as higher inner amplitude but do manifest as better halo-model fit quality.
+
+3. **gamma_hR is epiphenomenal.** The downstream coupling may be a statistical artefact of DQ construction rather than a genuine physical pathway. If so, a simpler model (M2 without gamma_hR) should be reconsidered — but this would re-fail T2 from 6B.
+
+### 37.7 — Program 7A Verdict
+
+**M2 is FALSIFIED on its specific halo-profile predictions.** The model's downstream H→haloResponse coupling is statistically real, but does not operate through the mechanism assumed (inner halo density, transition radius, or efficiency). The 1/4 matched-pair score and 1/6 significant correlation score are unambiguously negative.
+
+**What survives:** The bilateral drive (H→VfR, H→a0R) remains intact — VfResid, a0Resid, and the overall haloResponse split are all correct. The kinematic quietness check passes 3/3. The CORE of M2 (bilateral common-cause) is not threatened.
+
+**What is falsified:** The specific interpretation of gamma_hR as an inner halo density/efficiency coupling. M2 needs to either:
+- Reinterpret gamma_hR as a different physical mechanism (halo shape/concentration rather than amplitude)
+- Or drop the halo-profile prediction entirely and accept that the DQ→haloResponse correlation is explained by fit-quality statistics rather than physical halo properties
+
+**Next step:** Program 7B should investigate whether halo CONCENTRATION or PROFILE SHAPE (cored vs. cuspy) rather than amplitude is the correct interpretation of the downstream coupling.
+
+---
+
 ## References
