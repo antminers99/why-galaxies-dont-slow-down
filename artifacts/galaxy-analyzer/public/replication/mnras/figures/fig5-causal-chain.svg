@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="520" viewBox="0 0 560 520" font-family="Helvetica, Arial, sans-serif">
+<rect width="560" height="520" fill="white"/>
+<defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker></defs>
+<rect x="175" y="20" width="210" height="36" fill="#a8dadc" stroke="#333" stroke-width="1" rx="6"/>
+<text x="280" y="43" text-anchor="middle" font-size="12" font-weight="bold" fill="#1d3557">Formation History</text>
+<rect x="60" y="110" width="160" height="36" fill="#a8dadc" stroke="#333" stroke-width="1" rx="6"/>
+<text x="140" y="133" text-anchor="middle" font-size="12" font-weight="bold" fill="#1d3557">Halo Concentration</text>
+<rect x="300" y="110" width="180" height="36" fill="#e63946" stroke="#333" stroke-width="1" rx="6"/>
+<text x="390" y="133" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Halo Triaxiality (b/a)</text>
+<rect x="40" y="210" width="170" height="36" fill="#457b9d" stroke="#333" stroke-width="1" rx="6"/>
+<text x="125" y="233" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Enclosed Mass Shift</text>
+<rect x="310" y="210" width="200" height="36" fill="#e63946" stroke="#333" stroke-width="1" rx="6"/>
+<text x="410" y="233" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m=2 Velocity Field Power</text>
+<rect x="40" y="310" width="130" height="36" fill="#457b9d" stroke="#333" stroke-width="1" rx="6"/>
+<text x="105" y="333" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Vflat Shift</text>
+<rect x="200" y="310" width="130" height="36" fill="#e63946" stroke="#333" stroke-width="1" rx="6"/>
+<text x="265" y="333" text-anchor="middle" font-size="12" font-weight="bold" fill="white">a₀ Shift (4×)</text>
+<rect x="120" y="410" width="230" height="44" fill="#1d3557" stroke="#333" stroke-width="1" rx="6"/>
+<text x="235" y="437" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Bilateral Coupling</text>
+<line x1="280" y1="56" x2="140" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="280" y1="56" x2="390" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="140" y1="146" x2="125" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="390" y1="146" x2="410" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="390" y1="146" x2="125" y2="210" stroke="#333" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5,3"/>
+<line x1="125" y1="246" x2="105" y2="310" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="125" y1="246" x2="265" y2="310" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="105" y1="346" x2="235" y2="410" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="265" y1="346" x2="235" y2="410" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="410" y="264" text-anchor="middle" font-size="11" fill="#e63946" font-weight="bold">r(DQ, m2) = 0.85</text>
+<text x="410" y="278" text-anchor="middle" font-size="10" fill="#999">angular, 1D-invisible</text>
+<text x="125" y="262" text-anchor="middle" font-size="10" fill="#999">integral, 1D-visible</text>
+<text x="235" y="452" text-anchor="middle" font-size="12" fill="white">r = 0.77 (LOO, N = 45)</text>
+<rect x="365" y="310" width="170" height="60" fill="none" stroke="#e63946" stroke-width="1.5" stroke-dasharray="4,3" rx="6"/>
+<text x="450" y="330" text-anchor="middle" font-size="10" fill="#e63946">1D INVISIBLE</text>
+<text x="450" y="345" text-anchor="middle" font-size="9" fill="#999">Azimuthal averaging</text>
+<text x="450" y="358" text-anchor="middle" font-size="9" fill="#999">destroys m=2 by</text>
+<text x="450" y="371" text-anchor="middle" font-size="9" fill="#999">construction</text>
+</svg>

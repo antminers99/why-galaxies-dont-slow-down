@@ -134,9 +134,16 @@ The coupling survives all 55/55 tested construction variants, including:
 \item Subsample bootstrapping (10\,000 replicates)
 \end{itemize}
 
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig1-bilateral-coupling}
+\caption{Bilateral coupling in the $\vfresid$--$\aresid$ plane ($r = 0.77$, LOO, $N = 45$). Blue points show the full SPARC sample; red circles mark the seven THINGS galaxies with 2D velocity field data. The dashed line is the OLS fit. The systematic underpopulation of Q4 (the `dark quadrant') reflects the $4{:}1$ asymmetry of $H$.}
+\label{fig:bilateral}
+\end{figure}
+
 \subsection{Geometric structure}
 
-In the $\vfresid$--$\aresid$ plane, $H$ creates a characteristic asymmetry: the fourth quadrant (negative $\vfresid$, positive $\aresid$) is systematically underpopulated.
+In the $\vfresid$--$\aresid$ plane (Fig.~\ref{fig:bilateral}), $H$ creates a characteristic asymmetry: the fourth quadrant (negative $\vfresid$, positive $\aresid$) is systematically underpopulated.
 This `dark quadrant' signature arises because $H$ shifts $\azero$ approximately $4\times$ more than $\vflat$ (the $\alpha_{A0}/\alpha_{Vf} \approx 4{:}1$ asymmetry), preventing galaxies from having low kinematic excess but high acceleration excess.
 
 
@@ -172,7 +179,7 @@ This hidden residual genuinely activates with $\vflat$ (regime analysis: $r = 0.
 
 We test 10 rotation curve features (shape, asymmetry, radial gradients, etc.) as predictors of $H$.
 None achieves significant recovery.
-The total variance of $H$ accessible from \emph{all} RC features combined is 11.5~per~cent, leaving 88.5~per~cent inaccessible.
+The total variance of $H$ accessible from \emph{all} RC features combined is 11.5~per~cent, leaving 88.5~per~cent inaccessible (Fig.~\ref{fig:ceiling}).
 
 \subsection{Program 8B: the inaccessibility--strength paradox}
 
@@ -187,6 +194,13 @@ Such a signal would:
 \item Be invisible to differential quantities (RC profile shape) --- explaining the 88.5~per~cent inaccessibility.
 \item Require 2D velocity field data for direct detection.
 \end{enumerate}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig2-information-ceiling}
+\caption{Information ceiling analysis. Horizontal bars show the fraction of $H$ variance recovered by each approach. RC shape features (Program~8A) recover only 11.5~per~cent; scalar and 71-dim map representations reach $\sim$30~per~cent (the 1D ceiling). The $\mtwo$ velocity field mode breaks through the ceiling, recovering $\sim$83~per~cent. The $+53$~per~cent gain is angular information destroyed by azimuthal averaging.}
+\label{fig:ceiling}
+\end{figure}
 
 \subsection{Program 8C: map reconstruction}
 
@@ -219,7 +233,7 @@ averaged over $N_r$ radial bins.
 
 \subsection{The DQ--$\mtwo$ correlation}
 
-The $\mtwo$ power correlates strongly with bilateral excess:
+The $\mtwo$ power correlates strongly with bilateral excess (Fig.~\ref{fig:dq_m2}):
 \begin{equation}
 r(\DQ, P_2) = 0.847 \quad (N = 7, \; p = 0.005),
 \end{equation}
@@ -230,10 +244,24 @@ The partial correlation controlling for $\log\vflat$ remains strong:
 r(\DQ, P_2 \mid \log\vflat) = 0.750.
 \end{equation}
 
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig3-dq-m2-power}
+\caption{Bilateral excess ($\DQ$) versus $\log_{10}$ $\mtwo$ azimuthal power for $N = 7$ THINGS galaxies ($r = 0.85$, $p = 0.005$). NGC~2841 (red, high-$H$) and NGC~5055 (dark blue, low-$H$) anchor the extremes despite near-identical baryonic masses. The dashed line is the OLS fit.}
+\label{fig:dq_m2}
+\end{figure}
+
 \subsection{The gold pair}
 
-NGC~2841 ($\DQ = +2.25$, high bilateral excess) and NGC~5055 ($\DQ = -1.52$, low bilateral excess) form a structurally matched pair: $\Delta\log M_\mathrm{bar} = 0.07$, $\Delta\log\vflat = 0.09$.
+NGC~2841 ($\DQ = +2.25$, high bilateral excess) and NGC~5055 ($\DQ = -1.52$, low bilateral excess) form a structurally matched pair: $\Delta\log M_\mathrm{bar} = 0.07$, $\Delta\log\vflat = 0.09$ (Fig.~\ref{fig:goldpair}).
 Despite this similarity, their $\mtwo$ powers differ by a factor of $10.5\times$ --- precisely as predicted if $H$ traces $\mtwo$ structure in the halo potential.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig4-gold-pair}
+\caption{Property comparison of the gold pair: NGC~2841 (high bilateral excess) and NGC~5055 (low bilateral excess). Despite closely matched baryonic mass ($\Delta\log M_\mathrm{bar} = 0.07$) and flat velocity ($\Delta V_\mathrm{flat} = 106\kms$), the $\mtwo$ power differs by $10.5\times$, confirming that halo angular structure --- not baryonic properties --- drives the bilateral coupling.}
+\label{fig:goldpair}
+\end{figure}
 
 \subsection{Cosmological Monte Carlo}
 
@@ -269,7 +297,7 @@ The CDM-calibrated model \citep[Allgood et al. parameters;][]{Allgood2006} achie
 \section{Red team verification}
 \label{sec:redteam}
 
-We subject the carrier claim to 11 independent tests designed to break it.
+We subject the carrier claim to 11 independent tests designed to break it (Fig.~\ref{fig:redteam}).
 All tests pass.
 
 \subsection{Independent pipeline replication (9V.1)}
@@ -333,16 +361,31 @@ Program 8B reconciliation & Critical & Pass \\
 \end{tabular}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig6-red-team}
+\caption{Red team scorecard (Program~9V). All 11 tests pass: 8 critical tests (dark badges) and 3 advisory tests. The carrier claim survives independent replication, 19 sensitivity variants, bar exclusion, leave-one-out robustness, confounder control, and 1D reconciliation.}
+\label{fig:redteam}
+\end{figure}
+
 
 \section{Discussion}
 \label{sec:discussion}
 
 \subsection{The causal chain}
 
-The complete causal chain connecting formation history to the observed bilateral coupling is:
+The complete causal chain connecting formation history to the observed bilateral coupling (Fig.~\ref{fig:causal}) is:
 \begin{equation*}
 \text{Formation history} \;\to\; \text{Triaxiality}(b/a) \;\to\; \begin{cases} \mtwo \text{ power} & \text{(angular)} \\ \text{Mass shift} & \text{(integral)} \end{cases} \;\to\; \DQ
 \end{equation*}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5-causal-chain}
+\caption{Proposed causal chain from formation history to bilateral coupling. Halo triaxiality generates both an $\mtwo$ velocity field mode (angular, 1D-invisible) and an enclosed mass shift (integral, 1D-visible). The mass shift drives small correlated perturbations to $V_\mathrm{flat}$ and $a_0$ with a $4{:}1$ asymmetry. The $\mtwo$ mode provides the diagnostic fingerprint: $r(\DQ, P_2) = 0.85$.}
+\label{fig:causal}
+\end{figure}
+
 The $\mtwo$ mode (angular component) is invisible to 1D rotation curves because azimuthal averaging averages over cos$(2\theta)$ and sin$(2\theta)$ terms by construction.
 Only the enclosed mass shift (integral component) survives, producing small but correlated shifts in $\vflat$ and $\azero$ with a $4{:}1$ asymmetry ($\alpha_{A0}/\alpha_{Vf}$).
 
