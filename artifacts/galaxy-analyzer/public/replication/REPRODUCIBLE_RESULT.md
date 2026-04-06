@@ -349,4 +349,16 @@ log10(m/s^2) = logA0 - 13.489. Values range [3.1, 4.1] in CSV units.
 
 ---
 
-**Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results included for full reproducibility. This is a non-peer-reviewed computational analysis report. Analysis frozen at Phase 122.
+**Data:** SPARC (Lelli, McGaugh & Schombert, 2016, AJ 152, 157). All scripts and intermediate results included for full reproducibility. This is a non-peer-reviewed computational analysis report. Track 1 analysis frozen at Phase 122.
+
+---
+
+## Track 2: Hierarchical Coupling Law for Per-Galaxy a₀ Variation (Phases 123–134)
+
+A separate investigation (Track 2) directly addresses per-galaxy a₀ variation and identifies a transferable, regime-dependent, hierarchical baryon-halo coupling law. See **MANUSCRIPT-TRACK2.md** for the full analysis report.
+
+**Key result:** Within N=45 published SPARC galaxies, a₀ variation is predicted by a 5-axis model (LOO gap = 65.4%) consisting of a structural core (MHI, Mhost, MeanRun), a dominant kinematic coupling channel (VfResid = residual flat velocity beyond baryonic prediction), and a secondary outer-halo channel (lh_outerImprove). The VfResid channel transfers to N=10 crude-quality holdout galaxies with r = 0.801 and 57% gap closure. The law is strongest in high-Vflat galaxies (Vflat >= 120 km/s) and activates sharply near Vflat ~ 181 km/s.
+
+**Status:** Externally supported but preliminary. Larger independent samples needed.
+
+**Zenodo v8:** DOI 10.5281/zenodo.19433329 (Concept DOI: 10.5281/zenodo.19430633)
