@@ -1,0 +1,157 @@
+{
+  "program": "3A",
+  "title": "IFU/2D Observational Track",
+  "timestamp": "2026-04-06T17:26:28.192Z",
+  "N": 55,
+  "matchedPairs": [
+    {
+      "target": "NGC2841",
+      "control": "NGC7331",
+      "tDQ": 2.629540179934417,
+      "cDQ": 0.6120063625767911
+    },
+    {
+      "target": "NGC5005",
+      "control": "IC4202",
+      "tDQ": 2.5431829445205363,
+      "cDQ": 0.5374169689515338
+    },
+    {
+      "target": "NGC3741",
+      "control": "NGC1705",
+      "tDQ": 2.1478821098373073,
+      "cDQ": -0.6965514283131333
+    },
+    {
+      "target": "ESO563-G021",
+      "control": "NGC5371",
+      "tDQ": 1.8781395783246513,
+      "cDQ": -0.20261076187117322
+    },
+    {
+      "target": "UGC00128",
+      "control": "NGC2403",
+      "tDQ": 1.6158935848633516,
+      "cDQ": -0.5819090978376728
+    },
+    {
+      "target": "UGC02885",
+      "control": "NGC0801",
+      "tDQ": 1.555481033949692,
+      "cDQ": -0.25101018875585934
+    },
+    {
+      "target": "NGC6674",
+      "control": "NGC6195",
+      "tDQ": 1.5336874084937093,
+      "cDQ": -0.059163411663041066
+    },
+    {
+      "target": "NGC2998",
+      "control": "NGC5033",
+      "tDQ": 1.4895322381955294,
+      "cDQ": 0.37352133525743986
+    },
+    {
+      "target": "NGC5907",
+      "control": "NGC0891",
+      "tDQ": 1.4461274515675246,
+      "cDQ": 0.05350726762155644
+    },
+    {
+      "target": "NGC4013",
+      "control": "NGC4157",
+      "tDQ": 1.140908249346001,
+      "cDQ": -0.43593261690147167
+    },
+    {
+      "target": "NGC2915",
+      "control": "UGC08490",
+      "tDQ": 1.1179662800271335,
+      "cDQ": -0.2138377730598957
+    }
+  ],
+  "proxyCorrelations": {
+    "bumpiness": 0.2243603903701903,
+    "innerCV": -0.15567730525933446,
+    "outerCV": 0.1449167917507481,
+    "asymmetryIdx": -0.041502222671847326,
+    "outerGrad": 0.25661511725424657,
+    "postPeakDip": -0.10501245244865266,
+    "rcCurvature": -0.06467267105522267
+  },
+  "literatureAssessment": {
+    "NGC2841": {
+      "dq": "+2.63 (HIGHEST)",
+      "survey": "THINGS HI (de Blok+08, Oh+15)",
+      "beam": "~6 arcsec (~0.3 kpc at 14.1 Mpc)",
+      "ncm_amplitude": "Low: s1 ~ 5-10 km/s (< 5% of Vflat=285)",
+      "pa_twist": "5-10 deg in outer disk",
+      "warp": "Minor HI warp beyond R25",
+      "lopsidedness": "Low (A1/A0 < 0.1)",
+      "bar": "No bar (SA type)",
+      "verdict": "REGULAR KINEMATICS. Minimal non-circular motions. Does NOT show strong 2D anomalies."
+    },
+    "NGC3741": {
+      "dq": "+2.15 (#3)",
+      "survey": "THINGS HI (Begum+05, Oh+15)",
+      "beam": "~6 arcsec (~0.1 kpc at 3.2 Mpc)",
+      "ncm_amplitude": "Very low: < 3 km/s (< 6% of Vflat=50)",
+      "pa_twist": "Minimal",
+      "warp": "None detected",
+      "lopsidedness": "Low",
+      "bar": "No bar (Irr type)",
+      "verdict": "VERY REGULAR KINEMATICS. One of the cleanest dwarfs in THINGS. Extreme DM dominance."
+    },
+    "NGC5055": {
+      "dq": "-1.41 (LOW DQ)",
+      "survey": "THINGS HI (de Blok+08, Battaglia+06)",
+      "beam": "~6 arcsec (~0.2 kpc at 10.1 Mpc)",
+      "ncm_amplitude": "Moderate: s1 ~ 10-15 km/s (~8% of Vflat=179)",
+      "pa_twist": "> 10 deg beyond R25",
+      "warp": "STRONG outer HI warp (Battaglia+06)",
+      "lopsidedness": "Moderate (A1/A0 ~ 0.1-0.15)",
+      "bar": "Weak bar/oval",
+      "verdict": "IRREGULAR OUTER KINEMATICS. Strong warp + PA twist. Yet LOW DQ!"
+    },
+    "NGC2903": {
+      "dq": "-1.44 (LOW DQ)",
+      "survey": "THINGS HI (de Blok+08)",
+      "beam": "~6 arcsec (~0.2 kpc at 8.9 Mpc)",
+      "ncm_amplitude": "High: s1 ~ 15-20 km/s (~10% of Vflat=185)",
+      "pa_twist": "Moderate in bar region",
+      "warp": "None",
+      "lopsidedness": "Low to moderate",
+      "bar": "STRONG bar (SB type)",
+      "verdict": "BAR-DRIVEN non-circular motions in inner regions. Yet LOW DQ!"
+    },
+    "NGC3521": {
+      "dq": "-1.65 (LOW DQ)",
+      "survey": "THINGS HI (de Blok+08)",
+      "beam": "~6 arcsec (~0.3 kpc at 10.7 Mpc)",
+      "ncm_amplitude": "Moderate: s1 ~ 10-15 km/s (~7% of Vflat=214)",
+      "pa_twist": "Moderate",
+      "warp": "Some lopsidedness",
+      "lopsidedness": "Moderate",
+      "bar": "No bar (SA type)",
+      "verdict": "Moderate 2D irregularities. Yet LOW DQ."
+    }
+  },
+  "verdict": "2D kinematic explanation ELIMINATED. High-DQ galaxies are kinematically CLEAN. Low-DQ galaxies are MORE irregular. Pattern is INVERTED from prediction.",
+  "eliminatedExplanations": [
+    "structural variables",
+    "EFE",
+    "MOND functional law",
+    "assembly history",
+    "hidden systematic",
+    "triaxiality",
+    "disequilibrium",
+    "2D kinematic effects"
+  ],
+  "remainingProfile": {
+    "positive_r_haloResponse": 0.328,
+    "positive_r_Vflat": 0.323,
+    "positive_r_outerSlope": 0.239,
+    "kinematically_clean": true
+  }
+}

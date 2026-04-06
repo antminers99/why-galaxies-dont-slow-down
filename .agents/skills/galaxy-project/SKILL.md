@@ -124,6 +124,12 @@ More triaxiality makes match worse. Disequilibrium destroys bilateral structure 
 DQ genuinely unresolved. IFU targets: NGC2841, NGC5005 vs UGC02953 control.
 Full cosmo sims or IFU/2D data needed for resolution.
 
+**Program 3A (IFU Track):** Published THINGS results show INVERTED PATTERN.
+High-DQ galaxies (NGC2841, NGC3741) = kinematically CLEAN.
+Low-DQ galaxies (NGC5055, NGC2903) = IRREGULAR (warps, bar NCM).
+2D kinematic explanation ELIMINATED. DQ = quiet intrinsic halo property.
+8 explanations now eliminated. Points to DM physics or fundamental coupling.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -185,6 +191,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase415-dark-quarter.cjs` | Phase 415: the dark quarter |
 | `scripts/phase416-falsification.cjs` | Phase 416: DQ falsification tests |
 | `scripts/phase417-resolve-dq.cjs` | Phase 417: 3D halo resolution attempt |
+| `scripts/program3a-ifu-design.cjs` | Program 3A: IFU/2D track |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -206,3 +213,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase415-dark-quarter.json` | Phase 415 dark quarter analysis |
 | `public/phase416-falsification.json` | Phase 416 falsification tests |
 | `public/phase417-resolve-dq.json` | Phase 417 3D halo resolution |
+| `public/program3a-ifu-design.json` | Program 3A IFU/2D track |

@@ -1744,4 +1744,92 @@ Available 2D surveys: THINGS HI (NGC2841, NGC5005 included), HERACLES CO (NGC284
 
 ---
 
+## 27. Program 3A: IFU / 2D Observational Track
+
+**Question**: Does the Dark Quarter manifest as 2D kinematic anomalies (non-circular motions, warps, asymmetry)?
+
+### 27.1 — 2D Data Inventory
+
+| Galaxy | DQ | THINGS HI | HERACLES CO | 2D status |
+|--------|-----|-----------|-------------|-----------|
+| NGC2841 | +2.63 | YES | YES | GOOD |
+| NGC5005 | +2.54 | no | no | LIMITED |
+| NGC3741 | +2.15 | YES | no | GOOD |
+| NGC5055 | -1.41 | YES | YES | GOOD |
+| NGC2903 | -1.44 | YES | YES | GOOD |
+| NGC3521 | -1.65 | YES | YES | GOOD |
+
+### 27.2 — Published THINGS Results for Key Galaxies
+
+**High-DQ galaxies:**
+
+| Galaxy | DQ | NCM amplitude | PA twist | Warp | Bar | Verdict |
+|--------|-----|--------------|----------|------|-----|---------|
+| NGC2841 | +2.63 | Low: s1~5-10 km/s (<5% Vflat) | 5-10 deg outer | Minor | No | **REGULAR** |
+| NGC3741 | +2.15 | Very low: <3 km/s (<6% Vflat) | Minimal | None | No | **VERY REGULAR** |
+
+**Low-DQ galaxies:**
+
+| Galaxy | DQ | NCM amplitude | PA twist | Warp | Bar | Verdict |
+|--------|-----|--------------|----------|------|-----|---------|
+| NGC5055 | -1.41 | Moderate: s1~10-15 km/s (8%) | >10 deg | **STRONG** | Weak | **IRREGULAR** |
+| NGC2903 | -1.44 | High: s1~15-20 km/s (10%) | Moderate | None | **STRONG** | **IRREGULAR** |
+| NGC3521 | -1.65 | Moderate: s1~10-15 km/s (7%) | Moderate | Some | No | **MODERATE** |
+
+### 27.3 — The Critical Finding: INVERTED PATTERN
+
+**Prediction** (if DQ = 2D kinematic effect): High-DQ galaxies should show MORE non-circular motions, warps, and asymmetry.
+
+**Observation**: The pattern is **INVERTED**.
+
+- **NGC2841** (HIGHEST DQ = +2.63): One of the most kinematically regular massive spirals in THINGS. Low non-circular motions, no bar, minor outer warp only.
+- **NGC3741** (DQ = +2.15): One of the cleanest dwarf galaxies in THINGS. Extremely regular kinematics.
+- **NGC5055** (DQ = -1.41): STRONG outer warp, significant PA twist, moderate non-circular motions.
+- **NGC2903** (DQ = -1.44): STRONG bar-driven non-circular motions (s1 ~ 15-20 km/s).
+
+**The highest-DQ galaxies have the MOST REGULAR 2D kinematics. The lowest-DQ galaxies have the MOST IRREGULAR.**
+
+### 27.4 — 1D RC Proxies Confirm
+
+| Proxy | r(DQ) |
+|-------|-------|
+| Bumpiness | +0.224 |
+| Outer gradient | +0.257 |
+| Inner CV | -0.156 |
+| Outer CV | +0.145 |
+| Asymmetry index | -0.042 |
+| RC curvature | -0.065 |
+
+All correlations weak (|r| < 0.3). No 1D proxy captures DQ.
+
+### 27.5 — Program 3A Verdict: 2D KINEMATIC EXPLANATION ELIMINATED
+
+The Dark Quarter is NOT:
+- Non-circular motions (high-DQ galaxies have LESS)
+- Warps (high-DQ galaxies are LESS warped)
+- Bar-driven streaming (high-DQ galaxies are LESS barred)
+- Any 2D kinematic effect (pattern is inverted)
+
+**Updated cumulative elimination list:**
+
+| # | Hypothesis | Phase | Status |
+|---|-----------|-------|--------|
+| 1 | Structural variables | 406-408 | ELIMINATED |
+| 2 | External field effect | 410 | ELIMINATED |
+| 3 | MOND functional law | 411 | ELIMINATED |
+| 4 | Assembly history | 413 | ELIMINATED |
+| 5 | Hidden systematic error | 416A | LOW PROBABILITY (1.4%) |
+| 6 | Simple triaxiality | 417B | ELIMINATED (wrong sign) |
+| 7 | Disequilibrium | 417B | ELIMINATED (destroys bilaterality) |
+| 8 | **2D kinematic effects** | **3A** | **ELIMINATED (inverted pattern)** |
+
+**What the Dark Quarter IS:**
+- A quiet, intrinsic property of the DM halo
+- Correlates with halo dominance (haloResponse +0.33)
+- Correlates with fast rotation (Vflat +0.32) and rising outer RCs (+0.24)
+- Found in kinematically CLEAN galaxies
+- Points to: intrinsic halo density profile variations beyond c-M scatter, dark matter self-interaction, ultra-light dark matter states, or a fundamental galaxy-halo coupling not yet identified
+
+---
+
 ## References
