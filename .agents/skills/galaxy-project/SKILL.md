@@ -77,8 +77,8 @@ NOT claimed: a₀ universal constant, dark matter solved, MOND proved.
 - Phase 302: Regime law (hidden residual activates with Vflat, slope ratio 2.6:1)
 - Phase 303: Physical interpretation (H4 dynamical integration wins, score 10 vs 7/7/4)
 
-**Status:** PUBLICATION-READY + Phase 400 COMPLETE. Internal analysis FROZEN. Manuscript complete.
-Structured, regime-dependent coupling law with external support and leading H4 dynamical integration interpretation.
+**Status:** Phase 403 COMPLETE. VfResid established as genuine irreducible dynamical channel.
+Regime strengthening confirmed across 5 sub-samples. ~58 mock configs falsified. Section 11 written.
 
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
@@ -124,8 +124,11 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase400c-noise-physics.cjs` | Phase 400C: realistic noise + physics tests |
 | `scripts/phase401-regime-flip.cjs` | Phase 401: 30-config NFW sign-flip falsification |
 | `scripts/phase402-beyond-nfw.cjs` | Phase 402: cored haloes + genuine physics |
+| `scripts/phase402b-sign-flip.cjs` | Phase 402b: focused sign-flip tests |
+| `scripts/phase403-vfresid-anatomy.cjs` | Phase 403: VfResid anatomy + cross-sample |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
 | `public/phase401-regime-flip.json` | Phase 401 results |
 | `public/phase402-beyond-nfw.json` | Phase 402 results |
+| `public/phase403-vfresid-anatomy.json` | Phase 403 results |
