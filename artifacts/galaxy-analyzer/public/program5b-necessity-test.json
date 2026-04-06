@@ -1,0 +1,356 @@
+{
+  "program": "5B",
+  "title": "Necessity Test of Quiet Coupling",
+  "timestamp": "2026-04-06T18:11:24.831Z",
+  "ablations": [
+    {
+      "name": "B2-FULL (baseline)",
+      "r_VfA0": 0.46084131653379545,
+      "r_DQ_haloResp": 5.122371322142223e-17,
+      "score": 7,
+      "delta": 0,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - no quietness link",
+      "r_VfA0": 0.46084131653379545,
+      "r_DQ_haloResp": 5.122371322142223e-17,
+      "score": 7,
+      "delta": 0,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - no outerSlope link",
+      "r_VfA0": 0.46084131653379545,
+      "r_DQ_haloResp": 5.122371322142223e-17,
+      "score": 7,
+      "delta": 0,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - no VfResid coupling",
+      "r_VfA0": 0.03941079621046016,
+      "r_DQ_haloResp": -1.6391875438588986e-17,
+      "score": 5,
+      "delta": -2,
+      "checks": {
+        "channel": false,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - no a0Resid coupling",
+      "r_VfA0": 0.04786955906977855,
+      "r_DQ_haloResp": -6.549778679009169e-17,
+      "score": 5,
+      "delta": -2,
+      "checks": {
+        "channel": false,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - half quietness",
+      "r_VfA0": 0.46084131653379545,
+      "r_DQ_haloResp": 5.122371322142223e-17,
+      "score": 7,
+      "delta": 0,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - half coupling",
+      "r_VfA0": 0.20482580123065786,
+      "r_DQ_haloResp": -9.765111209351722e-19,
+      "score": 5,
+      "delta": -2,
+      "checks": {
+        "channel": false,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - no observational noise",
+      "r_VfA0": 0.4947156275552196,
+      "r_DQ_haloResp": 2.376658733632515e-16,
+      "score": 7,
+      "delta": 0,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": true,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    },
+    {
+      "name": "B2 - double noise",
+      "r_VfA0": 0.3822120279101372,
+      "r_DQ_haloResp": -1.1347735675763611e-16,
+      "score": 6,
+      "delta": -1,
+      "checks": {
+        "channel": true,
+        "channelSign": true,
+        "dqExists": true,
+        "haloRespPositive": false,
+        "quietnessInverted": true,
+        "haloRespCorrectDirection": true,
+        "linear": true
+      }
+    }
+  ],
+  "amplitudeTests": [
+    {
+      "name": "B2 alpha x1.0 (baseline)",
+      "r_VfA0": 0.46084131653379545,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x1.5",
+      "r_VfA0": 0.6438413996362371,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x2.0",
+      "r_VfA0": 0.7570449560418678,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x2.5",
+      "r_VfA0": 0.8270319295838282,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x3.0",
+      "r_VfA0": 0.8718800213695748,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x3.0 low-noise",
+      "r_VfA0": 0.8834047648863796,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x4.0 low-noise",
+      "r_VfA0": 0.9299787913261471,
+      "score": 7
+    },
+    {
+      "name": "B2 alpha x5.0 low-noise",
+      "r_VfA0": 0.9536594784363212,
+      "score": 7
+    }
+  ],
+  "bestAmplitude": {
+    "name": "B2 alpha x2.5",
+    "r_VfA0": 0.8270319295838282,
+    "score": 7
+  },
+  "crossValidation": {
+    "meanShrinkage": 0.0008223617148956474,
+    "allTestPass": true,
+    "folds": [
+      {
+        "seed": 111,
+        "full": {
+          "r_VfA0": 0.4523530605748159,
+          "score": 6
+        },
+        "train": {
+          "r_VfA0": 0.4503755685658999,
+          "score": 6
+        },
+        "test": {
+          "r_VfA0": 0.4569076556505371,
+          "score": 6
+        }
+      },
+      {
+        "seed": 222,
+        "full": {
+          "r_VfA0": 0.44989056362275737,
+          "score": 6
+        },
+        "train": {
+          "r_VfA0": 0.44817020283669495,
+          "score": 7
+        },
+        "test": {
+          "r_VfA0": 0.45391542800927565,
+          "score": 7
+        }
+      },
+      {
+        "seed": 333,
+        "full": {
+          "r_VfA0": 0.4538206165824003,
+          "score": 7
+        },
+        "train": {
+          "r_VfA0": 0.4570014966861186,
+          "score": 7
+        },
+        "test": {
+          "r_VfA0": 0.44632453559469853,
+          "score": 6
+        }
+      },
+      {
+        "seed": 444,
+        "full": {
+          "r_VfA0": 0.4573926484997847,
+          "score": 6
+        },
+        "train": {
+          "r_VfA0": 0.45836876754369693,
+          "score": 7
+        },
+        "test": {
+          "r_VfA0": 0.4550183251623812,
+          "score": 7
+        }
+      },
+      {
+        "seed": 555,
+        "full": {
+          "r_VfA0": 0.4574964051572379,
+          "score": 7
+        },
+        "train": {
+          "r_VfA0": 0.458646075108124,
+          "score": 7
+        },
+        "test": {
+          "r_VfA0": 0.45467554144562544,
+          "score": 7
+        }
+      }
+    ]
+  },
+  "competitors": [
+    {
+      "name": "ALT-1: Pure halo-eff (tuned)",
+      "r_VfA0": 0.5317969678245605,
+      "score": 6,
+      "matchesB2": false
+    },
+    {
+      "name": "ALT-2: Halo-eff + scatter",
+      "r_VfA0": 0.6537454248279142,
+      "score": 6,
+      "matchesB2": false
+    },
+    {
+      "name": "ALT-3: Mixed halo-heavy",
+      "r_VfA0": 0.5317969678245605,
+      "score": 6,
+      "matchesB2": false
+    },
+    {
+      "name": "ALT-4: Mixed quiet-weak",
+      "r_VfA0": 0.4275657950039452,
+      "score": 6,
+      "matchesB2": false
+    },
+    {
+      "name": "ALT-5: Double-halo no quiet",
+      "r_VfA0": 0.76265065447328,
+      "score": 6,
+      "matchesB2": false
+    },
+    {
+      "name": "ALT-6: Env-coupled only",
+      "r_VfA0": 0.46084131653379545,
+      "score": 7,
+      "matchesB2": true
+    },
+    {
+      "name": "ALT-7: Mass-dependent H",
+      "r_VfA0": 0.34931838125771236,
+      "score": 7,
+      "matchesB2": true
+    }
+  ],
+  "necessity": [
+    {
+      "name": "Quietness link (beta_quiet)",
+      "score": 7,
+      "delta": 0,
+      "necessary": false,
+      "critical": false
+    },
+    {
+      "name": "OuterSlope link (gamma)",
+      "score": 7,
+      "delta": 0,
+      "necessary": false,
+      "critical": false
+    },
+    {
+      "name": "VfResid coupling (alpha_Vf)",
+      "score": 5,
+      "delta": -2,
+      "necessary": true,
+      "critical": true
+    },
+    {
+      "name": "a0Resid coupling (alpha_a0)",
+      "score": 5,
+      "delta": -2,
+      "necessary": true,
+      "critical": true
+    }
+  ],
+  "quietNecessary": false,
+  "channelNecessary": true,
+  "verdict": "SUFFICIENT_ONLY"
+}

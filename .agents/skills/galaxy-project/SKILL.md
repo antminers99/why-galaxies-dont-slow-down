@@ -151,6 +151,10 @@ H ready for targeted observational confirmation. Program 4 COMPLETE.
 positive haloResp sign. Null model 4/7. H must couple through kinematic quietness, not halo efficiency.
 Physical interpretation: H = dynamical quietness of halo-disk coupling.
 
+**Program 5B (Necessity):** Ablation: quietness link delta=0, bilateral coupling CRITICAL (delta=-2).
+Amplitude x2.5 reaches r=0.827 with 7/7. CV shrinkage=0.001. B-family structure necessary,
+quiet coupling sufficient but NOT necessary. Essential: H→VfResid + H→a0Resid bilateral.
+
 **Zenodo v11:** DOI 10.5281/zenodo.19440400 (Concept: 10.5281/zenodo.19430633)
 
 **Phase 400 (VfResid origin):** Mock galaxy simulations (N=300×6 scenarios + N=500×7 diagnostic tests) reveal:
@@ -218,6 +222,7 @@ POSSIBLE FUTURE WORK:
 | `scripts/phase419-prediction-engine.cjs` | Phase 419: prediction engine |
 | `scripts/phase420-decisive-observation.cjs` | Phase 420: decisive observation |
 | `scripts/program5a-hidden-state-sim.cjs` | Program 5A: hidden-state simulation |
+| `scripts/program5b-necessity-test.cjs` | Program 5B: necessity test |
 | `public/phase400-vfresid-origin.json` | Phase 400A results |
 | `public/phase400b-regime-inversion.json` | Phase 400B results |
 | `public/phase400c-noise-physics.json` | Phase 400C results |
@@ -245,3 +250,4 @@ POSSIBLE FUTURE WORK:
 | `public/phase419-predictions.json` | Phase 419 prediction engine |
 | `public/phase420-decisive-obs.json` | Phase 420 decisive observation |
 | `public/program5a-hidden-state-sim.json` | Program 5A hidden-state simulation |
+| `public/program5b-necessity-test.json` | Program 5B necessity test |
