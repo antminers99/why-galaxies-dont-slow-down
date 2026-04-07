@@ -1,0 +1,47 @@
+{
+  "program": 11,
+  "phase": "11.2",
+  "title": "Combined Test A + B Verdict",
+  "timestamp": "2026-04-07T00:56:17.895Z",
+  "testA": {
+    "N": 7,
+    "meanRatio": 3.232488943183553,
+    "rDQ_ratio": -0.2603000905844022,
+    "pVal": 0.4903,
+    "verdict": "NEUTRAL — universal gradient, no DQ dependence",
+    "favors": "Neither"
+  },
+  "testB": {
+    "N": 7,
+    "meanM2Fraction": 0.03511427299016647,
+    "meanHigherFrac": 0.27985546378363946,
+    "nM1Dominant": 7,
+    "nM2Dominant": 0,
+    "m3FracOfNonRot": 0.5758615734755028,
+    "m2FracOfNonRot": 0.11148459324961632,
+    "rDQ_m2power": 0.5160917592121929,
+    "rDQ_m3power": 0.7862050027592021,
+    "verdict": "REVISED — m=2 not dominant, m=3 stronger",
+    "favors": "CDM consistent but triaxial interpretation too specific"
+  },
+  "discriminationTable": {
+    "CDM": {
+      "testA": "INDETERMINATE",
+      "testB": "WEAKENED",
+      "overall": "CONSISTENT but not uniquely favored"
+    },
+    "SIDM": {
+      "testA": "NOT SUPPORTED",
+      "testB": "N/A",
+      "overall": "NO EVIDENCE"
+    },
+    "FuzzyDM": {
+      "testA": "N/A",
+      "testB": "NOT SPECIFICALLY SUPPORTED",
+      "overall": "Spread is real but likely spiral streaming"
+    }
+  },
+  "revisedInterpretation": "H = total gravitational complexity beyond axisymmetry, not specifically m=2 triaxiality",
+  "keyFinding": "DQ correlates with total non-circular motion amplitude across all modes, not specifically m=2",
+  "program9Resolution": "Original r(DQ,m2)=0.847 partly inflated by azimuthal aliasing (8 bins); true signal is broader"
+}
