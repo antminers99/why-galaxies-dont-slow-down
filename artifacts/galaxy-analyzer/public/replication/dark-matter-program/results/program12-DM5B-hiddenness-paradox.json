@@ -1,0 +1,205 @@
+{
+  "program": "DM-5B",
+  "title": "Hiddenness Paradox Test",
+  "date": "2026-04-07",
+  "question": "Can complex non-axisymmetric shape simultaneously produce strong coupling AND remain hidden from 1D?",
+  "tests": {
+    "B1_erasure": {
+      "description": "How much angular information is destroyed by azimuthal averaging",
+      "meanNonAxiFraction": 15.8,
+      "knownCeiling": 88.5,
+      "rAbsDQ_nonAxiFrac": 0.117,
+      "perGalaxy": [
+        {
+          "name": "NGC2841",
+          "nonAxiFraction": 19.2
+        },
+        {
+          "name": "NGC5055",
+          "nonAxiFraction": 11.6
+        },
+        {
+          "name": "NGC3521",
+          "nonAxiFraction": 18.8
+        },
+        {
+          "name": "NGC7331",
+          "nonAxiFraction": 19.7
+        },
+        {
+          "name": "NGC2403",
+          "nonAxiFraction": 13.4
+        },
+        {
+          "name": "NGC2903",
+          "nonAxiFraction": 12.8
+        },
+        {
+          "name": "NGC3198",
+          "nonAxiFraction": 14.9
+        }
+      ],
+      "verdict": "ERASURE_CONFIRMED"
+    },
+    "B2_tradeoff": {
+      "description": "Strong 2D coupling + weak 1D visibility",
+      "rShapeDQ": 0.793,
+      "rHaloDQ": 0.267,
+      "rShapeHalo": 0.118,
+      "couplingRatio": 3,
+      "verdict": "TRADEOFF_CONFIRMED"
+    },
+    "B3_modeCombination": {
+      "description": "Multi-mode combination creates paradox where single modes fail",
+      "perModeCorrelations": {
+        "m2": 0.62,
+        "m3": 0.721,
+        "m4": 0.485,
+        "m5": 0.731,
+        "m6": 0.661
+      },
+      "combinedR": 0.793,
+      "bestSingleMode": 0.731,
+      "combinationBoost": 1.09,
+      "verdict": "COMBINATION_PARADOX_WEAK"
+    },
+    "B4_sufficiency": {
+      "description": "Is shapeAmplitude alone sufficient or extra params needed?",
+      "shapeR2": 0.629,
+      "shapePlusR2": 0.895,
+      "improvement": 26.6,
+      "extraCorrelations": {
+        "outerSupport": 0.608,
+        "uniformity": -0.085,
+        "quietness": 0.647
+      },
+      "verdict": "SHAPE_NECESSARY_NOT_SUFFICIENT"
+    }
+  },
+  "verdicts": {
+    "B1": "ERASURE_CONFIRMED",
+    "B2": "TRADEOFF_CONFIRMED",
+    "B3": "COMBINATION_PARADOX_WEAK",
+    "B4": "SHAPE_NECESSARY_NOT_SUFFICIENT"
+  },
+  "overallVerdict": "HIDDENNESS_PARADOX_RESOLVED",
+  "modelComparison": {
+    "simpleTriaxial": "3/4",
+    "complexShape": "4/4",
+    "shapeExtraPhysics": "4/4"
+  },
+  "perGalaxy": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.254,
+      "Vflat": 284.8,
+      "shapeAmplitude": 47968,
+      "nonAxiFraction": 19.2,
+      "haloResponse": 0.767,
+      "rcResidualStd": 46,
+      "perModePower": {
+        "m2": 5136.8,
+        "m3": 27696.9,
+        "m4": 2525.8,
+        "m5": 10718.3,
+        "m6": 1890.2
+      }
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.523,
+      "Vflat": 179,
+      "shapeAmplitude": 18837,
+      "nonAxiFraction": 11.6,
+      "haloResponse": 0.554,
+      "rcResidualStd": 60.5,
+      "perModePower": {
+        "m2": 1838.3,
+        "m3": 11642,
+        "m4": 1094.6,
+        "m5": 3362.9,
+        "m6": 899.2
+      }
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.518,
+      "Vflat": 213.7,
+      "shapeAmplitude": 33288,
+      "nonAxiFraction": 18.8,
+      "haloResponse": 0.622,
+      "rcResidualStd": 46.5,
+      "perModePower": {
+        "m2": 7279.7,
+        "m3": 13955.8,
+        "m4": 4967.5,
+        "m5": 4515.7,
+        "m6": 2569.7
+      }
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.135,
+      "Vflat": 239,
+      "shapeAmplitude": 34500,
+      "nonAxiFraction": 19.7,
+      "haloResponse": 0.981,
+      "rcResidualStd": 29.7,
+      "perModePower": {
+        "m2": 3809.5,
+        "m3": 19945.8,
+        "m4": 1973.8,
+        "m5": 7346.1,
+        "m6": 1424.3
+      }
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.142,
+      "Vflat": 131.2,
+      "shapeAmplitude": 14514,
+      "nonAxiFraction": 13.4,
+      "haloResponse": 0.931,
+      "rcResidualStd": 28.5,
+      "perModePower": {
+        "m2": 2260.3,
+        "m3": 7394.6,
+        "m4": 1499.3,
+        "m5": 1953.7,
+        "m6": 1405.9
+      }
+    },
+    {
+      "name": "NGC2903",
+      "DQ": -0.261,
+      "Vflat": 184.6,
+      "shapeAmplitude": 22042,
+      "nonAxiFraction": 12.8,
+      "haloResponse": 0.58,
+      "rcResidualStd": 67.7,
+      "perModePower": {
+        "m2": 1273.6,
+        "m3": 13630.9,
+        "m4": 1495.3,
+        "m5": 4346.1,
+        "m6": 1296.4
+      }
+    },
+    {
+      "name": "NGC3198",
+      "DQ": -0.472,
+      "Vflat": 150.1,
+      "shapeAmplitude": 18594,
+      "nonAxiFraction": 14.9,
+      "haloResponse": 0.757,
+      "rcResidualStd": 42.4,
+      "perModePower": {
+        "m2": 1490.5,
+        "m3": 11029.2,
+        "m4": 770.8,
+        "m5": 4438.5,
+        "m6": 865
+      }
+    }
+  ]
+}
