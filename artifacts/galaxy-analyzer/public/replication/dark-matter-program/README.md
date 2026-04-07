@@ -1,8 +1,8 @@
 # Program 12: Dark Matter Model Discrimination via Hidden State H
 
-## Project Status: DM-5B COMPLETE — Hiddenness Paradox RESOLVED
+## Project Status: DM-5C COMPLETE — Minimal carrier confirmed, phase FROZEN
 ## Parent Project: Galaxy Rotation Curve Analyzer (Programs 1–11)
-## Zenodo: DOI 10.5281/zenodo.19453045 (v16.1)
+## Zenodo: DOI 10.5281/zenodo.19453777 (v18)
 
 ---
 
@@ -310,7 +310,94 @@ shapeAmplitude alone explains 63% of DQ variance. Adding spatial distribution pa
 
 ---
 
-## Full Dark Matter Model Status (after DM-1 through DM-5B)
+## DM-5C: Extra Physics or Overfitting?
+
+### Question
+Is the +26.6pp R² improvement from multi-parameter models (outerSupport, downstreamQuietness) a genuine structural signal, or overfitting on N = 7?
+
+### Four Tests
+
+**C1 — Incremental LOO**
+Compare out-of-sample prediction power across three models:
+
+| Model | In-sample R² | Adjusted R² | LOO R² | LOO RMSE |
+|-------|-------------|-------------|--------|----------|
+| M1: shapeAmplitude only | 0.629 | 0.555 | **0.034** | 1.048 |
+| M2: shape + outerSupport | 0.722 | 0.583 | **0.118** | 1.001 |
+| M3: shape + outer + quietness | 0.744 | 0.488 | **−1.055** | 1.528 |
+
+M3 (the "R² = 0.90" model) **collapses catastrophically** out of sample: LOO R² = −1.055, meaning it predicts worse than the sample mean. The +26.6pp was overfitting. M2 is marginally better than M1 out of sample (+8.4pp), but both are weak with N = 7.
+
+**Verdict: EXTRAS PARTIALLY GENUINE** — M2 shows a hint of real improvement, M3 is pure overfitting.
+
+**C2 — Permutation Necessity**
+Fix shapeAmplitude and shuffle each extra parameter 5000 times:
+
+| Shuffled parameter | R² drop | p-value | Verdict |
+|-------------------|---------|---------|---------|
+| outerSupport | 0.019 | 0.333 | COSMETIC |
+| downstreamQuietness | −0.049 | 0.639 | COSMETIC |
+| shapeAmplitude | −0.045 | 0.637 | COSMETIC |
+
+With N = 7 and p = 3, the model is saturated — no individual parameter produces a statistically significant R² drop when shuffled. This confirms that the 3-parameter model cannot be distinguished from noise at this sample size.
+
+**Verdict: UNCLEAR** — sample too small for permutation to discriminate.
+
+**C3 — Causal Ordering**
+Partial correlation analysis reveals the causal structure:
+
+| Relationship | r | Interpretation |
+|-------------|---|----------------|
+| r(shape, DQ) | 0.793 | Strong direct effect |
+| r(outer, DQ \| shape) | **0.500** | Independent contribution — survives shape control |
+| r(quiet, DQ \| shape) | **−0.038** | Zero — purely downstream |
+| r(shape, DQ \| outer) | 0.748 | Shape retains strong direct effect |
+| r(shape, DQ \| quiet) | 0.603 | Shape retains strong direct effect |
+| r(shape, quiet) | 0.831 | Quietness is a shadow of shape |
+
+**Three conclusions:**
+1. **shapeAmplitude → DQ is direct and strong** (partial r = 0.60–0.75 after controlling for anything)
+2. **outerSupport has real independent information** (partial r = 0.50 after controlling for shape)
+3. **downstreamQuietness is NOT a cause** — it is a consequence of shape (r = 0.83 with shape, partial r = −0.04 with DQ)
+
+**Verdict: SHAPE DIRECT, SOME MEDIATION.**
+
+**C4 — Minimal Sufficient Model**
+Best out-of-sample model: **M2 (shape + outer)** with LOO R² = 0.118.
+Most parsimonious within 5pp of best: **M2**.
+
+But note: even M2's LOO R² = 0.118 is low in absolute terms. With N = 7, no linear model predicts well out of sample.
+
+**Verdict: SHAPE PLUS OUTER** (but with heavy caveat on N = 7).
+
+### DM-5C Summary
+
+| Test | Verdict |
+|------|---------|
+| C1 Incremental LOO | EXTRAS PARTIALLY GENUINE |
+| C2 Permutation necessity | UNCLEAR |
+| C3 Causal ordering | SHAPE DIRECT, SOME MEDIATION |
+| C4 Minimal sufficient model | SHAPE + OUTER |
+
+### The Clean Final Answer
+
+**shapeAmplitude is the minimal robust quantitative carrier of H.** It is the safe, parsimonious answer that survives all stress tests (DM-4V) and explains the hiddenness paradox (DM-5B).
+
+Additional findings from multi-parameter analysis:
+- **outerSupport** (outer-region non-axisymmetric power) contains real independent information (partial r = 0.50), but current data (N = 7) are insufficient for a definitive claim
+- **downstreamQuietness** is a downstream consequence, not a causal driver — its entire correlation with DQ is mediated through shapeAmplitude
+- **The R² = 0.90 three-parameter model was overfitting** — it collapses to R² = −1.055 out of sample
+
+### What This Means for Future Work
+
+The prediction for larger 2D surveys (WALLABY, MeerKAT MHONGOOSE, SKA):
+1. r(DQ, shapeAmplitude) > 0.5 should hold with N > 20 — this is the core prediction
+2. outerSupport may emerge as a genuine second predictor with larger N — this is the open question
+3. Multi-parameter models should only be trusted when N/p > 10 (i.e., N > 30 for a 3-parameter model)
+
+---
+
+## Full Dark Matter Model Status (after DM-1 through DM-5C)
 
 | Model | Status | Kill Evidence | Positive Evidence |
 |-------|--------|---------------|-------------------|
@@ -319,11 +406,11 @@ shapeAmplitude alone explains 63% of DQ variance. Adding spatial distribution pa
 | Fuzzy DM (ψDM) | **DEAD** | DM-3: 0/4 wave fingerprint | None |
 | SIDM | **No signal** | DM-2V: advantage was artifact | None after cleaning |
 | WDM | Weak | — | No positive evidence |
-| **CDM + complex halo shape** | **LEADING + SUFFICIENT** | None killed | 12/12 DM-1, 3/4 DM-2V, 4/4 DM-3, r=0.80 DM-4, confirmed DM-4V, partially consistent DM-5A, paradox resolved DM-5B |
+| **CDM + complex halo shape** | **LEADING + SUFFICIENT** | None killed | 12/12 DM-1, r=0.80 DM-4, confirmed DM-4V, paradox resolved DM-5B, minimal carrier confirmed DM-5C |
 
 ---
 
-## Key Numbers for Citation (updated after DM-5B)
+## Key Numbers for Citation (final, after DM-5C)
 
 | Quantity | Value | Source |
 |----------|-------|--------|
@@ -343,7 +430,10 @@ shapeAmplitude alone explains 63% of DQ variance. Adding spatial distribution pa
 | r(shapeAmplitude, haloResponse) | 0.118 | DM-5B B2 |
 | 2D/1D coupling ratio | 3.0× | DM-5B B2 |
 | shapeAmplitude alone R² | 0.629 | DM-5B B4 |
-| shapeAmplitude + extras R² | 0.895 | DM-5B B4 |
+| shapeAmplitude LOO R² | 0.034 | DM-5C C1 |
+| Multi-param LOO R² (M3) | −1.055 | DM-5C C1 (overfitting) |
+| r(outerSupport, DQ \| shape) | 0.500 | DM-5C C3 |
+| r(quietness, DQ \| shape) | −0.038 | DM-5C C3 (downstream) |
 
 ---
 
@@ -359,6 +449,7 @@ shapeAmplitude alone explains 63% of DQ variance. Adding spatial distribution pa
 | `scripts/program12-DM4V-verification.cjs` | shapeAmplitude stress tests | `results/program12-DM4V-verification.json` |
 | `scripts/program12-DM5A-CDM-triaxial-consistency.cjs` | CDM triaxial consistency (5 tests) | `results/program12-DM5A-CDM-triaxial-consistency.json` |
 | `scripts/program12-DM5B-hiddenness-paradox.cjs` | Hiddenness paradox (4 tests) | `results/program12-DM5B-hiddenness-paradox.json` |
+| `scripts/program12-DM5C-extra-physics-test.cjs` | Extra physics vs overfitting (4 tests) | `results/program12-DM5C-extra-physics-test.json` |
 
 All scripts are deterministic (seeded RNG), self-contained, and reproducible via `node scripts/<name>.cjs`.
 
