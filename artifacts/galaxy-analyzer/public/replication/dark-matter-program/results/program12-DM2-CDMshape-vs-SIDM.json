@@ -1,0 +1,133 @@
+{
+  "program": 12,
+  "phase": "DM-2",
+  "title": "CDM+Shape vs SIDM — Decisive Kill Test",
+  "timestamp": "2026-04-07T01:37:39.663Z",
+  "N": 7,
+  "galaxies": [
+    "NGC2841",
+    "NGC5055",
+    "NGC3521",
+    "NGC7331",
+    "NGC2403",
+    "NGC2903",
+    "NGC3198"
+  ],
+  "T1": {
+    "name": "Normalized inner suppression",
+    "meanSuppressionRatio": 0.7595711440029176,
+    "nSuppressed": 2,
+    "nEnhanced": 0,
+    "rDQ_suppression": 0,
+    "pVal": 1,
+    "verdict": "MIXED — no clear pattern",
+    "favors": "INCONCLUSIVE",
+    "perGalaxy": [
+      {
+        "name": "NGC2841",
+        "DQ": 2.254370061790992,
+        "innerC": 0.18762573931232981,
+        "outerC": 0.22803433052425415,
+        "suppressionRatio": 0.8227960188317943
+      },
+      {
+        "name": "NGC5055",
+        "DQ": -1.5228476025571591,
+        "innerC": 0.11969959631248032,
+        "outerC": 0.12115549430403427,
+        "suppressionRatio": 0.9879832276702166
+      },
+      {
+        "name": "NGC3521",
+        "DQ": 0.517836254332268,
+        "innerC": 0.18833665286804274,
+        "outerC": 0,
+        "suppressionRatio": null
+      },
+      {
+        "name": "NGC7331",
+        "DQ": -0.13516027460720484,
+        "innerC": 0.19724141195924358,
+        "outerC": 0,
+        "suppressionRatio": null
+      },
+      {
+        "name": "NGC2403",
+        "DQ": 0.1415876076276942,
+        "innerC": 0.10761152336437119,
+        "outerC": 0.1890873879801237,
+        "suppressionRatio": 0.5691099999524187
+      },
+      {
+        "name": "NGC2903",
+        "DQ": -0.26106056273318207,
+        "innerC": 0.11296600621731745,
+        "outerC": 0.1715777757616919,
+        "suppressionRatio": 0.6583953295572406
+      },
+      {
+        "name": "NGC3198",
+        "DQ": -0.4715816459282169,
+        "innerC": 0.16783158298193937,
+        "outerC": 0,
+        "suppressionRatio": null
+      }
+    ]
+  },
+  "T2": {
+    "name": "Core-linked angular complexity",
+    "rDQ_globalAngComplexity": 0.7201409179918943,
+    "pVal": 0.0524,
+    "rDQ_outerC": 0.3744256912963512,
+    "rDQ_innerC": 0.5026410832228302,
+    "rhR_angComplexity": 0.6256219469013589,
+    "outerLed": false,
+    "verdict": "INNER-LED — angular complexity driven by core region",
+    "favors": "SIDM"
+  },
+  "T3": {
+    "name": "Inaccessibility-strength paradox compatibility",
+    "rStrength_angComplexity": 0.06875632643152935,
+    "rDQ_outerFraction": 0.15796028665897902,
+    "outerDominanceFraction": 0.14285714285714285,
+    "verdict": "INNER-DOMINANT — non-rotational power concentrated in core",
+    "favors": "SIDM"
+  },
+  "T4": {
+    "name": "Matched-pair decisive check",
+    "highH": [
+      "NGC2841",
+      "NGC3521",
+      "NGC2403"
+    ],
+    "lowH": [
+      "NGC2903",
+      "NGC3198",
+      "NGC5055"
+    ],
+    "highH_outerC": 0.13904057283479263,
+    "lowH_outerC": 0.09757775668857538,
+    "highH_innerC": 0.16119130518158123,
+    "lowH_innerC": 0.13349906183724572,
+    "highH_suppression": null,
+    "lowH_suppression": null,
+    "shapeLed": true,
+    "corePattern": false,
+    "verdict": "SHAPE-LED — high-H have more outer complexity, no core suppression pattern",
+    "favors": "CDM+shape"
+  },
+  "combinedVerdict": {
+    "cdmWins": 1,
+    "sidmWins": 2,
+    "inconclusive": 1,
+    "overall": "SIDM is moderately favored over CDM+shape"
+  },
+  "methodologyNotes": [
+    "All angular complexity is NORMALIZED: C = sum(P_m2..m6) / P_total — not raw power",
+    "Inner zone: r/R_max <= 0.5; Outer zone: r/R_max > 0.5",
+    "16-bin azimuthal decomposition (Nyquist safe to m=7)",
+    "10 radial bins per galaxy",
+    "Suppression ratio = inner_C / outer_C (SIDM predicts < 0.6)",
+    "No reliance on m=2 alone; full m=2..6 spectrum used"
+  ]
+}
