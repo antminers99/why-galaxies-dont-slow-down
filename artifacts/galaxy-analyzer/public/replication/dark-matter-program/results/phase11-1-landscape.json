@@ -1,0 +1,78 @@
+{
+  "program": 11,
+  "phase": "11.1",
+  "title": "Theoretical Landscape Survey: Dark Matter Models vs Observed m=2",
+  "timestamp": "2026-04-07T00:43:20.604Z",
+  "input": {
+    "r_DQ_m2": 0.8466761816318997,
+    "p_value": 0.0053,
+    "N": 7,
+    "red_team": "8/8 critical PASS",
+    "partial_r": 0.7083190278465568
+  },
+  "models": [
+    {
+      "name": "Cold Dark Matter (CDM)",
+      "triaxiality": "HIGH",
+      "consistency": "CONSISTENT — CDM naturally produces triaxial halos with m=2 distortions",
+      "testable_via": "Predicts m=2 power correlated with merger history/environment",
+      "plausibility_score": 4
+    },
+    {
+      "name": "Self-Interacting Dark Matter (SIDM, σ/m ~ 1 cm²/g)",
+      "triaxiality": "REDUCED IN CORE",
+      "consistency": "TESTABLE — predicts specific radial m=2 gradient different from CDM",
+      "testable_via": "RADIAL GRADIENT: inner m=2 / outer m=2 ratio should be LOW",
+      "plausibility_score": 3
+    },
+    {
+      "name": "Fuzzy Dark Matter (ψDM, m_a ~ 10⁻²² eV)",
+      "triaxiality": "DIFFERENT PATTERN",
+      "consistency": "DISTINGUISHABLE — different m-spectrum from CDM triaxiality",
+      "testable_via": "M-SPECTRUM: expect comparable power at m=3,4 relative to m=2",
+      "plausibility_score": 2
+    },
+    {
+      "name": "Warm Dark Matter (WDM, m ~ few keV)",
+      "triaxiality": "SIMILAR TO CDM",
+      "consistency": "CONSISTENT but not distinguishable from CDM",
+      "testable_via": "Hard to distinguish from CDM with m=2 alone at these masses",
+      "plausibility_score": 3
+    },
+    {
+      "name": "MOND + External Field Effect (EFE)",
+      "triaxiality": "DIRECTION-DEPENDENT",
+      "consistency": "TESTABLE — makes specific directional prediction",
+      "testable_via": "ALIGNMENT TEST: m=2 PA should correlate with nearest neighbor direction",
+      "plausibility_score": 2
+    }
+  ],
+  "discriminating_tests": [
+    {
+      "name": "Test A: Radial m=2 gradient (inner vs outer)",
+      "discriminates": "CDM vs SIDM",
+      "feasibility": "HIGH — can compute from existing data"
+    },
+    {
+      "name": "Test B: m-spectrum shape (m=1,2,3,4 relative power)",
+      "discriminates": "CDM/SIDM vs Fuzzy DM",
+      "feasibility": "HIGH — can compute from existing data"
+    },
+    {
+      "name": "Test C: m=2 PA alignment with environment",
+      "discriminates": "CDM tidal vs MOND EFE",
+      "feasibility": "MEDIUM — need environment characterization"
+    },
+    {
+      "name": "Test D: m=2 vs stellar mass/concentration",
+      "discriminates": "Baryonic feedback vs DM-intrinsic",
+      "feasibility": "MEDIUM — need cross-match with morphological catalogs"
+    }
+  ],
+  "verdict": "CDM consistent; SIDM, FDM, MOND testable with existing data",
+  "immediate_next": [
+    "Phase 11.2: Radial m=2 gradient (CDM vs SIDM)",
+    "Phase 11.3: m-spectrum analysis (CDM vs FDM)",
+    "Phase 11.4: PA alignment with environment (CDM vs MOND)"
+  ]
+}
