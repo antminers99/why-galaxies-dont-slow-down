@@ -1,0 +1,155 @@
+{
+  "program": 12,
+  "phase": "DM-3",
+  "title": "Fuzzy DM vs CDM+Shape — Wave Fingerprint Test",
+  "timestamp": "2026-04-07T01:47:31.180Z",
+  "N": 7,
+  "galaxies": [
+    "NGC2841",
+    "NGC5055",
+    "NGC3521",
+    "NGC7331",
+    "NGC2403",
+    "NGC2903",
+    "NGC3198"
+  ],
+  "T1": {
+    "name": "Spectral width",
+    "meanEntropy": 0.7241514903583088,
+    "meanNEff": 2.5939181131133617,
+    "rDQ_entropy": 0.3087610905244254,
+    "pDQ_entropy": 0.4273,
+    "rDQ_nEff": 0.3429715405267348,
+    "rDQ_outsideDom": 0.42582789052020087,
+    "verdict": "MODERATE SPECTRUM — broader than pure m=2 but not wave-like",
+    "favors": "CDM+shape (not distinctively wave-like)"
+  },
+  "T2": {
+    "name": "Radial phase coherence",
+    "meanFlipRate": 0.1791991341991342,
+    "meanPhaseVar": 0.8869780515761584,
+    "meanCoherent": 3.4,
+    "rDQ_flipRate": 0.08278171797425628,
+    "rDQ_phaseVar": -0.4844650824310752,
+    "rDQ_ampCV": -0.05937080697767157,
+    "rDQ_coherent": 0.26750636658518423,
+    "verdict": "SMOOTH/COHERENT — stable halo shape, no wave signature",
+    "favors": "CDM+shape"
+  },
+  "T3": {
+    "name": "Odd/even mode asymmetry",
+    "meanOddEven": 4.150609775753707,
+    "nOddDominant": 6,
+    "rDQ_oddEven": -0.30786007310157903,
+    "innerMeanOE": 3.7372643406578905,
+    "outerMeanOE": 3.608088153249756,
+    "verdict": "STRONG ODD DOMINANCE — parity asymmetry inconsistent with wave interference",
+    "favors": "CDM+shape"
+  },
+  "T4": {
+    "name": "Hiddenness + wave uniqueness",
+    "rDQ_angComplexity": 0.6665072229525684,
+    "pVal": 0.0654,
+    "waveUniqueness": false,
+    "verdict": "NO WAVE FINGERPRINT — all observed features explainable by halo shape complexity",
+    "favors": "CDM+shape"
+  },
+  "combinedVerdict": {
+    "cdmWins": 4,
+    "fuzzyWins": 0,
+    "overall": "Fuzzy DM shows NO unique wave signature. CDM+shape explains all observed features. Fuzzy DM is effectively DEAD for this dataset."
+  },
+  "perGalaxy": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.254370061790992,
+      "Vflat": 284.8,
+      "spectralEntropy": 0.7131123993386208,
+      "nEffectiveModes": 2.5327218671992546,
+      "outsideDomFrac": 0.43375120916909676,
+      "oddEvenRatio": 4.2146624532616865,
+      "meanFlipRate": 0.175,
+      "meanPhaseVariance": 0.5045883773150687,
+      "nCoherentModes": 4,
+      "meanAmpCV": 0.44726992421122863
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.5228476025571591,
+      "Vflat": 179,
+      "spectralEntropy": 0.6910481223802779,
+      "nEffectiveModes": 2.317626084886635,
+      "outsideDomFrac": 0.3826365088896737,
+      "oddEvenRatio": 4.724038542363444,
+      "meanFlipRate": 0.07272727272727272,
+      "meanPhaseVariance": 0.8064864338187043,
+      "nCoherentModes": 4,
+      "meanAmpCV": 0.3764565870302016
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.517836254332268,
+      "Vflat": 213.7,
+      "spectralEntropy": 0.8674537605178788,
+      "nEffectiveModes": 3.4796237214691583,
+      "outsideDomFrac": 0.560993608836304,
+      "oddEvenRatio": 1.2494211431465496,
+      "meanFlipRate": 0.12000000000000002,
+      "meanPhaseVariance": 0.3522649877987544,
+      "nCoherentModes": 5,
+      "meanAmpCV": 0.3288846235469941
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.13516027460720484,
+      "Vflat": 239,
+      "spectralEntropy": 0.7147851826476133,
+      "nEffectiveModes": 2.4543108067890294,
+      "outsideDomFrac": 0.414375566046998,
+      "oddEvenRatio": 4.017451144822074,
+      "meanFlipRate": 0.25,
+      "meanPhaseVariance": 1.0139934098722292,
+      "nCoherentModes": 3,
+      "meanAmpCV": 0.4287532860799793
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.1415876076276942,
+      "Vflat": 131.2,
+      "spectralEntropy": 0.7610178797228658,
+      "nEffectiveModes": 2.7587105527492093,
+      "outsideDomFrac": 0.44934200433179383,
+      "oddEvenRatio": 2.5040600052381845,
+      "meanFlipRate": 0.12000000000000002,
+      "meanPhaseVariance": 0.8370607093256155,
+      "nCoherentModes": 3,
+      "meanAmpCV": 0.9583090502991259
+    },
+    {
+      "name": "NGC2903",
+      "DQ": -0.26106056273318207,
+      "Vflat": 184.6,
+      "spectralEntropy": 0.66830370375484,
+      "nEffectiveModes": 2.3728413934134576,
+      "outsideDomFrac": 0.3820214103064193,
+      "oddEvenRatio": 6.461164231362239,
+      "meanFlipRate": 0.25,
+      "meanPhaseVariance": 1.5418510435220423,
+      "nCoherentModes": 2,
+      "meanAmpCV": 0.7337708112496035
+    },
+    {
+      "name": "NGC3198",
+      "DQ": -0.4715816459282169,
+      "Vflat": 150.1,
+      "spectralEntropy": 0.6533393841460653,
+      "nEffectiveModes": 2.241592365286789,
+      "outsideDomFrac": 0.3832056047307683,
+      "oddEvenRatio": 5.883470910081767,
+      "meanFlipRate": 0.26666666666666666,
+      "meanPhaseVariance": 1.1526013993806945,
+      "nCoherentModes": 3,
+      "meanAmpCV": 0.6225032972233308
+    }
+  ]
+}
