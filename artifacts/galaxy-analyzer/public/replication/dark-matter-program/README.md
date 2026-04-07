@@ -1,6 +1,6 @@
 # Program 12: Dark Matter Model Discrimination via Hidden State H
 
-## Project Status: DM-5C COMPLETE — Minimal carrier confirmed, phase FROZEN
+## Project Status: DM-5D COMPLETE — Literature challenge resolved, phase FROZEN
 ## Parent Project: Galaxy Rotation Curve Analyzer (Programs 1–11)
 ## Zenodo: DOI 10.5281/zenodo.19453777 (v18)
 
@@ -397,7 +397,47 @@ The prediction for larger 2D surveys (WALLABY, MeerKAT MHONGOOSE, SKA):
 
 ---
 
-## Full Dark Matter Model Status (after DM-1 through DM-5C)
+## DM-5D: THINGS Literature Challenge Resolution
+
+### The Objection
+
+Trachternach et al. (2008) and de Blok et al. (2008) found that non-circular motions in THINGS galaxies are small on average and that potentials are approximately circular. If this is true, how can we claim a strong hidden-state signal carried by halo non-axisymmetry?
+
+### The Resolution
+
+We do not contradict their finding. Our metric captures something **different and broader** than what they measured. Four tests confirm this:
+
+| Test | Question | Result | Verdict |
+|------|----------|--------|---------|
+| A: Apples-to-apples | Does shapeAmplitude capture more than simple elongation? | partial r(shape, DQ \| elongation) = **0.635**; partial r(elongation, DQ \| shape) = **0.092** | **SHAPE CAPTURES MORE** |
+| B: Mean vs covariance | Can the mean be small while cross-galaxy correlation is strong? | CV = 0.41, r(shape, DQ) = 0.793, p = 0.031 | **MEAN SMALL, COVARIANCE STRONG** |
+| C: Outer vs global | Is the signal concentrated in specific radial zones? | Signal distributed across radii, not diluted by global average | **SIGNAL DISTRIBUTED** |
+| D: Elongation vs complex | Does simple m=2 fail where complex shape succeeds? | m=2 is ~0.4% of total non-axi power; partial r(shape, DQ \| m=2) = 0.635 | **COMPLEX ADDS BEYOND ELONGATION** |
+
+**Overall: 4/4 PASS — LITERATURE OBJECTION RESOLVED.**
+
+### The Key Numbers
+
+| Metric | r with DQ | Partial r controlling for the other |
+|--------|-----------|-------------------------------------|
+| elongation (m=2 only) | 0.620 | **0.092** (nothing left after controlling for shape) |
+| shapeAmplitude (all modes) | 0.793 | **0.635** (strong signal beyond elongation) |
+
+### What This Means
+
+1. **Different metric**: We measure complex multi-mode non-axisymmetry (m=2 through m=6). Trachternach measured simple elongation (m=2 alone). m=2 accounts for less than 1% of the total non-axisymmetric power; odd modes (m=3, m=5) dominate at an odd/even ratio of 3.45.
+
+2. **Mean ≠ information**: Non-circular motions can be small on average (as Trachternach reported) while their **cross-galaxy variation** carries strong predictive power (r = 0.793 with DQ, p = 0.031). The literature tested the sample mean; we test the covariance structure.
+
+3. **Compatibility with Sellwood & S&aacute;nchez (2010)**: Fitting axisymmetric geometry (tilted-ring models) can absorb or hide non-axisymmetric distortions. Our harmonic decomposition of the full 2D velocity field bypasses this absorption.
+
+4. **Compatibility with Marasco et al.**: Odd-mode dominance (m=3) does not contradict halo-shape origin — bisymmetric perturbations from triaxial halos can project as m=3 harmonics in HI velocity fields.
+
+**Summary statement**: Trachternach et al. found that simple elongation is small on average — and we agree. But complex non-axisymmetric structure (beyond m=2) varies systematically across galaxies and predicts the hidden coupling state H. These are different measurements, not contradictory findings. shapeAmplitude contains simple elongation and goes beyond it.
+
+---
+
+## Full Dark Matter Model Status (after DM-1 through DM-5D)
 
 | Model | Status | Kill Evidence | Positive Evidence |
 |-------|--------|---------------|-------------------|
@@ -406,11 +446,11 @@ The prediction for larger 2D surveys (WALLABY, MeerKAT MHONGOOSE, SKA):
 | Fuzzy DM (ψDM) | **DEAD** | DM-3: 0/4 wave fingerprint | None |
 | SIDM | **No signal** | DM-2V: advantage was artifact | None after cleaning |
 | WDM | Weak | — | No positive evidence |
-| **CDM + complex halo shape** | **LEADING + SUFFICIENT** | None killed | 12/12 DM-1, r=0.80 DM-4, confirmed DM-4V, paradox resolved DM-5B, minimal carrier confirmed DM-5C |
+| **CDM + complex halo shape** | **LEADING + SUFFICIENT** | None killed | 12/12 DM-1, r=0.80 DM-4, confirmed DM-4V, paradox resolved DM-5B, minimal carrier confirmed DM-5C, literature compatible DM-5D |
 
 ---
 
-## Key Numbers for Citation (final, after DM-5C)
+## Key Numbers for Citation (final, after DM-5D)
 
 | Quantity | Value | Source |
 |----------|-------|--------|
@@ -434,6 +474,12 @@ The prediction for larger 2D surveys (WALLABY, MeerKAT MHONGOOSE, SKA):
 | Multi-param LOO R² (M3) | −1.055 | DM-5C C1 (overfitting) |
 | r(outerSupport, DQ \| shape) | 0.500 | DM-5C C3 |
 | r(quietness, DQ \| shape) | −0.038 | DM-5C C3 (downstream) |
+| r(elongation m=2, DQ) | 0.620 | DM-5D A |
+| r(shapeAmp, DQ \| elongation) | 0.635 | DM-5D A (beyond elongation) |
+| r(elongation, DQ \| shapeAmp) | 0.092 | DM-5D A (elongation redundant) |
+| m=2 fraction of non-axi power | ~0.4% | DM-5D D |
+| odd/even mode ratio | 3.45 | DM-5D D |
+| Literature challenge | 4/4 PASS | DM-5D (RESOLVED) |
 
 ---
 
@@ -450,6 +496,7 @@ The prediction for larger 2D surveys (WALLABY, MeerKAT MHONGOOSE, SKA):
 | `scripts/program12-DM5A-CDM-triaxial-consistency.cjs` | CDM triaxial consistency (5 tests) | `results/program12-DM5A-CDM-triaxial-consistency.json` |
 | `scripts/program12-DM5B-hiddenness-paradox.cjs` | Hiddenness paradox (4 tests) | `results/program12-DM5B-hiddenness-paradox.json` |
 | `scripts/program12-DM5C-extra-physics-test.cjs` | Extra physics vs overfitting (4 tests) | `results/program12-DM5C-extra-physics-test.json` |
+| `scripts/program12-DM5D-THINGS-literature-challenge.cjs` | THINGS literature challenge (4 tests) | `results/program12-DM5D-THINGS-literature-challenge.json` |
 
 All scripts are deterministic (seeded RNG), self-contained, and reproducible via `node scripts/<name>.cjs`.
 
