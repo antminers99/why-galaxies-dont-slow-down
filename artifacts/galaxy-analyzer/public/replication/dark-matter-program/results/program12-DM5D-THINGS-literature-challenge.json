@@ -1,0 +1,141 @@
+{
+  "program": "DM-5D",
+  "title": "THINGS Literature Challenge Resolution",
+  "date": "2026-04-07",
+  "question": "How is our strong non-axisymmetry signal compatible with THINGS literature finding small non-circular motions?",
+  "tests": {
+    "A_applesApples": {
+      "rElongDQ": 0.62,
+      "rShapeDQ": 0.793,
+      "rElongShape": 0.734,
+      "partialShapeDQ_elong": 0.635,
+      "partialElongDQ_shape": 0.092,
+      "shapeAddsBeyondElongation": true,
+      "verdict": "SHAPE_CAPTURES_MORE_THAN_ELONGATION"
+    },
+    "B_meanVsCovariance": {
+      "meanShapeAmplitude": 27106,
+      "cvShapeAmplitude": 0.41,
+      "rShapeDQ": 0.793,
+      "permutationP": 0.0312,
+      "verdict": "MEAN_SMALL_BUT_COVARIANCE_STRONG"
+    },
+    "C_outerVsGlobal": {
+      "rInnerDQ": 0.645,
+      "rOuterDQ": 0.608,
+      "rGlobalDQ": 0.793,
+      "meanInner": 24157,
+      "meanOuter": 19698,
+      "outerStronger": false,
+      "verdict": "SIGNAL_DISTRIBUTED"
+    },
+    "D_elongVsComplex": {
+      "rM2DQ": 0.62,
+      "rOddDQ": 0.726,
+      "rAllModesDQ": 0.793,
+      "meanM2fraction": 0.4,
+      "rPartialShapeDQ_m2": 0.635,
+      "verdict": "COMPLEX_ADDS_BEYOND_ELONGATION"
+    }
+  },
+  "verdicts": {
+    "A_applesApples": "SHAPE_CAPTURES_MORE_THAN_ELONGATION",
+    "B_meanVsCovariance": "MEAN_SMALL_BUT_COVARIANCE_STRONG",
+    "C_outerVsGlobal": "SIGNAL_DISTRIBUTED",
+    "D_elongVsComplex": "COMPLEX_ADDS_BEYOND_ELONGATION"
+  },
+  "overallVerdict": "LITERATURE_OBJECTION_RESOLVED",
+  "perGalaxy": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.254,
+      "Vflat": 284.8,
+      "shapeAmplitude": 47968,
+      "elongation_m2": 5137,
+      "medNonCircAmp": 104350,
+      "outerNonAxi": 62317,
+      "innerNonAxi": 42480,
+      "oddEvenRatio": 4.02,
+      "m2FractionPercent": 0.3
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.523,
+      "Vflat": 179,
+      "shapeAmplitude": 18837,
+      "elongation_m2": 1838,
+      "medNonCircAmp": 80731,
+      "outerNonAxi": 16582,
+      "innerNonAxi": 20144,
+      "oddEvenRatio": 3.92,
+      "m2FractionPercent": 0.1
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.518,
+      "Vflat": 213.7,
+      "shapeAmplitude": 33288,
+      "elongation_m2": 7280,
+      "medNonCircAmp": 80708,
+      "outerNonAxi": 0,
+      "innerNonAxi": 31723,
+      "oddEvenRatio": 1.25,
+      "m2FractionPercent": 1.4
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.135,
+      "Vflat": 239,
+      "shapeAmplitude": 34500,
+      "elongation_m2": 3810,
+      "medNonCircAmp": 79652,
+      "outerNonAxi": 0,
+      "innerNonAxi": 34500,
+      "oddEvenRatio": 3.79,
+      "m2FractionPercent": 0.4
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.142,
+      "Vflat": 131.2,
+      "shapeAmplitude": 14514,
+      "elongation_m2": 2260,
+      "medNonCircAmp": 51874,
+      "outerNonAxi": 21991,
+      "innerNonAxi": 9386,
+      "oddEvenRatio": 1.81,
+      "m2FractionPercent": 0.4
+    },
+    {
+      "name": "NGC2903",
+      "DQ": -0.261,
+      "Vflat": 184.6,
+      "shapeAmplitude": 22042,
+      "elongation_m2": 1274,
+      "medNonCircAmp": 81464,
+      "outerNonAxi": 36993,
+      "innerNonAxi": 15159,
+      "oddEvenRatio": 4.42,
+      "m2FractionPercent": 0
+    },
+    {
+      "name": "NGC3198",
+      "DQ": -0.472,
+      "Vflat": 150.1,
+      "shapeAmplitude": 18594,
+      "elongation_m2": 1490,
+      "medNonCircAmp": 57476,
+      "outerNonAxi": 0,
+      "innerNonAxi": 15706,
+      "oddEvenRatio": 4.95,
+      "m2FractionPercent": 0.1
+    }
+  ],
+  "literatureContext": {
+    "trachternach2008": "Found median non-circular motions small (~few km/s) and average potential elongation close to zero across THINGS sample.",
+    "deBlok2008": "Derived rotation curves assuming axisymmetric tilted-ring models, which by construction erase non-axisymmetric structure.",
+    "sellwood2010": "Noted that fitting axisymmetric geometry can absorb/hide oval distortions; velfit-type tools may reveal what tilted-ring fits miss.",
+    "marasco2023": "Showed that bisymmetric perturbations from triaxial halos can project as m=3 harmonics in HI velocity fields.",
+    "ourResolution": "Our metric captures complex multi-mode non-axisymmetric structure (m=2 through m=6) and its cross-galaxy covariance with DQ, which is a different and broader observable than simple elongation or sample-averaged non-circular amplitude."
+  }
+}
