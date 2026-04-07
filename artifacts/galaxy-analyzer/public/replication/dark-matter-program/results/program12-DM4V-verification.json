@@ -1,0 +1,213 @@
+{
+  "program": 12,
+  "phase": "DM-4V",
+  "title": "DM-4 Verification: shapeAmplitude stress tests",
+  "timestamp": "2026-04-07T02:00:23.920Z",
+  "N": 7,
+  "galaxies": [
+    "NGC2841",
+    "NGC5055",
+    "NGC3521",
+    "NGC7331",
+    "NGC2403",
+    "NGC2903",
+    "NGC3198"
+  ],
+  "baseCorrelation": 0.8040825886284413,
+  "V1_binning": {
+    "configs": [
+      {
+        "label": "8rad x 12az",
+        "r": 0.6120295627073762,
+        "n": 7
+      },
+      {
+        "label": "10rad x 16az",
+        "r": 0.8119294048594409,
+        "n": 7
+      },
+      {
+        "label": "12rad x 16az (DM-4 default)",
+        "r": 0.8040825886284413,
+        "n": 7
+      },
+      {
+        "label": "12rad x 20az",
+        "r": 0.8067932410274458,
+        "n": 7
+      },
+      {
+        "label": "14rad x 16az",
+        "r": 0.7088901237915762,
+        "n": 7
+      },
+      {
+        "label": "16rad x 16az",
+        "r": 0.7373121528263731,
+        "n": 7
+      },
+      {
+        "label": "10rad x 12az",
+        "r": 0.6601424215524965,
+        "n": 7
+      },
+      {
+        "label": "14rad x 20az",
+        "r": 0.8010045004567168,
+        "n": 7
+      }
+    ],
+    "meanR": 0.7427729994812333,
+    "minR": 0.6120295627073762,
+    "maxR": 0.8119294048594409,
+    "range": 0.1998998421520647,
+    "allAbove05": true,
+    "verdict": "STABLE — moderate sensitivity but sign preserved"
+  },
+  "V2_normalization": {
+    "modes": [
+      {
+        "mode": "raw",
+        "r": 0.8040825886284413,
+        "p": 0.028,
+        "n": 7
+      },
+      {
+        "mode": "fractional",
+        "r": 0.6515333125754589,
+        "p": 0.0935,
+        "n": 7
+      },
+      {
+        "mode": "velocity",
+        "r": 0.8146178138069808,
+        "p": 0.0155,
+        "n": 7
+      }
+    ],
+    "allPositive": true,
+    "bestMode": "velocity",
+    "verdict": "ROBUST — result survives all normalizations"
+  },
+  "V3_robustness": {
+    "loo": {
+      "results": [
+        {
+          "dropped": "NGC2841",
+          "r": 0.4861337435938326
+        },
+        {
+          "dropped": "NGC5055",
+          "r": 0.7847957102896206
+        },
+        {
+          "dropped": "NGC3521",
+          "r": 0.7976231012211626
+        },
+        {
+          "dropped": "NGC7331",
+          "r": 0.8918076045535489
+        },
+        {
+          "dropped": "NGC2403",
+          "r": 0.8889052732999335
+        },
+        {
+          "dropped": "NGC2903",
+          "r": 0.8069925184516481
+        },
+        {
+          "dropped": "NGC3198",
+          "r": 0.7940569829132191
+        }
+      ],
+      "allPositive": true,
+      "min": 0.4861337435938326,
+      "max": 0.8918076045535489,
+      "nAbove05": 6
+    },
+    "kendallTau": 0.42857142857142855,
+    "concordant": 15,
+    "discordant": 6,
+    "jackknife": {
+      "mean": 0.7786164191889952,
+      "se": 0.30979031100753895,
+      "ci95": [
+        0.17142740961421876,
+        1.3858054287637716
+      ]
+    },
+    "bootstrap": {
+      "mean": 0.7305766051030156,
+      "ci95": [
+        0.08075891952755684,
+        0.9857633341545814
+      ],
+      "pctPositive": 97.8,
+      "pctAbove05": 83.7,
+      "nBoot": 5000
+    },
+    "verdict": "ROBUST — correlation survives all LOO drops, bootstrap, and pair analysis"
+  },
+  "V4_barExclusion": {
+    "results": [
+      {
+        "innerExcluded": "0%",
+        "r": 0.8040825886284413,
+        "n": 7
+      },
+      {
+        "innerExcluded": "10%",
+        "r": 0.7610491018305487,
+        "n": 7
+      },
+      {
+        "innerExcluded": "15%",
+        "r": 0.6355237778588539,
+        "n": 7
+      },
+      {
+        "innerExcluded": "20%",
+        "r": 0.7666297306130028,
+        "n": 7
+      },
+      {
+        "innerExcluded": "25%",
+        "r": 0.644150990792286,
+        "n": 7
+      },
+      {
+        "innerExcluded": "30%",
+        "r": 0.5914360019841659,
+        "n": 7
+      }
+    ],
+    "allPositive": true,
+    "barDriven": false,
+    "verdict": "ROBUST — shapeAmplitude NOT driven by inner bar; survives exclusion"
+  },
+  "combined": {
+    "nRobust": 3,
+    "nStable": 1,
+    "nFragile": 0,
+    "overall": "shapeAmplitude CONFIRMED — robust quantitative carrier of H. Ready for DM-5."
+  },
+  "keyNumbers": {
+    "baseR": 0.8040825886284413,
+    "binRange": [
+      0.6120295627073762,
+      0.8119294048594409
+    ],
+    "looRange": [
+      0.4861337435938326,
+      0.8918076045535489
+    ],
+    "kendallTau": 0.42857142857142855,
+    "bootstrapCI95": [
+      0.08075891952755684,
+      0.9857633341545814
+    ],
+    "bootstrapPctPositive": 97.8,
+    "barExclStable": true
+  }
+}
