@@ -1,0 +1,233 @@
+{
+  "program": 12,
+  "phase": "DM-4",
+  "title": "Quantitative Halo Shape Test — What shape parameter best captures H?",
+  "timestamp": "2026-04-07T01:52:04.922Z",
+  "N": 7,
+  "galaxies": [
+    "NGC2841",
+    "NGC5055",
+    "NGC3521",
+    "NGC7331",
+    "NGC2403",
+    "NGC2903",
+    "NGC3198"
+  ],
+  "T1": {
+    "name": "Non-axisymmetry strength",
+    "rDQ_shapeAmp": 0.7933920080346856,
+    "pDQ_shapeAmp": 0.0319,
+    "rDQ_ellipticity": 0.6202052855789609,
+    "rDQ_angularComplexity": 0.6665072229525684,
+    "pDQ_angC": 0.0732,
+    "rDQ_haloResponse": 0.26725373637001754,
+    "bestProxy": "shapeAmplitude",
+    "bestR": 0.7933920080346856,
+    "beatsHaloResponse": true
+  },
+  "T2": {
+    "name": "Directional stability",
+    "rDQ_phaseCoherence": 0.47131491897007305,
+    "rDQ_shapeCoherence": 0.09046322942570634,
+    "pDQ_shapeCoherence": 0.8607,
+    "rDQ_twist": -0.21533710741370338,
+    "rDQ_ampCV": 0.08500880918052417,
+    "coherenceMatters": false
+  },
+  "T3": {
+    "name": "Parameter ranking",
+    "ranking": [
+      {
+        "name": "shapeAmplitude",
+        "r": 0.7933920080346856,
+        "absR": 0.7933920080346856
+      },
+      {
+        "name": "angularComplexity",
+        "r": 0.6665072229525684,
+        "absR": 0.6665072229525684
+      },
+      {
+        "name": "ellipticityProxy",
+        "r": 0.6202052855789609,
+        "absR": 0.6202052855789609
+      },
+      {
+        "name": "phaseCoherence",
+        "r": 0.47131491897007305,
+        "absR": 0.47131491897007305
+      },
+      {
+        "name": "haloResponse",
+        "r": 0.26725373637001754,
+        "absR": 0.26725373637001754
+      },
+      {
+        "name": "isotropyIndex",
+        "r": 0.24922699005136176,
+        "absR": 0.24922699005136176
+      },
+      {
+        "name": "meanTwist",
+        "r": -0.21533710741370338,
+        "absR": 0.21533710741370338
+      },
+      {
+        "name": "oddPowerFraction",
+        "r": -0.18180383754487303,
+        "absR": 0.18180383754487303
+      },
+      {
+        "name": "shapeCoherence",
+        "r": 0.09046322942570634,
+        "absR": 0.09046322942570634
+      }
+    ],
+    "bestSingle": {
+      "name": "shapeAmplitude",
+      "r": 0.7933920080346856,
+      "absR": 0.7933920080346856
+    },
+    "secondBest": {
+      "name": "angularComplexity",
+      "r": 0.6665072229525684,
+      "absR": 0.6665072229525684
+    },
+    "correlation_top1_top2": 0.8677943639830923,
+    "independent": false
+  },
+  "T4": {
+    "name": "LOO + Bootstrap stability",
+    "bestParameter": "shapeAmplitude",
+    "loo": {
+      "min": 0.4267303551993574,
+      "max": 0.910292575876524,
+      "mean": 0.764650943458331,
+      "signStable": true
+    },
+    "bootstrap": {
+      "mean": 0.7122409116032156,
+      "ci95": [
+        -0.09990578836886085,
+        0.9859097502648346
+      ],
+      "pctPositive": 96.26,
+      "nBoot": 5000
+    },
+    "stable": false
+  },
+  "T5": {
+    "name": "Matched pairs",
+    "highH": [
+      "NGC2841",
+      "NGC3521",
+      "NGC2403"
+    ],
+    "lowH": [
+      "NGC2903",
+      "NGC3198",
+      "NGC5055"
+    ]
+  },
+  "overallVerdict": "SUCCESS — shape parameter \"shapeAmplitude\" captures H with r=0.793, LOO-stable. Halo non-axisymmetry is the quantitative carrier of H.",
+  "perGalaxy": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.254370061790992,
+      "Vflat": 284.8,
+      "hR": 0.7669798337501476,
+      "shapeAmplitude": 47968.04006314124,
+      "ellipticityProxy": 5136.827075829704,
+      "angularComplexity": 0.189250025561629,
+      "shapeCoherence": 0.5511262691580131,
+      "phaseCoherence": 0.7732071607346839,
+      "isotropyIndex": 0.729241989696675,
+      "oddPowerFrac": 0.8008491203308644,
+      "meanTwist": 12.4714297116034
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.5228476025571591,
+      "Vflat": 179,
+      "hR": 0.5538444578291046,
+      "shapeAmplitude": 18837.07383079571,
+      "ellipticityProxy": 1838.315500064713,
+      "angularComplexity": 0.11535583428748554,
+      "shapeCoherence": 0.6102719013107686,
+      "phaseCoherence": 0.7172391782320189,
+      "isotropyIndex": 0.7099735906903503,
+      "oddPowerFrac": 0.7965659370645571,
+      "meanTwist": 38.5968475158203
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.517836254332268,
+      "Vflat": 213.7,
+      "hR": 0.6222733344308535,
+      "shapeAmplitude": 33288.40845627693,
+      "ellipticityProxy": 7279.70571743308,
+      "angularComplexity": 0.18619959578643164,
+      "shapeCoherence": 0.5810215909795561,
+      "phaseCoherence": 0.7305308471985981,
+      "isotropyIndex": 0.9006048321234893,
+      "oddPowerFrac": 0.5548939739111508,
+      "meanTwist": 159.6695262229749
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.13516027460720484,
+      "Vflat": 239,
+      "hR": 0.9809102091413493,
+      "shapeAmplitude": 34499.54243382171,
+      "ellipticityProxy": 3809.5050158521344,
+      "angularComplexity": 0.1916832098110793,
+      "shapeCoherence": 0.47173533883752466,
+      "phaseCoherence": 0.6670173733270335,
+      "isotropyIndex": 0.736108018069794,
+      "oddPowerFrac": 0.7910815301097393,
+      "meanTwist": 144.03255877318213
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.1415876076276942,
+      "Vflat": 131.2,
+      "hR": 0.9309111687818349,
+      "shapeAmplitude": 14513.726209736626,
+      "ellipticityProxy": 2260.2559609496075,
+      "angularComplexity": 0.12502628743050642,
+      "shapeCoherence": 0.22682173483593773,
+      "phaseCoherence": 0.7152562915119114,
+      "isotropyIndex": 0.8473451279157149,
+      "oddPowerFrac": 0.6440988527578253,
+      "meanTwist": 143.09034018016368
+    },
+    {
+      "name": "NGC2903",
+      "DQ": -0.26106056273318207,
+      "Vflat": 184.6,
+      "hR": 0.5800032450926148,
+      "shapeAmplitude": 22042.38534632496,
+      "ellipticityProxy": 1273.6271937292718,
+      "angularComplexity": 0.1209184385943371,
+      "shapeCoherence": 0.29516247380318134,
+      "phaseCoherence": 0.5473957129524606,
+      "isotropyIndex": 0.7029001439888307,
+      "oddPowerFrac": 0.8155650004136867,
+      "meanTwist": 249.7863861665403
+    },
+    {
+      "name": "NGC3198",
+      "DQ": -0.4715816459282169,
+      "Vflat": 150.1,
+      "hR": 0.7573052283552879,
+      "shapeAmplitude": 18593.968074910477,
+      "ellipticityProxy": 1490.4798052036888,
+      "angularComplexity": 0.1432964463496388,
+      "shapeCoherence": 0.380860342962026,
+      "phaseCoherence": 0.6056809888146372,
+      "isotropyIndex": 0.7013178314111077,
+      "oddPowerFrac": 0.8318664005419026,
+      "meanTwist": 93.06401145544208
+    }
+  ]
+}
