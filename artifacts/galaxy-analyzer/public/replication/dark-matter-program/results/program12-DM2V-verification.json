@@ -1,0 +1,288 @@
+{
+  "program": 12,
+  "phase": "DM-2V",
+  "title": "DM-2 Verification: CDM+Shape vs SIDM after cleaning",
+  "timestamp": "2026-04-07T01:41:54.973Z",
+  "totalGalaxies": 7,
+  "cleanGalaxies": 7,
+  "removedForCoverage": [],
+  "keptGalaxies": [
+    "NGC2841",
+    "NGC5055",
+    "NGC3521",
+    "NGC7331",
+    "NGC2403",
+    "NGC2903",
+    "NGC3198"
+  ],
+  "cleanSuppressionTest": {
+    "meanSuppression": 0.7427393829477983,
+    "nSuppressed": 5,
+    "rDQ_suppression": -0.39259489899676075,
+    "verdict": "INCONCLUSIVE"
+  },
+  "radialCorrelations": {
+    "rDQ_innerC": 0.43131312449039455,
+    "rDQ_midC": 0.5948634502627205,
+    "rDQ_outerC": 0.7462383824642774,
+    "rDQ_allC": 0.6778858540411171,
+    "innerLed": false,
+    "difference": -0.3149252579738829,
+    "verdict": "CDM+shape"
+  },
+  "oddEvenStructure": {
+    "rDQ_innerOdd": -0.3408281111367531,
+    "rDQ_outerOdd": 0.13855912493324832,
+    "rDQ_innerEven": 0.3408281111367533,
+    "rDQ_outerEven": -0.1385591249332483
+  },
+  "nonRotDistribution": {
+    "perGalaxy": [
+      {
+        "name": "NGC2841",
+        "DQ": 2.254370061790992,
+        "innerFrac": 0.2074623347147801,
+        "outerFrac": 0.48501592569171126
+      },
+      {
+        "name": "NGC5055",
+        "DQ": -1.5228476025571591,
+        "innerFrac": 0.3224766741258823,
+        "outerFrac": 0.3463906526794002
+      },
+      {
+        "name": "NGC3521",
+        "DQ": 0.517836254332268,
+        "innerFrac": 0.14840695252812114,
+        "outerFrac": 0.6393902674361234
+      },
+      {
+        "name": "NGC7331",
+        "DQ": -0.13516027460720484,
+        "innerFrac": 0.1374664144690783,
+        "outerFrac": 0.5755554523922134
+      },
+      {
+        "name": "NGC2403",
+        "DQ": 0.1415876076276942,
+        "innerFrac": 0.19074740940518944,
+        "outerFrac": 0.5390607676356859
+      },
+      {
+        "name": "NGC2903",
+        "DQ": -0.26106056273318207,
+        "innerFrac": 0.16891174712985305,
+        "outerFrac": 0.6086251405338222
+      },
+      {
+        "name": "NGC3198",
+        "DQ": -0.4715816459282169,
+        "innerFrac": 0.18807861642596135,
+        "outerFrac": 0.48329062300770326
+      }
+    ],
+    "verdict": "CDM+shape"
+  },
+  "loo": {
+    "nInnerLed": 0,
+    "total": 7,
+    "stable": false,
+    "perDrop": [
+      {
+        "dropped": "NGC2841",
+        "rInner": 0.3218335930433817,
+        "rOuter": 0.7219252525977847,
+        "rGlobal": 0.5517011892404795,
+        "rSupp": -0.5030534522243235,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC5055",
+        "rInner": 0.5164510283893788,
+        "rOuter": 0.5418574926704404,
+        "rGlobal": 0.5446935607289183,
+        "rSupp": 0.2791076443532668,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC3521",
+        "rInner": 0.448243310842769,
+        "rOuter": 0.7438976610313714,
+        "rGlobal": 0.668451163285668,
+        "rSupp": -0.49960161446594564,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC7331",
+        "rInner": 0.4484554952855928,
+        "rOuter": 0.8914542622865904,
+        "rGlobal": 0.8309433554806427,
+        "rSupp": -0.426196742488204,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC2403",
+        "rInner": 0.4654052288914954,
+        "rOuter": 0.7521600555901609,
+        "rGlobal": 0.7302079230690444,
+        "rSupp": -0.39738446403027067,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC2903",
+        "rInner": 0.45750594549308304,
+        "rOuter": 0.7437124543777768,
+        "rGlobal": 0.6993428877511526,
+        "rSupp": -0.4787953859748898,
+        "innerLed": false
+      },
+      {
+        "dropped": "NGC3198",
+        "rInner": 0.41166745806605576,
+        "rOuter": 0.7867031361238752,
+        "rGlobal": 0.6851226392829841,
+        "rSupp": -0.46249131060777116,
+        "innerLed": false
+      }
+    ]
+  },
+  "bootstrap": {
+    "nBoot": 5000,
+    "innerLedPct": 19.7,
+    "sidmFavoredPct": 19.1,
+    "ciRInner": [
+      -0.42885832917608346,
+      0.9024623324697303
+    ],
+    "ciROuter": [
+      -0.13775775077541855,
+      0.9974021442736117
+    ],
+    "verdict": "CDM+shape"
+  },
+  "cleanVerdict": {
+    "T1": "INCONCLUSIVE",
+    "T2": "CDM+shape",
+    "T3": "CDM+shape",
+    "T4": "CDM+shape",
+    "cdmWins": 3,
+    "sidmWins": 0,
+    "inconclusive": 1,
+    "overall": "CDM+shape CONFIRMED — DM-2 SIDM signal was coverage artifact",
+    "dm2WasFragile": true
+  },
+  "perGalaxy": [
+    {
+      "name": "NGC2841",
+      "DQ": 2.254370061790992,
+      "Vflat": 284.8,
+      "innerAngC": 0.1433782985241297,
+      "midAngC": 0.20863843070348626,
+      "outerAngC": 0.2127630241145885,
+      "globalAngC": 0.19176036154271392,
+      "suppressionRatio": 0.6738872937193728,
+      "innerOddFrac": 0.7265249290343847,
+      "outerOddFrac": 0.7919982170911886,
+      "innerEvenFrac": 0.2734750709656154,
+      "outerEvenFrac": 0.20800178290881144,
+      "innerNonRotFrac": 0.2074623347147801,
+      "outerNonRotFrac": 0.48501592569171126
+    },
+    {
+      "name": "NGC5055",
+      "DQ": -1.5228476025571591,
+      "Vflat": 179,
+      "innerAngC": 0.12183544531224737,
+      "midAngC": 0.12122000415003327,
+      "outerAngC": 0.10591078063133931,
+      "globalAngC": 0.11528094709121992,
+      "suppressionRatio": 1.1503592418635795,
+      "innerOddFrac": 0.8072056569523274,
+      "outerOddFrac": 0.7390304599164225,
+      "innerEvenFrac": 0.1927943430476726,
+      "outerEvenFrac": 0.26096954008357753,
+      "innerNonRotFrac": 0.3224766741258823,
+      "outerNonRotFrac": 0.3463906526794002
+    },
+    {
+      "name": "NGC3521",
+      "DQ": 0.517836254332268,
+      "Vflat": 213.7,
+      "innerAngC": 0.16753272895823884,
+      "midAngC": 0.18388710334489403,
+      "outerAngC": 0.18105490064294813,
+      "globalAngC": 0.17891690684639544,
+      "suppressionRatio": 0.9253145226299294,
+      "innerOddFrac": 0.3584961384150636,
+      "outerOddFrac": 0.6087774281981422,
+      "innerEvenFrac": 0.6415038615849364,
+      "outerEvenFrac": 0.3912225718018578,
+      "innerNonRotFrac": 0.14840695252812114,
+      "outerNonRotFrac": 0.6393902674361234
+    },
+    {
+      "name": "NGC7331",
+      "DQ": -0.13516027460720484,
+      "Vflat": 239,
+      "innerAngC": 0.13269870048630217,
+      "midAngC": 0.21031218941482133,
+      "outerAngC": 0.21241503706035592,
+      "globalAngC": 0.19196024100545883,
+      "suppressionRatio": 0.6247142496253547,
+      "innerOddFrac": 0.7816898017378554,
+      "outerOddFrac": 0.768453266235321,
+      "innerEvenFrac": 0.2183101982621444,
+      "outerEvenFrac": 0.23154673376467905,
+      "innerNonRotFrac": 0.1374664144690783,
+      "outerNonRotFrac": 0.5755554523922134
+    },
+    {
+      "name": "NGC2403",
+      "DQ": 0.1415876076276942,
+      "Vflat": 131.2,
+      "innerAngC": 0.10417007630648273,
+      "midAngC": 0.11310362810983109,
+      "outerAngC": 0.1649098724886083,
+      "globalAngC": 0.12739452563497403,
+      "suppressionRatio": 0.6316788360483307,
+      "innerOddFrac": 0.5942753900252061,
+      "outerOddFrac": 0.6559837465464168,
+      "innerEvenFrac": 0.4057246099747938,
+      "outerEvenFrac": 0.3440162534535831,
+      "innerNonRotFrac": 0.19074740940518944,
+      "outerNonRotFrac": 0.5390607676356859
+    },
+    {
+      "name": "NGC2903",
+      "DQ": -0.26106056273318207,
+      "Vflat": 184.6,
+      "innerAngC": 0.08515799350011294,
+      "midAngC": 0.10427947599834816,
+      "outerAngC": 0.15168478268464625,
+      "globalAngC": 0.11913275529298015,
+      "suppressionRatio": 0.5614142169894327,
+      "innerOddFrac": 0.7990418553826497,
+      "outerOddFrac": 0.7649681643311174,
+      "innerEvenFrac": 0.2009581446173503,
+      "outerEvenFrac": 0.2350318356688826,
+      "innerNonRotFrac": 0.16891174712985305,
+      "outerNonRotFrac": 0.6086251405338222
+    },
+    {
+      "name": "NGC3198",
+      "DQ": -0.4715816459282169,
+      "Vflat": 150.1,
+      "innerAngC": 0.11416336126874199,
+      "midAngC": 0.1564535846564853,
+      "outerAngC": 0.1806933185142005,
+      "globalAngC": 0.1504367548131426,
+      "suppressionRatio": 0.6318073197585887,
+      "innerOddFrac": 0.8627185556679178,
+      "outerOddFrac": 0.6891437791881974,
+      "innerEvenFrac": 0.13728144433208225,
+      "outerEvenFrac": 0.3108562208118026,
+      "innerNonRotFrac": 0.18807861642596135,
+      "outerNonRotFrac": 0.48329062300770326
+    }
+  ]
+}
